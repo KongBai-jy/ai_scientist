@@ -1,0 +1,124 @@
+# ============================================================
+# AI Scientist — Git 忽略规则
+# ============================================================
+
+# --- Python 编译缓存 ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+
+# --- Python 打包产物 ---
+*.egg-info/
+*.egg
+dist/
+build/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.whl
+
+# --- 虚拟环境 ---
+.venv/
+venv/
+env/
+ENV/
+.env/
+
+# --- 环境变量 / 密钥 ---
+.env
+.env.local
+.env.*.local
+.env.development
+.env.production
+.env.staging
+
+# --- 向量数据库（Chroma）持久化数据 ---
+data/chroma_db/
+data/*.sqlite3
+data/*.duckdb
+
+# --- 日志文件 ---
+*.log
+logs/
+log/
+
+# --- 输出 / 临时文件 ---
+outputs/*
+!outputs/.gitkeep
+tmp/
+temp/
+.cache/
+
+# --- 测试 / 覆盖率 ---
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# --- Jupyter Notebook ---
+.ipynb_checkpoints
+
+# --- IDE / 编辑器 ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9settings/
+.ultralisp/
+
+# --- 操作系统 ---
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# --- Node.js（前端可能用到）---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- Docker ---
+docker-compose.override.yml
+
+# --- AI/ML 模型文件 ---
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.onnx
+*.ckpt
+*.h5
+*.pkl
+*.joblib
+
+# --- 大文件 / 数据集 ---
+data/raw/
+data/datasets/
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z

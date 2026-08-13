@@ -1,0 +1,71 @@
+# ============================================================
+# AI Scientist 后端依赖（基于 LangChain 1.x / LangGraph 1.x）
+# 基座模型：Qwen（阿里云百炼平台 DashScope）
+# ============================================================
+
+# --- LangChain 核心框架 ---
+langchain==1.2.12
+langchain-core==1.2.18
+langchain-classic==1.0.2
+langchain-community==0.4.1
+langchain-text-splitters==1.1.1
+
+# --- LangGraph 编排 ---
+langgraph==1.1.2
+langgraph-prebuilt==1.0.8
+langgraph-checkpoint==4.0.1
+
+# --- 大模型供应商（百炼 OpenAI 兼容模式）---
+langchain-openai==1.1.11
+openai==2.26.0
+dashscope==1.25.6
+
+# --- Web 服务 / API / SSE ---
+fastapi==0.135.1
+starlette==1.6.0
+uvicorn==0.46.0
+sse-starlette==3.3.4
+httpx==0.28.1
+aiohttp==3.12.14
+
+# --- 配置管理 / 数据校验 ---
+python-dotenv==1.2.1
+pydantic==2.12.5
+pydantic-settings==2.12.0
+orjson==3.11.7
+jsonschema==4.26.0
+
+# --- 向量数据库（Chroma）---
+langchain-chroma==1.1.0
+chromadb==1.1.1
+grpcio==1.83.0
+
+# --- 关系数据库（MySQL）---
+SQLAlchemy==2.0.48
+aiomysql==0.2.0
+pymysql==1.1.1
+alembic==1.14.0
+
+# --- PDF / 文献解析 ---
+PyMuPDF==1.25.2
+pypdf==6.10.2
+pdfminer.six==20260107
+
+# --- 统计分析（因果量化检验）---
+scipy==1.17.1
+scikit-learn==1.8.0
+statsmodels==0.14.4
+numpy==2.4.4
+pandas==2.2.3
+
+# --- Embedding / Tokenizer ---
+tiktoken==0.12.0
+
+# --- 可观测性 ---
+langsmith>=0.3.45,<1.0.0
+
+# --- 工具库 ---
+loguru==0.7.3
+tenacity==9.1.4
+python-dateutil==2.9.0.post0
+nest-asyncio==1.6.0

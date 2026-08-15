@@ -1,0 +1,97 @@
+"""
+Chroma 向量数据库服务
+用于本地知识库检索
+"""
+
+import os
+import logging
+from pathlib import Path
+from typing import List, Dict, Any, Optional
+from dotenv import load_dotenv
+
+from langchain_chroma import Chroma
+# 百炼的 OpenAI 兼容模式对 embedding 接口不完全兼容（期望 input.contents 而非 input），
+# 因此改用 dashscope 原生 SDK 的 LangChain 封装
+from langchain_community.embeddings import DashScopeEmbeddings
+
+# 加载项目根目录的 .env
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+load_dotenv(_PROJECT_ROOT / ".env")
+
+logger = logging.getLogger(__name__)
+
+_DEFAULT_EMBEDDING_MODEL = "text-embedding-v2"
+
+
+class ChromaService:
+    """Chroma 向量库服务"""
+
+    def __init__(
+        self,
+        persist_directory: Optional[str] = None,
+        collection_name: str = "knowledge_base"
+    ):
+        # 允许相对路径，但以项目根为基准
+        default_path = os.getenv("CHROMA_DB_PATH", "./data/chroma_db")
+        if not os.path.isabs(default_path):
+            default_path = str(_PROJECT_ROOT / default_path)
+        self.persist_directory = persist_directory or default_path
+
+        self.collection_name = collection_name
+
+        # 使用百炼 DashScope 原生 Embedding（避免 OpenAI 兼容模式的 input.contents 问题）
+        api_key = (
+            os.getenv("DASHSCOPE_API_KEY_EMBEDDING")
+            or os.getenv("DASHSCOPE_API_KEY")
+        )
+        model = (
+            os.getenv("QWEN_MODEL_EMBEDDING")
+            or _DEFAULT_EMBEDDING_MODEL
+        )
+        self.embeddings = DashScopeEmbeddings(
+            model=model,
+            dashscope_api_key=api_key,
+        )
+
+        self.vector_store = None
+
+    def load_or_create(self) -> Chroma:
+        """加载或创建向量库"""
+        if self.vector_store is None:
+            os.makedirs(self.persist_directory, exist_ok=True)
+            self.vector_store = Chroma(
+                collection_name=self.collection_name,
+                embedding_function=self.embeddings,
+                persist_directory=self.persist_directory,
+            )
+        return self.vector_store
+
+    def similarity_search(
+        self,
+        query: str,
+        k: int = 5
+    ) -> List[Dict[str, Any]]:
+        """相似度检索"""
+        store = self.load_or_create()
+        results = store.similarity_search_with_score(query, k=k)
+
+        return [
+            {
+                "content": doc.page_content,
+                "metadata": doc.metadata,
+                "score": score
+            }
+            for doc, score in results
+        ]
+
+    def add_documents(self, texts: List[str], metadatas: List[Dict]) -> None:
+        """添加文档到向量库"""
+        store = self.load_or_create()
+        store.add_texts(texts, metadatas=metadatas)
+        # chromadb>=1.3.5 持久化由 PersistentClient 内部处理，无需手动 persist()
+
+    def delete_collection(self) -> None:
+        """删除集合"""
+        if self.vector_store is not None:
+            self.vector_store.delete_collection()
+            self.vector_store = None

@@ -43,6 +43,16 @@ data/chroma_db/
 data/*.sqlite3
 data/*.duckdb
 
+# --- SQLite 数据库（业务库 + 临时库 + WAL/SHM 文件）---
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+data/*.db
+data/*.db-journal
+
 # --- 日志文件 ---
 *.log
 logs/
@@ -51,9 +61,19 @@ log/
 # --- 输出 / 临时文件 ---
 outputs/*
 !outputs/.gitkeep
+!outputs/init
 tmp/
 temp/
 .cache/
+
+# --- 运行时快照（agent_orchestrator 写出的 V1/V2/V3 等）---
+src/snapshots/*.json
+!src/snapshots/.gitkeep
+
+# --- API 调试 / 临时响应文件 ---
+_api_run_response.json
+_api_*_response.json
+*.response.json
 
 # --- 测试 / 覆盖率 ---
 .pytest_cache/
@@ -64,8 +84,19 @@ htmlcov/
 .tox/
 .nox/
 
-# --- Jupyter Notebook ---
+# --- Python 静态检查 / 类型工具缓存 ---
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.pytype/
+.dmypy.json
+dmypy.json
+
+# --- Jupyter / IPython 运行时 ---
 .ipynb_checkpoints
+.ipynb_checkpoints/
+.profile_default/
+ipython_config.py
 
 # --- IDE / 编辑器 ---
 .vscode/*
@@ -122,3 +153,49 @@ data/datasets/
 *.tar
 *.rar
 *.7z
+
+# --- 进程 / 锁文件（运行时生成）---
+*.pid
+*.pid.lock
+celerybeat-schedule
+celerybeat-schedule.db
+celeryevdump.*
+
+# --- LangGraph / LangChain 运行时缓存 ---
+.langgraph/
+langgraph_cache/
+*.langgraph
+
+# --- Windows / Python 工具临时文件 ---
+*.bak
+*.tmp
+*.temp
+*.orig
+*.rej
+
+# --- Trae / AI 工具本地缓存（如适用）---
+.trae/
+.aider*
+
+# --- 前端构建产物（如未来引入 web 构建）---
+web/dist/
+web/build/
+web/.vite/
+web/.turbo/
+web/.next/
+web/.nuxt/
+web/.output/
+web/stats.html
+
+# --- Tailwind / PostCSS 等前端缓存 ---
+web/.cache/
+web/node_modules/.cache/
+
+# --- Storybook / 测试快照（前端）---
+web/storybook-static/
+web/__snapshots__/*.snap
+
+# --- 数据版本控制（DVC，如启用）---
+.dvc/cache/
+.dvc/tmp/
+*.dvc.lock

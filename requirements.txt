@@ -37,7 +37,7 @@ jsonschema==4.26.0
 
 # --- 向量数据库（Chroma）---
 langchain-chroma==1.1.0
-chromadb==1.1.1
+chromadb>=1.3.5,<2.0.0
 grpcio==1.83.0
 
 # --- 关系数据库（MySQL）---

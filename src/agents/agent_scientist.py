@@ -22,6 +22,7 @@ from models.schemas import (
     ScientistInput, ScientistOutput,
     Hypothesis, Plan, VerificationCriteria
 )
+from utils.llm_structured_fallback import parse_llm_json_to_model
 
 # 加载项目根目录的 .env
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -61,7 +62,22 @@ SYSTEM_PROMPT = """你是一位顶尖的跨学科科学家，专精于将文献�
 - 2-3 条假设应呈现竞争性：不同机制、不同尺度、不同因果关系方向
 - 如果证据不足，可利用跨域类比线索进行合理推测，但必须明确标注
 
-## 输出格式（纯 JSON）
+## 输出格式（纯 JSON，字段名必须严格一致，大小写敏感）
+必须使用嵌套对象结构！禁止把对象写成描述性字符串！
+
+【字段 Schema】
+- hypotheses[i].plan                 → 对象，必须包含三个键：
+    * L1_conceptual  (字符串)        → 概念级方向描述
+    * L2_quantitative (字符串)       → 量化指标级，必须包含具体数字阈值（如 ≥、≤、%、K 等）
+    * L3_robustness   (字符串)       → 容错级，含备选方案+对照设计
+- hypotheses[i].verification_criteria → 对象，必须包含两个键：
+    * confirm   (字符串)              → 假设成立需要满足的可观测条件
+    * reject    (字符串)              → 假设推翻需要满足的可观测条件
+- hypotheses[i].id                   → 严格为 "H1"、"H2" 或 "H3"（字符串）
+- hypotheses[i].falsification_condition → 字符串，长度 ≥ 15，明确说明"在什么条件被观测到即推翻该假设"
+- cross_hypothesis_comparison        → 字符串，≥20 字符，比较所有假设的机制差异
+
+【正确示例】
 {
   "hypotheses": [
     {
@@ -83,6 +99,10 @@ SYSTEM_PROMPT = """你是一位顶尖的跨学科科学家，专精于将文献�
   ],
   "cross_hypothesis_comparison": "各假设之间的差异与互补关系"
 }
+
+【严禁出现】（出现将强制重生成）
+- "plan": "L1_conceptual: ..., L2_quantitative: ..."  —— 这是字符串，不是对象
+- "verification_criteria": "confirm: ..., reject: ..."  —— 这是字符串，不是对象
 """
 
 
@@ -152,17 +172,28 @@ def generate_hypotheses(
 
             # 每次重试微调 temperature
             if attempt > 1:
-                llm_with_temp = ChatOpenAI(
-                    model=os.getenv("QWEN_MODEL", "qwen-max"),
+                llm_cur = ChatOpenAI(
+                    model=os.getenv("QWEN_MODEL", "qwen-plus"),
                     api_key=os.getenv("DASHSCOPE_API_KEY"),
-                    base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",
+                    base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
                     temperature=current_temp,
                     max_tokens=4096,
                     timeout=180.0,
-                ).with_structured_output(ScientistOutput)
-                result = llm_with_temp.invoke(messages)
+                )
             else:
+                llm_cur = llm
+
+            try:
+                # 首选路径：结构化输出（如果 API 网关支持 response_format）
+                structured_llm = llm_cur.with_structured_output(ScientistOutput)
                 result = structured_llm.invoke(messages)
+            except Exception as structured_err:
+                # 降级路径：纯文本 JSON → 手动解析（兼容自建/专有云网关不支持 response_format）
+                logger.info("结构化输出失败，降级为纯文本 JSON 解析: %s",
+                            type(structured_err).__name__)
+                raw = llm_cur.invoke(messages)
+                raw_text = raw.content if hasattr(raw, "content") else str(raw)
+                result = parse_llm_json_to_model(raw_text, ScientistOutput)
 
             # 额外校验：每条假设的可证伪条件长度
             for h in result.hypotheses:
@@ -184,7 +215,14 @@ def generate_hypotheses(
 
             if attempt < max_retries:
                 # 将错误信息注入反馈
-                error_hint = f"【上一轮失败原因】{str(e)}，请确保：① falsification_condition 长度≥15；② plan 包含 L1/L2/L3；③ verification_criteria 包含 confirm/reject。"
+                error_hint = (
+                    f"【上一轮失败原因】{str(e)}\n"
+                    "请务必严格遵守以下两条硬格式要求，不得用字符串替代对象：\n"
+                    "1) plan 必须是对象，包含 L1_conceptual、L2_quantitative、L3_robustness 三个键\n"
+                    "2) verification_criteria 必须是对象，包含 confirm、reject 两个键\n"
+                    "示例正确写法: \"plan\": {\"L1_conceptual\": \"...\", \"L2_quantitative\": \"...\", \"L3_robustness\": \"...\"}\n"
+                    "示例错误写法: \"plan\": \"L1_conceptual: ..., L2_quantitative: ...\"（这是字符串！）"
+                )
                 messages = [
                     SystemMessage(content=SYSTEM_PROMPT),
                     HumanMessage(content=f"""

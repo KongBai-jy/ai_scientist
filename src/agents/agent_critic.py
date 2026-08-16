@@ -22,6 +22,7 @@ from models.schemas import (
     CriticInput, CriticOutput,
     DimensionScores, Hypothesis
 )
+from utils.llm_structured_fallback import parse_llm_json_to_model
 
 # 加载项目根目录的 .env
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -85,7 +86,19 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
 3. 构造反事实"必败条件"（该假设在什么极端条件下必然失效）
 4. 列出缺失证据清单（供下一轮迭代修复）
 
-## 输出格式（纯 JSON）
+## 输出格式（纯 JSON，字段名严格一致，嵌套对象必须为对象不可写字符串）
+- scores (对象) —— 必须是嵌套对象，五个键的取值 0-10 之间浮点数：
+    * evidence (float) —— 证据支撑度
+    * falsifiability (float) —— 可证伪性
+    * consistency (float) —— 理论一致性
+    * novelty (float) —— 新颖度
+    * cross_domain (float) —— 跨学科适配度
+- top_flaw (字符串，≥10 字符)
+- counterfactual (字符串，≥15 字符)
+- missing_evidences (字符串数组)
+- detailed_review (字符串，≥30 字符)
+
+【正确示例】
 {
   "scores": {
     "evidence": 7.5,
@@ -99,6 +112,9 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
   "missing_evidences": ["缺失证据1", "缺失证据2"],
   "detailed_review": "详细评审意见（Markdown 格式）"
 }
+
+【严禁】
+- "scores": "evidence: 7.5, falsifiability: 6.0..."   —— 字符串，错误
 """
 
 
@@ -145,7 +161,14 @@ def critique(
     for attempt in range(1, max_retries + 1):
         try:
             logger.info(f"Agent 3 评审尝试 {attempt}/{max_retries}...")
-            result = structured_llm.invoke(messages)
+            try:
+                result = structured_llm.invoke(messages)
+            except Exception as structured_err:
+                logger.info("结构化输出失败，降级为纯文本 JSON 解析: %s",
+                            type(structured_err).__name__)
+                raw = llm.invoke(messages)
+                raw_text = raw.content if hasattr(raw, "content") else str(raw)
+                result = parse_llm_json_to_model(raw_text, CriticOutput)
 
             # 校验评分范围
             scores = result.scores

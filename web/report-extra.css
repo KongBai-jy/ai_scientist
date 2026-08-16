@@ -1,0 +1,41 @@
+/* 报告页增量样式：五维评分 / 假设卡 / 证据表 / 迭代历程 */
+table.evidence{width:100%;border-collapse:collapse;margin:10px 0 16px;font-size:12px}
+table.evidence th{text-align:left;font-size:10px;letter-spacing:.05em;color:#6d7c78;border-bottom:1px solid #ddd;padding:7px 9px}
+table.evidence td{padding:9px;border-bottom:1px solid #eee;line-height:1.6;vertical-align:top}
+.analogies{display:grid;gap:8px;margin:10px 0 16px}
+.analogy{border:1px solid #e2e1d9;border-radius:8px;padding:10px 13px;background:#fcfbf8}
+.analogy b{font-size:12px}
+.analogy p{margin:4px 0 0;font-size:11.5px;color:#667471}
+.hypothesis{border:1px solid #dcded6;border-radius:10px;padding:16px;margin:12px 0;background:#fcfbf8}
+.hypo-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.hypo-head strong{font-family:monospace;background:#e8f1f5;color:#2e6a85;border-radius:999px;padding:3px 10px;font-size:11px}
+.hypo-head span{font-family:monospace;font-size:10px;color:#7b8a86}
+.hypothesis blockquote{margin:0 0 10px}
+.hypothesis p{font-size:12.5px;line-height:1.7}
+.hypothesis p.falsify{background:#fdf3f0;border:1px solid #efd5cf;border-radius:6px;padding:9px 11px;color:#8a4d43}
+.hypothesis .plan{border:1px solid #e7e6de;border-radius:8px;padding:8px 12px;margin:10px 0}
+.hypothesis .plan p{margin:5px 0;font-size:12px}
+.hypothesis .vc p{margin:6px 0}
+.hypothesis .vc-confirm{color:#3c6e52}
+.hypothesis .vc-reject{color:#8a4d43}
+.score-table{margin:12px 0}
+.score-row{display:grid;grid-template-columns:110px 1fr 44px;gap:12px;align-items:center;padding:7px 0}
+.score-row span{font-size:12.5px}
+.score-row .bar{height:6px;background:#e9ece6;border-radius:999px;overflow:hidden}
+.score-row .bar i{display:block;height:100%;background:linear-gradient(90deg,#4fa99e,#79c9bd);border-radius:999px}
+.score-row b{font-family:monospace;font-size:13px;color:#2c716b;text-align:right}
+p.flaw{background:#fdf1ee;border:1px solid #efd0c9;border-radius:8px;padding:11px 14px;color:#85483f}
+.md{font-size:13px;line-height:1.85}
+.md h1,.md h2,.md h3,.md h4{font-size:14.5px;margin:14px 0 6px;color:#2f4f4c}
+.md p{margin:6px 0}
+.md ul,.md ol{margin:6px 0;padding-left:22px}
+.md li{margin:3px 0}
+.md code{font-family:monospace;font-size:11px;background:#eef1ea;border-radius:4px;padding:1px 5px}
+.md blockquote{border-left:3px solid #bcd8ca;margin:8px 0;padding:2px 12px;color:#6b7a76}
+.rounds-history{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
+.rh-item{display:grid;gap:3px;border:1px solid #dce8df;background:#f4faf5;border-radius:8px;padding:12px;text-align:center}
+.rh-item span{font-family:monospace;font-size:10px;color:#6c8076}
+.rh-item b{font-family:monospace;font-size:22px;color:#2a5e48}
+.rh-item small{font-size:10px;color:#8b9a93}
+.feedback{border-left:3px solid #e4c498;background:#fcf6ea;border-radius:0 8px 8px 0;padding:10px 13px;margin:8px 0;font-size:12.5px;color:#6d5a3c}
+@media print{.report-top{display:none}}

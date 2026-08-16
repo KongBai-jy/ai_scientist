@@ -25,10 +25,20 @@ from agents.agent_orchestrator import (
     get_chart_waterfall,
     get_chart_risk,
 )
+from models.database import init_db
 
 # 加载项目根目录的 .env
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+import sys
+if getattr(sys, "frozen", False):
+    _PROJECT_ROOT = Path(sys.executable).resolve().parent
+    _BUNDLE_DIR = Path(getattr(sys, "_MEIPASS", _PROJECT_ROOT))
+else:
+    _PROJECT_ROOT = Path(__file__).resolve().parent.parent
+    _BUNDLE_DIR = _PROJECT_ROOT
+
 load_dotenv(_PROJECT_ROOT / ".env")
+# 建表（幂等，重复调用安全）
+init_db()
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -48,7 +58,10 @@ app.add_middleware(
 )
 
 # 挂载前端静态文件（部署期使用，开发期建议用 dev server 反向代理）
+# 优先用 exe/源码目录旁的 web/（方便替换），不存在则回退到打包内的 web/
 _WEB_DIR = _PROJECT_ROOT / "web"
+if not _WEB_DIR.exists() and _BUNDLE_DIR != _PROJECT_ROOT:
+    _WEB_DIR = _BUNDLE_DIR / "web"
 if _WEB_DIR.exists():
     app.mount("/static", StaticFiles(directory=str(_WEB_DIR)), name="static")
 
@@ -192,12 +205,54 @@ async def health_check():
     }
 
 
+PORT = int(os.getenv("PORT", "8848"))
+
+
+def _free_port(port: int) -> None:
+    """启动前确保端口可用：Windows 下若端口被占用，直接结束占用进程。
+
+    用法场景：重复双击 exe / 上次进程未退出，避免「端口被占用」启动失败。
+    """
+    import subprocess
+
+    try:
+        out = subprocess.run(
+            ["netstat", "-ano"],
+            capture_output=True, text=True, timeout=10,
+        ).stdout
+    except Exception:
+        return  # 无法查询端口状态时不阻塞启动（uvicorn 会给出标准报错）
+
+    pids = set()
+    for line in out.splitlines():
+        if f":{port} " in line and "LISTENING" in line:
+            parts = line.split()
+            try:
+                pid = int(parts[-1])
+            except (ValueError, IndexError):
+                continue
+            if pid and pid != os.getpid():
+                pids.add(pid)
+
+    for pid in pids:
+        logger.warning(f"端口 {port} 被 PID {pid} 占用，正在结束该进程…")
+        try:
+            subprocess.run(
+                ["taskkill", "/F", "/PID", str(pid)],
+                capture_output=True, text=True, timeout=15,
+            )
+            logger.info(f"PID {pid} 已结束")
+        except Exception as kill_err:
+            logger.warning(f"结束进程 {pid} 失败: {kill_err}")
+
+
 if __name__ == "__main__":
     import uvicorn
+    _free_port(PORT)
     uvicorn.run(
         app,
         host="0.0.0.0",
-        port=8000,
+        port=PORT,
         log_level="info",
         # 单轮 V1 生成约 92s、V2 迭代约 117s，默认 5s keep-alive 会被断开
         timeout_keep_alive=300,

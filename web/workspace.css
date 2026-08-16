@@ -1,0 +1,217 @@
+/* ============================================================
+   AI Scientist 工作台增量样式（轮次 / Tab / 图表 / 加载 / 报告）
+   视觉语言沿用参考项目 styles.css 的 paper 主题
+   ============================================================ */
+
+/* ---------- 顶部报告按钮 ---------- */
+.report-btn{border:1px solid #bfd6d1;background:#e3f0ed;color:#2c716b;border-radius:6px;padding:8px 12px;font-size:11px;font-weight:600;transition:background .16s,border-color .16s}
+.report-btn:hover{background:#d6ebe6;border-color:#8fc0b8}
+
+/* ---------- 工作台容器 ---------- */
+.workspace{position:relative;z-index:1;width:min(1060px,calc(100% - 64px));margin:0 auto;padding:26px 0 12px;animation:welcome-in .5s cubic-bezier(.22,1,.36,1) both}
+.workspace-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
+.workspace-head h2{font-family:var(--display);font-size:23px;letter-spacing:-.03em;margin:0;line-height:1.25}
+.workspace-head .ws-question{color:var(--muted);font-size:12px;line-height:1.6;max-width:640px;margin:0}
+.ws-score{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+.ws-score .big{font-family:var(--mono);font-size:26px;color:#2c716b;font-weight:600}
+.ws-score .lbl{font-size:9px;color:var(--muted);line-height:1.35}
+.ws-score .lbl b{display:block;font-size:10px;color:var(--text)}
+
+/* ---------- 轮次 Tab ---------- */
+.round-tabs{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.round-tab{appearance:none;display:flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);border-radius:var(--radius-md);padding:8px 13px;color:var(--muted);font-size:12px;font-weight:600;transition:border-color .16s,background .16s,transform .16s}
+.round-tab:hover{border-color:#9fc4be;transform:translateY(-1px)}
+.round-tab.active{border-color:#57a79d;background:#e6f1ee;color:#23685f}
+.round-tab .rt-dot{width:7px;height:7px;border-radius:50%;background:#c3c9c3}
+.round-tab.done .rt-dot{background:#72c69f;box-shadow:0 0 0 3px rgba(114,198,159,.14)}
+.round-tab .rt-score{font-family:var(--mono);font-size:10px;color:var(--quiet)}
+.round-tab.active .rt-score{color:#2c716b}
+.round-tab.locked{opacity:.5;cursor:not-allowed}
+.round-tab.locked:hover{transform:none;border-color:var(--line)}
+
+/* ---------- 内容 Tab ---------- */
+.content-tabs{display:flex;gap:2px;border-bottom:1px solid var(--line);margin-bottom:18px;overflow-x:auto}
+.content-tab{appearance:none;border:0;background:transparent;padding:9px 14px 10px;font-size:12px;font-weight:600;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .15s,border-color .15s}
+.content-tab:hover{color:var(--text)}
+.content-tab.active{color:#23685f;border-bottom-color:#4fa99e}
+.tab-panel{display:none;animation:welcome-in .32s cubic-bezier(.22,1,.36,1) both}
+.tab-panel.active{display:block}
+
+/* ---------- 通用卡片 ---------- */
+.panel-card{border:1px solid #d6d7cf;background:#fcfbf8;border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:19px;margin-bottom:14px}
+.panel-card h3{font-family:var(--display);font-size:17px;letter-spacing:-.02em;margin:0 0 9px;display:flex;align-items:center;gap:8px}
+.panel-card h3 .h3-ico{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;font-size:11px;background:#e4f1ed;color:#34796a}
+.panel-card h3.pink .h3-ico{background:#f5ece1;color:#a16b2f}
+.panel-card h3.red .h3-ico{background:#f8e7e4;color:#b05555}
+.panel-card p{font-size:12.5px;line-height:1.75;color:#596568;margin:0}
+.panel-card .sub{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.6}
+
+/* ---------- 探索者：证据表格 ---------- */
+.evidence-table{width:100%;border-collapse:collapse;margin-top:6px}
+.evidence-table th{text-align:left;font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:#6d7c78;padding:7px 9px;border-bottom:1px solid #e2e1d9;white-space:nowrap}
+.evidence-table td{padding:10px 9px;border-bottom:1px solid #ecebe4;font-size:12px;line-height:1.65;color:#4d5c5c;vertical-align:top}
+.evidence-table td.src{font-family:var(--mono);font-size:10px;color:#557773;white-space:nowrap;min-width:150px}
+.evidence-table td.yr{white-space:nowrap;font-size:10px;color:#85908e;min-width:58px}
+.evidence-table tr:last-child td{border-bottom:0}
+
+/* 缺口 / 缺失证据列表 */
+.gap-list{display:grid;gap:8px;margin-top:6px}
+.gap-item{display:flex;gap:9px;align-items:flex-start;padding:9px 11px;background:#fdf6f3;border:1px solid #f0ddd6;border-radius:var(--radius-sm);font-size:12px;line-height:1.6;color:#6e4c46}
+.gap-item .gap-ico{color:#c26a5c;flex:0 0 auto;font-size:12px;line-height:1.6}
+
+/* 跨域类比折叠 */
+.analogy-wrap{border:1px solid #e2e1d9;border-radius:var(--radius-md);overflow:hidden;margin-top:6px}
+.analogy-item{border-bottom:1px solid #e9e8e0;background:#fff}
+.analogy-item:last-child{border-bottom:0}
+.analogy-item summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:12.5px;font-weight:600;color:#3d5553}
+.analogy-item summary::-webkit-details-marker{display:none}
+.analogy-item summary:before{content:"▸";color:#4fa99e;font-size:11px;transition:transform .18s}
+.analogy-item[open] summary:before{transform:rotate(90deg)}
+.analogy-item .field-chip{font-family:var(--mono);font-size:9px;background:#eef3ee;border:1px solid #d8e3da;color:#4e7a68;border-radius:999px;padding:2px 8px}
+.analogy-body{padding:3px 13px 12px 36px;font-size:12px;line-height:1.7;color:#5d6b69}
+.analogy-body p{margin:4px 0 0}
+.analogy-body p b{color:#3f5553;font-weight:600}
+
+/* ---------- 科学家：假设卡片 ---------- */
+.hypo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.hypo-card{border:1px solid #d6d7cf;background:#fcfbf8;border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:11px;animation:welcome-in .45s cubic-bezier(.22,1,.36,1) both}
+.hypo-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.hypo-tag{font-family:var(--mono);font-size:10px;font-weight:700;border-radius:999px;padding:3px 9px;border:1px solid}
+.hypo-tag.h1{background:#e8f1f5;border-color:#bcd5e0;color:#2e6a85}
+.hypo-tag.h2{background:#e9f3ec;border-color:#c2ddc9;color:#37795a}
+.hypo-tag.h3{background:#faf0e2;border-color:#e8d3ae;color:#a06d2b}
+.hypo-src{font-family:var(--mono);font-size:9px;color:var(--quiet)}
+.hypo-card h3{font-family:var(--display);font-size:17px;line-height:1.35;letter-spacing:-.015em;margin:0}
+.hypo-card .hypo-reason{font-size:11.5px;line-height:1.65;color:var(--muted);margin:0}
+.hypo-falsify{border:1px solid #efd5cf;background:#fdf3f0;border-radius:var(--radius-sm);padding:9px 11px;font-size:11.5px;line-height:1.6;color:#8a4d43}
+.hypo-falsify b{display:block;font-size:10px;margin-bottom:2px;color:#b0554b}
+.hypo-plan{border:1px solid #e2e1d9;border-radius:var(--radius-md);overflow:hidden}
+.plan-step{display:grid;grid-template-columns:34px 1fr;gap:9px;padding:10px 12px;border-bottom:1px solid #eceae3;font-size:11.5px;line-height:1.6;color:#5b6a68}
+.plan-step:last-child{border-bottom:0}
+.plan-step .lv{font-family:var(--mono);font-size:9px;font-weight:700;height:20px;display:grid;place-items:center;border-radius:999px}
+.plan-step.l1 .lv{background:#e8f1f5;color:#2e6a85}
+.plan-step.l2 .lv{background:#e9f3ec;color:#37795a}
+.plan-step.l3 .lv{background:#faf0e2;color:#a06d2b}
+.hypo-vc{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.vc-box{border-radius:var(--radius-sm);padding:9px 11px;font-size:11px;line-height:1.6}
+.vc-box.confirm{background:#edf6f0;border:1px solid #d3e7d9;color:#3c6e52}
+.vc-box.reject{background:#fdf3f0;border:1px solid #efd5cf;color:#8a4d43}
+.vc-box b{display:block;font-size:10px;margin-bottom:2px}
+.compare-card{margin-top:2px}
+.compare-card p{font-size:12.5px}
+
+/* ---------- 评审官 ---------- */
+.critic-grid{display:grid;grid-template-columns:minmax(320px,2fr) minmax(240px,1fr);gap:14px;align-items:start}
+@media(max-width:900px){.critic-grid{grid-template-columns:1fr}}
+.score-table{width:100%;border-collapse:collapse}
+.score-table td{padding:8px 4px;border-bottom:1px solid #ecebe4;font-size:12px}
+.score-table td:last-child{font-family:var(--mono);font-weight:600;text-align:right;color:#2c716b}
+.score-table tr:last-child td{border-bottom:0}
+.score-bar{height:5px;background:#e9ece6;border-radius:999px;overflow:hidden;margin-top:4px}
+.score-bar i{display:block;height:100%;background:linear-gradient(90deg,#4fa99e,#79c9bd);border-radius:999px}
+.overall-stat{display:grid;place-items:center;text-align:center;padding:18px 10px;background:linear-gradient(160deg,#f3f8f4,#e9f2ec);border:1px solid #d4e4d8;border-radius:var(--radius-md)}
+.overall-stat .num{font-family:var(--mono);font-size:38px;font-weight:700;color:#2a5e48}
+.overall-stat .cap{font-size:10px;color:#6c8076;margin-top:3px}
+.overall-stat .gran{margin-top:9px;font-size:10px;color:#7a8d85;border-top:1px dashed #cbdcd1;padding-top:8px;width:100%}
+.flaw-alert{border:1px solid #efd0c9;background:#fdf1ee;border-radius:var(--radius-md);padding:12px 14px;font-size:12.5px;line-height:1.7;color:#85483f;display:flex;gap:10px;align-items:flex-start}
+.flaw-alert .fa-ico{font-size:15px;line-height:1.6}
+.cf-card{background:#f6f6f1;border:1px solid #e4e4da;border-radius:var(--radius-md);padding:12px 14px;font-size:12px;line-height:1.7;color:#616c69}
+.cf-card b{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:#7c8985;margin-bottom:5px}
+.md-body{font-size:12.5px;line-height:1.8;color:#4f5f5e;overflow-wrap:break-word}
+.md-body h1,.md-body h2,.md-body h3,.md-body h4{font-size:14px;margin:14px 0 6px;color:#2f4f4c;font-weight:700;letter-spacing:-.01em}
+.md-body h1:first-child,.md-body h2:first-child,.md-body h3:first-child,.md-body h4:first-child{margin-top:0}
+.md-body p{margin:6px 0}
+.md-body ul,.md-body ol{margin:6px 0;padding-left:20px}
+.md-body li{margin:3px 0}
+.md-body code{font-family:var(--mono);font-size:11px;background:#eef1ea;border-radius:4px;padding:1px 5px}
+.md-body blockquote{border-left:3px solid #bcd8ca;margin:8px 0;padding:2px 12px;color:#6b7a76}
+.md-body strong{color:#324d4a}
+
+/* ---------- 图表 Tab ---------- */
+.charts-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:980px){.charts-grid{grid-template-columns:1fr}}
+.chart-card{border:1px solid #d6d7cf;background:#fcfbf8;border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:15px 15px 8px;margin-bottom:0}
+.chart-card h3{font-size:13px;margin:0 0 4px;display:flex;align-items:center;justify-content:space-between}
+.chart-card h3 small{font-family:var(--mono);font-size:9px;color:#82908c;font-weight:400}
+.chart-box{width:100%;height:300px}
+.chart-empty{display:grid;place-items:center;height:300px;color:#909b98;font-size:11px;border:1px dashed #dcdcd3;border-radius:var(--radius-md);margin:6px 0 8px}
+.chart-card.wide{grid-column:1 / -1}
+
+/* ---------- 加载遮罩 ---------- */
+.loading-wrap{width:min(620px,100%);margin:36px auto 0;animation:welcome-in .4s ease both}
+.loading-card{border:1px solid #d6d7cf;background:#fcfbf8;border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:26px}
+.loading-title{font-family:var(--display);font-size:20px;letter-spacing:-.02em;margin:0 0 4px}
+.loading-sub{font-size:11.5px;color:var(--muted);margin:0 0 20px}
+.stage-list{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:18px}
+.stage{position:relative;border:1px solid #e2e1d9;border-radius:var(--radius-md);padding:11px 12px;font-size:11.5px;color:#8b9391;transition:all .3s}
+.stage .s-name{font-weight:700;display:flex;align-items:center;gap:7px}
+.stage .s-ico{display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#edf0ee;font-size:10px;color:#85908c}
+.stage .s-desc{font-size:10px;color:#a4aca9;margin-top:5px;line-height:1.5}
+.stage.running{border-color:#57a79d;background:#f2faf7;color:#23685f;box-shadow:0 0 0 3px rgba(73,183,176,.1)}
+.stage.running .s-ico{background:#d8eee9;color:#2c716b;animation:stage-pulse 1.6s ease-in-out infinite}
+.stage.running .s-desc{color:#5c7c76}
+.stage.done{border-color:#cfe3d6;background:#f4faf5;color:#3c6e52}
+.stage.done .s-ico{background:#e0efe4;color:#3c7c5a}
+.stage.done .s-desc{color:#6d8a78}
+@keyframes stage-pulse{50%{transform:scale(1.08)}}
+.loading-bar{height:5px;background:#e9ece6;border-radius:999px;overflow:hidden}
+.loading-bar i{display:block;height:100%;width:0%;background:linear-gradient(90deg,#4fa99e,#79c9bd);border-radius:999px}
+.loading-meta{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:#8b9391;margin-top:9px}
+.loading-tip{margin-top:15px;font-size:10.5px;color:#98a09d;text-align:center}
+
+/* ---------- 错误卡片 ---------- */
+.error-card{border:1px solid #ecc9c3;background:#fdf5f2;border-radius:var(--radius-lg);padding:20px;margin:30px auto 0;width:min(620px,100%);animation:welcome-in .4s ease both}
+.error-card h3{font-size:16px;color:#a04d43;margin:0 0 8px;font-family:var(--display)}
+.error-card p{font-size:12px;line-height:1.7;color:#8a584f;margin:0 0 6px;word-break:break-all}
+.error-card .err-actions{margin-top:13px;display:flex;gap:8px}
+.error-card .retry-btn{border:1px solid #d9a99f;background:#fff;color:#9c4f43;border-radius:6px;padding:8px 13px;font-size:11px;font-weight:600}
+.error-card .retry-btn:hover{background:#fbeae5}
+
+/* ---------- 空状态 ---------- */
+.empty-state{display:grid;place-items:center;padding:34px 10px;color:#98a09d;font-size:11.5px;border:1px dashed #dcdcd3;border-radius:var(--radius-md);margin-top:6px}
+
+/* ---------- 自定义问题区 ---------- */
+.custom-question{margin-top:22px;border-top:1px solid #e0dfd7;padding-top:18px}
+.custom-question label{font-size:12px;font-weight:600;color:#3d5553;display:block;margin-bottom:8px}
+.custom-question textarea{width:100%;border:1px solid #cdd1c9;border-radius:var(--radius-md);background:#fff;padding:11px 13px;color:#344244;font-size:13px;line-height:1.6;resize:vertical;min-height:64px}
+.custom-question textarea:focus{outline:2px solid var(--cyan);outline-offset:2px;border-color:transparent}
+.custom-question-foot{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.custom-hint{font-family:var(--mono);font-size:10px;color:#85908e}
+.custom-hint.bad{color:#b0554b}
+.overwrite-warning{margin-top:12px;font-size:11px;color:#a06d2b;background:#fdf4e7;border:1px solid #eedcbe;border-radius:var(--radius-sm);padding:9px 11px;line-height:1.6}
+.history-entry-btn{border:1px solid #bcd8ca;background:transparent;color:#3e7057;border-radius:5px;padding:9px 13px;font-size:11px;font-weight:600;transition:background .16s}
+.history-entry-btn:hover{background:#eaf4ee}
+
+/* ---------- 反馈历史（轮次内展示） ---------- */
+.fb-history{margin-top:10px}
+.fb-item{display:flex;gap:9px;align-items:flex-start;padding:9px 11px;background:#fbf6ec;border:1px solid #eddfc4;border-radius:var(--radius-sm);font-size:11.5px;line-height:1.65;color:#6d5a3c;margin-bottom:7px}
+.fb-item .fb-ico{flex:0 0 auto}
+
+/* 移动端微调 */
+@media(max-width:780px){
+  .workspace{width:calc(100% - 28px);padding-top:18px}
+  .workspace-head{display:block}
+  .ws-score{margin-top:10px}
+  .hypo-grid,.critic-grid{grid-template-columns:1fr}
+  .stage-list{grid-template-columns:1fr}
+}
+
+/* ---------- 输入区（移除引用证据/添加链接后，提交按钮右对齐） ---------- */
+.composer-foot{justify-content:flex-end}
+
+/* ---------- 历史条目删除按钮 ---------- */
+.history-item-wrap{position:relative}
+.history-item-wrap .history-item{width:100%}
+.history-del{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:20px;height:20px;display:none;place-items:center;border:1px solid #46555c;border-radius:50%;background:#233238;color:#9fb0b3;font-size:13px;line-height:1;padding:0;transition:color .15s,background .15s,border-color .15s}
+.history-del:hover{color:#ffd9d2;background:#3d2c2c;border-color:#7a4a4a}
+.history-item-wrap:hover .history-del{display:grid}
+.history-item-wrap:hover .history-item{padding-right:26px}
+@media(max-width:780px){.history-del{display:grid}.history-item-wrap .history-item{padding-right:26px}}
+
+/* ---------- 首页视频背景（循环播放） ---------- */
+.welcome-scene-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:center;animation:scene-breathe 18s ease-in-out infinite alternate;will-change:transform}
+/* 视频在上层时：中央仅一层很淡的雾保证标题可读，四周自然淡出，视频清晰可见 */
+.welcome-scene:has(.welcome-scene-video)::after{background:radial-gradient(ellipse 46% 60% at 44% 42%,rgba(244,246,242,.30) 0%,rgba(244,246,242,.16) 55%,transparent 78%)}
+/* 视频加载失败时隐藏（保留原静态图兜底） */
+.welcome-scene-video[style*="display: none"]{display:none!important}
+@media(prefers-reduced-motion:reduce){.welcome-scene-video{animation:none}}

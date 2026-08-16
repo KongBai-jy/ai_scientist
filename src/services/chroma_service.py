@@ -15,7 +15,12 @@ from langchain_chroma import Chroma
 from langchain_community.embeddings import DashScopeEmbeddings
 
 # 加载项目根目录的 .env
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+import sys
+if getattr(sys, "frozen", False):
+    _PROJECT_ROOT = Path(sys.executable).resolve().parent
+else:
+    _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+
 load_dotenv(_PROJECT_ROOT / ".env")
 
 logger = logging.getLogger(__name__)

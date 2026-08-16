@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>AI Scientist · 科研报告</title>
+<meta name="theme-color" content="#eef1ef"/>
+<link rel="icon" href="data:,"/>
+<link rel="stylesheet" href="/static/report.css?v=20260816-v3"/>
+<link rel="stylesheet" href="/static/report-extra.css?v=20260816-v3"/>
+</head>
+<body>
+<header class="report-top no-print">
+  <a class="back" href="/static/index.html">← 返回研究工作台</a>
+  <div class="report-tools">
+    <select id="roundSelect" aria-label="选择轮次" style="margin-right:8px"></select>
+    <button id="downloadMd">下载 Markdown</button>
+    <button id="printReport" class="primary">打印 / 保存 PDF</button>
+  </div>
+</header>
+
+<main class="paper" id="paper">
+  <div class="loading">正在生成科研报告…</div>
+</main>
+
+<script src="/static/report.js?v=20260816-v3"></script>
+</body>
+</html>

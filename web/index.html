@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#10161c"/>
+<title>AI Scientist · Research Workspace</title>
+<link rel="icon" href="data:,"/>
+<link rel="stylesheet" href="/static/styles.css?v=20260816-v3"/>
+<link rel="stylesheet" href="/static/workspace.css?v=20260816-v11"/>
+</head>
+<body>
+<a class="skip-link" href="#workspaceMain">跳到研究工作区</a>
+<div class="app">
+  <button class="mobile-sidebar-bg" id="mobileSidebarBg" type="button" aria-label="关闭研究档案"></button>
+  <aside class="left" id="historySidebar" aria-label="研究档案">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 3.5 20 12l8.5 4-8.5 4-4 8.5-4-8.5-8.5-4 8.5-4 4-8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="16" cy="16" r="2.7" fill="currentColor"/></svg></div>
+      <div><b>AI Scientist</b><small>科学假设生成系统</small></div>
+      <button class="mobile-sidebar-close" id="mobileSidebarClose" type="button">关闭</button>
+    </div>
+
+    <button class="new-btn" id="newResearchBtn" type="button">
+      <span><span class="new-plus" aria-hidden="true">+</span> 新建研究</span>
+      <span class="shortcut">Qwen</span>
+    </button>
+
+    <div class="left-search">
+      <div><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="5.8" stroke="currentColor" stroke-width="1.7"/><path d="m15.2 15.2 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><input id="historySearch" placeholder="搜索历史研究" aria-label="搜索历史研究"/></div>
+    </div>
+
+    <div class="history-title"><span>研究档案</span><small>RECENT</small></div>
+    <div class="history" id="historyList"><div class="history-empty">暂无研究记录</div></div>
+
+    <div class="left-footer">
+      <div class="avatar">RS</div>
+      <div><b>Researcher</b><small id="footerModel">model: --</small></div>
+      <span class="footer-status" id="footerStatus" title="服务运行状态"></span>
+    </div>
+  </aside>
+
+  <main class="center" id="workspaceMain">
+    <header class="topbar">
+      <div class="top-title">
+        <button class="qid" id="mobileNavBtn" type="button" aria-label="打开研究轮次" aria-controls="historySidebar" aria-expanded="false"><span id="topQid">AI</span></button>
+        <div><span class="workspace-label">ACTIVE RESEARCH</span><b id="topTitle">输入一个科学问题开始研究</b></div>
+        <span class="top-tag" id="topCategory" style="display:none">V1</span>
+      </div>
+      <div class="top-actions">
+        <span class="api-status" id="apiStatus" aria-live="polite"><i></i> 连接中…</span>
+        <button class="report-btn" id="reportBtn" type="button" style="display:none">完整报告</button>
+        <button class="mobile-new-btn" id="mobileNewResearchBtn" type="button">新建</button>
+        <button class="danger-btn" id="stopBtn" type="button" disabled>取消</button>
+      </div>
+    </header>
+
+    <div class="chat-wrap" id="chatWrap">
+      <div class="welcome-scene" id="welcomeScene" aria-hidden="true">
+        <div class="welcome-scene-image"><div class="welcome-scene-art"></div><video class="welcome-scene-video" src="/static/assets/welcome.mp4" autoplay muted loop playsinline preload="auto" onerror="this.style.display='none'"></video></div>
+        <div class="welcome-scene-haze"></div>
+        <span class="scene-glint glint-one"></span>
+        <span class="scene-glint glint-two"></span>
+        <span class="scene-glint glint-three"></span>
+        <span class="scene-particle particle-one"></span>
+        <span class="scene-particle particle-two"></span>
+        <span class="scene-particle particle-three"></span>
+      </div>
+      <div class="chat-inner" id="chatInner">
+        <div class="welcome">
+          <h1>让每一个研究假设<br>都经得起推敲。</h1>
+          <p class="welcome-copy">输入一个科学问题。多智能体系统将组织证据、提出可验证假设，并以证据、可证伪性、一致性、新颖度与跨域适配五个维度完成评审，支持多轮专家反馈迭代。</p>
+          <div class="welcome-actions"><button class="primary-btn" id="welcomeStart" type="button">开始一项研究 <span aria-hidden="true">→</span></button></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="composer-wrap">
+    <div class="composer-box" id="composerBox">
+      <div class="composer-prompt" id="composerPrompt">EXPERT INPUT</div>
+      <textarea id="expertInput" placeholder="开始研究后，可随时在这里提出专家意见…" aria-label="专家意见" aria-describedby="composerHint" disabled></textarea>
+      <div class="composer-foot"><button class="send" id="sendBtn" type="button" disabled>提交意见 <span aria-hidden="true">→</span></button></div>
+    </div>
+    <div class="composer-hint" id="composerHint">专家反馈将触发下一轮全链路迭代（V1 → V2 → V3）</div>
+  </div>
+</div>
+
+<div class="modal-bg" id="questionModalBg"></div>
+<section class="question-modal" id="questionModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="questionModalTitle" inert>
+  <div class="modal-head"><div><h2 id="questionModalTitle">开始新的研究</h2><p>从示例科学命题开始，或输入你自己的研究问题（至少 5 个字符）。</p></div><button id="closeQuestionModal" type="button" aria-label="关闭问题选择">×</button></div>
+  <div class="question-toolbar">
+    <div class="question-search"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><circle cx="10.8" cy="10.8" r="5.8" stroke="currentColor" stroke-width="1.7"/><path d="m15.2 15.2 4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><input id="questionSearch" placeholder="搜索示例问题关键词" aria-label="搜索问题"/></div>
+    <select id="questionCategory" aria-label="按领域筛选问题"><option>全部</option><option>高温超导</option><option>统计物理</option><option>神经科学</option><option>复杂网络</option><option>因果推断</option></select>
+  </div>
+  <div class="question-count" id="questionCount"></div>
+  <div class="question-grid" id="questionGrid"></div>
+  <div class="custom-question">
+    <label for="customQuestion">或输入自定义科学问题</label>
+    <textarea id="customQuestion" rows="3" placeholder="例如：如何从观测数据中稳健地识别因果效应并排除混杂因素？" aria-label="自定义科学问题"></textarea>
+    <div class="custom-question-foot">
+      <span id="customQuestionHint" class="custom-hint">至少 5 个字符</span>
+      <div style="display:flex;gap:10px;align-items:center">
+        <button class="history-entry-btn" id="historyEntryBtn" type="button" style="display:none">查看历史研究档案 →</button>
+        <button class="primary-btn" id="customStartBtn" type="button">开始研究 <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+    <div class="overwrite-warning" id="overwriteWarning" style="display:none">⚠ 开始新研究将覆盖现有 V1–V3 轮次记录（后端快照按轮次文件存储）</div>
+  </div>
+</section>
+
+<script src="/static/vendor/gsap.min.js?v=3.13.0"></script>
+<script src="/static/vendor/echarts.min.js?v=5.5.1"></script>
+<script src="/static/app.js?v=20260816-v12"></script>
+</body>
+</html>

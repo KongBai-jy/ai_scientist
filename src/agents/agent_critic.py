@@ -25,7 +25,12 @@ from models.schemas import (
 from utils.llm_structured_fallback import parse_llm_json_to_model
 
 # 加载项目根目录的 .env
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+import sys
+if getattr(sys, "frozen", False):
+    _PROJECT_ROOT = Path(sys.executable).resolve().parent
+else:
+    _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+
 load_dotenv(_PROJECT_ROOT / ".env")
 logger = logging.getLogger(__name__)
 
@@ -81,7 +86,7 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
    - 0-4分：生搬硬套
 
 ## 核心要求
-1. 对每条假设给出 5 维评分
+1. 对假设集整体给出一个综合 5 维评分（禁止逐条输出；如需逐条分析，写入 detailed_review 字段）
 2. 诊断 Top-1 致命缺陷
 3. 构造反事实"必败条件"（该假设在什么极端条件下必然失效）
 4. 列出缺失证据清单（供下一轮迭代修复）
@@ -115,6 +120,7 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
 
 【严禁】
 - "scores": "evidence: 7.5, falsifiability: 6.0..."   —— 字符串，错误
+- 输出 JSON 数组 / 逐条假设的评审列表 —— 数组，错误；必须且只能输出一个 JSON 对象
 """
 
 

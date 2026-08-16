@@ -26,7 +26,12 @@ from services.chroma_service import ChromaService
 from utils.llm_structured_fallback import parse_llm_json_to_model
 
 # 加载项目根目录的 .env（= src/ 上一级）
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+import sys
+if getattr(sys, "frozen", False):
+    _PROJECT_ROOT = Path(sys.executable).resolve().parent
+else:
+    _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+
 load_dotenv(_PROJECT_ROOT / ".env")
 logger = logging.getLogger(__name__)
 

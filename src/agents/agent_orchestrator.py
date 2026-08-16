@@ -27,7 +27,12 @@ from agents.agent_critic import critique, calculate_overall_score
 from models.database import SessionLocal, SnapshotRecord
 
 # 加载项目根目录的 .env
-_PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+import sys
+if getattr(sys, "frozen", False):
+    _PROJECT_ROOT = Path(sys.executable).resolve().parent
+else:
+    _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+
 load_dotenv(_PROJECT_ROOT / ".env")
 logger = logging.getLogger(__name__)
 
@@ -91,6 +96,18 @@ def run_full_pipeline(
     logger.info(f"=" * 60)
     logger.info(f"开始执行 {round_label}")
     logger.info(f"=" * 60)
+
+    # 新研究首轮（无反馈的 V1）：清除上一次研究残留的 V2/V3 快照文件，
+    # 避免图表/快照接口把旧研究的迭代轮次与新研究混排在一起
+    if round_label == "V1" and not feedback:
+        for stale_round in ("V2", "V3"):
+            stale_path = os.path.join(SNAPSHOTS_PATH, f"{stale_round}.json")
+            if os.path.exists(stale_path):
+                try:
+                    os.remove(stale_path)
+                    logger.info(f"已清除上一研究的残留快照 {stale_round}.json")
+                except OSError as rm_err:
+                    logger.warning(f"清除残留快照失败 {stale_path}: {rm_err}")
 
     # Step 1: Explorer
     logger.info("Step 1: 探索者执行中...")

@@ -359,6 +359,21 @@ def _coerce_model(data: Dict[str, Any], model_cls: Type[T]) -> T:
     from pydantic import ValidationError
 
     schema = model_cls.model_fields
+
+    # 模型偶尔会返回 JSON 数组（例如逐条评审列表）而 schema 期望单个对象：
+    # 取第一个元素兜底，避免 dict(list) 抛出难以理解的 "dictionary update sequence" 错误
+    if isinstance(data, list):
+        logger.warning(
+            "模型返回了数组，但 %s 期望单个对象：取第一个元素兜底",
+            model_cls.__name__,
+        )
+        data = data[0] if data and isinstance(data[0], dict) else {}
+    elif not isinstance(data, dict):
+        logger.warning(
+            "模型返回类型异常（%s），%s 重置为空对象兜底",
+            type(data).__name__, model_cls.__name__,
+        )
+        data = {}
     patched: Dict[str, Any] = dict(data)
 
     for field_name, field_info in schema.items():

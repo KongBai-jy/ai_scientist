@@ -23,7 +23,12 @@ Base = declarative_base()
 # ============================================================
 
 # 项目根目录 = src/ 的上一级
-PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+import sys
+if getattr(sys, "frozen", False):
+    PROJECT_ROOT = Path(sys.executable).resolve().parent
+else:
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+
 DATA_DIR = PROJECT_ROOT / "data"
 
 

@@ -116,7 +116,8 @@ function fmtScore(v, digits = 2) {
 
 /* ---------- 极简 Markdown 渲染（详细评审用） ---------- */
 function md(src) {
-  const lines = String(src || "").split(/\r?\n/);
+  // LLM 偶尔把换行写成字面量 \n（JSON 双重转义），先还原成真实换行
+  const lines = String(src || "").replace(/\\n/g, "\n").split(/\r?\n/);
   let html = "";
   let listType = null; // "ul" | "ol"
   const closeList = () => { if (listType) { html += `</${listType}>`; listType = null; } };

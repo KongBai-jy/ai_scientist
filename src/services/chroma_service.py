@@ -95,6 +95,14 @@ class ChromaService:
         store.add_texts(texts, metadatas=metadatas)
         # chromadb>=1.3.5 持久化由 PersistentClient 内部处理，无需手动 persist()
 
+    def count_documents(self) -> int:
+        """当前集合中的文档数（首次启动自动初始化知识库的判断依据）"""
+        try:
+            store = self.load_or_create()
+            return int(store._collection.count())
+        except Exception:
+            return -1  # 无法判断时返回 -1，由调用方决定是否初始化
+
     def delete_collection(self) -> None:
         """删除集合"""
         if self.vector_store is not None:

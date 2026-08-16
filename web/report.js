@@ -31,7 +31,8 @@ function list(items, fallback = "暂无。") {
 
 /* ---------- 与主页面一致的 Markdown 渲染 ---------- */
 function md(src) {
-  const lines = String(src || "").split(/\r?\n/);
+  // LLM 偶尔把换行写成字面量 \n（JSON 双重转义），先还原成真实换行
+  const lines = String(src || "").replace(/\\n/g, "\n").split(/\r?\n/);
   let html = "";
   let listType = null;
   const closeList = () => { if (listType) { html += `</${listType}>`; listType = null; } };

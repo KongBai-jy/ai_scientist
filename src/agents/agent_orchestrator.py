@@ -138,15 +138,18 @@ def run_full_pipeline(
         "granularity_stats": granularity_stats,
     }
 
-    # Step 7: 保存快照（文件 + 数据库）
+    # Step 7: 保存快照（文件 + 数据库，数据库失败不影响主流程）
     os.makedirs(SNAPSHOTS_PATH, exist_ok=True)
     filepath = os.path.join(SNAPSHOTS_PATH, f"{round_label}.json")
-    with open(filepath, "w", encoding="utf-8") as f:
-        json.dump(snapshot, f, ensure_ascii=False, indent=2)
-
-    # 写入数据库
-    db = SessionLocal()
     try:
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(snapshot, f, ensure_ascii=False, indent=2)
+    except Exception as file_err:
+        logger.warning(f"快照文件写入失败（不影响本次运行结果）: {file_err}")
+
+    # 写入数据库（失败仅记录日志，不中断主流程）
+    try:
+        db = SessionLocal()
         record = SnapshotRecord(
             round=round_label,
             question=question,
@@ -159,8 +162,14 @@ def run_full_pipeline(
         )
         db.add(record)
         db.commit()
+        logger.info(f"   数据库快照已写入 (id={record.id})")
+    except Exception as db_err:
+        logger.warning(f"数据库快照写入失败（降级为仅保存 JSON 文件）: {db_err}")
+        if 'db' in locals():
+            db.rollback()
     finally:
-        db.close()
+        if 'db' in locals():
+            db.close()
 
     logger.info(f"✅ {round_label} 完成，综合得分: {overall_score}")
     logger.info(f"   颗粒度: L1={granularity_stats['L1']}, L2={granularity_stats['L2']}, L3={granularity_stats['L3']}")

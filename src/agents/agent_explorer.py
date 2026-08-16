@@ -23,6 +23,7 @@ from models.schemas import (
     Evidence, Analogy
 )
 from services.chroma_service import ChromaService
+from utils.llm_structured_fallback import parse_llm_json_to_model
 
 # 加载项目根目录的 .env（= src/ 上一级）
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
@@ -68,7 +69,13 @@ SYSTEM_PROMPT = """你是一位顶尖的科学探索者，擅长解构复杂科�
   - 计算机：强化学习、图网络、信息论、复杂度理论
   - 数学：动力系统、图论、概率图模型、拓扑学
 
-## 输出格式（纯 JSON）
+## 输出格式（纯 JSON，字段名严格一致）
+- problem_skelton (字符串，≥5 字符) —— 问题骨架（注意是 skelton，不是 skeleton）
+- evidence_list (数组) —— 每条必须包含 claim + source 两个字符串键，year 可选
+- knowledge_gaps (字符串数组)
+- analogies (数组) —— 每条必须包含 field + phenomenon + mapping_relation 三个字符串键
+
+【正确示例】
 {
   "problem_skelton": "底层逻辑结构描述",
   "evidence_list": [
@@ -147,7 +154,14 @@ def explore(
     for attempt in range(1, max_retries + 1):
         try:
             logger.info(f"Agent 1 探索尝试 {attempt}/{max_retries}...")
-            result = structured_llm.invoke(messages)
+            try:
+                result = structured_llm.invoke(messages)
+            except Exception as structured_err:
+                logger.info("结构化输出失败，降级为纯文本 JSON 解析: %s",
+                            type(structured_err).__name__)
+                raw = llm.invoke(messages)
+                raw_text = raw.content if hasattr(raw, "content") else str(raw)
+                result = parse_llm_json_to_model(raw_text, ExplorerOutput)
 
             # 校验：证据和类比不能同时为空
             if not result.evidence_list and not result.analogies:

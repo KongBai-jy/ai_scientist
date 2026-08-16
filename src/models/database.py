@@ -96,7 +96,7 @@ class SnapshotRecord(Base):
 
     # 颗粒度统计
     granularity_stats = Column(JSON, nullable=False)
-    human_feedback = Column(JSON, default=list)
+    human_feedback = Column(JSON, nullable=True)  # 改为 nullable=True，由代码处理默认值
 
 
 class FeedbackRecord(Base):

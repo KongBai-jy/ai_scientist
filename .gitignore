@@ -69,6 +69,7 @@ temp/
 # --- 运行时快照（agent_orchestrator 写出的 V1/V2/V3 等）---
 src/snapshots/*.json
 !src/snapshots/.gitkeep
+snapshots/
 
 # --- API 调试 / 临时响应文件 ---
 _api_run_response.json

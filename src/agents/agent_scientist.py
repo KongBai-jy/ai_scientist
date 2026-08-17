@@ -121,6 +121,8 @@ def generate_hypotheses(
     knowledge_gaps: List[str],
     analogies: List[Dict[str, str]],
     feedback: Optional[str] = None,
+    prev_critic_output: Optional[Dict[str, Any]] = None,
+    prev_overall_score: Optional[float] = None,
     max_retries: int = 3
 ) -> ScientistOutput:
     """
@@ -132,6 +134,8 @@ def generate_hypotheses(
         knowledge_gaps: 知识缺口
         analogies: 跨域类比线索
         feedback: 专家反馈（迭代时传入）
+        prev_critic_output: 上一轮 Critic 评审结果（含评分、缺陷、缺失证据）
+        prev_overall_score: 上一轮综合得分
         max_retries: 最大重试次数
 
     Returns:
@@ -148,6 +152,34 @@ def generate_hypotheses(
 
     feedback_section = f"\n## 专家反馈（本轮迭代必须响应的修正指令）\n{feedback}" if feedback else ""
 
+    # 上一轮 Critic 评审结果（迭代时注入）
+    critic_section = ""
+    if prev_critic_output:
+        scores = prev_critic_output.get("scores", {})
+        top_flaw = prev_critic_output.get("top_flaw", "")
+        missing = prev_critic_output.get("missing_evidences", [])
+        prev_total = prev_overall_score if prev_overall_score is not None else "(未知)"
+
+        critic_section = f"""
+## 上一轮 Critic 评审（综合得分 {prev_total}，本轮必须针对性改进）
+- 五维评分：
+  - 证据支撑度 (evidence): {scores.get('evidence', 'N/A')}/10
+  - 可证伪性 (falsifiability): {scores.get('falsifiability', 'N/A')}/10
+  - 理论一致性 (consistency): {scores.get('consistency', 'N/A')}/10
+  - 新颖度 (novelty): {scores.get('novelty', 'N/A')}/10
+  - 跨学科适配度 (cross_domain): {scores.get('cross_domain', 'N/A')}/10
+- 致命缺陷 (top_flaw): {top_flaw}
+- 缺失证据清单 (missing_evidences):
+{chr(10).join(['  - ' + str(m) for m in missing]) if missing else '  （无）'}
+- 详细评审: {prev_critic_output.get('detailed_review', '无')}
+
+【本轮改进要求】
+1. 针对 top_flaw 指出的致命缺陷，必须在本轮假设中直接修复
+2. 针对 missing_evidences 中的每一条缺失证据，要么在新假设中引用它，要么给出可获取它的具体研究方案
+3. 保持上一轮表现好的维度，重点突破得分最低的 2 个维度
+4. 目标：本轮综合得分必须显著高于上一轮（至少提升 0.5 分）
+"""
+
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=f"""
@@ -162,6 +194,7 @@ def generate_hypotheses(
 
 ## 跨域类比线索
 {analogies_str}
+{critic_section}
 {feedback_section}
 
 请严格按照 JSON 格式输出。
@@ -242,6 +275,7 @@ def generate_hypotheses(
 
 ## 跨域类比线索
 {analogies_str}
+{critic_section}
 
 ## 专家反馈（含上一轮错误修正）
 {error_hint}
@@ -264,6 +298,8 @@ class ScientistState(BaseModel):
     knowledge_gaps: List[str] = Field(default_factory=list)
     analogies: List[Dict[str, str]] = Field(default_factory=list)
     feedback: Optional[str] = None
+    prev_critic_output: Optional[Dict[str, Any]] = None
+    prev_overall_score: Optional[float] = None
     scientist_output: Optional[ScientistOutput] = None
     retry_count: int = 0
     errors: List[str] = Field(default_factory=list)
@@ -280,6 +316,8 @@ def scientist_node(state: dict) -> dict:
             knowledge_gaps=state["knowledge_gaps"],
             analogies=state["analogies"],
             feedback=state.get("feedback"),
+            prev_critic_output=state.get("prev_critic_output"),
+            prev_overall_score=state.get("prev_overall_score"),
         )
         return {
             "scientist_output": result.model_dump(),

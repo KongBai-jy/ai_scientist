@@ -135,4 +135,4 @@ class Snapshot(BaseModel):
     agent_critic: CriticOutput
     overall_score: float
     human_feedback: List[Dict[str, Any]] = Field(default_factory=list)
-    granularity_stats: Dict[str, int] = Field(default_factory=dict)
+    granularity_stats: Dict[str, float] = Field(default_factory=dict)

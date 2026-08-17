@@ -7,6 +7,7 @@ Agent 4：指挥家（Orchestrator）
 import json
 import logging
 import os
+import re
 import time
 from datetime import datetime
 from pathlib import Path
@@ -59,26 +60,66 @@ SNAPSHOTS_PATH = os.getenv(
 # 2. 综合评分与统计
 # ============================================================
 
-def calculate_granularity_stats(hypotheses: List[Dict]) -> Dict[str, int]:
-    """统计计划颗粒度"""
-    stats = {"L1": 0, "L2": 0, "L3": 0}
+def _l1_quality(text: str) -> float:
+    if len(text) < 10:
+        return 0.0
+    score = 1.0
+    score += min(1.0, len(text) / 100)
+    keywords = ["方法", "模型", "算法", "框架", "机制", "结构", "模块", "分解", "学习", "推理", "映射", "变换"]
+    kw_count = sum(1 for kw in keywords if kw in text)
+    score += min(1.0, kw_count * 0.15)
+    return min(3.0, round(score, 2))
+
+
+def _l2_quality(text: str) -> float:
+    if not text or not re.search(r'\d+', text) or len(text) < 15:
+        return 0.0
+    score = 1.0
+    num_count = len(re.findall(r'\d+', text))
+    if num_count >= 5:
+        score += 1.0
+    elif num_count >= 3:
+        score += 0.5
+    score += min(1.0, len(text) / 80)
+    return min(3.0, round(score, 2))
+
+
+def _l3_quality(text: str) -> float:
+    if not text or len(text) < 20:
+        return 0.0
+    risk_kws = ["若", "如果", "万一", "一旦", "假设", "alternative", "fallback"]
+    mitigate_kws = ["备选", "替代", "对照", "切换", "转换", "降级", "补救"]
+    risk_count = sum(1 for kw in risk_kws if kw in text)
+    mitigate_count = sum(1 for kw in mitigate_kws if kw in text)
+    if risk_count == 0:
+        return 0.0
+    score = 1.0
+    if risk_count >= 2:
+        score += 0.5
+    if mitigate_count >= 2:
+        score += 0.5
+    score += min(1.0, len(text) / 100)
+    return min(3.0, round(score, 2))
+
+
+def calculate_granularity_stats(hypotheses: List[Dict]) -> Dict[str, float]:
+    """统计计划颗粒度（质量加权评估，0-3 分梯度）"""
+    stats = {"L1": 0.0, "L2": 0.0, "L3": 0.0}
     for h in hypotheses:
         plan = h.get("plan", {})
-        if plan.get("L1_conceptual"):
-            stats["L1"] += 1
-        if plan.get("L2_quantitative"):
-            stats["L2"] += 1
-        if plan.get("L3_robustness"):
-            stats["L3"] += 1
-    return stats
+        stats["L1"] += _l1_quality(plan.get("L1_conceptual", ""))
+        stats["L2"] += _l2_quality(plan.get("L2_quantitative", ""))
+        stats["L3"] += _l3_quality(plan.get("L3_robustness", ""))
+    return {k: round(v, 2) for k, v in stats.items()}
 
 
-def calculate_granularity_score(stats: Dict[str, int]) -> float:
-    """计算颗粒度得分（L1×1 + L2×3 + L3×6）/ 总数"""
-    total = stats["L1"] + stats["L2"] + stats["L3"]
-    if total == 0:
-        return 0
-    return round((stats["L1"] * 1 + stats["L2"] * 3 + stats["L3"] * 6) / total, 2)
+def calculate_granularity_score(stats: Dict[str, float]) -> float:
+    """计算颗粒度得分，按绝对质量归一化，范围 0-6
+    MAX = 3 条假设 × 3.0 质量分 × 权重和(1+3+6) = 90
+    """
+    MAX_POSSIBLE = 3 * 3.0 * 10
+    weighted_sum = stats["L1"] * 1 + stats["L2"] * 3 + stats["L3"] * 6
+    return round((weighted_sum / MAX_POSSIBLE) * 6, 2)
 
 
 # ============================================================
@@ -109,6 +150,25 @@ def run_full_pipeline(
                 except OSError as rm_err:
                     logger.warning(f"清除残留快照失败 {stale_path}: {rm_err}")
 
+    # ====== 读取上一轮快照，将 Critic 评审结果传给 Scientist ======
+    prev_critic_output = None
+    prev_overall_score = None
+    prev_round_num = int(round_label[1:])
+    if prev_round_num > 1:
+        prev_round_label = f"V{prev_round_num - 1}"
+        prev_snapshot_path = os.path.join(SNAPSHOTS_PATH, f"{prev_round_label}.json")
+        if os.path.exists(prev_snapshot_path):
+            try:
+                with open(prev_snapshot_path, "r", encoding="utf-8") as f:
+                    prev_snapshot = json.load(f)
+                prev_critic_output = prev_snapshot.get("agent_critic")
+                prev_overall_score = prev_snapshot.get("overall_score")
+                logger.info(f"已加载上一轮 {prev_round_label} Critic 结果（综合得分 {prev_overall_score}），将注入 Scientist")
+            except Exception as load_err:
+                logger.warning(f"加载上一轮快照失败: {load_err}（本轮不参考历史评审）")
+        else:
+            logger.info(f"上一轮 {prev_round_label} 快照不存在，本轮 Scientist 不参考历史评审")
+
     # Step 1: Explorer
     logger.info("Step 1: 探索者执行中...")
     explorer_result = explore(question)
@@ -121,12 +181,19 @@ def run_full_pipeline(
         knowledge_gaps=explorer_result.knowledge_gaps,
         analogies=[a.model_dump() for a in explorer_result.analogies],
         feedback=feedback,
+        prev_critic_output=prev_critic_output,
+        prev_overall_score=prev_overall_score,
     )
 
     # Step 3: Critic
     logger.info("Step 3: 评审官执行中...")
+    prev_scores_for_critic = None
+    if prev_critic_output:
+        prev_scores_for_critic = prev_critic_output.get("scores")
     critic_result = critique(
-        hypotheses=[h.model_dump() for h in scientist_result.hypotheses]
+        hypotheses=[h.model_dump() for h in scientist_result.hypotheses],
+        round_label=round_label,
+        prev_scores=prev_scores_for_critic,
     )
 
     # Step 4: 计算综合得分
@@ -134,6 +201,16 @@ def run_full_pipeline(
         critic_result.scores,
         penalty=0.0
     )
+
+    # 评分对比：若低于上一轮，记录警告（帮助定位迭代退化）
+    if prev_overall_score is not None and overall_score < prev_overall_score:
+        logger.warning(
+            f"⚠️ {round_label} 评分 ({overall_score}) 低于上一轮 "
+            f"({prev_overall_score})，退化 {round(prev_overall_score - overall_score, 2)} 分！"
+        )
+    elif prev_overall_score is not None:
+        improvement = round(overall_score - prev_overall_score, 2)
+        logger.info(f"📈 {round_label} 评分较上一轮提升 {improvement} 分")
 
     # Step 5: 统计颗粒度
     granularity_stats = calculate_granularity_stats(

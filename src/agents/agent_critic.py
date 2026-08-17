@@ -46,7 +46,7 @@ llm = ChatOpenAI(
     model=os.getenv("QWEN_MODEL", _DEFAULT_MODEL),
     api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
-    temperature=0.5,  # 评审需要更稳定
+    temperature=0.3,  # 降低温度：评审需要更稳定、可复现的评分
     max_tokens=4096,
     timeout=180.0,
 )
@@ -130,6 +130,8 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
 
 def critique(
     hypotheses: List[Dict[str, Any]],
+    round_label: str = "V1",
+    prev_scores: Optional[Dict[str, float]] = None,
     max_retries: int = 3
 ) -> CriticOutput:
     """
@@ -137,6 +139,8 @@ def critique(
 
     Args:
         hypotheses: 假设列表
+        round_label: 当前轮次标签（V1/V2/V3）
+        prev_scores: 上一轮五维评分（迭代评审时传入）
         max_retries: 最大重试次数
 
     Returns:
@@ -149,17 +153,36 @@ def critique(
 
     hypotheses_str = json.dumps(hypotheses, ensure_ascii=False, indent=2)
 
+    # 迭代评审上下文：告诉 Critic 本轮应比上一轮更好
+    iterative_context = ""
+    if round_label != "V1" and prev_scores:
+        iterative_context = f"""
+【迭代评审上下文】
+当前是 {round_label} 迭代评审。上一轮（V{int(round_label[1:])-1}）五维评分为：
+- evidence: {prev_scores.get('evidence', 'N/A')}
+- falsifiability: {prev_scores.get('falsifiability', 'N/A')}
+- consistency: {prev_scores.get('consistency', 'N/A')}
+- novelty: {prev_scores.get('novelty', 'N/A')}
+- cross_domain: {prev_scores.get('cross_domain', 'N/A')}
+
+本轮假设声称已针对上一轮缺陷做了改进。请重点验证改进是否真正到位：
+1. 如果上一轮 evidence 低分，本轮是否提供了更强的证据支撑？
+2. 如果上一轮 falsifiability 低分，本轮的可证伪条件是否更具体？
+3. 如果本轮质量未明显改善，应保持严厉评分，不要因为"迭代"而放松标准。
+"""
+
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=f"""
-## 待评审假设列表
+## 待评审假设列表（{round_label}）
 {hypotheses_str}
-
+{iterative_context}
 请对以上假设进行严格评审，按 JSON 格式输出评分、缺陷、反事实条件和缺失证据。
 
 注意：
 1. 反事实条件（counterfactual）必须具体、极端，例如："若未来探测器精度无法达到 10^-12 量级，则该假设无法验证"
 2. 缺失证据（missing_evidences）应具体到可检索的关键词
+3. 评分必须客观反映假设实际质量，不得放水
 """)
     ]
 
@@ -229,6 +252,8 @@ def calculate_overall_score(scores: DimensionScores, penalty: float = 0.0) -> fl
 
 class CriticState(BaseModel):
     hypotheses: List[Dict[str, Any]] = Field(default_factory=list)
+    round_label: str = "V1"
+    prev_scores: Optional[Dict[str, float]] = None
     critic_output: Optional[CriticOutput] = None
     retry_count: int = 0
     errors: List[str] = Field(default_factory=list)
@@ -239,7 +264,11 @@ def critic_node(state: dict) -> dict:
     logger.info("进入 Critic Node")
 
     try:
-        result = critique(state["hypotheses"])
+        result = critique(
+            state["hypotheses"],
+            round_label=state.get("round_label", "V1"),
+            prev_scores=state.get("prev_scores"),
+        )
         return {
             "critic_output": result.model_dump(),
             "retry_count": 0,

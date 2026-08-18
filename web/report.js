@@ -62,11 +62,26 @@ let state = { snapshots: [], current: null };
 /* 历史项目数据源：与主页面共享 localStorage 档案（?question= 指定项目） */
 const HISTORY_KEY = "ai_scientist.history.v1";
 async function loadSnapshots() {
-  const qParam = new URLSearchParams(location.search).get("question");
+  const params = new URLSearchParams(location.search);
+  const qParam = params.get("question");
+  const pidParam = params.get("project_id");
+
+  // 服务端项目（?project_id=）：直接从后端按项目读取快照
+  if (pidParam) {
+    const res = await fetch(`/api/snapshots?project_id=${encodeURIComponent(pidParam)}`);
+    if (!res.ok) throw new Error("快照读取失败，请确认后端服务已启动");
+    const body = await res.json();
+    const items = (body && body.data) || [];
+    items.sort((a, b) => ROUNDS.indexOf(a.round) - ROUNDS.indexOf(b.round));
+    if (items.length) return items;
+    // 后端无数据时回退到本地档案（?question= 路径）
+  }
+
+  // 历史项目：优先用本地 localStorage 档案
   if (qParam) {
     try {
       const store = JSON.parse(localStorage.getItem(HISTORY_KEY)) || {};
-      const proj = store[qParam];
+      const proj = store[pidParam] || store[qParam] || Object.values(store).find(p => p?.question === qParam);
       if (proj && proj.rounds) {
         const items = Object.values(proj.rounds).filter(s => s && s.round);
         items.sort((a, b) => ROUNDS.indexOf(a.round) - ROUNDS.indexOf(b.round));

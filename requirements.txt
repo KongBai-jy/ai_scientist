@@ -26,7 +26,7 @@ starlette==1.6.0
 uvicorn==0.46.0
 sse-starlette==3.3.4
 httpx==0.28.1
-aiohttp==3.12.14
+aiohttp>=3.12.14
 
 # --- 配置管理 / 数据校验 ---
 python-dotenv==1.2.1
@@ -54,9 +54,9 @@ pdfminer.six==20260107
 # --- 统计分析（因果量化检验）---
 scipy==1.17.1
 scikit-learn==1.8.0
-statsmodels==0.14.4
+statsmodels>=0.14.4
 numpy==2.4.4
-pandas==2.2.3
+pandas>=2.3.0
 
 # --- Embedding / Tokenizer ---
 tiktoken==0.12.0

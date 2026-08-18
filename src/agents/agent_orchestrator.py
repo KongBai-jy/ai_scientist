@@ -11,7 +11,7 @@ import re
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any, Optional, Literal
+from typing import List, Dict, Any, Optional, Literal, Callable
 from dotenv import load_dotenv
 
 from langgraph.graph import StateGraph, END
@@ -26,6 +26,7 @@ from agents.agent_explorer import explore
 from agents.agent_scientist import generate_hypotheses
 from agents.agent_critic import critique, calculate_overall_score
 from models.database import SessionLocal, SnapshotRecord
+from services.job_manager import PipelineCancelled, RoundLimitError
 
 # 加载项目根目录的 .env
 import sys
@@ -54,6 +55,70 @@ SNAPSHOTS_PATH = os.getenv(
     "SNAPSHOTS_PATH",
     str(_PROJECT_ROOT / "snapshots")
 )
+
+MAX_ROUND = 3
+
+
+def validate_round_limit(current_round: str) -> None:
+    """集中式 V3 边界守卫：超过最大迭代轮次时抛 RoundLimitError。
+
+    后台任务与同步接口统一走这里，避免只在前端/单点漏检。
+    """
+    if current_round == f"V{MAX_ROUND}":
+        raise RoundLimitError(f"已到最大迭代次数 V{MAX_ROUND}，无法继续迭代")
+
+
+def next_round_label(current_round: str) -> str:
+    return f"V{int(current_round[1:]) + 1}"
+
+
+def _project_snapshot_dir(project_id: Optional[str]) -> str:
+    """快照目录：有 project_id 时用独立子目录，否则回退到根目录（legacy 单项目模式）。"""
+    d = os.path.join(SNAPSHOTS_PATH, project_id) if project_id else SNAPSHOTS_PATH
+    os.makedirs(d, exist_ok=True)
+    return d
+
+
+def _round_path(project_id: Optional[str], round_label: str) -> str:
+    return os.path.join(_project_snapshot_dir(project_id), f"{round_label}.json")
+
+
+def _load_json(path: str) -> Optional[Dict[str, Any]]:
+    """容错读取 JSON 文件，损坏或缺失返回 None。"""
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
+def get_project_snapshots(project_id: Optional[str]) -> List[Dict[str, Any]]:
+    """读取单个项目（或 legacy 根目录）的所有轮次快照，按轮次排序。"""
+    if project_id:
+        d = os.path.join(SNAPSHOTS_PATH, project_id)
+        if not os.path.isdir(d):
+            return []
+        snaps = []
+        for fn in sorted(os.listdir(d)):
+            if fn.endswith(".json"):
+                s = _load_json(os.path.join(d, fn))
+                if s:
+                    s.setdefault("project_id", project_id)
+                    snaps.append(s)
+        return snaps
+
+    # legacy 根目录文件（单项目模式的旧数据）
+    snaps = []
+    if not os.path.exists(SNAPSHOTS_PATH):
+        return snaps
+    for fn in sorted(os.listdir(SNAPSHOTS_PATH)):
+        if fn.endswith(".json"):
+            s = _load_json(os.path.join(SNAPSHOTS_PATH, fn))
+            if s:
+                snaps.append(s)
+    return snaps
 
 
 # ============================================================
@@ -129,20 +194,32 @@ def calculate_granularity_score(stats: Dict[str, float]) -> float:
 def run_full_pipeline(
     question: str,
     feedback: Optional[str] = None,
-    round_label: str = "V1"
+    round_label: str = "V1",
+    project_id: Optional[str] = None,
+    progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
+    cancel_check: Optional[Callable[[], bool]] = None,
 ) -> Dict[str, Any]:
     """
     执行完整流水线
+
+    project_id: 项目隔离标识（快照写入 snapshots/{project_id}/ 子目录）。
+    progress_callback: 上报当前阶段（explorer/scientist/critic）与粗略进度。
+    cancel_check: 在步骤边界轮询取消标志，命中即抛 PipelineCancelled。
     """
     logger.info(f"=" * 60)
-    logger.info(f"开始执行 {round_label}")
+    logger.info(f"开始执行 {round_label}（project={project_id or 'legacy'}）")
     logger.info(f"=" * 60)
 
-    # 新研究首轮（无反馈的 V1）：清除上一次研究残留的 V2/V3 快照文件，
+    def _check_cancel() -> None:
+        if cancel_check and cancel_check():
+            logger.info(f"{round_label} 收到取消请求，中止流水线")
+            raise PipelineCancelled()
+
+    # 新研究首轮（无反馈的 V1）：仅清除当前项目残留的 V2/V3 快照文件，
     # 避免图表/快照接口把旧研究的迭代轮次与新研究混排在一起
     if round_label == "V1" and not feedback:
         for stale_round in ("V2", "V3"):
-            stale_path = os.path.join(SNAPSHOTS_PATH, f"{stale_round}.json")
+            stale_path = _round_path(project_id, stale_round)
             if os.path.exists(stale_path):
                 try:
                     os.remove(stale_path)
@@ -156,25 +233,26 @@ def run_full_pipeline(
     prev_round_num = int(round_label[1:])
     if prev_round_num > 1:
         prev_round_label = f"V{prev_round_num - 1}"
-        prev_snapshot_path = os.path.join(SNAPSHOTS_PATH, f"{prev_round_label}.json")
-        if os.path.exists(prev_snapshot_path):
-            try:
-                with open(prev_snapshot_path, "r", encoding="utf-8") as f:
-                    prev_snapshot = json.load(f)
-                prev_critic_output = prev_snapshot.get("agent_critic")
-                prev_overall_score = prev_snapshot.get("overall_score")
-                logger.info(f"已加载上一轮 {prev_round_label} Critic 结果（综合得分 {prev_overall_score}），将注入 Scientist")
-            except Exception as load_err:
-                logger.warning(f"加载上一轮快照失败: {load_err}（本轮不参考历史评审）")
+        prev_snapshot = _load_json(_round_path(project_id, prev_round_label))
+        if prev_snapshot:
+            prev_critic_output = prev_snapshot.get("agent_critic")
+            prev_overall_score = prev_snapshot.get("overall_score")
+            logger.info(f"已加载上一轮 {prev_round_label} Critic 结果（综合得分 {prev_overall_score}），将注入 Scientist")
         else:
             logger.info(f"上一轮 {prev_round_label} 快照不存在，本轮 Scientist 不参考历史评审")
 
     # Step 1: Explorer
     logger.info("Step 1: 探索者执行中...")
+    if progress_callback:
+        progress_callback("explorer", 15)
+    _check_cancel()
     explorer_result = explore(question)
 
     # Step 2: Scientist
     logger.info("Step 2: 科学家执行中...")
+    if progress_callback:
+        progress_callback("scientist", 50)
+    _check_cancel()
     scientist_result = generate_hypotheses(
         problem_skelton=explorer_result.problem_skelton,
         evidence_list=[e.model_dump() for e in explorer_result.evidence_list],
@@ -187,6 +265,9 @@ def run_full_pipeline(
 
     # Step 3: Critic
     logger.info("Step 3: 评审官执行中...")
+    if progress_callback:
+        progress_callback("critic", 85)
+    _check_cancel()
     prev_scores_for_critic = None
     if prev_critic_output:
         prev_scores_for_critic = prev_critic_output.get("scores")
@@ -223,6 +304,7 @@ def run_full_pipeline(
         "round": round_label,
         "timestamp": datetime.now().isoformat(),
         "question": question,
+        "project_id": project_id,
         "agent_explorer": explorer_result.model_dump(),
         "agent_scientist": scientist_result.model_dump(),
         "agent_critic": critic_result.model_dump(),
@@ -233,8 +315,8 @@ def run_full_pipeline(
     }
 
     # Step 7: 保存快照（文件 + 数据库，数据库失败不影响主流程）
-    os.makedirs(SNAPSHOTS_PATH, exist_ok=True)
-    filepath = os.path.join(SNAPSHOTS_PATH, f"{round_label}.json")
+    filepath = _round_path(project_id, round_label)
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
     try:
         with open(filepath, "w", encoding="utf-8") as f:
             json.dump(snapshot, f, ensure_ascii=False, indent=2)
@@ -274,18 +356,26 @@ def run_full_pipeline(
 def iterate_with_feedback(
     question: str,
     feedback: str,
-    current_round: str
+    current_round: str,
+    project_id: Optional[str] = None,
+    progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
+    cancel_check: Optional[Callable[[], bool]] = None,
 ) -> Dict[str, Any]:
     """
     在人在回路反馈后执行迭代
     """
-    next_round = f"V{int(current_round[1:]) + 1}"
+    # 集中式 V3 边界守卫（防御性：main.py 端点已校验，这里兜底）
+    validate_round_limit(current_round)
+    next_round = next_round_label(current_round)
     logger.info(f"收到反馈，触发 {next_round} 全链路重跑...")
 
     return run_full_pipeline(
         question=question,
         feedback=feedback,
-        round_label=next_round
+        round_label=next_round,
+        project_id=project_id,
+        progress_callback=progress_callback,
+        cancel_check=cancel_check,
     )
 
 
@@ -293,31 +383,28 @@ def iterate_with_feedback(
 # 4. 前端图表数据接口
 # ============================================================
 
-def get_snapshot(round_label: str) -> Optional[Dict[str, Any]]:
-    """读取快照"""
-    filepath = os.path.join(SNAPSHOTS_PATH, f"{round_label}.json")
-    if not os.path.exists(filepath):
-        return None
-    with open(filepath, "r", encoding="utf-8") as f:
-        return json.load(f)
+def get_snapshot(round_label: str, project_id: Optional[str] = None) -> Optional[Dict[str, Any]]:
+    """读取指定项目下某轮次的快照"""
+    return _load_json(_round_path(project_id, round_label))
 
 
 def get_all_snapshots() -> List[Dict[str, Any]]:
-    """获取所有快照"""
+    """获取所有项目的所有快照（含 legacy 根目录），每条带 project_id 字段。"""
     snapshots = []
     if not os.path.exists(SNAPSHOTS_PATH):
         return snapshots
-    for filename in sorted(os.listdir(SNAPSHOTS_PATH)):
-        if filename.endswith(".json"):
-            filepath = os.path.join(SNAPSHOTS_PATH, filename)
-            with open(filepath, "r", encoding="utf-8") as f:
-                snapshots.append(json.load(f))
+    # 先按项目子目录扫描，再扫描 legacy 根目录文件
+    for entry in sorted(os.listdir(SNAPSHOTS_PATH)):
+        full = os.path.join(SNAPSHOTS_PATH, entry)
+        if os.path.isdir(full):
+            snapshots.extend(get_project_snapshots(entry))
+    snapshots.extend(get_project_snapshots(None))
     return snapshots
 
 
-def get_chart_overall() -> Dict[str, Any]:
-    """获取综合得分折线图数据"""
-    snapshots = get_all_snapshots()
+def get_chart_overall(project_id: Optional[str] = None) -> Dict[str, Any]:
+    """获取综合得分折线图数据（按项目隔离）"""
+    snapshots = get_project_snapshots(project_id)
     if not snapshots:
         return {"xAxis": [], "series": {"overall_score": [], "granularity_score": []}}
     return {
@@ -329,9 +416,9 @@ def get_chart_overall() -> Dict[str, Any]:
     }
 
 
-def get_chart_radar() -> Dict[str, Any]:
-    """获取雷达图数据"""
-    snapshots = get_all_snapshots()
+def get_chart_radar(project_id: Optional[str] = None) -> Dict[str, Any]:
+    """获取雷达图数据（按项目隔离）"""
+    snapshots = get_project_snapshots(project_id)
     if not snapshots:
         return {"dimensions": [], "series": {}}
 
@@ -346,9 +433,9 @@ def get_chart_radar() -> Dict[str, Any]:
     return result
 
 
-def get_chart_granularity() -> Dict[str, Any]:
-    """获取颗粒度堆叠图数据"""
-    snapshots = get_all_snapshots()
+def get_chart_granularity(project_id: Optional[str] = None) -> Dict[str, Any]:
+    """获取颗粒度堆叠图数据（按项目隔离）"""
+    snapshots = get_project_snapshots(project_id)
     if not snapshots:
         return {"xAxis": [], "L1": [], "L2": [], "L3": []}
     return {
@@ -359,9 +446,9 @@ def get_chart_granularity() -> Dict[str, Any]:
     }
 
 
-def get_chart_waterfall() -> Dict[str, Any]:
-    """获取缺陷修复瀑布图数据"""
-    snapshots = get_all_snapshots()
+def get_chart_waterfall(project_id: Optional[str] = None) -> Dict[str, Any]:
+    """获取缺陷修复瀑布图数据（按项目隔离）"""
+    snapshots = get_project_snapshots(project_id)
     if len(snapshots) < 2:
         return {"start_score": 0, "steps": [], "end_score": 0}
 
@@ -388,9 +475,9 @@ def get_chart_waterfall() -> Dict[str, Any]:
     }
 
 
-def get_chart_risk() -> Dict[str, Any]:
-    """获取反事实风险收敛图数据"""
-    snapshots = get_all_snapshots()
+def get_chart_risk(project_id: Optional[str] = None) -> Dict[str, Any]:
+    """获取反事实风险收敛图数据（按项目隔离）"""
+    snapshots = get_project_snapshots(project_id)
     if not snapshots:
         return {"xAxis": [], "risk_index": [], "level": []}
 

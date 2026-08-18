@@ -6,8 +6,8 @@
 <meta name="theme-color" content="#10161c"/>
 <title>AI Scientist · Research Workspace</title>
 <link rel="icon" href="data:,"/>
-<link rel="stylesheet" href="/static/styles.css?v=20260816-v3"/>
-<link rel="stylesheet" href="/static/workspace.css?v=20260816-v11"/>
+<link rel="stylesheet" href="/static/styles.css?v=20260818-v6"/>
+<link rel="stylesheet" href="/static/workspace.css?v=20260818-v21"/>
 </head>
 <body>
 <a class="skip-link" href="#workspaceMain">跳到研究工作区</a>
@@ -42,15 +42,19 @@
   <main class="center" id="workspaceMain">
     <header class="topbar">
       <div class="top-title">
+        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="隐藏研究档案" aria-controls="historySidebar" aria-expanded="true" title="隐藏侧边栏">
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4" width="17" height="16" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 4v16" stroke="currentColor" stroke-width="1.6"/></svg>
+        </button>
         <button class="qid" id="mobileNavBtn" type="button" aria-label="打开研究轮次" aria-controls="historySidebar" aria-expanded="false"><span id="topQid">AI</span></button>
         <div><span class="workspace-label">ACTIVE RESEARCH</span><b id="topTitle">输入一个科学问题开始研究</b></div>
         <span class="top-tag" id="topCategory" style="display:none">V1</span>
       </div>
       <div class="top-actions">
+        <button class="home-btn" id="homeBtn" type="button">返回首页</button>
         <span class="api-status" id="apiStatus" aria-live="polite"><i></i> 连接中…</span>
         <button class="report-btn" id="reportBtn" type="button" style="display:none">完整报告</button>
         <button class="mobile-new-btn" id="mobileNewResearchBtn" type="button">新建</button>
-        <button class="danger-btn" id="stopBtn" type="button" disabled>取消</button>
+        <button class="danger-btn" id="stopBtn" type="button" style="display:none">取消</button>
       </div>
     </header>
 
@@ -104,12 +108,12 @@
         <button class="primary-btn" id="customStartBtn" type="button">开始研究 <span aria-hidden="true">→</span></button>
       </div>
     </div>
-    <div class="overwrite-warning" id="overwriteWarning" style="display:none">⚠ 开始新研究将覆盖现有 V1–V3 轮次记录（后端快照按轮次文件存储）</div>
+    <div class="overwrite-warning" id="overwriteWarning" style="display:none">新建研究将作为独立项目保存，原项目轮次不受影响；最多 2 个研究并行执行，其余排队</div>
   </div>
 </section>
 
 <script src="/static/vendor/gsap.min.js?v=3.13.0"></script>
 <script src="/static/vendor/echarts.min.js?v=5.5.1"></script>
-<script src="/static/app.js?v=20260816-v13"></script>
+<script src="/static/app.js?v=20260818-ai16"></script>
 </body>
 </html>

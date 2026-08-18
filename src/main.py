@@ -16,7 +16,6 @@ from pydantic import BaseModel, Field
 
 from agents.agent_orchestrator import (
     run_full_pipeline,
-    iterate_with_feedback,
     get_snapshot,
     get_all_snapshots,
     get_chart_overall,
@@ -24,6 +23,18 @@ from agents.agent_orchestrator import (
     get_chart_granularity,
     get_chart_waterfall,
     get_chart_risk,
+    validate_round_limit,
+    next_round_label,
+)
+from services.job_manager import (
+    create_job,
+    submit_job,
+    get_job,
+    list_active_jobs,
+    request_cancel,
+    progress_callback_for,
+    cancel_check_for,
+    RoundLimitError,
 )
 from models.database import init_db
 
@@ -74,12 +85,14 @@ class RunRequest(BaseModel):
     question: str = Field(..., min_length=5, description="科学问题")
     feedback: Optional[str] = Field(None, description="专家反馈（迭代时传入）")
     initial_round: str = Field("V1", description="轮次标签")
+    project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
 
 
 class FeedbackRequest(BaseModel):
     question: str = Field(..., min_length=5)
     feedback: str = Field(..., min_length=3)
     current_round: str = Field(..., pattern=r"^V[1-3]$")
+    project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
 
 
 class ChartResponse(BaseModel):
@@ -103,96 +116,157 @@ async def root():
     }
 
 
+def _enqueue(question: str, round_label: str, feedback=None, project_id=None):
+    """创建后台任务并提交到线程池，返回 JobRecord。
+
+    流水线在 worker 线程执行（不阻塞事件循环）；通过 progress_callback_for /
+    cancel_check_for 闭包上报真实阶段、响应取消。
+    """
+    job = create_job(
+        question=question,
+        round_label=round_label,
+        feedback=feedback,
+        project_id=project_id,
+    )
+
+    def run_fn(job):
+        return run_full_pipeline(
+            question=job.question,
+            feedback=job.feedback,
+            round_label=job.round_label,
+            project_id=job.project_id,
+            progress_callback=progress_callback_for(job),
+            cancel_check=cancel_check_for(job),
+        )
+
+    submit_job(job, run_fn)
+    return job
+
+
 @app.post("/api/run")
 async def run_pipeline(request: RunRequest):
-    """首次运行或带反馈重跑"""
-    try:
-        if request.feedback:
-            # 带反馈迭代
-            result = iterate_with_feedback(
-                question=request.question,
-                feedback=request.feedback,
-                current_round=request.initial_round
-            )
-        else:
-            # 首次运行
-            result = run_full_pipeline(
-                question=request.question,
-                round_label=request.initial_round
-            )
-        return {"success": True, "data": result}
-    except Exception as e:
-        logger.error(f"运行失败: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+    """首次运行或带反馈重跑：后台执行，立即返回任务 ID。"""
+    if request.feedback:
+        try:
+            validate_round_limit(request.initial_round)
+        except RoundLimitError as e:
+            raise HTTPException(status_code=400, detail=str(e))
+        round_label = next_round_label(request.initial_round)
+    else:
+        round_label = request.initial_round
+    job = _enqueue(
+        question=request.question,
+        round_label=round_label,
+        feedback=request.feedback,
+        project_id=request.project_id,
+    )
+    logger.info("已入队任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
+    return {
+        "success": True,
+        "job_id": job.job_id,
+        "project_id": job.project_id,
+        "round_label": round_label,
+        "status": job.status,
+    }
 
 
 @app.post("/api/feedback")
 async def submit_feedback(request: FeedbackRequest):
-    """提交专家反馈触发迭代"""
+    """提交专家反馈触发迭代：后台执行，立即返回任务 ID。"""
     # 边界保护：V3 是最后一轮，不允许继续迭代生成 V4
-    if request.current_round == "V3":
-        raise HTTPException(
-            status_code=400,
-            detail="已到最大迭代次数 V3，无法继续迭代"
-        )
     try:
-        result = iterate_with_feedback(
-            question=request.question,
-            feedback=request.feedback,
-            current_round=request.current_round
-        )
-        return {"success": True, "data": result}
-    except HTTPException:
-        raise  # 保留上面的 400 边界错误
-    except Exception as e:
-        logger.error(f"反馈处理失败: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        validate_round_limit(request.current_round)
+    except RoundLimitError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+    round_label = next_round_label(request.current_round)
+    job = _enqueue(
+        question=request.question,
+        round_label=round_label,
+        feedback=request.feedback,
+        project_id=request.project_id,
+    )
+    logger.info("已入队迭代任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
+    return {
+        "success": True,
+        "job_id": job.job_id,
+        "project_id": job.project_id,
+        "round_label": round_label,
+        "status": job.status,
+    }
+
+
+@app.get("/api/job/{job_id}")
+async def job_status(job_id: str):
+    """查询任务状态（前端轮询真实阶段）"""
+    data = get_job(job_id)
+    if not data:
+        raise HTTPException(status_code=404, detail=f"任务 {job_id} 不存在")
+    return {"success": True, "data": data}
+
+
+@app.post("/api/job/{job_id}/cancel")
+async def cancel_job(job_id: str):
+    """请求取消任务（排队中立即取消；执行中在步骤边界中止）"""
+    status = request_cancel(job_id)
+    if status is None:
+        raise HTTPException(status_code=404, detail=f"任务 {job_id} 不存在")
+    return {"success": True, "status": status}
+
+
+@app.get("/api/jobs")
+async def list_jobs():
+    """列出所有活跃任务（running / queued），供刷新后恢复轮询"""
+    return {"success": True, "data": list_active_jobs()}
 
 
 @app.get("/api/snapshot/{round_label}")
-async def get_snapshot_api(round_label: str):
+async def get_snapshot_api(round_label: str, project_id: Optional[str] = None):
     """获取指定版本快照"""
-    data = get_snapshot(round_label)
+    data = get_snapshot(round_label, project_id=project_id)
     if not data:
         raise HTTPException(status_code=404, detail=f"快照 {round_label} 不存在")
     return {"success": True, "data": data}
 
 
 @app.get("/api/snapshots")
-async def list_snapshots():
-    """获取所有版本快照"""
-    data = get_all_snapshots()
+async def list_snapshots(project_id: Optional[str] = None):
+    """获取所有版本快照（可选按项目过滤）"""
+    if project_id:
+        data = get_all_snapshots()
+        data = [s for s in data if s.get("project_id") == project_id]
+    else:
+        data = get_all_snapshots()
     return {"success": True, "data": data}
 
 
 @app.get("/api/chart/overall")
-async def chart_overall():
+async def chart_overall(project_id: Optional[str] = None):
     """综合得分折线图"""
-    return {"success": True, "data": get_chart_overall()}
+    return {"success": True, "data": get_chart_overall(project_id=project_id)}
 
 
 @app.get("/api/chart/radar")
-async def chart_radar():
+async def chart_radar(project_id: Optional[str] = None):
     """五维雷达图"""
-    return {"success": True, "data": get_chart_radar()}
+    return {"success": True, "data": get_chart_radar(project_id=project_id)}
 
 
 @app.get("/api/chart/granularity")
-async def chart_granularity():
+async def chart_granularity(project_id: Optional[str] = None):
     """计划颗粒度堆叠图"""
-    return {"success": True, "data": get_chart_granularity()}
+    return {"success": True, "data": get_chart_granularity(project_id=project_id)}
 
 
 @app.get("/api/chart/waterfall")
-async def chart_waterfall():
+async def chart_waterfall(project_id: Optional[str] = None):
     """缺陷修复瀑布图"""
-    return {"success": True, "data": get_chart_waterfall()}
+    return {"success": True, "data": get_chart_waterfall(project_id=project_id)}
 
 
 @app.get("/api/chart/risk")
-async def chart_risk():
+async def chart_risk(project_id: Optional[str] = None):
     """反事实风险收敛图"""
-    return {"success": True, "data": get_chart_risk()}
+    return {"success": True, "data": get_chart_risk(project_id=project_id)}
 
 
 @app.get("/api/health")

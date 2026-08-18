@@ -125,6 +125,18 @@ engine = create_engine(DATABASE_URL, connect_args=_connect_args)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
+# 并发任务下 SQLite 可能同时写入：开启 WAL + busy_timeout 缓解 "database is locked"
+if DATABASE_URL.startswith("sqlite"):
+    from sqlalchemy import event
+
+    @event.listens_for(engine, "connect")
+    def _set_sqlite_pragma(dbapi_conn, _):
+        cur = dbapi_conn.cursor()
+        cur.execute("PRAGMA journal_mode=WAL")
+        cur.execute("PRAGMA busy_timeout=5000")
+        cur.close()
+
+
 def init_db():
     """初始化数据库（创建所有表）"""
     Base.metadata.create_all(bind=engine)

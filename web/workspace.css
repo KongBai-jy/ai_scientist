@@ -9,6 +9,7 @@
 
 /* ---------- 工作台容器 ---------- */
 .workspace{position:relative;z-index:1;width:min(1060px,calc(100% - 64px));margin:0 auto;padding:26px 0 12px;animation:welcome-in .5s cubic-bezier(.22,1,.36,1) both}
+.workspace-report-actions{margin-top:14px}
 .workspace-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
 .workspace-head h2{font-family:var(--display);font-size:23px;letter-spacing:-.03em;margin:0;line-height:1.25}
 .workspace-head .ws-question{color:var(--muted);font-size:12px;line-height:1.6;max-width:640px;margin:0}
@@ -40,9 +41,6 @@
 /* ---------- 通用卡片 ---------- */
 .panel-card{border:1px solid #d6d7cf;background:#fcfbf8;border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:19px;margin-bottom:14px}
 .panel-card h3{font-family:var(--display);font-size:17px;letter-spacing:-.02em;margin:0 0 9px;display:flex;align-items:center;gap:8px}
-.panel-card h3 .h3-ico{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;font-size:11px;background:#e4f1ed;color:#34796a}
-.panel-card h3.pink .h3-ico{background:#f5ece1;color:#a16b2f}
-.panel-card h3.red .h3-ico{background:#f8e7e4;color:#b05555}
 .panel-card p{font-size:12.5px;line-height:1.75;color:#596568;margin:0}
 .panel-card .sub{font-size:11px;color:var(--muted);margin-top:6px;line-height:1.6}
 
@@ -50,8 +48,7 @@
 .evidence-table{width:100%;border-collapse:collapse;margin-top:6px}
 .evidence-table th{text-align:left;font-family:var(--mono);font-size:9px;letter-spacing:.06em;color:#6d7c78;padding:7px 9px;border-bottom:1px solid #e2e1d9;white-space:nowrap}
 .evidence-table td{padding:10px 9px;border-bottom:1px solid #ecebe4;font-size:12px;line-height:1.65;color:#4d5c5c;vertical-align:top}
-.evidence-table td.src{font-family:var(--mono);font-size:10px;color:#557773;white-space:nowrap;min-width:150px}
-.evidence-table td.yr{white-space:nowrap;font-size:10px;color:#85908e;min-width:58px}
+.evidence-table td.src{width:34%;font-family:var(--mono);font-size:10px;color:#557773;min-width:150px}
 .evidence-table tr:last-child td{border-bottom:0}
 
 /* 缺口 / 缺失证据列表 */
@@ -65,9 +62,10 @@
 .analogy-item:last-child{border-bottom:0}
 .analogy-item summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:9px;padding:11px 13px;font-size:12.5px;font-weight:600;color:#3d5553}
 .analogy-item summary::-webkit-details-marker{display:none}
-.analogy-item summary:before{content:"▸";color:#4fa99e;font-size:11px;transition:transform .18s}
+.analogy-item summary:before{content:"▸";flex:0 0 auto;color:#4fa99e;font-size:11px;transition:transform .18s}
 .analogy-item[open] summary:before{transform:rotate(90deg)}
-.analogy-item .field-chip{font-family:var(--mono);font-size:9px;background:#eef3ee;border:1px solid #d8e3da;color:#4e7a68;border-radius:999px;padding:2px 8px}
+.analogy-item .field-chip{flex:0 0 auto;white-space:nowrap;font-family:var(--mono);font-size:9px;background:#eef3ee;border:1px solid #d8e3da;color:#4e7a68;border-radius:999px;padding:2px 8px}
+.analogy-title{min-width:0;overflow-wrap:anywhere}
 .analogy-body{padding:3px 13px 12px 36px;font-size:12px;line-height:1.7;color:#5d6b69}
 .analogy-body p{margin:4px 0 0}
 .analogy-body p b{color:#3f5553;font-weight:600}
@@ -75,12 +73,13 @@
 /* ---------- 科学家：假设卡片 ---------- */
 .hypo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
 .hypo-card{border:1px solid #d6d7cf;background:#fcfbf8;border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:11px;animation:welcome-in .45s cubic-bezier(.22,1,.36,1) both}
-.hypo-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.hypo-head{display:grid;gap:6px}
+.hypo-top{display:flex;align-items:center;justify-content:flex-start;gap:8px}
 .hypo-tag{font-family:var(--mono);font-size:10px;font-weight:700;border-radius:999px;padding:3px 9px;border:1px solid}
 .hypo-tag.h1{background:#e8f1f5;border-color:#bcd5e0;color:#2e6a85}
 .hypo-tag.h2{background:#e9f3ec;border-color:#c2ddc9;color:#37795a}
 .hypo-tag.h3{background:#faf0e2;border-color:#e8d3ae;color:#a06d2b}
-.hypo-src{font-family:var(--mono);font-size:9px;color:var(--quiet)}
+.hypo-src{min-width:0;font-family:var(--mono);font-size:9px;color:var(--quiet);line-height:1.45}
 .hypo-card h3{font-family:var(--display);font-size:17px;line-height:1.35;letter-spacing:-.015em;margin:0}
 .hypo-card .hypo-reason{font-size:11.5px;line-height:1.65;color:var(--muted);margin:0}
 .hypo-falsify{border:1px solid #efd5cf;background:#fdf3f0;border-radius:var(--radius-sm);padding:9px 11px;font-size:11.5px;line-height:1.6;color:#8a4d43}
@@ -97,12 +96,19 @@
 .vc-box.confirm{background:#edf6f0;border:1px solid #d3e7d9;color:#3c6e52}
 .vc-box.reject{background:#fdf3f0;border:1px solid #efd5cf;color:#8a4d43}
 .vc-box b{display:block;font-size:10px;margin-bottom:2px}
-.compare-card{margin-top:2px}
+.compare-card{margin-top:14px}
 .compare-card p{font-size:12.5px}
 
 /* ---------- 评审官 ---------- */
 .critic-grid{display:grid;grid-template-columns:minmax(320px,2fr) minmax(240px,1fr);gap:14px;align-items:start}
-@media(max-width:900px){.critic-grid{grid-template-columns:1fr}}
+.critic-column{display:flex;flex-direction:column;gap:14px;min-width:0}
+@media(max-width:900px){
+  .critic-grid{display:flex;flex-direction:column}
+  .critic-left{display:contents}
+  .critic-score{order:1}
+  .critic-side{order:2}
+  .critic-review{order:3}
+}
 .score-table{width:100%;border-collapse:collapse}
 .score-table td{padding:8px 4px;border-bottom:1px solid #ecebe4;font-size:12px}
 .score-table td:last-child{font-family:var(--mono);font-weight:600;text-align:right;color:#2c716b}
@@ -200,13 +206,13 @@
 .composer-foot{justify-content:flex-end}
 
 /* ---------- 历史条目删除按钮 ---------- */
-.history-item-wrap{position:relative}
-.history-item-wrap .history-item{width:100%}
-.history-del{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:20px;height:20px;display:none;place-items:center;border:1px solid #46555c;border-radius:50%;background:#233238;color:#9fb0b3;font-size:13px;line-height:1;padding:0;transition:color .15s,background .15s,border-color .15s}
-.history-del:hover{color:#ffd9d2;background:#3d2c2c;border-color:#7a4a4a}
-.history-item-wrap:hover .history-del{display:grid}
-.history-item-wrap:hover .history-item{padding-right:26px}
-@media(max-width:780px){.history-del{display:grid}.history-item-wrap .history-item{padding-right:26px}}
+.history-item-wrap{position:relative;overflow:hidden;border-radius:var(--radius-md);touch-action:pan-y}
+.date-label{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:10px;color:#9aabad}
+.history-swipe-hint{white-space:nowrap}
+.history-item-wrap .history-item{position:relative;z-index:1;width:100%;transform:translateX(0);transition:transform .22s cubic-bezier(.22,1,.36,1),background .16s}
+.history-item-wrap.revealed .history-item{transform:translateX(-66px)}
+.history-del{position:absolute;z-index:0;right:0;top:0;width:66px;height:100%;display:flex;align-items:center;justify-content:center;border:0;border-radius:0;background:#8f4545;color:#fff1ee;font-size:11px;font-weight:650;line-height:1;padding:0;transition:background .15s}
+.history-del:hover,.history-del:focus-visible{background:#aa5353}
 
 /* ---------- 首页视频背景（循环播放） ---------- */
 .welcome-scene-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform-origin:center;animation:scene-breathe 18s ease-in-out infinite alternate;will-change:transform}

@@ -1,12 +1,14 @@
 /* ============================================================
    AI Scientist 前端（原生 JS）
-   后端契约：docs/frontend_api_run_spec.md（完全按后端接口实现）
-   - POST /api/run          首次运行 / 带反馈重跑
-   - POST /api/feedback     V1→V2 / V2→V3 反馈迭代（V3 后 400）
-   - GET  /api/snapshots    全部轮次快照
-   - GET  /api/snapshot/{r} 单轮快照
-   - GET  /api/chart/{name} 5 个图表接口
-   - GET  /api/health       健康检查
+   后端契约：
+   - POST /api/run            提交研究任务（后台执行，返回 job_id）
+   - POST /api/feedback       提交反馈触发迭代（后台执行，返回 job_id）
+   - GET  /api/job/{id}       轮询任务状态（真实阶段 explorer/scientist/critic）
+   - POST /api/job/{id}/cancel  取消任务
+   - GET  /api/jobs           活跃任务列表（刷新恢复用）
+   - GET  /api/snapshots?project_id=   全部轮次快照（按项目）
+   - GET  /api/chart/{name}?project_id= 5 个图表接口（按项目）
+   - GET  /api/health         健康检查
    ============================================================ */
 
 const $ = s => document.querySelector(s);
@@ -14,7 +16,10 @@ const $$ = s => [...document.querySelectorAll(s)];
 
 /* ================= 常量 ================= */
 const ROUNDS = ["V1", "V2", "V3"];
-const API_TIMEOUT_MS = 300000; // 后端一轮 90-180s，留足余量
+const API_TIMEOUT_MS = 300000; // 兜底超时
+const POLL_INTERVAL_MS = 2000; // 任务状态轮询间隔
+const VIEW_KEY = "ai_scientist.view.v1";
+const SIDEBAR_KEY = "ai_scientist.sidebar.collapsed.v1";
 const DIM_LABELS = {
   evidence: "证据支撑度", falsifiability: "可证伪性", consistency: "理论一致性",
   novelty: "新颖度", cross_domain: "跨域适配度",
@@ -32,25 +37,43 @@ const SAMPLE_QUESTIONS = [
 ];
 
 /* ================= 状态 ================= */
-let snapshots = {};            // {V1: snapshot, V2: ...}（当前查看项目的轮次）
+let snapshots = {};            // {V1: snapshot, ...}（当前查看项目的轮次）
 let currentRound = null;       // 当前查看的轮次
-let appStatus = "idle";        // idle | loading | ready | error
+let appStatus = "idle";        // idle | loading | ready | error（当前查看项目的状态）
 let currentQuestion = "";
 let chartsRendered = false;
-let loadingAbort = null;       // 取消用 AbortController
-let loadingStageTimer = null;
+let loadingStageTimer = null;  // loading 卡片计时器（仅剩余秒表）
+let jobs = {};                 // {project_id: {job_id, project_id, question, round, feedback, status, stage, progress}}
+let currentJobPid = null;      // 当前查看的 loading 卡片对应的 project_id
+let pollTimers = {};           // {project_id: timerId}
+let pollInFlight = {};         // {project_id: boolean}，避免慢请求造成重叠轮询
+const chartInstances = new Map();
+let chartResizeBound = false;
 
-/* ---------- 历史项目（localStorage 持久化，按「问题」分组归档） ---------- */
-// 后端只保存一个研究（V1-V3 文件会被新研究覆盖），历史项目由前端本地持久化，
-// 保证「研究档案」里始终能看到做过的每个研究
-let historyStore = {};         // {question: {rounds: {V1: snap,...}, updatedAt}}
-let currentProjectKey = null;  // 当前查看的项目（question 原文作为 key）
-let activeQuestion = null;     // 后端当前研究的问题（可继续迭代；其余项目只读）
+/* ---------- 历史项目（localStorage 持久化，以 project_id 独立归档） ---------- */
+let historyStore = {};         // {project_id: {question, rounds: {V1: snap,...}, updatedAt, running}}
+let currentProjectKey = null;  // 当前查看项目的 project_id
 const HISTORY_KEY = "ai_scientist.history.v1";
 const DELETED_KEY = "ai_scientist.deleted.v1";
-let deletedKeys = new Set(); // 被用户删除的问题「墓碑」：刷新时不再从后端重新导入
+let deletedKeys = new Set(); // 被用户删除的 project_id「墓碑」：刷新时不再从后端重新导入
+function snapshotProjectId(snap) {
+  return snap?.project_id || `legacy:${snap?.question || "unknown"}`;
+}
+function isBackendProjectId(projectId) {
+  return !!projectId && !String(projectId).startsWith("legacy:");
+}
 function loadHistoryStore() {
-  try { return JSON.parse(localStorage.getItem(HISTORY_KEY)) || {}; } catch { return {}; }
+  try {
+    const raw = JSON.parse(localStorage.getItem(HISTORY_KEY)) || {};
+    const migrated = {};
+    Object.entries(raw).forEach(([key, value]) => {
+      if (!value || typeof value !== "object") return;
+      const firstSnap = Object.values(value.rounds || {})[0];
+      const pid = value.project_id || firstSnap?.project_id || (key.startsWith("legacy:") ? key : `legacy:${key}`);
+      migrated[pid] = { ...value, project_id: pid, question: value.question || firstSnap?.question || key.replace(/^legacy:/, "") };
+    });
+    return migrated;
+  } catch { return {}; }
 }
 function saveHistoryStore() {
   try { localStorage.setItem(HISTORY_KEY, JSON.stringify(historyStore)); } catch { /* 超容量时静默 */ }
@@ -63,29 +86,50 @@ function saveDeletedKeys() {
 }
 function upsertSnapshot(snap) {
   if (!snap || !snap.round || !snap.question) return;
-  const proj = historyStore[snap.question] || (historyStore[snap.question] = { rounds: {}, updatedAt: "" });
+  const pid = snapshotProjectId(snap);
+  const proj = historyStore[pid] || (historyStore[pid] = { project_id: pid, question: snap.question, rounds: {}, updatedAt: "" });
+  proj.question = snap.question;
   proj.rounds[snap.round] = snap;
   proj.updatedAt = snap.timestamp || "";
   proj.running = false; // 有轮次数据说明已不再处于「研究中」状态
+  proj.project_id = pid;
   saveHistoryStore();
 }
-function cleanupRunningProject(q, restore = null) {
-  const proj = historyStore[q];
+function cleanupRunningProject(projectId, restore = null) {
+  const proj = historyStore[projectId];
   if (proj && !Object.keys(proj.rounds || {}).length) {
     // 失败/取消且没有任何轮次数据：移除占位条目；若同问题原本有历史数据则恢复
-    if (restore && Object.keys(restore.rounds || {}).length) historyStore[q] = restore;
-    else delete historyStore[q];
+    if (restore && Object.keys(restore.rounds || {}).length) historyStore[projectId] = restore;
+    else delete historyStore[projectId];
     saveHistoryStore();
     renderHistoryList();
   }
 }
 function projectList() {
   return Object.entries(historyStore)
-    .map(([question, p]) => ({ question, rounds: p.rounds, updatedAt: p.updatedAt, running: !!p.running }))
+    .map(([project_id, p]) => ({ project_id, question: p.question || "未命名研究", rounds: p.rounds || {}, updatedAt: p.updatedAt, running: !!p.running }))
     .sort((a, b) => String(b.updatedAt || "").localeCompare(String(a.updatedAt || "")));
 }
 function latestRoundOf(proj) {
   return ROUNDS.filter(r => proj.rounds[r]).pop();
+}
+function generateProjectId() {
+  if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID();
+  return "p-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 10);
+}
+function saveViewKey() { try { localStorage.setItem(VIEW_KEY, currentProjectKey || ""); } catch { /* 静默 */ } }
+function loadViewKey() { try { return localStorage.getItem(VIEW_KEY) || null; } catch { return null; } }
+function setSidebarCollapsed(collapsed) {
+  const isCollapsed = !!collapsed;
+  document.querySelector(".app").classList.toggle("sidebar-collapsed", isCollapsed);
+  const btn = $("#sidebarToggle");
+  btn.setAttribute("aria-expanded", String(!isCollapsed));
+  btn.setAttribute("aria-label", isCollapsed ? "显示研究档案" : "隐藏研究档案");
+  btn.title = isCollapsed ? "显示侧边栏" : "隐藏侧边栏";
+  try { localStorage.setItem(SIDEBAR_KEY, isCollapsed ? "1" : "0"); } catch { /* 静默 */ }
+}
+function loadSidebarCollapsed() {
+  try { return localStorage.getItem(SIDEBAR_KEY) === "1"; } catch { return false; }
 }
 
 /* ================= 工具函数 ================= */
@@ -112,6 +156,12 @@ function fmtTime(iso) {
 }
 function fmtScore(v, digits = 2) {
   return v == null ? "--" : Number(v).toFixed(digits);
+}
+function evidenceYear(evidence) {
+  const direct = String(evidence?.year || "").match(/\b(?:18|19|20|21)\d{2}\b/);
+  if (direct) return direct[0];
+  const fromSource = String(evidence?.source || "").match(/\b(?:18|19|20|21)\d{2}\b/);
+  return fromSource ? fromSource[0] : "";
 }
 
 /* ---------- 极简 Markdown 渲染（详细评审用） ---------- */
@@ -174,13 +224,7 @@ async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
     return body;
   } catch (e) {
     if (e.name === "AbortError") {
-      if (externalSignal && externalSignal.aborted) {
-        const err = new Error("已取消当前请求");
-        err.aborted = true;
-        err.cancelled = true;
-        throw err;
-      }
-      const err = new Error("请求超时（后端一轮约 1-3 分钟，请稍后重试）");
+      const err = new Error("请求超时，请稍后重试");
       err.aborted = true;
       throw err;
     }
@@ -192,27 +236,111 @@ async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
     clearTimeout(timer);
   }
 }
-async function apiRun(question, feedback = null, round = "V1") {
+/* 提交任务：后台执行，立即返回 job_id / project_id / round_label */
+async function apiCreateJob(question, feedback, round, projectId) {
   if (feedback) {
     return apiFetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ question, feedback, current_round: round }),
-      signal: loadingAbort?.signal,
-    });
+      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId }),
+    }, 15000);
   }
   return apiFetch("/api/run", {
     method: "POST",
-    body: JSON.stringify({ question, initial_round: round }),
-    signal: loadingAbort?.signal,
-  });
+    body: JSON.stringify({ question, initial_round: round, project_id: projectId }),
+  }, 15000);
+}
+async function apiJobStatus(jobId) {
+  return apiFetch(`/api/job/${jobId}`, {}, 8000);
+}
+async function apiCancelJob(jobId) {
+  return apiFetch(`/api/job/${jobId}/cancel`, { method: "POST" }, 8000);
+}
+async function apiJobs() {
+  return apiFetch("/api/jobs", {}, 8000);
 }
 
-/* ================= 加载动画（无 SSE，按阶段预估展示） ================= */
-function showLoading(roundLabel) {
+/* ================= 后台任务轮询（真实阶段） ================= */
+function startPolling(job) {
+  const pid = job.project_id;
+  stopPolling(pid);
+  const tick = async () => {
+    if (!jobs[pid] || !["queued", "running"].includes(jobs[pid].status)) return;
+    await pollJob(pid, job.job_id);
+    if (jobs[pid] && ["queued", "running"].includes(jobs[pid].status)) {
+      pollTimers[pid] = setTimeout(tick, POLL_INTERVAL_MS);
+    }
+  };
+  tick(); // 立即先查一次；本次完成后才安排下一次，避免请求重叠
+}
+function stopPolling(pid) {
+  if (pollTimers[pid]) { clearTimeout(pollTimers[pid]); delete pollTimers[pid]; }
+  delete pollInFlight[pid];
+}
+async function pollJob(pid, jobId) {
+  if (pollInFlight[pid]) return;
+  pollInFlight[pid] = true;
+  try {
+    const res = await apiJobStatus(jobId);
+    if (res && res.data) applyJobStatus(res.data);
+  } catch (e) {
+    if (e.status === 404) {
+      // 服务重启导致任务丢失：停轮询并清理 running 占位
+      stopPolling(pid);
+      const q = jobs[pid]?.question;
+      delete jobs[pid];
+      if (historyStore[pid]) {
+        historyStore[pid].running = false;
+        cleanupRunningProject(pid);
+      }
+      if (currentJobPid === pid) { currentJobPid = null; setStopBtn(false); }
+      renderHistoryList();
+    }
+    // 其余网络错误忽略，等待下一次轮询
+  } finally {
+    delete pollInFlight[pid];
+  }
+}
+function applyJobStatus(d) {
+  if (!d) return;
+  const pid = d.project_id;
+  const proj = historyStore[pid];
+  jobs[pid] = { ...(jobs[pid] || {}), ...d, question: d.question, round: d.round_label || (jobs[pid] || {}).round };
+  if (proj) {
+    proj.project_id = pid;
+    proj.round = d.round_label || proj.round;
+    proj.running = d.status === "running" || d.status === "queued";
+  }
+  if (d.status === "done") {
+    onJobFinished(d);
+  } else if (d.status === "error") {
+    onJobError(d);
+  } else if (d.status === "cancelled") {
+    onJobCancelled(d);
+  } else {
+    // queued / running：若当前查看该项目，用真实阶段刷新 loading 卡片
+    if (currentProjectKey === pid) updateLoadingStage(d);
+    renderHistoryList();
+  }
+}
+
+/* ================= 加载动画（真实阶段 + 秒表） ================= */
+function setStopBtn(visible) {
+  const btn = $("#stopBtn");
+  btn.style.display = visible ? "" : "none";
+  btn.disabled = !visible;
+}
+function showLoading(roundLabel, projectId, job) {
+  disposeAllCharts();
   appStatus = "loading";
+  currentJobPid = projectId || null;
   setWorkspaceMode(true);
-  $("#stopBtn").disabled = false;
+  setStopBtn(true);
   setComposerEnabled(false, "loading");
+  // 顶栏跟随当前研究（loading 期间也显示问题，避免停留在欢迎占位）
+  $("#topQid").textContent = roundLabel || "AI";
+  $("#topTitle").textContent = currentQuestion || "正在生成研究…";
+  $("#topCategory").style.display = "none";
+  $("#reportBtn").style.display = "none";
   const chat = $("#chatInner");
   chat.innerHTML = `
   <div class="loading-wrap" id="loadingWrap">
@@ -226,51 +354,53 @@ function showLoading(roundLabel) {
       </div>
       <div class="loading-bar"><i id="loadingBarFill"></i></div>
       <div class="loading-meta"><span id="loadingStageText">流水线启动中…</span><span id="loadingElapsed">00:00</span></div>
-      <p class="loading-tip">后端暂未提供实时进度推送，阶段高亮按时间预估切换</p>
     </div>
   </div>`;
   animateIn($("#loadingWrap"), { y: 16, duration: .45 });
 
   const startedAt = Date.now();
   const elapsedEl = $("#loadingElapsed");
-  const barFill = $("#loadingBarFill");
-  const stageText = $("#loadingStageText");
-  const stages = { explorer: ["探索者", "探索者 文献挖掘中…"], scientist: ["科学家", "科学家 生成假设中…"], critic: ["评审官", "评审官 评审中…"] };
-  const keys = Object.keys(stages);
-  let idx = 0;
-
-  const renderStage = () => {
-    keys.forEach((k, i) => {
-      const el = chat.querySelector(`[data-stage="${k}"]`);
-      if (!el) return;
-      el.classList.toggle("running", i === idx);
-      el.classList.toggle("done", i < idx);
-    });
-    stageText.textContent = stages[keys[idx]][1];
-  };
-  renderStage();
-
-  // 阶段轮换 + 进度条缓慢逼近 92%（不走到 100%，完成后由结果渲染接管）
-  const elapsedTimer = setInterval(() => {
+  stopLoadingAnim();
+  loadingStageTimer = setInterval(() => {
     const sec = Math.floor((Date.now() - startedAt) / 1000);
     elapsedEl.textContent = `${String(Math.floor(sec / 60)).padStart(2, "0")}:${String(sec % 60).padStart(2, "0")}`;
   }, 1000);
-  loadingStageTimer = setInterval(() => {
-    const elapsed = (Date.now() - startedAt) / 1000;
-    idx = Math.min(keys.length - 1, Math.floor(elapsed / 32));
-    renderStage();
-    const pct = Math.min(92, 6 + elapsed * 1.15);
-    if (motionEnabled()) window.gsap.to(barFill, { width: `${pct}%`, duration: .8, ease: "power2.out" });
+
+  // 应用已知阶段（排队中或已有真实 stage）
+  updateLoadingStage(job || { status: "queued" });
+}
+function updateLoadingStage(d) {
+  const chat = $("#chatInner");
+  if (!chat) return;
+  const stage = d?.stage;
+  const order = ["explorer", "scientist", "critic"];
+  let activeIdx = -1;
+  let text = "流水线启动中…";
+  let pct = 4;
+  if (d?.status === "queued") {
+    text = "排队等待中…（最多 2 个研究并行执行）";
+    pct = 4;
+  } else if (stage) {
+    activeIdx = order.indexOf(stage);
+    text = { explorer: "探索者 文献挖掘中…", scientist: "科学家 生成假设中…", critic: "评审官 评审中…" }[stage] || "流水线执行中…";
+    pct = stage === "explorer" ? 20 : stage === "scientist" ? 55 : 85;
+  }
+  order.forEach((k, i) => {
+    const el = chat.querySelector(`[data-stage="${k}"]`);
+    if (!el) return;
+    el.classList.toggle("running", i === activeIdx);
+    el.classList.toggle("done", i < activeIdx);
+  });
+  const stageText = $("#loadingStageText");
+  if (stageText) stageText.textContent = text;
+  const barFill = $("#loadingBarFill");
+  if (barFill) {
+    if (motionEnabled()) window.gsap.to(barFill, { width: `${pct}%`, duration: .6, ease: "power2.out" });
     else barFill.style.width = `${pct}%`;
-  }, 2000);
-  loadingStageTimer._elapsedTimer = elapsedTimer;
+  }
 }
 function stopLoadingAnim() {
-  if (loadingStageTimer) {
-    clearInterval(loadingStageTimer);
-    clearInterval(loadingStageTimer._elapsedTimer);
-    loadingStageTimer = null;
-  }
+  if (loadingStageTimer) { clearInterval(loadingStageTimer); loadingStageTimer = null; }
 }
 
 /* ================= 工作台渲染 ================= */
@@ -333,40 +463,126 @@ function renderHistoryList() {
     return;
   }
   list.innerHTML = `
-    <div class="date-label">本地持久化研究档案</div>
+    <div class="date-label"><span>本地持久化研究档案</span><span class="history-swipe-hint">← 左滑显示删除</span></div>
     ${rows.map((p, idx) => {
       const lr = latestRoundOf(p);
       const snap = lr ? p.rounds[lr] : null;
-      const isActive = p.question === currentProjectKey;
-      const isBackend = p.question === activeQuestion;
-      const isRunning = p.running && !lr;
+      const isActive = p.project_id === currentProjectKey;
+      const job = p.project_id ? jobs[p.project_id] : null;
+      const isBackend = isBackendProjectId(p.project_id) || (job && ["queued", "running"].includes(job.status));
+      const isRunning = (p.running && !lr) || (job && ["queued", "running"].includes(job.status));
       return `<div class="history-item-wrap" data-idx="${idx}">
         <button class="history-item ${isActive ? "active" : ""}">
           <span class="dot ${isRunning ? "needs_human" : isActive ? "running" : "completed"}"></span>
           <b>${esc(p.question.slice(0, 18))}${p.question.length > 18 ? "…" : ""}</b>
           <small>${isRunning ? "研究中 · 流水线执行中…" : snap ? `${lr} · 综合 ${fmtScore(snap.overall_score)}` : "暂无轮次记录"}${isBackend ? " · 服务端" : ""}</small>
         </button>
-        <button class="history-del" title="删除该历史研究" aria-label="删除该历史研究">×</button>
+        <button class="history-del" type="button" title="删除该历史研究" aria-label="删除该历史研究" tabindex="-1">删除</button>
       </div>`;
     }).join("")}`;
   const visible = rows;
   $$(".history-item-wrap").forEach(wrap => {
     const item = visible[Number(wrap.dataset.idx)];
     if (!item) return;
-    wrap.querySelector(".history-item").onclick = () => {
+    const historyItem = wrap.querySelector(".history-item");
+    const deleteBtn = wrap.querySelector(".history-del");
+    bindHistorySwipe(wrap, historyItem, deleteBtn);
+    historyItem.onclick = event => {
+      if (wrap.dataset.suppressClick === "1") { wrap.dataset.suppressClick = "0"; event.preventDefault(); return; }
+      if (wrap.classList.contains("revealed")) { setHistorySwipeOpen(wrap, false); return; }
       closeMobileSidebar(false);
-      switchProject(item.question);
+      switchProject(item.project_id);
     };
-    wrap.querySelector(".history-del").onclick = event => {
+    deleteBtn.onclick = event => {
       event.stopPropagation();
-      deleteProject(item.question);
+      setHistorySwipeOpen(wrap, false);
+      deleteProject(item.project_id);
     };
+  });
+}
+
+function setHistorySwipeOpen(wrap, open) {
+  if (open) {
+    $$(".history-item-wrap.revealed").forEach(other => { if (other !== wrap) setHistorySwipeOpen(other, false); });
+  }
+  wrap.classList.toggle("revealed", open);
+  const deleteBtn = wrap.querySelector(".history-del");
+  if (deleteBtn) deleteBtn.tabIndex = open ? 0 : -1;
+}
+
+function bindHistorySwipe(wrap, item, deleteBtn) {
+  let startX = 0;
+  let startY = 0;
+  let baseX = 0;
+  let currentX = 0;
+  let tracking = false;
+  let horizontal = false;
+  let wheelDistance = 0;
+  let wheelResetTimer = null;
+  const revealWidth = 66;
+  const finish = () => {
+    if (!tracking) return;
+    tracking = false;
+    const pointerId = Number(item.dataset.pointerId);
+    if (Number.isFinite(pointerId)) item.releasePointerCapture?.(pointerId);
+    item.style.removeProperty("transition");
+    item.style.removeProperty("transform");
+    if (horizontal) {
+      setHistorySwipeOpen(wrap, currentX < -revealWidth * .45);
+      wrap.dataset.suppressClick = "1";
+      setTimeout(() => { wrap.dataset.suppressClick = "0"; }, 0);
+    }
+  };
+  item.addEventListener("pointerdown", event => {
+    if (!event.isPrimary || event.button > 0) return;
+    tracking = true;
+    horizontal = false;
+    startX = event.clientX;
+    startY = event.clientY;
+    baseX = wrap.classList.contains("revealed") ? -revealWidth : 0;
+    currentX = baseX;
+    item.dataset.pointerId = String(event.pointerId);
+    item.setPointerCapture?.(event.pointerId);
+    item.style.transition = "none";
+  });
+  item.addEventListener("pointermove", event => {
+    if (!tracking) return;
+    const dx = event.clientX - startX;
+    const dy = event.clientY - startY;
+    if (!horizontal && Math.abs(dx) > 5 && Math.abs(dx) > Math.abs(dy)) horizontal = true;
+    if (!horizontal) return;
+    currentX = Math.max(-revealWidth, Math.min(0, baseX + dx));
+    item.style.transform = `translateX(${currentX}px)`;
+  });
+  item.addEventListener("pointerup", finish);
+  item.addEventListener("pointercancel", finish);
+  item.addEventListener("wheel", event => {
+    if (Math.abs(event.deltaX) < 4 || Math.abs(event.deltaX) <= Math.abs(event.deltaY)) return;
+    event.preventDefault();
+    wheelDistance += event.deltaX;
+    clearTimeout(wheelResetTimer);
+    wheelResetTimer = setTimeout(() => { wheelDistance = 0; }, 140);
+    if (wheelDistance > 18) {
+      setHistorySwipeOpen(wrap, true);
+      wheelDistance = 0;
+    } else if (wheelDistance < -18) {
+      setHistorySwipeOpen(wrap, false);
+      wheelDistance = 0;
+    }
+  }, { passive: false });
+  deleteBtn.addEventListener("keydown", event => {
+    if (event.key === "Escape") { setHistorySwipeOpen(wrap, false); item.focus(); }
   });
 }
 
 function renderWorkspace() {
   const snap = snapshots[currentRound];
   if (!snap) return;
+  disposeAllCharts();
+  const activeJob = currentProjectKey ? jobs[currentProjectKey] : null;
+  const isRunning = activeJob && ["queued", "running"].includes(activeJob.status);
+  setStopBtn(!!isRunning);
+  currentJobPid = isRunning ? currentProjectKey : null;
   setWorkspaceMode(true);
   const chat = $("#chatInner");
   const score = snap.overall_score;
@@ -420,7 +636,7 @@ function renderWorkspace() {
   $("#reportBtn").onclick = () => openReport();
   // 报告 + Markdown 下载入口（评审 Tab 下方也放一份）
   const reportBar = document.createElement("div");
-  reportBar.className = "panel-card";
+  reportBar.className = "panel-card workspace-report-actions";
   reportBar.style.cssText = "display:flex;gap:8px;align-items:center;justify-content:flex-end;padding:12px 16px";
   reportBar.innerHTML = `
     <span style="margin-right:auto;font-size:11px;color:var(--muted)">本轮快照完整数据已保存（JSON + SQLite）</span>
@@ -444,17 +660,27 @@ function switchRound(round) {
 }
 
 /* 切换历史项目：工作台整体切换到该项目的轮次数据 */
-function switchProject(question) {
-  const proj = historyStore[question];
+function switchProject(projectId) {
+  const proj = historyStore[projectId];
   if (!proj) return;
+  currentProjectKey = projectId;
+  currentQuestion = proj.question;
+  const job = proj.project_id ? jobs[proj.project_id] : null;
+  const isRunning = (proj.running && !latestRoundOf(proj)) || (job && ["queued", "running"].includes(job.status));
   const lr = latestRoundOf(proj);
-  if (proj.running && !lr) {
-    addSystemToast("该研究正在生成中，完成后即可查看");
+  if (isRunning) {
+    // 生成中：无论是否已有旧轮次，都恢复该项目自己的进度与取消入口
+    snapshots = {};
+    currentRound = null;
+    chartsRendered = false;
+    setWorkspaceMode(true);
+    showLoading(job?.round || proj.round || "V1", proj.project_id, job);
+    refreshComposer();
+    document.querySelector(".chat-wrap").scrollTo({ top: 0, behavior: "auto" });
+    saveViewKey();
     return;
   }
   if (!lr) return;
-  currentProjectKey = question;
-  currentQuestion = question;
   snapshots = Object.assign({}, proj.rounds);
   currentRound = lr;
   appStatus = "ready";
@@ -463,26 +689,38 @@ function switchProject(question) {
   renderWorkspace();
   refreshComposer();
   document.querySelector(".chat-wrap").scrollTo({ top: 0, behavior: "auto" });
+  saveViewKey();
 }
 
-/* 删除历史项目（仅删本地档案；服务端当前研究的快照会在下次导入时被墓碑过滤） */
-function deleteProject(question) {
-  if (!historyStore[question]) return;
-  if (!window.confirm(`确定删除该历史研究？\n「${question}」将从本地档案移除，无法恢复。`)) return;
-  delete historyStore[question];
-  deletedKeys.add(question);
+/* 删除历史项目（同时停轮询/取消后端任务） */
+function deleteProject(projectId) {
+  const proj = historyStore[projectId];
+  if (!proj) return;
+  if (!window.confirm(`确定删除该历史研究？\n「${proj.question}」将从本地档案移除，无法恢复。`)) return;
+  if (proj.project_id) {
+    stopPolling(proj.project_id);
+    const job = jobs[proj.project_id];
+    if (job && ["queued", "running"].includes(job.status)) apiCancelJob(job.job_id).catch(() => {});
+    delete jobs[proj.project_id];
+  }
+  delete historyStore[projectId];
+  deletedKeys.add(projectId);
   saveHistoryStore();
   saveDeletedKeys();
   // 删除的是当前查看的项目：切到最近一个剩余项目，没有则回欢迎页
-  if (currentProjectKey === question) {
+  if (currentProjectKey === projectId) {
     currentProjectKey = null;
     currentQuestion = "";
     snapshots = {};
     currentRound = null;
     chartsRendered = false;
+    currentJobPid = null;
+    setStopBtn(false);
+    stopLoadingAnim();
+    saveViewKey();
     const remaining = projectList().find(p => latestRoundOf(p));
     if (remaining) {
-      switchProject(remaining.question);
+      switchProject(remaining.project_id);
     } else {
       appStatus = "idle";
       setWorkspaceMode(false);
@@ -503,11 +741,36 @@ function showWelcomeView() {
   $("#welcomeStart2").onclick = openQuestionModal;
 }
 
-/* 输入区状态统一收口：服务端当前项目按轮次开反馈；历史项目只读 */
+function returnHome() {
+  closeMobileSidebar(false);
+  stopLoadingAnim();
+  currentProjectKey = null;
+  currentQuestion = "";
+  snapshots = {};
+  currentRound = null;
+  currentJobPid = null;
+  chartsRendered = false;
+  appStatus = "idle";
+  setStopBtn(false);
+  setWorkspaceMode(false);
+  showWelcomeView();
+  updateTopbar();
+  renderHistoryList();
+  saveViewKey();
+  $("#chatWrap").scrollTo({ top: 0, behavior: "auto" });
+}
+
+/* 输入区状态统一收口：按项目运行状态与轮次开放反馈 */
 function refreshComposer() {
-  if (currentProjectKey !== activeQuestion) { setComposerEnabled(false, "readonly"); return; }
+  const proj = historyStore[currentProjectKey];
+  if (!proj) return;
+  const job = proj.project_id ? jobs[proj.project_id] : null;
+  const isRunning = (proj.running || (job && ["queued", "running"].includes(job.status)));
+  if (isRunning) { setComposerEnabled(false, "loading"); return; }
   if (appStatus !== "ready") { setComposerEnabled(false); return; }
-  setComposerEnabled(currentRound !== "V3", currentRound === "V3" ? "v3-max" : "feedback");
+  if (!isBackendProjectId(proj.project_id)) { setComposerEnabled(false, "readonly"); return; }
+  const lr = latestRoundOf(proj);
+  setComposerEnabled(lr !== "V3", lr === "V3" ? "v3-max" : "feedback");
 }
 
 function switchTab(tab) {
@@ -526,6 +789,7 @@ function renderCriticRadar() {
   const scores = (snap.agent_critic || {}).scores || {};
   const values = DIM_ORDER.map(d => scores[d] ?? 0);
   const instance = window.echarts.getInstanceByDom(dom) || window.echarts.init(dom);
+  registerChart("criticRadar", instance);
   instance.setOption({
     tooltip: {},
     radar: {
@@ -552,29 +816,28 @@ function renderExplorer(snap) {
   const analogies = e.analogies || [];
   return `
   <div class="panel-card">
-    <h3><span class="h3-ico">骨</span>问题骨架</h3>
+    <h3>问题骨架</h3>
     <p>${esc(e.problem_skelton || "（未提供）")}</p>
   </div>
   <div class="panel-card">
-    <h3><span class="h3-ico">证</span>证据列表 <span style="font-size:10px;color:var(--muted);font-weight:400">来自 Chroma 向量库检索</span></h3>
+    <h3>证据列表 <span style="font-size:10px;color:var(--muted);font-weight:400">来自 Chroma 向量库检索</span></h3>
     ${evidence.length ? `<table class="evidence-table">
-      <thead><tr><th>证据陈述</th><th>来源</th><th>年份</th></tr></thead>
+      <thead><tr><th>证据陈述</th><th>来源</th></tr></thead>
       <tbody>${evidence.map(ev => `<tr>
         <td>${esc(ev.claim)}</td>
         <td class="src">${esc(ev.source || "未知")}</td>
-        <td class="yr">${ev.year && /^\d{4}$/.test(String(ev.year)) ? esc(ev.year) : "—"}</td>
       </tr>`).join("")}</tbody>
     </table>` : `<div class="empty-state">未检索到相关文献，仅基于跨域类比推理</div>`}
   </div>
   <div class="panel-card">
-    <h3 class="red"><span class="h3-ico">缺</span>知识缺口</h3>
+    <h3 class="red">知识缺口</h3>
     ${gaps.length ? `<div class="gap-list">${gaps.map(g => `<div class="gap-item"><span class="gap-ico">!</span><span>${esc(g)}</span></div>`).join("")}</div>` : `<div class="empty-state">暂无识别到知识缺口</div>`}
   </div>
   <div class="panel-card">
-    <h3 class="pink"><span class="h3-ico">类</span>跨域类比线索</h3>
+    <h3 class="pink">跨域类比线索</h3>
     ${analogies.length ? `<div class="analogy-wrap">${analogies.map(a => `
       <details class="analogy-item">
-        <summary><span class="field-chip">${esc(a.field || "未知领域")}</span>${esc(a.phenomenon || "")}</summary>
+        <summary><span class="field-chip">${esc(a.field || "未知领域")}</span><span class="analogy-title">${esc(a.phenomenon || "")}</span></summary>
         <div class="analogy-body"><p><b>映射关系：</b>${esc(a.mapping_relation || "")}</p></div>
       </details>`).join("")}</div>` : `<div class="empty-state">暂无跨域类比</div>`}
   </div>`;
@@ -587,15 +850,17 @@ function renderScientist(snap) {
   const fb = (snap.human_feedback || []).filter(f => f && f.content);
   return `
   ${fb.length ? `<div class="panel-card fb-history">
-    <h3 class="pink"><span class="h3-ico">馈</span>本轮专家反馈</h3>
+    <h3 class="pink">本轮专家反馈</h3>
     ${fb.map(f => `<div class="fb-item"><span class="fb-ico">💬</span><span>${esc(f.content)}</span></div>`).join("")}
   </div>` : ""}
   <div class="hypo-grid">
     ${hyps.map((h, i) => {
       const tagCls = `hypo-tag h${(h.id || "H1").slice(1) || 1}`;
       return `<article class="hypo-card">
-      <div class="hypo-top"><span class="${tagCls}">${esc(h.id)}</span><span class="hypo-src">${esc(h.source || "")}</span></div>
-      <h3>${esc(h.statement)}</h3>
+      <header class="hypo-head">
+        <div class="hypo-top"><span class="${tagCls}">${esc(h.id)}</span><span class="hypo-src">${esc(h.source || "")}</span></div>
+        <h3>${esc(h.statement)}</h3>
+      </header>
       <p class="hypo-reason"><b style="color:#3f5553">推论逻辑：</b>${esc(h.supporting_reasoning || "")}</p>
       <div class="hypo-falsify"><b>⚡ 可证伪条件</b>${esc(h.falsification_condition || "")}</div>
       <div class="hypo-plan">
@@ -611,7 +876,7 @@ function renderScientist(snap) {
     }).join("")}
   </div>
   <div class="panel-card compare-card">
-    <h3><span class="h3-ico">比</span>假设间对比</h3>
+    <h3>假设间对比</h3>
     <p>${esc(cmp || "（未提供）")}</p>
   </div>`;
 }
@@ -622,40 +887,42 @@ function renderCritic(snap) {
   const missing = c.missing_evidences || [];
   return `
   <div class="critic-grid">
-    <div class="panel-card" style="margin-bottom:0">
-      <h3><span class="h3-ico">雷</span>五维评分</h3>
-      <div id="criticRadar" class="chart-box" style="height:270px"></div>
-      <table class="score-table">
-        ${DIM_ORDER.map(d => {
-          const v = scores[d];
-          return `<tr><td>${DIM_LABELS[d]}</td><td>${fmtScore(v, 1)}</td></tr>
-          <tr><td colspan="2"><div class="score-bar"><i style="width:${(v || 0) * 10}%"></i></div></td></tr>`;
-        }).join("")}
-      </table>
+    <div class="critic-column critic-left">
+      <div class="panel-card critic-score" style="margin-bottom:0">
+        <h3>五维评分</h3>
+        <div id="criticRadar" class="chart-box" style="height:270px"></div>
+        <table class="score-table">
+          ${DIM_ORDER.map(d => {
+            const v = scores[d];
+            return `<tr><td>${DIM_LABELS[d]}</td><td>${fmtScore(v, 1)}</td></tr>
+            <tr><td colspan="2"><div class="score-bar"><i style="width:${(v || 0) * 10}%"></i></div></td></tr>`;
+          }).join("")}
+        </table>
+      </div>
+      <div class="panel-card critic-review" style="margin-bottom:0">
+        <h3>详细评审意见</h3>
+        <div class="md-body">${md(c.detailed_review)}</div>
+      </div>
     </div>
-    <div>
+    <div class="critic-side">
       <div class="overall-stat" style="margin-bottom:14px">
         <div class="num">${fmtScore(snap.overall_score)}</div>
         <div class="cap">综合得分（加权）</div>
         <div class="gran">颗粒度 ${fmtScore(snap.granularity_score)}</div>
       </div>
       <div class="panel-card" style="margin-bottom:14px">
-        <h3 class="red"><span class="h3-ico">!</span>致命缺陷</h3>
+        <h3 class="red">致命缺陷</h3>
         <div class="flaw-alert"><span class="fa-ico">⚠</span><span>${esc(c.top_flaw || "（未提供）")}</span></div>
       </div>
       <div class="panel-card" style="margin-bottom:14px">
-        <h3 class="pink"><span class="h3-ico">反</span>反事实攻击</h3>
+        <h3 class="pink">反事实攻击</h3>
         <div class="cf-card"><b>COUNTERFACTUAL</b>${esc(c.counterfactual || "（未提供）")}</div>
       </div>
       <div class="panel-card" style="margin-bottom:0">
-        <h3 class="red"><span class="h3-ico">缺</span>缺失证据</h3>
+        <h3 class="red">缺失证据</h3>
         ${missing.length ? `<div class="gap-list">${missing.map(m => `<div class="gap-item"><span class="gap-ico">!</span><span>${esc(m)}</span></div>`).join("")}</div>` : `<div class="empty-state">暂无缺失证据</div>`}
       </div>
     </div>
-  </div>
-  <div class="panel-card" style="margin-top:14px">
-    <h3><span class="h3-ico">评</span>详细评审意见</h3>
-    <div class="md-body">${md(c.detailed_review)}</div>
   </div>`;
 }
 
@@ -723,7 +990,7 @@ function clipRisk(d) {
   };
 }
 
-/* 历史项目（非服务端当前研究）没有图表接口数据 → 用本地快照推导出与后端接口相同的数据结构 */
+/* 历史项目（无 project_id，非服务端）没有图表接口数据 → 用本地快照推导出与后端接口相同的数据结构 */
 function chartsDataFromSnapshots() {
   const rounds = ROUNDS.filter(r => snapshots[r]);
   const list = rounds.map(r => snapshots[r]);
@@ -754,6 +1021,9 @@ function chartsDataFromSnapshots() {
 async function renderCharts() {
   if (chartsRendered || !window.echarts) return;
   chartsRendered = true;
+  const proj = historyStore[currentProjectKey];
+  const projectId = isBackendProjectId(proj?.project_id) ? proj.project_id : null;
+  const viewedAtStart = currentProjectKey; // 防串画：请求期间切走了项目就不渲染
   const mkEmpty = id => { const el = document.getElementById(id); if (el) el.innerHTML = `<div class="chart-empty">暂无数据</div>`; };
   // 轮次切换会重建 DOM，先释放旧实例避免泄漏
   ["chartOverall", "chartRadarAll", "chartGranularity", "chartWaterfall", "chartRisk"].forEach(id => {
@@ -762,14 +1032,15 @@ async function renderCharts() {
   });
   try {
     let overall, radar, gran, waterfall, risk;
-    if (currentProjectKey === activeQuestion) {
-      // 服务端当前研究：走图表接口，再按当前轮次截断
+    if (projectId) {
+      // 服务端项目：走图表接口（按项目隔离），再按当前轮次截断
+      const p = `?project_id=${encodeURIComponent(projectId)}`;
       [overall, radar, gran, waterfall, risk] = await Promise.all([
-        apiFetch("/api/chart/overall", {}, 10000),
-        apiFetch("/api/chart/radar", {}, 10000),
-        apiFetch("/api/chart/granularity", {}, 10000),
-        apiFetch("/api/chart/waterfall", {}, 10000),
-        apiFetch("/api/chart/risk", {}, 10000),
+        apiFetch(`/api/chart/overall${p}`, {}, 10000),
+        apiFetch(`/api/chart/radar${p}`, {}, 10000),
+        apiFetch(`/api/chart/granularity${p}`, {}, 10000),
+        apiFetch(`/api/chart/waterfall${p}`, {}, 10000),
+        apiFetch(`/api/chart/risk${p}`, {}, 10000),
       ]);
       overall = clipOverall(overall?.data);
       radar = clipRadar(radar?.data);
@@ -785,23 +1056,44 @@ async function renderCharts() {
       waterfall = clipWaterfall(d.waterfall);
       risk = clipRisk(d.risk);
     }
+    if (currentProjectKey !== viewedAtStart) return; // 中途切换了项目：丢弃本次渲染（chartsRendered 由 switchProject 重置）
     buildOverallChart(overall);
     buildRadarChart(radar);
     buildGranularityChart(gran);
     buildWaterfallChart(waterfall);
     buildRiskChart(risk);
   } catch (e) {
-    ["chartOverall", "chartRadarAll", "chartGranularity", "chartWaterfall", "chartRisk"].forEach(mkEmpty);
+    if (currentProjectKey === viewedAtStart) {
+      ["chartOverall", "chartRadarAll", "chartGranularity", "chartWaterfall", "chartRisk"].forEach(mkEmpty);
+    }
+    chartsRendered = false; // 失败后允许重试（修复「图表偶尔出不来」）
     console.error("图表加载失败:", e);
   }
 }
 
+function registerChart(key, instance) {
+  chartInstances.set(key, instance);
+  if (!chartResizeBound) {
+    window.addEventListener("resize", () => {
+      chartInstances.forEach(chart => {
+        if (chart && !chart.isDisposed()) chart.resize();
+      });
+    });
+    chartResizeBound = true;
+  }
+}
+function disposeAllCharts() {
+  chartInstances.forEach(chart => {
+    if (chart && !chart.isDisposed()) chart.dispose();
+  });
+  chartInstances.clear();
+}
 function chartBase(el, option) {
   const dom = document.getElementById(el);
   if (!dom) return;
   const instance = window.echarts.getInstanceByDom(dom) || window.echarts.init(dom);
   instance.setOption(option, true);
-  window.addEventListener("resize", () => instance.resize());
+  registerChart(el, instance);
 }
 const CHART_AXIS = { axisLine: { lineStyle: { color: "#c9cfc9" } }, axisLabel: { color: "#7a8583", fontSize: 10 } };
 const CHART_SPLIT = { lineStyle: { color: "#e8ebe4" } };
@@ -911,7 +1203,9 @@ function buildRiskChart(d) {
 /* ================= 报告与导出 ================= */
 function openReport() {
   if (currentRound) {
-    window.open(`/static/report.html?round=${encodeURIComponent(currentRound)}&question=${encodeURIComponent(currentProjectKey || currentQuestion)}`, "_blank");
+    const proj = historyStore[currentProjectKey];
+    const pid = isBackendProjectId(proj?.project_id) ? proj.project_id : "";
+    window.open(`/static/report.html?round=${encodeURIComponent(currentRound)}&question=${encodeURIComponent(currentQuestion)}&project_id=${encodeURIComponent(pid)}`, "_blank");
   }
 }
 function snapshotToMarkdown(snap, allRounds) {
@@ -923,7 +1217,12 @@ function snapshotToMarkdown(snap, allRounds) {
   L.push(`## 一、探索者（Explorer）`, "");
   L.push(`### 问题骨架`, "", e.problem_skelton || "（未提供）", "");
   L.push(`### 证据列表`, "");
-  (e.evidence_list || []).forEach(ev => L.push(`- ${ev.claim}（来源：${ev.source || "未知"}${ev.year && /^\d{4}$/.test(String(ev.year)) ? `, ${ev.year}` : ""}）`));
+  (e.evidence_list || []).forEach(ev => {
+    const year = evidenceYear(ev);
+    const source = ev.source || "未知";
+    const yearSuffix = year && !String(source).includes(year) ? `, ${year}` : "";
+    L.push(`- ${ev.claim}（来源：${source}${yearSuffix}）`);
+  });
   L.push("");
   L.push(`### 知识缺口`, "");
   (e.knowledge_gaps || []).forEach(g => L.push(`- ${g}`));
@@ -986,7 +1285,7 @@ function downloadMarkdown() {
 function showError(message, { retry = null } = {}) {
   appStatus = "error";
   stopLoadingAnim();
-  $("#stopBtn").disabled = true;
+  setStopBtn(false);
   const chat = $("#chatInner");
   const escaped = esc(message);
   chat.innerHTML = `
@@ -998,22 +1297,120 @@ function showError(message, { retry = null } = {}) {
   if (retry) $("#retryBtn").onclick = retry;
   updateTopbar();
 }
-function handleRunSuccess(data) {
-  stopLoadingAnim();
-  const snap = data?.data;
+/* 任务完成：归档快照；仅当正查看该项目时才渲染工作区（核心非劫持修复） */
+function onJobFinished(d) {
+  const pid = d.project_id;
+  stopPolling(pid);
+  const snap = d?.result;
   if (!snap || !snap.round) { showError("后端返回数据异常"); return; }
-  snapshots[snap.round] = snap;
-  upsertSnapshot(snap);               // 归档进本地历史
-  currentProjectKey = snap.question;  // 本轮对应项目成为当前项目
-  activeQuestion = snap.question;     // 后端当前研究
-  currentRound = snap.round;
-  currentQuestion = snap.question || currentQuestion;
-  appStatus = "ready";
-  $("#stopBtn").disabled = true;
-  chartsRendered = false;
-  renderWorkspace();
-  refreshComposer();
-  document.querySelector(".chat-wrap").scrollTo({ top: 0, behavior: "auto" });
+  if (!snap.project_id) snap.project_id = pid;
+  if (jobs[pid]) jobs[pid].status = "done";
+  if (deletedKeys.has(pid)) return; // 项目已被删除：不再导入
+  upsertSnapshot(snap);
+  renderHistoryList();
+  if (currentProjectKey === pid) {
+    const proj = historyStore[pid];
+    snapshots = Object.assign({}, proj?.rounds || {});
+    currentRound = snap.round;
+    currentQuestion = snap.question;
+    appStatus = "ready";
+    chartsRendered = false;
+    setStopBtn(false);
+    stopLoadingAnim();
+    currentJobPid = null;
+    setWorkspaceMode(true);
+    renderWorkspace();
+    refreshComposer();
+    document.querySelector(".chat-wrap").scrollTo({ top: 0, behavior: "auto" });
+  } else {
+    // 后台完成：当前不在该项目，不劫持视图，仅刷新侧栏
+    if (currentJobPid === pid) { currentJobPid = null; setStopBtn(false); }
+    addSystemToast(`研究完成：${(snap.question || "").slice(0, 20)}…（${snap.round} · 综合 ${fmtScore(snap.overall_score)}）`);
+  }
+}
+function onJobError(d) {
+  const pid = d.project_id;
+  stopPolling(pid);
+  const prevJob = jobs[pid];
+  const q = d.question || prevJob?.question;
+  const round = d.round_label || prevJob?.round || "V1";
+  const feedback = prevJob?.feedback || null;
+  if (jobs[pid]) jobs[pid].status = "error";
+  if (q) {
+    const proj = historyStore[pid];
+    if (proj && !Object.keys(proj.rounds || {}).length) { delete historyStore[pid]; saveHistoryStore(); }
+  }
+  renderHistoryList();
+  if (currentProjectKey === pid) {
+    currentJobPid = null;
+    setStopBtn(false);
+    stopLoadingAnim();
+    showError(d.error || "研究流程出错", {
+      retry: () => {
+        const fromRound = prevJob?.from_round || "V1";
+        showLoading(round, pid, null);
+        enqueueJob(q, fromRound, feedback, pid).catch(e2 => showError(e2.message || "重试失败"));
+      },
+    });
+    setComposerEnabled(false);
+  } else {
+    addSystemToast(`研究失败：${(q || "").slice(0, 20)}…`);
+  }
+}
+function onJobCancelled(d) {
+  const pid = d.project_id;
+  stopPolling(pid);
+  if (jobs[pid]) jobs[pid].status = "cancelled";
+  const q = d.question;
+  cleanupRunningProject(pid);
+  renderHistoryList();
+  if (currentProjectKey === pid) {
+    currentJobPid = null;
+    setStopBtn(false);
+    stopLoadingAnim();
+    const proj = historyStore[pid];
+    if (proj && latestRoundOf(proj)) {
+      switchProject(pid); // 已有轮次：回到该项目的旧结果
+    } else {
+      appStatus = "idle";
+      currentQuestion = "";
+      snapshots = {};
+      currentRound = null;
+      chartsRendered = false;
+      setWorkspaceMode(false);
+      showWelcomeView();
+      updateTopbar();
+    }
+  }
+}
+
+/* ================= 任务提交 ================= */
+/* 提交任务到后端并开始轮询；jobs 与 historyStore 占位同步更新 */
+function enqueueJob(question, round, feedback, projectId) {
+  return apiCreateJob(question, feedback, round, projectId).then(d => {
+    const job = {
+      job_id: d.job_id,
+      project_id: d.project_id,
+      question,
+      round: d.round_label,   // 后端返回的目标轮次（正在生成）
+      from_round: round,      // 提交时传给后端的轮次引用（current_round / initial_round），重试用
+      feedback,
+      status: "queued",
+      stage: null,
+      progress: null,
+    };
+    jobs[d.project_id] = job;
+    const proj = historyStore[d.project_id];
+    if (proj) {
+      proj.project_id = d.project_id;
+      proj.running = true;
+      proj.round = d.round_label;
+    }
+    saveHistoryStore();
+    renderHistoryList();
+    startPolling(job);
+    return d;
+  });
 }
 
 /* ================= 研究启动 / 反馈 ================= */
@@ -1024,88 +1421,71 @@ async function startResearch(question) {
     $("#customQuestionHint").classList.add("bad");
     return;
   }
-  if (appStatus === "loading") return;
   closeQuestionModal();
-  const prevProjectKey = currentProjectKey; // 取消时恢复用
-  const prevSameProject = historyStore[q] || null; // 同问题重跑失败时恢复旧数据
+  const projectId = generateProjectId();
   currentQuestion = q;
-  snapshots = {};          // 新研究：清空工作区，成功后由 handleRunSuccess 重新赋值
+  snapshots = {};          // 新研究：清空工作区，成功后由 onJobFinished 重新赋值
   currentRound = null;
   // 点「开始研究」的瞬间就在历史档案里创建「研究中」条目（失败/取消时自动移除）
-  historyStore[q] = { rounds: {}, updatedAt: new Date().toISOString(), running: true };
-  deletedKeys.delete(q); // 重新研究同一问题时解除删除墓碑
+  historyStore[projectId] = { question: q, rounds: {}, updatedAt: new Date().toISOString(), running: true, project_id: projectId, round: "V1" };
+  deletedKeys.delete(projectId);
   saveHistoryStore();
   saveDeletedKeys();
-  currentProjectKey = q;   // 侧边栏高亮运行中的研究
+  currentProjectKey = projectId;   // 侧边栏高亮运行中的研究
   renderHistoryList();
   setWorkspaceMode(true);
   $("#chatInner").innerHTML = "";
-  showLoading("V1");
-  loadingAbort = new AbortController();
+  showLoading("V1", projectId, null);
+  saveViewKey();
   try {
-    const data = await apiRun(q, null, "V1");
-    handleRunSuccess(data);
+    await enqueueJob(q, "V1", null, projectId);
   } catch (e) {
-    if (e.cancelled) {
-      // 用户取消：回到之前查看的项目（或欢迎界面）
-      stopLoadingAnim();
-      $("#stopBtn").disabled = true;
-      cleanupRunningProject(q, prevSameProject);
-      if (prevProjectKey && historyStore[prevProjectKey]) {
-        switchProject(prevProjectKey);
-      } else if (Object.keys(snapshots).length) {
-        appStatus = "ready";
-        renderWorkspace();
-        refreshComposer();
-      } else {
-        appStatus = "idle";
-        currentQuestion = "";
-        setWorkspaceMode(false);
-        showWelcomeView();
-      }
-      updateTopbar();
-    } else {
-      cleanupRunningProject(q, prevSameProject);
-      showError(e.message || "运行失败", { retry: () => startResearch(q) });
-      setComposerEnabled(false);
+    // 入队失败：清理占位并恢复旧数据
+    if (historyStore[projectId] && !Object.keys(historyStore[projectId].rounds).length) {
+      delete historyStore[projectId];
+      saveHistoryStore();
     }
-  } finally {
-    loadingAbort = null;
+    stopLoadingAnim();
+    setStopBtn(false);
+    currentJobPid = null;
+    renderHistoryList();
+    showError(e.message || "运行失败");
   }
 }
 
 async function submitFeedback() {
   const text = $("#expertInput").value.trim();
-  if (!text || text.length < 3 || appStatus === "loading") return;
-  if (!currentRound || currentRound === "V3") return;
-  if (currentProjectKey !== activeQuestion) return; // 历史项目只读
+  if (!text || text.length < 3) return;
+  const proj = historyStore[currentProjectKey];
+  if (!proj) return;
+  if (!isBackendProjectId(proj.project_id)) { addSystemToast("历史项目仅支持查看，如需迭代请新建研究"); return; }
+  const fromRound = latestRoundOf(proj) || currentRound;
+  if (!fromRound || fromRound === "V3") return;
+  const nextRound = `V${Number(fromRound[1]) + 1}`; // 仅用于展示「正在生成 Vx」
   const question = currentQuestion;
-  const fromRound = currentRound;
-  showLoading(`V${Number(fromRound[1]) + 1}`);
-  loadingAbort = new AbortController();
+  showLoading(nextRound, proj.project_id, null);
+  saveViewKey();
   try {
-    const data = await apiRun(question, text, fromRound);
+    // 后端按 current_round 自行 +1：这里传当前轮次，避免二次递增导致跳轮（V1 直接变 V3）
+    await enqueueJob(question, fromRound, text, proj.project_id);
     $("#expertInput").value = "";
-    handleRunSuccess(data);
   } catch (e) {
-    if (e.cancelled) {
-      stopLoadingAnim();
-      $("#stopBtn").disabled = true;
-      appStatus = "ready";
-      renderWorkspace();
-      refreshComposer();
-    } else if (e.status === 400) {
-      stopLoadingAnim();
-      $("#stopBtn").disabled = true;
-      appStatus = "ready";
-      renderWorkspace();
-      refreshComposer();
+    if (e.status === 400) {
+      addSystemToast(e.message || "已达到最大迭代次数 V3");
     } else {
-      showError(e.message || "反馈处理失败", { retry: () => submitFeedback() });
+      showError(e.message || "反馈处理失败");
       setComposerEnabled(false);
+      return;
     }
-  } finally {
-    loadingAbort = null;
+    // 回到 ready 视图
+    stopLoadingAnim();
+    setStopBtn(false);
+    currentJobPid = null;
+    if (currentProjectKey === proj.project_id) {
+      appStatus = "ready";
+      renderWorkspace();
+      refreshComposer();
+    }
   }
 }
 
@@ -1241,6 +1621,8 @@ $("#mobileNewResearchBtn").onclick = openQuestionModal;
 $("#mobileNavBtn").onclick = openMobileSidebar;
 $("#mobileSidebarClose").onclick = () => closeMobileSidebar();
 $("#mobileSidebarBg").onclick = () => closeMobileSidebar();
+$("#sidebarToggle").onclick = () => setSidebarCollapsed(!document.querySelector(".app").classList.contains("sidebar-collapsed"));
+$("#homeBtn").onclick = returnHome;
 $("#closeQuestionModal").onclick = closeQuestionModal;
 $("#questionModalBg").onclick = closeQuestionModal;
 $("#questionSearch").addEventListener("input", () => { clearTimeout(window._qs); window._qs = setTimeout(loadQuestions, 180); });
@@ -1254,9 +1636,14 @@ $("#customQuestion").addEventListener("input", () => {
   $("#customQuestionHint").textContent = `至少 5 个字符（当前 ${$("#customQuestion").value.length} 个）`;
   $("#customQuestionHint").classList.toggle("bad", $("#customQuestion").value.trim().length < 5);
 });
-$("#stopBtn").onclick = () => {
-  loadingAbort?.abort();
-  addSystemToast("已取消当前请求");
+$("#stopBtn").onclick = async () => {
+  const job = currentJobPid ? jobs[currentJobPid] : null;
+  if (job && ["queued", "running"].includes(job.status)) {
+    try {
+      await apiCancelJob(job.job_id);
+      addSystemToast("已请求取消，正在停止…");
+    } catch { addSystemToast("取消失败，请稍后重试"); }
+  }
 };
 document.addEventListener("keydown", event => {
   if (event.key !== "Escape") return;
@@ -1293,7 +1680,7 @@ window.addEventListener("unhandledrejection", e => {
 });
 
 /* ================= 启动 ================= */
-/* 首页逻辑：始终先显示视频欢迎界面；已有历史项目时提供「继续已有研究」入口跳转工作台 */
+/* 首页逻辑：首次进入先显示欢迎界面；刷新时恢复上次查看的项目与运行中的任务 */
 function enterWorkspace() {
   const projects = projectList();
   const target = projects.find(p => latestRoundOf(p)); // 跳过正在生成的占位条目
@@ -1301,10 +1688,11 @@ function enterWorkspace() {
     addSystemToast("暂无已完成的研究，请先开始一项研究");
     return;
   }
-  switchProject(target.question);
+  switchProject(target.project_id);
 }
 async function init() {
   setWorkspaceMode(false);
+  setSidebarCollapsed(loadSidebarCollapsed());
   animateShell();
   setupWelcomeScene();
   animateWelcome();
@@ -1320,27 +1708,49 @@ async function init() {
     $("#footerStatus").style.background = "#c26a5c";
   }
 
-  // 恢复历史项目（本地持久化 + 服务端快照合并归档；不直接渲染工作台——首页始终先显示欢迎界面）
+  // 恢复本地历史 + 服务端快照合并归档
   historyStore = loadHistoryStore();
   deletedKeys = loadDeletedKeys();
   try {
     const res = await apiFetch("/api/snapshots", {}, 8000);
     const items = (res && res.data) || [];
     // 被用户删除的问题打上墓碑，刷新时不再从后端重新导入
-    items.forEach(s => { if (s && s.round && !deletedKeys.has(s.question)) upsertSnapshot(s); });
-    // 后端当前研究 = 时间戳最新的快照对应的问题
-    if (items.length) {
-      const latest = items.slice().sort((a, b) => String(b.timestamp || "").localeCompare(String(a.timestamp || "")))[0];
-      activeQuestion = latest.question;
-      appStatus = "ready";
-    }
+    items.forEach(s => {
+      if (s && s.round && !deletedKeys.has(snapshotProjectId(s)) && !deletedKeys.has(s.question)) upsertSnapshot(s);
+    });
   } catch {
     // 服务端不可用时仍展示本地历史
-    if (projectList().length) appStatus = "ready";
   }
-  renderHistoryList();
 
-  // 历史入口放在问题弹窗里（首页保持极简：视频 + 标题 + 一个按钮）
+  // 恢复刷新前仍在运行的任务（真实阶段轮询 + running 占位）
+  try {
+    const jobsRes = await apiFetch("/api/jobs", {}, 8000);
+    (jobsRes?.data || []).forEach(j => {
+      if (!j || !j.project_id) return;
+      j.round = j.round_label || j.round; // 后端字段 round_label → 前端统一用 round
+      jobs[j.project_id] = j;
+      const q = j.question;
+      if (historyStore[j.project_id]) {
+        historyStore[j.project_id].running = true;
+        historyStore[j.project_id].round = j.round_label;
+        historyStore[j.project_id].question = q;
+      } else if (!deletedKeys.has(j.project_id) && !deletedKeys.has(q)) {
+        historyStore[j.project_id] = { question: q, rounds: {}, updatedAt: new Date().toISOString(), running: true, project_id: j.project_id, round: j.round_label };
+      }
+      startPolling(j);
+    });
+    saveHistoryStore();
+    renderHistoryList();
+  } catch { /* 恢复失败不阻塞 */ }
+
+  // 刷新恢复：跳回上次查看的项目（生成中的会显示其 loading 卡片）
+  const viewKey = loadViewKey();
+  if (viewKey && historyStore[viewKey]) {
+    switchProject(viewKey);
+  } else if (viewKey) {
+    const migratedView = projectList().find(p => p.question === viewKey);
+    if (migratedView) switchProject(migratedView.project_id);
+  }
 
   // 视频自动播放兜底：部分浏览器 autoplay 属性不生效时显式触发
   const video = document.querySelector(".welcome-scene-video");

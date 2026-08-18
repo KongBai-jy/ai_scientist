@@ -37,6 +37,7 @@ from services.job_manager import (
     RoundLimitError,
 )
 from models.database import init_db
+from services.paper_search_service import PaperSearchService
 
 # 加载项目根目录的 .env
 import sys
@@ -86,13 +87,22 @@ class RunRequest(BaseModel):
     feedback: Optional[str] = Field(None, description="专家反馈（迭代时传入）")
     initial_round: str = Field("V1", description="轮次标签")
     project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
+    auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理）")
 
 
 class FeedbackRequest(BaseModel):
     question: str = Field(..., min_length=5)
     feedback: str = Field(..., min_length=3)
     current_round: str = Field(..., pattern=r"^V[1-3]$")
-    project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
+    auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理）")
+
+
+class SearchPapersRequest(BaseModel):
+    """在线文献检索请求（基于 arXiv API）"""
+    query: str = Field(..., min_length=2, description="搜索关键词（建议英文）")
+    max_results: int = Field(5, ge=1, le=20, description="返回数")
+    ingest: bool = Field(True, description="是否自动写入 Chroma（默认是）")
+    dedupe: bool = Field(True, description="是否去重（默认是）")
 
 
 class ChartResponse(BaseModel):
@@ -116,7 +126,7 @@ async def root():
     }
 
 
-def _enqueue(question: str, round_label: str, feedback=None, project_id=None):
+def _enqueue(question: str, round_label: str, feedback=None, project_id=None, auto_search_papers: bool = False):
     """创建后台任务并提交到线程池，返回 JobRecord。
 
     流水线在 worker 线程执行（不阻塞事件循环）；通过 progress_callback_for /
@@ -137,6 +147,7 @@ def _enqueue(question: str, round_label: str, feedback=None, project_id=None):
             project_id=job.project_id,
             progress_callback=progress_callback_for(job),
             cancel_check=cancel_check_for(job),
+            auto_search_papers=auto_search_papers,
         )
 
     submit_job(job, run_fn)
@@ -159,6 +170,7 @@ async def run_pipeline(request: RunRequest):
         round_label=round_label,
         feedback=request.feedback,
         project_id=request.project_id,
+        auto_search_papers=request.auto_search_papers,
     )
     logger.info("已入队任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
     return {
@@ -184,6 +196,7 @@ async def submit_feedback(request: FeedbackRequest):
         round_label=round_label,
         feedback=request.feedback,
         project_id=request.project_id,
+        auto_search_papers=request.auto_search_papers,
     )
     logger.info("已入队迭代任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
     return {
@@ -237,6 +250,59 @@ async def list_snapshots(project_id: Optional[str] = None):
     else:
         data = get_all_snapshots()
     return {"success": True, "data": data}
+
+
+@app.post("/api/search-papers")
+async def search_papers(request: SearchPapersRequest):
+    """在线检索 arXiv 论文，可选自动写入 Chroma 向量库"""
+    try:
+        svc = PaperSearchService()
+        if request.ingest:
+            result = svc.search_and_ingest(
+                query=request.query,
+                max_results=request.max_results,
+                dedupe=request.dedupe,
+            )
+            return {
+                "success": True,
+                "data": {
+                    "query": result["query"],
+                    "retrieved": result["retrieved"],
+                    "ingested": result["ingested"],
+                    "skipped": result["skipped"],
+                    "papers": result["papers"],
+                },
+            }
+        else:
+            # dry-run：仅检索不入库
+            papers = svc.search(
+                query=request.query,
+                max_results=request.max_results,
+            )
+            return {
+                "success": True,
+                "data": {
+                    "query": request.query,
+                    "retrieved": len(papers),
+                    "ingested": 0,
+                    "skipped": 0,
+                    "papers": [
+                        {
+                            "title": p.title,
+                            "year": p.year,
+                            "source": p.source,
+                            "arxiv_id": p.arxiv_id,
+                            "doi": p.doi,
+                            "url": p.url,
+                            "abstract": p.abstract[:300],
+                        }
+                        for p in papers
+                    ],
+                },
+            }
+    except Exception as e:
+        logger.error(f"在线文献检索失败: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 @app.get("/api/chart/overall")

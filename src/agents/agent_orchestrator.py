@@ -198,6 +198,7 @@ def run_full_pipeline(
     project_id: Optional[str] = None,
     progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
     cancel_check: Optional[Callable[[], bool]] = None,
+    auto_search_papers: bool = False,
 ) -> Dict[str, Any]:
     """
     执行完整流水线
@@ -241,116 +242,147 @@ def run_full_pipeline(
         else:
             logger.info(f"上一轮 {prev_round_label} 快照不存在，本轮 Scientist 不参考历史评审")
 
-    # Step 1: Explorer
-    logger.info("Step 1: 探索者执行中...")
-    if progress_callback:
-        progress_callback("explorer", 15)
-    _check_cancel()
-    explorer_result = explore(question)
+    # ====== 自动检索 arXiv 文献入库（可选）======
+    # 策略 B：pipeline 开始前快照现有 arxiv_id 集合，结束后精确清理本次塞入的文献
+    _paper_svc = None
+    _pre_arxiv_ids: set = set()
+    if auto_search_papers:
+        try:
+            from services.paper_search_service import PaperSearchService
+            _paper_svc = PaperSearchService()
+            _pre_arxiv_ids = _paper_svc.get_existing_arxiv_ids()
+            ingest_result = _paper_svc.search_and_ingest(question, max_results=5)
+            logger.info(
+                f"📚 自动检索入库: 检索 {ingest_result.get('retrieved', 0)} 篇, "
+                f"入库 {ingest_result.get('ingested', 0)} 篇"
+            )
+        except Exception as e:
+            logger.warning(f"自动检索文献失败，跳过（不影响主流程）: {e}")
+            _paper_svc = None  # 标记不清理
 
-    # Step 2: Scientist
-    logger.info("Step 2: 科学家执行中...")
-    if progress_callback:
-        progress_callback("scientist", 50)
-    _check_cancel()
-    scientist_result = generate_hypotheses(
-        problem_skelton=explorer_result.problem_skelton,
-        evidence_list=[e.model_dump() for e in explorer_result.evidence_list],
-        knowledge_gaps=explorer_result.knowledge_gaps,
-        analogies=[a.model_dump() for a in explorer_result.analogies],
-        feedback=feedback,
-        prev_critic_output=prev_critic_output,
-        prev_overall_score=prev_overall_score,
-    )
-
-    # Step 3: Critic
-    logger.info("Step 3: 评审官执行中...")
-    if progress_callback:
-        progress_callback("critic", 85)
-    _check_cancel()
-    prev_scores_for_critic = None
-    if prev_critic_output:
-        prev_scores_for_critic = prev_critic_output.get("scores")
-    critic_result = critique(
-        hypotheses=[h.model_dump() for h in scientist_result.hypotheses],
-        round_label=round_label,
-        prev_scores=prev_scores_for_critic,
-    )
-
-    # Step 4: 计算综合得分
-    overall_score = calculate_overall_score(
-        critic_result.scores,
-        penalty=0.0
-    )
-
-    # 评分对比：若低于上一轮，记录警告（帮助定位迭代退化）
-    if prev_overall_score is not None and overall_score < prev_overall_score:
-        logger.warning(
-            f"⚠️ {round_label} 评分 ({overall_score}) 低于上一轮 "
-            f"({prev_overall_score})，退化 {round(prev_overall_score - overall_score, 2)} 分！"
-        )
-    elif prev_overall_score is not None:
-        improvement = round(overall_score - prev_overall_score, 2)
-        logger.info(f"📈 {round_label} 评分较上一轮提升 {improvement} 分")
-
-    # Step 5: 统计颗粒度
-    granularity_stats = calculate_granularity_stats(
-        [h.model_dump() for h in scientist_result.hypotheses]
-    )
-    granularity_score = calculate_granularity_score(granularity_stats)
-
-    # Step 6: 构建快照
-    snapshot = {
-        "round": round_label,
-        "timestamp": datetime.now().isoformat(),
-        "question": question,
-        "project_id": project_id,
-        "agent_explorer": explorer_result.model_dump(),
-        "agent_scientist": scientist_result.model_dump(),
-        "agent_critic": critic_result.model_dump(),
-        "overall_score": overall_score,
-        "granularity_score": granularity_score,
-        "human_feedback": [{"content": feedback}] if feedback else [],
-        "granularity_stats": granularity_stats,
-    }
-
-    # Step 7: 保存快照（文件 + 数据库，数据库失败不影响主流程）
-    filepath = _round_path(project_id, round_label)
-    os.makedirs(os.path.dirname(filepath), exist_ok=True)
     try:
-        with open(filepath, "w", encoding="utf-8") as f:
-            json.dump(snapshot, f, ensure_ascii=False, indent=2)
-    except Exception as file_err:
-        logger.warning(f"快照文件写入失败（不影响本次运行结果）: {file_err}")
+        # Step 1: Explorer
+        logger.info("Step 1: 探索者执行中...")
+        if progress_callback:
+            progress_callback("explorer", 15)
+        _check_cancel()
+        explorer_result = explore(question)
 
-    # 写入数据库（失败仅记录日志，不中断主流程）
-    try:
-        db = SessionLocal()
-        record = SnapshotRecord(
-            round=round_label,
-            question=question,
-            overall_score=overall_score,
-            explorer_output=explorer_result.model_dump(),
-            scientist_output=scientist_result.model_dump(),
-            critic_output=critic_result.model_dump(),
-            granularity_stats=granularity_stats,
-            human_feedback=[{"content": feedback}] if feedback else []
+        # Step 2: Scientist
+        logger.info("Step 2: 科学家执行中...")
+        if progress_callback:
+            progress_callback("scientist", 50)
+        _check_cancel()
+        scientist_result = generate_hypotheses(
+            problem_skelton=explorer_result.problem_skelton,
+            evidence_list=[e.model_dump() for e in explorer_result.evidence_list],
+            knowledge_gaps=explorer_result.knowledge_gaps,
+            analogies=[a.model_dump() for a in explorer_result.analogies],
+            feedback=feedback,
+            prev_critic_output=prev_critic_output,
+            prev_overall_score=prev_overall_score,
         )
-        db.add(record)
-        db.commit()
-        logger.info(f"   数据库快照已写入 (id={record.id})")
-    except Exception as db_err:
-        logger.warning(f"数据库快照写入失败（降级为仅保存 JSON 文件）: {db_err}")
-        if 'db' in locals():
-            db.rollback()
+
+        # Step 3: Critic
+        logger.info("Step 3: 评审官执行中...")
+        if progress_callback:
+            progress_callback("critic", 85)
+        _check_cancel()
+        prev_scores_for_critic = None
+        if prev_critic_output:
+            prev_scores_for_critic = prev_critic_output.get("scores")
+        critic_result = critique(
+            hypotheses=[h.model_dump() for h in scientist_result.hypotheses],
+            round_label=round_label,
+            prev_scores=prev_scores_for_critic,
+        )
+
+        # Step 4: 计算综合得分
+        overall_score = calculate_overall_score(
+            critic_result.scores,
+            penalty=0.0
+        )
+
+        # 评分对比：若低于上一轮，记录警告（帮助定位迭代退化）
+        if prev_overall_score is not None and overall_score < prev_overall_score:
+            logger.warning(
+                f"⚠️ {round_label} 评分 ({overall_score}) 低于上一轮 "
+                f"({prev_overall_score})，退化 {round(prev_overall_score - overall_score, 2)} 分！"
+            )
+        elif prev_overall_score is not None:
+            improvement = round(overall_score - prev_overall_score, 2)
+            logger.info(f"📈 {round_label} 评分较上一轮提升 {improvement} 分")
+
+        # Step 5: 统计颗粒度
+        granularity_stats = calculate_granularity_stats(
+            [h.model_dump() for h in scientist_result.hypotheses]
+        )
+        granularity_score = calculate_granularity_score(granularity_stats)
+
+        # Step 6: 构建快照
+        snapshot = {
+            "round": round_label,
+            "timestamp": datetime.now().isoformat(),
+            "question": question,
+            "project_id": project_id,
+            "agent_explorer": explorer_result.model_dump(),
+            "agent_scientist": scientist_result.model_dump(),
+            "agent_critic": critic_result.model_dump(),
+            "overall_score": overall_score,
+            "granularity_score": granularity_score,
+            "human_feedback": [{"content": feedback}] if feedback else [],
+            "granularity_stats": granularity_stats,
+        }
+
+        # Step 7: 保存快照（文件 + 数据库，数据库失败不影响主流程）
+        filepath = _round_path(project_id, round_label)
+        os.makedirs(os.path.dirname(filepath), exist_ok=True)
+        try:
+            with open(filepath, "w", encoding="utf-8") as f:
+                json.dump(snapshot, f, ensure_ascii=False, indent=2)
+        except Exception as file_err:
+            logger.warning(f"快照文件写入失败（不影响本次运行结果）: {file_err}")
+
+        # 写入数据库（失败仅记录日志，不中断主流程）
+        try:
+            db = SessionLocal()
+            record = SnapshotRecord(
+                round=round_label,
+                question=question,
+                overall_score=overall_score,
+                explorer_output=explorer_result.model_dump(),
+                scientist_output=scientist_result.model_dump(),
+                critic_output=critic_result.model_dump(),
+                granularity_stats=granularity_stats,
+                human_feedback=[{"content": feedback}] if feedback else []
+            )
+            db.add(record)
+            db.commit()
+            logger.info(f"   数据库快照已写入 (id={record.id})")
+        except Exception as db_err:
+            logger.warning(f"数据库快照写入失败（降级为仅保存 JSON 文件）: {db_err}")
+            if 'db' in locals():
+                db.rollback()
+        finally:
+            if 'db' in locals():
+                db.close()
+
+        logger.info(f"✅ {round_label} 完成，综合得分: {overall_score}")
+        logger.info(f"   颗粒度: L1={granularity_stats['L1']}, L2={granularity_stats['L2']}, L3={granularity_stats['L3']}")
+
+        return snapshot
     finally:
-        if 'db' in locals():
-            db.close()
-
-    logger.info(f"✅ {round_label} 完成，综合得分: {overall_score}")
-    logger.info(f"   颗粒度: L1={granularity_stats['L1']}, L2={granularity_stats['L2']}, L3={granularity_stats['L3']}")
-
-    return snapshot
+        # ====== 精确清理本次塞入的临时文献（策略 B）======
+        # 即使 pipeline 失败/取消也执行清理，避免污染长期知识库
+        if _paper_svc is not None:
+            try:
+                post_arxiv_ids = _paper_svc.get_existing_arxiv_ids()
+                new_ids = post_arxiv_ids - _pre_arxiv_ids
+                if new_ids:
+                    cleaned = _paper_svc.cleanup_by_arxiv_ids(list(new_ids))
+                    logger.info(f"🧹 已清理本次临时文献 {cleaned}/{len(new_ids)} 篇")
+            except Exception as e:
+                logger.warning(f"清理临时文献失败: {e}")
 
 
 def iterate_with_feedback(
@@ -360,6 +392,7 @@ def iterate_with_feedback(
     project_id: Optional[str] = None,
     progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
     cancel_check: Optional[Callable[[], bool]] = None,
+    auto_search_papers: bool = False,
 ) -> Dict[str, Any]:
     """
     在人在回路反馈后执行迭代
@@ -376,6 +409,7 @@ def iterate_with_feedback(
         project_id=project_id,
         progress_callback=progress_callback,
         cancel_check=cancel_check,
+        auto_search_papers=auto_search_papers,
     )
 
 

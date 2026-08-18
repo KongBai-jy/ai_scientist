@@ -309,6 +309,7 @@ function applyJobStatus(d) {
     proj.project_id = pid;
     proj.round = d.round_label || proj.round;
     proj.running = d.status === "running" || d.status === "queued";
+    if (!proj.run_started_at && d.created_at) proj.run_started_at = d.created_at;
   }
   if (d.status === "done") {
     onJobFinished(d);
@@ -358,13 +359,18 @@ function showLoading(roundLabel, projectId, job) {
   </div>`;
   animateIn($("#loadingWrap"), { y: 16, duration: .45 });
 
-  const startedAt = Date.now();
+  const projectStartedAt = historyStore[projectId]?.run_started_at;
+  const startedAt = [job?.created_at, projectStartedAt, job?.started_at]
+    .map(value => value ? new Date(value).getTime() : NaN)
+    .find(value => Number.isFinite(value)) || Date.now();
   const elapsedEl = $("#loadingElapsed");
   stopLoadingAnim();
-  loadingStageTimer = setInterval(() => {
-    const sec = Math.floor((Date.now() - startedAt) / 1000);
+  const updateElapsed = () => {
+    const sec = Math.max(0, Math.floor((Date.now() - startedAt) / 1000));
     elapsedEl.textContent = `${String(Math.floor(sec / 60)).padStart(2, "0")}:${String(sec % 60).padStart(2, "0")}`;
-  }, 1000);
+  };
+  updateElapsed();
+  loadingStageTimer = setInterval(updateElapsed, 1000);
 
   // 应用已知阶段（排队中或已有真实 stage）
   updateLoadingStage(job || { status: "queued" });
@@ -1149,21 +1155,25 @@ function buildWaterfallChart(d) {
   if (!el) return;
   if (!d || !d.steps?.length) { el.innerHTML = `<div class="chart-empty">至少需要两轮数据（V1→V2 迭代后生成）</div>`; return; }
   const labels = [d.steps[0].from_round, ...d.steps.map(s => s.to_round)];
-  const totals = [d.start_score, ...d.steps.map(s => Math.round((d.start_score + (s.delta || 0)) * 100) / 100)];
-  const helper = [], values = [];
-  d.steps.forEach((s, i) => {
-    values.push(Number(((s.delta || 0)).toFixed(2)));
-    helper.push(totals[i] - Math.max(0, s.delta || 0));
+  const helper = [0];
+  const values = [{ value: Number(d.start_score.toFixed(2)), total: Number(d.start_score.toFixed(2)), isStart: true }];
+  let runningTotal = Number(d.start_score) || 0;
+  d.steps.forEach(s => {
+    const delta = Number(s.delta) || 0;
+    const nextTotal = Math.round((runningTotal + delta) * 100) / 100;
+    helper.push(delta >= 0 ? runningTotal : nextTotal);
+    values.push({ value: Math.abs(delta), delta, total: nextTotal });
+    runningTotal = nextTotal;
   });
-  values.push(Number(d.end_score.toFixed(2)));
-  helper.push(0);
   chartBase("chartWaterfall", {
     tooltip: {
       trigger: "axis", axisPointer: { type: "shadow" },
       formatter: params => {
         const p = params.find(x => x.seriesName === "增量");
         if (!p) return "";
-        return `${p.name}<br/>得分变化：${p.value > 0 ? "+" : ""}${p.value}`;
+        const item = p.data || {};
+        if (item.isStart) return `${p.name}<br/>起始得分：${item.total}`;
+        return `${p.name}<br/>得分变化：${item.delta > 0 ? "+" : ""}${item.delta}<br/>当前得分：${item.total}`;
       },
     },
     grid: { left: 38, right: 18, top: 22, bottom: 26 },
@@ -1171,7 +1181,14 @@ function buildWaterfallChart(d) {
     yAxis: { type: "value", min: 0, max: 10, ...CHART_AXIS, splitLine: CHART_SPLIT },
     series: [
       { name: "基座", type: "bar", stack: "wf", data: helper, itemStyle: { color: "transparent" }, emphasis: { itemStyle: { color: "transparent" } }, tooltip: { show: false } },
-      { name: "增量", type: "bar", stack: "wf", data: values, barMaxWidth: 44, label: { show: true, position: "top", fontSize: 10, color: "#5c6b68" }, itemStyle: { color: p => (p.value >= 0 ? "#4fa99e" : "#c26a5c") } },
+      {
+        name: "增量", type: "bar", stack: "wf", data: values, barMaxWidth: 44,
+        label: {
+          show: true, position: "top", fontSize: 10, color: "#5c6b68",
+          formatter: p => p.data.isStart ? p.data.total : `${p.data.delta > 0 ? "+" : ""}${p.data.delta}`,
+        },
+        itemStyle: { color: p => (p.data.isStart || p.data.delta >= 0 ? "#4fa99e" : "#c26a5c") },
+      },
     ],
   });
 }
@@ -1348,6 +1365,10 @@ function onJobError(d) {
     showError(d.error || "研究流程出错", {
       retry: () => {
         const fromRound = prevJob?.from_round || "V1";
+        if (historyStore[pid]) {
+          historyStore[pid].run_started_at = new Date().toISOString();
+          saveHistoryStore();
+        }
         showLoading(round, pid, null);
         enqueueJob(q, fromRound, feedback, pid).catch(e2 => showError(e2.message || "重试失败"));
       },
@@ -1388,6 +1409,7 @@ function onJobCancelled(d) {
 /* 提交任务到后端并开始轮询；jobs 与 historyStore 占位同步更新 */
 function enqueueJob(question, round, feedback, projectId) {
   return apiCreateJob(question, feedback, round, projectId).then(d => {
+    const runStartedAt = historyStore[d.project_id]?.run_started_at || new Date().toISOString();
     const job = {
       job_id: d.job_id,
       project_id: d.project_id,
@@ -1398,6 +1420,7 @@ function enqueueJob(question, round, feedback, projectId) {
       status: "queued",
       stage: null,
       progress: null,
+      created_at: runStartedAt,
     };
     jobs[d.project_id] = job;
     const proj = historyStore[d.project_id];
@@ -1423,11 +1446,12 @@ async function startResearch(question) {
   }
   closeQuestionModal();
   const projectId = generateProjectId();
+  const runStartedAt = new Date().toISOString();
   currentQuestion = q;
   snapshots = {};          // 新研究：清空工作区，成功后由 onJobFinished 重新赋值
   currentRound = null;
   // 点「开始研究」的瞬间就在历史档案里创建「研究中」条目（失败/取消时自动移除）
-  historyStore[projectId] = { question: q, rounds: {}, updatedAt: new Date().toISOString(), running: true, project_id: projectId, round: "V1" };
+  historyStore[projectId] = { question: q, rounds: {}, updatedAt: runStartedAt, run_started_at: runStartedAt, running: true, project_id: projectId, round: "V1" };
   deletedKeys.delete(projectId);
   saveHistoryStore();
   saveDeletedKeys();
@@ -1463,6 +1487,8 @@ async function submitFeedback() {
   if (!fromRound || fromRound === "V3") return;
   const nextRound = `V${Number(fromRound[1]) + 1}`; // 仅用于展示「正在生成 Vx」
   const question = currentQuestion;
+  proj.run_started_at = new Date().toISOString();
+  saveHistoryStore();
   showLoading(nextRound, proj.project_id, null);
   saveViewKey();
   try {

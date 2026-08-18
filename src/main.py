@@ -1,8 +1,3 @@
-"""
-FastAPI 服务入口
-提供 REST API 供前端调用
-"""
-
 import os
 import logging
 from pathlib import Path
@@ -103,6 +98,7 @@ class SearchPapersRequest(BaseModel):
     max_results: int = Field(5, ge=1, le=20, description="返回数")
     ingest: bool = Field(True, description="是否自动写入 Chroma（默认是）")
     dedupe: bool = Field(True, description="是否去重（默认是）")
+    full_text: bool = Field(False, description="是否下载 PDF 全文并切分入库（默认只入库摘要）")
 
 
 class ChartResponse(BaseModel):
@@ -262,6 +258,7 @@ async def search_papers(request: SearchPapersRequest):
                 query=request.query,
                 max_results=request.max_results,
                 dedupe=request.dedupe,
+                full_text=request.full_text,
             )
             return {
                 "success": True,
@@ -270,6 +267,7 @@ async def search_papers(request: SearchPapersRequest):
                     "retrieved": result["retrieved"],
                     "ingested": result["ingested"],
                     "skipped": result["skipped"],
+                    "mode": result["mode"],
                     "papers": result["papers"],
                 },
             }

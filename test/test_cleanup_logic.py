@@ -6,13 +6,13 @@
     3. 算 diff，精确清理本次塞入的
 
 用法:
-    python test_cleanup_logic.py "causal inference"
-    python test_cleanup_logic.py "YBCO superconductor"
+    python test/test_cleanup_logic.py "causal inference"
+    python test/test_cleanup_logic.py "YBCO superconductor"
 """
 import sys
 import os
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "src"))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 
 
 def main():

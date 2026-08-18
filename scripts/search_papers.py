@@ -6,8 +6,13 @@
     # 仅检索（不入库，dry-run）
     python scripts/search_papers.py search "causal inference" -k 5
 
-    # 检索 + 自动塞入 Chroma（带去重）
+    # 检索 + 自动塞入 Chroma（带去重，仅入库摘要）
     python scripts/search_papers.py ingest "causal inference" -k 5
+
+    # 检索 + 下载 PDF 全文 + 切分入库（每篇分多个 chunk）
+    python scripts/search_papers.py ingest "causal inference" --full-text -k 3
+
+    # 跳过去重检查
     python scripts/search_papers.py ingest "quantum entanglement" --no-dedupe
 
     # 查看当前向量库中所有论文（复用 seed_chroma 的 list 能力）
@@ -16,6 +21,8 @@
 注意:
     - 英文关键词检索效果最佳（arXiv 为英文数据库）
     - 中文问题建议先翻译成英文关键词，或直接传整句英文
+    - --full-text 模式每篇 PDF 下载+解析约 5-10 秒，比摘要模式慢
+    - PDF 解析失败的论文会自动降级为 abstract 入库
 """
 
 import sys
@@ -61,19 +68,29 @@ def cmd_ingest(args):
         query=args.query,
         max_results=args.top_k,
         dedupe=not args.no_dedupe,
+        full_text=args.full_text,
     )
+
+    mode_label = "PDF 全文" if result["mode"] == "pdf" else "摘要"
+    unit = "个 chunks" if result["mode"] == "pdf" else "篇"
 
     print("=" * 70)
     print(f"  检索关键词: {result['query']}")
+    print(f"  入库模式:  {mode_label}")
     print(f"  检索到:    {result['retrieved']} 篇")
-    print(f"  已写入:    {result['ingested']} 篇")
+    print(f"  已写入:    {result['ingested']} {unit}")
     print(f"  跳过(去重): {result['skipped']} 篇")
     print("=" * 70)
 
     if result["ingested"] > 0:
         print("\n已入库论文:")
         for p in result["papers"]:
-            print(f"  - {p['title']}  ({p['year'] or '?'})  [{p['source']}]")
+            mode_tag = p.get("mode", "?")
+            chunks = p.get("chunks", 1)
+            chunk_info = f"  [{chunks} chunks]" if result["mode"] == "pdf" and mode_tag == "pdf" else ""
+            skip_tag = "  [跳过]" if mode_tag == "skipped" else ""
+            fallback_tag = "  [降级 abstract]" if mode_tag == "abstract" and result["mode"] == "pdf" else ""
+            print(f"  - {p['title']}  ({p.get('year') or '?'})  [{p.get('source')}]{chunk_info}{skip_tag}{fallback_tag}")
         print(f"\n后续可:")
         print(f"  python scripts/seed_chroma.py list                          # 核对总数")
         print(f"  python scripts/seed_chroma.py search \"{result['query']}\"   # 测试相似度")
@@ -100,6 +117,11 @@ def main():
         "--no-dedupe",
         action="store_true",
         help="跳过去重检查（默认会基于 arxiv_id/doi 去重）",
+    )
+    p_ingest.add_argument(
+        "--full-text",
+        action="store_true",
+        help="下载 PDF 全文并切分入库（每篇分多个 chunk，默认只入库摘要）",
     )
 
     args = parser.parse_args()

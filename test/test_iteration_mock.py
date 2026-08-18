@@ -4,7 +4,7 @@ Mock 迭代测试脚本：验证质量加权颗粒度机制
 使用 V1 快照数据，分别计算 V1 和模拟 V2 的颗粒度质量得分，
 验证质量加权后分数能否在迭代中产生实际差异。
 
-运行：python test_iteration_mock.py
+运行：python test/test_iteration_mock.py
 """
 
 import json
@@ -15,7 +15,7 @@ from pathlib import Path
 
 random.seed(42)
 
-_PROJECT_ROOT = Path(__file__).resolve().parent
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
 SNAPSHOTS_PATH = os.getenv("SNAPSHOTS_PATH", str(_PROJECT_ROOT / "snapshots"))
 
 

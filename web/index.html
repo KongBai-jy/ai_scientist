@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#10161c"/>
 <title>AI Scientist · Research Workspace</title>
 <link rel="icon" href="data:,"/>
-<link rel="stylesheet" href="/static/styles.css?v=20260818-v6"/>
+<link rel="stylesheet" href="/static/styles.css?v=20260824-v7"/>
 <link rel="stylesheet" href="/static/workspace.css?v=20260818-v21"/>
 </head>
 <body>
@@ -81,6 +81,7 @@
 
   <div class="composer-wrap">
     <div class="composer-box" id="composerBox">
+      <div class="suggestion-chips" id="composerChips" aria-hidden="true"></div>
       <div class="composer-prompt" id="composerPrompt">EXPERT INPUT</div>
       <textarea id="expertInput" placeholder="开始研究后，可随时在这里提出专家意见…" aria-label="专家意见" aria-describedby="composerHint" disabled></textarea>
       <div class="composer-foot"><button class="send" id="sendBtn" type="button" disabled>提交意见 <span aria-hidden="true">→</span></button></div>
@@ -100,6 +101,7 @@
   <div class="question-grid" id="questionGrid"></div>
   <div class="custom-question">
     <label for="customQuestion">或输入自定义科学问题</label>
+    <div class="suggestion-chips" id="customQuestionChips" aria-hidden="true"></div>
     <textarea id="customQuestion" rows="3" placeholder="例如：如何从观测数据中稳健地识别因果效应并排除混杂因素？" aria-label="自定义科学问题"></textarea>
     <div class="custom-question-foot">
       <span id="customQuestionHint" class="custom-hint">至少 5 个字符</span>
@@ -114,6 +116,6 @@
 
 <script src="/static/vendor/gsap.min.js?v=3.13.0"></script>
 <script src="/static/vendor/echarts.min.js?v=5.5.1"></script>
-<script src="/static/app.js?v=20260818-ai18"></script>
+<script src="/static/app.js?v=20260824-ai19"></script>
 </body>
 </html>

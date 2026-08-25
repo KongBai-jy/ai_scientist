@@ -30,7 +30,7 @@ logger = logging.getLogger(__name__)
 _ATOM_NS = "{http://www.w3.org/2005/Atom}"
 _ARXIV_NS = "{http://arxiv.org/schemas/atom}"
 
-_ARXIV_API = "https://export.arxiv.org/api/query"
+_ARXIV_API = "http://export.arxiv.org/api/query"
 
 
 @dataclass
@@ -93,11 +93,14 @@ class PaperSearchService:
         在线检索论文（基于 arXiv API）
 
         Args:
-            query: 搜索关键词（英文效果最佳，中文 arXiv 支持有限）
+            query: 搜索关键词（英文效果最佳；若为中文，将自动翻译为英文关键词）
             max_results: 最大返回数
         """
+        prepared = self._prepare_query(query)
+        if prepared != query:
+            logger.info(f"query 预处理: {query!r} → {prepared!r}")
         try:
-            return self._arxiv_search(query, max_results)
+            return self._arxiv_search(prepared, max_results)
         except Exception as e:
             logger.warning(f"arXiv 检索失败: {e}")
             return []
@@ -460,6 +463,94 @@ class PaperSearchService:
             "ingested": len(chunks),
             "skipped": False,
         }
+
+    # ============================================================
+    # Query 预处理（中文 → 英文关键词 / 字符清洗）
+    # ============================================================
+
+    @staticmethod
+    def _prepare_query(query: str) -> str:
+        """将 query 转为 arXiv 可识别的英文关键词
+
+        处理策略：
+        1. 纯 ASCII → 直接返回（去掉首尾空白）
+        2. 含中文字符 → 尝试调用 DashScope 翻译为英文关键词；失败时用简单字符清洗降级
+        """
+        q = (query or "").strip()
+        if not q:
+            return q
+
+        # 纯 ASCII / 英文 query 直接返回
+        if all(ord(c) < 128 for c in q):
+            return q
+
+        # 含中文：调用 LLM 翻译
+        translated = PaperSearchService._translate_to_english(q)
+        if translated and translated != q:
+            return translated
+
+        # 降级：移除明显的中文/标点，保留英文数字部分
+        fallback = re.sub(r"[^\w\s\-+:().,?]", " ", q)
+        fallback = re.sub(r"\s+", " ", fallback).strip()
+        return fallback or q
+
+    @staticmethod
+    def _translate_to_english(text: str) -> Optional[str]:
+        """调用 DashScope（或系统 LLM）将中文 query 翻译为 3-6 个英文关键词"""
+        try:
+            import os
+            from dotenv import load_dotenv
+            from pathlib import Path
+
+            # 加载项目根目录 .env（如果还没加载）
+            _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+            load_dotenv(_PROJECT_ROOT / ".env", override=False)
+
+            api_key = (
+                os.getenv("DASHSCOPE_API_KEY")
+                or os.getenv("DASHSCOPE_API_KEY_EMBEDDING")
+            )
+            if not api_key:
+                logger.warning("无 DASHSCOPE_API_KEY，跳过中文翻译")
+                return None
+
+            model = os.getenv("QWEN_MODEL", "qwen-plus")
+            prompt = (
+                "将下面的科学研究问题翻译成 3-6 个英文关键词短语，"
+                "这些关键词将用于 arXiv 文献检索。\n"
+                "要求：只输出关键词，用英文逗号分隔，不要其他文字。\n"
+                f"问题：{text}"
+            )
+            resp = httpx.post(
+                "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                },
+                json={
+                    "model": model,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": 0.1,
+                    "max_tokens": 128,
+                },
+                timeout=15,
+            )
+            resp.raise_for_status()
+            data = resp.json()
+            content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+            content = content.strip()
+            # 清理可能的引号、序号和末尾句号
+            content = re.sub(r"^[\d\.\)\s]+", "", content)
+            content = re.sub(r"[\"'`]", "", content)
+            content = content.rstrip(".。")
+            # 将逗号分隔符替换为空格，让 arXiv 把所有关键词作为一个联合 query
+            # 例如 "YBCO, high-temperature superconductivity" → "YBCO high-temperature superconductivity"
+            content = re.sub(r"[,，;；]", " ", content)
+            content = re.sub(r"\s+", " ", content).strip()
+            return content or None
+        except Exception as e:
+            logger.warning(f"中文翻译失败（将使用降级策略）: {e}")
+            return None
 
     # ============================================================
     # arXiv 检索

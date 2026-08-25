@@ -198,13 +198,18 @@ async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
   const externalSignal = options.signal || null;
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const res = await fetch(url, {
-      headers: { "Content-Type": "application/json", ...(options.headers || {}) },
-      ...options,
-      signal: externalSignal && window.AbortSignal?.any
-        ? window.AbortSignal.any([controller.signal, externalSignal])
-        : (externalSignal || controller.signal),
-    });
+    // 强制请求体按 UTF-8 编码发送：body 为字符串时用 TextEncoder 转 UTF-8 Uint8Array，
+    // 避免个别浏览器/代理在无 charset 时回退到 latin1 导致中文被替换为 ?
+    const fetchOpts = { ...options };
+    const baseHeaders = { "Content-Type": "application/json; charset=utf-8", ...(options.headers || {}) };
+    if (typeof fetchOpts.body === "string") {
+      fetchOpts.body = new TextEncoder().encode(fetchOpts.body);
+    }
+    fetchOpts.headers = baseHeaders;
+    fetchOpts.signal = externalSignal && window.AbortSignal?.any
+      ? window.AbortSignal.any([controller.signal, externalSignal])
+      : (externalSignal || controller.signal);
+    const res = await fetch(url, fetchOpts);
     let body = null;
     try { body = await res.json(); } catch { /* 非 JSON 响应 */ }
     if (!res.ok) {
@@ -1662,6 +1667,83 @@ $("#customQuestion").addEventListener("input", () => {
   $("#customQuestionHint").textContent = `至少 5 个字符（当前 ${$("#customQuestion").value.length} 个）`;
   $("#customQuestionHint").classList.toggle("bad", $("#customQuestion").value.trim().length < 5);
 });
+
+/* === 迭代相关问题建议 chips（输入栏自动补全） === */
+function attachSuggestionChips(textareaSelector, containerSelector, mode) {
+  const ta = $(textareaSelector);
+  const box = $(containerSelector);
+  if (!ta || !box) return;
+  let timer = null;
+  let inFlight = false;
+  let lastFocused = false;
+  let blurTimer = null;
+
+  function renderSkeleton() {
+    box.innerHTML = '<button class="suggestion-chip skeleton" type="button" disabled>…</button>'.repeat(3);
+    box.classList.add("show");
+  }
+  function clearBox() {
+    box.classList.remove("show");
+    box.innerHTML = "";
+  }
+  function appendText(text) {
+    const cur = ta.value;
+    if (!cur.trim()) {
+      ta.value = text;
+    } else if (/[\s，。！？,.!?]$/.test(cur)) {
+      ta.value = cur + text;
+    } else {
+      ta.value = cur + " " + text;
+    }
+    ta.focus();
+    ta.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+  async function fetchAndRender() {
+    if (inFlight) return;
+    inFlight = true;
+    renderSkeleton();
+    const ctx = ta.value.trim();
+    const pid = (mode === "feedback" && currentProjectKey && isBackendProjectId(currentProjectKey)) ? currentProjectKey : null;
+    try {
+      const d = await apiFetch("/api/suggest-questions", {
+        method: "POST",
+        body: JSON.stringify({ context: ctx, mode, project_id: pid, top_k: 3 }),
+      }, 12000);
+      const qs = (d && Array.isArray(d.questions) ? d.questions : []).filter(q => q && String(q).trim());
+      if (!qs.length) { clearBox(); return; }
+      box.innerHTML = qs.map(q => `<button class="suggestion-chip" type="button">${esc(q)}</button>`).join("");
+      box.classList.add("show");
+      box.querySelectorAll(".suggestion-chip").forEach((btn, i) => {
+        btn.onclick = () => appendText(qs[i]);
+      });
+    } catch {
+      clearBox();
+    } finally {
+      inFlight = false;
+    }
+  }
+
+  ta.addEventListener("focus", () => {
+    if (lastFocused) return;
+    lastFocused = true;
+    clearTimeout(blurTimer);
+    fetchAndRender();
+  });
+  ta.addEventListener("blur", () => {
+    lastFocused = false;
+    // 延迟 220ms 让 chip click 先触发
+    blurTimer = setTimeout(() => {
+      if (!lastFocused) clearBox();
+    }, 220);
+  });
+  ta.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = setTimeout(fetchAndRender, 350);
+  });
+}
+attachSuggestionChips("#expertInput", "#composerChips", "feedback");
+attachSuggestionChips("#customQuestion", "#customQuestionChips", "question");
+
 $("#stopBtn").onclick = async () => {
   const job = currentJobPid ? jobs[currentJobPid] : null;
   if (job && ["queued", "running"].includes(job.status)) {

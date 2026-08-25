@@ -578,6 +578,197 @@ def orchestrator_node(state: dict) -> dict:
         }
 
 
+# ============================================================
+# 6. 智能建议问题生成（输入框自动补全）
+# ============================================================
+
+_suggest_llm = None
+
+
+def _get_suggest_llm():
+    """懒加载建议问题生成 LLM（避免无 DASHSCOPE_API_KEY 时启动失败）"""
+    global _suggest_llm
+    if _suggest_llm is None:
+        from langchain_openai import ChatOpenAI
+        _suggest_llm = ChatOpenAI(
+            model=os.getenv("QWEN_MODEL", ""),
+            api_key=os.getenv("DASHSCOPE_API_KEY"),
+            base_url=os.getenv("DASHSCOPE_API_BASE", "https://dashscope.aliyuncs.com/compatible-mode/v1"),
+            temperature=0.5,
+            max_tokens=512,
+            timeout=30.0,
+        )
+    return _suggest_llm
+
+
+def _build_snapshot_brief(project_id: Optional[str]) -> tuple[str, str]:
+    """从最近一轮 snapshot 提取研究上下文摘要。返回 (brief, based_on)。"""
+    snaps = get_project_snapshots(project_id)
+    if not snaps:
+        return "", "context_only"
+
+    latest = snaps[-1]
+    based_on = f"snapshot:{latest.get('round', 'V?')}"
+
+    scientist_out = latest.get("agent_scientist") or {}
+    critic_out = latest.get("agent_critic") or {}
+
+    hypotheses = scientist_out.get("hypotheses") or []
+    h_brief = "\n".join(
+        f"  {i+1}. {h.get('title', '无标题')[:80]}"
+        + (f"（{h.get('plan', {}).get('L1_conceptual', '')[:60]}）"
+           if h.get('plan', {}).get('L1_conceptual') else "")
+        for i, h in enumerate(hypotheses[:3])
+    ) or "  - 无假设"
+
+    top_flaw = (critic_out.get("top_flaw") or "无")[:150]
+    missing_evs = critic_out.get("missing_evidences") or []
+    missing_brief = "\n".join(f"  - {e[:80]}" for e in missing_evs[:3]) if missing_evs else "  - 无"
+
+    scores = critic_out.get("scores") or {}
+    overall = latest.get("overall_score", 0)
+
+    brief = f"""【当前研究进展】
+- 最新轮次: {latest.get('round', 'V?')}  综合得分: {overall}
+- 五维评分: evidence={scores.get('evidence', '?')}, falsifiability={scores.get('falsifiability', '?')}, consistency={scores.get('consistency', '?')}, novelty={scores.get('novelty', '?')}, cross_domain={scores.get('cross_domain', '?')}
+- 当前假设:
+{h_brief}
+- Critic 致命缺陷: {top_flaw}
+- Critic 缺失证据:
+{missing_brief}
+"""
+    return brief, based_on
+
+
+def _build_chroma_brief(context: str) -> tuple[str, str]:
+    """冷启动兜底：用 Chroma 向量库检索 top-3 文献片段作为上下文。
+
+    无 snapshot 时调用，让 LLM 至少能基于已塞入库里的文献生成建议，
+    避免冷启动场景下建议完全无锚点。
+
+    Returns:
+        (brief, based_on)：brief 为空表示向量库也为空（连 Chroma 都没东西）
+    """
+    try:
+        from services.chroma_service import ChromaService
+    except Exception as e:
+        logger.warning(f"ChromaService 导入失败，跳过向量库兜底: {e}")
+        return "", "context_only"
+
+    # context 太短时用默认 query，避免检索命中噪声
+    query = context.strip() if len(context.strip()) >= 5 else "scientific hypothesis research method"
+
+    try:
+        svc = ChromaService()
+        results = svc.similarity_search(query, k=3)
+    except Exception as e:
+        logger.warning(f"Chroma 检索失败，跳过向量库兜底: {e}")
+        return "", "context_only"
+
+    if not results:
+        return "", "context_only"
+
+    # 拼接 brief：每条文献片段 + 来源
+    lines = []
+    for i, r in enumerate(results, 1):
+        content = (r.get("content") or "").strip()
+        if not content:
+            continue
+        # 截 200 字符避免 prompt 过长
+        if len(content) > 200:
+            content = content[:200] + "..."
+        source = (r.get("metadata") or {}).get("source", "未知来源")
+        lines.append(f"  {i}. {content}  (来源: {source})")
+
+    if not lines:
+        return "", "context_only"
+
+    brief = f"""【向量库相关文献片段】（冷启动兜底，无 snapshot 可用）
+{chr(10).join(lines)}
+"""
+    return brief, "chroma:top_3"
+
+
+def suggest_questions(
+    context: str = "",
+    mode: str = "question",
+    project_id: Optional[str] = None,
+    top_k: int = 3,
+) -> Dict[str, Any]:
+    """
+    基于当前研究上下文生成 N 条迭代相关问题。
+
+    上下文来源优先级：
+        1. 最近一轮 snapshot（hypotheses + critic 评审）
+        2. Chroma 向量库检索（冷启动兜底，无 snapshot 时用）
+        3. 仅用户前缀 + system prompt（最终兜底，向量库也为空时）
+
+    Args:
+        context: 用户已输入的前缀（可空），作为引导词让建议自然延伸
+        mode: "question"（追问方向）或 "feedback"（改进建议）
+        project_id: 项目 ID（用于读取最近 snapshot）
+        top_k: 生成数量（1-5）
+
+    Returns:
+        {questions: List[str], based_on: "snapshot:Vx" | "chroma:top_3" | "context_only" | "error"}
+    """
+    try:
+        llm = _get_suggest_llm()
+    except Exception as e:
+        logger.warning(f"建议 LLM 初始化失败: {e}")
+        return {"questions": [], "based_on": "error", "error": str(e)}
+
+    # 来源 1：最近 snapshot
+    snapshot_brief, based_on = _build_snapshot_brief(project_id)
+
+    # 来源 2（兜底）：Chroma 向量库检索
+    if not snapshot_brief:
+        snapshot_brief, based_on = _build_chroma_brief(context)
+        if snapshot_brief:
+            logger.info(f"冷启动兜底：基于 Chroma 向量库生成建议（query={context[:30]!r}）")
+
+    # 来源 3（最终兜底）：只靠 context + system prompt，brief 为空
+
+    if mode == "feedback":
+        task_desc = "用户要在反馈框输入改进建议。生成 N 条最值得提的改进方向（聚焦补证据/改方法/换视角）"
+    else:
+        task_desc = "用户要追问新问题。生成 N 条最值得继续追问的迭代相关问题（涵盖深挖证据/改进方法/跨域类比）"
+
+    context_hint = f"\n【用户已输入前缀】（建议应自然延伸此前缀）\n{context}" if context else ""
+
+    system_content = (
+        f"你是科研迭代助手。基于当前研究上下文，生成 {top_k} 条用户最可能追问的迭代相关问题。\n\n"
+        "要求：\n"
+        "1. 每条 15-40 字符，简洁直接\n"
+        "2. 涵盖不同维度：1 个深挖证据/数据，1 个改进方法/实验设计，1 个跨域类比/新视角\n"
+        "3. 直接可执行（用户点击即发送）\n"
+        "4. 仅输出 JSON 数组：[\"问题1\", \"问题2\", \"问题3\"]\n"
+        "5. 不要任何额外说明、不要 markdown 代码块、不要前后空行"
+    )
+
+    human_content = f"{snapshot_brief}{context_hint}\n\n【任务】{task_desc}\n"
+
+    try:
+        from langchain_core.messages import SystemMessage, HumanMessage
+        resp = llm.invoke([SystemMessage(content=system_content), HumanMessage(content=human_content)])
+        text = resp.content.strip()
+
+        # 容错：剥离 markdown 代码块
+        if text.startswith("```"):
+            text = re.sub(r"^```[a-z]*\n?", "", text)
+            text = re.sub(r"\n?```$", "", text).strip()
+
+        questions = json.loads(text)
+        if not isinstance(questions, list):
+            questions = []
+        questions = [q.strip() for q in questions if isinstance(q, str) and q.strip()][:top_k]
+
+        return {"questions": questions, "based_on": based_on}
+    except Exception as e:
+        logger.warning(f"建议生成失败: {e}")
+        return {"questions": [], "based_on": "error", "error": str(e)}
+
+
 def build_orchestrator_graph():
     """构建完整编排图"""
     workflow = StateGraph(OrchestratorState)

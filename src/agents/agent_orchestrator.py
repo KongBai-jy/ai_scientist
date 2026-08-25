@@ -199,6 +199,7 @@ def run_full_pipeline(
     progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
     cancel_check: Optional[Callable[[], bool]] = None,
     auto_search_papers: bool = False,
+    paper_granularity: str = "fast",
 ) -> Dict[str, Any]:
     """
     执行完整流水线
@@ -206,6 +207,9 @@ def run_full_pipeline(
     project_id: 项目隔离标识（快照写入 snapshots/{project_id}/ 子目录）。
     progress_callback: 上报当前阶段（explorer/scientist/critic）与粗略进度。
     cancel_check: 在步骤边界轮询取消标志，命中即抛 PipelineCancelled。
+    paper_granularity: arXiv 临时文献入库粒度，控制 embedding token 消耗：
+        - "fast"（默认，摘要模式）：每篇仅入标题+摘要，chunk 少、token 省约 96%
+        - "full"（严格模式）：下载 PDF 全文分块入库，证据更细但 token 消耗大
     """
     logger.info(f"=" * 60)
     logger.info(f"开始执行 {round_label}（project={project_id or 'legacy'}）")
@@ -251,10 +255,17 @@ def run_full_pipeline(
             from services.paper_search_service import PaperSearchService
             _paper_svc = PaperSearchService()
             _pre_arxiv_ids = _paper_svc.get_existing_arxiv_ids()
-            ingest_result = _paper_svc.search_and_ingest(question, max_results=5)
+            _granularity = paper_granularity if paper_granularity in ("fast", "full") else "fast"
+            _full_text = (_granularity == "full")
+            ingest_result = _paper_svc.search_and_ingest(
+                question,
+                max_results=5,
+                full_text=_full_text,
+            )
             logger.info(
                 f"📚 自动检索入库: 检索 {ingest_result.get('retrieved', 0)} 篇, "
-                f"入库 {ingest_result.get('ingested', 0)} 篇"
+                f"入库 {ingest_result.get('ingested', 0)} 篇 "
+                f"(粒度={_granularity}, full_text={_full_text})"
             )
         except Exception as e:
             logger.warning(f"自动检索文献失败，跳过（不影响主流程）: {e}")
@@ -393,6 +404,7 @@ def iterate_with_feedback(
     progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
     cancel_check: Optional[Callable[[], bool]] = None,
     auto_search_papers: bool = False,
+    paper_granularity: str = "fast",
 ) -> Dict[str, Any]:
     """
     在人在回路反馈后执行迭代
@@ -410,6 +422,7 @@ def iterate_with_feedback(
         progress_callback=progress_callback,
         cancel_check=cancel_check,
         auto_search_papers=auto_search_papers,
+        paper_granularity=paper_granularity,
     )
 
 

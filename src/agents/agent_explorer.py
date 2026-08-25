@@ -95,6 +95,11 @@ SYSTEM_PROMPT = """你是一位顶尖的科学探索者，擅长解构复杂科�
 ## 约束
 - 每条证据必须绑定 source，缺失则视为无效
 - 若本地文献不足，必须利用跨域类比补全，不允许返回空列表
+
+## 语言要求（强制）
+- 所有输出 JSON 字段（problem_skelton、claim、knowledge_gaps、phenomenon、mapping_relation 等）**必须使用中文**
+- 允许保留的英文仅限：专有名词（如 YBCO、Riemann hypothesis、DNA、CRISPR、arXiv 编号、DOI、学科标准术语）、文献来源（source）、论文标题与作者名
+- 若证据片段为英文，请在 claim 中用中文转述其核心含义，保留必要的英文术语
 """
 
 

@@ -1,7 +1,7 @@
 """
 内置种子文献数据（首次启动自动初始化知识库用）
 
-与 scripts/seed_chroma.py 共用同一数据源；
+提供跨域类比推理的种子文献与 scripts/seed_chroma.py 共用同一数据源；
 自定义文献请编辑本文件的 DEFAULT_SEED_DATA。
 每条数据字段:
   content: 文献正文片段（必填，不能为空）

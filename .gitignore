@@ -39,7 +39,7 @@ ENV/
 .env.staging
 
 # --- 向量数据库（Chroma）持久化数据 ---
-data/chroma_db/
+data/chroma_db_backup_v1/
 data/*.sqlite3
 data/*.duckdb
 

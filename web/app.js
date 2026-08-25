@@ -25,7 +25,8 @@ const DIM_LABELS = {
   novelty: "新颖度", cross_domain: "跨域适配度",
 };
 const DIM_ORDER = ["evidence", "falsifiability", "consistency", "novelty", "cross_domain"];
-const SAMPLE_QUESTIONS = [
+// 兜底示例（后端 /api/questions 不可用时使用）
+const FALLBACK_QUESTIONS = [
   { id: 1, category: "高温超导", title: "如何提升 YBCO 体系的超导转变温度(Tc)？", summary: "基于氧含量调控、高压诱导与人工钉扎中心的证据链，探索 CuO2 面结构与 Tc 的关系", q: "关于高温超导材料的研究：如何提升 YBCO 体系的超导转变温度(Tc)？" },
   { id: 2, category: "统计物理", title: "重整化群如何统一描述相变临界行为？", summary: "从 Onsager 二维伊辛模型严格解到 Wilson RG 理论，探索临界指数普适类", q: "重整化群方法如何统一描述不同体系相变的临界行为？" },
   { id: 3, category: "神经科学", title: "神经元雪崩的临界性是否优化大脑信息处理？", summary: "基于 Beggs & Plenz 的功率律雪崩证据，探索临界态与计算能力的关系", q: "神经元雪崩现象中的临界性如何支撑大脑信息处理的最优化？" },
@@ -35,6 +36,41 @@ const SAMPLE_QUESTIONS = [
   { id: 7, category: "统计物理", title: "Onsager 严格解如何约束二维相变理论？", summary: "二维伊辛模型严格解与相变普适类的关系", q: "Onsager 对二维伊辛模型的严格解如何约束二维体系的相变理论？" },
   { id: 8, category: "因果推断", title: "后门准则如何指导调整集选择？", summary: "Pearl 因果图模型中的后门准则与混杂因素控制", q: "Pearl 因果图模型中的后门准则如何指导调整集的选择以消除混杂偏差？" },
 ];
+// 当前生效的问题列表（默认兜底，弹窗打开时尝试从后端拉取 Science 125 动态问题）
+let sampleQuestions = FALLBACK_QUESTIONS;
+let dynamicQuestionsLoaded = false;
+
+// 拉取后端从 Science_125 文献提取的动态问题；成功后替换 sampleQuestions 并重渲染
+async function loadDynamicQuestions() {
+  if (dynamicQuestionsLoaded) return;
+  dynamicQuestionsLoaded = true; // 只尝试一次，失败则本次会话沿用兜底
+  try {
+    const d = await apiFetch("/api/questions", { method: "GET" });
+    const list = (d && d.questions) || [];
+    if (Array.isArray(list) && list.length) {
+      sampleQuestions = list.map(x => ({
+        id: x.id,
+        category: x.category || "未分类",
+        title: x.question,
+        summary: "Science 125 前沿科学问题（Science, 2025）",
+        q: x.question,
+      }));
+      questionPage = 1;
+      rebuildCategoryOptions();
+      loadQuestions();
+    }
+  } catch { /* 后端不可用：沿用兜底示例 */ }
+}
+
+// 根据当前问题列表重建领域筛选下拉框
+function rebuildCategoryOptions() {
+  const select = $("#questionCategory");
+  if (!select) return;
+  const cats = ["全部", ...new Set(sampleQuestions.map(x => x.category))];
+  const prev = select.value;
+  select.innerHTML = cats.map(c => `<option>${esc(c)}</option>`).join("");
+  if (cats.includes(prev)) select.value = prev;
+}
 
 /* ================= 状态 ================= */
 let snapshots = {};            // {V1: snapshot, ...}（当前查看项目的轮次）
@@ -242,16 +278,20 @@ async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
   }
 }
 /* 提交任务：后台执行，立即返回 job_id / project_id / round_label */
+function currentPaperGranularity() {
+  const sel = $("#paperGranularity");
+  return sel && (sel.value === "full") ? "full" : "fast";
+}
 async function apiCreateJob(question, feedback, round, projectId) {
   if (feedback) {
     return apiFetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId }),
+      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, paper_granularity: currentPaperGranularity() }),
     }, 15000);
   }
   return apiFetch("/api/run", {
     method: "POST",
-    body: JSON.stringify({ question, initial_round: round, project_id: projectId }),
+    body: JSON.stringify({ question, initial_round: round, project_id: projectId, paper_granularity: currentPaperGranularity() }),
   }, 15000);
 }
 async function apiJobStatus(jobId) {
@@ -1521,26 +1561,56 @@ async function submitFeedback() {
 }
 
 /* ================= 问题选择弹窗 ================= */
+const QUESTION_PAGE_SIZE = 8; // 每页显示题目数
+let questionPage = 1;          // 当前页码
+
+// 渲染分页控制条；每次筛选变化时重置到第 1 页
+function renderQuestionPagination(total, rowsCount) {
+  const totalPages = Math.max(1, Math.ceil(rowsCount / QUESTION_PAGE_SIZE));
+  if (questionPage > totalPages) questionPage = totalPages;
+  if (questionPage < 1) questionPage = 1;
+  const wrap = $("#questionPagination");
+  if (!wrap) return;
+  if (totalPages <= 1) { wrap.innerHTML = ""; return; }
+  wrap.innerHTML = `
+    <button type="button" data-pg="prev" ${questionPage === 1 ? "disabled" : ""} aria-label="上一页">‹ 上一页</button>
+    <span class="page-indicator">第 ${questionPage} / ${totalPages} 页 · 共 ${rowsCount} 题</span>
+    <button type="button" data-pg="next" ${questionPage === totalPages ? "disabled" : ""} aria-label="下一页">下一页 ›</button>`;
+  wrap.onclick = (e) => {
+    const btn = e.target.closest("button[data-pg]");
+    if (!btn || btn.disabled) return;
+    if (btn.dataset.pg === "prev") questionPage -= 1;
+    else questionPage += 1;
+    loadQuestions();
+  };
+}
+
 function loadQuestions() {
   const q = ($("#questionSearch").value || "").trim();
   const cat = $("#questionCategory").value;
-  const rows = SAMPLE_QUESTIONS.filter(x =>
+  const rows = sampleQuestions.filter(x =>
     (cat === "全部" || x.category === cat) &&
     (!q || x.title.includes(q) || x.q.includes(q) || x.category.includes(q)));
+  const totalPages = Math.max(1, Math.ceil(rows.length / QUESTION_PAGE_SIZE));
+  if (questionPage > totalPages) questionPage = totalPages;
+  if (questionPage < 1) questionPage = 1;
+  const start = (questionPage - 1) * QUESTION_PAGE_SIZE;
+  const pageRows = rows.slice(start, start + QUESTION_PAGE_SIZE);
   $("#questionCount").textContent = `找到 ${rows.length} 个示例问题 · 亦可输入自定义问题`;
-  $("#questionGrid").innerHTML = rows.map(item => `
+  $("#questionGrid").innerHTML = pageRows.map((item, i) => `
   <article class="question-card">
     <div class="qno">${esc(item.category)}</div>
     <h4>${esc(item.title)}</h4>
     <p>${esc(item.summary)}</p>
     <footer><span>示例 #${item.id}</span><button data-id="${item.id}">开始研究 →</button></footer>
   </article>`).join("");
+  renderQuestionPagination(totalPages, rows.length);
   if (!$("#questionGrid").dataset.bound) {
     $("#questionGrid").dataset.bound = "true";
     $("#questionGrid").addEventListener("click", event => {
       const button = event.target.closest("button[data-id]");
       if (!button) return;
-      const item = SAMPLE_QUESTIONS.find(x => String(x.id) === String(button.dataset.id));
+      const item = sampleQuestions.find(x => String(x.id) === String(button.dataset.id));
       if (item) startResearch(item.q).catch(err => showError(err.message || "运行失败"));
     });
   }
@@ -1562,6 +1632,7 @@ function openQuestionModal() {
   $("#overwriteWarning").style.display = Object.keys(snapshots).length ? "" : "none";
   $("#historyEntryBtn").style.display = projectList().length ? "" : "none";
   loadQuestions();
+  loadDynamicQuestions(); // 异步拉取 Science 125 动态问题（失败静默沿用兜底）
   requestAnimationFrame(() => $("#questionSearch").focus());
 }
 function closeQuestionModal() {
@@ -1656,8 +1727,8 @@ $("#sidebarToggle").onclick = () => setSidebarCollapsed(!document.querySelector(
 $("#homeBtn").onclick = returnHome;
 $("#closeQuestionModal").onclick = closeQuestionModal;
 $("#questionModalBg").onclick = closeQuestionModal;
-$("#questionSearch").addEventListener("input", () => { clearTimeout(window._qs); window._qs = setTimeout(loadQuestions, 180); });
-$("#questionCategory").onchange = loadQuestions;
+$("#questionSearch").addEventListener("input", () => { questionPage = 1; clearTimeout(window._qs); window._qs = setTimeout(loadQuestions, 180); });
+$("#questionCategory").onchange = () => { questionPage = 1; loadQuestions(); };
 $("#historySearch").addEventListener("input", renderHistoryList);
 $("#sendBtn").onclick = () => submitFeedback().catch(err => showError(err.message || "反馈处理失败"));
 $("#expertInput").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submitFeedback(); } });

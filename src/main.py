@@ -34,6 +34,7 @@ from services.job_manager import (
 )
 from models.database import init_db
 from services.paper_search_service import PaperSearchService
+from services.question_service import get_science_questions
 
 # 加载项目根目录的 .env
 import sys
@@ -122,7 +123,8 @@ class RunRequest(BaseModel):
     feedback: Optional[str] = Field(None, description="专家反馈（迭代时传入）")
     initial_round: str = Field("V1", description="轮次标签")
     project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
-    auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理）")
+    auto_search_papers: bool = Field(True, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认开启）")
+    paper_granularity: str = Field("fast", description="arXiv 文献入库粒度：fast=摘要模式(省token,默认)，full=全文模式(证据更细)")
 
 
 class FeedbackRequest(BaseModel):
@@ -130,7 +132,8 @@ class FeedbackRequest(BaseModel):
     feedback: str = Field(..., min_length=3)
     current_round: str = Field(..., pattern=r"^V[1-3]$")
     project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
-    auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理）")
+    auto_search_papers: bool = Field(True, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认开启）")
+    paper_granularity: str = Field("fast", description="arXiv 文献入库粒度：fast=摘要模式(省token,默认)，full=全文模式(证据更细)")
 
 
 class SearchPapersRequest(BaseModel):
@@ -171,7 +174,7 @@ async def root():
     }
 
 
-def _enqueue(question: str, round_label: str, feedback=None, project_id=None, auto_search_papers: bool = False):
+def _enqueue(question: str, round_label: str, feedback=None, project_id=None, auto_search_papers: bool = False, paper_granularity: str = "fast"):
     """创建后台任务并提交到线程池，返回 JobRecord。
 
     流水线在 worker 线程执行（不阻塞事件循环）；通过 progress_callback_for /
@@ -205,6 +208,7 @@ def _enqueue(question: str, round_label: str, feedback=None, project_id=None, au
             progress_callback=progress_callback_for(job),
             cancel_check=cancel_check_for(job),
             auto_search_papers=auto_search_papers,
+            paper_granularity=paper_granularity,
         )
 
     submit_job(job, run_fn)
@@ -228,6 +232,7 @@ async def run_pipeline(request: RunRequest):
         feedback=request.feedback,
         project_id=request.project_id,
         auto_search_papers=request.auto_search_papers,
+        paper_granularity=request.paper_granularity,
     )
     logger.info("已入队任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
     return {
@@ -254,6 +259,7 @@ async def submit_feedback(request: FeedbackRequest):
         feedback=request.feedback,
         project_id=request.project_id,
         auto_search_papers=request.auto_search_papers,
+        paper_granularity=request.paper_granularity,
     )
     logger.info("已入队迭代任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
     return {
@@ -362,6 +368,28 @@ async def search_papers(request: SearchPapersRequest):
     except Exception as e:
         logger.error(f"在线文献检索失败: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.get("/api/questions")
+async def questions_api():
+    """从 Chroma 的 Science_125 文献中动态提取示例问题（前端「开始研究」弹窗用）。
+
+    提取失败或向量库无该文献时返回空列表，前端回退到内置示例。
+    """
+    questions = get_science_questions()
+    return {
+        "success": True,
+        "total": len(questions),
+        "questions": [
+            {
+                "id": i + 1,
+                "category": q["category"],
+                "question": q["question"],
+                "question_en": q.get("question_en", q["question"]),
+            }
+            for i, q in enumerate(questions)
+        ],
+    }
 
 
 @app.post("/api/suggest-questions")

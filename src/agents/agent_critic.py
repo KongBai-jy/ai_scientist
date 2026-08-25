@@ -121,6 +121,11 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
 【严禁】
 - "scores": "evidence: 7.5, falsifiability: 6.0..."   —— 字符串，错误
 - 输出 JSON 数组 / 逐条假设的评审列表 —— 数组，错误；必须且只能输出一个 JSON 对象
+
+## 语言要求（强制）
+- 所有文本字段（top_flaw、counterfactual、missing_evidences、detailed_review 等）**必须使用中文**
+- 评分维度名（evidence、falsifiability、consistency、novelty、cross_domain）保持英文键名不变
+- 允许保留的英文仅限：专有名词、arXiv 编号、DOI、标准学科术语、假设的英文 ID（H1/H2/H3）
 """
 
 

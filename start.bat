@@ -12,8 +12,11 @@ for /f "tokens=5" %%P in ('netstat -ano ^| findstr /R /C:":8848 .*LISTENING"') d
     )
 )
 
-set "PYTHON_EXE=%~dp0.venv\Scripts\python.exe"
-if not exist "%PYTHON_EXE%" (
+rem 兼容 .venv（带点）与 venv（无点）两种虚拟环境命名
+set "PYTHON_EXE="
+if exist "%~dp0.venv\Scripts\python.exe" set "PYTHON_EXE=%~dp0.venv\Scripts\python.exe"
+if not defined PYTHON_EXE if exist "%~dp0venv\Scripts\python.exe" set "PYTHON_EXE=%~dp0venv\Scripts\python.exe"
+if not defined PYTHON_EXE (
     echo Project virtual environment was not found. Falling back to system Python.
     set "PYTHON_EXE=python"
 )

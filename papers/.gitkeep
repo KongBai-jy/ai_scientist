@@ -1,0 +1,11 @@
+# PDF 文献文件夹
+#
+# 存放用于构建本地知识库的 PDF 论文，使用方式：
+#   python scripts/seed_pdf.py "papers/你的文献.pdf" --source "文献来源标识"
+#
+# 示例：
+#   python scripts/seed_pdf.py "papers/125道科学问题.pdf" --source "125 Questions (Science, 2025)"
+#
+# 查看当前入库情况：
+#   python scripts/seed_chroma.py list
+#   python scripts/seed_chroma.py search "关键词"

@@ -1,0 +1,129 @@
+{
+  "problem_id": 34,
+  "problem_cn": "复活灭绝生物是否可行？",
+  "problem_en": "Is de-extinction possible?",
+  "category": "生物学",
+  "query_en": "Is de-extinction possible",
+  "query_cn": "复活灭绝生物是否可行",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:02",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2178336115",
+      "doi": "https://doi.org/10.1086/316293",
+      "title": "Correcting for the Effects of Interstellar Extinction",
+      "year": 1999,
+      "cited_by_count": 3278,
+      "relevance_score": 717.1352,
+      "authors": [
+        "E. L. Fitzpatrick"
+      ],
+      "venue": "Publications of the Astronomical Society of the Pacific",
+      "abstract": "This paper addresses the issue of how best to correct astronomical data for the wavelength‐dependent effects of Galactic interstellar extinction. The main general features of extinction from the IR through the UV are reviewed, along with the nature of observed spatial variations. The enormous range of extinction properties found in the Galaxy, particularly in the UV spectral region, is illustrated. Fortunately, there are some tight constraints on the wavelength dependence of extinction and some general correlations between extinction curve shape and interstellar environment. These relationships provide some guidance for correcting data for the effects of extinction. Several strategies for dereddening are discussed along with estimates of the uncertainties inherent in each method. In the Appendix, a new derivation of the wavelength dependence of an average Galactic extinction curve from the IR through the UV is presented, along with a new estimate of how this extinction law varies with the parameter R≡A(V)/ E ( B − V ). These curves represent the true monochromatic wavelength dependence of extinction and, as such, are suitable for dereddening IR–UV spectrophotometric data of any resolution and can be used to derive extinction relations for any photometry system.",
+      "keywords": [
+        "Extinction (optical mineralogy)",
+        "Physics",
+        "Wavelength",
+        "Astrophysics",
+        "Photometry (optics)"
+      ],
+      "url": "https://openalex.org/W2178336115",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1965372241",
+      "doi": "https://doi.org/10.1086/155591",
+      "title": "The size distribution of interstellar grains",
+      "year": 1977,
+      "cited_by_count": 3879,
+      "relevance_score": 567.4565,
+      "authors": [
+        "J. S. Mathis",
+        "William M. Rumpl",
+        "K. H. Nordsieck"
+      ],
+      "venue": "The Astrophysical Journal",
+      "abstract": "The observed interstellar extinction over the wavelength range 0.11 μm < λ < 1 μm was fitted with a very general particle size distribution of uncoated graphite, enstatite, olivine, silicon carbide, iron, and magnetite. Combinations of these materials, up to three at a time, were considered. The cosmic abundances ofthe various constituents were taken into account as constraints on the possible distributions of particle sizes. Excellent fits to the interstellar extinction, including the narrowness of the λ2160 feature, proved possible. Graphite was a necessary component of any good mixture, but it could be used with any of the other materials. The particle size distributions are roughly power law in nature, with an exponent of about -3.3 to -3.6. The size range for graphite is about 0.005 μm to about 1 μm. The size distribution for the other materials is also approximately power law in nature, with the same exponent, but there is a narrower range of sizes: about 0.025-0.25 μm, depending on the material. The number of large particles is not well determined, because they are gray. Similarly, the number of small particles is not well determined because they are in the Rayleigh limit. This power-law distribution is drastically different from an Oort-van de Hulst distribution, which is much more slowly varying for small particles but drops much faster for particles larger than average. The extinction was also fitted with spherical graphite particles plus cylinders of each of the other materials. Linear and circular polarizations were then determined for the cylinders on the assumption of Davis-Greenstein alignment. The extinction was quite satisfactory, but the linear polarization reached a maximum in the ultraviolet (about 1600 Å). This is because the mixture contains many small particles. Ifthe small particles are not elongated or aligned, the wavelength dependence of the polarization can be fitted, but the larger particles which are aligned do not provide enough polarization per magnitude of extinction. However, a fit to polarization and extinction can be achieved if the material responsible for the polarization contributes only a small part of the extinction but consists of fairly large particles and is very well aligned. Dielectric particles with coatings could also provide the polarization. Subject headings: interstellar : matter «— polarization —",
+      "keywords": [
+        "Physics",
+        "Cosmic dust",
+        "Extinction (optical mineralogy)",
+        "Power law",
+        "Astrophysics"
+      ],
+      "url": "https://openalex.org/W1965372241",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1775749144",
+      "doi": "https://doi.org/10.1016/s0021-9258(19)52451-6",
+      "title": "PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT",
+      "year": 1951,
+      "cited_by_count": 318892,
+      "relevance_score": 543.6203,
+      "authors": [
+        "OliverH. Lowry",
+        "NiraJ. Rosebrough",
+        "A. Farr",
+        "RoseJ. Randall"
+      ],
+      "venue": "Journal of Biological Chemistry",
+      "abstract": "Since 1922 when Wu proposed the use of the Folin phenol reagent for the measurement of proteins (l), a number of modified analytical procedures ut.ilizing this reagent have been reported for the determination of proteins in serum (2-G), in antigen-antibody precipitates (7-9), and in insulin (10).",
+      "keywords": [
+        "Reagent",
+        "Chemistry",
+        "Phenol",
+        "Chromatography",
+        "Organic chemistry"
+      ],
+      "url": "https://openalex.org/W1775749144",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2103791867",
+      "doi": "https://doi.org/10.1038/sj.npp.1301555",
+      "title": "Neural Mechanisms of Extinction Learning and Retrieval",
+      "year": 2007,
+      "cited_by_count": 1660,
+      "relevance_score": 488.94873,
+      "authors": [
+        "Gregory J. Quirk",
+        "Devin Mueller"
+      ],
+      "venue": "Neuropsychopharmacology",
+      "abstract": "",
+      "keywords": [
+        "Extinction (optical mineralogy)",
+        "Amygdala",
+        "Psychology",
+        "Neuroscience",
+        "Fear conditioning"
+      ],
+      "url": "https://openalex.org/W2103791867",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2145465887",
+      "doi": "https://doi.org/10.1101/lm.78804",
+      "title": "Context and Behavioral Processes in Extinction: Table 1.",
+      "year": 2004,
+      "cited_by_count": 1828,
+      "relevance_score": 482.43256,
+      "authors": [
+        "Mark E. Bouton"
+      ],
+      "venue": "Learning & Memory",
+      "abstract": "This article provides a selective review and integration of the behavioral literature on Pavlovian extinction. The first part reviews evidence that extinction does not destroy the original learning, but instead generates new learning that is especially context-dependent. The second part examines insights provided by research on several related behavioral phenomena (the interference paradigms, conditioned inhibition, and inhibition despite reinforcement). The final part examines four potential causes of extinction: the discrimination of a new reinforcement rate, generalization decrement, response inhibition, and violation of a reinforcer expectation. The data are consistent with behavioral models that emphasize the role of generalization decrement and expectation violation, but would be more so if those models were expanded to better accommodate the finding that extinction involves a context-modulated form of inhibitory learning.",
+      "keywords": [
+        "Extinction (optical mineralogy)",
+        "Generalization",
+        "Reinforcement",
+        "Psychology",
+        "Context (archaeology)"
+      ],
+      "url": "https://openalex.org/W2145465887",
+      "matched_by": "en"
+    }
+  ]
+}

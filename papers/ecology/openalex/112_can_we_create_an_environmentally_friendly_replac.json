@@ -1,0 +1,176 @@
+{
+  "problem_id": 112,
+  "problem_cn": "我们可以造出环境友好的塑料替代品吗？",
+  "problem_en": "Can we create an environmentally friendly replacement for plastics?",
+  "category": "生态学",
+  "query_en": "Can we create an environmentally friendly replacement for plastics",
+  "query_cn": "我们可以造出环境友好的塑料替代品吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:42",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4324130041",
+      "doi": "https://doi.org/10.1021/acs.chemrev.2c00644",
+      "title": "Enzymes’ Power for Plastics Degradation",
+      "year": 2023,
+      "cited_by_count": 584,
+      "relevance_score": 416.4272,
+      "authors": [
+        "Vincent Tournier",
+        "Sophie Duquesne",
+        "Frédérique Guillamot",
+        "Henri Cramail",
+        "Daniel Taton",
+        "Alain Marty",
+        "Isabelle André"
+      ],
+      "venue": "Chemical Reviews",
+      "abstract": "Plastics are everywhere in our modern way of living, and their production keeps increasing every year, causing major environmental concerns. Nowadays, the end-of-life management involves accumulation in landfills, incineration, and recycling to a lower extent. This ecological threat to the environment is inspiring alternative bio-based solutions for plastic waste treatment and recycling toward a circular economy. Over the past decade, considerable efforts have been made to degrade commodity plastics using biocatalytic approaches. Here, we provide a comprehensive review on the recent advances in enzyme-based biocatalysis and in the design of related biocatalytic processes to recycle or upcycle commodity plastics, including polyesters, polyamides, polyurethanes, and polyolefins. We also discuss scope and limitations, challenges, and opportunities of this field of research. An important message from this review is that polymer-assimilating enzymes are very likely part of the solution to reaching a circular plastic economy.",
+      "keywords": [
+        "Circular economy",
+        "Commodity chemicals",
+        "Commodity",
+        "Incineration",
+        "Scope (computer science)"
+      ],
+      "url": "https://openalex.org/W4324130041",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3009442077",
+      "doi": "https://doi.org/10.1016/j.jmrt.2020.02.090",
+      "title": "Eco-friendly concrete containing recycled plastic as partial replacement for sand",
+      "year": 2020,
+      "cited_by_count": 313,
+      "relevance_score": 337.75565,
+      "authors": [
+        "Ibrahim Almeshal",
+        "Bassam A. Tayeh",
+        "Rayed Alyousef",
+        "Hisham Alabduljabbar",
+        "Abdeliazim Mustafa Mohamed"
+      ],
+      "venue": "Journal of Materials Research and Technology",
+      "abstract": "Solid waste is one of the many factors that negatively affect the environment. Problems stem from factors such as difficulty of waste recycling and limited reuse. Plastic is an important type of solid waste with a strong environmental impact. This study aims to investigate the effects of utilising poly-ethylene terephthalate (PET) as a partial substitute for sand in concrete. The effects of this material on the physical and mechanical properties of concrete were examined. A group of six concrete mixtures containing PET was prepared as a partial substitute for sand with substitution levels 0%, 10%, 20%, 30%, 40% and 50%. Concrete was cast to determine the behaviour of fresh and hardened concrete in terms of workability, unit weight, compressive strength, flexural strength, tensile strength, pulse velocity and fire-resistant behaviour. The experimental results showed a reduction in unit weight, the sand replacement harmed the concrete mechanical properties at varying rates and proved that plastic waste can be disposed of by specific ratios and therefore, can be effectively applied in industrial usage.",
+      "keywords": [
+        "Materials science",
+        "Ultimate tensile strength",
+        "Compressive strength",
+        "Flexural strength",
+        "Reuse"
+      ],
+      "url": "https://openalex.org/W3009442077",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4384820237",
+      "doi": "https://doi.org/10.1021/acs.chemrev.2c00876",
+      "title": "A Review of Biodegradable Plastics: Chemistry, Applications, Properties, and Future Research Needs",
+      "year": 2023,
+      "cited_by_count": 508,
+      "relevance_score": 337.26794,
+      "authors": [
+        "Min Soo Kim",
+        "Hochan Chang",
+        "Lei Zheng",
+        "Qiang Yan",
+        "Brian F. Pfleger",
+        "John Klier",
+        "Kevin Michael Nelson",
+        "Erica L.‐W. Majumder",
+        "George W. Huber"
+      ],
+      "venue": "Chemical Reviews",
+      "abstract": "Environmental concerns over waste plastics’ effect on the environment are leading to the creation of biodegradable plastics. Biodegradable plastics may serve as a promising approach to manage the issue of environmental accumulation of plastic waste in the ocean and soil. Biodegradable plastics are the type of polymers that can be degraded by microorganisms into small molecules (e.g., H 2 O, CO 2, and CH 4 ). However, there are misconceptions surrounding biodegradable plastics. For example, the term “biodegradable” on product labeling can be misconstrued by the public to imply that the product will degrade under any environmental conditions. Such misleading information leads to consumer encouragement of excessive consumption of certain goods and increased littering of products labeled as “biodegradable”. This review not only provides a comprehensive overview of the state-of-the-art biodegradable plastics but also clarifies the definitions and various terms associated with biodegradable plastics, including oxo-degradable plastics, enzyme-mediated plastics, and biodegradation agents. Analytical techniques and standard test methods to evaluate the biodegradability of polymeric materials in alignment with international standards are summarized. The review summarizes the properties and industrial applications of previously developed biodegradable plastics and then discusses how biomass-derived monomers can create new types of biodegradable polymers by utilizing their unique chemical properties from oxygen-containing functional groups. The terminology and methodologies covered in the paper provide a perspective on directions for the design of new biodegradable polymers that possess not only advanced performance for practical applications but also environmental benefits.",
+      "keywords": [
+        "Biodegradation",
+        "Biodegradable polymer",
+        "Biodegradable plastic",
+        "Plastic waste",
+        "Biochemical engineering"
+      ],
+      "url": "https://openalex.org/W4384820237",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4295788330",
+      "doi": "https://doi.org/10.1039/d2gc02588d",
+      "title": "Expanding plastics recycling technologies: chemical aspects, technology status and challenges",
+      "year": 2022,
+      "cited_by_count": 592,
+      "relevance_score": 296.20956,
+      "authors": [
+        "Houqian Li",
+        "Horacio A. Aguirre‐Villegas",
+        "Robert D. Allen",
+        "Xianglan Bai",
+        "Craig H. Benson",
+        "Gregg T. Beckham",
+        "Sabrina L. Bradshaw",
+        "Jessica L. Brown",
+        "Robert C. Brown",
+        "Victor S. Cecon",
+        "Julia B. Curley",
+        "Greg W. Curtzwiler",
+        "Son Dong",
+        "Soumika Gaddameedi",
+        "John E. García",
+        "Ive Hermans",
+        "Min Soo Kim",
+        "Jiaze Ma",
+        "Lesli O. Mark",
+        "Manos Mavrikakis",
+        "Olumide O. Olafasakin",
+        "Tim A. Osswald",
+        "Konstantinos G. Papanikolaou",
+        "Harish Radhakrishnan",
+        "Marco A. Sánchez-Castillo",
+        "Kevin L. Sánchez‐Rivera",
+        "Khairun N. Tumu",
+        "Reid C. Van Lehn",
+        "Keith Vorst",
+        "Mark Mba Wright",
+        "Jiayang Wu",
+        "Ví­ctor M. Zavala",
+        "Panzheng Zhou",
+        "George W. Huber"
+      ],
+      "venue": "Green Chemistry",
+      "abstract": "This paper reviewed the entire life cycle of plastics and options for the management of plastic waste to address barriers to industrial chemical recycling and further provide perceptions on possible opportunities with such materials.",
+      "keywords": [
+        "Waste management",
+        "Chemical industry",
+        "Plastic waste",
+        "Business",
+        "Environmental science"
+      ],
+      "url": "https://openalex.org/W4295788330",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2038009999",
+      "doi": "https://doi.org/10.1002/bbb.1468",
+      "title": "Green building blocks for bio‐based plastics",
+      "year": 2014,
+      "cited_by_count": 311,
+      "relevance_score": 286.169,
+      "authors": [
+        "P.F.H. Harmsen",
+        "Martijn M. Hackmann",
+        "H.L. Bos"
+      ],
+      "venue": "Biofuels Bioproducts and Biorefining",
+      "abstract": "Abstract In this paper we investigate the possible routes to produce the most commonly used polymers from biomass. This includes vinyl polymers, polyesters, polyamides, polyurethanes, and synthetic rubbers. Also the most promising newly developed polymers that can be produced from biomass are investigated. Approximately 80% by weight of all chemicals produced by the petrochemical industry are applied in polymer materials. Producing these materials from biomass instead of fossil resources thus significantly contributes to the development of the bio‐based economy. We show that it is technically possible to produce all major bioplastics from biomass. In many cases even more than one process can be envisioned. Essential chemical building blocks involved in the bio‐based production routes are presented, including state of the art production routes and production volumes. If we assume that processing costs for bio‐based processes will lower with further development of the bio‐based technologies, feedstock costs will start to weigh more heavily on the total production costs in the future. In that respect efficient use of biomass will become more important. Building blocks with acid‐ and alcohol functionalities, such as lactic acid and succinic acid, can be well produced from biomass like sugars, since the oxygen atoms needed for these building blocks are already present in the biomass. Building blocks that can be applied in many polymer groups due to their chemical structure are promising and are expected to undergo substantial growth. We show that there are various developments on these versatile building blocks. © 2014 Society of Chemical Industry and John Wiley & Sons, Ltd",
+      "keywords": [
+        "Biomass (ecology)",
+        "Petrochemical",
+        "Raw material",
+        "Bioplastic",
+        "Chemical industry"
+      ],
+      "url": "https://openalex.org/W2038009999",
+      "matched_by": "en"
+    }
+  ]
+}

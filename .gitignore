@@ -6,22 +6,12 @@
 __pycache__/
 *.py[cod]
 *$py.class
-*.so
-*.egg
 
-# --- Python 打包产物 ---
-*.egg-info/
+# --- Python 打包产物（保留最常用）---
 *.egg
+*.egg-info/
 dist/
 build/
-eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.whl
 
 # --- 虚拟环境 ---
 .venv/
@@ -39,19 +29,19 @@ ENV/
 .env.staging
 
 # --- 向量数据库（Chroma）持久化数据 ---
-data/chroma_db/
-data/*.sqlite3
+data/chroma_db_backup_v1/
 data/*.duckdb
 
-# --- SQLite 数据库（业务库 + 临时库 + WAL/SHM 文件）---
+# --- SQLite 数据库及 WAL/SHM 文件（全局 + data 下双层覆盖）---
 *.db
 *.db-journal
 *.sqlite
 *.sqlite3
 *.sqlite-shm
 *.sqlite-wal
-data/*.db
-data/*.db-journal
+data/ai_scientist.db
+data/ai_scientist.db-wal
+data/ai_scientist.db-shm
 
 # --- 日志文件 ---
 *.log
@@ -66,9 +56,7 @@ tmp/
 temp/
 .cache/
 
-# --- 运行时快照（agent_orchestrator 写出的 V1/V2/V3 等）---
-src/snapshots/*.json
-!src/snapshots/.gitkeep
+# --- 运行时快照（agent_orchestrator 写出的 V1/V2/V3 JSON）---
 snapshots/
 
 # --- API 调试 / 临时响应文件 ---
@@ -76,7 +64,7 @@ _api_run_response.json
 _api_*_response.json
 *.response.json
 
-# --- 测试 / 覆盖率 ---
+# --- 测试 / 静态检查缓存 ---
 .pytest_cache/
 .coverage
 .coverage.*
@@ -84,20 +72,8 @@ coverage.xml
 htmlcov/
 .tox/
 .nox/
-
-# --- Python 静态检查 / 类型工具缓存 ---
 .mypy_cache/
 .ruff_cache/
-.pyre/
-.pytype/
-.dmypy.json
-dmypy.json
-
-# --- Jupyter / IPython 运行时 ---
-.ipynb_checkpoints
-.ipynb_checkpoints/
-.profile_default/
-ipython_config.py
 
 # --- IDE / 编辑器 ---
 .vscode/*
@@ -107,96 +83,13 @@ ipython_config.py
 *.swp
 *.swo
 *~
-.project
-.classpath
-.c9settings/
-.ultralisp/
 
-# --- 操作系统 ---
-Thumbs.db
-Thumbs.db:encryptable
-ehthumbs.db
-ehthumbs_vista.db
-Desktop.ini
-$RECYCLE.BIN/
+# --- 操作系统常见垃圾文件 ---
 .DS_Store
-.AppleDouble
-.LSOverride
-._*
-.Spotlight-V100
-.Trashes
+Thumbs.db
+Desktop.ini
 
-# --- Node.js（前端可能用到）---
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# --- Docker ---
-docker-compose.override.yml
-
-# --- AI/ML 模型文件 ---
-*.pt
-*.pth
-*.safetensors
-*.bin
-*.onnx
-*.ckpt
-*.h5
-*.pkl
-*.joblib
-
-# --- 大文件 / 数据集 ---
-data/raw/
-data/datasets/
-*.zip
-*.tar.gz
-*.tar
-*.rar
-*.7z
-
-# --- 进程 / 锁文件（运行时生成）---
-*.pid
-*.pid.lock
-celerybeat-schedule
-celerybeat-schedule.db
-celeryevdump.*
-
-# --- LangGraph / LangChain 运行时缓存 ---
-.langgraph/
-langgraph_cache/
-*.langgraph
-
-# --- Windows / Python 工具临时文件 ---
+# --- Windows / 通用临时文件 ---
 *.bak
 *.tmp
 *.temp
-*.orig
-*.rej
-
-# --- Trae / AI 工具本地缓存（如适用）---
-.trae/
-.aider*
-
-# --- 前端构建产物（如未来引入 web 构建）---
-web/dist/
-web/build/
-web/.vite/
-web/.turbo/
-web/.next/
-web/.nuxt/
-web/.output/
-web/stats.html
-
-# --- Tailwind / PostCSS 等前端缓存 ---
-web/.cache/
-web/node_modules/.cache/
-
-# --- Storybook / 测试快照（前端）---
-web/storybook-static/
-web/__snapshots__/*.snap
-
-# --- 数据版本控制（DVC，如启用）---
-.dvc/cache/
-.dvc/tmp/
-*.dvc.lock

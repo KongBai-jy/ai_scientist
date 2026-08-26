@@ -25,7 +25,8 @@ const DIM_LABELS = {
   novelty: "新颖度", cross_domain: "跨域适配度",
 };
 const DIM_ORDER = ["evidence", "falsifiability", "consistency", "novelty", "cross_domain"];
-const SAMPLE_QUESTIONS = [
+// 兜底示例（后端 /api/questions 不可用时使用）
+const FALLBACK_QUESTIONS = [
   { id: 1, category: "高温超导", title: "如何提升 YBCO 体系的超导转变温度(Tc)？", summary: "基于氧含量调控、高压诱导与人工钉扎中心的证据链，探索 CuO2 面结构与 Tc 的关系", q: "关于高温超导材料的研究：如何提升 YBCO 体系的超导转变温度(Tc)？" },
   { id: 2, category: "统计物理", title: "重整化群如何统一描述相变临界行为？", summary: "从 Onsager 二维伊辛模型严格解到 Wilson RG 理论，探索临界指数普适类", q: "重整化群方法如何统一描述不同体系相变的临界行为？" },
   { id: 3, category: "神经科学", title: "神经元雪崩的临界性是否优化大脑信息处理？", summary: "基于 Beggs & Plenz 的功率律雪崩证据，探索临界态与计算能力的关系", q: "神经元雪崩现象中的临界性如何支撑大脑信息处理的最优化？" },
@@ -35,6 +36,41 @@ const SAMPLE_QUESTIONS = [
   { id: 7, category: "统计物理", title: "Onsager 严格解如何约束二维相变理论？", summary: "二维伊辛模型严格解与相变普适类的关系", q: "Onsager 对二维伊辛模型的严格解如何约束二维体系的相变理论？" },
   { id: 8, category: "因果推断", title: "后门准则如何指导调整集选择？", summary: "Pearl 因果图模型中的后门准则与混杂因素控制", q: "Pearl 因果图模型中的后门准则如何指导调整集的选择以消除混杂偏差？" },
 ];
+// 当前生效的问题列表（默认兜底，弹窗打开时尝试从后端拉取 Science 125 动态问题）
+let sampleQuestions = FALLBACK_QUESTIONS;
+let dynamicQuestionsLoaded = false;
+
+// 拉取后端从 Science_125 文献提取的动态问题；成功后替换 sampleQuestions 并重渲染
+async function loadDynamicQuestions() {
+  if (dynamicQuestionsLoaded) return;
+  dynamicQuestionsLoaded = true; // 只尝试一次，失败则本次会话沿用兜底
+  try {
+    const d = await apiFetch("/api/questions", { method: "GET" });
+    const list = (d && d.questions) || [];
+    if (Array.isArray(list) && list.length) {
+      sampleQuestions = list.map(x => ({
+        id: x.id,
+        category: x.category || "未分类",
+        title: x.question,
+        summary: "Science 125 前沿科学问题（Science, 2025）",
+        q: x.question,
+      }));
+      questionPage = 1;
+      rebuildCategoryOptions();
+      loadQuestions();
+    }
+  } catch { /* 后端不可用：沿用兜底示例 */ }
+}
+
+// 根据当前问题列表重建领域筛选下拉框
+function rebuildCategoryOptions() {
+  const select = $("#questionCategory");
+  if (!select) return;
+  const cats = ["全部", ...new Set(sampleQuestions.map(x => x.category))];
+  const prev = select.value;
+  select.innerHTML = cats.map(c => `<option>${esc(c)}</option>`).join("");
+  if (cats.includes(prev)) select.value = prev;
+}
 
 /* ================= 状态 ================= */
 let snapshots = {};            // {V1: snapshot, ...}（当前查看项目的轮次）
@@ -198,13 +234,18 @@ async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
   const externalSignal = options.signal || null;
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const res = await fetch(url, {
-      headers: { "Content-Type": "application/json", ...(options.headers || {}) },
-      ...options,
-      signal: externalSignal && window.AbortSignal?.any
-        ? window.AbortSignal.any([controller.signal, externalSignal])
-        : (externalSignal || controller.signal),
-    });
+    // 强制请求体按 UTF-8 编码发送：body 为字符串时用 TextEncoder 转 UTF-8 Uint8Array，
+    // 避免个别浏览器/代理在无 charset 时回退到 latin1 导致中文被替换为 ?
+    const fetchOpts = { ...options };
+    const baseHeaders = { "Content-Type": "application/json; charset=utf-8", ...(options.headers || {}) };
+    if (typeof fetchOpts.body === "string") {
+      fetchOpts.body = new TextEncoder().encode(fetchOpts.body);
+    }
+    fetchOpts.headers = baseHeaders;
+    fetchOpts.signal = externalSignal && window.AbortSignal?.any
+      ? window.AbortSignal.any([controller.signal, externalSignal])
+      : (externalSignal || controller.signal);
+    const res = await fetch(url, fetchOpts);
     let body = null;
     try { body = await res.json(); } catch { /* 非 JSON 响应 */ }
     if (!res.ok) {
@@ -237,16 +278,20 @@ async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
   }
 }
 /* 提交任务：后台执行，立即返回 job_id / project_id / round_label */
+function currentPaperGranularity() {
+  const sel = $("#paperGranularity");
+  return sel && (sel.value === "full") ? "full" : "fast";
+}
 async function apiCreateJob(question, feedback, round, projectId) {
   if (feedback) {
     return apiFetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId }),
+      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, paper_granularity: currentPaperGranularity() }),
     }, 15000);
   }
   return apiFetch("/api/run", {
     method: "POST",
-    body: JSON.stringify({ question, initial_round: round, project_id: projectId }),
+    body: JSON.stringify({ question, initial_round: round, project_id: projectId, paper_granularity: currentPaperGranularity() }),
   }, 15000);
 }
 async function apiJobStatus(jobId) {
@@ -815,9 +860,16 @@ function renderCriticRadar() {
 }
 
 /* ================= 四个 Tab 的渲染 ================= */
+// 证据来源是否可展示：仅保留可溯源的 arXiv / openalex 在线来源，
+// 隐藏 Science_2025（本地中文浓缩库）、本地 PDF、种子锚点等其它来源。
+// 后端仍会检索 Science_2025 参与假设构建，这里只做前端展示层过滤。
+function isOnlineEvidenceSource(source) {
+  return /arxiv|openalex/i.test(String(source || ""));
+}
+
 function renderExplorer(snap) {
   const e = snap.agent_explorer || {};
-  const evidence = e.evidence_list || [];
+  const evidence = (e.evidence_list || []).filter(ev => isOnlineEvidenceSource(ev.source));
   const gaps = e.knowledge_gaps || [];
   const analogies = e.analogies || [];
   return `
@@ -1234,12 +1286,17 @@ function snapshotToMarkdown(snap, allRounds) {
   L.push(`## 一、探索者（Explorer）`, "");
   L.push(`### 问题骨架`, "", e.problem_skelton || "（未提供）", "");
   L.push(`### 证据列表`, "");
-  (e.evidence_list || []).forEach(ev => {
-    const year = evidenceYear(ev);
-    const source = ev.source || "未知";
-    const yearSuffix = year && !String(source).includes(year) ? `, ${year}` : "";
-    L.push(`- ${ev.claim}（来源：${source}${yearSuffix}）`);
-  });
+  const mdEvidence = (e.evidence_list || []).filter(ev => isOnlineEvidenceSource(ev.source));
+  if (mdEvidence.length) {
+    mdEvidence.forEach(ev => {
+      const year = evidenceYear(ev);
+      const source = ev.source || "未知";
+      const yearSuffix = year && !String(source).includes(year) ? `, ${year}` : "";
+      L.push(`- ${ev.claim}（来源：${source}${yearSuffix}）`);
+    });
+  } else {
+    L.push("- （无 arXiv / openalex 在线来源证据）");
+  }
   L.push("");
   L.push(`### 知识缺口`, "");
   (e.knowledge_gaps || []).forEach(g => L.push(`- ${g}`));
@@ -1338,6 +1395,7 @@ function onJobFinished(d) {
     setWorkspaceMode(true);
     renderWorkspace();
     refreshComposer();
+    refreshSuggestionChipsAutomatically(); // 一轮完成：直接展示推荐问题，无需点击输入栏
     document.querySelector(".chat-wrap").scrollTo({ top: 0, behavior: "auto" });
   } else {
     // 后台完成：当前不在该项目，不劫持视图，仅刷新侧栏
@@ -1516,26 +1574,56 @@ async function submitFeedback() {
 }
 
 /* ================= 问题选择弹窗 ================= */
+const QUESTION_PAGE_SIZE = 8; // 每页显示题目数
+let questionPage = 1;          // 当前页码
+
+// 渲染分页控制条；每次筛选变化时重置到第 1 页
+function renderQuestionPagination(total, rowsCount) {
+  const totalPages = Math.max(1, Math.ceil(rowsCount / QUESTION_PAGE_SIZE));
+  if (questionPage > totalPages) questionPage = totalPages;
+  if (questionPage < 1) questionPage = 1;
+  const wrap = $("#questionPagination");
+  if (!wrap) return;
+  if (totalPages <= 1) { wrap.innerHTML = ""; return; }
+  wrap.innerHTML = `
+    <button type="button" data-pg="prev" ${questionPage === 1 ? "disabled" : ""} aria-label="上一页">‹ 上一页</button>
+    <span class="page-indicator">第 ${questionPage} / ${totalPages} 页 · 共 ${rowsCount} 题</span>
+    <button type="button" data-pg="next" ${questionPage === totalPages ? "disabled" : ""} aria-label="下一页">下一页 ›</button>`;
+  wrap.onclick = (e) => {
+    const btn = e.target.closest("button[data-pg]");
+    if (!btn || btn.disabled) return;
+    if (btn.dataset.pg === "prev") questionPage -= 1;
+    else questionPage += 1;
+    loadQuestions();
+  };
+}
+
 function loadQuestions() {
   const q = ($("#questionSearch").value || "").trim();
   const cat = $("#questionCategory").value;
-  const rows = SAMPLE_QUESTIONS.filter(x =>
+  const rows = sampleQuestions.filter(x =>
     (cat === "全部" || x.category === cat) &&
     (!q || x.title.includes(q) || x.q.includes(q) || x.category.includes(q)));
+  const totalPages = Math.max(1, Math.ceil(rows.length / QUESTION_PAGE_SIZE));
+  if (questionPage > totalPages) questionPage = totalPages;
+  if (questionPage < 1) questionPage = 1;
+  const start = (questionPage - 1) * QUESTION_PAGE_SIZE;
+  const pageRows = rows.slice(start, start + QUESTION_PAGE_SIZE);
   $("#questionCount").textContent = `找到 ${rows.length} 个示例问题 · 亦可输入自定义问题`;
-  $("#questionGrid").innerHTML = rows.map(item => `
+  $("#questionGrid").innerHTML = pageRows.map((item, i) => `
   <article class="question-card">
     <div class="qno">${esc(item.category)}</div>
     <h4>${esc(item.title)}</h4>
     <p>${esc(item.summary)}</p>
     <footer><span>示例 #${item.id}</span><button data-id="${item.id}">开始研究 →</button></footer>
   </article>`).join("");
+  renderQuestionPagination(totalPages, rows.length);
   if (!$("#questionGrid").dataset.bound) {
     $("#questionGrid").dataset.bound = "true";
     $("#questionGrid").addEventListener("click", event => {
       const button = event.target.closest("button[data-id]");
       if (!button) return;
-      const item = SAMPLE_QUESTIONS.find(x => String(x.id) === String(button.dataset.id));
+      const item = sampleQuestions.find(x => String(x.id) === String(button.dataset.id));
       if (item) startResearch(item.q).catch(err => showError(err.message || "运行失败"));
     });
   }
@@ -1557,6 +1645,7 @@ function openQuestionModal() {
   $("#overwriteWarning").style.display = Object.keys(snapshots).length ? "" : "none";
   $("#historyEntryBtn").style.display = projectList().length ? "" : "none";
   loadQuestions();
+  loadDynamicQuestions(); // 异步拉取 Science 125 动态问题（失败静默沿用兜底）
   requestAnimationFrame(() => $("#questionSearch").focus());
 }
 function closeQuestionModal() {
@@ -1651,8 +1740,8 @@ $("#sidebarToggle").onclick = () => setSidebarCollapsed(!document.querySelector(
 $("#homeBtn").onclick = returnHome;
 $("#closeQuestionModal").onclick = closeQuestionModal;
 $("#questionModalBg").onclick = closeQuestionModal;
-$("#questionSearch").addEventListener("input", () => { clearTimeout(window._qs); window._qs = setTimeout(loadQuestions, 180); });
-$("#questionCategory").onchange = loadQuestions;
+$("#questionSearch").addEventListener("input", () => { questionPage = 1; clearTimeout(window._qs); window._qs = setTimeout(loadQuestions, 180); });
+$("#questionCategory").onchange = () => { questionPage = 1; loadQuestions(); };
 $("#historySearch").addEventListener("input", renderHistoryList);
 $("#sendBtn").onclick = () => submitFeedback().catch(err => showError(err.message || "反馈处理失败"));
 $("#expertInput").addEventListener("keydown", e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); submitFeedback(); } });
@@ -1662,6 +1751,93 @@ $("#customQuestion").addEventListener("input", () => {
   $("#customQuestionHint").textContent = `至少 5 个字符（当前 ${$("#customQuestion").value.length} 个）`;
   $("#customQuestionHint").classList.toggle("bad", $("#customQuestion").value.trim().length < 5);
 });
+
+/* === 迭代相关问题建议 chips（输入栏自动补全） === */
+function attachSuggestionChips(textareaSelector, containerSelector, mode) {
+  const ta = $(textareaSelector);
+  const box = $(containerSelector);
+  if (!ta || !box) return;
+  let timer = null;
+  let inFlight = false;
+  let lastFocused = false;
+  let blurTimer = null;
+
+  function renderSkeleton() {
+    box.innerHTML = '<button class="suggestion-chip skeleton" type="button" disabled>…</button>'.repeat(3);
+    box.classList.add("show");
+  }
+  function clearBox() {
+    box.classList.remove("show");
+    box.innerHTML = "";
+  }
+  function appendText(text) {
+    const cur = ta.value;
+    if (!cur.trim()) {
+      ta.value = text;
+    } else if (/[\s，。！？,.!?]$/.test(cur)) {
+      ta.value = cur + text;
+    } else {
+      ta.value = cur + " " + text;
+    }
+    ta.focus();
+    ta.dispatchEvent(new Event("input", { bubbles: true }));
+  }
+  async function fetchAndRender() {
+    if (inFlight) return;
+    inFlight = true;
+    renderSkeleton();
+    const ctx = ta.value.trim();
+    const pid = (mode === "feedback" && currentProjectKey && isBackendProjectId(currentProjectKey)) ? currentProjectKey : null;
+    try {
+      const d = await apiFetch("/api/suggest-questions", {
+        method: "POST",
+        body: JSON.stringify({ context: ctx, mode, project_id: pid, top_k: 3 }),
+      }, 12000);
+      const qs = (d && Array.isArray(d.questions) ? d.questions : []).filter(q => q && String(q).trim());
+      if (!qs.length) { clearBox(); return; }
+      const basedon = (d && d.based_on_desc) ? `<div class="suggestion-basedon">${esc(d.based_on_desc)}</div>` : "";
+      box.innerHTML = basedon + qs.map(q => `<button class="suggestion-chip" type="button">${esc(q)}</button>`).join("");
+      box.classList.add("show");
+      box.querySelectorAll(".suggestion-chip").forEach((btn, i) => {
+        btn.onclick = () => appendText(qs[i]);
+      });
+    } catch {
+      clearBox();
+    } finally {
+      inFlight = false;
+    }
+  }
+
+  ta.addEventListener("focus", () => {
+    if (lastFocused) return;
+    lastFocused = true;
+    clearTimeout(blurTimer);
+    fetchAndRender();
+  });
+  ta.addEventListener("blur", () => {
+    lastFocused = false;
+    // 延迟 220ms 让 chip click 先触发
+    blurTimer = setTimeout(() => {
+      if (!lastFocused) clearBox();
+    }, 220);
+  });
+  ta.addEventListener("input", () => {
+    clearTimeout(timer);
+    timer = setTimeout(fetchAndRender, 350);
+  });
+
+  // 暴露手动刷新器：供"一轮对话完成"后自动展示推荐问题（无需点击输入栏）
+  if (!window.__suggestRefreshers) window.__suggestRefreshers = {};
+  window.__suggestRefreshers[mode] = fetchAndRender;
+}
+/* 一轮对话完成后自动展示全部输入提示的推荐问题 */
+function refreshSuggestionChipsAutomatically() {
+  const refreshers = window.__suggestRefreshers || {};
+  Object.values(refreshers).forEach(fn => { try { fn(); } catch { /* 静默 */ } });
+}
+attachSuggestionChips("#expertInput", "#composerChips", "feedback");
+attachSuggestionChips("#customQuestion", "#customQuestionChips", "question");
+
 $("#stopBtn").onclick = async () => {
   const job = currentJobPid ? jobs[currentJobPid] : null;
   if (job && ["queued", "running"].includes(job.status)) {

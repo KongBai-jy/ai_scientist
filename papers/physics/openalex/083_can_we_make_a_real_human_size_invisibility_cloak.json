@@ -1,0 +1,148 @@
+{
+  "problem_id": 83,
+  "problem_cn": "可以制造真人大小的隐身斗篷吗？",
+  "problem_en": "Can we make a real, human-size invisibility cloak?",
+  "category": "物理学",
+  "query_en": "Can we make a real, human-size invisibility cloak",
+  "query_cn": "可以制造真人大小的隐身斗篷吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:38",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2027409326",
+      "doi": "https://doi.org/10.1038/ncomms1023",
+      "title": "Three-dimensional broadband ground-plane cloak made of metamaterials",
+      "year": 2010,
+      "cited_by_count": 565,
+      "relevance_score": 434.58527,
+      "authors": [
+        "Hui Feng",
+        "Tie Jun Cui"
+      ],
+      "venue": "Nature Communications",
+      "abstract": "Since invisibility cloaks were first suggested by transformation optics theory, there has been much work on the theoretical analysis and design of various types and a few experimental verifications at microwave and optical frequencies within two-dimensional limits. Here, we realize the first practical implementation of a fully 3D broadband and low-loss ground-plane cloak at microwave frequencies. The cloak, realized by drilling inhomogeneous holes in multi-layered dielectric plates, can conceal a 3D object located under a curved conducting plane from all viewing angles by imitating the reflection of a flat conducting plane. We also designed and realized, using non-resonant metamaterials, a high-gain lens antenna that can produce narrow-beam plane waves in the near-field region in a broad frequency band. The antenna constitutes the transmitter of the measurement system and is essential for the measurement of cloaking behaviour. Optical cloaking has already been demonstrated in two dimensions, and also in three dimensions for a limited range of angles. Now, Ma and Cui present a metamaterial-based cloaking device that can shield an object lying on the ground plane from all viewing angles at microwave frequencies.",
+      "keywords": [
+        "Cloak",
+        "Metamaterial",
+        "Optics",
+        "Cloaking",
+        "Ground plane"
+      ],
+      "url": "https://openalex.org/W2027409326",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3147384791",
+      "doi": "https://doi.org/10.1038/s41377-021-00507-8",
+      "title": "Polarization-insensitive 3D conformal-skin metasurface cloak",
+      "year": 2021,
+      "cited_by_count": 225,
+      "relevance_score": 288.9271,
+      "authors": [
+        "He‐Xiu Xu",
+        "Guangwei Hu",
+        "Yanzhao Wang",
+        "Chaohui Wang",
+        "Mingzhao Wang",
+        "Shaojie Wang",
+        "Yongjun Huang",
+        "Patrice Genevet",
+        "Wei Huang",
+        "Cheng‐Wei Qiu"
+      ],
+      "venue": "Light Science & Applications",
+      "abstract": "Electromagnetic metasurface cloaks provide an alternative paradigm toward rendering arbitrarily shaped scatterers invisible. Most transformation-optics (TO) cloaks intrinsically need wavelength-scale volume/thickness, such that the incoming waves could have enough long paths to interact with structured meta-atoms in the cloak region and consequently restore the wavefront. Other challenges of TO cloaks include the polarization-dependent operation to avoid singular parameters of composite cloaking materials and limitations of canonical geometries, e.g., circular, elliptical, trapezoidal, and triangular shapes. Here, we report for the first time a conformal-skin metasurface carpet cloak, enabling to work under arbitrary states of polarization (SOP) at Poincaré sphere for the incident light and arbitrary conformal platform of the object to be cloaked. By exploiting the foundry three-dimensional (3D) printing techniques to fabricate judiciously designed meta-atoms on the external surface of a conformal object, the spatial distributions of intensity and polarization of its scattered lights can be reconstructed exactly the same as if the scattering wavefront were deflected from a flat ground at any SOP, concealing targets under polarization-scanning detections. Two conformal-skin carpet cloaks working for partial- and full-azimuth plane operation are respectively fabricated on trapezoid and pyramid platforms via 3D printing. Experimental results are in good agreement with numerical simulations and both demonstrate the polarization-insensitive cloaking within a desirable bandwidth. Our approach paves a deterministic and robust step forward to the realization of interfacial, free-form, and full-polarization cloaking for a realistic arbitrary-shape target in real-world applications.",
+      "keywords": [
+        "Cloak",
+        "Cloaking",
+        "Conformal map",
+        "Wavefront",
+        "Optics"
+      ],
+      "url": "https://openalex.org/W3147384791",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2125465589",
+      "doi": "https://doi.org/10.1038/ncomms3652",
+      "title": "Ray-optics cloaking devices for large objects in incoherent natural light",
+      "year": 2013,
+      "cited_by_count": 211,
+      "relevance_score": 259.89774,
+      "authors": [
+        "Hongsheng Chen",
+        "Bin Zheng",
+        "Lian Shen",
+        "Huaping Wang",
+        "Xianmin Zhang",
+        "Nikolay I. Zheludev",
+        "Baile Zhang"
+      ],
+      "venue": "Nature Communications",
+      "abstract": "A cloak that can hide living creatures from sight is a common feature of mythology but still remains unrealized as a practical device. To preserve the wave phase, the previous cloaking solution proposed by Pendry and colleagues required transformation of the electromagnetic space around the hidden object in such a way that the rays bending around the object inside the cloak region have to travel faster than those passing it by. This difficult phase preservation requirement is the main obstacle for building a broadband polarization-insensitive cloak for large objects. Here we propose a simplified version of Pendry’s cloak by abolishing the requirement for phase preservation, as it is irrelevant for observation using incoherent natural light with human eyes, which are phase and polarization insensitive. This allows for a cloak design on large scales using commonly available materials. We successfully demonstrate the cloaking of living creatures, a cat and a fish, from the eye. Although many electromagnetic cloaking schemes exist at different wavelengths, realizing a broadband visible wavelength device is hard. By relaxing the need for phase preservation inherent to most methods, Chen et al.present a ray-optics scheme for cloaking large-scale objects from the human eye.",
+      "keywords": [
+        "Cloak",
+        "Cloaking",
+        "Creatures",
+        "Optics",
+        "Broadband"
+      ],
+      "url": "https://openalex.org/W2125465589",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2011946548",
+      "doi": "https://doi.org/10.1088/2040-8978/13/2/024014",
+      "title": "The colours of cloaks",
+      "year": 2010,
+      "cited_by_count": 64,
+      "relevance_score": 202.75334,
+      "authors": [
+        "Sébastien Guenneau",
+        "Ross C. McPhedran",
+        "Stéfan Enoch",
+        "A. B. Movchan",
+        "Mohamed Farhat",
+        "N. Nicorovici"
+      ],
+      "venue": "Journal of Optics",
+      "abstract": "We present a survey of results from various research groups under the unifying viewpoint of transformational physics, which has been recently introduced for the design of metamaterials in optics and acoustics. We illustrate the versatility of underlying geometric transforms in order to bridge wave phenomena (the different 'colours' of waves) ranging from transverse electric waves, to linear surface water waves at an air–fluid interface, to pressure waves in fluids and out-of-plane shear waves in elastic media: these waves are all governed by a second order scalar partial differential equation (PDE) invariant under geometric transform. Moreover, flexural waves propagating in thin plates represent a very peculiar situation whereby the displacement field satisfies a fourth order scalar PDE which also retains its form under geometric transform (unlike for the Navier equation in elastodynamics). Control of flexural wave trajectories is illustrated with a multilayered cloak and a carpet. Interestingly, the colours of waves can be revealed through an analysis of the band spectra of invisibility cloaks. In the context of acoustics, this suggests one can hear the shape of a drum. Alternative avenues towards cloaking based upon anomalous resonances of a negatively refracting coating (which can be seen as the result of folding the space back onto itself), and even plasmonic shells reducing the scattering cross-section of nano-objects are also addressed.",
+      "keywords": [
+        "Cloaking",
+        "Physics",
+        "Metamaterial",
+        "Shear waves",
+        "Scalar field"
+      ],
+      "url": "https://openalex.org/W2011946548",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2559353070",
+      "doi": "https://doi.org/10.1037/xhp0000319",
+      "title": "Submentalizing or mentalizing in a Level 1 perspective-taking task: A cloak and goggles test.",
+      "year": 2016,
+      "cited_by_count": 112,
+      "relevance_score": 200.27419,
+      "authors": [
+        "Jane Conway",
+        "Danna Lee",
+        "Mobin Ojaghi",
+        "Caroline Catmur",
+        "Geoffrey Bird"
+      ],
+      "venue": "Journal of Experimental Psychology Human Perception & Performance",
+      "abstract": "It has been proposed that humans possess an automatic system to represent mental states ('implicit mentalizing'). The existence of an implicit mentalizing system has generated considerable debate however, centered on the ability of various experimental paradigms to demonstrate unambiguously such mentalizing. Evidence for implicit mentalizing has previously been provided by the 'dot perspective task,' where participants are slower to verify the number of dots they can see when an avatar can see a different number of dots. However, recent evidence challenged a mentalizing interpretation of this effect by showing it was unaltered when the avatar was replaced with an inanimate arrow stimulus. Here we present an extension of the dot perspective task using an invisibility cloaking device to render the dots invisible on certain trials. This paradigm is capable of providing unambiguous evidence of automatic mentalizing, but no such evidence was found. Two further well-powered experiments used opaque and transparent goggles to manipulate visibility but found no evidence of automatic mentalizing, nor of individual differences in empathy or perspective-taking predicting performance, contradicting previous studies using the same design. The results cast doubt on the existence of an implicit mentalizing system, suggesting that previous effects were due to domain-general processes. (PsycINFO Database Record",
+      "keywords": [
+        "Mentalization",
+        "Perspective (graphical)",
+        "Cognitive psychology",
+        "Psychology",
+        "Empathy"
+      ],
+      "url": "https://openalex.org/W2559353070",
+      "matched_by": "en"
+    }
+  ]
+}

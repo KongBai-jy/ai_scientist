@@ -1,0 +1,129 @@
+{
+  "problem_id": 40,
+  "problem_cn": "人类可以冬眠吗？",
+  "problem_en": "Can humans hibernate?",
+  "category": "生物学",
+  "query_en": "Can humans hibernate",
+  "query_cn": "人类可以冬眠吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:24",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1973175580",
+      "doi": "https://doi.org/10.1152/physrev.00008.2003",
+      "title": "Mammalian Hibernation: Cellular and Molecular Responses to Depressed Metabolism and Low Temperature",
+      "year": 2003,
+      "cited_by_count": 1165,
+      "relevance_score": 729.52734,
+      "authors": [
+        "Hannah V. Carey",
+        "Matthew T. Andrews",
+        "Sandra L. Martin"
+      ],
+      "venue": "Physiological Reviews",
+      "abstract": "Mammalian hibernators undergo a remarkable phenotypic switch that involves profound changes in physiology, morphology, and behavior in response to periods of unfavorable environmental conditions. The ability to hibernate is found throughout the class Mammalia and appears to involve differential expression of genes common to all mammals, rather than the induction of novel gene products unique to the hibernating state. The hibernation season is characterized by extended bouts of torpor, during which minimal body temperature (Tb) can fall as low as -2.9 degrees C and metabolism can be reduced to 1% of euthermic rates. Many global biochemical and physiological processes exploit low temperatures to lower reaction rates but retain the ability to resume full activity upon rewarming. Other critical functions must continue at physiologically relevant levels during torpor and be precisely regulated even at Tb values near 0 degrees C. Research using new tools of molecular and cellular biology is beginning to reveal how hibernators survive repeated cycles of torpor and arousal during the hibernation season. Comprehensive approaches that exploit advances in genomic and proteomic technologies are needed to further define the differentially expressed genes that distinguish the summer euthermic from winter hibernating states. Detailed understanding of hibernation from the molecular to organismal levels should enable the translation of this information to the development of a variety of hypothermic and hypometabolic strategies to improve outcomes for human and animal health.",
+      "keywords": [
+        "Hibernation (computing)",
+        "Cellular metabolism",
+        "Metabolism",
+        "Biology",
+        "Cell biology"
+      ],
+      "url": "https://openalex.org/W1973175580",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1489679817",
+      "doi": "https://doi.org/10.1111/brv.12137",
+      "title": "Daily torpor and hibernation in birds and mammals",
+      "year": 2014,
+      "cited_by_count": 867,
+      "relevance_score": 498.93967,
+      "authors": [
+        "Thomas Ruf",
+        "Fritz Geiser"
+      ],
+      "venue": "Biological reviews/Biological reviews of the Cambridge Philosophical Society",
+      "abstract": "Many birds and mammals drastically reduce their energy expenditure during times of cold exposure, food shortage, or drought, by temporarily abandoning euthermia, i.e. the maintenance of high body temperatures. Traditionally, two different types of heterothermy, i.e. hypometabolic states associated with low body temperature (torpor), have been distinguished: daily torpor, which lasts less than 24 h and is accompanied by continued foraging, versus hibernation, with torpor bouts lasting consecutive days to several weeks in animals that usually do not forage but rely on energy stores, either food caches or body energy reserves. This classification of torpor types has been challenged, suggesting that these phenotypes may merely represent extremes in a continuum of traits. Here, we investigate whether variables of torpor in 214 species (43 birds and 171 mammals) form a continuum or a bimodal distribution. We use Gaussian-mixture cluster analysis as well as phylogenetically informed regressions to quantitatively assess the distinction between hibernation and daily torpor and to evaluate the impact of body mass and geographical distribution of species on torpor traits. Cluster analysis clearly confirmed the classical distinction between daily torpor and hibernation. Overall, heterothermic endotherms tend to be small; hibernators are significantly heavier than daily heterotherms and also are distributed at higher average latitudes (∼35°) than daily heterotherms (∼25°). Variables of torpor for an average 30 g heterotherm differed significantly between daily heterotherms and hibernators. Average maximum torpor bout duration was >30-fold longer, and mean torpor bout duration >25-fold longer in hibernators. Mean minimum body temperature differed by ∼13°C, and the mean minimum torpor metabolic rate was ∼35% of the basal metabolic rate (BMR) in daily heterotherms but only 6% of BMR in hibernators. Consequently, our analysis strongly supports the view that hibernators and daily heterotherms are functionally distinct groups that probably have been subject to disruptive selection. Arguably, the primary physiological difference between daily torpor and hibernation, which leads to a variety of derived further distinct characteristics, is the temporal control of entry into and arousal from torpor, which is governed by the circadian clock in daily heterotherms, but apparently not in hibernators.",
+      "keywords": [
+        "Torpor",
+        "Hibernation (computing)",
+        "Biology",
+        "Foraging",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W1489679817",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2076782363",
+      "doi": "https://doi.org/10.1038/nature00828",
+      "title": "Climate-mediated energetic constraints on the distribution of hibernating mammals",
+      "year": 2002,
+      "cited_by_count": 390,
+      "relevance_score": 446.5901,
+      "authors": [
+        "Murray M. Humphries",
+        "Donald W. Thomas",
+        "John R. Speakman"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Myotis lucifugus",
+        "Biogeography",
+        "Hibernation (computing)",
+        "Energetics",
+        "Climate change"
+      ],
+      "url": "https://openalex.org/W2076782363",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2056938335",
+      "doi": "https://doi.org/10.1016/s0735-1097(86)80325-4",
+      "title": "Reversible ischemic left ventricular dysfunction: Evidence for the “hibernating myocardium”",
+      "year": 1986,
+      "cited_by_count": 723,
+      "relevance_score": 398.1396,
+      "authors": [
+        "Eugene Braunwald",
+        "John D. Rutherford"
+      ],
+      "venue": "Journal of the American College of Cardiology",
+      "abstract": "",
+      "keywords": [
+        "Medicine",
+        "Hibernating myocardium",
+        "Cardiology",
+        "Internal medicine",
+        "Myocardial stunning"
+      ],
+      "url": "https://openalex.org/W2056938335",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1981748148",
+      "doi": "https://doi.org/10.1016/s0018-506x(02)00024-7",
+      "title": "The concept of allostasis in biology and biomedicine",
+      "year": 2003,
+      "cited_by_count": 3287,
+      "relevance_score": 376.67792,
+      "authors": [
+        "Bruce S. McEwen",
+        "John C. Wingfield"
+      ],
+      "venue": "Hormones and Behavior",
+      "abstract": "",
+      "keywords": [
+        "Allostasis",
+        "Allostatic load",
+        "Psychology",
+        "Neuroscience"
+      ],
+      "url": "https://openalex.org/W1981748148",
+      "matched_by": "en"
+    }
+  ]
+}

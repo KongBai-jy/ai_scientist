@@ -1,0 +1,138 @@
+{
+  "problem_id": 87,
+  "problem_cn": "湍流的普适统计不变性是什么？",
+  "problem_en": "What is the ultimate statistical invariance of turbulence?",
+  "category": "工程与材料科学",
+  "query_en": "What is the ultimate statistical invariance of turbulence",
+  "query_cn": "湍流的普适统计不变性是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:55",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2118448635",
+      "doi": "https://doi.org/10.1007/s11214-013-0004-8",
+      "title": "Solar Wind Turbulence and the Role of Ion Instabilities",
+      "year": 2013,
+      "cited_by_count": 288,
+      "relevance_score": 227.3944,
+      "authors": [
+        "Olga Alexandrova",
+        "Christopher H. K. Chen",
+        "L. Sorriso‐Valvo",
+        "T. S. Horbury",
+        "S. D. Bale"
+      ],
+      "venue": "Space Science Reviews",
+      "abstract": "Solar wind is probably the best laboratory to study turbulence in astrophysical plasmas. In addition to the presence of magnetic field, the differences with neutral fluid isotropic turbulence are: (i) weakness of collisional dissipation and (ii) presence of several characteristic space and time scales. In this paper we discuss observational properties of solar wind turbulence in a large range from the MHD to the electron scales. At MHD scales, within the inertial range, turbulence cascade of magnetic fluctuations develops mostly in the plane perpendicular to the mean field, with the Kolmogorov scaling $k_{\\perp}^{-5/3}$ for the perpendicular cascade and $k_{\\|}^{-2}$ for the parallel one. Solar wind turbulence is compressible in nature: density fluctuations at MHD scales have the Kolmogorov spectrum. Velocity fluctuations do not follow magnetic field ones: their spectrum is a power-law with a −3/2 spectral index. Probability distribution functions of different plasma parameters are not Gaussian, indicating presence of intermittency. At the moment there is no global model taking into account all these observed properties of the inertial range. At ion scales, turbulent spectra have a break, compressibility increases and the density fluctuation spectrum has a local flattening. Around ion scales, magnetic spectra are variable and ion instabilities occur as a function of the local plasma parameters. Between ion and electron scales, a small scale turbulent cascade seems to be established. It is characterized by a well defined power-law spectrum in magnetic and density fluctuations with a spectral index close to −2.8. Approaching electron scales, the fluctuations are no more self-similar: an exponential cut-off is usually observed (for time intervals without quasi-parallel whistlers) indicating an onset of dissipation. The small scale inertial range between ion and electron scales and the electron dissipation range can be together described by $\\sim k_{\\perp}^{-\\alpha}\\exp(-k_{\\perp}\\ell_{d})$ , with α≃8/3 and the dissipation scale ℓ d close to the electron Larmor radius ℓ d ≃ρ e . The nature of this small scale cascade and a possible dissipation mechanism are still under debate.",
+      "keywords": [
+        "Physics",
+        "Solar wind",
+        "Turbulence",
+        "Magnetohydrodynamic turbulence",
+        "Magnetohydrodynamics"
+      ],
+      "url": "https://openalex.org/W2118448635",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1972386460",
+      "doi": "https://doi.org/10.1016/s0376-0421(98)00012-8",
+      "title": "MEMS applications in turbulence and flow control",
+      "year": 1999,
+      "cited_by_count": 143,
+      "relevance_score": 169.76697,
+      "authors": [
+        "Lennart Löfdahl",
+        "Mohamed Gad‐el‐Hak"
+      ],
+      "venue": "Progress in Aerospace Sciences",
+      "abstract": "Manufacturing processes that can create extremely small machines have been developed in recent years. Microelectromechanical systems (MEMS) refer to devices that have characteristic length of less than 1 mm but more than 1 μm, that combine electrical and mechanical components and that are fabricated using integrated circuit batch-processing techniques. Electrostatic, magnetic, pneumatic and thermal actuators, motors, valves, gears and tweezers of less than 100 μm size have been fabricated. These have been used as sensors for pressure, temperature, mass flow, velocity and sound, as actuators for linear and angular motions, and as simple components for complex systems such as micro-heat-engines and micro-heat-pumps. In this paper, we focus on the use of microelectromechanical systems for the diagnosis and control of turbulent shear flows. We survey the status and outlook of microsensors and microactuators as used for those particular applications, and compare the minute devices to their larger cousins. Microsensors can resolve all relevant scales even in high-Reynolds-number turbulent flows. Arrays of microsensors and microactuators make it feasible, for the first time, to achieve effective reactive control targeted toward specific small-scale coherent structures in turbulent wall-bounded flows.",
+      "keywords": [
+        "Microelectromechanical systems",
+        "Actuator",
+        "Turbulence",
+        "Reynolds number",
+        "Flow control (data)"
+      ],
+      "url": "https://openalex.org/W1972386460",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2144449033",
+      "doi": "https://doi.org/10.1098/rsta.2014.0155",
+      "title": "Dissipation and heating in solar wind turbulence: from the macro to the micro and back again",
+      "year": 2015,
+      "cited_by_count": 208,
+      "relevance_score": 168.9023,
+      "authors": [
+        "Khurom Kiyani",
+        "K. T. Osman",
+        "S. C. Chapman"
+      ],
+      "venue": "Philosophical Transactions of the Royal Society A Mathematical Physical and Engineering Sciences",
+      "abstract": "The past decade has seen a flurry of research activity focused on discerning the physics of kinetic scale turbulence in high-speed astrophysical plasma flows. By 'kinetic' we mean spatial scales on the order of or, in particular, smaller than the ion inertial length or the ion gyro-radius--the spatial scales at which the ion and electron bulk velocities decouple and considerable change can be seen in the ion distribution functions. The motivation behind most of these studies is to find the ultimate fate of the energy cascade of plasma turbulence, and thereby the channels by which the energy in the system is dissipated. This brief Introduction motivates the case for a themed issue on this topic and introduces the topic of turbulent dissipation and heating in the solar wind. The theme issue covers the full breadth of studies: from theory and models, massive simulations of these models and observational studies from the highly rich and vast amount of data collected from scores of heliospheric space missions since the dawn of the space age. A synopsis of the theme issue is provided, where a brief description of all the contributions is discussed and how they fit together to provide an over-arching picture on the highly topical subject of dissipation and heating in turbulent collisionless plasmas in general and in the solar wind in particular.",
+      "keywords": [
+        "Solar wind",
+        "Turbulence",
+        "Dissipation",
+        "Physics",
+        "Heliosphere"
+      ],
+      "url": "https://openalex.org/W2144449033",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2010800472",
+      "doi": "https://doi.org/10.2307/409957",
+      "title": "Preliminaries to speech analysis: The distinctive features and their correlates. By Roman Jakobson, C. Gunnar M. Fant, and Morris Halle. (Technical report No. 13, 2d printing with additions and corrections.) Pp. viii, 58. [Cambridge, Mass.]: Acoustics Laboratory, Massachusetts Institute of Technology, 1952.",
+      "year": 1953,
+      "cited_by_count": 1170,
+      "relevance_score": 153.48041,
+      "authors": [
+        "Paul L. Garvin"
+      ],
+      "venue": "Language",
+      "abstract": "The Concept of the Distinctive Feature 1.1 Resolving Speech into Ultimate Units 1.2 Invariance and Redundant Variations 1.3 Identification of Distinctive Features 1.4 Inherent and Prosodic Distinctive Features 1.5 The Distinctive Features Compared to Other Sound Features II A Tentative Survey of the Distinctive Features 2.1 Prefatory Acoustical Remarks 2.11 Properties of the Source Function Utilized in Language 2.111 Type of Source 2.112 Number of Sources 2.113 Transient Effects 2.12 Transfer Functions Utilized in Language 2.121 General Properties 2.122 Location of Source 2.123 Shape of the Vocal Tract 2.13 Neutral Position of the Vocal Tract 2.14 Phoneme BoundariesThis report proposes some questions to be discussed by specialists working on various aspects of speech communication.These questions concern the ultimate discrete components of language, their specific structure, their inven- tory in the languages of the world, their identification on the acoustical and perceptual levels and their articulatory prerequisites.We regard the present list of distinctive features, and particularly their defi- nitions on different levels, as a provisional sketch which is open to discussion and which requires experimental verification and further elaboration.The nature of these problems calls for coordinated research by linguists, psycho- logists, experts in the physiology of speech and hearing, physicists, communications and electronics engineers, mathematicians, students in symbolic logic and semiotics, and neurologists dealing with language disturbances, as well as the investigators of the poetic use of speech sounds.",
+      "keywords": [
+        "Linguistics",
+        "Psychology",
+        "History",
+        "Communication",
+        "Philosophy"
+      ],
+      "url": "https://openalex.org/W2010800472",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4297259616",
+      "doi": "https://doi.org/10.1093/cercor/bhac363",
+      "title": "The fractal brain: scale-invariance in structure and dynamics",
+      "year": 2022,
+      "cited_by_count": 82,
+      "relevance_score": 124.6613,
+      "authors": [
+        "George Florin Grosu",
+        "Alexander V. Hopp",
+        "Vasile V. Moca",
+        "Harald Bârzan",
+        "Andrei Ciuparu",
+        "Mária Ercsey-Ravasz",
+        "Mathias Winkel",
+        "Helmut Linde",
+        "Raul C. Mureșan"
+      ],
+      "venue": "Cerebral Cortex",
+      "abstract": "The past 40 years have witnessed extensive research on fractal structure and scale-free dynamics in the brain. Although considerable progress has been made, a comprehensive picture has yet to emerge, and needs further linking to a mechanistic account of brain function. Here, we review these concepts, connecting observations across different levels of organization, from both a structural and functional perspective. We argue that, paradoxically, the level of cortical circuits is the least understood from a structural point of view and perhaps the best studied from a dynamical one. We further link observations about scale-freeness and fractality with evidence that the environment provides constraints that may explain the usefulness of fractal structure and scale-free dynamics in the brain. Moreover, we discuss evidence that behavior exhibits scale-free properties, likely emerging from similarly organized brain dynamics, enabling an organism to thrive in an environment that shares the same organizational principles. Finally, we review the sparse evidence for and try to speculate on the functional consequences of fractality and scale-freeness for brain computation. These properties may endow the brain with computational capabilities that transcend current models of neural computation and could hold the key to unraveling how the brain constructs percepts and generates behavior.",
+      "keywords": [
+        "Fractal",
+        "Scale (ratio)",
+        "Perspective (graphical)",
+        "Computer science",
+        "Cognitive science"
+      ],
+      "url": "https://openalex.org/W4297259616",
+      "matched_by": "en"
+    }
+  ]
+}

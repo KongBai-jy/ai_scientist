@@ -1,0 +1,126 @@
+{
+  "problem_id": 33,
+  "problem_cn": "生物如何演化？",
+  "problem_en": "How do organisms evolve?",
+  "category": "生物学",
+  "query_en": "How do organisms evolve",
+  "query_cn": "生物如何演化",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:23:58",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1961310889",
+      "doi": null,
+      "title": "The Nature of Technology: What it Is and How it Evolves",
+      "year": 2009,
+      "cited_by_count": 2041,
+      "relevance_score": 924.965,
+      "authors": [
+        "W. Brian Arthur"
+      ],
+      "venue": null,
+      "abstract": "From the Publisher: \"More than any thing else technology creates our world. It creates our wealth, our economy, our very way of being,\" says W. Brian Arthur. Yet, until now the major questions of technology have gone unanswered. Where do new technologies come from-how exactly does invention work? What constitutes innovation, and how is it achieved? Why are certain regions-Cambridge, England, in the 1920s and Silicon Valley today-hotbeds of innovation, while others languish? Does technology, like biological life, evolve? How do new industries, and the economy itself, emerge from technologies? In this groundbreaking work, pioneering technology thinker and economist W. Brian Arthur sets forth a boldly original way of thinking about technology that gives answers to these questions. The Nature of Technology is an elegant and powerful theory of technology's origins and evolution. It achieves for the progress of technology what Thomas Kuhn's The Structure of Scientific Revolutions did for scientific progress. Arthur explains how transformative new technologies arise and how innovation really works. Conventional thinking ascribes the invention of technologies to \"thinking outside the box,\" or vaguely to genius or creativity, but Arthur shows that such explanations are inadequate. Rather, technologies are put together from pieces-themselves technologies-that already exist. Technologies therefore share common ancestries and combine, morph, and combine again to create further technologies. Technology evolves much as a coral reef builds itself from activities of small organisms-it creates itself from itself; all technologies are descended from earlier technologies. Drawing on a wealth of examples, from historical inventions to the high-tech wonders of today, and writing in wonder fully engaging and clear prose, Arthur takes us on a mind-opening journey that will change the way we think about technology and how it structures our lives.",
+      "keywords": [
+        "Emerging technologies",
+        "Engineering",
+        "Computer science",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W1961310889",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W234963275",
+      "doi": "https://doi.org/10.1515/9781400849383",
+      "title": "Robustness and Evolvability in Living Systems",
+      "year": 2013,
+      "cited_by_count": 921,
+      "relevance_score": 597.5264,
+      "authors": [
+        "Andreas Wagner"
+      ],
+      "venue": "Princeton University Press eBooks",
+      "abstract": "All living things are remarkably complex, yet their DNA is unstable, undergoing countless random mutations over generations. Despite this instability, most animals do not grow two heads or die, plants continue to thrive, and bacteria continue to divide. Robustness and Evolvability in Living Systems tackles this perplexing paradox. The book explores why genetic changes do not cause organisms to fail catastrophically and how evolution shapes organisms' robustness. Andreas Wagner looks at this problem from the ground up, starting with the alphabet of DNA, the genetic code, RNA, and protein molecules, moving on to genetic networks and embryonic development, and working his way up to whole organisms. He then develops an evolutionary explanation for robustness. Wagner shows how evolution by natural selection preferentially finds and favors robust solutions to the problems organisms face in surviving and reproducing. Such robustness, he argues, also enhances the potential for future evolutionary innovation. Wagner also argues that robustness has less to do with organisms having plenty of spare parts (the redundancy theory that has been popular) and more to do with the reality that mutations can change organisms in ways that do not substantively affect their fitness. Unparalleled in its field, this book offers the most detailed analysis available of all facets of robustness within organisms. It will appeal not only to biologists but also to engineers interested in the design of robust systems and to social scientists concerned with robustness in human communities and populations.",
+      "keywords": [
+        "Evolvability",
+        "Robustness (evolution)",
+        "Computer science",
+        "Biology",
+        "Evolutionary biology"
+      ],
+      "url": "https://openalex.org/W234963275",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2035503922",
+      "doi": "https://doi.org/10.3354/meps210223",
+      "title": "Our evolving conceptual model of the coastal eutrophication problem",
+      "year": 2001,
+      "cited_by_count": 2885,
+      "relevance_score": 502.20068,
+      "authors": [
+        "James E. Cloern"
+      ],
+      "venue": "Marine Ecology Progress Series",
+      "abstract": "MEPS Marine Ecology Progress Series Contact the journal Facebook Twitter RSS Mailing List Subscribe to our mailing list via Mailchimp HomeLatest VolumeAbout the JournalEditorsTheme Sections MEPS 210:223-253 (2001) - doi:10.3354/meps210223 Our evolving conceptual model of the coastal eutrophication problem James E. Cloern* US Geological Survey, MS496, 345 Middlefield Rd., Menlo Park, California 94025, USA *E-mail: jecloern@usgs.gov ABSTRACT: A primary focus of coastal science during the past 3 decades has been the question: How does anthropogenic nutrient enrichment cause change in the structure or function of nearshore coastal ecosystems? This theme of environmental science is recent, so our conceptual model of the coastal eutrophication problem continues to change rapidly. In this review, I suggest that the early (Phase I) conceptual model was strongly influenced by limnologists, who began intense study of lake eutrophication by the 1960s. The Phase I model emphasized changing nutrient input as a signal, and responses to that signal as increased phytoplankton biomass and primary production, decomposition of phytoplankton-derived organic matter, and enhanced depletion of oxygen from bottom waters. Coastal research in recent decades has identified key differences in the responses of lakes and coastal-estuarine ecosystems to nutrient enrichment. The contemporary (Phase II) conceptual model reflects those differences and includes explicit recognition of (1) system-specific attributes that act as a filter to modulate the responses to enrichment (leading to large differences among estuarine-coastal systems in their sensitivity to nutrient enrichment); and (2) a complex suite of direct and indirect responses including linked changes in: water transparency, distribution of vascular plants and biomass of macroalgae, sediment biogeochemistry and nutrient cycling, nutrient ratios and their regulation of phytoplankton community composition, frequency of toxic/harmful algal blooms, habitat quality for metazoans, reproduction/growth/survival of pelagic and benthic invertebrates, and subtle changes such as shifts in the seasonality of ecosystem functions. Each aspect of the Phase II model is illustrated here with examples from coastal ecosystems around the world. In the last section of this review I present one vision of the next (Phase III) stage in the evolution of our conceptual model, organized around 5 questions that will guide coastal science in the early 21st century: (1) How do system-specific attributes constrain or amplify the responses of coastal ecosystems to nutrient enrichment? (2) How does nutrient enrichment interact with other stressors (toxic contaminants, fishing harvest, aquaculture, nonindigenous species, habitat loss, climate change, hydrologic manipulations) to change coastal ecosystems? (3) How are responses to multiple stressors linked? (4) How does human-induced change in the coastal zone impact the Earth system as habitat for humanity and other species? (5) How can a deeper scientific understanding of the coastal eutrophication problem be applied to develop tools for building strategies at ecosystem restoration or rehabilitation? KEY WORDS: Coastal eutrophication · Nutrient enrichment · Estuaries · Nitrogen · Phosphorus · Coastal ecosystems Full text in pdf format PreviousNextExport citation RSS - Facebook - Tweet - linkedIn Cited by Published in MEPS Vol. 210. Online publication date: January 26, 2001 Print ISSN: 0171-8630; Online ISSN: 1616-1599 Copyright © 2001 Inter-Research.",
+      "keywords": [
+        "Eutrophication",
+        "Environmental science",
+        "Phytoplankton",
+        "Ecosystem",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W2035503922",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1483388411",
+      "doi": "https://doi.org/10.1016/0162-3095(90)90017-z",
+      "title": "The past explains the present",
+      "year": 1990,
+      "cited_by_count": 1783,
+      "relevance_score": 453.65717,
+      "authors": [
+        "John Tooby",
+        "Leda Cosmides"
+      ],
+      "venue": "Ethology and Sociobiology",
+      "abstract": "",
+      "keywords": [
+        "Categorization",
+        "Selection (genetic algorithm)",
+        "Adaptation (eye)",
+        "Cognitive science",
+        "Consciousness"
+      ],
+      "url": "https://openalex.org/W1483388411",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2097560155",
+      "doi": null,
+      "title": "Spikes: Exploring the Neural Code",
+      "year": 1996,
+      "cited_by_count": 2902,
+      "relevance_score": 450.93536,
+      "authors": [
+        "Fred Rieke",
+        "Davd Warland",
+        "Rob de Ruyter van Steveninck",
+        "William Bialek"
+      ],
+      "venue": null,
+      "abstract": "Our perception of the world is driven by input from the sensory nerves. This input arrives encoded as sequences of identical spikes. Much of neural computation involves processing these spike trains. What does it mean to say that a certain set of spikes is the right answer to a computational problem? In what sense does a spike train convey information about the sensory world? Spikes begins by providing precise formulations of these and related questions about the representation of sensory signals in neural spike trains. The answers to these questions are then pursued in experiments on sensory neurons.The authors invite the reader to play the role of a hypothetical observer inside the brain who makes decisions based on the incoming spike trains. Rather than asking how a neuron responds to a given stimulus, the authors ask how the brain could make inferences about an unknown stimulus from a given neural response. The flavor of some problems faced by the organism is captured by analyzing the way in which the observer can make a running reconstruction of the sensory stimulus as it evolves in time. These ideas are illustrated by examples from experiments on several biological systems. Intended for neurobiologists with an interest in mathematical analysis of neural data as well as the growing number of physicists and mathematicians interested in information processing by real nervous systems, Spikes provides a self-contained review of relevant concepts in information theory and statistical decision theory. A quantitative framework is used to pose precise questions about the structure of the neural code. These questions in turn influence both the design and analysis of experiments on sensory neurons.",
+      "keywords": [
+        "Stimulus (psychology)",
+        "Sensory system",
+        "Perception",
+        "Computer science",
+        "Spike (software development)"
+      ],
+      "url": "https://openalex.org/W2097560155",
+      "matched_by": "en"
+    }
+  ]
+}

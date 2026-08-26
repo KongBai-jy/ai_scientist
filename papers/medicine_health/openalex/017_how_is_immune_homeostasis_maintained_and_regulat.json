@@ -1,0 +1,144 @@
+{
+  "problem_id": 17,
+  "problem_cn": "免疫稳态如何维持、如何调控？",
+  "problem_en": "How is immune homeostasis maintained and regulated?",
+  "category": "医学与健康",
+  "query_en": "How is immune homeostasis maintained and regulated",
+  "query_cn": "免疫稳态如何维持、如何调控",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:20:05",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2048502267",
+      "doi": "https://doi.org/10.4161/gmic.19320",
+      "title": "The role of gut microbiota in immune homeostasis and autoimmunity",
+      "year": 2012,
+      "cited_by_count": 1436,
+      "relevance_score": 1169.0835,
+      "authors": [
+        "Hsin-Jung Wu",
+        "Eric Wu"
+      ],
+      "venue": "Gut Microbes",
+      "abstract": "Keeping a delicate balance in the immune system by eliminating invading pathogens, while still maintaining self-tolerance to avoid autoimmunity, is critical for the body's health. The gut microbiota that resides in the gastrointestinal tract provides essential health benefits to its host, particularly by regulating immune homeostasis. Moreover, it has recently become obvious that alterations of these gut microbial communities can cause immune dysregulation, leading to autoimmune disorders. Here we review the advances in our understanding of how the gut microbiota regulates innate and adaptive immune homeostasis, which in turn can affect the development of not only intestinal but also systemic autoimmune diseases. Exploring the interaction of gut microbes and the host immune system will not only allow us to understand the pathogenesis of autoimmune diseases but will also provide us new foundations for the design of novel immuno- or microbe-based therapies.",
+      "keywords": [
+        "Autoimmunity",
+        "Immune system",
+        "Biology",
+        "Gut flora",
+        "Immunology"
+      ],
+      "url": "https://openalex.org/W2048502267",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2580767461",
+      "doi": "https://doi.org/10.1038/s41598-016-0028-x",
+      "title": "Ror2 signaling regulates Golgi structure and transport through IFT20 for tumor invasiveness",
+      "year": 2017,
+      "cited_by_count": 16101,
+      "relevance_score": 1027.4967,
+      "authors": [
+        "Michiru Nishita",
+        "Seung‐Yeol Park",
+        "Tadashi Nishio",
+        "Koki Kamizaki",
+        "Zhichao Wang",
+        "Kota Tamada",
+        "Toru Takumi",
+        "Ryuju Hashimoto",
+        "Hiroki Otani",
+        "Gregory J. Pazour",
+        "Victor W. Hsu",
+        "Yasuhiro Minami"
+      ],
+      "venue": "Scientific Reports",
+      "abstract": "Signaling through the Ror2 receptor tyrosine kinase promotes invadopodia formation for tumor invasion. Here, we identify intraflagellar transport 20 (IFT20) as a new target of this signaling in tumors that lack primary cilia, and find that IFT20 mediates the ability of Ror2 signaling to induce the invasiveness of these tumors. We also find that IFT20 regulates the nucleation of Golgi-derived microtubules by affecting the GM130-AKAP450 complex, which promotes Golgi ribbon formation in achieving polarized secretion for cell migration and invasion. Furthermore, IFT20 promotes the efficiency of transport through the Golgi complex. These findings shed new insights into how Ror2 signaling promotes tumor invasiveness, and also advance the understanding of how Golgi structure and transport can be regulated.",
+      "keywords": [
+        "Golgi apparatus",
+        "Cell biology",
+        "Cilium",
+        "Biology",
+        "Endoplasmic reticulum"
+      ],
+      "url": "https://openalex.org/W2580767461",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2055348159",
+      "doi": "https://doi.org/10.1038/nature12034",
+      "title": "Macrophage biology in development, homeostasis and disease",
+      "year": 2013,
+      "cited_by_count": 4772,
+      "relevance_score": 994.7878,
+      "authors": [
+        "Thomas A. Wynn",
+        "Ajay Chawla",
+        "Jeffrey W. Pollard"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Homeostasis",
+        "Macrophage",
+        "Biology",
+        "Haematopoiesis",
+        "Disease"
+      ],
+      "url": "https://openalex.org/W2055348159",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2109491705",
+      "doi": "https://doi.org/10.1038/ni.1863",
+      "title": "The role of pattern-recognition receptors in innate immunity: update on Toll-like receptors",
+      "year": 2010,
+      "cited_by_count": 9233,
+      "relevance_score": 778.55316,
+      "authors": [
+        "Taro Kawai",
+        "Shizuo Akira"
+      ],
+      "venue": "Nature Immunology",
+      "abstract": "",
+      "keywords": [
+        "Innate immune system",
+        "Pattern recognition receptor",
+        "Biology",
+        "Acquired immune system",
+        "Receptor"
+      ],
+      "url": "https://openalex.org/W2109491705",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2018505426",
+      "doi": "https://doi.org/10.1038/nature07450",
+      "title": "Lymphoid tissue genesis induced by commensals through NOD1 regulates intestinal homeostasis",
+      "year": 2008,
+      "cited_by_count": 1093,
+      "relevance_score": 739.9213,
+      "authors": [
+        "Djahida Bouskra",
+        "Christophe Brézillon",
+        "M Bérard",
+        "Catherine Werts",
+        "Rosa Varona",
+        "Ivo G. Boneca",
+        "Gérard Eberl"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "NOD1",
+        "Innate lymphoid cell",
+        "Biology",
+        "CCL20",
+        "Immune system"
+      ],
+      "url": "https://openalex.org/W2018505426",
+      "matched_by": "en"
+    }
+  ]
+}

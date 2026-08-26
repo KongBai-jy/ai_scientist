@@ -1,0 +1,126 @@
+{
+  "problem_id": 2,
+  "problem_cn": "黎曼猜想成立吗？",
+  "problem_en": "Is the Riemann hypothesis true?",
+  "category": "数学科学",
+  "query_en": "Is the Riemann hypothesis true",
+  "query_cn": "黎曼猜想成立吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:11",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2101718938",
+      "doi": "https://doi.org/10.5802/jtnb.591",
+      "title": "On Robin’s criterion for the Riemann hypothesis",
+      "year": 2008,
+      "cited_by_count": 207,
+      "relevance_score": 471.19757,
+      "authors": [
+        "YoungJu Choie",
+        "Nicolas Lichiardopol",
+        "Pieter Moree",
+        "Patrick Solé"
+      ],
+      "venue": "Journal de Théorie des Nombres de Bordeaux",
+      "abstract": "Robin’s criterion states that the Riemann Hypothesis (RH) is true if and only if Robin’s inequality σ ( n ) : = ∑ d | n d < e γ n log log n is satisfied for n ≥ 5041 , where γ denotes the Euler(-Mascheroni) constant. We show by elementary methods that if n ≥ 37 does not satisfy Robin’s criterion it must be even and is neither squarefree nor squarefull. Using a bound of Rosser and Schoenfeld we show, moreover, that n must be divisible by a fifth power > 1 . As consequence we obtain that RH holds true iff every natural number divisible by a fifth power > 1 satisfies Robin’s inequality.",
+      "keywords": [
+        "Mathematics",
+        "Combinatorics",
+        "Riemann hypothesis",
+        "Humanities",
+        "Calculus (dental)"
+      ],
+      "url": "https://openalex.org/W2101718938",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2013498129",
+      "doi": "https://doi.org/10.55094/holistence.185",
+      "title": "Science and Hypothesis",
+      "year": 2024,
+      "cited_by_count": 828,
+      "relevance_score": 327.15665,
+      "authors": [
+        "H. Poincaré H. Poincaré"
+      ],
+      "venue": null,
+      "abstract": "Henri Poincaré's Science and Hypothesis is a foundational work of modern philosophy of science that challenges superficial views of scientific certainty. Poincaré argues that the logic of science is not infallible, and that mathematical truths are not simply derived from self-evident propositions. Instead, he examines the indispensable role of hypothesis, which he insists is as necessary for the experimenter as it is for the mathematician. The book distinguishes between different kinds of hypotheses: some are verifiable and become fertile truths, while others are merely \"conventions in disguise\". This is especially true in mathematics. Poincaré argues that the axioms of geometry, for example, are not experimental facts or à priori intuitions, but conventions. However, these conventions are not arbitrary; they are guided by experiment to find the \"most convenient path\". By surveying the sciences — from arithmetic and non-Euclidean geometry to classical mechanics and modern physics —Poincaré redefines the aim of science. He concludes that its goal is not to discover \"things themselves\", but rather \"the relations between things\", as \"outside those relations there is no reality knowable\". The book also explores the true nature of mathematical reasoning, arguing that it is not purely deductive but a fruitful inductive process.",
+      "keywords": [
+        "Philosophy",
+        "Psychology",
+        "Epistemology"
+      ],
+      "url": "https://openalex.org/W2013498129",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2012857639",
+      "doi": "https://doi.org/10.1016/s0022-0000(76)80043-8",
+      "title": "Riemann's hypothesis and tests for primality",
+      "year": 1976,
+      "cited_by_count": 721,
+      "relevance_score": 320.2986,
+      "authors": [
+        "Gary L. Miller"
+      ],
+      "venue": "Journal of Computer and System Sciences",
+      "abstract": "",
+      "keywords": [
+        "Primality test",
+        "Mathematics",
+        "Riemann hypothesis",
+        "Number theory",
+        "Class (philosophy)"
+      ],
+      "url": "https://openalex.org/W2012857639",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1988915620",
+      "doi": "https://doi.org/10.1112/jlms/52.1.15",
+      "title": "The Riemann Hypothesis and Inverse Spectral Problems for Fractal Strings",
+      "year": 1995,
+      "cited_by_count": 85,
+      "relevance_score": 286.66122,
+      "authors": [
+        "Michel L. Lapidus",
+        "Helmut Maier"
+      ],
+      "venue": "Journal of the London Mathematical Society",
+      "abstract": "Motivated in part by the first author's work [23] on the Weyl-Berry conjecture for the vibrations of ‘fractal drums’ (that is, ‘drums with fractal boundary’), M. L. Lapidus and C. Pomerance [31] have studied a direct spectral problem for the vibrations of ‘fractal strings’ (that is, one-dimensional ‘fractal drums’) and established in the process some unexpected connections with the Riemann zeta-function ζ = ζ (s) in the ‘critical interval’ 0 < s < 1. In this paper we show, in particular, that the converse of their theorem (suitably interpreted as a natural inverse spectral problem for fractal strings, with boundary of Minkowski fractal dimension D ∈ (0,1)) is not true in the ‘midfractal’ case when D = 1 2 , but that it is true for all other D in the critical interval (0,1) if and only if the Riemann hypothesis is true. We thus obtain a new characterization of the Riemann hypothesis by means of an inverse spectral problem. (Actually, we prove the following stronger result: for a given D ∈ (0,1), the above inverse spectral problem is equivalent to the ‘partial Riemann hypothesis’ for D, according to which ζ = ζ (s) does not have any zero on the vertical line Re s = D.) Therefore, in some very precise sense, our work shows that the question (à la Marc Kac) “Can one hear the shape of a fractal string?” – now interpreted as a suitable converse (namely, the above inverse problem) – is intimately connected with the existence of zeros of ζ = ζ(s) in the critical strip 0 < Res < 1, and hence to the Riemann hypothesis.",
+      "keywords": [
+        "Mathematics",
+        "Fractal",
+        "Inverse",
+        "Riemann hypothesis",
+        "Fractal derivative"
+      ],
+      "url": "https://openalex.org/W1988915620",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2058590036",
+      "doi": "https://doi.org/10.1007/bf02422942",
+      "title": "Contributions to the theory of the riemann zeta-function and the theory of the distribution of primes",
+      "year": 1916,
+      "cited_by_count": 458,
+      "relevance_score": 278.29382,
+      "authors": [
+        "G. H. Hardy",
+        "J. E. Littlewood"
+      ],
+      "venue": "Acta Mathematica",
+      "abstract": "solution of I~ ' The idea which dominates the critical stage of the argument is also LANvxu's, but is to be found in another of his papers ('(~ber die Anzahl der Gitterpunkte in gewissen Bereichen',",
+      "keywords": [
+        "Mathematics",
+        "Riemann zeta function",
+        "Riemann hypothesis",
+        "Riemann Xi function",
+        "Distribution (mathematics)"
+      ],
+      "url": "https://openalex.org/W2058590036",
+      "matched_by": "en"
+    }
+  ]
+}

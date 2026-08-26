@@ -1,0 +1,127 @@
+{
+  "problem_id": 54,
+  "problem_cn": "宇宙射线起源是什么？",
+  "problem_en": "What is the origin of cosmic rays?",
+  "category": "天文学",
+  "query_en": "What is the origin of cosmic rays",
+  "query_cn": "宇宙射线起源是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:25:24",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2107415832",
+      "doi": "https://doi.org/10.1146/annurev.nucl.57.090506.123011",
+      "title": "Cosmic-Ray Propagation and Interactions in the Galaxy",
+      "year": 2007,
+      "cited_by_count": 1165,
+      "relevance_score": 1079.397,
+      "authors": [
+        "A. W. Strong",
+        "I. V. Moskalenko",
+        "В. С. Птускин"
+      ],
+      "venue": "Annual Review of Nuclear and Particle Science",
+      "abstract": "We survey the theory and experimental tests for the propagation of cosmic rays in the Galaxy up to energies of 10 15 eV. A guide to the previous reviews and essential literature is given, followed by an exposition of basic principles. The basic ideas of cosmic-ray propagation are described, and the physical origin of its processes is explained. The various techniques for computing the observational consequences of the theory are described and contrasted. These include analytical and numerical techniques. We present the comparison of models with data, including direct and indirect—especially γ-ray—observations, and indicate what we can learn about cosmic-ray propagation. Some important topics, including electron and antiparticle propagation, are chosen for discussion.",
+      "keywords": [
+        "Physics",
+        "Cosmic ray",
+        "Galaxy",
+        "COSMIC cancer database",
+        "Astrophysics"
+      ],
+      "url": "https://openalex.org/W2107415832",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2081160630",
+      "doi": "https://doi.org/10.1007/s00159-013-0070-7",
+      "title": "The origin of galactic cosmic rays",
+      "year": 2013,
+      "cited_by_count": 550,
+      "relevance_score": 902.2741,
+      "authors": [
+        "Pasquale Blasi"
+      ],
+      "venue": "The Astronomy and Astrophysics Review",
+      "abstract": "",
+      "keywords": [
+        "Cosmic ray",
+        "Physics",
+        "Supernova",
+        "Astrophysics",
+        "Astronomy"
+      ],
+      "url": "https://openalex.org/W2081160630",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2795322206",
+      "doi": "https://doi.org/10.1146/annurev-astro-081811-125615",
+      "title": "Cosmic Star-Formation History",
+      "year": 2014,
+      "cited_by_count": 3789,
+      "relevance_score": 872.52155,
+      "authors": [
+        "Piero Madau",
+        "Mark Dickinson"
+      ],
+      "venue": "Annual Review of Astronomy and Astrophysics",
+      "abstract": "Over the past two decades, an avalanche of new data from multiwavelength imaging and spectroscopic surveys has revolutionized our view of galaxy formation and evolution. Here we review the range of complementary techniques and theoretical tools that allow astronomers to map the cosmic history of star formation, heavy element production, and reionization of the Universe from the cosmic “dark ages” to the present epoch. A consistent picture is emerging, whereby the star-formation rate density peaked approximately 3.5 Gyr after the Big Bang, at z≈1.9, and declined exponentially at later times, with an e-folding timescale of 3.9 Gyr. Half of the stellar mass observed today was formed before a redshift z = 1.3. About 25% formed before the peak of the cosmic star-formation rate density, and another 25% formed after z = 0.7. Less than ∼1% of today's stars formed during the epoch of reionization. Under the assumption of a universal initial mass function, the global stellar mass density inferred at any epoch matches reasonably well the time integral of all the preceding star-formation activity. The comoving rates of star formation and central black hole accretion follow a similar rise and fall, offering evidence for coevolution of black holes and their host galaxies. The rise of the mean metallicity of the Universe to about 0.001 solar by z = 6, one Gyr after the Big Bang, appears to have been accompanied by the production of fewer than ten hydrogen Lyman-continuum photons per baryon, a rather tight budget for cosmological reionization.",
+      "keywords": [
+        "Physics",
+        "Reionization",
+        "Astrophysics",
+        "Astronomy",
+        "Galaxy"
+      ],
+      "url": "https://openalex.org/W2795322206",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2553975475",
+      "doi": "https://doi.org/10.1088/0031-9112/29/12/034",
+      "title": "Elements of X-ray Diffraction",
+      "year": 1978,
+      "cited_by_count": 7138,
+      "relevance_score": 849.0589,
+      "authors": [
+        "E. D. T. Atkins"
+      ],
+      "venue": "Physics Bulletin",
+      "abstract": "B D Cullity London: Addison-Wesley 1978 pp xii + 555 price £16.50 This is the second edition of a book concerned with the theory and application of x-ray diffraction to polycrystalline materials in particular. The first edition is an established text for many metallurgists, physicists and chemists interested in orientation and quality of single crystals, structure and texture of polycrystalline aggregates and chemical analysis using x-rays.",
+      "keywords": [
+        "Diffraction",
+        "X-ray",
+        "Materials science",
+        "Geology",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W2553975475",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2122658693",
+      "doi": "https://doi.org/10.1086/306470",
+      "title": "Propagation of Cosmic‐Ray Nucleons in the Galaxy",
+      "year": 1998,
+      "cited_by_count": 1059,
+      "relevance_score": 710.99976,
+      "authors": [
+        "A. W. Strong",
+        "I. V. Moskalenko"
+      ],
+      "venue": "The Astrophysical Journal",
+      "abstract": "We describe a method for the numerical computation of the propagation of primary and secondary nucleons, primary electrons, and secondary positrons and electrons. Fragmentation and energy losses are computed using realistic distributions for the interstellar gas and radiation fields, and diffusive reacceleration is also incorporated. The models are adjusted to agree with the observed cosmic-ray B/C and 10 Be/ 9 Be ratios. Models with diffusion and convection do not account well for the observed energy dependence of B/C, while models with reacceleration reproduce this easily. The height of the halo propagation region is determined using recent 10 Be/ 9 Be measurements as >4 kpc for diffusion/convection models and 4-12 kpc for reacceleration models. For convection models, we set an upper limit on the velocity gradient of dV / dz < 7 km s -1 kpc -1 . The radial distribution of cosmic-ray sources required is broader than current estimates of the supernova remnant (SNR) distribution for all halo sizes. Full details of the numerical method used to solve the cosmic-ray propagation equation are given.",
+      "keywords": [
+        "Cosmic ray",
+        "Physics",
+        "Halo",
+        "Nucleon",
+        "Computational physics"
+      ],
+      "url": "https://openalex.org/W2122658693",
+      "matched_by": "en"
+    }
+  ]
+}

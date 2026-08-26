@@ -1,0 +1,140 @@
+{
+  "problem_id": 80,
+  "problem_cn": "宏观世界、微观世界，我们可以精准模拟吗？",
+  "problem_en": "Can we accurately simulate the macro- and microworld?",
+  "category": "物理学",
+  "query_en": "Can we accurately simulate the macro- and microworld",
+  "query_cn": "宏观世界、微观世界，我们可以精准模拟吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:55",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2014786311",
+      "doi": "https://doi.org/10.1103/physrevlett.56.1505",
+      "title": "Lattice-Gas Automata for the Navier-Stokes Equation",
+      "year": 1986,
+      "cited_by_count": 2768,
+      "relevance_score": 263.5568,
+      "authors": [
+        "U. Frisch",
+        "B. Hasslacher",
+        "Yves Pomeau"
+      ],
+      "venue": "Physical Review Letters",
+      "abstract": "~e show that a class of deterministic lattice gases with discrete Boolean elements simulates the Navier-Stokes equation, and can be used to design simple, massively parallel computing machines.",
+      "keywords": [
+        "Lattice gas automaton",
+        "Massively parallel",
+        "Lattice (music)",
+        "Cellular automaton",
+        "Automaton"
+      ],
+      "url": "https://openalex.org/W2014786311",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4291291092",
+      "doi": "https://doi.org/10.11588/heidok.00008262",
+      "title": "Complex Problem Solving: The European Perspective",
+      "year": 1995,
+      "cited_by_count": 391,
+      "relevance_score": 52.447727,
+      "authors": [
+        "Frensch, Peter",
+        "Joachim Funke"
+      ],
+      "venue": "heiDOK (Heidelberg University)",
+      "abstract": "This volume presents a state-of-the-science review of the most promising current European research -- and its historic roots of research -- on complex problem solving (CPS) in Europe. It is an attempt to close the knowledge gap among American scholars regarding the European approach to understanding CPS. Although most of the American researchers are well aware of the fact that CPS has been a very active research area in Europe for quite some time, they do not know any specifics about even the most important research. Part of the reason for this lack of knowledge is undoubtedly the fact that European researchers -- for the most part -- have been rather reluctant to publish their work in English-language journals. The book concentrates on European research because the basic approach European scholars have taken to studying CPS is very different from one taken by North American researchers. Traditionally, American scholars have been studying CPS in \\\"natural\\\" domains -- physics, reading, writing, and chess playing -- concentrating primarily on exploring novice-expert differences and the acquisition of a complex skill. European scholars, in contrast, have been primarily concerned with problem solving behavior in artificially generated, mostly computerized, complex systems. While the American approach has the advantage of high external validity, the European approach has the advantage of system variables that can be systematically manipulated to reveal the effects of system parameters on CPS behavior. The two approaches are thus best viewed as complementing each other. This volume contains contributions from four European countries -- Sweden, Switzerland, Great Britain, and Germany. As such, it accurately represents the bulk of empirical research on CPS which has been conducted in Europe. An international cooperation started two years ago with the goal of bringing the European research on complex problem solving to the awareness of American scholars. A direct result of that effort, the contributions to this book are both informative and comprehensive.",
+      "keywords": [
+        "Perspective (graphical)",
+        "Management science",
+        "Computer science",
+        "Epistemology",
+        "Cognitive science"
+      ],
+      "url": "https://openalex.org/W4291291092",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2065300520",
+      "doi": "https://doi.org/10.3390/ijms131012773",
+      "title": "Theoretical Models for Surface Forces and Adhesion and Their Measurement Using Atomic Force Microscopy",
+      "year": 2012,
+      "cited_by_count": 451,
+      "relevance_score": 51.357082,
+      "authors": [
+        "Fábio L. Leite",
+        "Carolina C. Bueno",
+        "Alessandra Luzia Da Róz",
+        "E.C. Ziemath",
+        "Osvaldo N. Oliveira"
+      ],
+      "venue": "International Journal of Molecular Sciences",
+      "abstract": "The increasing importance of studies on soft matter and their impact on new technologies, including those associated with nanotechnology, has brought intermolecular and surface forces to the forefront of physics and materials science, for these are the prevailing forces in micro and nanosystems. With experimental methods such as the atomic force spectroscopy (AFS), it is now possible to measure these forces accurately, in addition to providing information on local material properties such as elasticity, hardness and adhesion. This review provides the theoretical and experimental background of afs, adhesion forces, intermolecular interactions and surface forces in air, vacuum and in solution.",
+      "keywords": [
+        "Force spectroscopy",
+        "Intermolecular force",
+        "Atomic force microscopy",
+        "Surface force",
+        "Surface forces apparatus"
+      ],
+      "url": "https://openalex.org/W2065300520",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2560867627",
+      "doi": "https://doi.org/10.1016/j.trpro.2016.12.094",
+      "title": "A Hybrid and Multiscale Approach to Model and Simulate Mobility in the Context of Public Events",
+      "year": 2016,
+      "cited_by_count": 10,
+      "relevance_score": 43.136196,
+      "authors": [
+        "Daniel H. Biedermann",
+        "Carolin Torchiani",
+        "Peter M. Kielar",
+        "David Willems",
+        "Oliver Handel",
+        "Stefan Ruzika",
+        "André Borrmann"
+      ],
+      "venue": "Transportation research procedia",
+      "abstract": "Organizers of large events have to ensure efficient mobility to guarantee a smooth and secure event course. Traffic and crowd simulations help to predict weak spots on the event's infrastructure. Thus, we propose a hybrid and multiscale approach to provide realistic and computationally efficient simulations. Our approach is able to predict traffic and crowd flow on different spatial resolutions. Events can be modeled on three spatial scales: macroscopic, mesoscopic, and microscopic. Each scale has individual characteristics according to spatial resolution and computational efficiency. Our approach combines these scales to model multimodal aspects of mobilityduring an event course. For the macroscopic scale, a public transport approach, which combines network based optimization with simulation techniques, is presented. This optimization approach for bus transport was integrated into a crowd simulation platform, which simulates the behavior of visitors after having arrived at the event site.",
+      "keywords": [
+        "Crowd simulation",
+        "Computer science",
+        "Event (particle physics)",
+        "Context (archaeology)",
+        "Mesoscopic physics"
+      ],
+      "url": "https://openalex.org/W2560867627",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4206046353",
+      "doi": "https://doi.org/10.3390/su14031101",
+      "title": "Academic and Administrative Role of Artificial Intelligence in Education",
+      "year": 2022,
+      "cited_by_count": 293,
+      "relevance_score": 40.426105,
+      "authors": [
+        "Sayed Fayaz Ahmad",
+        "Muhammad Mansoor Alam",
+        "Mohd Khairil Rahmat",
+        "Muhammad Shujaat Mubarik",
+        "Syed Irfan Hyder"
+      ],
+      "venue": "Sustainability",
+      "abstract": "The aim of the article is to explore the academic and administrative applications of Artificial Intelligence. Teachers have the main responsibility of teaching in any educational setting. But there are various other tasks to be performed by the teachers as well. Besides academic duty, most of the teacher’s time and educational resources are dedicated to administrative works. Artificial Intelligence Applications (AIA) are not only assisting education academically and administratively but also enhance their effectiveness. AIA provides help to teachers in various types of tasks in the shape of Learning Analytics (LA), Virtual Reality (VR), Grading/Assessments (G/A), and Admissions. It minimizes the administrative tasks of a teacher to invest more in teaching and guiding students. In the current era, where there are a lot of tasks associated with the teaching profession, AIA adds a significant contribution to enhance student learning, minimize the workload of a teacher, grade/assess the students effectively and easily, and to help in a lot of other administrative tasks. The study needs to be quantitatively checked to make it generalized and acceptable.",
+      "keywords": [
+        "Workload",
+        "Grading (engineering)",
+        "Duty",
+        "Computer science",
+        "Mathematics education"
+      ],
+      "url": "https://openalex.org/W4206046353",
+      "matched_by": "en"
+    }
+  ]
+}

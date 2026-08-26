@@ -1,0 +1,627 @@
+[
+  {
+    "en": "What makes prime numbers so special?",
+    "cn": "为什么质数如此特殊？",
+    "category": "数学科学"
+  },
+  {
+    "en": "Is the Riemann hypothesis true?",
+    "cn": "黎曼猜想成立吗？",
+    "category": "数学科学"
+  },
+  {
+    "en": "Will the Navier–Stokes problem ever be solved?",
+    "cn": "纳维-斯托克斯方程能够被彻底解决吗？",
+    "category": "数学科学"
+  },
+  {
+    "en": "Are there more color pigments to discover?",
+    "cn": "还存在更多有待人类发现的颜料吗？",
+    "category": "化学"
+  },
+  {
+    "en": "Will the periodic table ever be complete?",
+    "cn": "元素周期表会有最终完整版吗？",
+    "category": "化学"
+  },
+  {
+    "en": "How can we measure interface phenomena on the microscopic level?",
+    "cn": "我们该如何在微观尺度测量界面现象？",
+    "category": "化学"
+  },
+  {
+    "en": "What is the future for energy storage?",
+    "cn": "储能技术的未来将走向何方？",
+    "category": "化学"
+  },
+  {
+    "en": "Why does life require chirality?",
+    "cn": "为什么生命分子需要手性？",
+    "category": "化学"
+  },
+  {
+    "en": "How can we better manage the world’s plastic waste?",
+    "cn": "人类该如何更好治理全球塑料垃圾？",
+    "category": "化学"
+  },
+  {
+    "en": "Will AI redefine the future of chemistry?",
+    "cn": "AI会重新定义化学的未来吗？",
+    "category": "化学"
+  },
+  {
+    "en": "How can matter be programmed into living materials?",
+    "cn": "我们能否把物质编程，创造活体材料？",
+    "category": "化学"
+  },
+  {
+    "en": "What drives reproduction in living systems?",
+    "cn": "生命系统繁衍的驱动机制是什么？",
+    "category": "化学"
+  },
+  {
+    "en": "Can we predict the next pandemic?",
+    "cn": "我们能够预测下一场大流行病吗？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "Will we ever find a cure for the common cold?",
+    "cn": "人类可以找到普通感冒的根治办法吗？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "Can we design and manufacture medicines customized for individual people?",
+    "cn": "我们能否设计制造面向个体的定制化药物？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "Can a human tissue or organ be fully regenerated?",
+    "cn": "人体组织与器官能否实现完全再生？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "How is immune homeostasis maintained and regulated?",
+    "cn": "免疫稳态如何维持、如何调控？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "Is there a scientific basis to the Meridian System in traditional Chinese medicine?",
+    "cn": "中医经络体系具备科学依据吗？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "How will the next generation of vaccines be made?",
+    "cn": "下一代疫苗将如何制造？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "What is the etiology of autism?",
+    "cn": "自闭症的病因是什么？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "Can we ever overcome antibiotic resistance?",
+    "cn": "人类能否战胜抗生素耐药性？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "What role does our microbiome play in health and disease?",
+    "cn": "人体微生物组在健康和疾病中扮演什么角色？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "Can xenotransplantation solve the shortage of donor organs?",
+    "cn": "异种器官移植能否解决供体器官短缺？",
+    "category": "医学与健康"
+  },
+  {
+    "en": "What could help conservation of the oceans?",
+    "cn": "有什么办法助力海洋保护？",
+    "category": "生物学"
+  },
+  {
+    "en": "Can we stop ourselves from aging?",
+    "cn": "人类可以停止衰老吗？",
+    "category": "生物学"
+  },
+  {
+    "en": "Why can only some cells become other cells?",
+    "cn": "为什么只有部分细胞可以分化成其他类型细胞？",
+    "category": "生物学"
+  },
+  {
+    "en": "Why are some genomes so big and others very small?",
+    "cn": "为什么部分生物基因组巨大，部分却很小？",
+    "category": "生物学"
+  },
+  {
+    "en": "Will it be possible to cure all cancers?",
+    "cn": "我们是否可以治愈全部癌症？",
+    "category": "生物学"
+  },
+  {
+    "en": "What genes make us uniquely human?",
+    "cn": "哪些基因塑造了人类独有的特征？",
+    "category": "生物学"
+  },
+  {
+    "en": "How do migratory animals know where they’re going?",
+    "cn": "迁徙动物如何知道自己要去往何方？",
+    "category": "生物学"
+  },
+  {
+    "en": "Why did dinosaurs grow to be so big?",
+    "cn": "恐龙体型为什么可以长得如此巨大？",
+    "category": "生物学"
+  },
+  {
+    "en": "How many species are there on Earth?",
+    "cn": "地球上总共有多少物种？",
+    "category": "生物学"
+  },
+  {
+    "en": "How do organisms evolve?",
+    "cn": "生物如何演化？",
+    "category": "生物学"
+  },
+  {
+    "en": "Is de-extinction possible?",
+    "cn": "复活灭绝生物是否可行？",
+    "category": "生物学"
+  },
+  {
+    "en": "Did ancient humans interbreed with other human-like ancestors?",
+    "cn": "古人类是否和其他人科远古祖先发生过混血？",
+    "category": "生物学"
+  },
+  {
+    "en": "Why do humans get so attached to dogs and cats?",
+    "cn": "人类为什么对猫狗产生强烈的情感依恋？",
+    "category": "生物学"
+  },
+  {
+    "en": "Where do human emotions originate?",
+    "cn": "人类情绪起源于哪里？",
+    "category": "生物学"
+  },
+  {
+    "en": "Will the world’s population keep growing indefinitely?",
+    "cn": "世界人口会持续无限增长吗？",
+    "category": "生物学"
+  },
+  {
+    "en": "Why do we stop growing?",
+    "cn": "人类身体为什么会停止生长？",
+    "category": "生物学"
+  },
+  {
+    "en": "Can humans hibernate?",
+    "cn": "人类可以冬眠吗？",
+    "category": "生物学"
+  },
+  {
+    "en": "Will humans look physically different in the future?",
+    "cn": "未来人类的外貌会变得不一样吗？",
+    "category": "生物学"
+  },
+  {
+    "en": "Why were there species explosions and mass extinctions?",
+    "cn": "物种大爆发和大灭绝因何发生？",
+    "category": "生物学"
+  },
+  {
+    "en": "How might genome editing be used to cure disease?",
+    "cn": "基因组编辑如何用于治疗疾病？",
+    "category": "生物学"
+  },
+  {
+    "en": "Can a cell be artificially synthesized?",
+    "cn": "细胞可以人工合成吗？",
+    "category": "生物学"
+  },
+  {
+    "en": "How are biomolecules organized in cells to function orderly and effectively?",
+    "cn": "细胞内部的生物大分子，如何有序高效完成生命活动？",
+    "category": "生物学"
+  },
+  {
+    "en": "How many dimensions are there in space?",
+    "cn": "宇宙存在多少个维度？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is the shape of the universe?",
+    "cn": "宇宙的真实形状是什么？",
+    "category": "天文学"
+  },
+  {
+    "en": "Where did the Big Bang start?",
+    "cn": "大爆炸是从哪个地点开始？",
+    "category": "天文学"
+  },
+  {
+    "en": "Why don’t the orbits of planets decay and cause them to crash into each other?",
+    "cn": "行星轨道为什么不会衰减，互相撞击？",
+    "category": "天文学"
+  },
+  {
+    "en": "When will the universe die? Will it continue to expand?",
+    "cn": "宇宙何时消亡？宇宙会持续膨胀吗？",
+    "category": "天文学"
+  },
+  {
+    "en": "Is it possible to live permanently on another planet?",
+    "cn": "人类可以永久在别的行星定居吗？",
+    "category": "天文学"
+  },
+  {
+    "en": "Why do black holes exist?",
+    "cn": "黑洞为什么会存在？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is the universe made of?",
+    "cn": "宇宙是由什么构成的？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is the origin of cosmic rays?",
+    "cn": "宇宙射线起源是什么？",
+    "category": "天文学"
+  },
+  {
+    "en": "Are we alone in the universe?",
+    "cn": "宇宙中只有人类生命吗？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is the origin of mass?",
+    "cn": "质量的起源是什么？",
+    "category": "天文学"
+  },
+  {
+    "en": "Is our Milky Way Galaxy special?",
+    "cn": "我们的银河系是否特殊？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is the smallest scale of space-time?",
+    "cn": "时空最小尺度是多少？",
+    "category": "天文学"
+  },
+  {
+    "en": "Is Einstein’s general theory of relativity correct?",
+    "cn": "爱因斯坦广义相对论完全正确吗？",
+    "category": "天文学"
+  },
+  {
+    "en": "Is water necessary for all life in the universe, or just on Earth?",
+    "cn": "水是宇宙生命的必需条件，还是仅仅地球生命需要？",
+    "category": "天文学"
+  },
+  {
+    "en": "How are pulsars formed?",
+    "cn": "脉冲星如何形成？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is preventing humans from carrying out deep-space exploration?",
+    "cn": "是什么阻碍人类开展深空探索？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is the volume, composition, and significance of the deep biosphere?",
+    "cn": "深部生物圈的体积、成分，意义是什么？",
+    "category": "天文学"
+  },
+  {
+    "en": "Will humans one day have to leave the planet (or die trying)?",
+    "cn": "未来人类是否必须离开地球，否则面临灭亡？",
+    "category": "天文学"
+  },
+  {
+    "en": "Is it possible to understand the structure of compact stars and matter?",
+    "cn": "致密星体（白矮星、中子星、黑洞）的物质与结构我们可以理解吗？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is the origin of high-energy cosmic neutrinos?",
+    "cn": "高能宇宙中微子来自哪里？",
+    "category": "天文学"
+  },
+  {
+    "en": "What is gravity?",
+    "cn": "引力究竟是什么？",
+    "category": "天文学"
+  },
+  {
+    "en": "Where do the heavy elements in the universe come from?",
+    "cn": "宇宙重元素来自哪里？",
+    "category": "天文学"
+  },
+  {
+    "en": "Is there a diffraction limit?",
+    "cn": "衍射极限是否是不可逾越的？",
+    "category": "物理学"
+  },
+  {
+    "en": "What is the microscopic mechanism for high-temperature superconductivity?",
+    "cn": "高温超导微观机理是什么？",
+    "category": "物理学"
+  },
+  {
+    "en": "What are the limits of heat transfer in matter?",
+    "cn": "物质热传递的物理上限是什么？",
+    "category": "物理学"
+  },
+  {
+    "en": "What are the fundamental principles of collective motion?",
+    "cn": "集体运动的基础原理是什么？",
+    "category": "物理学"
+  },
+  {
+    "en": "Will we ever travel at the speed of light?",
+    "cn": "人类可以达到光速航行吗？",
+    "category": "物理学"
+  },
+  {
+    "en": "What is quantum uncertainty and why is it important?",
+    "cn": "量子不确定性原理为什么重要？",
+    "category": "物理学"
+  },
+  {
+    "en": "What are the smallest building blocks of matter?",
+    "cn": "物质最小的基本构建单元是什么？",
+    "category": "物理学"
+  },
+  {
+    "en": "Why does time seem to flow in only one direction?",
+    "cn": "为什么时间只单向流逝？",
+    "category": "物理学"
+  },
+  {
+    "en": "Are there any particles that behave oppositely to the properties or states of photons?",
+    "cn": "是否存在和光子性质完全相反的粒子？",
+    "category": "物理学"
+  },
+  {
+    "en": "Will Bose–Einstein condensates be widely used in the future?",
+    "cn": "玻色-爱因斯坦凝聚体会大规模应用吗？",
+    "category": "物理学"
+  },
+  {
+    "en": "What is the maximum speed to which we can accelerate a particle?",
+    "cn": "人类可以把粒子加速到多高？",
+    "category": "物理学"
+  },
+  {
+    "en": "Can we accurately simulate the macro- and microworld?",
+    "cn": "宏观世界、微观世界，我们可以精准模拟吗？",
+    "category": "物理学"
+  },
+  {
+    "en": "Can humans make intense lasers with incoherence comparable to sunlight?",
+    "cn": "人类能否制造出类似太阳光宽谱非相干强激光？",
+    "category": "物理学"
+  },
+  {
+    "en": "Is quantum many-body entanglement more fundamental than quantum fields?",
+    "cn": "量子多体纠缠比量子场论更加基础吗？",
+    "category": "物理学"
+  },
+  {
+    "en": "Can we make a real, human-size invisibility cloak?",
+    "cn": "可以制造真人大小的隐身斗篷吗？",
+    "category": "物理学"
+  },
+  {
+    "en": "Will there ever be a “theory of everything”?",
+    "cn": "“万物理论”是否能够实现？",
+    "category": "物理学"
+  },
+  {
+    "en": "What is dark matter?",
+    "cn": "暗物质到底是什么？",
+    "category": "物理学"
+  },
+  {
+    "en": "What is the optimum hardware for quantum computers?",
+    "cn": "量子计算机最优硬件方案是什么？",
+    "category": "物理学"
+  },
+  {
+    "en": "What is the ultimate statistical invariance of turbulence?",
+    "cn": "湍流的普适统计不变性是什么？",
+    "category": "工程与材料科学"
+  },
+  {
+    "en": "How can we develop manufacturing systems on Mars?",
+    "cn": "如何在火星建立制造工业体系？",
+    "category": "工程与材料科学"
+  },
+  {
+    "en": "How can we break the current limit on energy-conversion efficiencies?",
+    "cn": "我们能否突破现有能量转换效率上限？",
+    "category": "工程与材料科学"
+  },
+  {
+    "en": "Is a future of only self-driving cars realistic?",
+    "cn": "完全自动驾驶汽车普及是否现实？",
+    "category": "工程与材料科学"
+  },
+  {
+    "en": "Is there an upper limit to computer processing speed?",
+    "cn": "计算机运算速度存在物理上限吗？",
+    "category": "信息科学"
+  },
+  {
+    "en": "Information Science Can DNA act as an information storage medium?",
+    "cn": "DNA能否作为信息存储介质？",
+    "category": "信息科学"
+  },
+  {
+    "en": "Can AI replace a doctor?",
+    "cn": "AI可以取代医生吗？",
+    "category": "信息科学"
+  },
+  {
+    "en": "Can topological quantum computing be realized?",
+    "cn": "拓扑量子计算能否实现？",
+    "category": "信息科学"
+  },
+  {
+    "en": "Where does consciousness lie?",
+    "cn": "意识存在于大脑的哪个位置？",
+    "category": "神经科学"
+  },
+  {
+    "en": "What are the coding principles embedded in neuronal spike trains?",
+    "cn": "神经元脉冲序列蕴藏什么编码规则？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Can human memory be stored, manipulated, and transplanted digitally?",
+    "cn": "人类记忆可以数字化存储、修改、移植吗？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Why do we need sleep?",
+    "cn": "我们为什么需要睡眠？",
+    "category": "神经科学"
+  },
+  {
+    "en": "What is addiction and how does it work?",
+    "cn": "成瘾的发生机理是什么？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Why do we fall in love?",
+    "cn": "人类为什么会相爱？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Can we cure neurodegenerative diseases?",
+    "cn": "神经退行性疾病能够被治愈吗？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Why are most people right-handed?",
+    "cn": "为什么大多数人是右利手？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Is it possible to predict the future?",
+    "cn": "人类能够预测未来吗？",
+    "category": "神经科学"
+  },
+  {
+    "en": "How did speech evolve and what parts of the brain control it?",
+    "cn": "语言如何演化？大脑哪些区域控制语言？",
+    "category": "神经科学"
+  },
+  {
+    "en": "How smart are nonhuman animals?",
+    "cn": "非人类动物有多聪明？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Can we more effectively diagnose and treat complex mental disorders?",
+    "cn": "复杂精神障碍能否更有效诊断、治疗？",
+    "category": "神经科学"
+  },
+  {
+    "en": "Can we stop global climate change?",
+    "cn": "人类可以阻止全球气候变化吗？",
+    "category": "生态学"
+  },
+  {
+    "en": "Where do we put all the excess carbon dioxide?",
+    "cn": "多余的二氧化碳我们安置到哪里？",
+    "category": "生态学"
+  },
+  {
+    "en": "How is the Earth's magnetic field generated and why does it drift?",
+    "cn": "地球磁场如何产生，为什么会漂移？",
+    "category": "生态学"
+  },
+  {
+    "en": "Can we more accurately predict extreme events such as tsunamis, hurricanes, and earthquakes?",
+    "cn": "我们可以更准确预测海啸、飓风、地震这类极端灾害吗？",
+    "category": "生态学"
+  },
+  {
+    "en": "What happens if all the ice on the planet melts?",
+    "cn": "如果地球上全部冰川融化，会发生什么？",
+    "category": "生态学"
+  },
+  {
+    "en": "Can we create an environmentally friendly replacement for plastics?",
+    "cn": "我们可以造出环境友好的塑料替代品吗？",
+    "category": "生态学"
+  },
+  {
+    "en": "Can we achieve a situation where essentially every material can be recycled and reused?",
+    "cn": "是否可以实现几乎全部材料循环回收再利用？",
+    "category": "生态学"
+  },
+  {
+    "en": "Will we soon see the end of monocultures like wheat, maize, rice, and soy?",
+    "cn": "小麦玉米水稻大豆这类单一农作物种植模式会终结吗？",
+    "category": "生态学"
+  },
+  {
+    "en": "Could we live in a fossil-fuel-free world?",
+    "cn": "人类能否生活在无化石燃料的世界？",
+    "category": "能源科学"
+  },
+  {
+    "en": "What is the future of hydrogen energy?",
+    "cn": "氢能的未来前景如何？",
+    "category": "能源科学"
+  },
+  {
+    "en": "Will cold fusion ever be possible?",
+    "cn": "冷聚变能否实现？",
+    "category": "能源科学"
+  },
+  {
+    "en": "Will injectable, disease-fighting nanobots ever be a reality?",
+    "cn": "可注射治病纳米机器人能否成为现实？",
+    "category": "人工智能"
+  },
+  {
+    "en": "Is there a limit to human intelligence?",
+    "cn": "人类智力存在上限吗？",
+    "category": "人工智能"
+  },
+  {
+    "en": "Will it be possible to create robots with subjective perception (sentient robots)?",
+    "cn": "能否制造拥有主观感知的机器人？",
+    "category": "人工智能"
+  },
+  {
+    "en": "Will artificial intelligence replace humans?",
+    "cn": "AI是否会取代人类？",
+    "category": "人工智能"
+  },
+  {
+    "en": "Could we integrate with computers to form a human–machine hybrid species?",
+    "cn": "人类能否和计算机融合，变成人机混合物种？",
+    "category": "人工智能"
+  },
+  {
+    "en": "How does group intelligence emerge?",
+    "cn": "群体智能如何涌现？",
+    "category": "人工智能"
+  },
+  {
+    "en": "Can robots or AIs have human creativity?",
+    "cn": "机器人AI能否拥有人类一样的创造力？",
+    "category": "人工智能"
+  },
+  {
+    "en": "Can quantum artificial intelligence imitate the human brain?",
+    "cn": "量子人工智能可以模拟人脑吗？",
+    "category": "人工智能"
+  }
+]

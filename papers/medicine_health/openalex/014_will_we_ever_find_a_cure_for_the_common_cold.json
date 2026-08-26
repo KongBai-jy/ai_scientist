@@ -1,0 +1,135 @@
+{
+  "problem_id": 14,
+  "problem_cn": "人类可以找到普通感冒的根治办法吗？",
+  "problem_en": "Will we ever find a cure for the common cold?",
+  "category": "医学与健康",
+  "query_en": "Will we ever find a cure for the common cold",
+  "query_cn": "人类可以找到普通感冒的根治办法吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:53",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2746155276",
+      "doi": "https://doi.org/10.1590/1807-3107bor-2017.vol31.0061",
+      "title": "Light curing in dentistry and clinical implications: a literature review",
+      "year": 2017,
+      "cited_by_count": 284,
+      "relevance_score": 180.45009,
+      "authors": [
+        "Frederick A. Rueggeberg",
+        "Marcelo Giannini",
+        "César Augusto Galvão Arrais",
+        "Richard Bengt Price"
+      ],
+      "venue": "Brazilian Oral Research",
+      "abstract": "Contemporary dentistry literally cannot be performed without use of resin-based restorative materials. With the success of bonding resin materials to tooth structures, an even wider scope of clinical applications has arisen for these lines of products. Understanding of the basic events occurring in any dental polymerization mechanism, regardless of the mode of activating the process, will allow clinicians to both better appreciate the tremendous improvements that have been made over the years, and will also provide valuable information on differences among strategies manufacturers use to optimize product performance, as well as factors under the control of the clinician, whereby they can influence the long-term outcome of their restorative procedures.",
+      "keywords": [
+        "Dentistry",
+        "Restorative dentistry",
+        "Scope (computer science)",
+        "Dentin Bonding Agents",
+        "Curing (chemistry)"
+      ],
+      "url": "https://openalex.org/W2746155276",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2138820253",
+      "doi": "https://doi.org/10.3389/fmicb.2014.00172",
+      "title": "Recombinant protein expression in Escherichia coli: advances and challenges",
+      "year": 2014,
+      "cited_by_count": 2572,
+      "relevance_score": 162.78789,
+      "authors": [
+        "Germán L. Rosano",
+        "Eduardo A. Ceccarelli"
+      ],
+      "venue": "Frontiers in Microbiology",
+      "abstract": "Escherichia coli is one of the organisms of choice for the production of recombinant proteins. Its use as a cell factory is well-established and it has become the most popular expression platform. For this reason, there are many molecular tools and protocols at hand for the high-level production of heterologous proteins, such as a vast catalog of expression plasmids, a great number of engineered strains and many cultivation strategies. We review the different approaches for the synthesis of recombinant proteins in E. coli and discuss recent progress in this ever-growing field.",
+      "keywords": [
+        "Escherichia coli",
+        "Recombinant DNA",
+        "Heterologous",
+        "Plasmid",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2138820253",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1921607560",
+      "doi": "https://doi.org/10.1046/j.1365-2958.2003.03580.x",
+      "title": "Prophages and bacterial genomics: what have we learned so far?",
+      "year": 2003,
+      "cited_by_count": 911,
+      "relevance_score": 158.88887,
+      "authors": [
+        "Sherwood Casjens"
+      ],
+      "venue": "Molecular Microbiology",
+      "abstract": "Bacterial genome nucleotide sequences are being completed at a rapid and increasing rate. Integrated virus genomes (prophages) are common in such genomes. Fifty-one of the 82 such genomes published to date carry prophages, and these contain 230 recognizable putative prophages. Prophages can constitute as much as 10-20% of a bacterium's genome and are major contributors to differences between individuals within species. Many of these prophages appear to be defective and are in a state of mutational decay. Prophages, including defective ones, can contribute important biological properties to their bacterial hosts. Therefore, if we are to comprehend bacterial genomes fully, it is essential that we are able to recognize accurately and understand their prophages from nucleotide sequence analysis. Analysis of the evolution of prophages can shed light on the evolution of both bacteriophages and their hosts. Comparison of the Rac prophages in the sequenced genomes of three Escherichia coli strains and the Pnm prophages in two Neisseria meningitidis strains suggests that some prophages can lie in residence for very long times, perhaps millions of years, and that recombination events have occurred between related prophages that reside at different locations in a bacterium's genome. In addition, many genes in defective prophages remain functional, so a significant portion of the temperate bacteriophage gene pool resides in prophages.",
+      "keywords": [
+        "Prophage",
+        "Biology",
+        "Genome",
+        "Genetics",
+        "Bacterial genome size"
+      ],
+      "url": "https://openalex.org/W1921607560",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2023645909",
+      "doi": "https://doi.org/10.3748/wjg.14.2142",
+      "title": "Necrotizing enterocolitis: A multifactorial disease with no cure",
+      "year": 2008,
+      "cited_by_count": 190,
+      "relevance_score": 156.61717,
+      "authors": [
+        "Kareena Schnabl",
+        "John E. Van Aerde",
+        "Alan BR Thomson",
+        "M. Thomas Clandinin"
+      ],
+      "venue": "World Journal of Gastroenterology",
+      "abstract": "Necrotizing enterocolitis is an inflammatory bowel disease of neonates with significant morbidity and mortality in preterm infants. Due to the multifactorial nature of the disease and limitations in disease models, early diagnosis remains challenging and the pathogenesis elusive. Although preterm birth, hypoxic-ischemic events, formula feeding, and abnormal bacteria colonization are established risk factors, the role of genetics and vasoactive/inflammatory mediators is unclear. Consequently, treatments do not target the specific underlying disease processes and are symptomatic and surgically invasive. Breast-feeding is the most effective preventative measure. Recent advances in the prevention of necrotizing enterocolitis have focused on bioactive nutrients and trophic factors in human milk. Development of new disease models including the aspect of prematurity that consistently predisposes neonates to the disease with multiple risk factors will improve our understanding of the pathogenesis and lead to discovery of innovative therapeutics.",
+      "keywords": [
+        "Necrotizing enterocolitis",
+        "Disease",
+        "Medicine",
+        "Pathogenesis",
+        "Enterocolitis"
+      ],
+      "url": "https://openalex.org/W2023645909",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4393308058",
+      "doi": "https://doi.org/10.1002/cac2.12539",
+      "title": "Immunologic tumor microenvironment modulators for turning cold tumors hot",
+      "year": 2024,
+      "cited_by_count": 343,
+      "relevance_score": 153.74062,
+      "authors": [
+        "Gholamreza Khosravi",
+        "Samaneh Mostafavi",
+        "Sanaz Bastan",
+        "Narges Ebrahimi",
+        "Roya Safari Gharibvand",
+        "Nahid Eskandari"
+      ],
+      "venue": "癌症：英文版",
+      "abstract": "Tumors can be classified into distinct immunophenotypes based on the presence and arrangement of cytotoxic immune cells within the tumor microenvironment (TME). Hot tumors, characterized by heightened immune activity and responsiveness to immune checkpoint inhibitors (ICIs), stand in stark contrast to cold tumors, which lack immune infiltration and remain resistant to therapy. To overcome immune evasion mechanisms employed by tumor cells, novel immunologic modulators have emerged, particularly ICIs targeting cytotoxic T-lymphocyte-associated protein 4 (CTLA-4) and programmed cell death protein 1/programmed death-ligand 1(PD-1/PD-L1). These agents disrupt inhibitory signals and reactivate the immune system, transforming cold tumors into hot ones and promoting effective antitumor responses. However, challenges persist, including primary resistance to immunotherapy, autoimmune side effects, and tumor response heterogeneity. Addressing these challenges requires innovative strategies, deeper mechanistic insights, and a combination of immune interventions to enhance the effectiveness of immunotherapies. In the landscape of cancer medicine, where immune cold tumors represent a formidable hurdle, understanding the TME and harnessing its potential to reprogram the immune response is paramount. This review sheds light on current advancements and future directions in the quest for more effective and safer cancer treatment strategies, offering hope for patients with immune-resistant tumors.",
+      "keywords": [
+        "Tumor microenvironment",
+        "Neuroscience",
+        "Cancer research",
+        "Chemistry",
+        "Medicine"
+      ],
+      "url": "https://openalex.org/W4393308058",
+      "matched_by": "en"
+    }
+  ]
+}

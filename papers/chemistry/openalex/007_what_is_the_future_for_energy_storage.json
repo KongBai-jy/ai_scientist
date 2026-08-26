@@ -1,0 +1,136 @@
+{
+  "problem_id": 7,
+  "problem_cn": "储能技术的未来将走向何方？",
+  "problem_en": "What is the future for energy storage?",
+  "category": "化学",
+  "query_en": "What is the future for energy storage",
+  "query_cn": "储能技术的未来将走向何方",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:28",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2162677524",
+      "doi": "https://doi.org/10.1039/c3ee44164d",
+      "title": "Pseudocapacitive oxide materials for high-rate electrochemical energy storage",
+      "year": 2014,
+      "cited_by_count": 5489,
+      "relevance_score": 1051.0956,
+      "authors": [
+        "Veronica Augustyn",
+        "Patrice Simon",
+        "Bruce Dunn"
+      ],
+      "venue": "Energy & Environmental Science",
+      "abstract": "Electrochemical energy storage technology is based on devices capable of exhibiting high energy density (batteries) or high power density (electrochemical capacitors). There is a growing need, for current and near-future applications, where both high energy and high power densities are required in the same material. Pseudocapacitance, a faradaic process involving surface or near surface redox reactions, offers a means of achieving high energy density at high charge–discharge rates. Here, we focus on the pseudocapacitive properties of transition metal oxides. First, we introduce pseudocapacitance and describe its electrochemical features. Then, we review the most relevant pseudocapacitive materials in aqueous and non-aqueous electrolytes. The major challenges for pseudocapacitive materials along with a future outlook are detailed at the end.",
+      "keywords": [
+        "Pseudocapacitance",
+        "Materials science",
+        "Supercapacitor",
+        "Energy storage",
+        "Electrochemical energy storage"
+      ],
+      "url": "https://openalex.org/W2162677524",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2089402107",
+      "doi": "https://doi.org/10.1002/1097-0266(200010/11)21:10/11<1105::aid-smj133>3.0.co;2-e",
+      "title": "Dynamic capabilities: what are they?",
+      "year": 2000,
+      "cited_by_count": 14639,
+      "relevance_score": 880.359,
+      "authors": [
+        "Kathleen M. Eisenhardt",
+        "Jeffrey A. Martin"
+      ],
+      "venue": "Strategic Management Journal",
+      "abstract": "This paper focuses on dynamic capabilities and, more generally, the resource-based view of the firm. We argue that dynamic capabilities are a set of specific and identifiable processes such as product development, strategic decision making, and alliancing. They are neither vague nor tautological. Although dynamic capabilities are idiosyncratic in their details and path dependent in their emergence, they have significant commonalities across firms (popularly termed ‘best practice’). This suggests that they are more homogeneous, fungible, equifinal, and substitutable than is usually assumed. In moderately dynamic markets, dynamic capabilities resemble the traditional conception of routines. They are detailed, analytic, stable processes with predictable outcomes. In contrast, in high-velocity markets, they are simple, highly experiential and fragile processes with unpredictable outcomes. Finally, well-known learning mechanisms guide the evolution of dynamic capabilities. In moderately dynamic markets, the evolutionary emphasis is on variation. In high-velocity markets, it is on selection. At the level of RBV, we conclude that traditional RBV misidentifies the locus of long-term competitive advantage in dynamic markets, overemphasizes the strategic logic of leverage, and reaches a boundary condition in high-velocity markets. Copyright © 2000 John Wiley & Sons, Ltd.",
+      "keywords": [
+        "Dynamic capabilities",
+        "Leverage (statistics)",
+        "Dynamic decision-making",
+        "Resource (disambiguation)",
+        "Industrial organization"
+      ],
+      "url": "https://openalex.org/W2089402107",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2017428530",
+      "doi": "https://doi.org/10.1016/j.pnsc.2008.07.014",
+      "title": "Progress in electrical energy storage system: A critical review",
+      "year": 2009,
+      "cited_by_count": 3708,
+      "relevance_score": 835.11633,
+      "authors": [
+        "Haisheng Chen",
+        "Thang Ngoc Cong",
+        "Wei Yang",
+        "Chunqing Tan",
+        "Yongliang Li",
+        "Yulong Ding"
+      ],
+      "venue": "Progress in Natural Science Materials International",
+      "abstract": "Electrical energy storage technologies for stationary applications are reviewed. Particular attention is paid to pumped hydroelectric storage, compressed air energy storage, battery, flow battery, fuel cell, solar fuel, superconducting magnetic energy storage, flywheel, capacitor/supercapacitor, and thermal energy storage. Comparison is made among these technologies in terms of technical characteristics, applications and deployment status.",
+      "keywords": [
+        "Energy storage",
+        "Flywheel",
+        "Compressed air energy storage",
+        "Supercapacitor",
+        "Battery (electricity)"
+      ],
+      "url": "https://openalex.org/W2017428530",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2509883496",
+      "doi": "https://doi.org/10.1038/ncomms12647",
+      "title": "Multidimensional materials and device architectures for future hybrid energy storage",
+      "year": 2016,
+      "cited_by_count": 1620,
+      "relevance_score": 733.7638,
+      "authors": [
+        "Maria R. Lukatskaya",
+        "Bruce Dunn",
+        "Yury Gogotsi"
+      ],
+      "venue": "Nature Communications",
+      "abstract": "Electrical energy storage plays a vital role in daily life due to our dependence on numerous portable electronic devices. Moreover, with the continued miniaturization of electronics, integration of wireless devices into our homes and clothes and the widely anticipated ‘Internet of Things’, there are intensive efforts to develop miniature yet powerful electrical energy storage devices. This review addresses the cutting edge of electrical energy storage technology, outlining approaches to overcome current limitations and providing future research directions towards the next generation of electrical energy storage devices whose characteristics represent a true hybridization of batteries and electrochemical capacitors. With the continued miniaturization of electronics, there are increasing efforts to engineer small, powerful energy storage devices. Here the authors review the cutting edge of this rapidly developing field, highlighting the most promising materials and architectures for our future energy storage requirements.",
+      "keywords": [
+        "Energy storage",
+        "Miniaturization",
+        "Electronics",
+        "Computer science",
+        "Electrochemical energy storage"
+      ],
+      "url": "https://openalex.org/W2509883496",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2063866856",
+      "doi": "https://doi.org/10.1016/j.apenergy.2014.09.081",
+      "title": "Overview of current development in electrical energy storage technologies and the application potential in power system operation",
+      "year": 2014,
+      "cited_by_count": 3790,
+      "relevance_score": 685.1259,
+      "authors": [
+        "Xing Luo",
+        "Jihong Wang",
+        "Mark Dooner",
+        "Jonathan Clarke"
+      ],
+      "venue": "Applied Energy",
+      "abstract": "Electrical power generation is changing dramatically across the world because of the need to reduce greenhouse gas emissions and to introduce mixed energy sources. The power network faces great challenges in transmission and distribution to meet demand with unpredictable daily and seasonal variations. Electrical Energy Storage (EES) is recognized as underpinning technologies to have great potential in meeting these challenges, whereby energy is stored in a certain state, according to the technology used, and is converted to electrical energy when needed. However, the wide variety of options and complex characteristic matrices make it difficult to appraise a specific EES technology for a particular application. This paper intends to mitigate this problem by providing a comprehensive and clear picture of the state-of-the-art technologies available, and where they would be suited for integration into a power generation and distribution system. The paper starts with an overview of the operation principles, technical and economic performance features and the current research and development of important EES technologies, sorted into six main categories based on the types of energy stored. Following this, a comprehensive comparison and an application potential analysis of the reviewed technologies are presented.",
+      "keywords": [
+        "Underpinning",
+        "Variety (cybernetics)",
+        "Energy storage",
+        "Electric power system",
+        "Systems engineering"
+      ],
+      "url": "https://openalex.org/W2063866856",
+      "matched_by": "en"
+    }
+  ]
+}

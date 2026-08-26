@@ -119,9 +119,20 @@ class FeedbackRecord(Base):
 
 # 数据库连接
 DATABASE_URL = _resolve_database_url()
+# 是否启用了 MySQL：仅当用户配置了有效 MYSQL_* 时，_resolve_database_url 才会返回 mysql 连接；
+# 未配置时落到 SQLite，此时调用方应跳过 MySQL 专属写入，避免无意义的连接等待
+USES_MYSQL = DATABASE_URL.startswith("mysql")
 # SQLite 需要 check_same_thread=False（FastAPI 多线程场景）
 _connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}
-engine = create_engine(DATABASE_URL, connect_args=_connect_args)
+# MySQL (pymysql) 显式指定 Unicode 与 utf8mb4，避免个别连接线程用 latin1/系统默认 charset 导致中文被替换为 ?
+if DATABASE_URL.startswith("mysql"):
+    _connect_args.setdefault("charset", "utf8mb4")
+    _connect_args.setdefault("use_unicode", True)
+engine = create_engine(
+    DATABASE_URL,
+    connect_args=_connect_args,
+    pool_pre_ping=True,          # 自动检测失效连接（防止长时间空闲后 server 断开）
+)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 

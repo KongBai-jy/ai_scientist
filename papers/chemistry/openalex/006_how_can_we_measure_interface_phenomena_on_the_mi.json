@@ -1,0 +1,166 @@
+{
+  "problem_id": 6,
+  "problem_cn": "我们该如何在微观尺度测量界面现象？",
+  "problem_en": "How can we measure interface phenomena on the microscopic level?",
+  "category": "化学",
+  "query_en": "How can we measure interface phenomena on the microscopic level",
+  "query_cn": "我们该如何在微观尺度测量界面现象",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:24",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2465001862",
+      "doi": "https://doi.org/10.1103/revmodphys.89.025006",
+      "title": "Interface-induced phenomena in magnetism",
+      "year": 2017,
+      "cited_by_count": 916,
+      "relevance_score": 616.1546,
+      "authors": [
+        "F. Hellman",
+        "Axel Hoffmann",
+        "Yaroslav Tserkovnyak",
+        "Geoffrey S. D. Beach",
+        "Eric E. Fullerton",
+        "Chris Leighton",
+        "A. H. MacDonald",
+        "Daniel C. Ralph",
+        "Darío Arena",
+        "H. A. Dürr",
+        "Peter Fischer",
+        "J. Grollier",
+        "Joseph P. Heremans",
+        "T. Jungwirth",
+        "A. V. Kimel",
+        "B. Koopmans",
+        "I. N. Krivorotov",
+        "Steven J. May",
+        "A. K. Petford‐Long",
+        "James M. Rondinelli",
+        "Nitin Samarth",
+        "Iván K. Schuller",
+        "A. N. Slavin",
+        "M. D. Stiles",
+        "Oleg Tchernyshyov",
+        "A. Thiaville",
+        "Barry Zink"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "This article reviews static and dynamic interfacial effects in magnetism, focusing on interfacially-driven magnetic effects and phenomena associated with spin-orbit coupling and intrinsic symmetry breaking at interfaces. It provides a historical background and literature survey, but focuses on recent progress, identifying the most exciting new scientific results and pointing to promising future research directions. It starts with an introduction and overview of how basic magnetic properties are affected by interfaces, then turns to a discussion of charge and spin transport through and near interfaces and how these can be used to control the properties of the magnetic layer. Important concepts include spin accumulation, spin currents, spin transfer torque, and spin pumping. An overview is provided to the current state of knowledge and existing review literature on interfacial effects such as exchange bias, exchange spring magnets, spin Hall effect, oxide heterostructures, and topological insulators. The article highlights recent discoveries of interface-induced magnetism and non-collinear spin textures, non-linear dynamics including spin torque transfer and magnetization reversal induced by interfaces, and interfacial effects in ultrafast magnetization processes.",
+      "keywords": [
+        "Physics",
+        "Interface (matter)",
+        "Magnetism",
+        "Condensed matter physics",
+        "Engineering physics"
+      ],
+      "url": "https://openalex.org/W2465001862",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2130457461",
+      "doi": "https://doi.org/10.1146/annurev.fluid.30.1.139",
+      "title": "DIFFUSE-INTERFACE METHODS IN FLUID MECHANICS",
+      "year": 1998,
+      "cited_by_count": 2146,
+      "relevance_score": 576.3141,
+      "authors": [
+        "Daniel Anderson",
+        "G. B. McFadden",
+        "A. A. Wheeler"
+      ],
+      "venue": "Annual Review of Fluid Mechanics",
+      "abstract": "▪ Abstract We review the development of diffuse-interface models of hydrodynamics and their application to a wide variety of interfacial phenomena. These models have been applied successfully to situations in which the physical phenomena of interest have a length scale commensurate with the thickness of the interfacial region (e.g. near-critical interfacial phenomena or small-scale flows such as those occurring near contact lines) and fluid flows involving large interface deformations and/or topological changes (e.g. breakup and coalescence events associated with fluid jets, droplets, and large-deformation waves). We discuss the issues involved in formulating diffuse-interface models for single-component and binary fluids. Recent applications and computations using these models are discussed in each case. Further, we address issues including sharp-interface analyses that relate these models to the classical free-boundary problem, computational approaches to describe interfacial phenomena, and models of fully miscible fluids.",
+      "keywords": [
+        "Breakup",
+        "Coalescence (physics)",
+        "Computation",
+        "Mechanics",
+        "Interface (matter)"
+      ],
+      "url": "https://openalex.org/W2130457461",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2030046989",
+      "doi": "https://doi.org/10.1088/0034-4885/30/2/306",
+      "title": "The theory of equilibrium critical phenomena",
+      "year": 1967,
+      "cited_by_count": 2511,
+      "relevance_score": 555.6053,
+      "authors": [
+        "Michael E. Fisher"
+      ],
+      "venue": "Reports on Progress in Physics",
+      "abstract": "The theory of critical phenomena in systems at equilibrium is reviewed at an introductory level with special emphasis on the values of the critical point exponents α, β, γ,..., and their interrelations. The experimental observations are surveyed and the analogies between different physical systems - fluids, magnets, superfluids, binary alloys, etc. - are developed phenomenologically. An exact theoretical basis for the analogies follows from the equivalence between classical and quantal `lattice gases' and the Ising and Heisenberg-Ising magnetic models. General rigorous inequalities for critical exponents at and below T c are derived. The nature and validity of the `classical' (phenomenological and mean field) theories are discussed, their predictions being contrasted with the exact results for plane Ising models, which are summarized concisely. Padé approximant and ratio techniques applied to appropriate series expansions lead to precise critical-point estimates for the three-dimensional Heisenberg and Ising models (tables of data are presented). With this background a critique is presented of recent theoretical ideas: namely, the `droplet' picture of the critical point and the `homogeneity' and `scaling' hypotheses. These lead to a `law of corresponding states' near a critical point and to relations between the various exponents which suggest that perhaps only two or three exponents might be algebraically independent for any system.",
+      "keywords": [
+        "Ising model",
+        "Physics",
+        "Critical point (mathematics)",
+        "Critical exponent",
+        "Statistical physics"
+      ],
+      "url": "https://openalex.org/W2030046989",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2130869501",
+      "doi": "https://doi.org/10.1103/revmodphys.80.839",
+      "title": "Transport phenomena in nanofluidics",
+      "year": 2008,
+      "cited_by_count": 1913,
+      "relevance_score": 540.5445,
+      "authors": [
+        "Reto B. Schoch",
+        "Jongyoon Han",
+        "Philippe Renaud"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "The transport of fluid in and around nanometer-sized objects with at least one characteristic dimension below $100\\phantom{\\rule{0.3em}{0ex}}\\mathrm{nm}$ enables the occurrence of phenomena that are impossible at bigger length scales. This research field was only recently termed nanofluidics, but it has deep roots in science and technology. Nanofluidics has experienced considerable growth in recent years, as is confirmed by significant scientific and practical achievements. This review focuses on the physical properties and operational mechanisms of the most common structures, such as nanometer-sized openings and nanowires in solution on a chip. Since the surface-to-volume ratio increases with miniaturization, this ratio is high in nanochannels, resulting in surface-charge-governed transport, which allows ion separation and is described by a comprehensive electrokinetic theory. The charge selectivity is most pronounced if the Debye screening length is comparable to the smallest dimension of the nanochannel cross section, leading to a predominantly counterion containing nanometer-sized aperture. These unique properties contribute to the charge-based partitioning of biomolecules at the microchannel-nanochannel interface. Additionally, at this free-energy barrier, size-based partitioning can be achieved when biomolecules and nanoconstrictions have similar dimensions. Furthermore, nanopores and nanowires are rooted in interesting physical concepts, and since these structures demonstrate sensitive, label-free, and real-time electrical detection of biomolecules, the technologies hold great promise for the life sciences. The purpose of this review is to describe physical mechanisms on the nanometer scale where new phenomena occur, in order to exploit these unique properties and realize integrated sample preparation and analysis systems.",
+      "keywords": [
+        "Nanofluidics",
+        "Nanotechnology",
+        "Debye length",
+        "Electrokinetic phenomena",
+        "Nanopore"
+      ],
+      "url": "https://openalex.org/W2130869501",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2403412395",
+      "doi": "https://doi.org/10.1021/acs.chemrev.6b00045",
+      "title": "Water at Interfaces",
+      "year": 2016,
+      "cited_by_count": 813,
+      "relevance_score": 335.29156,
+      "authors": [
+        "Olle Björneholm",
+        "Martin Hangaard Hansen",
+        "A. Hodgson",
+        "Limin Liu",
+        "David T. Limmer",
+        "Angelos Michaelides",
+        "Philipp Pedevilla",
+        "Jan Rossmeisl",
+        "Huaze Shen",
+        "Gabriele Tocci",
+        "Eric Tyrode",
+        "Marie‐Madeleine Walz",
+        "Josephina Werner",
+        "Hendrik Bluhm"
+      ],
+      "venue": "Chemical Reviews",
+      "abstract": "The interfaces of neat water and aqueous solutions play a prominent role in many technological processes and in the environment. Examples of aqueous interfaces are ultrathin water films that cover most hydrophilic surfaces under ambient relative humidities, the liquid/solid interface which drives many electrochemical reactions, and the liquid/vapor interface, which governs the uptake and release of trace gases by the oceans and cloud droplets. In this article we review some of the recent experimental and theoretical advances in our knowledge of the properties of aqueous interfaces and discuss open questions and gaps in our understanding.",
+      "keywords": [
+        "Chemistry",
+        "Aqueous solution",
+        "Interface (matter)",
+        "Nanotechnology",
+        "TRACE (psycholinguistics)"
+      ],
+      "url": "https://openalex.org/W2403412395",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+{
+  "problem_id": 102,
+  "problem_cn": "为什么大多数人是右利手？",
+  "problem_en": "Why are most people right-handed?",
+  "category": "神经科学",
+  "query_en": "Why are most people right-handed",
+  "query_cn": "为什么大多数人是右利手",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:58",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2170488209",
+      "doi": "https://doi.org/10.1080/13504620220145401",
+      "title": "Mind the Gap: Why do people act environmentally and what are the barriers to pro-environmental behavior?",
+      "year": 2002,
+      "cited_by_count": 8675,
+      "relevance_score": 991.43634,
+      "authors": [
+        "Anja Kollmuss",
+        "Julian Agyeman"
+      ],
+      "venue": "Environmental Education Research",
+      "abstract": "Numerous theoretical frameworks have been developed to explain the gap between the possession of environmental knowledge and environmental awareness, and displaying pro-environmental behavior. Although many hundreds of studies have been undertaken, no definitive explanation has yet been found. Our article describes a few of the most influential and commonly used analytical frameworks: early US linear progression models; altruism, empathy and prosocial behavior models; and finally, sociological models. All of the models we discuss (and many of the ones we do not such as economic models, psychological models that look at behavior in general, social marketing models and that have become known as deliberative and inclusionary processes or procedures (DIPS)) have some validity in certain circumstances. This indicates that the question of what shapes pro-environmental behavior is such a complex one that it cannot be visualized through one single framework or diagram. We then analyze the factors that have been found to have some influence, positive or negative, on pro-environmental behavior such as demographic factors, external factors (e.g. institutional, economic, social and cultural) and internal factors (e.g. motivation, pro-environmental knowledge, awareness, values, attitudes, emotion, locus of control, responsibilities and priorities). Although we point out that developing a model that tries to incorporate all factors might neither be feasible nor useful, we feel that it can help illuminate this complex field. Accordingly, we propose our own model based on the work of Fliegenschnee and Schelakovsky (1998) who were influenced by Fietkau and Kessel (1981).",
+      "keywords": [
+        "Prosocial behavior",
+        "Empathy",
+        "Altruism (biology)",
+        "Social psychology",
+        "Psychology"
+      ],
+      "url": "https://openalex.org/W2170488209",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1990100773",
+      "doi": "https://doi.org/10.1111/j.1551-6708.1987.tb00863.x",
+      "title": "Why a Diagram is (Sometimes) Worth Ten Thousand Words",
+      "year": 1987,
+      "cited_by_count": 3611,
+      "relevance_score": 448.26337,
+      "authors": [
+        "Jill H. Larkin",
+        "Herbert A. Simon"
+      ],
+      "venue": "Cognitive Science",
+      "abstract": "We distinguish diagrammatic from sentential paper‐and‐pencil representations of information by developing alternative models of information‐processing systems that are informationally equivalent and that can be characterized as sentential or diagrammatic. Sentential representations are sequential, like the propositions in a text. Diagrammatic representations are indexed by location in a plane. Diagrammatic representations also typically display information that is only implicit in sentential representations and that therefore has to be computed, sometimes at great cost, to make it explicit for use. We then contrast the computational efficiency of these representations for solving several illustrative problems in mathematics and physics. When two representations are informationally equivalent, their computational efficiency depends on the information‐processing operators that act on them. Two sets of operators may differ in their capabilities for recognizing patterns, in the inferences they can carry out directly, and in their control strategies (in particular, the control of search). Diagrammatic and sentential representations support operators that differ in all of these respects. Operators working on one representation may recognize features readily or make inferences directly that are difficult to realize in the other representation. Most important, however, are differences in the efficiency of search for information and in the explicitness of information. In the representations we call diagrammatic, information is organized by location, and often much of the information needed to make an inference is present and explicit at a single location. In addition, cues to the next logical step in the problem may be present at an adjacent location. Therefore problem solving can proceed through a smooth traversal of the diagram, and may require very little search or computation of elements that had been implicit.",
+      "keywords": [
+        "Diagrammatic reasoning",
+        "Representation (politics)",
+        "Inference",
+        "Computer science",
+        "Theoretical computer science"
+      ],
+      "url": "https://openalex.org/W1990100773",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W585758897",
+      "doi": null,
+      "title": "Handedness and brain asymmetry the right shift theory",
+      "year": 2002,
+      "cited_by_count": 514,
+      "relevance_score": 401.0824,
+      "authors": [
+        "Marian Annett"
+      ],
+      "venue": null,
+      "abstract": "Brain asymmetry for speech is moderately related to handedness but what are the rules?Are symmetries for hand and brain associated with characteristics such as intelligence, motor skill, spatial reasoning or skill at sports?In this follow up to the influential Left, Right Hand and Brain (1985) Marian Annett draws on a working lifetime of research to help provide answers to crucial questions. Central to her argument is the Right Shift Theory - her original and innovative contribution to the field that seeks to explain the relationships between left-and right-handedness and left-and right-brain specialisation. The theory proposes that handedness in humans and our non-human primate relations depends on chance but that chance is weighted towards right-handedness in most people by an agent of right-hemisphere disadvantage. It argues for the existence of a single gene for right shift (RS+) that evolved in humans to aid the growth of speech in the left hemisphere of the brain.The Right Shift Theory has possible implications for a wide range of questions about human abilities and disabilities, including verbal and non verbal intelligence, educational progress and dyslexia, spatial reasoning, sporting skills and mental illness. It continues to be at the cutting edge of research, solving problems and generating new avenues of investigation - most recently the surprising idea that a mutant RS+ gene might be involved in the causes of schizophrenia and autism.Handedness and Brain Asymmetry will make fascinating reading for students and researchers in psychology and neurology, educationalists, and anyone with a keen interest in why people have different talents and weaknesses.",
+      "keywords": [
+        "Brain asymmetry",
+        "Psychology",
+        "Cognitive psychology",
+        "Argument (complex analysis)",
+        "Left and right"
+      ],
+      "url": "https://openalex.org/W585758897",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1976637107",
+      "doi": "https://doi.org/10.1207/s15326985ep4102_1",
+      "title": "Why Minimal Guidance During Instruction Does Not Work: An Analysis of the Failure of Constructivist, Discovery, Problem-Based, Experiential, and Inquiry-Based Teaching",
+      "year": 2006,
+      "cited_by_count": 6813,
+      "relevance_score": 389.7037,
+      "authors": [
+        "Paul A. Kirschner",
+        "John Sweller",
+        "Richard E. Clark"
+      ],
+      "venue": "Educational Psychologist",
+      "abstract": "Evidence for the superiority of guided instruction is explained in the context of our knowledge of human cognitive architecture, expert–novice differences, and cognitive load. Although unguided or minimally guided instructional approaches are very popular and intuitively appealing, the point is made that these approaches ignore both the structures that constitute human cognitive architecture and evidence from empirical studies over the past half-century that consistently indicate that minimally guided instruction is less effective and less efficient than instructional approaches that place a strong emphasis on guidance of the student learning process. The advantage of guidance begins to recede only when learners have sufficiently high prior knowledge to provide \"internal\" guidance. Recent developments in instructional research and instructional design models that support guidance during instruction are briefly described.",
+      "keywords": [
+        "Experiential learning",
+        "Cognitive load",
+        "Context (archaeology)",
+        "Cognition",
+        "Cognitive architecture"
+      ],
+      "url": "https://openalex.org/W1976637107",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2792018968",
+      "doi": "https://doi.org/10.1257/aer.20181047",
+      "title": "Bartik Instruments: What, When, Why, and How",
+      "year": 2020,
+      "cited_by_count": 2357,
+      "relevance_score": 352.44022,
+      "authors": [
+        "Paul Goldsmith-Pinkham",
+        "Isaac Sorkin",
+        "Henry Swift"
+      ],
+      "venue": "American Economic Review",
+      "abstract": "The Bartik instrument is formed by interacting local industry shares and national industry growth rates. We show that the typical use of a Bartik instrument assumes a pooled exposure research design, where the shares measure differential exposure to common shocks, and identification is based on exogeneity of the shares. Next, we show how the Bartik instrument weights each of the exposure designs. Finally, we discuss how to assess the plausibility of the research design. We illustrate our results through two applications: estimating the elasticity of labor supply, and estimating the elasticity of substitution between immigrants and natives. (JEL C51, F14, J15, J22, L60, R23, R32)",
+      "keywords": [
+        "Endogeneity",
+        "Elasticity of substitution",
+        "Elasticity (physics)",
+        "Economics",
+        "Econometrics"
+      ],
+      "url": "https://openalex.org/W2792018968",
+      "matched_by": "en"
+    }
+  ]
+}

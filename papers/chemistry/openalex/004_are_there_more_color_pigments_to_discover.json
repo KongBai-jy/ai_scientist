@@ -1,0 +1,135 @@
+{
+  "problem_id": 4,
+  "problem_cn": "还存在更多有待人类发现的颜料吗？",
+  "problem_en": "Are there more color pigments to discover?",
+  "category": "化学",
+  "query_en": "Are there more color pigments to discover",
+  "query_cn": "还存在更多有待人类发现的颜料吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:17",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2108193798",
+      "doi": "https://doi.org/10.3390/molecules16021710",
+      "title": "Carotenoids and Their Isomers: Color Pigments in Fruits and Vegetables",
+      "year": 2011,
+      "cited_by_count": 624,
+      "relevance_score": 509.39954,
+      "authors": [
+        "Hock Eng Khoo",
+        "K. Nagendra Prasad",
+        "Kin Weng Kong",
+        "Yueming Jiang",
+        "Amin Ismail"
+      ],
+      "venue": "Molecules",
+      "abstract": "Fruits and vegetables are colorful pigment-containing food sources. Owing to their nutritional benefits and phytochemicals, they are considered as 'functional food ingredients'. Carotenoids are some of the most vital colored phytochemicals, occurring as all-trans and cis-isomers, and accounting for the brilliant colors of a variety of fruits and vegetables. Carotenoids extensively studied in this regard include β-carotene, lycopene, lutein and zeaxanthin. Coloration of fruits and vegetables depends on their growth maturity, concentration of carotenoid isomers, and food processing methods. This article focuses more on several carotenoids and their isomers present in different fruits and vegetables along with their concentrations. Carotenoids and their geometric isomers also play an important role in protecting cells from oxidation and cellular damages.",
+      "keywords": [
+        "Carotenoid",
+        "Pigment",
+        "Food science",
+        "Chemistry",
+        "Botany"
+      ],
+      "url": "https://openalex.org/W2108193798",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1951338962",
+      "doi": "https://doi.org/10.1523/jneurosci.04-01-00309.1984",
+      "title": "Anatomy and physiology of a color system in the primate visual cortex",
+      "year": 1984,
+      "cited_by_count": 1650,
+      "relevance_score": 335.55817,
+      "authors": [
+        "Margaret S. Livingstone",
+        "DH Hubel"
+      ],
+      "venue": "Journal of Neuroscience",
+      "abstract": "Staining for the mitochondrial enzyme cytochrome oxidase reveals an array of dense regions (blobs) in the primate primary visual cortex. They are most obvious in the upper layers, 2 and 3, but can also be seen in layers 4B, 5, and 6, in register with the blobs in layers 2 and 3. We compared cells inside and outside blobs in macaque and squirrel monkeys, looking at their physiological responses and anatomical connections. Cells within blobs did not show orientation selectivity, whereas cells between blobs were highly orientation selective. Receptive fields of blob cells had circular symmetry and were of three main types, Broad-Band Center-Surround, Red-Green Double-Opponent, and Yellow-Blue Double-Opponent. Double-Opponent cells responded poorly or not at all to white light in any form, or to diffuse light at any wavelength. In contrast to blob cells, none of the cells recorded in layer 4C beta were Double-Opponent: like the majority of cells in the parvocellular geniculate layers, they were either Broad-Band or Color-Opponent Center-Surround, e.g., red-on-center green-off-surround. To our surprise cells in layer 4C alpha were orientation selective. In tangential penetrations throughout layers 2 and 3, optium orientation, when plotted against electrode position, formed long, regular, usually linear sequences, which were interrupted but not perturbed by the blobs. Staining area 18 for cytochrome oxidase reveals a series of alternating wide and narrow dense stripes, separated by paler interstripes. After small injections of horseradish peroxidase into area 18, we saw a precise set of connections from the blobs in area 17 to thin stripes in area 18, and from the interblob regions in area 17 to interstripes in area 18. Specific reciprocal connections also ran from thin stripes to blobs and from interstripes to interblobs. We have not yet determined the area 17 connections to thick stripes in area 18. In addition, within area 18 there are stripe-to-stripe and interstripe-to-interstripe intrinsic connections. These results suggest that a system involved in the processing of color information, especially color-spatial interactions, runs parallel to and separate from the orientation-specific system. Color, encoded in three coordinates by the major blob cell types, red-green, yellow-blue, and black-white, can be transformed into the three coordinates, red, green, and blue, of the Retinex algorithm of Land.",
+      "keywords": [
+        "Parvocellular cell",
+        "Orientation (vector space)",
+        "Anatomy",
+        "Visual cortex",
+        "Retina"
+      ],
+      "url": "https://openalex.org/W1951338962",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2080928914",
+      "doi": "https://doi.org/10.3390/molecules17021483",
+      "title": "Anthocyanins and Their Variation in Red Wines II. Anthocyanin Derived Pigments and Their Color Evolution",
+      "year": 2012,
+      "cited_by_count": 332,
+      "relevance_score": 313.13818,
+      "authors": [
+        "Fei He",
+        "Nana Liang",
+        "Lin Mu",
+        "Qiu‐Hong Pan",
+        "Jun Wang",
+        "Malcolm J. Reeves",
+        "Chang‐Qing Duan"
+      ],
+      "venue": "Molecules",
+      "abstract": "Originating in the grapes, anthocyanins and their derivatives are the crucial pigments responsible for the red wine color. During wine maturation and aging, the concentration of monomeric anthocyanins declines constantly, while numerous more complex and stable anthocyanin derived pigments are formed, mainly including pyranoanthocyanins, polymeric anthocyanins produced from condensation between anthocyanin and/or flavan-3-ols directly or mediated by aldehydes. Correspondingly, their structural modifications result in a characteristic variation of color, from purple-red color in young red wines to brick-red hue of the aged. Because of the extreme complexity of chemical compounds involved, many investigations have been made using model solutions of know composition rather than wine. Thus, there is a large amount of research still required to obtain an overall perspective of the anthocyanin composition and its change with time in red wines. Future findings may well greatly revise our current interpretation of the color in red wines. This paper summarizes the most recent advances in the studies of the anthocyanins derived pigments in red wines, as well as their color evolution.",
+      "keywords": [
+        "Anthocyanin",
+        "Wine",
+        "Hue",
+        "Wine color",
+        "Pigment"
+      ],
+      "url": "https://openalex.org/W2080928914",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2124218959",
+      "doi": "https://doi.org/10.1017/s0140525x03000013",
+      "title": "Color realism and color science",
+      "year": 2003,
+      "cited_by_count": 517,
+      "relevance_score": 272.98837,
+      "authors": [
+        "Alex Byrne",
+        "David Hilbert"
+      ],
+      "venue": "Behavioral and Brain Sciences",
+      "abstract": "The target article is an attempt to make some progress on the problem of color realism. Are objects colored? And what is the nature of the color properties? We defend the view that physical objects (for instance, tomatoes, radishes, and rubies) are colored, and that colors are physical properties, specifically, types of reflectance. This is probably a minority opinion, at least among color scientists. Textbooks frequently claim that physical objects are not colored, and that the colors are \"subjective\" or \"in the mind.\" The article has two other purposes: First, to introduce an interdisciplinary audience to some distinctively philosophical tools that are useful in tackling the problem of color realism and, second, to clarify the various positions and central arguments in the debate. The first part explains the problem of color realism and makes some useful distinctions. These distinctions are then used to expose various confusions that often prevent people from seeing that the issues are genuine and difficult, and that the problem of color realism ought to be of interest to anyone working in the field of color science. The second part explains the various leading answers to the problem of color realism, and (briefly) argues that all views other than our own have serious difficulties or are unmotivated. The third part explains and motivates our own view, that colors are types of reflectances and defends it against objections made in the recent literature that are often taken as fatal.",
+      "keywords": [
+        "Realism",
+        "Colored",
+        "Epistemology",
+        "Aesthetics",
+        "Field (mathematics)"
+      ],
+      "url": "https://openalex.org/W2124218959",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2130043709",
+      "doi": "https://doi.org/10.1351/pac200678081477",
+      "title": "Carotenoids and other pigments as natural colorants",
+      "year": 2006,
+      "cited_by_count": 372,
+      "relevance_score": 263.73547,
+      "authors": [
+        "Alan Mortensen"
+      ],
+      "venue": "Pure and Applied Chemistry",
+      "abstract": "Abstract Food colorants may be classified into synthetic, nature-identical, inorganic, and natural colorants. Natural colorants for food are made from renewable sources. Most often, the colorants are extracted from plant material, but other sources such as insects, algae, cyanobacteria, and fungi are used as well. Natural colorants are usually extracted and concentrated using either water or lower alcohols for water-soluble pigments and organic solvents for lipophilic pigments. Legislation restricts which colorants are allowed, what sources may be used for that particular colorant, what solvents may be used to extract it, and the purity of the pigment. Colorants are formulated to make them more suitable for a variety of foods and drinks (e.g., lipophilic pigments for use in beverages) and to increase their stability. The natural colorants allowed in the EU and the USA are presented. Many of these colorants are also allowed in most parts of the world. A few colorants that are not allowed in the EU and the USA, but are important food colorants in other parts of the world, are also presented.",
+      "keywords": [
+        "Chemistry",
+        "Pigment",
+        "Natural food",
+        "Carotenoid",
+        "Food additive"
+      ],
+      "url": "https://openalex.org/W2130043709",
+      "matched_by": "en"
+    }
+  ]
+}

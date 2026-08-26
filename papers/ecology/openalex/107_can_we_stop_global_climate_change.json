@@ -1,0 +1,169 @@
+{
+  "problem_id": 107,
+  "problem_cn": "人类可以阻止全球气候变化吗？",
+  "problem_en": "Can we stop global climate change?",
+  "category": "生态学",
+  "query_en": "Can we stop global climate change",
+  "query_cn": "人类可以阻止全球气候变化吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T11:07:42",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2130509491",
+      "doi": "https://doi.org/10.1016/j.gloenvcha.2014.04.002",
+      "title": "Changes in the global value of ecosystem services",
+      "year": 2014,
+      "cited_by_count": 6251,
+      "relevance_score": 999.68494,
+      "authors": [
+        "Robert Costanza",
+        "R.S. de Groot",
+        "Paul C. Sutton",
+        "Sander van der Ploeg",
+        "Sharolyn Anderson",
+        "Ida Kubiszewski",
+        "Stephen Färber",
+        "R. Kerry Turner"
+      ],
+      "venue": "Global Environmental Change",
+      "abstract": "",
+      "keywords": [
+        "Ecosystem services",
+        "Valuation (finance)",
+        "Unit (ring theory)",
+        "Goods and services",
+        "Business"
+      ],
+      "url": "https://openalex.org/W2130509491",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2009225674",
+      "doi": "https://doi.org/10.1038/nature14338",
+      "title": "Climate change and the permafrost carbon feedback",
+      "year": 2015,
+      "cited_by_count": 3873,
+      "relevance_score": 979.9095,
+      "authors": [
+        "Edward A. G. Schuur",
+        "A. David McGuire",
+        "Christina Schädel",
+        "Guido Grosse",
+        "J. W. Harden",
+        "Daniel J. Hayes",
+        "Gustaf Hugelius",
+        "Charles D. Koven",
+        "Peter Kuhry",
+        "David M. Lawrence",
+        "Susan M. Natali",
+        "David Olefeldt",
+        "V. E. Romanovsky",
+        "Kevin Schaefer",
+        "Merritt R. Turetsky",
+        "Claire C. Treat",
+        "Jorien E. Vonk"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Permafrost",
+        "Greenhouse gas",
+        "Environmental science",
+        "Climate change",
+        "Arctic"
+      ],
+      "url": "https://openalex.org/W2009225674",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2131222241",
+      "doi": "https://doi.org/10.1038/nature12060",
+      "title": "The global distribution and burden of dengue",
+      "year": 2013,
+      "cited_by_count": 10328,
+      "relevance_score": 880.48676,
+      "authors": [
+        "Samir Bhatt",
+        "Peter W. Gething",
+        "Oliver J. Brady",
+        "Jane P. Messina",
+        "Andrew Farlow",
+        "Catherine L. Moyes",
+        "John M. Drake",
+        "John S. Brownstein",
+        "Anne G. Hoen",
+        "Osman Sankoh",
+        "Monica F. Myers",
+        "Dylan B. George",
+        "Thomas Jaenisch",
+        "William Wint",
+        "Cameron P. Simmons",
+        "Thomas W. Scott",
+        "Jeremy Farrar",
+        "Simon I Hay"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Dengue fever",
+        "Public health",
+        "Environmental health",
+        "Geography",
+        "Global health"
+      ],
+      "url": "https://openalex.org/W2131222241",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3043791248",
+      "doi": "https://doi.org/10.1038/s43017-020-0067-5",
+      "title": "Global lake responses to climate change",
+      "year": 2020,
+      "cited_by_count": 1468,
+      "relevance_score": 778.0167,
+      "authors": [
+        "R. Iestyn Woolway",
+        "Benjamin M. Kraemer",
+        "John D. Lenters",
+        "Christopher J. Merchant",
+        "Catherine M. O’Reilly",
+        "Sapna Sharma"
+      ],
+      "venue": "Nature Reviews Earth & Environment",
+      "abstract": "",
+      "keywords": [
+        "Climate change",
+        "Environmental science",
+        "Precipitation",
+        "Lake ecosystem",
+        "Ecosystem"
+      ],
+      "url": "https://openalex.org/W3043791248",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1968176769",
+      "doi": "https://doi.org/10.1038/nclimate1716",
+      "title": "Robustness and uncertainties in the new CMIP5 climate model projections",
+      "year": 2012,
+      "cited_by_count": 1601,
+      "relevance_score": 738.0673,
+      "authors": [
+        "Reto Knutti",
+        "Jan Sedláčék"
+      ],
+      "venue": "Nature Climate Change",
+      "abstract": "",
+      "keywords": [
+        "Climate change",
+        "Climate model",
+        "Climatology",
+        "Robustness (evolution)",
+        "Transient climate simulation"
+      ],
+      "url": "https://openalex.org/W1968176769",
+      "matched_by": "en"
+    }
+  ]
+}

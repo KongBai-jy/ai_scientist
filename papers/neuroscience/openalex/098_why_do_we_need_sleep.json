@@ -1,0 +1,136 @@
+{
+  "problem_id": 98,
+  "problem_cn": "我们为什么需要睡眠？",
+  "problem_en": "Why do we need sleep?",
+  "category": "神经科学",
+  "query_en": "Why do we need sleep",
+  "query_cn": "我们为什么需要睡眠",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:39",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2025032338",
+      "doi": "https://doi.org/10.1111/j.1365-2648.1991.tb01599.x",
+      "title": "Why do we need sleep? Relating theory to nursing practice",
+      "year": 1991,
+      "cited_by_count": 45,
+      "relevance_score": 1299.2515,
+      "authors": [
+        "Linda A Hodgson"
+      ],
+      "venue": "Journal of Advanced Nursing",
+      "abstract": "By reviewing the literature, this paper explores the nature and function of sleep. Most of the evidence for the functional theories of sleep has been obtained as a result of examining the effects of sleep deprivation, the physiological, emotional and behavioural effects of which are discussed. There is a discussion on how an awareness of the theoretical knowledge may help in the nursing care of patients with advanced cancer and other chronic diseases, as well as their carers. The physiological effects of stress, and the possible relationship to patients and their carers, leads the author to highlight the need for further research, and possible benefit of proactive intervention for the bereaved. The effects of poor nutrition and common symptoms such as pain and dyspnoea on sleep, and the iatrogenic causes of sleep disturbances, are discussed. The importance of individualized patient care is stressed. The conclusion is drawn that although researchers do not seem to have been able to prove conclusively any essential function of sleep, the nurse is in a unique position to facilitate and enable patients and their carers to cope during the waking hours, without the added stress that sleep disruption and deprivation bring.",
+      "keywords": [
+        "Nursing",
+        "Sleep (system call)",
+        "Psychology",
+        "Nursing practice",
+        "Nursing theory"
+      ],
+      "url": "https://openalex.org/W2025032338",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2605277320",
+      "doi": "https://doi.org/10.1016/j.neuron.2017.02.004",
+      "title": "Sleep and Human Aging",
+      "year": 2017,
+      "cited_by_count": 1204,
+      "relevance_score": 831.1327,
+      "authors": [
+        "Bryce A. Mander",
+        "Joseph R. Winer",
+        "Matthew P. Walker"
+      ],
+      "venue": "Neuron",
+      "abstract": "",
+      "keywords": [
+        "Sleep (system call)",
+        "Psychology",
+        "Sleep deprivation",
+        "Neuroscience",
+        "Developmental psychology"
+      ],
+      "url": "https://openalex.org/W2605277320",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2153762265",
+      "doi": "https://doi.org/10.1093/sleep/26.2.117",
+      "title": "The Cumulative Cost of Additional Wakefulness: Dose-Response Effects on Neurobehavioral Functions and Sleep Physiology From Chronic Sleep Restriction and Total Sleep Deprivation",
+      "year": 2003,
+      "cited_by_count": 3171,
+      "relevance_score": 683.3887,
+      "authors": [
+        "Hans P. A. Van Dongen",
+        "Greg Maislin",
+        "Janet Mullington",
+        "David F. Dinges"
+      ],
+      "venue": "SLEEP",
+      "abstract": "OBJECTIVES: To inform the debate over whether human sleep can be chronically reduced without consequences, we conducted a dose-response chronic sleep restriction experiment in which waking neurobehavioral and sleep physiological functions were monitored and compared to those for total sleep deprivation. DESIGN: The chronic sleep restriction experiment involved randomization to one of three sleep doses (4 h, 6 h, or 8 h time in bed per night), which were maintained for 14 consecutive days. The total sleep deprivation experiment involved 3 nights without sleep (0 h time in bed). Each study also involved 3 baseline (pre-deprivation) days and 3 recovery days. SETTING: Both experiments were conducted under standardized laboratory conditions with continuous behavioral, physiological and medical monitoring. PARTICIPANTS: A total of n = 48 healthy adults (ages 21-38) participated in the experiments. INTERVENTIONS: Noctumal sleep periods were restricted to 8 h, 6 h or 4 h per day for 14 days, or to 0 h for 3 days. All other sleep was prohibited. RESULTS: Chronic restriction of sleep periods to 4 h or 6 h per night over 14 consecutive days resulted in significant cumulative, dose-dependent deficits in cognitive performance on all tasks. Subjective sleepiness ratings showed an acute response to sleep restriction but only small further increases on subsequent days, and did not significantly differentiate the 6 h and 4 h conditions. Polysomnographic variables and delta power in the non-REM sleep EEG-a putative marker of sleep homeostasis--displayed an acute response to sleep restriction with negligible further changes across the 14 restricted nights. Comparison of chronic sleep restriction to total sleep deprivation showed that the latter resulted in disproportionately large waking neurobehavioral and sleep delta power responses relative to how much sleep was lost. A statistical model revealed that, regardless of the mode of sleep deprivation, lapses in behavioral alertness were near-linearly related to the cumulative duration of wakefulness in excess of 15.84 h (s.e. 0.73 h). CONCLUSIONS: Since chronic restriction of sleep to 6 h or less per night produced cognitive performance deficits equivalent to up to 2 nights of total sleep deprivation, it appears that even relatively moderate sleep restriction can seriously impair waking neurobehavioral functions in healthy adults. Sleepiness ratings suggest that subjects were largely unaware of these increasing cognitive deficits, which may explain why the impact of chronic sleep restriction on waking cognitive functions is often assumed to be benign. Physiological sleep responses to chronic restriction did not mirror waking neurobehavioral responses, but cumulative wakefulness in excess of a 15.84 h predicted performance lapses across all four experimental conditions. This suggests that sleep debt is perhaps best understood as resulting in additional wakefulness that has a neurobiological \"cost\" which accumulates over time.",
+      "keywords": [
+        "Sleep (system call)",
+        "Sleep restriction",
+        "Sleep deprivation",
+        "Wakefulness",
+        "Sleep debt"
+      ],
+      "url": "https://openalex.org/W2153762265",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2086238474",
+      "doi": "https://doi.org/10.1016/j.neuron.2009.08.024",
+      "title": "Cortical Firing and Sleep Homeostasis",
+      "year": 2009,
+      "cited_by_count": 778,
+      "relevance_score": 612.0938,
+      "authors": [
+        "Vladyslav V. Vyazovskiy",
+        "Umberto Olcese",
+        "Yaniv M. Lazimy",
+        "Ugo Faraguna",
+        "Steve K. Esser",
+        "Justin C. Williams",
+        "Chiara Cirelli",
+        "Giulio Tononi"
+      ],
+      "venue": "Neuron",
+      "abstract": "The need to sleep grows with the duration of wakefulness and dissipates with time spent asleep, a process called sleep homeostasis. What are the consequences of staying awake on brain cells, and why is sleep needed? Surprisingly, we do not know whether the firing of cortical neurons is affected by how long an animal has been awake or asleep. Here, we found that after sustained wakefulness cortical neurons fire at higher frequencies in all behavioral states. During early NREM sleep after sustained wakefulness, periods of population activity (ON) are short, frequent, and associated with synchronous firing, while periods of neuronal silence are long and frequent. After sustained sleep, firing rates and synchrony decrease, while the duration of ON periods increases. Changes in firing patterns in NREM sleep correlate with changes in slow-wave activity, a marker of sleep homeostasis. Thus, the systematic increase of firing during wakefulness is counterbalanced by staying asleep.",
+      "keywords": [
+        "Wakefulness",
+        "Non-rapid eye movement sleep",
+        "Sleep (system call)",
+        "Neuroscience",
+        "Population"
+      ],
+      "url": "https://openalex.org/W2086238474",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2107026277",
+      "doi": "https://doi.org/10.4300/jgme-d-12-00156.1",
+      "title": "Using Effect Size—or Why the P Value Is Not Enough",
+      "year": 2012,
+      "cited_by_count": 5586,
+      "relevance_score": 554.14056,
+      "authors": [
+        "Gail M. Sullivan",
+        "Richard Feinn"
+      ],
+      "venue": "Journal of Graduate Medical Education",
+      "abstract": "These statements about the importance of effect sizes were made by two of the most influential statistician-researchers of the past half-century. Yet many submissions to Journal of Graduate Medical Education omit mention of the effect size in quantitative studies while prominently displaying the P value. In this paper, we target readers with little or no statistical background in order to encourage you to improve your comprehension of the relevance of effect size for planning, analyzing, reporting, and understanding education research studies.In medical education research studies that compare different educational interventions, effect size is the magnitude of the difference between groups. The absolute effect size is the difference between the average, or mean, outcomes in two different intervention groups. For example, if an educational intervention resulted in the improvement of subjects' examination scores by an average total of 15 of 50 questions as compared to that of another intervention, the absolute effect size is 15 questions or 3 grade levels (30%) better on the examination. Absolute effect size does not take into account the variability in scores, in that not every subject achieved the average outcome.In another example, residents' self-assessed confidence in performing a procedure improved an average of 0.4 point on a Likert-type scale ranging from 1 to 5, after simulation training. While the absolute effect size in the first example appears clear, the effect size in the second example is less apparent. Is a 0.4 change a lot or trivial? Accounting for variability in the measured improvement may aid in interpreting the magnitude of the change in the second example.Thus, effect size can refer to the raw difference between group means, or absolute effect size, as well as standardized measures of effect, which are calculated to transform the effect to an easily understood scale. Absolute effect size is useful when the variables under study have intrinsic meaning (eg, number of hours of sleep). Calculated indices of effect size are useful when the measurements have no intrinsic meaning, such as numbers on a Likert scale; when studies have used different scales so no direct comparison is possible; or when effect size is examined in the context of variability in the population under study.Calculated effect sizes can also quantitatively compare results from different studies and thus are commonly used in meta-analyses.The effect size is the main finding of a quantitative study. While a P value can inform the reader whether an effect exists, the P value will not reveal the size of the effect. In reporting and interpreting studies, both the substantive significance (effect size) and statistical significance (P value) are essential results to be reported.For this reason, effect sizes should be reported in a paper's Abstract and Results sections. In fact, an estimate of the effect size is often needed before starting the research endeavor, in order to calculate the number of subjects likely to be required to avoid a Type II, or β, error, which is the probability of concluding there is no effect when one actually exists. In other words, you must determine what number of subjects in the study will be sufficient to ensure (to a particular degree of certainty) that the study has acceptable power to support the null hypothesis. That is, if no difference is found between the groups, then this is a true finding.Statistical significance is the probability that the observed difference between two groups is due to chance. If the P value is larger than the alpha level chosen (eg, .05), any observed difference is assumed to be explained by sampling variability. With a sufficiently large sample, a statistical test will almost always demonstrate a significant difference, unless there is no effect whatsoever, that is, when the effect size is exactly zero; yet very small differences, even if significant, are often meaningless. Thus, reporting only the significant P value for an analysis is not adequate for readers to fully understand the results.For example, if a sample size is 10 000, a significant P value is likely to be found even when the difference in outcomes between groups is negligible and may not justify an expensive or time-consuming intervention over another. The level of significance by itself does not predict effect size. Unlike significance tests, effect size is independent of sample size. Statistical significance, on the other hand, depends upon both sample size and effect size. For this reason, P values are considered to be confounded because of their dependence on sample size. Sometimes a statistically significant result means only that a huge sample size was used.3A commonly cited example of this problem is the Physicians Health Study of aspirin to prevent myocardial infarction (MI).4 In more than 22 000 subjects over an average of 5 years, aspirin was associated with a reduction in MI (although not in overall cardiovascular mortality) that was highly statistically significant: P < .00001. The study was terminated early due to the conclusive evidence, and aspirin was recommended for general prevention. However, the effect size was very small: a risk difference of 0.77% with r2 = .001—an extremely small effect size. As a result of that study, many people were advised to take aspirin who would not experience benefit yet were also at risk for adverse effects. Further studies found even smaller effects, and the recommendation to use aspirin has since been modified.Depending upon the type of comparisons under study, effect size is estimated with different indices. The indices fall into two main study categories, those looking at effect sizes between groups and those looking at measures of association between variables (table 1). For two independent groups, effect size can be measured by the standardized difference between two means, or mean (group 1) – mean (group 2) / standard deviation.The denominator standardizes the difference by transforming the absolute difference into standard deviation units. Cohen's term d is an example of this type of effect size index. Cohen classified effect sizes as small (d = 0.2), medium (d = 0.5), and large (d ≥ 0.8).5 According to Cohen, “a medium effect of .5 is visible to the naked eye of a careful observer. A small effect of .2 is noticeably smaller than medium but not so small as to be trivial. A large effect of .8 is the same distance above the medium as small is below it.” 6 These designations large, medium, and small do not take into account other variables such as the accuracy of the assessment instrument and the diversity of the study population. However these ballpark categories provide a general guide that should also be informed by context.Between group means, the effect size can also be understood as the average percentile distribution of group 1 vs. that of group 2 or the amount of overlap between the distributions of interventions 1 and 2 for the two groups under comparison. For an effect size of 0, the mean of group 2 is at the 50th percentile of group 1, and the distributions overlap completely (100%)—that is , there is no difference. For an effect size of 0.8, the mean of group 2 is at the 79th percentile of group 1; thus, someone from group 2 with an average score (ie, mean) would have a higher score than 79% of the people from group 1. The distributions overlap by only 53% or a non-overlap of 47% in this situation (table 2).5,6Statistical power is the probability that your study will find a statistically significant difference between interventions when an actual difference does exist. If statistical power is high, the likelihood of deciding there is an effect, when one does exist, is high. Power is 1-β, where β is the probability of wrongly concluding there is no effect when one actually exists. This type of error is termed Type II error. Like statistical significance, statistical power depends upon effect size and sample size. If the effect size of the intervention is large, it is possible to detect such an effect in smaller sample numbers, whereas a smaller effect size would require larger sample sizes. Huge sample sizes may detect differences that are quite small and possibly trivial.Methods to increase the power of your study include using more potent interventions that have bigger effects, increasing the size of the sample/subjects, reducing measurement error (use highly valid outcome measures), and raising the α level but only if making a Type I error is highly unlikely.Before starting your study, calculate the power of your study with an estimated effect size; if power is too low, you may need more subjects in the study. How can you estimate an effect size before carrying out the study and finding the differences in outcomes? For the purpose of calculating a reasonable sample size, effect size can be estimated by pilot study results, similar work published by others, or the minimum difference that would be considered important by educators/experts. There are many online sample size/power calculators available, with explanations of their use (BOX).7,8Power must be calculated prior to starting the study; post-hoc calculations, sometimes reported when prior calculations are omitted, have limited value due to the incorrect assumption that the sample effect size represents the population effect size.Of interest, a β error of 0.2 was chosen by Cohen, who postulated that an α error was more serious than a β error. Therefore, he estimated the β error at 4 times the α: 4 × 0.05 = 0.20. Although arbitrary, as this has been copied by researchers for decades, use of other levels will need to be explained.Effect size helps readers understand the magnitude of differences found, whereas statistical significance examines whether the findings are likely to be due to chance. Both are essential for readers to understand the full impact of your work. Report both in the Abstract and Results sections.",
+      "keywords": [
+        "Confidence interval",
+        "Comprehension",
+        "Psychology",
+        "Value (mathematics)",
+        "Likert scale"
+      ],
+      "url": "https://openalex.org/W2107026277",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "problem_id": 121,
+  "problem_cn": "AI是否会取代人类？",
+  "problem_en": "Will artificial intelligence replace humans?",
+  "category": "人工智能",
+  "query_en": "Will artificial intelligence replace humans",
+  "query_cn": "AI是否会取代人类",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:10:14",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4206368953",
+      "doi": "https://doi.org/10.1016/j.jretconser.2021.102900",
+      "title": "Will artificial intelligence replace human customer service? The impact of communication quality and privacy risks on adoption intention",
+      "year": 2022,
+      "cited_by_count": 337,
+      "relevance_score": 2339.8262,
+      "authors": [
+        "Meng­meng Song",
+        "Xinyu Xing",
+        "Yucong Duan",
+        "Jason Cohen",
+        "Jian Mou"
+      ],
+      "venue": "Journal of Retailing and Consumer Services",
+      "abstract": "",
+      "keywords": [
+        "Service quality",
+        "Competence (human resources)",
+        "Service (business)",
+        "Business",
+        "Affect (linguistics)"
+      ],
+      "url": "https://openalex.org/W4206368953",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2786141192",
+      "doi": "https://doi.org/10.1177/1094670517752459",
+      "title": "Artificial Intelligence in Service",
+      "year": 2018,
+      "cited_by_count": 3399,
+      "relevance_score": 1613.1096,
+      "authors": [
+        "Ming‐Hui Huang",
+        "Roland T. Rust"
+      ],
+      "venue": "Journal of Service Research",
+      "abstract": "Artificial intelligence (AI) is increasingly reshaping service by performing various tasks, constituting a major source of innovation, yet threatening human jobs. We develop a theory of AI job replacement to address this double-edged impact. The theory specifies four intelligences required for service tasks—mechanical, analytical, intuitive, and empathetic—and lays out the way firms should decide between humans and machines for accomplishing those tasks. AI is developing in a predictable order, with mechanical mostly preceding analytical, analytical mostly preceding intuitive, and intuitive mostly preceding empathetic intelligence. The theory asserts that AI job replacement occurs fundamentally at the task level, rather than the job level, and for “lower” (easier for AI) intelligence tasks first. AI first replaces some of a service job’s tasks, a transition stage seen as augmentation, and then progresses to replace human labor entirely when it has the ability to take over all of a job’s tasks. The progression of AI task replacement from lower to higher intelligences results in predictable shifts over time in the relative importance of the intelligences for service employees. An important implication from our theory is that analytical skills will become less important, as AI takes over more analytical tasks, giving the “softer” intuitive and empathetic skills even more importance for service employees. Eventually, AI will be capable of performing even the intuitive and empathetic tasks, which enables innovative ways of human–machine integration for providing service but also results in a fundamental threat for human employment.",
+      "keywords": [
+        "Human intelligence",
+        "Task (project management)",
+        "Service (business)",
+        "Computer science",
+        "Order (exchange)"
+      ],
+      "url": "https://openalex.org/W2786141192",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2888283162",
+      "doi": "https://doi.org/10.1002/jsc.2201",
+      "title": "BlackRock Robo‐Advisor 4.0: When artificial intelligence replaces human discretion",
+      "year": 2018,
+      "cited_by_count": 52,
+      "relevance_score": 1288.8785,
+      "authors": [
+        "Damir Tokic"
+      ],
+      "venue": "Strategic Change",
+      "abstract": "Abstract BlackRock, the largest US investment management firm, has started to replace human stock‐pickers with the full automated investment program, based on self‐learning artificial intelligence algorithms. This is the first high‐profile case in the financial industry where artificial intelligence replaces human discretion. The advanced version of BlackRock Robo‐Advisor can also be customized to perform within the strategic planning framework. Human discretionary decision‐making jobs are at risk of being replaced by machines.",
+      "keywords": [
+        "Discretion",
+        "Stock (firearms)",
+        "Investment (military)",
+        "Computer science",
+        "Business"
+      ],
+      "url": "https://openalex.org/W2888283162",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2796755741",
+      "doi": "https://doi.org/10.1016/j.bushor.2018.03.007",
+      "title": "Artificial intelligence and the future of work: Human-AI symbiosis in organizational decision making",
+      "year": 2018,
+      "cited_by_count": 2449,
+      "relevance_score": 1286.0126,
+      "authors": [
+        "Mohammad Hossein Jarrahi"
+      ],
+      "venue": "Business Horizons",
+      "abstract": "",
+      "keywords": [
+        "Premise",
+        "Computer science",
+        "Knowledge management",
+        "Perspective (graphical)",
+        "Complementarity (molecular biology)"
+      ],
+      "url": "https://openalex.org/W2796755741",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2979906316",
+      "doi": "https://doi.org/10.1007/s11747-019-00696-0",
+      "title": "How artificial intelligence will change the future of marketing",
+      "year": 2019,
+      "cited_by_count": 2526,
+      "relevance_score": 1235.2064,
+      "authors": [
+        "Thomas H. Davenport",
+        "Abhijit Guha",
+        "Dhruv Grewal",
+        "Timna Breßgott"
+      ],
+      "venue": "Journal of the Academy of Marketing Science",
+      "abstract": "Abstract In the future, artificial intelligence (AI) is likely to substantially change both marketing strategies and customer behaviors. Building from not only extant research but also extensive interactions with practice, the authors propose a multidimensional framework for understanding the impact of AI involving intelligence levels, task types, and whether AI is embedded in a robot. Prior research typically addresses a subset of these dimensions; this paper integrates all three into a single framework. Next, the authors propose a research agenda that addresses not only how marketing strategies and customer behaviors will change in the future, but also highlights important policy questions relating to privacy, bias and ethics. Finally, the authors suggest AI will be more effective if it augments (rather than replaces) human managers.",
+      "keywords": [
+        "Extant taxon",
+        "Task (project management)",
+        "Computer science",
+        "Marketing",
+        "Marketing research"
+      ],
+      "url": "https://openalex.org/W2979906316",
+      "matched_by": "en"
+    }
+  ]
+}

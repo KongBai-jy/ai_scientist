@@ -1,0 +1,166 @@
+{
+  "problem_id": 42,
+  "problem_cn": "物种大爆发和大灭绝因何发生？",
+  "problem_en": "Why were there species explosions and mass extinctions?",
+  "category": "生物学",
+  "query_en": "Why were there species explosions and mass extinctions",
+  "query_cn": "物种大爆发和大灭绝因何发生",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:31",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2552047291",
+      "doi": "https://doi.org/10.1016/j.palaeo.2016.11.005",
+      "title": "On the causes of mass extinctions",
+      "year": 2016,
+      "cited_by_count": 534,
+      "relevance_score": 521.5252,
+      "authors": [
+        "David P.G. Bond",
+        "Stephen E. Grasby"
+      ],
+      "venue": "Palaeogeography Palaeoclimatology Palaeoecology",
+      "abstract": "The temporal link between large igneous province (LIP) eruptions and at least half of the major extinctions of the Phanerozoic implies that large scale volcanism is the main driver of mass extinction. Here we review almost twenty biotic crises between the early Cambrian and end Cretaceous and explore potential causal mechanisms. Most extinctions are associated with global warming and proximal killers such as marine anoxia (including the Early/Middle Cambrian, the Late Ordovician, the intra-Silurian, intra-Devonian, end-Permian, and Early Jurassic crises). Many, but not all of these are accompanied by large negative carbon isotope excursions, supporting a volcanogenic origin. Most post-Silurian biocrises affected both terrestrial and marine biospheres, suggesting that atmospheric processes were crucial in driving global extinctions. Volcanogenic-atmospheric kill mechanisms include ocean acidification, toxic metal poisoning, acid rain, and ozone damage and consequent increased UV-B radiation, volcanic darkness, cooling and photosynthetic shutdown, each of which has been implicated in numerous events. Intriguingly, some of the most voluminous LIPs such as the oceanic plateaus of the Cretaceous were emplaced with minimal faunal losses and so volume of magma is not the only factor governing LIP lethality. The missing link might be continental configuration because the best examples of the LIP/extinction relationship occurred during the time of Pangaea. Many of the proximal kill mechanisms in LIP/extinction scenarios are also potential effects of bolide impact, including cooling, warming, acidification and ozone destruction. However, the absence of convincing temporal links between impacts and extinctions other than the Chicxulub-Cretaceous example, suggests that impacts are not the main driver of extinctions. With numerous competing extinction scenarios, and the realisation that some of the purported environmental stresses may once again be driving mass extinction, we explore how experimental biology might inform our understanding of ancient extinctions as well as future crises.",
+      "keywords": [
+        "Extinction event",
+        "Geology",
+        "Paleontology",
+        "Large igneous province",
+        "Phanerozoic"
+      ],
+      "url": "https://openalex.org/W2552047291",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3037105506",
+      "doi": "https://doi.org/10.1111/brv.12627",
+      "title": "Scientists' warning on invasive alien species",
+      "year": 2020,
+      "cited_by_count": 2214,
+      "relevance_score": 422.3118,
+      "authors": [
+        "Petr Pyšek",
+        "Philip E. Hulme",
+        "Daniel Simberloff",
+        "Sven Bacher",
+        "Tim M. Blackburn",
+        "James T. Carlton",
+        "Wayne Dawson",
+        "Franz Essl",
+        "Llewellyn C. Foxcroft",
+        "Piero Genovesi",
+        "Jonathan M. Jeschke",
+        "Ingolf Kühn",
+        "Andrew M. Liebhold",
+        "Nicholas E. Mandrak",
+        "Laura A. Meyerson",
+        "Aníbal Pauchard",
+        "Jan Pergl",
+        "Helen E. Roy",
+        "Hanno Seebens",
+        "Mark van Kleunen",
+        "Montserrat Vilà",
+        "Michael J. Wingfield",
+        "David M. Richardson"
+      ],
+      "venue": "Biological reviews/Biological reviews of the Cambridge Philosophical Society",
+      "abstract": "Biological invasions are a global consequence of an increasingly connected world and the rise in human population size. The numbers of invasive alien species - the subset of alien species that spread widely in areas where they are not native, affecting the environment or human livelihoods - are increasing. Synergies with other global changes are exacerbating current invasions and facilitating new ones, thereby escalating the extent and impacts of invaders. Invasions have complex and often immense long-term direct and indirect impacts. In many cases, such impacts become apparent or problematic only when invaders are well established and have large ranges. Invasive alien species break down biogeographic realms, affect native species richness and abundance, increase the risk of native species extinction, affect the genetic composition of native populations, change native animal behaviour, alter phylogenetic diversity across communities, and modify trophic networks. Many invasive alien species also change ecosystem functioning and the delivery of ecosystem services by altering nutrient and contaminant cycling, hydrology, habitat structure, and disturbance regimes. These biodiversity and ecosystem impacts are accelerating and will increase further in the future. Scientific evidence has identified policy strategies to reduce future invasions, but these strategies are often insufficiently implemented. For some nations, notably Australia and New Zealand, biosecurity has become a national priority. There have been long-term successes, such as eradication of rats and cats on increasingly large islands and biological control of weeds across continental areas. However, in many countries, invasions receive little attention. Improved international cooperation is crucial to reduce the impacts of invasive alien species on biodiversity, ecosystem services, and human livelihoods. Countries can strengthen their biosecurity regulations to implement and enforce more effective management strategies that should also address other global changes that interact with invasions.",
+      "keywords": [
+        "Alien",
+        "Alien species",
+        "Invasive species",
+        "Geography",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W3037105506",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2103317434",
+      "doi": "https://doi.org/10.1890/04-0922",
+      "title": "EFFECTS OF BIODIVERSITY ON ECOSYSTEM FUNCTIONING: A CONSENSUS OF CURRENT KNOWLEDGE",
+      "year": 2005,
+      "cited_by_count": 8007,
+      "relevance_score": 396.70233,
+      "authors": [
+        "David U. Hooper",
+        "F. Stuart Chapin",
+        "John J. Ewel",
+        "Andy Hector",
+        "Pablo Inchausti",
+        "Sandra Lavorel",
+        "John H. Lawton",
+        "David M. Lodge",
+        "Michel Loreau",
+        "Shahid Naeem",
+        "Bernhard Schmid",
+        "Heikki Setälä",
+        "Amy J. Symstad",
+        "John Vandermeer",
+        "David A. Wardle"
+      ],
+      "venue": "Ecological Monographs",
+      "abstract": "Humans are altering the composition of biological communities through a variety of activities that increase rates of species invasions and species extinctions, at all scales, from local to global. These changes in components of the Earth's biodiversity cause concern for ethical and aesthetic reasons, but they also have a strong potential to alter ecosystem properties and the goods and services they provide to humanity. Ecological experiments, observations, and theoretical developments show that ecosystem properties depend greatly on biodiversity in terms of the functional characteristics of organisms present in the ecosystem and the distribution and abundance of those organisms over space and time. Species effects act in concert with the effects of climate, resource availability, and disturbance regimes in influencing ecosystem properties. Human activities can modify all of the above factors; here we focus on modification of these biotic controls. The scientific community has come to a broad consensus on many aspects of the relationship between biodiversity and ecosystem functioning, including many points relevant to management of ecosystems. Further progress will require integration of knowledge about biotic and abiotic controls on ecosystem properties, how ecological communities are structured, and the forces driving species extinctions and invasions. To strengthen links to policy and management, we also need to integrate our ecological knowledge with understanding of the social and economic constraints of potential management practices. Understanding this complexity, while taking strong steps to minimize current losses of species, is necessary for responsible management of Earth's ecosystems and the diverse biota they contain. Based on our review of the scientific literature, we are certain of the following conclusions: 1) Species' functional characteristics strongly influence ecosystem properties. Functional characteristics operate in a variety of contexts, including effects of dominant species, keystone species, ecological engineers, and interactions among species (e.g., competition, facilitation, mutualism, disease, and predation). Relative abundance alone is not always a good predictor of the ecosystem-level importance of a species, as even relatively rare species (e.g., a keystone predator) can strongly influence pathways of energy and material flows. 2) Alteration of biota in ecosystems via species invasions and extinctions caused by human activities has altered ecosystem goods and services in many well-documented cases. Many of these changes are difficult, expensive, or impossible to reverse or fix with technological solutions. 3) The effects of species loss or changes in composition, and the mechanisms by which the effects manifest themselves, can differ among ecosystem properties, ecosystem types, and pathways of potential community change. 4) Some ecosystem properties are initially insensitive to species loss because (a) ecosystems may have multiple species that carry out similar functional roles, (b) some species may contribute relatively little to ecosystem properties, or (c) properties may be primarily controlled by abiotic environmental conditions. 5) More species are needed to insure a stable supply of ecosystem goods and services as spatial and temporal variability increases, which typically occurs as longer time periods and larger areas are considered. We have high confidence in the following conclusions: 1) Certain combinations of species are complementary in their patterns of resource use and can increase average rates of productivity and nutrient retention. At the same time, environmental conditions can influence the importance of complementarity in structuring communities. Identification of which and how many species act in a complementary way in complex communities is just beginning. 2) Susceptibility to invasion by exotic species is strongly influenced by species composition and, under similar environmental conditions, generally decreases with increasing species richness. However, several other factors, such as propagule pressure, disturbance regime, and resource availability also strongly influence invasion success and often override effects of species richness in comparisons across different sites or ecosystems. 3) Having a range of species that respond differently to different environmental perturbations can stabilize ecosystem process rates in response to disturbances and variation in abiotic conditions. Using practices that maintain a diversity of organisms of different functional effect and functional response types will help preserve a range of management options. Uncertainties remain and further research is necessary in the following areas: 1) Further resolution of the relationships among taxonomic diversity, functional diversity, and community structure is important for identifying mechanisms of biodiversity effects. 2) Multiple trophic levels are common to ecosystems but have been understudied in biodiversity/ecosystem functioning research. The response of ecosystem properties to varying composition and diversity of consumer organisms is much more complex than responses seen in experiments that vary only the diversity of primary producers. 3) Theoretical work on stability has outpaced experimental work, especially field research. We need long-term experiments to be able to assess temporal stability, as well as experimental perturbations to assess response to and recovery from a variety of disturbances. Design and analysis of such experiments must account for several factors that covary with species diversity. 4) Because biodiversity both responds to and influences ecosystem properties, understanding the feedbacks involved is necessary to integrate results from experimental communities with patterns seen at broader scales. Likely patterns of extinction and invasion need to be linked to different drivers of global change, the forces that structure communities, and controls on ecosystem properties for the development of effective management and conservation strategies. 5) This paper focuses primarily on terrestrial systems, with some coverage of freshwater systems, because that is where most empirical and theoretical study has focused. While the fundamental principles described here should apply to marine systems, further study of that realm is necessary. Despite some uncertainties about the mechanisms and circumstances under which diversity influences ecosystem properties, incorporating diversity effects into policy and management is essential, especially in making decisions involving large temporal and spatial scales. Sacrificing those aspects of ecosystems that are difficult or impossible to reconstruct, such as diversity, simply because we are not yet certain about the extent and mechanisms by which they affect ecosystem properties, will restrict future management options even further. It is incumbent upon ecologists to communicate this need, and the values that can derive from such a perspective, to those charged with economic and policy decision-making.",
+      "keywords": [
+        "Biodiversity",
+        "Ecosystem",
+        "Ecosystem services",
+        "Ecology",
+        "Environmental resource management"
+      ],
+      "url": "https://openalex.org/W2103317434",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1812041023",
+      "doi": null,
+      "title": "Existential risks: analyzing human extinction scenarios and related hazards",
+      "year": 2002,
+      "cited_by_count": 429,
+      "relevance_score": 244.2562,
+      "authors": [
+        "Nick Bostrom"
+      ],
+      "venue": "Oxford University Research Archive (ORA) (University of Oxford)",
+      "abstract": "Because of accelerating technological progress, humankind may be rapidly approaching a critical phase in its career. In addition to well-known threats such as nuclear holocaust, the propects of radically transforming technologies like nanotech systems and machine intelligence present us with unprecedented opportunities and risks. Our future, and whether we will have a future at all, may well be determined by how we deal with these challenges. In the case of radically transforming technologies, a better understanding of the transition dynamics from a human to a \"posthuman\" society is needed. Of particular importance is to know where the pitfalls are: the ways in which things could go terminally wrong. While we have had long exposure to various personal, local, and endurable global hazards, this paper analyzes a recently emerging category: that of existential risks. These are threats that could case our extinction or destroy the potential of Earth - originating intelligent life. Some of these threats are relatively well known while others, including some of the gravest, have gone almost unrecognized. Existential risks have a cluster of features that make ordinary risk management ineffective. A final section of this paper discusses several ethical and policy implications. A clearer understanding of the threat picture will enable us to formulate better strategies.",
+      "keywords": [
+        "Existentialism",
+        "Posthuman",
+        "Human enhancement",
+        "Environmental ethics",
+        "Risk analysis (engineering)"
+      ],
+      "url": "https://openalex.org/W1812041023",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1842074407",
+      "doi": "https://doi.org/10.1093/mnras/stv2983",
+      "title": "Bolometric light curves and explosion parameters of 38 stripped-envelope core-collapse supernovae",
+      "year": 2016,
+      "cited_by_count": 340,
+      "relevance_score": 218.60301,
+      "authors": [
+        "J. D. Lyman",
+        "D. Bersier",
+        "P. A. James",
+        "P. A. Mazzali",
+        "J. J. Eldridge",
+        "M. Fraser",
+        "E. Pian"
+      ],
+      "venue": "Monthly Notices of the Royal Astronomical Society",
+      "abstract": "Literature data are collated for 38 stripped-envelope core-collapse supernovae (SE SNe; i.e. SNe IIb, Ib, Ic and Ic-BL) that have good light-curve coverage in more than one optical band. Using bolometric corrections derived in previous work, the bolometric light curve of each SN is recovered and template bolometric light curves provided. Peak light distributions and decay rates are investigated; SNe subtypes are not cleanly distinguished in this parameter space, although some grouping of types does occur and there is a suggestion of a Phillipslike relation for most SNe Ic-BL. The bolometric light curves are modelled with a simple analytical prescription and compared to results from more detailed modelling. Distributions of the explosion parameters show the extreme nature of SNe Ic-BL in terms of their 56 Ni mass and the kinetic energy, however ejected masses are similar to other subtypes. SNe Ib and Ic have very similar distributions of explosion parameters, indicating a similarity in progenitors. SNe IIb are the most homogeneous subtype and have the lowest average values for 56 Ni mass, ejected mass, and kinetic energy. Ejecta masses for each subtype and SE SNe as a whole are inconsistent with those expected from very massive stars. The majority of the ejecta mass distribution is well described by more moderately massive progenitors in binaries, indicating these are the dominant progenitor channel for SE SNe.",
+      "keywords": [
+        "Physics",
+        "Light curve",
+        "Supernova",
+        "Ejecta",
+        "Astrophysics"
+      ],
+      "url": "https://openalex.org/W1842074407",
+      "matched_by": "en"
+    }
+  ]
+}

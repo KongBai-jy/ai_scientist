@@ -1,0 +1,130 @@
+{
+  "problem_id": 48,
+  "problem_cn": "大爆炸是从哪个地点开始？",
+  "problem_en": "Where did the Big Bang start?",
+  "category": "天文学",
+  "query_en": "Where did the Big Bang start",
+  "query_cn": "大爆炸是从哪个地点开始",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:52",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2068380679",
+      "doi": "https://doi.org/10.1016/0927-6505(93)90017-8",
+      "title": "Pre-big-bang in string cosmology",
+      "year": 1993,
+      "cited_by_count": 994,
+      "relevance_score": 673.4787,
+      "authors": [
+        "M. Gasperini",
+        "G. Veneziano"
+      ],
+      "venue": "Astroparticle Physics",
+      "abstract": "",
+      "keywords": [
+        "Physics",
+        "Cosmic microwave background",
+        "Cosmology",
+        "Graviton",
+        "Big Bang (financial markets)"
+      ],
+      "url": "https://openalex.org/W2068380679",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2013442457",
+      "doi": "https://doi.org/10.1088/0034-4885/59/12/001",
+      "title": "Big bang nucleosynthesis and physics beyond the standard model",
+      "year": 1996,
+      "cited_by_count": 537,
+      "relevance_score": 443.41086,
+      "authors": [
+        "Subir Sarkar"
+      ],
+      "venue": "Reports on Progress in Physics",
+      "abstract": "The Hubble expansion of galaxies, the 2.73 K black-body radiation background and the cosmic abundances of the light elements argue for a hot, dense origin of the universe - the standard big bang cosmology - and enable its evolution to be traced back fairly reliably to the nucleosynthesis era when the temperature was of O(1) MeV corresponding to an expansion age of O(1) s. All particles, known and hypothetical, would have been created at higher temperatures in the early universe and analyses of their possible effects on the abundances of the synthesized elements enable many interesting constraints to be obtained on particle properties. These arguments have usefully complemented laboratory experiments in guiding attempts to extend physics beyond the standard model, incorporating ideas such as supersymmetry, compositeness and unification. We first present a pedagogical account of relativistic cosmology and primordial nucleosynthesis, discussing both theoretical and observational aspects, and then proceed to examine such constraints in detail, in particular those pertaining to new massless particles and massive unstable particles. Finally, in a section aimed at particle physicists, we illustrate applications of such constraints to models of new physics.",
+      "keywords": [
+        "Physics",
+        "Big Bang nucleosynthesis",
+        "Cosmology",
+        "Big Bang (financial markets)",
+        "Standard Model (mathematical formulation)"
+      ],
+      "url": "https://openalex.org/W2013442457",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2155419203",
+      "doi": "https://doi.org/10.1257/jep.28.2.3",
+      "title": "Big Data: New Tricks for Econometrics",
+      "year": 2014,
+      "cited_by_count": 1576,
+      "relevance_score": 349.4358,
+      "authors": [
+        "Hal R. Varian"
+      ],
+      "venue": "The Journal of Economic Perspectives",
+      "abstract": "Computers are now involved in many economic transactions and can capture data associated with these transactions, which can then be manipulated and analyzed. Conventional statistical and econometric techniques such as regression often work well, but there are issues unique to big datasets that may require different tools. First, the sheer size of the data involved may require more powerful data manipulation tools. Second, we may have more potential predictors than appropriate for estimation, so we need to do some kind of variable selection. Third, large datasets may allow for more flexible relationships than simple linear models. Machine learning techniques such as decision trees, support vector machines, neural nets, deep learning, and so on may allow for more effective ways to model complex relationships. In this essay, I will describe a few of these tools for manipulating and analyzing big data. I believe that these methods have a lot to offer and should be more widely known and used by economists.",
+      "keywords": [
+        "Computer science",
+        "Big data",
+        "Machine learning",
+        "Data science",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W2155419203",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1545960046",
+      "doi": "https://doi.org/10.1002/eji.201545502",
+      "title": "The “Big Bang” in obese fat: Events initiating obesity‐induced adipose tissue inflammation",
+      "year": 2015,
+      "cited_by_count": 351,
+      "relevance_score": 303.9641,
+      "authors": [
+        "Felix M. Wensveen",
+        "Sonja Valentić",
+        "Marko Šestan",
+        "Tamara Turk Wensveen",
+        "Bojan Polić"
+      ],
+      "venue": "European Journal of Immunology",
+      "abstract": "Obesity is associated with the accumulation of pro-inflammatory cells in visceral adipose tissue (VAT), which is an important underlying cause of insulin resistance and progression to diabetes mellitus type 2 (DM2). Although the role of pro-inflammatory cytokines in disease development is established, the initiating events leading to immune cell activation remain elusive. Lean adipose tissue is predominantly populated with regulatory cells, such as eosinophils and type 2 innate lymphocytes. These cells maintain tissue homeostasis through the excretion of type 2 cytokines, such as IL-4, IL-5, and IL-13, which keep adipose tissue macrophages (ATMs) in an anti-inflammatory, M2-like state. Diet-induced obesity is associated with the loss of tissue homeostasis and development of type 1 inflammatory responses in VAT, characterized by IFN-γ. A key event is a shift of ATMs toward an M1 phenotype. Recent studies show that obesity-induced adipocyte hypertrophy results in upregulated surface expression of stress markers. Adipose stress is detected by local sentinels, such as NK cells and CD8(+) T cells, which produce IFN-γ, driving M1 ATM polarization. A rapid accumulation of pro-inflammatory cells in VAT follows, leading to inflammation. In this review, we provide an overview of events leading to adipose tissue inflammation, with a special focus on adipose homeostasis and the obesity-induced loss of homeostasis which marks the initiation of VAT inflammation.",
+      "keywords": [
+        "Adipose tissue",
+        "Inflammation",
+        "Adipose tissue macrophages",
+        "Biology",
+        "Endocrinology"
+      ],
+      "url": "https://openalex.org/W1545960046",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2786926186",
+      "doi": "https://doi.org/10.1146/annurev-nucl-101917-020852",
+      "title": "Heavy Ion Collisions: The Big Picture and the Big Questions",
+      "year": 2018,
+      "cited_by_count": 822,
+      "relevance_score": 303.82767,
+      "authors": [
+        "Wit Busza",
+        "Krishna Rajagopal",
+        "Wilke van der Schee"
+      ],
+      "venue": "Annual Review of Nuclear and Particle Science",
+      "abstract": "Heavy ion collisions quickly form a droplet of quark–gluon plasma (QGP) with a remarkably small viscosity. We give an accessible introduction to how to study this smallest and hottest droplet of liquid made on Earth and why it is so interesting. The physics of heavy ion collisions ranges from highly energetic quarks and gluons described by perturbative QCD to a bath of strongly interacting gluons at lower energy scales. These gluons quickly thermalize and form QGP, while the energetic partons traverse this plasma and end in a shower of particles called jets. Analyzing the final particles in various ways allows us to study the properties of QGP and the complex dynamics of multiscale processes in QCD that govern its formation and evolution, providing what is perhaps the simplest form of complex quantum matter that we know of. Much remains to be understood, and throughout the review big open questions are encountered.",
+      "keywords": [
+        "Physics",
+        "Quark–gluon plasma",
+        "QCD matter",
+        "Parton",
+        "Particle physics"
+      ],
+      "url": "https://openalex.org/W2786926186",
+      "matched_by": "en"
+    }
+  ]
+}

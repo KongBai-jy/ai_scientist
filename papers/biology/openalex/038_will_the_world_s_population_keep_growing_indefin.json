@@ -1,0 +1,130 @@
+{
+  "problem_id": 38,
+  "problem_cn": "世界人口会持续无限增长吗？",
+  "problem_en": "Will the world’s population keep growing indefinitely?",
+  "category": "生物学",
+  "query_en": "Will the world’s population keep growing indefinitely",
+  "query_cn": "世界人口会持续无限增长吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:16",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2083857556",
+      "doi": "https://doi.org/10.1038/nature04514",
+      "title": "Temperature sensitivity of soil carbon decomposition and feedbacks to climate change",
+      "year": 2006,
+      "cited_by_count": 7025,
+      "relevance_score": 204.62808,
+      "authors": [
+        "Eric A. Davidson",
+        "Ivan A. Janssens"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Permafrost",
+        "Soil carbon",
+        "Environmental science",
+        "Climate change",
+        "Soil water"
+      ],
+      "url": "https://openalex.org/W2083857556",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2154433795",
+      "doi": "https://doi.org/10.1111/j.1461-0248.2011.01736.x",
+      "title": "Impacts of climate change on the future of biodiversity",
+      "year": 2012,
+      "cited_by_count": 4247,
+      "relevance_score": 160.08232,
+      "authors": [
+        "Céline Bellard",
+        "Cléo Bertelsmeier",
+        "Paul Leadley",
+        "Wilfried Thuiller",
+        "Franck Courchamp"
+      ],
+      "venue": "Ecology Letters",
+      "abstract": "Many studies in recent years have investigated the effects of climate change on the future of biodiversity. In this review, we first examine the different possible effects of climate change that can operate at individual, population, species, community, ecosystem and biome scales, notably showing that species can respond to climate change challenges by shifting their climatic niche along three non-exclusive axes: time (e.g. phenology), space (e.g. range) and self (e.g. physiology). Then, we present the principal specificities and caveats of the most common approaches used to estimate future biodiversity at global and sub-continental scales and we synthesise their results. Finally, we highlight several challenges for future research both in theoretical and applied realms. Overall, our review shows that current estimates are very variable, depending on the method, taxonomic group, biodiversity loss metrics, spatial scales and time periods considered. Yet, the majority of models indicate alarming consequences for biodiversity, with the worst-case scenarios leading to extinction rates that would qualify as the sixth mass extinction in the history of the earth.",
+      "keywords": [
+        "Biodiversity",
+        "Climate change",
+        "Biome",
+        "Extinction (optical mineralogy)",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W2154433795",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2763071442",
+      "doi": "https://doi.org/10.1177/2158244017736094",
+      "title": "The Role of Population in Economic Growth",
+      "year": 2017,
+      "cited_by_count": 396,
+      "relevance_score": 159.86206,
+      "authors": [
+        "E. Wesley F. Peterson"
+      ],
+      "venue": "SAGE Open",
+      "abstract": "The relationship between population growth and economic growth is controversial. This article draws on historical data to chart the links between population growth, growth in per capita output, and overall economic growth over the past 200 years. Low population growth in high-income countries is likely to create social and economic problems while high population growth in low-income countries may slow their development. International migration could help to adjust these imbalances but is opposed by many. Drawing on economic analyses of inequality, it appears that lower population growth and limited migration may contribute to increased national and global economic inequality.",
+      "keywords": [
+        "Population growth",
+        "Economics",
+        "Population",
+        "Economic inequality",
+        "Inequality"
+      ],
+      "url": "https://openalex.org/W2763071442",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2000196122",
+      "doi": "https://doi.org/10.1017/s0140525x0999094x",
+      "title": "The myth of language universals: Language diversity and its importance for cognitive science",
+      "year": 2009,
+      "cited_by_count": 2656,
+      "relevance_score": 144.50832,
+      "authors": [
+        "Nicholas Evans",
+        "Stephen C. Levinson"
+      ],
+      "venue": "Behavioral and Brain Sciences",
+      "abstract": "Talk of linguistic universals has given cognitive scientists the impression that languages are all built to a common pattern. In fact, there are vanishingly few universals of language in the direct sense that all languages exhibit them. Instead, diversity can be found at almost every level of linguistic organization. This fundamentally changes the object of enquiry from a cognitive science perspective. This target article summarizes decades of cross-linguistic work by typologists and descriptive linguists, showing just how few and unprofound the universal characteristics of language are, once we honestly confront the diversity offered to us by the world's 6,000 to 8,000 languages. After surveying the various uses of \"universal,\" we illustrate the ways languages vary radically in sound, meaning, and syntactic organization, and then we examine in more detail the core grammatical machinery of recursion, constituency, and grammatical relations. Although there are significant recurrent patterns in organization, these are better explained as stable engineering solutions satisfying multiple design constraints, reflecting both cultural-historical factors and the constraints of human cognition. Linguistic diversity then becomes the crucial datum for cognitive science: we are the only species with a communication system that is fundamentally variable at all levels. Recognizing the true extent of structural diversity in human language opens up exciting new research directions for cognitive scientists, offering thousands of different natural experiments given by different languages, with new opportunities for dialogue with biological paradigms concerned with change and diversity, and confronting us with the extraordinary plasticity of the highest human skills.",
+      "keywords": [
+        "Linguistic universal",
+        "Problem of universals",
+        "Linguistics",
+        "Cognition",
+        "Diversity (politics)"
+      ],
+      "url": "https://openalex.org/W2000196122",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W600857319",
+      "doi": null,
+      "title": "Climates of hunger: Mankind and the world's changing weather",
+      "year": 1977,
+      "cited_by_count": 116,
+      "relevance_score": 134.85982,
+      "authors": [
+        "Reid A. Bryson",
+        "Thomas J. Murray"
+      ],
+      "venue": null,
+      "abstract": "Climate is changing. Parts of our world have been cooling. Rain belts and food-growing areas have shifted. People are starving. And we have been too slow to realize what is happening and why. In recent years, world climate changes have drawn more attention than at any other time in history. What we once called \"crazy weather,\" just a few years ago, is now beginning to be seen as part of a logical and, in part, predictable pattern, an awesome natural force that we must deal with if man is to avoid disaster of unprecedented proportions. Along with drought in some places and floods in others, both caused by changing wind patterns, average temperatures of the Northern Hemisphere have been falling. The old-fashioned winters our grandfathers spoke of might be returning. In England, the growing season has already been cut by as much as two weeks. The selection of food crop varieties in both North America and Europe is in for sharp reappraisal, in view of the shrinking frost-free agricultural season and other climatic changes. Climate has always had profound effects upon human history, helping both to build and to destroy great civilizations. Until now, we have not had the knowledge to react intelligently to the signs of shifting climate. Today, even though we remain essentially powerless to affect climate purposefully, we are ready to recognize the signs of change and we are somewhat better able to predict the effects of those changes. This book will help. Here, climatologist Reid A. Bryson and science writer Thomas J. Murray present a broad view of climatic change, examining the past in order to view the future. The prospects are not bright. Bryson, whom Fortune magazine called \"the most outspoken perceiver of climatological danger signals\" in the United States, says that world temperatures since the sixteenth century have been significantly cooler than those of the first half of the present century. Temperatures now seem to be falling, and many of the weather irregularities we have experienced in recent years are, in great part, an expression of this broad reversal. Unfortunately, we came to view the recent warm period as \"normal,\" and based many of our institutions upon it. The world added a billion people to its population during that time, thanks in part to an unusually favorable agricultural climate. Now we must be able to adjust quickly to climatic changes or face the potentially tragic consequences of inaction. The climatic problems Bryson and Murray speak of are not in some vague geological future. They are upon us now, and we are not prepared. Climates o f Hunger is a book of paramount importance for our time. It will be essential reading not only for professionals in the field - including agricultural meteorologists, political scientists, geographers, sociologists, and business counselors - but for all who are concerned in any way with environmental trends, world and domestic food supplies, and their effects on human institutions.",
+      "keywords": [
+        "Natural (archaeology)",
+        "Reading (process)",
+        "Environmental ethics",
+        "Natural disaster",
+        "Politics"
+      ],
+      "url": "https://openalex.org/W600857319",
+      "matched_by": "en"
+    }
+  ]
+}

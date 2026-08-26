@@ -1,0 +1,172 @@
+{
+  "problem_id": 101,
+  "problem_cn": "神经退行性疾病能够被治愈吗？",
+  "problem_en": "Can we cure neurodegenerative diseases?",
+  "category": "神经科学",
+  "query_en": "Can we cure neurodegenerative diseases",
+  "query_cn": "神经退行性疾病能够被治愈吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:53",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4321019178",
+      "doi": "https://doi.org/10.1016/j.cell.2022.12.032",
+      "title": "Hallmarks of neurodegenerative diseases",
+      "year": 2023,
+      "cited_by_count": 1740,
+      "relevance_score": 940.4198,
+      "authors": [
+        "David M. Wilson",
+        "Mark Cookson",
+        "Ludo Van Den Bosch",
+        "Henrik Zetterberg",
+        "David M. Holtzman",
+        "Ilse Dewachter"
+      ],
+      "venue": "Cell",
+      "abstract": "",
+      "keywords": [
+        "Proteostasis",
+        "Biology",
+        "Neuroscience",
+        "Neurodegeneration",
+        "Disease"
+      ],
+      "url": "https://openalex.org/W4321019178",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2937074474",
+      "doi": "https://doi.org/10.3390/molecules24081583",
+      "title": "Oxidative Stress: A Key Modulator in Neurodegenerative Diseases",
+      "year": 2019,
+      "cited_by_count": 2264,
+      "relevance_score": 875.9781,
+      "authors": [
+        "Anju Singh",
+        "Ritushree Kukreti",
+        "Luciano Saso",
+        "Shrikant Kukreti"
+      ],
+      "venue": "Molecules",
+      "abstract": "Oxidative stress is proposed as a regulatory element in ageing and various neurological disorders. The excess of oxidants causes a reduction of antioxidants, which in turn produce an oxidation-reduction imbalance in organisms. Paucity of the antioxidant system generates oxidative-stress, characterized by elevated levels of reactive species (oxygen, hydroxyl free radical, and so on). Mitochondria play a key role in ATP supply to cells via oxidative phosphorylation, as well as synthesis of essential biological molecules. Various redox reactions catalyzed by enzymes take place in the oxidative phosphorylation process. An inefficient oxidative phosphorylation may generate reactive oxygen species (ROS), leading to mitochondrial dysfunction. Mitochondrial redox metabolism, phospholipid metabolism, and proteolytic pathways are found to be the major and potential source of free radicals. A lower concentration of ROS is essential for normal cellular signaling, whereas the higher concentration and long-time exposure of ROS cause damage to cellular macromolecules such as DNA, lipids and proteins, ultimately resulting in necrosis and apoptotic cell death. Normal and proper functioning of the central nervous system (CNS) is entirely dependent on the chemical integrity of brain. It is well established that the brain consumes a large amount of oxygen and is highly rich in lipid content, becoming prone to oxidative stress. A high consumption of oxygen leads to excessive production of ROS. Apart from this, the neuronal membranes are found to be rich in polyunsaturated fatty acids, which are highly susceptible to ROS. Various neurodegenerative diseases such as Parkinson's disease (PD), Alzheimer's disease (AD), Huntington's disease (HD), and amyotrophic lateral sclerosis (ALS), among others, can be the result of biochemical alteration (due to oxidative stress) in bimolecular components. There is a need to understand the processes and role of oxidative stress in neurodegenerative diseases. This review is an effort towards improving our understanding of the pivotal role played by OS in neurodegenerative disorders.",
+      "keywords": [
+        "Oxidative stress",
+        "Key (lock)",
+        "Neuroscience",
+        "Chemistry",
+        "Medicine"
+      ],
+      "url": "https://openalex.org/W2937074474",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2754890392",
+      "doi": "https://doi.org/10.1016/j.immuni.2017.08.008",
+      "title": "The TREM2-APOE Pathway Drives the Transcriptional Phenotype of Dysfunctional Microglia in Neurodegenerative Diseases",
+      "year": 2017,
+      "cited_by_count": 3139,
+      "relevance_score": 854.5727,
+      "authors": [
+        "Susanne Krasemann",
+        "Charlotte Madore",
+        "Ron Cialic",
+        "Caroline Baufeld",
+        "Narghes Calcagno",
+        "Rachid El Fatimy",
+        "Lien Beckers",
+        "Elaine O’Loughlin",
+        "Yang Xu",
+        "Zain Fanek",
+        "David Greco",
+        "Scott Smith",
+        "George Tweet",
+        "Zachary Humulock",
+        "Tobias Zrzavy",
+        "Patricia Conde-Sanroman",
+        "Mar Gacias",
+        "Zhiping Weng",
+        "Hao Chen",
+        "Emily Tjon",
+        "Fargol Mazaheri",
+        "Kristin Hartmann",
+        "Asaf Madi",
+        "Jason D. Ulrich",
+        "Markus Glatzel",
+        "Anna Worthmann",
+        "Jöerg Heeren",
+        "Bogdan Budnik",
+        "Cynthia A. Lemere",
+        "Tsuneya Ikezu",
+        "Frank L. Heppner",
+        "Vladimir Litvak",
+        "David M. Holtzman",
+        "Hans Lassmann",
+        "Howard L. Weiner",
+        "Jordi Ochando",
+        "Christian Haass",
+        "Oleg Butovsky"
+      ],
+      "venue": "Immunity",
+      "abstract": "",
+      "keywords": [
+        "TREM2",
+        "Microglia",
+        "Neurodegeneration",
+        "Apolipoprotein E",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2754890392",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2122386753",
+      "doi": "https://doi.org/10.1152/physrev.00029.2006",
+      "title": "Nitric Oxide and Peroxynitrite in Health and Disease",
+      "year": 2007,
+      "cited_by_count": 6344,
+      "relevance_score": 680.4759,
+      "authors": [
+        "Pál Pacher",
+        "Joseph S. Beckman",
+        "Lucas Liaudet"
+      ],
+      "venue": "Physiological Reviews",
+      "abstract": "The discovery that mammalian cells have the ability to synthesize the free radical nitric oxide (NO) has stimulated an extraordinary impetus for scientific research in all the fields of biology and medicine. Since its early description as an endothelial-derived relaxing factor, NO has emerged as a fundamental signaling device regulating virtually every critical cellular function, as well as a potent mediator of cellular damage in a wide range of conditions. Recent evidence indicates that most of the cytotoxicity attributed to NO is rather due to peroxynitrite, produced from the diffusion-controlled reaction between NO and another free radical, the superoxide anion. Peroxynitrite interacts with lipids, DNA, and proteins via direct oxidative reactions or via indirect, radical-mediated mechanisms. These reactions trigger cellular responses ranging from subtle modulations of cell signaling to overwhelming oxidative injury, committing cells to necrosis or apoptosis. In vivo, peroxynitrite generation represents a crucial pathogenic mechanism in conditions such as stroke, myocardial infarction, chronic heart failure, diabetes, circulatory shock, chronic inflammatory diseases, cancer, and neurodegenerative disorders. Hence, novel pharmacological strategies aimed at removing peroxynitrite might represent powerful therapeutic tools in the future. Evidence supporting these novel roles of NO and peroxynitrite is presented in detail in this review.",
+      "keywords": [
+        "Peroxynitrite",
+        "Nitric oxide",
+        "Superoxide",
+        "Mediator",
+        "Peroxynitrous acid"
+      ],
+      "url": "https://openalex.org/W2122386753",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4206481149",
+      "doi": "https://doi.org/10.1016/s0140-6736(21)00218-x",
+      "title": "Parkinson's disease",
+      "year": 2021,
+      "cited_by_count": 3798,
+      "relevance_score": 628.9467,
+      "authors": [
+        "Bastiaan R. Bloem",
+        "Michael S. Okun",
+        "Christine Klein"
+      ],
+      "venue": "The Lancet",
+      "abstract": "",
+      "keywords": [
+        "Disease",
+        "Parkinson's disease",
+        "Medicine",
+        "Parkinsonism",
+        "Levodopa"
+      ],
+      "url": "https://openalex.org/W4206481149",
+      "matched_by": "en"
+    }
+  ]
+}

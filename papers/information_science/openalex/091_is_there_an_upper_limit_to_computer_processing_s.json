@@ -1,0 +1,129 @@
+{
+  "problem_id": 91,
+  "problem_cn": "计算机运算速度存在物理上限吗？",
+  "problem_en": "Is there an upper limit to computer processing speed?",
+  "category": "信息科学",
+  "query_en": "Is there an upper limit to computer processing speed",
+  "query_cn": "计算机运算速度存在物理上限吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T11:07:35",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1973333099",
+      "doi": "https://doi.org/10.1111/1467-9868.00294",
+      "title": "Bayesian Calibration of Computer Models",
+      "year": 2001,
+      "cited_by_count": 4259,
+      "relevance_score": 578.4252,
+      "authors": [
+        "Marc C. Kennedy",
+        "Anthony O’Hagan"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B (Statistical Methodology)",
+      "abstract": "Summary We consider prediction and uncertainty analysis for systems which are approximated using complex mathematical models. Such models, implemented as computer codes, are often generic in the sense that by a suitable choice of some of the model's input parameters the code can be used to predict the behaviour of the system in a variety of specific applications. However, in any specific application the values of necessary parameters may be unknown. In this case, physical observations of the system in the specific context are used to learn about the unknown parameters. The process of fitting the model to the observed data by adjusting the parameters is known as calibration. Calibration is typically effected by ad hoc fitting, and after calibration the model is used, with the fitted input values, to predict the future behaviour of the system. We present a Bayesian calibration technique which improves on this traditional approach in two respects. First, the predictions allow for all sources of uncertainty, including the remaining uncertainty over the fitted parameters. Second, they attempt to correct for any inadequacy of the model which is revealed by a discrepancy between the observed data and the model predictions from even the best-fitting parameter values. The method is illustrated by using data from a nuclear radiation release at Tomsk, and from a more complex simulated nuclear accident exercise.",
+      "keywords": [
+        "Calibration",
+        "Computer science",
+        "Bayesian probability",
+        "Context (archaeology)",
+        "Code (set theory)"
+      ],
+      "url": "https://openalex.org/W1973333099",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2113168655",
+      "doi": "https://doi.org/10.1207/s15327906mbr3901_4",
+      "title": "Confidence Limits for the Indirect Effect: Distribution of the Product and Resampling Methods",
+      "year": 2004,
+      "cited_by_count": 7725,
+      "relevance_score": 557.1773,
+      "authors": [
+        "David P. MacKinnon",
+        "Chondra M. Lockwood",
+        "Jason Williams"
+      ],
+      "venue": "Multivariate Behavioral Research",
+      "abstract": "The most commonly used method to test an indirect effect is to divide the estimate of the indirect effect by its standard error and compare the resulting z statistic with a critical value from the standard normal distribution. Confidence limits for the indirect effect are also typically based on critical values from the standard normal distribution. This article uses a simulation study to demonstrate that confidence limits are imbalanced because the distribution of the indirect effect is normal only in special cases. Two alternatives for improving the performance of confidence limits for the indirect effect are evaluated: (a) a method based on the distribution of the product of two normal random variables, and (b) resampling methods. In Study 1, confidence limits based on the distribution of the product are more accurate than methods based on an assumed normal distribution but confidence limits are still imbalanced. Study 2 demonstrates that more accurate confidence limits are obtained using resampling methods, with the bias-corrected bootstrap the best method overall.",
+      "keywords": [
+        "Resampling",
+        "Confidence interval",
+        "Confidence distribution",
+        "Statistics",
+        "CDF-based nonparametric confidence interval"
+      ],
+      "url": "https://openalex.org/W2113168655",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2087484885",
+      "doi": "https://doi.org/10.3758/bf03193146",
+      "title": "G*Power 3: A flexible statistical power analysis program for the social, behavioral, and biomedical sciences",
+      "year": 2007,
+      "cited_by_count": 65633,
+      "relevance_score": 514.1381,
+      "authors": [
+        "Franz Faul",
+        "Edgar Erdfelder",
+        "Albert-Georg Lang",
+        "Axel Buchner"
+      ],
+      "venue": "Behavior Research Methods",
+      "abstract": "",
+      "keywords": [
+        "Statistical power",
+        "Power (physics)",
+        "Computer science",
+        "Statistical analysis",
+        "Power analysis"
+      ],
+      "url": "https://openalex.org/W2087484885",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2124985265",
+      "doi": "https://doi.org/10.1186/gb-2009-10-3-r25",
+      "title": "Ultrafast and memory-efficient alignment of short DNA sequences to the human genome",
+      "year": 2009,
+      "cited_by_count": 23235,
+      "relevance_score": 493.87946,
+      "authors": [
+        "Ben Langmead",
+        "Cole Trapnell",
+        "Mihai Pop",
+        "Steven L. Salzberg"
+      ],
+      "venue": "Genome biology",
+      "abstract": "Bowtie is an ultrafast, memory-efficient alignment program for aligning short DNA sequence reads to large genomes. For the human genome, Burrows-Wheeler indexing allows Bowtie to align more than 25 million reads per CPU hour with a memory footprint of approximately 1.3 gigabytes. Bowtie extends previous Burrows-Wheeler techniques with a novel quality-aware backtracking algorithm that permits mismatches. Multiple processor cores can be used simultaneously to achieve even greater alignment speeds. Bowtie is open source (http://bowtie.cbcb.umd.edu).",
+      "keywords": [
+        "Biology",
+        "Human genetics",
+        "Human genome",
+        "Genome",
+        "Computational biology"
+      ],
+      "url": "https://openalex.org/W2124985265",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2582743722",
+      "doi": "https://doi.org/10.32614/r.manuals",
+      "title": "R: A Language and Environment for Statistical Computing",
+      "year": 2000,
+      "cited_by_count": 353396,
+      "relevance_score": 479.20947,
+      "authors": [
+        "R Core Team"
+      ],
+      "venue": null,
+      "abstract": "This introduction to R is derived from an original set of notes describing the S and S-Plus environments written in 1990-2 by Bill Venables and David M",
+      "keywords": [
+        "Computer science",
+        "Programming language"
+      ],
+      "url": "https://openalex.org/W2582743722",
+      "matched_by": "en"
+    }
+  ]
+}

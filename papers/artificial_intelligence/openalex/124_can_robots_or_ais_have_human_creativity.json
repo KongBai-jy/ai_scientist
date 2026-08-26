@@ -1,0 +1,144 @@
+{
+  "problem_id": 124,
+  "problem_cn": "机器人AI能否拥有人类一样的创造力？",
+  "problem_en": "Can robots or AIs have human creativity?",
+  "category": "人工智能",
+  "query_en": "Can robots or AIs have human creativity",
+  "query_cn": "机器人AI能否拥有人类一样的创造力",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:10:29",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4380988459",
+      "doi": "https://doi.org/10.1002/jocb.597",
+      "title": "Artificial Intelligence & Creativity: A Manifesto for Collaboration",
+      "year": 2023,
+      "cited_by_count": 221,
+      "relevance_score": 272.86044,
+      "authors": [
+        "Florent Vinchon",
+        "Todd Lubart",
+        "Sabrina Bartolotta",
+        "Valentin Gironnay",
+        "Marion Botella",
+        "Samira Bourgeois‐Bougrine",
+        "Jean‐Marie Burkhardt",
+        "Nathalie Bonnardel",
+        "Giovanni Emanuele Corazza",
+        "Vlad Petre Glăveanu",
+        "Michael Hanchett Hanson",
+        "Zorana Ivčević",
+        "Maciej Karwowski",
+        "James C. Kaufman",
+        "Takeshi Okada",
+        "Roni Reiter‐Palmon",
+        "Andrea Gaggioli"
+      ],
+      "venue": "The Journal of Creative Behavior",
+      "abstract": "ABSTRACT With the advent of artificial intelligence (AI), the field of creativity faces new opportunities and challenges. This manifesto explores several scenarios of human–machine collaboration on creative tasks and proposes “fundamental laws of generative AI” to reinforce the responsible and ethical use of AI in the creativity field. Four scenarios are proposed and discussed: “Co‐Cre‐AI‐tion,” “Organic,” “Plagiarism 3.0,” and “Shut down,” each illustrating different possible futures based on the collaboration between humans and machines. In addition, we have incorporated an AI‐generated manifesto that also highlights important themes, ranging from accessibility and ethics to cultural sensitivity. The fundamental laws proposed aim to prevent AIs from generating harmful content and competing directly with humans. Creating labels and laws are also highlighted to ensure responsible use of AIs. The positive future of creativity and AI lies in a harmonious collaboration that can benefit everyone, potentially leading to a new level of creative productivity respecting ethical considerations and human values during the creative process.",
+      "keywords": [
+        "Manifesto",
+        "Creativity",
+        "Field (mathematics)",
+        "Generative grammar",
+        "Productivity"
+      ],
+      "url": "https://openalex.org/W4380988459",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2528491735",
+      "doi": "https://doi.org/10.1038/538020a",
+      "title": "Can we open the black box of AI?",
+      "year": 2016,
+      "cited_by_count": 1742,
+      "relevance_score": 269.96823,
+      "authors": [
+        "Davide Castelvecchi"
+      ],
+      "venue": "Nature",
+      "abstract": "Artificial intelligence is everywhere. But before scientists trust it, they first need to understand how machines learn.",
+      "keywords": [
+        "Black box",
+        "Computer science",
+        "Artificial intelligence",
+        "Data science"
+      ],
+      "url": "https://openalex.org/W2528491735",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3017131514",
+      "doi": "https://doi.org/10.1109/access.2020.2988510",
+      "title": "Artificial Intelligence in Education: A Review",
+      "year": 2020,
+      "cited_by_count": 3722,
+      "relevance_score": 260.1188,
+      "authors": [
+        "Lijia Chen",
+        "Pingping Chen",
+        "Zhijian Lin"
+      ],
+      "venue": "IEEE Access",
+      "abstract": "The purpose of this study was to assess the impact of Artificial Intelligence (AI) on education. Premised on a narrative and framework for assessing AI identified from a preliminary analysis, the scope of the study was limited to the application and effects of AI in administration, instruction, and learning. A qualitative research approach, leveraging the use of literature review as a research design and approach was used and effectively facilitated the realization of the study purpose. Artificial intelligence is a field of study and the resulting innovations and developments that have culminated in computers, machines, and other artifacts having human-like intelligence characterized by cognitive abilities, learning, adaptability, and decision-making capabilities. The study ascertained that AI has extensively been adopted and used in education, particularly by education institutions, in different forms. AI initially took the form of computer and computer related technologies, transitioning to web-based and online intelligent education systems, and ultimately with the use of embedded computer systems, together with other technologies, the use of humanoid robots and web-based chatbots to perform instructors' duties and functions independently or with instructors. Using these platforms, instructors have been able to perform different administrative functions, such as reviewing and grading students' assignments more effectively and efficiently, and achieve higher quality in their teaching activities. On the other hand, because the systems leverage machine learning and adaptability, curriculum and content has been customized and personalized in line with students' needs, which has fostered uptake and retention, thereby improving learners experience and overall quality of learning.",
+      "keywords": [
+        "Computer science",
+        "Adaptability",
+        "Personalized learning",
+        "Artificial intelligence",
+        "Curriculum"
+      ],
+      "url": "https://openalex.org/W3017131514",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4220670663",
+      "doi": "https://doi.org/10.1177/01634437221077009",
+      "title": "Rethinking creativity: creative industries, AI and everyday creativity",
+      "year": 2022,
+      "cited_by_count": 179,
+      "relevance_score": 235.69984,
+      "authors": [
+        "Hye-Kyung Lee"
+      ],
+      "venue": "Media Culture & Society",
+      "abstract": "This commentary reflects on how creativity is dehumanised (and rehumanised) and how its labour aspects are hindered (and highlighted) in the three recent developments in our understanding of arts, culture and creativity: the creative industries; AI creativity; and creativity in everyday life. The creative industries discourse instrumentalises and dehumanises creativity by hiding labour perspectives and treating creativity as human capital and a generator of IP. Meanwhile, contemplating AI creativity helps us to look beyond the economic paradigm and consider key traits of human creativity and the creation process, some aspects of which are successfully emulated by AI. Yet, we also observe how AI dissociates creativity from human agency and how its cost-cutting effect can challenge human creators in many sectors. Finally, the idea of everyday creativity effectively rehumanises and democratises creativity; however, it not only lacks labour perspectives but also hinders them.",
+      "keywords": [
+        "Creativity",
+        "Creativity technique",
+        "Agency (philosophy)",
+        "The arts",
+        "Sociology"
+      ],
+      "url": "https://openalex.org/W4220670663",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3147517805",
+      "doi": "https://doi.org/10.3389/frai.2021.622364",
+      "title": "Human- versus Artificial Intelligence",
+      "year": 2021,
+      "cited_by_count": 578,
+      "relevance_score": 223.85974,
+      "authors": [
+        "J.E. Korteling",
+        "G. C. van de Boer-Visschedijk",
+        "Romy Blankendaal",
+        "Rudy Boonekamp",
+        "A.R. Eikelboom"
+      ],
+      "venue": "Frontiers in Artificial Intelligence",
+      "abstract": "AI is one of the most debated subjects of today and there seems little common understanding concerning the differences and similarities of human intelligence and artificial intelligence. Discussions on many relevant topics, such as trustworthiness, explainability, and ethics are characterized by implicit anthropocentric and anthropomorphistic conceptions and, for instance, the pursuit of human-like intelligence as the golden standard for Artificial Intelligence. In order to provide more agreement and to substantiate possible future research objectives, this paper presents three notions on the similarities and differences between human- and artificial intelligence: 1) the fundamental constraints of human (and artificial) intelligence, 2) human intelligence as one of many possible forms of general intelligence, and 3) the high potential impact of multiple (integrated) forms of narrow-hybrid AI applications. For the time being, AI systems will have fundamentally different cognitive qualities and abilities than biological systems. For this reason, a most prominent issue is how we can use (and “collaborate” with) these systems as effectively as possible? For what tasks and under what conditions, decisions are safe to leave to AI and when is human judgment required? How can we capitalize on the specific strengths of human- and artificial intelligence? How to deploy AI systems effectively to complement and compensate for the inherent constraints of human cognition (and vice versa)? Should we pursue the development of AI “partners” with human (-level) intelligence or should we focus more at supplementing human limitations? In order to answer these questions, humans working with AI systems in the workplace or in policy making have to develop an adequate mental model of the underlying ‘psychological’ mechanisms of AI. So, in order to obtain well-functioning human-AI systems, Intelligence Awareness in humans should be addressed more vigorously. For this purpose a first framework for educational content is proposed.",
+      "keywords": [
+        "Human intelligence",
+        "Artificial general intelligence",
+        "Artificial intelligence",
+        "Cognition",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W3147517805",
+      "matched_by": "en"
+    }
+  ]
+}

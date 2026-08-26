@@ -1,0 +1,140 @@
+{
+  "problem_id": 18,
+  "problem_cn": "中医经络体系具备科学依据吗？",
+  "problem_en": "Is there a scientific basis to the Meridian System in traditional Chinese medicine?",
+  "category": "医学与健康",
+  "query_en": "Is there a scientific basis to the Meridian System in traditional Chinese medicine",
+  "query_cn": "中医经络体系具备科学依据吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:20:08",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1728574210",
+      "doi": "https://doi.org/10.1186/1472-6963-7-26",
+      "title": "Use frequency of traditional Chinese medicine in Taiwan",
+      "year": 2007,
+      "cited_by_count": 301,
+      "relevance_score": 406.99017,
+      "authors": [
+        "Fang-Pey Chen",
+        "Tzeng‐Ji Chen",
+        "Yen‐Ying Kung",
+        "Yu‐Chun Chen",
+        "Li‐Fang Chou",
+        "Fan-Jou Chen",
+        "Shinn‐Jang Hwang"
+      ],
+      "venue": "BMC Health Services Research",
+      "abstract": "BACKGROUND: Use of Traditional Chinese medicine (TCM), an important category of complementary and alternative medicine (CAM), has increased substantially in Western countries during the past decade. Use of TCM is also widespread in the Chinese population. However, few informative data have been obtained to date by large-scale investigations of TCM use in the Chinese population. This study was aimed at elucidating the demographics and patterns of TCM use in Taiwan. METHODS: We employed the complete datasets of TCM outpatient reimbursement claims from 1996 to 2001, including the use of Chinese herbal remedies, acupuncture and traumatology manipulative therapy, to analyse use frequencies, the characteristics of TCM users, and the disease categories that were treated by TCM in Taiwan. RESULTS: At the end of 2001, 6,142,829 (28.4%) among the 21,653,555 valid beneficiaries of the National Health Insurance in Taiwan had used TCM during the year. However, 13,536,266 subjects (62.5%) had used TCM at least once during the whole 6-year period from 1996 to 2001, with a total of 156,224,266 visits (mean 11.5 visits per user). The mean number of TCM users per annum was 5,733,602, with a mean increment of 1,671,476 (29.2%) of new users yearly. Among TCM users, female was higher than male (female:male = 1.13:1), and the age distribution displayed a peak at around the 30s, followed by the 20s and 40s. Chinese herbal remedies (85.9%) were the most common TCM modality used by this population, followed by acupuncture (11.0%) and traumatology manipulative therapies (3.1%). Private TCM clinics provided most of the TCM care (82.6%), followed by private TCM hospitals (12.0%). The top ten major disease categories for TCM visits were diseases of the respiratory system, musculoskeletal system and connective tissue; symptoms, signs and ill-defined conditions; injury and poisoning; diseases of the digestive system, genitourinary system, skin and subcutaneous tissue, nervous system and sense organs, circulatory and endocrine system; nutritional and metabolic diseases; and immunological disorders. CONCLUSION: TCM was popular among the Chinese population in Taiwan during the period studied. More than 60% of all subjects had used TCM during the 6-year interval. TCM was widely used by the Chinese population to treat problems and diseases of major human organ systems recognised by western medicine. This study provides information about the use frequencies of TCM and the disease categories treated by TCM, which should be useful for health policy makers and for those considering the integration of TCM and Western medicine.",
+      "keywords": [
+        "Medicine",
+        "Traditional Chinese medicine",
+        "Acupuncture",
+        "Traditional medicine",
+        "Alternative medicine"
+      ],
+      "url": "https://openalex.org/W1728574210",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3195514909",
+      "doi": "https://doi.org/10.5582/bst.2021.01318",
+      "title": "The positive role of traditional Chinese medicine as an adjunctive therapy for cancer",
+      "year": 2021,
+      "cited_by_count": 414,
+      "relevance_score": 403.59573,
+      "authors": [
+        "Xiaoyi Zhang",
+        "Hua Qiu",
+        "Chensheng Li",
+        "Pingping Cai",
+        "Fanghua Qi"
+      ],
+      "venue": "BioScience Trends",
+      "abstract": "Traditional Chinese medicine (TCM), especially Chinese herbal medicines and acupuncture, has been traditionally used to treat patients with cancers in China and other East Asian countries. Numerous studies have indicated that TCM not only alleviates the symptoms (e.g., fatigue, chronic pain, anorexia/cachexia, and insomnia) of patients with cancer and improves their quality of life (QOL) but also diminishes adverse reactions and complications caused by chemotherapy, radiotherapy, or targeted-therapy. Therefore, Chinese herbal medicines and acupuncture and other alternative therapies need to be understood by TCM physicians and other health care providers. This review mainly summarizes the experimental results and conclusions from literature published since 2010, and a search of the literature as been performed in the PubMed, MEDLINE, Web of Science, Scopus, Springer, ScienceDirect, and China Hospital Knowledge Database (CHKD) databases. Some Chinese herbal medicines (e.g., Panax ginseng, Panax quinquefolius, Astragali radix, Bu-zhong-yi-qi-tang (TJ-41), Liu-jun-zi-tang (TJ-43), Shi-quan-da-bu-tang (TJ-48), and Ban-xia-xie-xin-tang (TJ-14)) and some acupuncture points (e.g., Zusanli (ST36), Zhongwan (CV12), Neiguan (PC6) and Baihui (GV20)) that are commonly used to treat cancer-related symptoms and/or to reduce the toxicity of chemotherapy, radiotherapy, or targeted-therapy are highlighted and summarized. Through a review of literature, we conclude that TCM can effectively alleviate adverse gastrointestinal reactions (including diarrhea, nausea, and vomiting) to these anti-cancer therapies, decrease the incidence of bone marrow suppression, alleviate cardiotoxicity, and protect against chemotherapy-induced peripheral neuropathy and radiation-induced pneumonitis. Moreover, TCM can alleviate epidermal growth factor receptor-tyrosine kinase inhibitor (EGFR-TKI)-related acneiform eruptions, diarrhea, and other adverse reactions. The hope is that this review can contribute to an understanding of TCM as an adjuvant therapy for cancer and that it can provide useful information for the development of more effective anti-cancer therapies. However, more rigorously designed trials involving cancer treatment must be conducted in the future, including complete quality control and standardized models at the cellular, organic, animal and clinical levels, in order to study TCM in multiple forms and at multiple levels.",
+      "keywords": [
+        "Medicine",
+        "Acupuncture",
+        "Adverse effect",
+        "Nausea",
+        "Radiation therapy"
+      ],
+      "url": "https://openalex.org/W3195514909",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3143036104",
+      "doi": "https://doi.org/10.1016/j.pharmthera.2021.107843",
+      "title": "Traditional Chinese Medicine (TCM) in the treatment of COVID-19 and other viral infections: Efficacies and mechanisms",
+      "year": 2021,
+      "cited_by_count": 576,
+      "relevance_score": 395.93127,
+      "authors": [
+        "Kai Huang",
+        "Pan Zhang",
+        "Zhenghao Zhang",
+        "Ji Youn Youn",
+        "Chen Wang",
+        "Hongchun Zhang",
+        "Hua Cai"
+      ],
+      "venue": "Pharmacology & Therapeutics",
+      "abstract": "",
+      "keywords": [
+        "Coronavirus disease 2019 (COVID-19)",
+        "Traditional Chinese medicine",
+        "2019-20 coronavirus outbreak",
+        "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)",
+        "Virology"
+      ],
+      "url": "https://openalex.org/W3143036104",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3088639750",
+      "doi": "https://doi.org/10.1016/j.phymed.2020.153337",
+      "title": "Traditional Chinese herbal medicine at the forefront battle against COVID-19: Clinical experience and scientific basis",
+      "year": 2020,
+      "cited_by_count": 210,
+      "relevance_score": 393.19174,
+      "authors": [
+        "David Y.W. Lee",
+        "Qing Y. Li",
+        "Jing Liu",
+        "Thomas Efferth"
+      ],
+      "venue": "Phytomedicine",
+      "abstract": "",
+      "keywords": [
+        "Traditional medicine",
+        "Traditional Chinese medicine",
+        "Medicine",
+        "Coronavirus disease 2019 (COVID-19)",
+        "Isolation (microbiology)"
+      ],
+      "url": "https://openalex.org/W3088639750",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2141935892",
+      "doi": "https://doi.org/10.1016/s2005-2901(10)60014-3",
+      "title": "Defining Meridians: A Modern Basis of Understanding",
+      "year": 2010,
+      "cited_by_count": 179,
+      "relevance_score": 352.30157,
+      "authors": [
+        "John C. Longhurst"
+      ],
+      "venue": "Journal of Acupuncture and Meridian Studies",
+      "abstract": "Acupuncture, one of the primary methods of treatment in traditional Oriental medicine, is based on a system of meridians. Along the meridians lie acupuncture points or acupoints, which are stimulated by needling, pressure or heat to resolve a clinical problem. A number of methods have been used to identify meridians and to explain them anatomically. Thus, tendinomuscular structures, primo-vessels (Bonghan ducts), regions of increased temperature and low skin resistance have been suggested to represent meridians or as methods to identify them. However, none of these methods have met the criteria for a meridian, an entity that, when stimulated by acupuncture can result in clinical improvement. More recently, modern physiologists have put forward the \"neural hypothesis\" stating that the clinical influence of acupuncture is transmitted primarily through stimulation of sensory nerves that provide signals to the brain, which processes this information and then causes clinical changes associated with treatment. Although additional research is warranted to investigate the role of some of the structures identified, it seems clear that the peripheral and central nervous system can now be considered to be the most rational basis for defining meridians. The meridian maps and associated acupoints located along them are best viewed as road maps that can guide practitioners towards applying acupuncture to achieve optimal clinical results.",
+      "keywords": [
+        "Basis (linear algebra)",
+        "Mathematics",
+        "Geometry"
+      ],
+      "url": "https://openalex.org/W2141935892",
+      "matched_by": "en"
+    }
+  ]
+}

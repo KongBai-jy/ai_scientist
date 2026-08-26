@@ -1,0 +1,132 @@
+{
+  "problem_id": 99,
+  "problem_cn": "成瘾的发生机理是什么？",
+  "problem_en": "What is addiction and how does it work?",
+  "category": "神经科学",
+  "query_en": "What is addiction and how does it work",
+  "query_cn": "成瘾的发生机理是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:44",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2066848874",
+      "doi": "https://doi.org/10.1038/npp.2009.110",
+      "title": "Neurocircuitry of Addiction",
+      "year": 2009,
+      "cited_by_count": 5286,
+      "relevance_score": 1101.2144,
+      "authors": [
+        "George F. Koob",
+        "Nora D. Volkow"
+      ],
+      "venue": "Neuropsychopharmacology",
+      "abstract": "",
+      "keywords": [
+        "Psychology",
+        "Neuroscience",
+        "Ventral striatum",
+        "Prefrontal cortex",
+        "Orbitofrontal cortex"
+      ],
+      "url": "https://openalex.org/W2066848874",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1975271154",
+      "doi": "https://doi.org/10.1016/0740-5472(92)90062-s",
+      "title": "The fifth edition of the addiction severity index",
+      "year": 1992,
+      "cited_by_count": 4269,
+      "relevance_score": 821.2261,
+      "authors": [
+        "A. Thomas McLellan",
+        "Harvey Kushner",
+        "David S. Metzger",
+        "Roger H. Peters",
+        "Iris Smith",
+        "Grant Grissom",
+        "Helen M. Pettinati",
+        "Milton Argeriou"
+      ],
+      "venue": "Journal of Substance Abuse Treatment",
+      "abstract": "",
+      "keywords": [
+        "Addiction",
+        "Psychiatry",
+        "Comparability",
+        "Normative",
+        "Opiate"
+      ],
+      "url": "https://openalex.org/W1975271154",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2102582267",
+      "doi": "https://doi.org/10.1093/alcalc/agt010",
+      "title": "Motivational Interviewing: Helping People Change",
+      "year": 2013,
+      "cited_by_count": 4319,
+      "relevance_score": 777.7977,
+      "authors": [
+        "Gillian Tober"
+      ],
+      "venue": "Alcohol and Alcoholism",
+      "abstract": "Description of and instruction in the art of motivational interviewing (MI) has made a significant contribution to the optimism of practitioners treating addiction disorders. This is the field in which MI arose 30 years ago. Its use has generalized into other health behaviour change interventions, and beyond into general decision making. For the addiction field, the essence of the contribution has been to give practitioners a set of skills to deal with that most challenging characteristic of people with addiction disorders, namely resistance to change. This third edition of Motivational Interviewing elaborates on the method described in the two previous editions (Miller and Rollnick, 1991, 2002), but without the assistance of contributing authors and with the change of the sub-title to ‘Helping People Change’. The previous sub-titles were: Volume 1 ‘Helping People Change Addictive Behaviour’ and Volume 2: ‘Preparing People for Change’. These subtle differences are important; the practice of MI appears to stop where the behaviour change plan begins. Hence, arguably the second volume's sub-title is the most apt. All are based on the once novel approach in the addiction field, first described in 1983 (Miller, 1983), a method for combining directiveness with a non-confrontational style of consultation. Research and theory suggested that this was a way forward, and practitioners experienced the benefits. Maintaining the skill of working towards a health improvement goal and doing this while minimizing resistance and enhancing engagement were significant achievements and backed up by modest evidence of effectiveness. This book covers a lot of ground. Three hundred pages describe MI at various stages of change; another 50 pages focus on the doing of it: something called experiencing it, which is different from learning, applying and integrating it. Eighteen pages are about the evaluation of MI (though more evidence is cited throughout the book), and what is interesting about this section is the account by Miller of the evolution of MI, the initial absence of evidence, the pursuit of evidence and the incorporation of that evidence into the development of the method. To some extent, this is a truly evolutionary account of the possible symbiosis between research and practice. Miller started out by describing a set of clinical principles and their adoption in practice, derived from bits of research and theory, and combined these into an account of ‘what I think might work best’. It is a good story to read. In the section on training and implementation, the authors deal with the thorny question of the difference between the numbers of people who claim to practise MI and the numbers who can demonstrate competence, i.e. the difference between being able to talk about it and being able to do it, which is seen as a barrier to implementing MI in practice. But could it be that the real barrier to practice is the over-complication of a simple set of principles? In all the discussions that follow about what is and what is not MI, it may be difficult to see the wood for the trees. The authors advocate a non-prescriptive approach to change, but give plenty of advice about what you should and should not do as a practitioner of MI. They sanction some applications and adaptations of it but ignore others, and the method they describe for evaluating its application focuses on their own definitions of what MI is and what it is not. There are other rating methods, not described, for comparing MI with other practices, which are peer-reviewed and in the public domain. This limits the debate. However, enough debate. The distilling out of the principles, a simplified version of the core skills based on specific evidence of what makes a real difference, and the presentation of them in a concise and accessible way might curtail the endless discussion and exploration and give people some pointers to the essential ingredients that have a proven impact on helping people change. The third edition of Motivational Interviewing is full of useful material, some of it backed up by evidence and much detail that makes good sense to people versed in the literature of effective counselling skills. This begs the question of ‘to whom is the book aimed’? Experienced practitioners are familiar with this material; if it is aimed at the inexperienced as the content suggests, is much of this book too complicated? Also, the examples of dialogue may bear little resemblance to the down and dirty conversations in the average addiction clinic and perhaps resemble more the polite exchanges of the private health care setting; nonetheless, the instructions of what to do and what not to do, with their stereotype assertions of how people respond, give a flavour of how to operationalize the Rogerian principles of treating people with respect, listening and facilitating dialogue and combine them with getting people to think about change, based on common sense and some evidence. But I fear some sections are just too complicated to facilitate practice. The book offers examples of dialogue clearly set apart from the explanatory text, it has key learning points, albeit ones that are rather general and evangelical; many do not apply to MI in particular but are good-practice principles. And this is the thing about MI; it is a set of good-practice skills and for that it is useful. The burgeoning discussion, definition and elaboration of its component parts could be one of the things preventing its more universal application.",
+      "keywords": [
+        "Motivational interviewing",
+        "Addiction",
+        "Miller",
+        "Psychology",
+        "Psychological intervention"
+      ],
+      "url": "https://openalex.org/W2102582267",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1989416066",
+      "doi": "https://doi.org/10.1016/s0893-133x(00)00195-0",
+      "title": "Drug Addiction, Dysregulation of Reward, and Allostasis",
+      "year": 2001,
+      "cited_by_count": 2971,
+      "relevance_score": 694.22577,
+      "authors": [
+        "G F Koob"
+      ],
+      "venue": "Neuropsychopharmacology",
+      "abstract": "",
+      "keywords": [
+        "Allostasis",
+        "Addiction",
+        "Psychology",
+        "Neuroscience",
+        "Neurochemical"
+      ],
+      "url": "https://openalex.org/W1989416066",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2808240146",
+      "doi": "https://doi.org/10.1556/2006.7.2018.49",
+      "title": "Is smartphone addiction really an addiction?",
+      "year": 2018,
+      "cited_by_count": 960,
+      "relevance_score": 547.54144,
+      "authors": [
+        "Tayana Panova",
+        "Xavier Carbonell"
+      ],
+      "venue": "Journal of Behavioral Addictions",
+      "abstract": "Aims In light of the rise in research on technological addictions and smartphone addiction in particular, the aim of this paper was to review the relevant literature on the topic of smartphone addiction and determine whether this disorder exists or if it does not adequately satisfy the criteria for addiction. Methods We reviewed quantitative and qualitative studies on smartphone addiction and analyzed their methods and conclusions to make a determination on the suitability of the diagnosis \"addiction\" to excessive and problematic smartphone use. Results Although the majority of research in the field declares that smartphones are addictive or takes the existence of smartphone addiction as granted, we did not find sufficient support from the addiction perspective to confirm the existence of smartphone addiction at this time. The behaviors observed in the research could be better labeled as problematic or maladaptive smartphone use and their consequences do not meet the severity levels of those caused by addiction. Discussion and conclusions Addiction is a disorder with severe effects on physical and psychological health. A behavior may have a similar presentation as addiction in terms of excessive use, impulse control problems, and negative consequences, but that does not mean that it should be considered an addiction. We propose moving away from the addiction framework when studying technological behaviors and using other terms such as \"problematic use\" to describe them. We recommend that problematic technology use is to be studied in its sociocultural context with an increased focus on its compensatory functions, motivations, and gratifications.",
+      "keywords": [
+        "Addiction",
+        "Psychology",
+        "Behavioral addiction",
+        "Smartphone addiction",
+        "Context (archaeology)"
+      ],
+      "url": "https://openalex.org/W2808240146",
+      "matched_by": "en"
+    }
+  ]
+}

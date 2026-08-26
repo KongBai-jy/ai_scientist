@@ -1,0 +1,136 @@
+{
+  "problem_id": 23,
+  "problem_cn": "异种器官移植能否解决供体器官短缺？",
+  "problem_en": "Can xenotransplantation solve the shortage of donor organs?",
+  "category": "医学与健康",
+  "query_en": "Can xenotransplantation solve the shortage of donor organs",
+  "query_cn": "异种器官移植能否解决供体器官短缺",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:20:26",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2110553915",
+      "doi": "https://doi.org/10.1146/annurev.med.53.082901.103900",
+      "title": "Will the Pig Solve the Transplantation Backlog?",
+      "year": 2002,
+      "cited_by_count": 295,
+      "relevance_score": 538.6969,
+      "authors": [
+        "David K.C. Cooper",
+        "Bernd Gollackner",
+        "David H. Sachs"
+      ],
+      "venue": "Annual Review of Medicine",
+      "abstract": "The increasing shortage of human cadaveric organs for purposes of transplantation has become the critical limiting factor in the number of transplants performed each year. Some of this deficit is being met by the use of organs or partial organs from living donors, but this source is insufficient. Xenotransplantation-the transplantation of organs between species, namely from the pig to human-could provide a solution if immunologic and other associated problems could be solved. When a pig organ is transplanted into a primate, hyperacute rejection, induced by anti-pig antibody and mediated by complement and the coagulation system, develops rapidly. This immediate problem can now be overcome, but the return or persistence of anti-pig antibody leads to a delayed form of humoral rejection, acute humoral xenograft rejection, which leads to destruction of the organ within days or weeks. We review the various approaches being investigated to overcome this barrier. Whether they will also prevent subsequent acute cellular rejection remains unknown. Brief mention is made of the potential physiologic incompatibilities between pig and human organs, as well as the microbiologic safety aspects of xenotransplantation. Finally, the question of patient and societal acceptance of xenotransplantation is discussed.",
+      "keywords": [
+        "Xenotransplantation",
+        "Economic shortage",
+        "Transplantation",
+        "Immunology",
+        "Limiting"
+      ],
+      "url": "https://openalex.org/W2110553915",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2734381510",
+      "doi": "https://doi.org/10.1007/s12033-017-0024-9",
+      "title": "Genetically Modified Pigs as Organ Donors for Xenotransplantation",
+      "year": 2017,
+      "cited_by_count": 131,
+      "relevance_score": 464.88095,
+      "authors": [
+        "Magdalena Hryhorowicz",
+        "Joanna Zeyland",
+        "Ryszard Słomski",
+        "Daniel Lipiński"
+      ],
+      "venue": "Molecular Biotechnology",
+      "abstract": "The growing shortage of available organs is a major problem in transplantology. Thus, new and alternative sources of organs need to be found. One promising solution could be xenotransplantation, i.e., the use of animal cells, tissues and organs. The domestic pig is the optimum donor for such transplants. However, xenogeneic transplantation from pigs to humans involves high immune incompatibility and a complex rejection process. The rapid development of genetic engineering techniques enables genome modifications in pigs that reduce the cross-species immune barrier.",
+      "keywords": [
+        "Xenotransplantation",
+        "Economic shortage",
+        "Transplantation",
+        "Immune system",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2734381510",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3003099222",
+      "doi": "https://doi.org/10.3389/fimmu.2019.03060",
+      "title": "Xenotransplantation: Current Status in Preclinical Research",
+      "year": 2020,
+      "cited_by_count": 214,
+      "relevance_score": 370.18332,
+      "authors": [
+        "Tianyu Lu",
+        "Bochao Yang",
+        "Ruolin Wang",
+        "Chuan Qin"
+      ],
+      "venue": "Frontiers in Immunology",
+      "abstract": "The increasing life expectancy of humans has led to a growing numbers of patients with chronic diseases and end-stage organ failure. Transplantation is an effective approach for the treatment of end-stage organ failure; however, the imbalance between organ supply and the demand for human organs is a bottleneck for clinical transplantation. Therefore, xenotransplantation might be a promising alternative approach to bridge the gap between the supply and demand of organs, tissues, and cells; however, immunological barriers are limiting factors in clinical xenotransplantation. Thanks to advances in gene-editing tools and immunosuppressive therapy as well as the prolonged xenograft survival time in pig-to-non-human primate models, clinical xenotransplantation has become more viable. In this review, we focus on the evolution and current status of xenotransplantation research, including our current understanding of the immunological mechanisms involved in xenograft rejection, genetically modified pigs used for xenotransplantation, and progress that has been made in developing pig-to-pig-to-non-human primate models. Three main types of rejection can occur after xenotransplantation, which we discuss in detail: (1) hyperacute xenograft rejection, (2) acute humoral xenograft rejection, and (3) acute cellular rejection. Furthermore, in studies on immunological rejection, genetically modified pigs have been generated to bridge cross-species molecular incompatibilities; in the last decade, most advances made in the field of xenotransplantation have resulted from the production of genetically engineered pigs; accordingly, we summarize the genetically modified pigs that are currently available for xenotransplantation. Next, we summarize the longest survival time of solid organs in preclinical models in recent years, including heart, liver, kidney, and lung xenotransplantation. Overall, we conclude that recent achievements and the accumulation of experience in xenotransplantation mean that the first-in-human clinical trial could be possible in the near future. Furthermore, we hope that xenotransplantation and various approaches will be able to collectively solve the problem of human organ shortage.",
+      "keywords": [
+        "Xenotransplantation",
+        "Transplantation",
+        "Genetically modified organism",
+        "Medicine",
+        "Immunology"
+      ],
+      "url": "https://openalex.org/W3003099222",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2508555475",
+      "doi": "https://doi.org/10.1016/j.ebiom.2016.08.034",
+      "title": "Clinical Benefit of Islet Xenotransplantation for the Treatment of Type 1 Diabetes",
+      "year": 2016,
+      "cited_by_count": 207,
+      "relevance_score": 329.17154,
+      "authors": [
+        "Shinichi Matsumoto",
+        "Adrián Abalovich",
+        "Carlos Wechsler",
+        "Shaun Wynyard",
+        "Robert B. Elliott"
+      ],
+      "venue": "EBioMedicine",
+      "abstract": "BACKGROUND: Allogeneic islet transplantation has become a viable option for the treatment of unstable type 1 diabetes. However, the donor shortage and the necessity of the immunosuppressive drugs are two major issues. To solve these issues, we performed islet xenotransplantation using encapsulated neonatal porcine islets without immunosuppressive drugs. METHODS: Two different doses (approximately 5000IEQ/kg and 10,000IEQ/kg) of encapsulated neonatal porcine islets were transplanted twice (total approximately 10,000IEQ/kg and 20,000IEQ/kg) into four type 1 diabetic patients in each group (total 8 patients). FINDINGS: In the higher dose group, all four patients improved HbA1c. This was maintained at a level of <7% for >600days with significant reduction of the frequency of unaware hypoglycemic events. INTERPRETATION: The clinical benefit of islet xenotransplantation with microencapsulation has been shown.",
+      "keywords": [
+        "Xenotransplantation",
+        "Islet",
+        "Economic shortage",
+        "Medicine",
+        "Transplantation"
+      ],
+      "url": "https://openalex.org/W2508555475",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4311291192",
+      "doi": "https://doi.org/10.1038/s41581-022-00664-y",
+      "title": "Progress towards solving the donor organ shortage",
+      "year": 2022,
+      "cited_by_count": 28,
+      "relevance_score": 328.5263,
+      "authors": [
+        "Douglas J. Anderson",
+        "Jayme E. Locke"
+      ],
+      "venue": "Nature Reviews Nephrology",
+      "abstract": "",
+      "keywords": [
+        "Medicine",
+        "Economic shortage",
+        "Immunosuppression",
+        "Xenotransplantation",
+        "Organ transplantation"
+      ],
+      "url": "https://openalex.org/W4311291192",
+      "matched_by": "en"
+    }
+  ]
+}

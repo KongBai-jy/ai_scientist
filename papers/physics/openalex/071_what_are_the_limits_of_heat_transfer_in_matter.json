@@ -1,0 +1,130 @@
+{
+  "problem_id": 71,
+  "problem_cn": "物质热传递的物理上限是什么？",
+  "problem_en": "What are the limits of heat transfer in matter?",
+  "category": "物理学",
+  "query_en": "What are the limits of heat transfer in matter",
+  "query_cn": "物质热传递的物理上限是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:24",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2172396214",
+      "doi": "https://doi.org/10.1175/1520-0493(1972)100<0081:otaosh>2.3.co;2",
+      "title": "On the Assessment of Surface Heat Flux and Evaporation Using Large-Scale Parameters",
+      "year": 1972,
+      "cited_by_count": 6736,
+      "relevance_score": 631.8928,
+      "authors": [
+        "C. H. B. Priestley",
+        "R. J. Taylor"
+      ],
+      "venue": "Monthly Weather Review",
+      "abstract": "In an introductory review it is reemphasized that the large-scale parameterization of the surface fluxes of sensible and latent heat is properly expressed in terms of energetic considerations over land while formulas of the bulk aerodynamic type are most suitahle over the sea. A general framework is suggested. Data from a number of saturated land sites and open water sites in the absence of advection suggest a widely applicable formula for the relationship between sensible and latent heat fluxes. For drying land surfaces, we assume that the evaporation rate is given by the same formula for evaporation multiplied by a factor. This factor is found to remain at unity while an amount of water, varying from one site to another, is evaporated. Following this a linear decrease sets in, reducing the evaporation rate to zero after a further 5 cm of evaporation, the same at several sites examined.",
+      "keywords": [
+        "Evaporation",
+        "Sensible heat",
+        "Advection",
+        "Latent heat",
+        "Environmental science"
+      ],
+      "url": "https://openalex.org/W2172396214",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1526160613",
+      "doi": "https://doi.org/10.1103/revmodphys.81.503",
+      "title": "Heat transfer and large scale dynamics in turbulent Rayleigh-Bénard convection",
+      "year": 2009,
+      "cited_by_count": 1634,
+      "relevance_score": 512.1607,
+      "authors": [
+        "Guenter Ahlers",
+        "Siegfried Großmann",
+        "Detlef Lohse"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "The progress in our understanding of several aspects of turbulent Rayleigh-B\\'enard convection is reviewed. The focus is on the question of how the Nusselt number and the Reynolds number depend on the Rayleigh number Ra and the Prandtl number Pr, and on how the thicknesses of the thermal and the kinetic boundary layers scale with Ra and Pr. Non-Oberbeck-Boussinesq effects and the dynamics of the large scale convection roll are addressed as well. The review ends with a list of challenges for future research on the turbulent Rayleigh-B\\'enard system.",
+      "keywords": [
+        "Physics",
+        "Prandtl number",
+        "Nusselt number",
+        "Turbulence",
+        "Rayleigh number"
+      ],
+      "url": "https://openalex.org/W1526160613",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2122765019",
+      "doi": "https://doi.org/10.1103/physrevd.79.015014",
+      "title": "A theory of dark matter",
+      "year": 2009,
+      "cited_by_count": 1682,
+      "relevance_score": 385.47495,
+      "authors": [
+        "Nima Arkani–Hamed",
+        "Douglas P. Finkbeiner",
+        "Tracy R. Slatyer",
+        "Neal Weiner"
+      ],
+      "venue": "Physical review. D. Particles, fields, gravitation, and cosmology/Physical review. D. Particles and fields",
+      "abstract": "We propose a comprehensive theory of dark matter that explains the recent proliferation of unexpected observations in high-energy astrophysics. Cosmic ray spectra from ATIC and PAMELA require a WIMP (weakly interacting massive particle). with mass ${M}_{\\ensuremath{\\chi}}\\ensuremath{\\sim}500--800\\text{ }\\text{ }\\mathrm{GeV}$ that annihilates into leptons at a level well above that expected from a thermal relic. Signals from WMAP and EGRET reinforce this interpretation. Limits on $\\overline{p}$ and ${\\ensuremath{\\pi}}^{0}\\mathrm{\\text{\\ensuremath{-}}}\\ensuremath{\\gamma}$'s constrain the hadronic channels allowed for dark matter. Taken together, we argue these facts imply the presence of a new force in the dark sector, with a Compton wavelength ${m}_{\\ensuremath{\\phi}}^{\\ensuremath{-}1}\\ensuremath{\\gtrsim}1\\text{ }\\text{ }{\\mathrm{GeV}}^{\\ensuremath{-}1}$. The long range allows a Sommerfeld enhancement to boost the annihilation cross section as required, without altering the weak-scale annihilation cross section during dark matter freeze-out in the early universe. If the dark matter annihilates into the new force carrier $\\ensuremath{\\phi}$, its low mass can make hadronic modes kinematically inaccessible, forcing decays dominantly into leptons. If the force carrier is a non-Abelian gauge boson, the dark matter is part of a multiplet of states, and splittings between these states are naturally generated with size $\\ensuremath{\\alpha}{m}_{\\ensuremath{\\phi}}\\ensuremath{\\sim}\\text{ }\\text{ }\\mathrm{MeV}$, leading to the eXciting dark matter (XDM) scenario previously proposed to explain the positron annihilation in the galactic center observed by the INTEGRAL satellite; the light boson invoked by XDM to mediate a large inelastic scattering cross section is identified with the $\\ensuremath{\\phi}$ here. Somewhat smaller splittings would also be expected, providing a natural source for the parameters of the inelastic dark matter (iDM) explanation for the DAMA annual modulation signal. Since the Sommerfeld enhancement is most significant at low velocities, early dark matter halos at redshift $\\ensuremath{\\sim}10$ potentially produce observable effects on the ionization history of the universe. Because of the enhanced cross section, detection of substructure is more probable than with a conventional WIMP. Moreover, the low velocity dispersion of dwarf galaxies and Milky Way subhalos can increase the substructure annihilation signal by an additional order of magnitude or more.",
+      "keywords": [
+        "Physics",
+        "Dark matter",
+        "Particle physics",
+        "Annihilation",
+        "Weakly interacting massive particles"
+      ],
+      "url": "https://openalex.org/W2122765019",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2011094999",
+      "doi": "https://doi.org/10.1289/ehp.1002313",
+      "title": "Heat Waves in the United States: Mortality Risk during Heat Waves and Effect Modification by Heat Wave Characteristics in 43 U.S. Communities",
+      "year": 2010,
+      "cited_by_count": 1173,
+      "relevance_score": 340.2213,
+      "authors": [
+        "G. Brooke Anderson",
+        "Michelle L. Bell"
+      ],
+      "venue": "Environmental Health Perspectives",
+      "abstract": "BACKGROUND: Devastating health effects from recent heat waves, and projected increases in frequency, duration, and severity of heat waves from climate change, highlight the importance of understanding health consequences of heat waves. OBJECTIVES: We analyzed mortality risk for heat waves in 43 U.S. cities (1987-2005) and investigated how effects relate to heat waves' intensity, duration, or timing in season. METHODS: Heat waves were defined as ≥ 2 days with temperature ≥ 95th percentile for the community for 1 May through 30 September. Heat waves were characterized by their intensity, duration, and timing in season. Within each community, we estimated mortality risk during each heat wave compared with non-heat wave days, controlling for potential confounders. We combined individual heat wave effect estimates using Bayesian hierarchical modeling to generate overall effects at the community, regional, and national levels. We estimated how heat wave mortality effects were modified by heat wave characteristics (intensity, duration, timing in season). RESULTS: Nationally, mortality increased 3.74% [95% posterior interval (PI), 2.29-5.22%] during heat waves compared with non-heat wave days. Heat wave mortality risk increased 2.49% for every 1°F increase in heat wave intensity and 0.38% for every 1-day increase in heat wave duration. Mortality increased 5.04% (95% PI, 3.06-7.06%) during the first heat wave of the summer versus 2.65% (95% PI, 1.14-4.18%) during later heat waves, compared with non-heat wave days. Heat wave mortality impacts and effect modification by heat wave characteristics were more pronounced in the Northeast and Midwest compared with the South. CONCLUSIONS: We found higher mortality risk from heat waves that were more intense or longer, or those occurring earlier in summer. These findings have implications for decision makers and researchers estimating health effects from climate change.",
+      "keywords": [
+        "Heat wave",
+        "Intensity (physics)",
+        "Environmental science",
+        "Atmospheric sciences",
+        "Medicine"
+      ],
+      "url": "https://openalex.org/W2011094999",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2113888014",
+      "doi": "https://doi.org/10.2172/15004820",
+      "title": "Heat Transfer Analysis and Modeling of a Parabolic Trough Solar Receiver Implemented in Engineering Equation Solver",
+      "year": 2003,
+      "cited_by_count": 829,
+      "relevance_score": 335.1008,
+      "authors": [
+        "R. Forristall"
+      ],
+      "venue": null,
+      "abstract": "This report describes the development, validation, and use of a heat transfer model implemented in Engineering Equation Solver. The model determines the performance of a parabolic trough solar collector's linear receiver, also called a heat collector element. All heat transfer and thermodynamic equations, optical properties, and parameters used in the model are discussed. The modeling assumptions and limitations are also discussed, along with recommendations for model improvement.",
+      "keywords": [
+        "Parabolic trough",
+        "Solver",
+        "Heat transfer",
+        "Heat equation",
+        "Mechanical engineering"
+      ],
+      "url": "https://openalex.org/W2113888014",
+      "matched_by": "en"
+    }
+  ]
+}

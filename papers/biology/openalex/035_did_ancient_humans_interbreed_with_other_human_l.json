@@ -1,0 +1,166 @@
+{
+  "problem_id": 35,
+  "problem_cn": "古人类是否和其他人科远古祖先发生过混血？",
+  "problem_en": "Did ancient humans interbreed with other human-like ancestors?",
+  "category": "生物学",
+  "query_en": "Did ancient humans interbreed with other human-like ancestors",
+  "query_cn": "古人类是否和其他人科远古祖先发生过混血",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:06",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2233603983",
+      "doi": "https://doi.org/10.1186/s13059-015-0866-z",
+      "title": "Ancient DNA and the rewriting of human history: be sparing with Occam’s razor",
+      "year": 2016,
+      "cited_by_count": 2036,
+      "relevance_score": 953.35675,
+      "authors": [
+        "Marc Haber",
+        "Massimo Mezzavilla",
+        "Yali Xue",
+        "Chris Tyler‐Smith"
+      ],
+      "venue": "Genome biology",
+      "abstract": "Ancient DNA research is revealing a human history far more complex than that inferred from parsimonious models based on modern DNA. Here, we review some of the key events in the peopling of the world in the light of the findings of work on ancient DNA.",
+      "keywords": [
+        "Occam's razor",
+        "Ancient DNA",
+        "Biology",
+        "Human genetics",
+        "Rewriting"
+      ],
+      "url": "https://openalex.org/W2233603983",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2105990937",
+      "doi": "https://doi.org/10.1371/journal.pgen.1002947",
+      "title": "The Date of Interbreeding between Neandertals and Modern Humans",
+      "year": 2012,
+      "cited_by_count": 491,
+      "relevance_score": 717.3545,
+      "authors": [
+        "Sriram Sankararaman",
+        "Nick Patterson",
+        "Heng Li",
+        "Svante Pääbo",
+        "David Reich"
+      ],
+      "venue": "PLoS Genetics",
+      "abstract": "Comparisons of DNA sequences between Neandertals and present-day humans have shown that Neandertals share more genetic variants with non-Africans than with Africans. This could be due to interbreeding between Neandertals and modern humans when the two groups met subsequent to the emergence of modern humans outside Africa. However, it could also be due to population structure that antedates the origin of Neandertal ancestors in Africa. We measure the extent of linkage disequilibrium (LD) in the genomes of present-day Europeans and find that the last gene flow from Neandertals (or their relatives) into Europeans likely occurred 37,000-86,000 years before the present (BP), and most likely 47,000-65,000 years ago. This supports the recent interbreeding hypothesis and suggests that interbreeding may have occurred when modern humans carrying Upper Paleolithic technologies encountered Neandertals as they expanded out of Africa.",
+      "keywords": [
+        "Biology",
+        "Linkage disequilibrium",
+        "Evolutionary biology",
+        "Neanderthal",
+        "Population"
+      ],
+      "url": "https://openalex.org/W2105990937",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2101294025",
+      "doi": "https://doi.org/10.1146/annurev.genet.37.110801.143214",
+      "title": "Genetic Analyses from Ancient DNA",
+      "year": 2004,
+      "cited_by_count": 1326,
+      "relevance_score": 496.28986,
+      "authors": [
+        "Svante Pääbo",
+        "Hendrik N. Poinar",
+        "David Serre",
+        "Viviane Jaenicke-Després",
+        "Juliane Hebler",
+        "Nadin Rohland",
+        "Melanie Kuch",
+        "Johannes Krause",
+        "Linda Vigilant",
+        "Michael Hofreiter"
+      ],
+      "venue": "Annual Review of Genetics",
+      "abstract": "About 20 years ago, DNA sequences were separately described from the quagga (a type of zebra) and an ancient Egyptian individual. What made these DNA sequences exceptional was that they were derived from 140- and 2400-year-old specimens. However, ancient DNA research, defined broadly as the retrieval of DNA sequences from museum specimens, archaeological finds, fossil remains, and other unusual sources of DNA, only really became feasible with the advent of techniques for the enzymatic amplification of specific DNA sequences. Today, reports of analyses of specimens hundreds, thousands, and even millions of years old are almost commonplace. But can all these results be believed? In this paper, we critically assess the state of ancient DNA research. In particular, we discuss the precautions and criteria necessary to ascertain to the greatest extent possible that results represent authentic ancient DNA sequences. We also highlight some significant results and areas of promising future research.",
+      "keywords": [
+        "Ancient DNA",
+        "Biology",
+        "DNA",
+        "DNA sequencing",
+        "Evolutionary biology"
+      ],
+      "url": "https://openalex.org/W2101294025",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2409675099",
+      "doi": "https://doi.org/10.1073/pnas.1524306113",
+      "title": "Ancient DNA and human history",
+      "year": 2016,
+      "cited_by_count": 275,
+      "relevance_score": 453.2953,
+      "authors": [
+        "Montgomery Slatkin",
+        "Fernando Racimo"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "abstract": "We review studies of genomic data obtained by sequencing hominin fossils with particular emphasis on the unique information that ancient DNA (aDNA) can provide about the demographic history of humans and our closest relatives. We concentrate on nuclear genomic sequences that have been published in the past few years. In many cases, particularly in the Arctic, the Americas, and Europe, aDNA has revealed historical demographic patterns in a way that could not be resolved by analyzing present-day genomes alone. Ancient DNA from archaic hominins has revealed a rich history of admixture between early modern humans, Neanderthals, and Denisovans, and has allowed us to disentangle complex selective processes. Information from aDNA studies is nowhere near saturation, and we believe that future aDNA sequences will continue to change our understanding of hominin history.",
+      "keywords": [
+        "Ancient DNA",
+        "Evolutionary biology",
+        "Demographic history",
+        "Biology",
+        "Genome"
+      ],
+      "url": "https://openalex.org/W2409675099",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1999623479",
+      "doi": "https://doi.org/10.1038/nature13408",
+      "title": "Altitude adaptation in Tibetans caused by introgression of Denisovan-like DNA",
+      "year": 2014,
+      "cited_by_count": 1337,
+      "relevance_score": 380.872,
+      "authors": [
+        "Emilia Huerta‐Sánchez",
+        "Xin Jin",
+        "Asan",
+        "Zhuoma Bianba",
+        "Benjamin M. Peter",
+        "Nicolas Vinckenbosch",
+        "Yu Liang",
+        "Xin Yi",
+        "Mingze He",
+        "Mehmet Somel",
+        "Peixiang Ni",
+        "Bo Wang",
+        "Xiaohua Ou",
+        "Huasang",
+        "Jiangbai Luosang",
+        "Zha Xi Ping Cuo",
+        "Kui Li",
+        "Guoyi Gao",
+        "Ye Yin",
+        "Wei Wang",
+        "Xiuqing Zhang",
+        "Xun Xu",
+        "Huanming Yang",
+        "Yingrui Li",
+        "Jian Wang",
+        "Jun Wang",
+        "Rasmus Nielsen"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Introgression",
+        "Haplotype",
+        "Biology",
+        "Subspecies",
+        "Plateau (mathematics)"
+      ],
+      "url": "https://openalex.org/W1999623479",
+      "matched_by": "en"
+    }
+  ]
+}

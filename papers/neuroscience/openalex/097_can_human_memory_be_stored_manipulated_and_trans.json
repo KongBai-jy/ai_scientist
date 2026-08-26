@@ -1,0 +1,129 @@
+{
+  "problem_id": 97,
+  "problem_cn": "人类记忆可以数字化存储、修改、移植吗？",
+  "problem_en": "Can human memory be stored, manipulated, and transplanted digitally?",
+  "category": "神经科学",
+  "query_en": "Can human memory be stored, manipulated, and transplanted digitally",
+  "query_cn": "人类记忆可以数字化存储、修改、移植吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:33",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W3003606046",
+      "doi": "https://doi.org/10.1177/1529100620946707",
+      "title": "Citizens Versus the Internet: Confronting Digital Challenges With Cognitive Tools",
+      "year": 2020,
+      "cited_by_count": 438,
+      "relevance_score": 230.81555,
+      "authors": [
+        "Anastasia Kozyreva",
+        "Stephan Lewandowsky",
+        "Ralph Hertwig"
+      ],
+      "venue": "Gothic.net",
+      "abstract": "The Internet has evolved into a ubiquitous and indispensable digital environment in which people communicate, seek information, and make decisions. Despite offering various benefits, online environments are also replete with smart, highly adaptive choice architectures designed primarily to maximize commercial interests, capture and sustain users' attention, monetize user data, and predict and influence future behavior. This online landscape holds multiple negative consequences for society, such as a decline in human autonomy, rising incivility in online conversation, the facilitation of political extremism, and the spread of disinformation. Benevolent choice architects working with regulators may curb the worst excesses of manipulative choice architectures, yet the strategic advantages, resources, and data remain with commercial players. One way to address some of this imbalance is with interventions that empower Internet users to gain some control over their digital environments, in part by boosting their information literacy and their cognitive resistance to manipulation. Our goal is to present a conceptual map of interventions that are based on insights from psychological science. We begin by systematically outlining how online and offline environments differ despite being increasingly inextricable. We then identify four major types of challenges that users encounter in online environments: persuasive and manipulative choice architectures, AI-assisted information architectures, false and misleading information, and distracting environments. Next, we turn to how psychological science can inform interventions to counteract these challenges of the digital world. After distinguishing among three types of behavioral and cognitive interventions-nudges, technocognition, and boosts-we focus on boosts, of which we identify two main groups: (a) those aimed at enhancing people's agency in their digital environments (e.g., self-nudging, deliberate ignorance) and (b) those aimed at boosting competencies of reasoning and resilience to manipulation (e.g., simple decision aids, inoculation). These cognitive tools are designed to foster the civility of online discourse and protect reason and human autonomy against manipulative choice architectures, attention-grabbing techniques, and the spread of false information.",
+      "keywords": [
+        "The Internet",
+        "Cognition",
+        "Psychology",
+        "Internet privacy",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W3003606046",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4221057587",
+      "doi": "https://doi.org/10.1538/expanim.21-0120",
+      "title": "Morris water maze: a versatile and pertinent tool for assessing spatial learning and memory",
+      "year": 2022,
+      "cited_by_count": 373,
+      "relevance_score": 163.0391,
+      "authors": [
+        "Muhammad Zulfadhli Othman",
+        "Zurina Hassan",
+        "Ahmad Tarmizi Che Has"
+      ],
+      "venue": "EXPERIMENTAL ANIMALS",
+      "abstract": "Since its development about 40 years ago (1981-2021), Morris water maze has turned into a very popular tool for assessing spatial learning and memory. Its many advantages have ensured its pertinence to date. These include its effectiveness in evaluating hippocampal-dependent learning and memory, exemption from motivational differences across diverse experimental manipulations, reliability in various cross-species studies, and adaptability to many experimental conditions with various test protocols. Nonetheless, throughout its establishment, several experimental and analysis loopholes have galvanized researchers to assess ways in which it could be improved and adapted to fill this gap. Therefore, in this review, we briefly summarize these developments since the early years of its establishment through to the most recent advancements in computerized analysis, offering more comprehensive analysis paradigms. In addition, we discuss the adaptability of the Morris water maze across different test versions and analysis paradigms, providing suggestions with regard to the best paradigms for particular experimental conditions. Hence, the proper selection of the experimental protocols, analysis paradigms, and consideration of the assay's limitations should be carefully considered. Given that appropriate measures are taken, with various adaptations made, the Morris water maze will likely remain a relevant tool to assess the mechanisms of spatial learning and memory.",
+      "keywords": [
+        "Morris water navigation task",
+        "Adaptability",
+        "Computer science",
+        "Spatial learning",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W4221057587",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3092216269",
+      "doi": "https://doi.org/10.1002/adma.202002640",
+      "title": "Functional Fibers and Fabrics for Soft Robotics, Wearables, and Human–Robot Interface",
+      "year": 2020,
+      "cited_by_count": 625,
+      "relevance_score": 158.46382,
+      "authors": [
+        "Jiaqing Xiong",
+        "Jian Chen",
+        "Pooi See Lee"
+      ],
+      "venue": "Advanced Materials",
+      "abstract": "Soft robotics inspired by the movement of living organisms, with excellent adaptability and accuracy for accomplishing tasks, are highly desirable for efficient operations and safe interactions with human. With the emerging wearable electronics, higher tactility and skin affinity are pursued for safe and user-friendly human-robot interactions. Fabrics interlocked by fibers perform traditional static functions such as warming, protection, and fashion. Recently, dynamic fibers and fabrics are favorable to deliver active stimulus responses such as sensing and actuating abilities for soft-robots and wearables. First, the responsive mechanisms of fiber/fabric actuators and their performances under various external stimuli are reviewed. Fiber/yarn-based artificial muscles for soft-robots manipulation and assistance in human motion are discussed, as well as smart clothes for improving human perception. Second, the geometric designs, fabrications, mechanisms, and functions of fibers/fabrics for sensing and energy harvesting from the human body and environments are summarized. Effective integration between the electronic components with garments, human skin, and living organisms is illustrated, presenting multifunctional platforms with self-powered potential for human-robot interactions and biomedicine. Lastly, the relationships between robotic/wearable fibers/fabrics and the external stimuli, together with the challenges and possible routes for revolutionizing the robotic fibers/fabrics and wearables in this new era are proposed.",
+      "keywords": [
+        "Wearable computer",
+        "Soft robotics",
+        "Robot",
+        "Human–computer interaction",
+        "Robotics"
+      ],
+      "url": "https://openalex.org/W3092216269",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1583077160",
+      "doi": "https://doi.org/10.3998/dcbooks.9380304.0001.001",
+      "title": "Digital Rubbish",
+      "year": 2011,
+      "cited_by_count": 215,
+      "relevance_score": 157.26636,
+      "authors": [
+        "Jennifer Gabrys"
+      ],
+      "venue": "University of Michigan Press eBooks",
+      "abstract": "This is a study of the material life of information and its devices; of electronic waste in its physical and electronic incarnations; a cultural and material mapping of the spaces where electronics in the form of both hardware and information accumulate, break down, or are stowed away. Electronic waste occurs not just in the form of discarded computers but also as a scatter of information devices, software, and systems that are rendered obsolete and fail. Where other studies have addressed \"digital\" technology through a focus on its immateriality or virtual qualities, Gabrys traces the material, spatial, cultural, and political infrastructures that enable the emergence and dissolution of these technologies. In the course of her book, she explores five interrelated \"spaces\" where electronics fall apart: from Silicon Valley to Nasdaq, from containers bound for China to museums and archives that preserve obsolete electronics as cultural artifacts, to the landfill as material repository. All together, these sites stack up into a sedimentary record that forms the \"natural history\" of this study. Digital Rubbish: A Natural History of Electronics describes the materiality of electronics from a unique perspective, examining the multiple forms of waste that electronics create as evidence of the resources, labor, and imaginaries that are bundled into these machines. By drawing on the material analysis developed by Walter Benjamin, this natural history method allows for an inquiry into electronics that focuses neither on technological progression nor on great inventors but rather considers the ways in which electronic technologies fail and decay. Ranging across studies of media and technology, as well as environments, geography, and design, Jennifer Gabrys pulls together the far-reaching material and cultural processes that enable the making and breaking of these technologies. Jennifer Gabrys is Senior Lecturer in Design and Convener of the Masters in Design and Environment in the Department of Design, Goldsmiths, University of London. Jacket image: Computer dump ©iStockphoto/Lya_Cattel. digitalculturebooks is an imprint of the University of Michigan Press and the Scholarly Publishing Office of the University of Michigan Library dedicated to publishing innovative and accessible work exploring new media and their impact on society, culture, and scholarly communication. Visit the website at www.digitalculture.org.",
+      "keywords": [
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W1583077160",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1943579973",
+      "doi": "https://doi.org/10.1109/access.2015.2437951",
+      "title": "The Internet of Things for Health Care: A Comprehensive Survey",
+      "year": 2015,
+      "cited_by_count": 3068,
+      "relevance_score": 133.44028,
+      "authors": [
+        "S. M. Riazul Islam",
+        "Daehan Kwak",
+        "Md. Humaun Kabir",
+        "Mahmud Hossain",
+        "Kyung-Sup Kwak"
+      ],
+      "venue": "IEEE Access",
+      "abstract": "The Internet of Things (IoT) makes smart objects the ultimate building blocks in the development of cyber-physical smart pervasive frameworks. The IoT has a variety of application domains, including health care. The IoT revolution is redesigning modern health care with promising technological, economic, and social prospects. This paper surveys advances in IoT-based health care technologies and reviews the state-of-the-art network architectures/platforms, applications, and industrial trends in IoT-based health care solutions. In addition, this paper analyzes distinct IoT security and privacy features, including security requirements, threat models, and attack taxonomies from the health care perspective. Further, this paper proposes an intelligent collaborative security model to minimize security risk; discusses how different innovations such as big data, ambient intelligence, and wearables can be leveraged in a health care context; addresses various IoT and eHealth policies and regulations across the world to determine how they can facilitate economies and societies in terms of sustainable development; and provides some avenues for future research on IoT-based health care based on a set of open issues and challenges.",
+      "keywords": [
+        "Health care",
+        "Computer science",
+        "The Internet",
+        "Internet privacy",
+        "World Wide Web"
+      ],
+      "url": "https://openalex.org/W1943579973",
+      "matched_by": "en"
+    }
+  ]
+}

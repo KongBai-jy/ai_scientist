@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#10161c"/>
 <title>AI Scientist · Research Workspace</title>
 <link rel="icon" href="data:,"/>
-<link rel="stylesheet" href="/static/styles.css?v=20260818-v6"/>
+<link rel="stylesheet" href="/static/styles.css?v=20260826-gran"/>
 <link rel="stylesheet" href="/static/workspace.css?v=20260818-v21"/>
 </head>
 <body>
@@ -81,6 +81,7 @@
 
   <div class="composer-wrap">
     <div class="composer-box" id="composerBox">
+      <div class="suggestion-chips" id="composerChips" aria-hidden="true"></div>
       <div class="composer-prompt" id="composerPrompt">EXPERT INPUT</div>
       <textarea id="expertInput" placeholder="开始研究后，可随时在这里提出专家意见…" aria-label="专家意见" aria-describedby="composerHint" disabled></textarea>
       <div class="composer-foot"><button class="send" id="sendBtn" type="button" disabled>提交意见 <span aria-hidden="true">→</span></button></div>
@@ -98,12 +99,21 @@
   </div>
   <div class="question-count" id="questionCount"></div>
   <div class="question-grid" id="questionGrid"></div>
+  <div class="question-pagination" id="questionPagination"></div>
   <div class="custom-question">
     <label for="customQuestion">或输入自定义科学问题</label>
+    <div class="suggestion-chips" id="customQuestionChips" aria-hidden="true"></div>
     <textarea id="customQuestion" rows="3" placeholder="例如：如何从观测数据中稳健地识别因果效应并排除混杂因素？" aria-label="自定义科学问题"></textarea>
     <div class="custom-question-foot">
       <span id="customQuestionHint" class="custom-hint">至少 5 个字符</span>
       <div style="display:flex;gap:10px;align-items:center">
+        <label class="granularity-toggle" title="影响 arXiv 文献检索的尺寸与 token 消耗">
+          <span class="gt-label">文献</span>
+          <select id="paperGranularity" aria-label="文献检索粒度">
+            <option value="fast" selected>快速(摘要，省额度)</option>
+            <option value="full">严格(全文，证据更细)</option>
+          </select>
+        </label>
         <button class="history-entry-btn" id="historyEntryBtn" type="button" style="display:none">查看历史研究档案 →</button>
         <button class="primary-btn" id="customStartBtn" type="button">开始研究 <span aria-hidden="true">→</span></button>
       </div>
@@ -114,6 +124,6 @@
 
 <script src="/static/vendor/gsap.min.js?v=3.13.0"></script>
 <script src="/static/vendor/echarts.min.js?v=5.5.1"></script>
-<script src="/static/app.js?v=20260818-ai18"></script>
+<script src="/static/app.js?v=20260826-auto"></script>
 </body>
 </html>

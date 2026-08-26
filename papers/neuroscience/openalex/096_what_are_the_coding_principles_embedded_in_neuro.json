@@ -1,0 +1,134 @@
+{
+  "problem_id": 96,
+  "problem_cn": "神经元脉冲序列蕴藏什么编码规则？",
+  "problem_en": "What are the coding principles embedded in neuronal spike trains?",
+  "category": "神经科学",
+  "query_en": "What are the coding principles embedded in neuronal spike trains",
+  "query_cn": "神经元脉冲序列蕴藏什么编码规则",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:29",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2056486423",
+      "doi": "https://doi.org/10.1038/nn.3063",
+      "title": "Cortical oscillations and speech processing: emerging computational principles and operations",
+      "year": 2012,
+      "cited_by_count": 2054,
+      "relevance_score": 580.5895,
+      "authors": [
+        "Anne-Lise Giraud",
+        "David Poeppel"
+      ],
+      "venue": "Nature Neuroscience",
+      "abstract": "",
+      "keywords": [
+        "Neuroscience",
+        "Systems neuroscience",
+        "Neuroscientist",
+        "Cognitive science",
+        "Psychology"
+      ],
+      "url": "https://openalex.org/W2056486423",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2138704896",
+      "doi": "https://doi.org/10.1523/jneurosci.18-10-03870.1998",
+      "title": "The Variable Discharge of Cortical Neurons: Implications for Connectivity, Computation, and Information Coding",
+      "year": 1998,
+      "cited_by_count": 2311,
+      "relevance_score": 530.3376,
+      "authors": [
+        "Michael N. Shadlen",
+        "William T. Newsome"
+      ],
+      "venue": "Journal of Neuroscience",
+      "abstract": "Cortical neurons exhibit tremendous variability in the number and temporal distribution of spikes in their discharge patterns. Furthermore, this variability appears to be conserved over large regions of the cerebral cortex, suggesting that it is neither reduced nor expanded from stage to stage within a processing pathway. To investigate the principles underlying such statistical homogeneity, we have analyzed a model of synaptic integration incorporating a highly simplified integrate and fire mechanism with decay. We analyzed a \"high-input regime\" in which neurons receive hundreds of excitatory synaptic inputs during each interspike interval. To produce a graded response in this regime, the neuron must balance excitation with inhibition. We find that a simple integrate and fire mechanism with balanced excitation and inhibition produces a highly variable interspike interval, consistent with experimental data. Detailed information about the temporal pattern of synaptic inputs cannot be recovered from the pattern of output spikes, and we infer that cortical neurons are unlikely to transmit information in the temporal pattern of spike discharge. Rather, we suggest that quantities are represented as rate codes in ensembles of 50-100 neurons. These column-like ensembles tolerate large fractions of common synaptic input and yet covary only weakly in their spike discharge. We find that an ensemble of 100 neurons provides a reliable estimate of rate in just one interspike interval (10-50 msec). Finally, we derived an expression for the variance of the neural spike count that leads to a stable propagation of signal and noise in networks of neurons-that is, conditions that do not impose an accumulation or diminution of noise. The solution implies that single neurons perform simple algebra resembling averaging, and that more sophisticated computations arise by virtue of the anatomical convergence of novel combinations of inputs to the cortical column from external sources.",
+      "keywords": [
+        "Neural coding",
+        "Neuroscience",
+        "Spike (software development)",
+        "Excitatory postsynaptic potential",
+        "Neuron"
+      ],
+      "url": "https://openalex.org/W2138704896",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1580901834",
+      "doi": "https://doi.org/10.1523/jneurosci.19-21-09497.1999",
+      "title": "Replay and Time Compression of Recurring Spike Sequences in the Hippocampus",
+      "year": 1999,
+      "cited_by_count": 987,
+      "relevance_score": 484.05698,
+      "authors": [
+        "Zoltán Nádasdy",
+        "Hajime Hirase",
+        "András Czurkó",
+        "Jozsef Csicsvari",
+        "György Buzsáki"
+      ],
+      "venue": "Journal of Neuroscience",
+      "abstract": "Information in neuronal networks may be represented by the spatiotemporal patterns of spikes. Here we examined the temporal coordination of pyramidal cell spikes in the rat hippocampus during slow-wave sleep. In addition, rats were trained to run in a defined position in space (running wheel) to activate a selected group of pyramidal cells. A template-matching method and a joint probability map method were used for sequence search. Repeating spike sequences in excess of chance occurrence were examined by comparing the number of repeating sequences in the original spike trains and in surrogate trains after Monte Carlo shuffling of the spikes. Four different shuffling procedures were used to control for the population dynamics of hippocampal neurons. Repeating spike sequences in the recorded cell assemblies were present in both the awake and sleeping animal in excess of what might be predicted by random variations. Spike sequences observed during wheel running were \"replayed\" at a faster timescale during single sharp-wave bursts of slow-wave sleep. We hypothesize that the endogenously expressed spike sequences during sleep reflect reactivation of the circuitry modified by previous experience. Reactivation of acquired sequences may serve to consolidate information.",
+      "keywords": [
+        "Spike (software development)",
+        "Shuffling",
+        "Hippocampus",
+        "Neuroscience",
+        "Hippocampal formation"
+      ],
+      "url": "https://openalex.org/W1580901834",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1570411240",
+      "doi": "https://doi.org/10.3389/fncom.2015.00099",
+      "title": "Unsupervised learning of digit recognition using spike-timing-dependent plasticity",
+      "year": 2015,
+      "cited_by_count": 1461,
+      "relevance_score": 455.95255,
+      "authors": [
+        "Peter U. Diehl",
+        "Matthew Cook"
+      ],
+      "venue": "Frontiers in Computational Neuroscience",
+      "abstract": "In order to understand how the mammalian neocortex is performing computations, two things are necessary; we need to have a good understanding of the available neuronal processing units and mechanisms, and we need to gain a better understanding of how those mechanisms are combined to build functioning systems. Therefore, in recent years there is an increasing interest in how spiking neural networks (SNN) can be used to perform complex computations or solve pattern recognition tasks. However, it remains a challenging task to design SNNs which use biologically plausible mechanisms (especially for learning new patterns), since most such SNN architectures rely on training in a rate-based network and subsequent conversion to a SNN. We present a SNN for digit recognition which is based on mechanisms with increased biological plausibility, i.e., conductance-based instead of current-based synapses, spike-timing-dependent plasticity with time-dependent weight change, lateral inhibition, and an adaptive spiking threshold. Unlike most other systems, we do not use a teaching signal and do not present any class labels to the network. Using this unsupervised learning scheme, our architecture achieves 95% accuracy on the MNIST benchmark, which is better than previous SNN implementations without supervision. The fact that we used no domain-specific knowledge points toward the general applicability of our network design. Also, the performance of our network scales well with the number of neurons used and shows similar performance for four different learning rules, indicating robustness of the full combination of mechanisms, which suggests applicability in heterogeneous biological neural networks.",
+      "keywords": [
+        "Spiking neural network",
+        "Computer science",
+        "Spike-timing-dependent plasticity",
+        "MNIST database",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W1570411240",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1985983039",
+      "doi": "https://doi.org/10.1371/journal.pcbi.1000092",
+      "title": "The Dynamic Brain: From Spiking Neurons to Neural Masses and Cortical Fields",
+      "year": 2008,
+      "cited_by_count": 1152,
+      "relevance_score": 404.78836,
+      "authors": [
+        "Gustavo Deco",
+        "Viktor Jirsa",
+        "P. A. Robinson",
+        "Michael Breakspear",
+        "Karl Friston"
+      ],
+      "venue": "PLoS Computational Biology",
+      "abstract": "The cortex is a complex system, characterized by its dynamics and architecture, which underlie many functions such as action, perception, learning, language, and cognition. Its structural architecture has been studied for more than a hundred years; however, its dynamics have been addressed much less thoroughly. In this paper, we review and integrate, in a unifying framework, a variety of computational approaches that have been used to characterize the dynamics of the cortex, as evidenced at different levels of measurement. Computational models at different space-time scales help us understand the fundamental mechanisms that underpin neural processes and relate these processes to neuroscience data. Modeling at the single neuron level is necessary because this is the level at which information is exchanged between the computing elements of the brain; the neurons. Mesoscopic models tell us how neural elements interact to yield emergent behavior at the level of microcolumns and cortical columns. Macroscopic models can inform us about whole brain dynamics and interactions between large-scale neural systems such as cortical regions, the thalamus, and brain stem. Each level of description relates uniquely to neuroscience data, from single-unit recordings, through local field potentials to functional magnetic resonance imaging (fMRI), electroencephalogram (EEG), and magnetoencephalogram (MEG). Models of the cortex can establish which types of large-scale neuronal networks can perform computations and characterize their emergent properties. Mean-field and related formulations of dynamics also play an essential and complementary role as forward models that can be inverted given empirical data. This makes dynamic models critical in integrating theory and experiments. We argue that elaborating principled and informed models is a prerequisite for grounding empirical neuroscience in a cogent theoretical framework, commensurate with the achievements in the physical sciences.",
+      "keywords": [
+        "Neuroscience",
+        "Computer science",
+        "Computational model",
+        "Artificial intelligence",
+        "Computational neuroscience"
+      ],
+      "url": "https://openalex.org/W1985983039",
+      "matched_by": "en"
+    }
+  ]
+}

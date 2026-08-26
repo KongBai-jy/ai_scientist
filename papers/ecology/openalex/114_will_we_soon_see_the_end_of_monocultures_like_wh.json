@@ -1,0 +1,162 @@
+{
+  "problem_id": 114,
+  "problem_cn": "小麦玉米水稻大豆这类单一农作物种植模式会终结吗？",
+  "problem_en": "Will we soon see the end of monocultures like wheat, maize, rice, and soy?",
+  "category": "生态学",
+  "query_en": "Will we soon see the end of monocultures like wheat, maize, rice, and soy",
+  "query_cn": "小麦玉米水稻大豆这类单一农作物种植模式会终结吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:52",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4393403623",
+      "doi": "https://doi.org/10.1093/pnasnexus/pgae106",
+      "title": "Earth at risk: An urgent call to end the age of destruction and forge a just and sustainable future",
+      "year": 2024,
+      "cited_by_count": 152,
+      "relevance_score": 110.30352,
+      "authors": [
+        "Charles H. Fletcher",
+        "William J. Ripple",
+        "Thomas M. Newsome",
+        "Phoebe Barnard",
+        "Kamanamaikalani Beamer",
+        "Aishwarya Behl",
+        "Jay Bowen",
+        "Michael J. Cooney",
+        "Eileen Crist",
+        "Christopher B. Field",
+        "Krista Hiser",
+        "David M. Karl",
+        "David A. King",
+        "Michael Mann",
+        "Davianna Pōmaikaʻi McGregor",
+        "Camilo Mora",
+        "Наоми Орескес",
+        "Michael Wilson"
+      ],
+      "venue": "PNAS Nexus",
+      "abstract": "Human development has ushered in an era of converging crises: climate change, ecological destruction, disease, pollution, and socioeconomic inequality. This review synthesizes the breadth of these interwoven emergencies and underscores the urgent need for comprehensive, integrated action. Propelled by imperialism, extractive capitalism, and a surging population, we are speeding past Earth's material limits, destroying critical ecosystems, and triggering irreversible changes in biophysical systems that underpin the Holocene climatic stability which fostered human civilization. The consequences of these actions are disproportionately borne by vulnerable populations, further entrenching global inequities. Marine and terrestrial biomes face critical tipping points, while escalating challenges to food and water access foreshadow a bleak outlook for global security. Against this backdrop of Earth at risk, we call for a global response centered on urgent decarbonization, fostering reciprocity with nature, and implementing regenerative practices in natural resource management. We call for the elimination of detrimental subsidies, promotion of equitable human development, and transformative financial support for lower income nations. A critical paradigm shift must occur that replaces exploitative, wealth-oriented capitalism with an economic model that prioritizes sustainability, resilience, and justice. We advocate a global cultural shift that elevates kinship with nature and communal well-being, underpinned by the recognition of Earth's finite resources and the interconnectedness of its inhabitants. The imperative is clear: to navigate away from this precipice, we must collectively harness political will, economic resources, and societal values to steer toward a future where human progress does not come at the cost of ecological integrity and social equity.",
+      "keywords": [
+        "Planetary boundaries",
+        "Population",
+        "Environmental ethics",
+        "Political science",
+        "Capitalism"
+      ],
+      "url": "https://openalex.org/W4393403623",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2029983019",
+      "doi": "https://doi.org/10.1080/03066150.2012.719224",
+      "title": "The Long Green Revolution",
+      "year": 2012,
+      "cited_by_count": 698,
+      "relevance_score": 101.99593,
+      "authors": [
+        "Raj Patel"
+      ],
+      "venue": "The Journal of Peasant Studies",
+      "abstract": "To combat climate change and hunger, a number of governments, foundations and aid agencies have called for a ‘New Green Revolution’. Such calls obfuscate the dynamics of the Green Revolution. Using Arrighi's analysis of capital accumulation cycles, it is possible to trace a Long Green Revolution that spans the twentieth and twenty-first centuries. Such an analysis illuminates commonalities in past and present Green Revolutions, including their bases in class struggles and crises of accumulation, modes of governance – particularly in the links between governments and philanthropic institutions – and the institutions through which truths about agricultural change were produced and became known. Such an analysis also suggests processes of continuity between the original Green Revolution and features of twenty-first-century agricultural change, while providing a historical grounding in international financial capital's structural changes to help explain some of the novel features that accompany the New Green Revolution, such as ‘land grabs’, patents on life, and nutritionism.",
+      "keywords": [
+        "Green Revolution",
+        "Agricultural revolution",
+        "Capital (architecture)",
+        "Industrial Revolution",
+        "Corporate governance"
+      ],
+      "url": "https://openalex.org/W2029983019",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3017487449",
+      "doi": "https://doi.org/10.1016/j.foodres.2020.109256",
+      "title": "Mitigation of emerging implications of climate change on food production systems",
+      "year": 2020,
+      "cited_by_count": 380,
+      "relevance_score": 61.4506,
+      "authors": [
+        "Andrea Gómez‐Zavaglia",
+        "Juan C. Mejuto",
+        "Jesús Simal‐Gándara"
+      ],
+      "venue": "Food Research International",
+      "abstract": "",
+      "keywords": [
+        "Climate change",
+        "Agriculture",
+        "Natural resource economics",
+        "Environmental science",
+        "Food security"
+      ],
+      "url": "https://openalex.org/W3017487449",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2115151090",
+      "doi": "https://doi.org/10.1071/fp11164",
+      "title": "Non-invasive approaches for phenotyping of enhanced performance traits in bean",
+      "year": 2011,
+      "cited_by_count": 151,
+      "relevance_score": 60.441837,
+      "authors": [
+        "Uwe Rascher",
+        "Stephan Bloßfeld",
+        "Fabio Fiorani",
+        "Siegfried Jahnke",
+        "Marcus Jansen",
+        "A. J. Kuhn",
+        "Shizue Matsubara",
+        "Luc J. Martin",
+        "Andrew Merchant",
+        "Ralf Metzner",
+        "Mark Müller‐Linow",
+        "Kerstin Nagel",
+        "Roland Pieruschka",
+        "Francisco Pinto",
+        "Christina Schreiber",
+        "Vicky M. Temperton",
+        "Michael R. Thorpe",
+        "Dagmar van Dusschoten",
+        "Elizabeth Van Volkenburgh",
+        "Carel W. Windt",
+        "Ulrich Schurr"
+      ],
+      "venue": "Functional Plant Biology",
+      "abstract": "Plant phenotyping is an emerging discipline in plant biology. Quantitative measurements of functional and structural traits help to better understand gene-environment interactions and support breeding for improved resource use efficiency of important crops such as bean (Phaseolus vulgaris L.). Here we provide an overview of state-of-the-art phenotyping approaches addressing three aspects of resource use efficiency in plants: belowground roots, aboveground shoots and transport/allocation processes. We demonstrate the capacity of high-precision methods to measure plant function or structural traits non-invasively, stating examples wherever possible. Ideally, high-precision methods are complemented by fast and high-throughput technologies. High-throughput phenotyping can be applied in the laboratory using automated data acquisition, as well as in the field, where imaging spectroscopy opens a new path to understand plant function non-invasively. For example, we demonstrate how magnetic resonance imaging (MRI) can resolve root structure and separate root systems under resource competition, how automated fluorescence imaging (PAM fluorometry) in combination with automated shape detection allows for high-throughput screening of photosynthetic traits and how imaging spectrometers can be used to quantify pigment concentration, sun-induced fluorescence and potentially photosynthetic quantum yield. We propose that these phenotyping techniques, combined with mechanistic knowledge on plant structure-function relationships, will open new research directions in whole-plant ecophysiology and may assist breeding for varieties with enhanced resource use efficiency varieties.",
+      "keywords": [
+        "Biology",
+        "Function (biology)",
+        "Phaseolus",
+        "Biological system",
+        "Botany"
+      ],
+      "url": "https://openalex.org/W2115151090",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2173432551",
+      "doi": null,
+      "title": "Roundup Ready Nation: The Political Ecology Of Genetically Modified Soy In Argentina",
+      "year": 2014,
+      "cited_by_count": 9,
+      "relevance_score": 51.863373,
+      "authors": [
+        "Amalia Leguizamón"
+      ],
+      "venue": "CUNY Academic Works (City University of New York)",
+      "abstract": "This dissertation is a case study of agrarian transformation in an agro-export society, Argentina. I study the process of adoption of the technological package of genetically modified (GM) soy in the Argentine countryside, its socio-ecological consequences, and Argentines' responses to it. In particular, this research addresses Argentina's unique situation of being a developing country that has positively embraced the biotechnology of GM seeds as a key accumulation strategy without the emergence of major contestation against GM soy monocropping. In order to answer the puzzle of quiescence, I look at how power relations structure access to social and environmental goods and bads, as well as at how power relates to the causes of consensus and conflict. From a critical political economy perspective, in this work I contribute to three major areas of substantive research: (1) Technology and socio-environmental change; (2) Natural resource extraction as a model of neoliberal socioeconomic development for Latin America; and (3) Social movements, in particular rural and environmental movements in the Latin American region. It terms of data collection, I rely on a multi-method approach based on archival research, quantitative analysis, and ethnographic methods (interviewing and participant observation). Whether GM crops can alleviate poverty and address food security while conserving ecosystems remains one of the most divisive questions in contemporary development studies. This dissertation is thus a necessary and timely contribution to debates on agricultural GM biotechnology. More broadly, the aim of this research is to contribute to discussions around the dynamics of agrarian and rural transformations, technological adoption and resistance, and the relationship between ecological modification and social change.",
+      "keywords": [
+        "Politics",
+        "Ecology",
+        "Genetically modified organism",
+        "Political science",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2173432551",
+      "matched_by": "en"
+    }
+  ]
+}

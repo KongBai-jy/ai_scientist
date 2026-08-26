@@ -1,0 +1,144 @@
+{
+  "problem_id": 79,
+  "problem_cn": "人类可以把粒子加速到多高？",
+  "problem_en": "What is the maximum speed to which we can accelerate a particle?",
+  "category": "物理学",
+  "query_en": "What is the maximum speed to which we can accelerate a particle",
+  "query_cn": "人类可以把粒子加速到多高",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:52",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W3201073812",
+      "doi": "https://doi.org/10.1016/j.cpc.2021.108171",
+      "title": "LAMMPS - a flexible simulation tool for particle-based materials modeling at the atomic, meso, and continuum scales",
+      "year": 2021,
+      "cited_by_count": 12241,
+      "relevance_score": 882.85156,
+      "authors": [
+        "Aidan P. Thompson",
+        "Hasan Metin Aktulga",
+        "Richard A. Berger",
+        "Dan Bolintineanu",
+        "William M. Brown",
+        "Paul Crozier",
+        "Pieter J. in ’t Veld",
+        "Axel Kohlmeyer",
+        "Stan Moore",
+        "Trung Dac Nguyen",
+        "Ray Shan",
+        "Mark J. Stevens",
+        "Julien Tranchida",
+        "Christian Robert Trott",
+        "Steven J. Plimpton"
+      ],
+      "venue": "Computer Physics Communications",
+      "abstract": "Since the classical molecular dynamics simulator LAMMPS was released as an open source code in 2004, it has become a widely-used tool for particle-based modeling of materials at length scales ranging from atomic to mesoscale to continuum. Reasons for its popularity are that it provides a wide variety of particle interaction models for different materials, that it runs on any platform from a single CPU core to the largest supercomputers with accelerators, and that it gives users control over simulation details, either via the input script or by adding code for new interatomic potentials, constraints, diagnostics, or other features needed for their models. As a result, hundreds of people have contributed new capabilities to LAMMPS and it has grown from fifty thousand lines of code in 2004 to a million lines today. In this paper several of the fundamental algorithms used in LAMMPS are described along with the design strategies which have made it flexible for both users and developers. We also highlight some capabilities recently added to the code which were enabled by this flexibility, including dynamic load balancing, on-the-fly visualization, magnetic spin dynamics models, and quantum-accuracy machine learning interatomic potentials. Program Title: Large-scale Atomic/Molecular Massively Parallel Simulator (LAMMPS) CPC Library link to program files: https://doi.org/10.17632/cxbxs9btsv.1 Developer's repository link: https://github.com/lammps/lammps Licensing provisions: GPLv2 Programming language: C++, Python, C, Fortran Supplementary material: https://www.lammps.org Nature of problem: Many science applications in physics, chemistry, materials science, and related fields require parallel, scalable, and efficient generation of long, stable classical particle dynamics trajectories. Within this common problem definition, there lies a great diversity of use cases, distinguished by different particle interaction models, external constraints, as well as timescales and lengthscales ranging from atomic to mesoscale to macroscopic. Solution method: The LAMMPS code uses parallel spatial decomposition, distributed neighbor lists, and parallel FFTs for long-range Coulombic interactions [1]. The time integration algorithm is based on the Størmer-Verlet symplectic integrator [2], which provides better stability than higher-order non-symplectic methods. In addition, LAMMPS supports a wide range of interatomic potentials, constraints, diagnostics, software interfaces, and pre- and post-processing features. Additional comments including restrictions and unusual features: This paper serves as the definitive reference for the LAMMPS code. S. Plimpton, Fast parallel algorithms for short-range molecular dynamics. J. Comp. Phys. 117 (1995) 1–19. L. Verlet, Computer experiments on classical fluids: I. Thermodynamical properties of Lennard–Jones molecules, Phys. Rev. 159 (1967) 98–103.",
+      "keywords": [
+        "Python (programming language)",
+        "Computer science",
+        "Fortran",
+        "Computational science",
+        "Molecular dynamics"
+      ],
+      "url": "https://openalex.org/W3201073812",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3097364771",
+      "doi": "https://doi.org/10.2172/877507",
+      "title": "FLUKA: A Multi-Particle Transport Code",
+      "year": 2005,
+      "cited_by_count": 2536,
+      "relevance_score": 473.16193,
+      "authors": [
+        "A. Ferrari",
+        "P. Sala",
+        "A. Fassò",
+        "J. Ranft"
+      ],
+      "venue": null,
+      "abstract": "This report describes the 2005 version of the Fluka particle transport code. The first part introduces the basic notions, describes the modular structure of the system, and contains an installation and beginner's guide. The second part complements this initial information with details about the various components of Fluka and how to use them. It concludes with a detailed history and bibliography.",
+      "keywords": [
+        "Modular design",
+        "Code (set theory)",
+        "Particle (ecology)",
+        "Computer science",
+        "Modular construction"
+      ],
+      "url": "https://openalex.org/W3097364771",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2001741999",
+      "doi": "https://doi.org/10.1088/0004-637x/771/1/54",
+      "title": "THE MAXIMUM ENERGY OF ACCELERATED PARTICLES IN RELATIVISTIC COLLISIONLESS SHOCKS",
+      "year": 2013,
+      "cited_by_count": 408,
+      "relevance_score": 467.21365,
+      "authors": [
+        "Lorenzo Sironi",
+        "Anatoly Spitkovsky",
+        "Jonathan Arons"
+      ],
+      "venue": "The Astrophysical Journal",
+      "abstract": "The afterglow emission from gamma-ray bursts (GRBs) is usually interpreted as synchrotron radiation from electrons accelerated at the GRB external shock that propagates with relativistic velocities into the magnetized interstellar medium. By means of multi-dimensional particle-in-cell simulations, we investigate the acceleration performance of weakly magnetized relativistic shocks, in the magnetization range 0 ≲ σ ≲ 10 −1 . The pre-shock magnetic field is orthogonal to the flow, as generically expected for relativistic shocks. We find that relativistic perpendicular shocks propagating in electron–positron plasmas are efficient particle accelerators if the magnetization is σ ≲ 10 −3 . For electron–ion plasmas, the transition to efficient acceleration occurs for σ ≲ 3 × 10 −5 . Here, the acceleration process proceeds similarly for the two species, since the electrons enter the shock nearly in equipartition with the ions, as a result of strong pre-heating in the self-generated upstream turbulence. In both electron–positron and electron–ion shocks, we find that the maximum energy of the accelerated particles scales in time as ε max ∝ t 1/2 . This scaling is shallower than the so-called (and commonly assumed) Bohm limit ε max ∝ t , and it naturally results from the small-scale nature of the Weibel turbulence generated in the shock layer. In magnetized plasmas, the energy of the accelerated particles increases until it reaches a saturation value ε sat /γ 0 m i c 2 ∼ σ −1/4 , where γ 0 m i c 2 is the mean energy per particle in the upstream bulk flow. Further energization is prevented by the fact that the self-generated turbulence is confined within a finite region of thickness ∝σ −1/2 around the shock. Our results can provide physically grounded inputs for models of non-thermal emission from a variety of astrophysical sources, with particular relevance to GRB afterglows.",
+      "keywords": [
+        "Physics",
+        "Relativistic particle",
+        "Plasma",
+        "Astrophysics",
+        "Energy (signal processing)"
+      ],
+      "url": "https://openalex.org/W2001741999",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2131598171",
+      "doi": "https://doi.org/10.1080/01621459.1999.10474153",
+      "title": "Filtering via Simulation: Auxiliary Particle Filters",
+      "year": 1999,
+      "cited_by_count": 2275,
+      "relevance_score": 465.50092,
+      "authors": [
+        "M. Pitt",
+        "Neil Shephard"
+      ],
+      "venue": "Journal of the American Statistical Association",
+      "abstract": "This article analyses the recently suggested particle approach to filtering time series. We suggest that the algorithm is not robust to outliers for two reasons: The design of the simulators and the use of the discrete support to represent the sequentially updating prior distribution. Here we tackle the first of these problems.",
+      "keywords": [
+        "Particle filter",
+        "Outlier",
+        "Computer science",
+        "Key (lock)",
+        "Series (stratigraphy)"
+      ],
+      "url": "https://openalex.org/W2131598171",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2100514692",
+      "doi": "https://doi.org/10.1046/j.1365-8711.2003.06206.x",
+      "title": "Cosmological smoothed particle hydrodynamics simulations: a hybrid multiphase model for star formation",
+      "year": 2003,
+      "cited_by_count": 2269,
+      "relevance_score": 448.1732,
+      "authors": [
+        "Volker Springel",
+        "Lars Hernquist"
+      ],
+      "venue": "Monthly Notices of the Royal Astronomical Society",
+      "abstract": "We present a model for star formation and supernova feedback that describes the multiphase structure of star-forming gas on scales that are typically not resolved in cosmological simulations. Our approach includes radiative heating and cooling, the growth of cold clouds embedded in an ambient hot medium, star formation in these clouds, feedback from supernovae in the form of thermal heating and cloud evaporation, galactic winds and outflows, and metal enrichment. Implemented using smoothed particle hydrodynamics, our scheme is a significantly modified and extended version of the grid-based method of Yepes et al., and enables us to achieve a high dynamic range in simulations of structure formation. We discuss properties of the feedback model in detail and show that it predicts a self-regulated, quiescent mode of star formation, which, in particular, stabilizes the star-forming gaseous layers of disc galaxies. The parametrization of this mode can be reduced to a single free quantity that determines the overall time-scale for star formation. We fix this parameter numerically to match the observed rates of star formation in local disc galaxies. When normalized in this manner, cosmological simulations employing our model nevertheless overproduce the observed cosmic abundance of stellar material. We are thus motivated to extend our feedback model to include galactic winds associated with star formation. Using small-scale simulations of individual star-forming disc galaxies, we show that these winds produce either galactic fountains or outflows, depending on the depth of the gravitational potential. In low-mass haloes, winds can greatly suppress the overall efficiency of star formation. When incorporated into cosmological simulations, our combined model for star formation and winds predicts a cosmic star formation density that is consistent with observations, provided that the winds are sufficiently energetic. Moreover, outflows from galaxies in these simulations drive chemical enrichment of the intergalactic medium — in principle, accounting for the presence of metals in the Lyman α forest.",
+      "keywords": [
+        "Physics",
+        "Astrophysics",
+        "Star formation",
+        "Supernova",
+        "Galaxy"
+      ],
+      "url": "https://openalex.org/W2100514692",
+      "matched_by": "en"
+    }
+  ]
+}

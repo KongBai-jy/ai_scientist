@@ -1,0 +1,143 @@
+{
+  "problem_id": 116,
+  "problem_cn": "氢能的未来前景如何？",
+  "problem_en": "What is the future of hydrogen energy?",
+  "category": "能源科学",
+  "query_en": "What is the future of hydrogen energy",
+  "query_cn": "氢能的未来前景如何",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:56",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W3180291289",
+      "doi": "https://doi.org/10.1016/j.coche.2021.100701",
+      "title": "A green hydrogen economy for a renewable energy society",
+      "year": 2021,
+      "cited_by_count": 954,
+      "relevance_score": 735.0488,
+      "authors": [
+        "Alexandra M. Oliveira",
+        "Rebecca R. Beswick",
+        "Yushan Yan"
+      ],
+      "venue": "Current Opinion in Chemical Engineering",
+      "abstract": "",
+      "keywords": [
+        "Hydrogen technologies",
+        "Renewable energy",
+        "Hydrogen economy",
+        "Electricity",
+        "Natural resource economics"
+      ],
+      "url": "https://openalex.org/W3180291289",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3159296886",
+      "doi": "https://doi.org/10.1016/j.rser.2021.111180",
+      "title": "Hydrogen energy systems: A critical review of technologies, applications, trends and challenges",
+      "year": 2021,
+      "cited_by_count": 2275,
+      "relevance_score": 649.5979,
+      "authors": [
+        "Meiling Yue",
+        "Hugo Lambert",
+        "Elodie Pahon",
+        "Robin Roche",
+        "Samir Jemeï",
+        "Daniel Hissel"
+      ],
+      "venue": "Renewable and Sustainable Energy Reviews",
+      "abstract": "The global energy transition towards a carbon neutral society requires a profound transformation of electricity generation and consumption, as well as of electric power systems. Hydrogen has an important potential to accelerate the process of scaling up clean and renewable energy, however its integration in power systems remains little studied. This paper reviews the current progress and outlook of hydrogen technologies and their application in power systems for hydrogen production, re-electrification and storage. The characteristics of electrolysers and fuel cells are demonstrated with experimental data and the deployments of hydrogen for energy storage, power-to-gas, co- and tri-generation and transportation are investigated using examples from worldwide projects. The current techno-economic status of these technologies and applications is presented, in which cost, efficiency and durability are identified as the main critical aspects. This is also confirmed by the results of a statistical analysis of the literature. Finally, conclusions show that continuous efforts on performance improvements, scale ramp-up, technical prospects and political support are required to enable a cost-competitive hydrogen economy.",
+      "keywords": [
+        "Hydrogen technologies",
+        "Renewable energy",
+        "Electricity generation",
+        "Electrification",
+        "Power to gas"
+      ],
+      "url": "https://openalex.org/W3159296886",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2998704111",
+      "doi": "https://doi.org/10.1016/j.rser.2019.109620",
+      "title": "Hydrogen as an energy vector",
+      "year": 2019,
+      "cited_by_count": 1132,
+      "relevance_score": 618.8399,
+      "authors": [
+        "Zainul Abdin",
+        "Ali Zafaranloo",
+        "Ahmad Rafiee",
+        "Walter Mérida",
+        "Wojciech Lipiński",
+        "Kaveh Khalilpour"
+      ],
+      "venue": "Renewable and Sustainable Energy Reviews",
+      "abstract": "",
+      "keywords": [
+        "Renewable energy",
+        "Fossil fuel",
+        "Hydrogen technologies",
+        "Environmental science",
+        "Hydrogen economy"
+      ],
+      "url": "https://openalex.org/W2998704111",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2911892655",
+      "doi": "https://doi.org/10.1016/j.esr.2019.01.006",
+      "title": "The role of renewable energy in the global energy transformation",
+      "year": 2019,
+      "cited_by_count": 4906,
+      "relevance_score": 617.4125,
+      "authors": [
+        "Dolf Gielen",
+        "Francisco Boshell",
+        "Değer Saygin",
+        "Morgan Bazilian",
+        "Nicholas Wagner",
+        "Ricardo Gorini"
+      ],
+      "venue": "Energy Strategy Reviews",
+      "abstract": "This paper explores the technical and economic characteristics of an accelerated energy transition to 2050, using new datasets for renewable energy. The analysis indicates that energy efficiency and renewable energy technologies are the core elements of that transition, and their synergies are likewise important. Favourable economics, ubiquitous resources, scalable technology, and significant socio-economic benefits underpin such a transition. Renewable energy can supply two-thirds of the total global energy demand, and contribute to the bulk of the greenhouse gas emissions reduction that is needed between now and 2050 for limiting average global surface temperature increase below 2 °C. Enabling policy and regulatory frameworks will need to be adjusted to mobilise the six-fold acceleration of renewables growth that is needed, with the highest growth estimated for wind and solar PV technologies, complemented by a high level of energy efficiency. Still, to ensure the eventual elimination of carbon dioxide emissions will require new technology and innovation, notably for the transport and manufacturing sectors, which remain largely ignored in the international debate. More attention is needed for emerging infrastructure issues such as charging infrastructure and other sector coupling implications.",
+      "keywords": [
+        "Renewable energy",
+        "Environmental economics",
+        "Greenhouse gas",
+        "Energy transition",
+        "Efficient energy use"
+      ],
+      "url": "https://openalex.org/W2911892655",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3212480370",
+      "doi": "https://doi.org/10.1016/j.enconman.2021.114898",
+      "title": "Perspective of the role of hydrogen in the 21st century energy transition",
+      "year": 2021,
+      "cited_by_count": 862,
+      "relevance_score": 598.61194,
+      "authors": [
+        "Tommaso Capurso",
+        "Michele Stefanizzi",
+        "Marco Torresi",
+        "Sergio Mario Camporeale"
+      ],
+      "venue": "Energy Conversion and Management",
+      "abstract": "",
+      "keywords": [
+        "Power to gas",
+        "Renewable energy",
+        "Hydrogen economy",
+        "Hydrogen production",
+        "Hydrogen technologies"
+      ],
+      "url": "https://openalex.org/W3212480370",
+      "matched_by": "en"
+    }
+  ]
+}

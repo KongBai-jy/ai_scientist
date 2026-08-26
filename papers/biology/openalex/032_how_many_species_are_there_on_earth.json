@@ -1,0 +1,131 @@
+{
+  "problem_id": 32,
+  "problem_cn": "地球上总共有多少物种？",
+  "problem_en": "How many species are there on Earth?",
+  "category": "生物学",
+  "query_en": "How many species are there on Earth",
+  "query_cn": "地球上总共有多少物种",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:30",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1996816368",
+      "doi": "https://doi.org/10.1371/journal.pbio.1001127",
+      "title": "How Many Species Are There on Earth and in the Ocean?",
+      "year": 2011,
+      "cited_by_count": 3029,
+      "relevance_score": 9871.853,
+      "authors": [
+        "Camilo Mora",
+        "Derek P. Tittensor",
+        "Sina M. Adl",
+        "Alastair G. B. Simpson",
+        "Boris Worm"
+      ],
+      "venue": "PLoS Biology",
+      "abstract": "The diversity of life is one of the most striking aspects of our planet; hence knowing how many species inhabit Earth is among the most fundamental questions in science. Yet the answer to this question remains enigmatic, as efforts to sample the world's biodiversity to date have been limited and thus have precluded direct quantification of global species richness, and because indirect estimates rely on assumptions that have proven highly controversial. Here we show that the higher taxonomic classification of species (i.e., the assignment of species to phylum, class, order, family, and genus) follows a consistent and predictable pattern from which the total number of species in a taxonomic group can be estimated. This approach was validated against well-known taxa, and when applied to all domains of life, it predicts ~8.7 million (± 1.3 million SE) eukaryotic species globally, of which ~2.2 million (± 0.18 million SE) are marine. In spite of 250 years of taxonomic classification and over 1.2 million species already catalogued in a central database, our results suggest that some 86% of existing species on Earth and 91% of species in the ocean still await description. Renewed interest in further exploration and taxonomy is required if this significant gap in our knowledge of life on Earth is to be closed.",
+      "keywords": [
+        "Phylum",
+        "Biology",
+        "Taxonomic rank",
+        "Biodiversity",
+        "Species richness"
+      ],
+      "url": "https://openalex.org/W1996816368",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2029174977",
+      "doi": "https://doi.org/10.1126/science.241.4872.1441",
+      "title": "How Many Species Are There on Earth?",
+      "year": 1988,
+      "cited_by_count": 1196,
+      "relevance_score": 6332.4463,
+      "authors": [
+        "Robert M. May"
+      ],
+      "venue": "Science",
+      "abstract": "This article surveys current answers to the factual question posed in the title and reviews the kinds of information that are needed to make these answers more precise. Various factors affecting diversity are also reviewed. These include the structure of food webs, the relative abundance of species, the number of species and of individuals in different categories of body size, along with other determinants of the commonness and rarity of organisms.",
+      "keywords": [
+        "Abundance (ecology)",
+        "Diversity (politics)",
+        "Relative species abundance",
+        "Ecology",
+        "Geography"
+      ],
+      "url": "https://openalex.org/W2029174977",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2759820149",
+      "doi": "https://doi.org/10.1146/annurev-ento-020117-043348",
+      "title": "How Many Species of Insects and Other Terrestrial Arthropods Are There on Earth?",
+      "year": 2017,
+      "cited_by_count": 1565,
+      "relevance_score": 2608.7446,
+      "authors": [
+        "Nigel E. Stork"
+      ],
+      "venue": "Annual Review of Entomology",
+      "abstract": "In the last decade, new methods of estimating global species richness have been developed and existing ones improved through the use of more appropriate statistical tools and new data. Taking the mean of most of these new estimates indicates that globally there are approximately 1.5 million, 5.5 million, and 7 million species of beetles, insects, and terrestrial arthropods, respectively. Previous estimates of 30 million species or more based on the host specificity of insects to plants now seem extremely unlikely. With 1 million insect species named, this suggests that 80% remain to be discovered and that a greater focus should be placed on less-studied taxa such as many families of Coleoptera, Diptera, and Hymenoptera and on poorly sampled parts of the world. DNA tools have revealed many new species in taxonomically intractable groups, but unbiased studies of previously well-researched insect faunas indicate that 1-2% of species may be truly cryptic.",
+      "keywords": [
+        "Biology",
+        "Species richness",
+        "Fauna",
+        "Taxon",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W2759820149",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2162348455",
+      "doi": "https://doi.org/10.1038/35002501",
+      "title": "Biodiversity hotspots for conservation priorities",
+      "year": 2000,
+      "cited_by_count": 31579,
+      "relevance_score": 1900.6154,
+      "authors": [
+        "Norman Myers",
+        "Russell A. Mittermeier",
+        "Cristina G. Mittermeier",
+        "Gustavo A. B. da Fonseca",
+        "Jennifer Kent"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Biodiversity",
+        "Biodiversity hotspot",
+        "Habitat",
+        "Vertebrate",
+        "Global biodiversity"
+      ],
+      "url": "https://openalex.org/W2162348455",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388835185",
+      "doi": "https://doi.org/10.1371/journal.pbio.3002388",
+      "title": "How many species are there on Earth? Progress and problems",
+      "year": 2023,
+      "cited_by_count": 73,
+      "relevance_score": 1590.7905,
+      "authors": [
+        "John J. Wiens"
+      ],
+      "venue": "PLoS Biology",
+      "abstract": "How many species exist on Earth? Projections range from millions to trillions. A 2011 paper in PLOS Biology provided a comprehensive estimate of 9 million.This article is part of the PLOS Biology 20th Anniversary Collection.In 2010, Robert May [1] pointed out an embarrassing truth about modern science.Even as we invest huge amounts of time, money, and effort to find life on other planets, we still do not know how much life (i.e., how many species) is on our own.Although \"do not know\" might sound like hyperbole, estimates have ranged wildly, from 2 million [2] to 3 trillion [3].Countering this embarrassing situation, a study by Mora and colleaguesAU : Pleasenotethatallinstan [4] represented a transformative advance.This paper has since become the \"default\" estimate of the number of living species on the plant (8.75 million), even though approximatelyAU : PleasenotethatasperPLOSstyl 80% of those species are hypothetical.Here, I discuss why this paper represented important progress and how we might continue to move forward in estimating this fundamental number in science.What was so special about the study by Mora and colleagues?When it was published, various other biodiversity projections existed, based on various approaches.Two major advances were that it was statistically based and taxonomically comprehensive.For example, many previous estimates relied on expert opinion or questionable assumptions [4].Furthermore, most earlier studies focused on a particular group (e.g., insects or plants), rather than all of life.Thus, most studies did not even attempt to estimate the number of species on Earth.The approach of Mora and colleagues [4] involved two main steps.First, they used biodiversity databases to plot the numbers of new higher taxa (genera to phyla) described in each major group over time, in order to project the value at which these numbers might asymptote (i.e., stop increasing) in the future.Second, they regressed these estimated asymptote numbers of higher taxa at each taxonomic level (e.g., the number of phyla) against a ranking of taxonomic levels (1 to 6, from phylum to species) and then used this regression model to extrapolate the unknown number of species in each group.Using this approach, they estimated that there are about 7.8 million animal species, 298,000 plants, 611,000 fungi, and 63,900 protists.They estimated relatively few prokaryotes (10,000 bacteria and 500 archaea).Overall, they projected that there are 8.75 million living species, of which only 1.2 million were described (including approximately 0.95 million animal species).Mora and colleagues validated this approach by comparing their projections [4] to those from expert opinion [5].They did this",
+      "keywords": [
+        "Biology",
+        "Evolutionary biology",
+        "Earth (classical element)",
+        "Astrobiology",
+        "Computational biology"
+      ],
+      "url": "https://openalex.org/W4388835185",
+      "matched_by": "en"
+    }
+  ]
+}

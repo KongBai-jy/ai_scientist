@@ -1,0 +1,135 @@
+{
+  "problem_id": 69,
+  "problem_cn": "衍射极限是否是不可逾越的？",
+  "problem_en": "Is there a diffraction limit?",
+  "category": "物理学",
+  "query_en": "Is there a diffraction limit",
+  "query_cn": "衍射极限是否是不可逾越的",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:17",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1992858116",
+      "doi": "https://doi.org/10.1038/nmeth929",
+      "title": "Sub-diffraction-limit imaging by stochastic optical reconstruction microscopy (STORM)",
+      "year": 2006,
+      "cited_by_count": 8347,
+      "relevance_score": 7293.0645,
+      "authors": [
+        "Michael J. Rust",
+        "Mark Bates",
+        "Xiaowei Zhuang"
+      ],
+      "venue": "Nature Methods",
+      "abstract": "",
+      "keywords": [
+        "Fluorophore",
+        "Microscopy",
+        "Resolution (logic)",
+        "Photoactivated localization microscopy",
+        "Fluorescence-lifetime imaging microscopy"
+      ],
+      "url": "https://openalex.org/W1992858116",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2025864484",
+      "doi": "https://doi.org/10.1038/nphoton.2009.282",
+      "title": "Plasmonics beyond the diffraction limit",
+      "year": 2010,
+      "cited_by_count": 3904,
+      "relevance_score": 6987.009,
+      "authors": [
+        "Dmitri K. Gramotnev",
+        "Sergey I. Bozhevolnyi"
+      ],
+      "venue": "Nature Photonics",
+      "abstract": "",
+      "keywords": [
+        "Nanophotonics",
+        "Plasmon",
+        "Photonics",
+        "Diffraction",
+        "Surface plasmon polariton"
+      ],
+      "url": "https://openalex.org/W2025864484",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1973054824",
+      "doi": "https://doi.org/10.1038/nmat2141",
+      "title": "Superlenses to overcome the diffraction limit",
+      "year": 2008,
+      "cited_by_count": 1328,
+      "relevance_score": 3942.5432,
+      "authors": [
+        "Xiang Zhang",
+        "Zhaowei Liu"
+      ],
+      "venue": "Nature Materials",
+      "abstract": "",
+      "keywords": [
+        "Superlens",
+        "Metamaterial",
+        "Diffraction",
+        "Limit (mathematics)",
+        "Lithography"
+      ],
+      "url": "https://openalex.org/W1973054824",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2016927087",
+      "doi": "https://doi.org/10.1038/nmat852",
+      "title": "Local detection of electromagnetic energy transport below the diffraction limit in metal nanoparticle plasmon waveguides",
+      "year": 2003,
+      "cited_by_count": 2284,
+      "relevance_score": 3864.4993,
+      "authors": [
+        "Stefan A. Maier",
+        "Pieter G. Kik",
+        "Harry A. Atwater",
+        "Sheffer Meltzer",
+        "Elad Harel",
+        "Bruce E. Koel",
+        "Ari Requicha"
+      ],
+      "venue": "Nature Materials",
+      "abstract": "",
+      "keywords": [
+        "Plasmon",
+        "Materials science",
+        "Surface plasmon",
+        "Optics",
+        "Diffraction"
+      ],
+      "url": "https://openalex.org/W2016927087",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2074163997",
+      "doi": "https://doi.org/10.1364/oe.14.008247",
+      "title": "Optical Hyperlens: Far-field imaging beyond the diffraction limit",
+      "year": 2006,
+      "cited_by_count": 1559,
+      "relevance_score": 3828.9827,
+      "authors": [
+        "Zubin Jacob",
+        "Leonid Alekseyev",
+        "Evgenii E. Narimanov"
+      ],
+      "venue": "Optics Express",
+      "abstract": "We propose an approach to far-field optical imaging beyond the diffraction limit. The proposed system allows image magnification, is robust with respect to material losses and can be fabricated by adapting existing metamaterial technologies in a cylindrical geometry.",
+      "keywords": [
+        "Optics",
+        "Metamaterial",
+        "Diffraction",
+        "Limit (mathematics)",
+        "Magnification"
+      ],
+      "url": "https://openalex.org/W2074163997",
+      "matched_by": "en"
+    }
+  ]
+}

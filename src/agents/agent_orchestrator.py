@@ -25,7 +25,7 @@ from models.schemas import (
 from agents.agent_explorer import explore
 from agents.agent_scientist import generate_hypotheses
 from agents.agent_critic import critique, calculate_overall_score
-from models.database import SessionLocal, SnapshotRecord
+from models.database import SessionLocal, SnapshotRecord, USES_MYSQL
 from services.job_manager import PipelineCancelled, RoundLimitError
 
 # 加载项目根目录的 .env
@@ -199,6 +199,7 @@ def run_full_pipeline(
     progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
     cancel_check: Optional[Callable[[], bool]] = None,
     auto_search_papers: bool = False,
+    paper_granularity: str = "fast",
 ) -> Dict[str, Any]:
     """
     执行完整流水线
@@ -206,6 +207,9 @@ def run_full_pipeline(
     project_id: 项目隔离标识（快照写入 snapshots/{project_id}/ 子目录）。
     progress_callback: 上报当前阶段（explorer/scientist/critic）与粗略进度。
     cancel_check: 在步骤边界轮询取消标志，命中即抛 PipelineCancelled。
+    paper_granularity: arXiv 临时文献入库粒度，控制 embedding token 消耗：
+        - "fast"（默认，摘要模式）：每篇仅入标题+摘要，chunk 少、token 省约 96%
+        - "full"（严格模式）：下载 PDF 全文分块入库，证据更细但 token 消耗大
     """
     logger.info(f"=" * 60)
     logger.info(f"开始执行 {round_label}（project={project_id or 'legacy'}）")
@@ -251,10 +255,17 @@ def run_full_pipeline(
             from services.paper_search_service import PaperSearchService
             _paper_svc = PaperSearchService()
             _pre_arxiv_ids = _paper_svc.get_existing_arxiv_ids()
-            ingest_result = _paper_svc.search_and_ingest(question, max_results=5)
+            _granularity = paper_granularity if paper_granularity in ("fast", "full") else "fast"
+            _full_text = (_granularity == "full")
+            ingest_result = _paper_svc.search_and_ingest(
+                question,
+                max_results=5,
+                full_text=_full_text,
+            )
             logger.info(
                 f"📚 自动检索入库: 检索 {ingest_result.get('retrieved', 0)} 篇, "
-                f"入库 {ingest_result.get('ingested', 0)} 篇"
+                f"入库 {ingest_result.get('ingested', 0)} 篇 "
+                f"(粒度={_granularity}, full_text={_full_text})"
             )
         except Exception as e:
             logger.warning(f"自动检索文献失败，跳过（不影响主流程）: {e}")
@@ -343,29 +354,32 @@ def run_full_pipeline(
         except Exception as file_err:
             logger.warning(f"快照文件写入失败（不影响本次运行结果）: {file_err}")
 
-        # 写入数据库（失败仅记录日志，不中断主流程）
-        try:
-            db = SessionLocal()
-            record = SnapshotRecord(
-                round=round_label,
-                question=question,
-                overall_score=overall_score,
-                explorer_output=explorer_result.model_dump(),
-                scientist_output=scientist_result.model_dump(),
-                critic_output=critic_result.model_dump(),
-                granularity_stats=granularity_stats,
-                human_feedback=[{"content": feedback}] if feedback else []
-            )
-            db.add(record)
-            db.commit()
-            logger.info(f"   数据库快照已写入 (id={record.id})")
-        except Exception as db_err:
-            logger.warning(f"数据库快照写入失败（降级为仅保存 JSON 文件）: {db_err}")
-            if 'db' in locals():
-                db.rollback()
-        finally:
-            if 'db' in locals():
-                db.close()
+        # 写入数据库（仅当启用了 MySQL 才尝试；未配置/落到 SQLite 时跳过，以 JSON 快照为准）
+        if not USES_MYSQL:
+            logger.info("   未启用 MySQL，跳过数据库快照（仅保存 JSON 文件）")
+        else:
+            try:
+                db = SessionLocal()
+                record = SnapshotRecord(
+                    round=round_label,
+                    question=question,
+                    overall_score=overall_score,
+                    explorer_output=explorer_result.model_dump(),
+                    scientist_output=scientist_result.model_dump(),
+                    critic_output=critic_result.model_dump(),
+                    granularity_stats=granularity_stats,
+                    human_feedback=[{"content": feedback}] if feedback else []
+                )
+                db.add(record)
+                db.commit()
+                logger.info(f"   数据库快照已写入 (id={record.id})")
+            except Exception as db_err:
+                logger.warning(f"数据库快照写入失败（降级为仅保存 JSON 文件）: {db_err}")
+                if 'db' in locals():
+                    db.rollback()
+            finally:
+                if 'db' in locals():
+                    db.close()
 
         logger.info(f"✅ {round_label} 完成，综合得分: {overall_score}")
         logger.info(f"   颗粒度: L1={granularity_stats['L1']}, L2={granularity_stats['L2']}, L3={granularity_stats['L3']}")
@@ -393,6 +407,7 @@ def iterate_with_feedback(
     progress_callback: Optional[Callable[[Optional[str], Optional[int]], None]] = None,
     cancel_check: Optional[Callable[[], bool]] = None,
     auto_search_papers: bool = False,
+    paper_granularity: str = "fast",
 ) -> Dict[str, Any]:
     """
     在人在回路反馈后执行迭代
@@ -410,6 +425,7 @@ def iterate_with_feedback(
         progress_callback=progress_callback,
         cancel_check=cancel_check,
         auto_search_papers=auto_search_papers,
+        paper_granularity=paper_granularity,
     )
 
 
@@ -576,6 +592,276 @@ def orchestrator_node(state: dict) -> dict:
             "errors": [str(e)],
             "retry_count": state.get("retry_count", 0) + 1
         }
+
+
+# ============================================================
+# 6. 智能建议问题生成（输入框自动补全）
+# ============================================================
+
+_suggest_llm = None
+
+
+def _get_suggest_llm():
+    """懒加载建议问题生成 LLM（避免无 DASHSCOPE_API_KEY 时启动失败）"""
+    global _suggest_llm
+    if _suggest_llm is None:
+        from langchain_openai import ChatOpenAI
+        _suggest_llm = ChatOpenAI(
+            model=os.getenv("QWEN_MODEL", ""),
+            api_key=os.getenv("DASHSCOPE_API_KEY"),
+            base_url=os.getenv("DASHSCOPE_API_BASE", "https://dashscope.aliyuncs.com/compatible-mode/v1"),
+            temperature=0.5,
+            max_tokens=512,
+            timeout=30.0,
+        )
+    return _suggest_llm
+
+
+def _build_snapshot_brief(project_id: Optional[str]) -> tuple[str, str]:
+    """从最近一轮 snapshot 提取研究上下文摘要。返回 (brief, based_on)。"""
+    snaps = get_project_snapshots(project_id)
+    if not snaps:
+        return "", "context_only"
+
+    latest = snaps[-1]
+    based_on = f"snapshot:{latest.get('round', 'V?')}"
+
+    scientist_out = latest.get("agent_scientist") or {}
+    critic_out = latest.get("agent_critic") or {}
+
+    hypotheses = scientist_out.get("hypotheses") or []
+    h_brief = "\n".join(
+        f"  {i+1}. {h.get('title', '无标题')[:80]}"
+        + (f"（{h.get('plan', {}).get('L1_conceptual', '')[:60]}）"
+           if h.get('plan', {}).get('L1_conceptual') else "")
+        for i, h in enumerate(hypotheses[:3])
+    ) or "  - 无假设"
+
+    top_flaw = (critic_out.get("top_flaw") or "无")[:150]
+    missing_evs = critic_out.get("missing_evidences") or []
+    missing_brief = "\n".join(f"  - {e[:80]}" for e in missing_evs[:3]) if missing_evs else "  - 无"
+
+    scores = critic_out.get("scores") or {}
+    overall = latest.get("overall_score", 0)
+
+    # 短板定向：找出五维中最低的一维，作为 prompt 引导的优先提问方向
+    _weak_dims = ["evidence", "falsifiability", "consistency", "novelty", "cross_domain"]
+    weak_dim, weak_value = None, None
+    for k in _weak_dims:
+        try:
+            v = float(scores.get(k))
+        except (TypeError, ValueError):
+            continue
+        if weak_value is None or v < weak_value:
+            weak_value, weak_dim = v, k
+    weak_hint = f"\n- 薄弱维度: {weak_dim}（{weak_value}）——优先追问如何补强该维度" if weak_dim else ""
+
+    brief = f"""【当前研究进展】
+- 最新轮次: {latest.get('round', 'V?')}  综合得分: {overall}
+- 五维评分: evidence={scores.get('evidence', '?')}, falsifiability={scores.get('falsifiability', '?')}, consistency={scores.get('consistency', '?')}, novelty={scores.get('novelty', '?')}, cross_domain={scores.get('cross_domain', '?')}
+- 当前假设:
+{h_brief}
+- Critic 致命缺陷: {top_flaw}
+- Critic 缺失证据:
+{missing_brief}{weak_hint}
+"""
+    return brief, based_on
+
+
+def _build_covered_brief(project_id: Optional[str]) -> str:
+    """从该项目历史轮次的 human_feedback 中提取“已追问/反馈过的方向”。
+
+    目的：第 4 项改进——让 LLM 避开已覆盖方向、往未探索处走，避免每次生成
+    风格相近的追问。仅在 snapshot 路径（有历史）时有内容。
+    """
+    snaps = get_project_snapshots(project_id)
+    if not snaps:
+        return ""
+    covered: List[str] = []
+    for s in snaps[-5:]:  # 最近 5 轮
+        fb = s.get("human_feedback") or []
+        items = fb if isinstance(fb, list) else []
+        for it in items:
+            c = str(it.get("content") if isinstance(it, dict) else it).strip()
+            if c and c not in covered:
+                covered.append(c[:60])
+    if not covered:
+        return ""
+    lines = "\n".join(f"  - {c}" for c in covered)
+    return f"\n【已追问/反馈过的方向】（请避开重复，往未探索处走）\n{lines}\n"
+
+
+def _build_chroma_brief(context: str) -> tuple[str, str]:
+    """冷启动兜底：用 Chroma 向量库检索 top-3 文献片段作为上下文。
+
+    无 snapshot 时调用，让 LLM 至少能基于已塞入库里的文献生成建议，
+    避免冷启动场景下建议完全无锚点。
+
+    Returns:
+        (brief, based_on)：brief 为空表示向量库也为空（连 Chroma 都没东西）
+    """
+    try:
+        from services.chroma_service import ChromaService
+    except Exception as e:
+        logger.warning(f"ChromaService 导入失败，跳过向量库兜底: {e}")
+        return "", "context_only"
+
+    # context 太短时用默认 query，避免检索命中噪声
+    query = context.strip() if len(context.strip()) >= 5 else "scientific hypothesis research method"
+
+    try:
+        svc = ChromaService()
+        results = svc.similarity_search(query, k=3)
+    except Exception as e:
+        logger.warning(f"Chroma 检索失败，跳过向量库兜底: {e}")
+        return "", "context_only"
+
+    if not results:
+        return "", "context_only"
+
+    # 拼接 brief：每条文献片段 + 来源
+    lines = []
+    for i, r in enumerate(results, 1):
+        content = (r.get("content") or "").strip()
+        if not content:
+            continue
+        # 截 200 字符避免 prompt 过长
+        if len(content) > 200:
+            content = content[:200] + "..."
+        source = (r.get("metadata") or {}).get("source", "未知来源")
+        lines.append(f"  {i}. {content}  (来源: {source})")
+
+    if not lines:
+        return "", "context_only"
+
+    brief = f"""【向量库相关文献片段】（冷启动兜底，无 snapshot 可用）
+{chr(10).join(lines)}
+"""
+    return brief, "chroma:top_3"
+
+
+def _based_on_desc(based_on: str) -> str:
+    """把 based_on 标签翻译成前端可展示的资源口径说明（第 6 项透明度）。"""
+    key = based_on.split(":")[0] if ":" in based_on else based_on
+    return {
+        "snapshot": "依据最近一轮研究进展（假设 / Critic 缺陷 / 薄弱维度）",
+        "chroma": "依据文献库检索到的资料片段",
+        "context_only": "仅依据你当前的输入",
+        "error": "",
+    }.get(key, "")
+
+
+def suggest_questions(
+    context: str = "",
+    mode: str = "question",
+    project_id: Optional[str] = None,
+    top_k: int = 3,
+) -> Dict[str, Any]:
+    """
+    基于当前研究上下文生成 N 条迭代相关问题。
+
+    上下文来源优先级：
+        1. 最近一轮 snapshot（hypotheses + critic 评审）
+        2. Chroma 向量库检索（冷启动兜底，无 snapshot 时用）
+        3. 仅用户前缀 + system prompt（最终兜底，向量库也为空时）
+
+    Args:
+        context: 用户已输入的前缀（可空），作为引导词让建议自然延伸
+        mode: "question"（追问方向）或 "feedback"（改进建议）
+        project_id: 项目 ID（用于读取最近 snapshot）
+        top_k: 生成数量（1-5）
+
+    Returns:
+        {questions: List[str], dims: List[str], based_on: "snapshot:Vx" | "chroma:top_3" | "context_only" | "error",
+         based_on_desc: str}
+    """
+    try:
+        llm = _get_suggest_llm()
+    except Exception as e:
+        logger.warning(f"建议 LLM 初始化失败: {e}")
+        return {"questions": [], "based_on": "error", "error": str(e)}
+
+    # 来源 1：最近 snapshot
+    snapshot_brief, based_on = _build_snapshot_brief(project_id)
+
+    # 来源 2（兜底）：Chroma 向量库检索
+    if not snapshot_brief:
+        snapshot_brief, based_on = _build_chroma_brief(context)
+        if snapshot_brief:
+            logger.info(f"冷启动兜底：基于 Chroma 向量库生成建议（query={context[:30]!r}）")
+
+    # 来源 3（最终兜底）：只靠 context + system prompt，brief 为空
+
+    if mode == "feedback":
+        task_desc = "用户要在反馈框输入改进建议。生成 N 条最值得提的改进方向（聚焦补证据/改方法/换视角）"
+    else:
+        task_desc = "用户要追问新问题。生成 N 条最值得继续追问的迭代相关问题（涵盖深挖证据/改进方法/跨域类比）"
+
+    context_hint = f"\n【用户已输入前缀】（建议应自然延伸此前缀）\n{context}" if context else ""
+
+    # 第 4 项：snapshot 路径时注入“已追问/反馈过的方向”，避免生成重复追问
+    covered_brief = ""
+    if based_on.startswith("snapshot:"):
+        covered_brief = _build_covered_brief(project_id)
+
+    system_content = (
+        f"你是科研迭代助手。基于当前研究上下文，生成 {top_k} 条用户最可能追问的迭代相关问题。\n\n"
+        "要求：\n"
+        "1. 每条 15-40 字符，简洁直接\n"
+        "2. 按维度覆盖：1 个 deep_dive（深挖证据/数据），1 个 method（改进方法/实验设计），1 个 cross_domain（跨域类比/新视角）；若上下文提示了【薄弱维度】，请优先对该维度提问\n"
+        "3. 若提供了【已追问/反馈过的方向】，请避开重复、往未探索处延伸\n"
+        "4. 直接可执行（用户点击即发送）\n"
+        "5. 仅输出 JSON 数组，每项含 dim 与 question：\n"
+        "   [{\"dim\":\"deep_dive\",\"question\":\"问题1\"},{\"dim\":\"method\",\"question\":\"问题2\"},{\"dim\":\"cross_domain\",\"question\":\"问题3\"}]\n"
+        "   dim 仅允许 deep_dive | method | cross_domain 之一\n"
+        "6. 不要任何额外说明、不要 markdown 代码块、不要前后空行"
+    )
+
+    human_content = f"{snapshot_brief}{covered_brief}{context_hint}\n\n【任务】{task_desc}\n"
+
+    # 第 6 项：基于脚本做透明化说明
+    desc = _based_on_desc(based_on)
+
+    try:
+        from langchain_core.messages import SystemMessage, HumanMessage
+        resp = llm.invoke([SystemMessage(content=system_content), HumanMessage(content=human_content)])
+        text = resp.content.strip()
+
+        # 容错：剥离 markdown 代码块
+        if text.startswith("```"):
+            text = re.sub(r"^```[a-z]*\n?", "", text)
+            text = re.sub(r"\n?```$", "", text).strip()
+
+        data = json.loads(text)
+        questions: List[str] = []
+        dims: List[str] = []
+        if isinstance(data, list):
+            if all(isinstance(x, str) for x in data):
+                # 兼容旧版纯字符串数组输出
+                questions = [x.strip() for x in data if x.strip()][:top_k]
+            else:
+                for item in data:
+                    if not isinstance(item, dict):
+                        continue
+                    q = str(item.get("question", "")).strip()
+                    dim = str(item.get("dim", "")).strip()
+                    if q and q not in questions:
+                        questions.append(q[:80])
+                        dims.append(dim if dim in {"deep_dive", "method", "cross_domain"} else "other")
+
+        if not questions:
+            return {"questions": [], "dims": [], "based_on": based_on, "based_on_desc": desc,
+                    "error": "LLM 未返回有效问题"}
+
+        return {
+            "questions": questions[:top_k],
+            "dims": (dims or [])[:top_k],
+            "based_on": based_on,
+            "based_on_desc": desc,
+        }
+    except Exception as e:
+        logger.warning(f"建议生成失败: {e}")
+        return {"questions": [], "dims": [], "based_on": "error", "based_on_desc": "", "error": str(e)}
 
 
 def build_orchestrator_graph():

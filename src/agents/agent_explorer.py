@@ -95,12 +95,78 @@ SYSTEM_PROMPT = """你是一位顶尖的科学探索者，擅长解构复杂科�
 ## 约束
 - 每条证据必须绑定 source，缺失则视为无效
 - 若本地文献不足，必须利用跨域类比补全，不允许返回空列表
+
+## 语言要求（强制）
+- 所有输出 JSON 字段（problem_skelton、claim、knowledge_gaps、phenomenon、mapping_relation 等）**必须使用中文**
+- 允许保留的英文仅限：专有名词（如 YBCO、Riemann hypothesis、DNA、CRISPR、arXiv 编号、DOI、学科标准术语）、文献来源（source）、论文标题与作者名
+- 若证据片段为英文，请在 claim 中用中文转述其核心含义，保留必要的英文术语
 """
 
 
 # ============================================================
 # 3. 核心函数
 # ============================================================
+
+# 检索候选池放大倍数：比最终 top_k 取更多候选，用于分来源遴选
+# （扩大 k 只增加返回条数，query 仍只做 1 次 embedding，token 消耗不变）
+_POOL_MULTIPLIER = 4
+
+
+def _hybrid_retrieve(
+    chroma: ChromaService,
+    question: str,
+    top_k: int = 5,
+) -> List[Dict[str, Any]]:
+    """分来源融合检索：本地知识库 + 至少 1 条 arXiv 在线文献。
+
+    思路：一次相似度检索取扩大后的候选池（不增加 embedding 调用），
+    按 metadata 是否含 arxiv_id 区分「arXiv 在线文献」与「本地/Science 文献」。
+    组合时保证 arXiv 来源至少 1 条参与证据生成，剩余名额给本地高相关文献。
+
+    Args:
+        chroma: 向量库服务
+        question: 用户科学问题
+        top_k: 最终返回文档数
+
+    Returns:
+        融合后的检索结果列表
+    """
+    pool_size = max(top_k * _POOL_MULTIPLIER, 3)
+    pool = chroma.similarity_search(question, k=pool_size)
+
+    arxiv = [r for r in pool if r["metadata"].get("arxiv_id")]
+    local = [r for r in pool if not r["metadata"].get("arxiv_id")]
+    logger.info(
+        f"分来源检索: 候选 {len(pool)} 条（arXiv={len(arxiv)}，本地/Science={len(local)}）"
+    )
+
+    merged: List[Dict[str, Any]] = []
+    seen: set = set()
+
+    def _add(results: List[Dict[str, Any]], limit: int) -> int:
+        """按去重规则追加 results，返回实际追加条数"""
+        added = 0
+        for r in results:
+            if added >= limit:
+                break
+            key = (r["metadata"].get("source"), r["content"][:40])
+            if key in seen:
+                continue
+            seen.add(key)
+            merged.append(r)
+            added += 1
+        return added
+
+    # 至少 1 条 arXiv 在线文献参与
+    n_arxiv = min(1, len(arxiv))
+    _add(arxiv, n_arxiv)
+    # 剩余名额由本地/Science 高相关文献填充
+    _add(local, top_k - n_arxiv)
+
+    if n_arxiv > 0:
+        logger.info(f"已纳入 {n_arxiv} 条 arXiv 在线文献参与假设构建")
+    return merged
+
 
 def explore(
     question: str,
@@ -121,9 +187,9 @@ def explore(
     Raises:
         RuntimeError: 超过最大重试次数仍失败
     """
-    # 1. 向量检索
+    # 1. 向量检索（分来源融合：本地知识库 + 至少 1 条 arXiv 在线文献）
     chroma = ChromaService()
-    results = chroma.similarity_search(question, k=top_k)
+    results = _hybrid_retrieve(chroma, question, top_k=top_k)
 
     # 2. 构建 Prompt
     if results:

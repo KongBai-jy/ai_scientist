@@ -1,0 +1,171 @@
+{
+  "problem_id": 43,
+  "problem_cn": "基因组编辑如何用于治疗疾病？",
+  "problem_en": "How might genome editing be used to cure disease?",
+  "category": "生物学",
+  "query_en": "How might genome editing be used to cure disease",
+  "query_cn": "基因组编辑如何用于治疗疾病",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:34",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2182456467",
+      "doi": "https://doi.org/10.1146/annurev-biochem-060815-014607",
+      "title": "CRISPR/Cas9 in Genome Editing and Beyond",
+      "year": 2016,
+      "cited_by_count": 1213,
+      "relevance_score": 632.18164,
+      "authors": [
+        "Haifeng Wang",
+        "Marie La Russa",
+        "Lei S. Qi"
+      ],
+      "venue": "Annual Review of Biochemistry",
+      "abstract": "The Cas9 protein (CRISPR-associated protein 9), derived from type II CRISPR (clustered regularly interspaced short palindromic repeats) bacterial immune systems, is emerging as a powerful tool for engineering the genome in diverse organisms. As an RNA-guided DNA endonuclease, Cas9 can be easily programmed to target new sites by altering its guide RNA sequence, and its development as a tool has made sequence-specific gene editing several magnitudes easier. The nuclease-deactivated form of Cas9 further provides a versatile RNA-guided DNA-targeting platform for regulating and imaging the genome, as well as for rewriting the epigenetic status, all in a sequence-specific manner. With all of these advances, we have just begun to explore the possible applications of Cas9 in biomedical research and therapeutics. In this review, we describe the current models of Cas9 function and the structural and biochemical studies that support it. We focus on the applications of Cas9 for genome editing, regulation, and imaging, discuss other possible applications and some technical considerations, and highlight the many advantages that CRISPR/Cas9 technology offers.",
+      "keywords": [
+        "CRISPR",
+        "Cas9",
+        "Genome editing",
+        "Computational biology",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2182456467",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4224436908",
+      "doi": "https://doi.org/10.1038/s41392-022-00974-4",
+      "title": "Microbiota in health and diseases",
+      "year": 2022,
+      "cited_by_count": 3112,
+      "relevance_score": 508.147,
+      "authors": [
+        "Kejun Hou",
+        "Zhuo‐Xun Wu",
+        "Xuan-Yu Chen",
+        "Jing‐Quan Wang",
+        "Dongya Zhang",
+        "Chuanxing Xiao",
+        "Dan Zhu",
+        "Jagadish Koya",
+        "Liuya Wei",
+        "Jilin Li",
+        "Zhe‐Sheng Chen"
+      ],
+      "venue": "Signal Transduction and Targeted Therapy",
+      "abstract": "The role of microbiota in health and diseases is being highlighted by numerous studies since its discovery. Depending on the localized regions, microbiota can be classified into gut, oral, respiratory, and skin microbiota. The microbial communities are in symbiosis with the host, contributing to homeostasis and regulating immune function. However, microbiota dysbiosis can lead to dysregulation of bodily functions and diseases including cardiovascular diseases (CVDs), cancers, respiratory diseases, etc. In this review, we discuss the current knowledge of how microbiota links to host health or pathogenesis. We first summarize the research of microbiota in healthy conditions, including the gut-brain axis, colonization resistance and immune modulation. Then, we highlight the pathogenesis of microbiota dysbiosis in disease development and progression, primarily associated with dysregulation of community composition, modulation of host immune response, and induction of chronic inflammation. Finally, we introduce the clinical approaches that utilize microbiota for disease treatment, such as microbiota modulation and fecal microbial transplantation.",
+      "keywords": [
+        "Dysbiosis",
+        "Gut flora",
+        "Immune system",
+        "Immunology",
+        "Pathogenesis"
+      ],
+      "url": "https://openalex.org/W4224436908",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2112635226",
+      "doi": "https://doi.org/10.1016/s0140-6736(12)60026-9",
+      "title": "Crohn's disease",
+      "year": 2012,
+      "cited_by_count": 2134,
+      "relevance_score": 455.43097,
+      "authors": [
+        "Daniel C. Baumgart",
+        "William J. Sandborn"
+      ],
+      "venue": "The Lancet",
+      "abstract": "",
+      "keywords": [
+        "Immunology",
+        "Immune system",
+        "Disease",
+        "Chemokine",
+        "Innate immune system"
+      ],
+      "url": "https://openalex.org/W2112635226",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2913928134",
+      "doi": "https://doi.org/10.1038/s41571-019-0177-5",
+      "title": "Challenges to curing primary brain tumours",
+      "year": 2019,
+      "cited_by_count": 989,
+      "relevance_score": 382.6087,
+      "authors": [
+        "Kenneth Aldape",
+        "Kevin M. Brindle",
+        "Louis Chesler",
+        "Rajesh Chopra",
+        "Amar Gajjar",
+        "Mark R. Gilbert",
+        "Nicholas G. Gottardo",
+        "David H. Gutmann",
+        "Darren Hargrave",
+        "Eric C. Holland",
+        "David Jones",
+        "Johanna A. Joyce",
+        "Pamela Kearns",
+        "Mark W. Kieran",
+        "Ingo K. Mellinghoff",
+        "Melinda S. Merchant",
+        "Stefan M. Pfister",
+        "Steven M. Pollard",
+        "Vijay Ramaswamy",
+        "Jeremy N. Rich",
+        "Giles Robinson",
+        "David H. Rowitch",
+        "John H. Sampson",
+        "Michael D. Taylor",
+        "Paul Workman",
+        "Richard J. Gilbertson"
+      ],
+      "venue": "Nature Reviews Clinical Oncology",
+      "abstract": "Despite decades of research, brain tumours remain among the deadliest of all forms of cancer. The ability of these tumours to resist almost all conventional and novel treatments relates, in part, to the unique cell-intrinsic and microenvironmental properties of neural tissues. In an attempt to encourage progress in our understanding and ability to successfully treat patients with brain tumours, Cancer Research UK convened an international panel of clinicians and laboratory-based scientists to identify challenges that must be overcome if we are to cure all patients with a brain tumour. The seven key challenges summarized in this Position Paper are intended to serve as foci for future research and investment.",
+      "keywords": [
+        "Brain cancer",
+        "Brain research",
+        "Medicine",
+        "Intensive care medicine",
+        "Neuroscience"
+      ],
+      "url": "https://openalex.org/W2913928134",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1584253018",
+      "doi": "https://doi.org/10.1038/nrdp.2018.10",
+      "title": "Sickle cell disease",
+      "year": 2018,
+      "cited_by_count": 1398,
+      "relevance_score": 324.02103,
+      "authors": [
+        "Gregory J. Kato",
+        "Frédéric B. Piel",
+        "Clarice D. Reid",
+        "Marilyn Gaston",
+        "Kwaku Ohene‐Frempong",
+        "Lakshmanan Krishnamurti",
+        "Wally R. Smith",
+        "Julie A. Panepinto",
+        "D. J. Weatherall",
+        "Fernando Ferreira Costa",
+        "Elliott Vichinsky"
+      ],
+      "venue": "Nature Reviews Disease Primers",
+      "abstract": "",
+      "keywords": [
+        "Haemolysis",
+        "Acute chest syndrome",
+        "Disease",
+        "Medicine",
+        "Immunology"
+      ],
+      "url": "https://openalex.org/W1584253018",
+      "matched_by": "en"
+    }
+  ]
+}

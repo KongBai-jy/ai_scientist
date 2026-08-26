@@ -1,0 +1,136 @@
+{
+  "problem_id": 85,
+  "problem_cn": "暗物质到底是什么？",
+  "problem_en": "What is dark matter?",
+  "category": "物理学",
+  "query_en": "What is dark matter",
+  "query_cn": "暗物质到底是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:47",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2056125228",
+      "doi": "https://doi.org/10.1016/s0370-2693(00)00660-2",
+      "title": "What if dark matter is bosonic and self-interacting",
+      "year": 2000,
+      "cited_by_count": 66,
+      "relevance_score": 1101.4847,
+      "authors": [
+        "Antonio Riotto",
+        "I. Tkachev"
+      ],
+      "venue": "Physics Letters B",
+      "abstract": "",
+      "keywords": [
+        "Physics",
+        "Scalar field dark matter",
+        "Annihilation",
+        "Dark matter",
+        "Limiting"
+      ],
+      "url": "https://openalex.org/W2056125228",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2062591846",
+      "doi": "https://doi.org/10.1103/physrevd.86.083521",
+      "title": "What if dark matter gamma-ray lines come with gluon lines?",
+      "year": 2012,
+      "cited_by_count": 79,
+      "relevance_score": 1032.5094,
+      "authors": [
+        "Xiaoyong Chu",
+        "Thomas Hambye",
+        "Tiziana Scarnà",
+        "Michel H. G. Tytgat"
+      ],
+      "venue": "Physical review. D. Particles, fields, gravitation, and cosmology/Physical review. D. Particles and fields",
+      "abstract": "In dark matter (DM) models, the production of a $\\ensuremath{\\gamma}$ line (or of a ``box-shaped'' $\\ensuremath{\\gamma}$-ray spectrum) from DM annihilation proceeds in general from a loop diagram involving a heavy charged particle. If the charged particle in the loop carries also a color charge, this leads inevitably to DM annihilation to gluons, with a naturally larger rate. We consider a scenario in which DM candidates annihilate dominantly into gluon pairs, and determine (as far as possible, model-independent) constraints from a variety of observables: (a) the dark matter relic density, (b) the production of antiprotons, (c) DM direct detection and (d) gluon-gluon fusion processes at LHC. Among other things, we show that this scenario together with the recent claim for a possible $\\ensuremath{\\gamma}$ line from the Galactic center in the Fermi-LAT data, leads to a relic abundance of DM that may be naturally close to the cosmological observations.",
+      "keywords": [
+        "Physics",
+        "Gluon",
+        "Annihilation",
+        "Particle physics",
+        "Dark matter"
+      ],
+      "url": "https://openalex.org/W2062591846",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1578502854",
+      "doi": "https://doi.org/10.1126/science.1102823",
+      "title": "What Is Dark Matter Made Of?",
+      "year": 2004,
+      "cited_by_count": 29,
+      "relevance_score": 857.96716,
+      "authors": [
+        "K. Zioutas",
+        "D. H. H. Hoffmann",
+        "K. Dennerl",
+        "T. Papaevangelou"
+      ],
+      "venue": "Science",
+      "abstract": "Some 25% of the mass of the universe consists of dark (that is, nonluminous) matter. The nature of this dark matter remains unknown. In their Perspective,\n Zioutas\n et al .\n discuss attempts to detect neutralinos and axions, the two leading particle candidates for dark matter, in astrophysical studies. They show that astrophysical and cosmological observations, some of which have been overlooked in the past, can shed light on particle physics problems that are beyond the reach of accelerator experiments.",
+      "keywords": [
+        "Dark matter",
+        "Physics",
+        "Astrophysics"
+      ],
+      "url": "https://openalex.org/W1578502854",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2058355633",
+      "doi": "https://doi.org/10.1103/physrevlett.72.3754",
+      "title": "Is a Massive Tau Neutrino Just What Cold Dark Matter Needs?",
+      "year": 1994,
+      "cited_by_count": 51,
+      "relevance_score": 847.08795,
+      "authors": [
+        "Scott Dodelson",
+        "G. Gyuk",
+        "Michael S. Turner"
+      ],
+      "venue": "Physical Review Letters",
+      "abstract": "The cold dark matter scenario for structure formation in the Universe has many successes; however, when its spectrum of density perturbations is normalized to the Cosmic Background Explorer anisotropy measurement the level of inhomogeneity predicted on small scales is too large. This can be remedied by a tau neutrino of mass 1-10 MeV and lifetime 0.1-100 sec whose decay products include electron neutrinos because it allows the total energy density in relativistic particles to be doubled without interfering with nucleosynthesis.",
+      "keywords": [
+        "Physics",
+        "Neutrino",
+        "Cold dark matter",
+        "Dark matter",
+        "Sterile neutrino"
+      ],
+      "url": "https://openalex.org/W2058355633",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2010581546",
+      "doi": "https://doi.org/10.1086/312287",
+      "title": "Dark Matter Substructure within Galactic Halos",
+      "year": 1999,
+      "cited_by_count": 3051,
+      "relevance_score": 810.71643,
+      "authors": [
+        "Ben Moore",
+        "Sebastiano Ghigna",
+        "Fabio Governato",
+        "George Lake",
+        "Thomas Quinn",
+        "Joachim Stadel",
+        "P. Tozzi"
+      ],
+      "venue": "The Astrophysical Journal",
+      "abstract": "We use numerical simulations to examine the substructure within galactic and cluster mass halos that form within a hierarchical universe. Clusters are easily reproduced with a steep mass spectrum of thousands of substructure clumps that closely matches the observations. However, the survival of dark matter substructure also occurs on galactic scales, leading to the remarkable result that galaxy halos appear as scaled versions of galaxy clusters. The model predicts that the virialized extent of the Milky Way's halo should contain about 500 satellites with circular velocities larger than the Draco and Ursa Minor systems, i.e., bound masses ≳10 8 M ☉ and tidally limited sizes ≳1 kpc. The substructure clumps are on orbits that take a large fraction of them through the stellar disk, leading to significant resonant and impulsive heating. Their abundance and singular density profiles have important implications for the existence of old thin disks, cold stellar streams, gravitational lensing, and indirect/direct detection experiments.",
+      "keywords": [
+        "Physics",
+        "Astrophysics",
+        "Substructure",
+        "Halo",
+        "Dark matter"
+      ],
+      "url": "https://openalex.org/W2010581546",
+      "matched_by": "en"
+    }
+  ]
+}

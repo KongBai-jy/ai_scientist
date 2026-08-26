@@ -1,0 +1,136 @@
+{
+  "problem_id": 115,
+  "problem_cn": "人类能否生活在无化石燃料的世界？",
+  "problem_en": "Could we live in a fossil-fuel-free world?",
+  "category": "能源科学",
+  "query_en": "Could we live in a fossil-fuel-free world",
+  "query_cn": "人类能否生活在无化石燃料的世界",
+  "source": "openalex",
+  "collected_at": "2026-08-26T11:07:45",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4224246016",
+      "doi": "https://doi.org/10.3390/su14084792",
+      "title": "A Global Assessment: Can Renewable Energy Replace Fossil Fuels by 2050?",
+      "year": 2022,
+      "cited_by_count": 1397,
+      "relevance_score": 753.3079,
+      "authors": [
+        "Jerry L. Holechek",
+        "Hatim M. E. Geli",
+        "Mohammed N. Sawalhah",
+        "Raul Valdéz"
+      ],
+      "venue": "Sustainability",
+      "abstract": "Our study evaluated the effectiveness of using eight pathways in combination for a complete to transition from fossil fuels to renewable energy by 2050. These pathways included renewable energy development; improving energy efficiency; increasing energy conservation; carbon taxes; more equitable balancing of human wellbeing and per capita energy use; cap and trade systems; carbon capture, utilization, and storage; and nuclear power development. We used the annual ‘British Petroleum statistical review of world energy 2021’ report as our primary database. Globally, fossil fuels, renewable (primarily hydro, wind and solar), nuclear energy accounted for 83%, 12.6%, and 6.3% of the total energy consumption in 2020. To achieve zero fossil fuel use by 2050, we found that renewable energy production will need to be increased by up to 6-fold or 8-fold if energy demand is held constant at, or increased 50% from, the 2020 energy demand level. Constraining 2050 world energy demand to a 25% increase over the 2020 level, improves the probability of achieving independence from fossil fuels. Improvements in energy efficiency need to accelerate beyond the current rate of ~1.5% per year. Aggressive application of energy conservation policies involving land use and taxation could potentially reduce world energy use by 10% or more by 2050. Our meta-analysis shows that the minimum level of per capita energy consumption that would allow 8 billion people to have a ‘Decent Living Standard’ is on average ~70 GJ per capita per year, which is 93% of the 2020 global average. Developed countries in temperate climates with high vehicle-dependency needed ~120 GJ per capita year−1, whereas equatorial countries with low vehicle-dependency needed 30 GJ per capita year−1. Our meta-analyses indicated replacement of fossil fuels with renewable energy by 2050 may be possible but will require aggressive application of all eight pathways, major lifestyle changes in developed countries, and close cooperation among all countries.",
+      "keywords": [
+        "Renewable energy",
+        "Fossil fuel",
+        "Environmental science",
+        "Renewable fuels",
+        "Natural resource economics"
+      ],
+      "url": "https://openalex.org/W4224246016",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3001937224",
+      "doi": "https://doi.org/10.1002/est2.135",
+      "title": "Role of energy storage systems in energy transition from fossil fuels to renewables",
+      "year": 2020,
+      "cited_by_count": 909,
+      "relevance_score": 545.69073,
+      "authors": [
+        "Anam Kalair",
+        "Naeem Abas",
+        "Muhammad Shoaib Saleem",
+        "Ali Raza Kalair",
+        "Nasrullah Khan"
+      ],
+      "venue": "Energy Storage",
+      "abstract": "Abstract We present the role of heat and electricity storage systems on the rapid rise of renewable energy resources and the steady fall of fossil fuels. The upsurge in renewable resources and slump in fossil fuel consumptions is attributed to sustainable energy systems, energy transition, climate change, and clean energy initiatives. The fast growth of renewables brings new design and operational challenges to transition towards 100% renewable energy goal. Energy storage systems can help ride‐through energy transition from hydrocarbon fuels to renewable sources. Nuclear fusion and artificial photosynthesis are the ultimate Holy Grails for permanent clean energy solutions. Plants harvest light and store it in chemical energy to regulate the food supply chain that may be a guideline for an energy transition from fossil fuels to renewables. Heat and electricity storage devices can account for the periodic nature of solar and wind energy sources. Solar thermal systems for water and space heating are also a viable solution for subzero temperature areas. This study presents the transition of world's energy prospect from fossil fuels to renewables and new advances in energy storage systems.",
+      "keywords": [
+        "Renewable energy",
+        "Fossil fuel",
+        "Energy development",
+        "Energy transition",
+        "Energy storage"
+      ],
+      "url": "https://openalex.org/W3001937224",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2186066651",
+      "doi": "https://doi.org/10.22004/ag.econ.288998",
+      "title": "World agriculture towards 2030/2050: the 2012 revision",
+      "year": 2012,
+      "cited_by_count": 3145,
+      "relevance_score": 381.70587,
+      "authors": [
+        "N. Alexandratos",
+        "Jelle Bruinsma",
+        "Alexandratos, Nikos",
+        "Bruinsma, Jelle"
+      ],
+      "venue": "RePEc: Research Papers in Economics",
+      "abstract": "Current UN projections indicate that world population could increase by 2.25 billion people from today's levels, reaching 9.15 billion by 2050. At the global level, agricultural production and consumption in 2050 are projected to be 60 percent higher than in 2005/07. The perceived limit to producing food for a growing global population remains a source of debate and preoccupation despite the agriculture sector's historical ability to meet such demand. This paper is the latest in the series by the Global Perspective Studies unit within FAO, which aims to provide insights into how food and agriculture may develop, between now and 2050, making note of key assumptions and uncertainties. Such a long look forward is inherently burdened with uncertainty, but the methodical inclusion of the range of technical expertise found throughout FAO on likely paths of development and constraints results in an outlook that is widely used for planning and framing debates in food and agriculture.",
+      "keywords": [
+        "Agriculture",
+        "Geography",
+        "Population",
+        "Land use",
+        "Interim"
+      ],
+      "url": "https://openalex.org/W2186066651",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2897565898",
+      "doi": "https://doi.org/10.1016/j.erss.2018.09.016",
+      "title": "Embodied energy injustices: Unveiling and politicizing the transboundary harms of fossil fuel extractivism and fossil fuel supply chains",
+      "year": 2018,
+      "cited_by_count": 276,
+      "relevance_score": 378.23654,
+      "authors": [
+        "Noel Healy",
+        "Jennie C. Stephens",
+        "Stephanie A. Malin"
+      ],
+      "venue": "Energy Research & Social Science",
+      "abstract": "We introduce the new concept of embodied energy injustices in order to encourage integrative, systemic, transboundary assessment of the global implications and responsibility of energy-policy decisions. Embodied energy injustices reframe considerations of energy justice to explicitly consider hidden and distant injustices (upstream or downstream) arising from the extraction, processing, transportation and disposal of energy resources. We assess the embodied energy injustices connected to the decision to decommission a coal-fired power plant in Salem, Massachusetts, US, and its replacement with a natural-gas-fired power station. Cerrejón open-pit coalmine in La Guajira, Colombia, powered the Salem plant for over a decade. Fracked gas from Pennsylvania now supplies fuel for the new power station. Comparing the extraction of these two very different fuels reveals multiple parallel injustices. But the regulatory environment fails to account for the different constituencies, jurisdictions and effects that fall outside the formal remit of existing impact assessments. We therefore call for mandatory transboundary impact assessments of large-scale energy-related projects, which explicitly integrate previously unrecognized social-environmental harms and injustices. Expanding energy law and policy discussions to incorporate embodied energy injustices can enhance sustainable energy governance and enable corporate accountability for the transboundary harms of fossil fuel extraction and use. Linking chains of energy injustice —by revealing their interconnected positions along fossil-fuel supply chains—may help generate and unite powerful trans-local solidarity movements, which politicize local struggles within wider national, regional and global energy politics.",
+      "keywords": [
+        "Embodied energy",
+        "Injustice",
+        "Energy law",
+        "Energy supply",
+        "Corporate governance"
+      ],
+      "url": "https://openalex.org/W2897565898",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2158221767",
+      "doi": "https://doi.org/10.1002/anie.200602373",
+      "title": "The Future of Energy Supply: Challenges and Opportunities",
+      "year": 2006,
+      "cited_by_count": 1918,
+      "relevance_score": 337.5388,
+      "authors": [
+        "Nicola Armaroli",
+        "Vincenzo Balzani"
+      ],
+      "venue": "Angewandte Chemie International Edition",
+      "abstract": "Energy for everybody? The ever increasing world energy demand cannot be satisfied much longer with fossil fuels; alternatives are required to limit the chance of a climate collapse and the spreading of wars for natural resources. The 21st century will be largely defined by the way we face and resolve the energy crisis. This is an intricate and fascinating scientific challenge, in which chemistry will play a fundamental role, and also an unprecedented opportunity to shape a more peaceful world.",
+      "keywords": [
+        "Business",
+        "Energy supply",
+        "Nanotechnology",
+        "Energy (signal processing)",
+        "Chemistry"
+      ],
+      "url": "https://openalex.org/W2158221767",
+      "matched_by": "en"
+    }
+  ]
+}

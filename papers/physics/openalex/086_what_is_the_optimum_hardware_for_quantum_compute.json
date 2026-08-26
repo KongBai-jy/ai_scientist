@@ -1,0 +1,173 @@
+{
+  "problem_id": 86,
+  "problem_cn": "量子计算机最优硬件方案是什么？",
+  "problem_en": "What is the optimum hardware for quantum computers?",
+  "category": "物理学",
+  "query_en": "What is the optimum hardware for quantum computers",
+  "query_cn": "量子计算机最优硬件方案是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:51",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2120145199",
+      "doi": "https://doi.org/10.1088/0953-8984/21/39/395502",
+      "title": "QUANTUM ESPRESSO: a modular and open-source software project for quantum simulations of materials",
+      "year": 2009,
+      "cited_by_count": 29231,
+      "relevance_score": 2197.1726,
+      "authors": [
+        "Paolo Giannozzi",
+        "Stefano Baroni",
+        "Nicola Bonini",
+        "Matteo Calandra",
+        "Roberto Car",
+        "Carlo Cavazzoni",
+        "Davide Ceresoli",
+        "G. Chiarotti",
+        "Matteo Cococcioni",
+        "Ismaïla Dabo",
+        "Andrea Dal Corso",
+        "Stefano de Gironcoli",
+        "Stefano Fabris",
+        "Guido Fratesi",
+        "Ralph Gebauer",
+        "U. Gerstmann",
+        "Christos Gougoussis",
+        "Anton Kokalj",
+        "Michele Lazzeri",
+        "Layla Martin‐Samos",
+        "Nicola Marzari",
+        "Francesco Mauri",
+        "Riccardo Mazzarello",
+        "Stefano Paolini",
+        "Alfredo Pasquarello",
+        "Lorenzo Paulatto",
+        "Carlo Sbraccia",
+        "Sandro Scandolo",
+        "Gabriele Sclauzero",
+        "Ari P. Seitsonen",
+        "Alexander Smogunov",
+        "Paolo Umari",
+        "Renata M. Wentzcovitch"
+      ],
+      "venue": "Journal of Physics Condensed Matter",
+      "abstract": "QUANTUM ESPRESSO is an integrated suite of computer codes for electronic-structure calculations and materials modeling, based on density-functional theory, plane waves, and pseudopotentials (norm-conserving, ultrasoft, and projector-augmented wave). The acronym ESPRESSO stands for opEn Source Package for Research in Electronic Structure, Simulation, and Optimization. It is freely available to researchers around the world under the terms of the GNU General Public License. QUANTUM ESPRESSO builds upon newly-restructured electronic-structure codes that have been developed and tested by some of the original authors of novel electronic-structure algorithms and applied in the last twenty years by some of the leading materials modeling groups worldwide. Innovation and efficiency are still its main focus, with special attention paid to massively parallel architectures, and a great effort being devoted to user friendliness. QUANTUM ESPRESSO is evolving towards a distribution of independent and interoperable codes in the spirit of an open-source project, where researchers active in the field of electronic-structure calculations are encouraged to participate in the project by contributing their own codes or by implementing their own ideas into existing codes.",
+      "keywords": [
+        "Interoperability",
+        "Computer science",
+        "Computational science",
+        "Modular design",
+        "World Wide Web"
+      ],
+      "url": "https://openalex.org/W2120145199",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2781738013",
+      "doi": "https://doi.org/10.22331/q-2018-08-06-79",
+      "title": "Quantum Computing in the NISQ era and beyond",
+      "year": 2018,
+      "cited_by_count": 8585,
+      "relevance_score": 1190.4147,
+      "authors": [
+        "John Preskill"
+      ],
+      "venue": "Quantum",
+      "abstract": "Noisy Intermediate-Scale Quantum (NISQ) technology will be available in the near future. Quantum computers with 50-100 qubits may be able to perform tasks which surpass the capabilities of today's classical digital computers, but noise in quantum gates will limit the size of quantum circuits that can be executed reliably. NISQ devices will be useful tools for exploring many-body quantum physics, and may have other useful applications, but the 100-qubit quantum computer will not change the world right away - we should regard it as a significant step toward the more powerful quantum technologies of the future. Quantum technologists should continue to strive for more accurate quantum gates and, eventually, fully fault-tolerant quantum computing.",
+      "keywords": [
+        "Quantum computer",
+        "Computer science",
+        "Qubit",
+        "Quantum gate",
+        "Computer engineering"
+      ],
+      "url": "https://openalex.org/W2781738013",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3038067977",
+      "doi": "https://doi.org/10.1103/revmodphys.74.145",
+      "title": "Quantum cryptography",
+      "year": 2002,
+      "cited_by_count": 8463,
+      "relevance_score": 1171.9081,
+      "authors": [
+        "Nicolas Gisin",
+        "G. Ribordy",
+        "Wolfgang Tittel",
+        "Hugo Zbinden"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "Quantum cryptography could well be the first application of quantum mechanics at the single-quantum level. The rapid progress in both theory and experiment in recent years is reviewed, with emphasis on open questions and technological issues.",
+      "keywords": [
+        "Physics",
+        "Quantum cryptography",
+        "Theoretical physics",
+        "Open quantum system",
+        "Quantum mechanics"
+      ],
+      "url": "https://openalex.org/W3038067977",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2559394418",
+      "doi": "https://doi.org/10.1038/nature23474",
+      "title": "Quantum machine learning",
+      "year": 2017,
+      "cited_by_count": 4668,
+      "relevance_score": 1074.6898,
+      "authors": [
+        "Jacob Biamonte",
+        "Péter Wittek",
+        "Nicola Pancotti",
+        "Patrick Rebentrost",
+        "Nathan Wiebe",
+        "Seth Lloyd"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Quantum machine learning",
+        "Computer science",
+        "Quantum",
+        "Software",
+        "Field (mathematics)"
+      ],
+      "url": "https://openalex.org/W2559394418",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3111162498",
+      "doi": "https://doi.org/10.1038/s42254-021-00348-9",
+      "title": "Variational quantum algorithms",
+      "year": 2021,
+      "cited_by_count": 3194,
+      "relevance_score": 809.23376,
+      "authors": [
+        "M. Cerezo",
+        "Andrew Arrasmith",
+        "Ryan Babbush",
+        "Simon C. Benjamin",
+        "Suguru Endo",
+        "Keisuke Fujii",
+        "Jarrod R. McClean",
+        "Kosuke Mitarai",
+        "Xiao Yuan",
+        "Lukasz Cincio",
+        "Patrick J. Coles"
+      ],
+      "venue": "Nature Reviews Physics",
+      "abstract": "",
+      "keywords": [
+        "Quantum algorithm",
+        "Quantum computer",
+        "Quantum",
+        "Quantum technology",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W3111162498",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "problem_id": 22,
+  "problem_cn": "人体微生物组在健康和疾病中扮演什么角色？",
+  "problem_en": "What role does our microbiome play in health and disease?",
+  "category": "医学与健康",
+  "query_en": "What role does our microbiome play in health and disease",
+  "query_cn": "人体微生物组在健康和疾病中扮演什么角色",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:20:22",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2605052214",
+      "doi": "https://doi.org/10.1186/s12967-017-1175-y",
+      "title": "Influence of diet on the gut microbiome and implications for human health",
+      "year": 2017,
+      "cited_by_count": 2629,
+      "relevance_score": 1048.9098,
+      "authors": [
+        "Rasnik Singh",
+        "Hsin-Wen Chang",
+        "Di Yan",
+        "Kristina M. Lee",
+        "Derya Uçmak",
+        "Kirsten Wong",
+        "Michael Abrouk",
+        "Benjamin Farahnik",
+        "Mio Nakamura",
+        "Tian Hao Zhu",
+        "Tina Bhutani",
+        "Wilson Liao"
+      ],
+      "venue": "Journal of Translational Medicine",
+      "abstract": "Recent studies have suggested that the intestinal microbiome plays an important role in modulating risk of several chronic diseases, including inflammatory bowel disease, obesity, type 2 diabetes, cardiovascular disease, and cancer. At the same time, it is now understood that diet plays a significant role in shaping the microbiome, with experiments showing that dietary alterations can induce large, temporary microbial shifts within 24 h. Given this association, there may be significant therapeutic utility in altering microbial composition through diet. This review systematically evaluates current data regarding the effects of several common dietary components on intestinal microbiota. We show that consumption of particular types of food produces predictable shifts in existing host bacterial genera. Furthermore, the identity of these bacteria affects host immune and metabolic parameters, with broad implications for human health. Familiarity with these associations will be of tremendous use to the practitioner as well as the patient.",
+      "keywords": [
+        "Microbiome",
+        "Disease",
+        "Obesity",
+        "Type 2 diabetes",
+        "Immune system"
+      ],
+      "url": "https://openalex.org/W2605052214",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4210377299",
+      "doi": "https://doi.org/10.1136/gutjnl-2021-326789",
+      "title": "Gut microbiome and health: mechanistic insights",
+      "year": 2022,
+      "cited_by_count": 2387,
+      "relevance_score": 1037.6748,
+      "authors": [
+        "Willem M. de Vos",
+        "Herbert Tilg",
+        "Matthias Van Hul",
+        "Patrice D. Cani"
+      ],
+      "venue": "Gut",
+      "abstract": "The gut microbiota is now considered as one of the key elements contributing to the regulation of host health. Virtually all our body sites are colonised by microbes suggesting different types of crosstalk with our organs. Because of the development of molecular tools and techniques (ie, metagenomic, metabolomic, lipidomic, metatranscriptomic), the complex interactions occurring between the host and the different microorganisms are progressively being deciphered. Nowadays, gut microbiota deviations are linked with many diseases including obesity, type 2 diabetes, hepatic steatosis, intestinal bowel diseases (IBDs) and several types of cancer. Thus, suggesting that various pathways involved in immunity, energy, lipid and glucose metabolism are affected.In this review, specific attention is given to provide a critical evaluation of the current understanding in this field. Numerous molecular mechanisms explaining how gut bacteria might be causally linked with the protection or the onset of diseases are discussed. We examine well-established metabolites (ie, short-chain fatty acids, bile acids, trimethylamine N-oxide) and extend this to more recently identified molecular actors (ie, endocannabinoids, bioactive lipids, phenolic-derived compounds, advanced glycation end products and enterosynes) and their specific receptors such as peroxisome proliferator-activated receptor alpha (PPARα) and gamma (PPARγ), aryl hydrocarbon receptor (AhR), and G protein-coupled receptors (ie, GPR41, GPR43, GPR119, Takeda G protein-coupled receptor 5).Altogether, understanding the complexity and the molecular aspects linking gut microbes to health will help to set the basis for novel therapies that are already being developed.",
+      "keywords": [
+        "Microbiome",
+        "Computational biology",
+        "Gut microbiome",
+        "Biology",
+        "Bioinformatics"
+      ],
+      "url": "https://openalex.org/W4210377299",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2143777796",
+      "doi": "https://doi.org/10.1186/gb-2012-13-9-r79",
+      "title": "Dysfunction of the intestinal microbiome in inflammatory bowel disease and treatment",
+      "year": 2012,
+      "cited_by_count": 2807,
+      "relevance_score": 928.69507,
+      "authors": [
+        "Xochitl C. Morgan",
+        "Timothy L. Tickle",
+        "Harry Sokol",
+        "Dirk Gevers",
+        "Kathryn L. Devaney",
+        "Doyle V. Ward",
+        "Joshua A Reyes",
+        "Shiraz A. Shah",
+        "Neal S. LeLeiko",
+        "Scott B. Snapper",
+        "Athos Bousvaros",
+        "Joshua R. Korzenik",
+        "Bruce E. Sands",
+        "Ramnik J. Xavier",
+        "Curtis Huttenhower"
+      ],
+      "venue": "Genome biology",
+      "abstract": "BACKGROUND: The inflammatory bowel diseases (IBD) Crohn's disease and ulcerative colitis result from alterations in intestinal microbes and the immune system. However, the precise dysfunctions of microbial metabolism in the gastrointestinal microbiome during IBD remain unclear. We analyzed the microbiota of intestinal biopsies and stool samples from 231 IBD and healthy subjects by 16S gene pyrosequencing and followed up a subset using shotgun metagenomics. Gene and pathway composition were assessed, based on 16S data from phylogenetically-related reference genomes, and associated using sparse multivariate linear modeling with medications, environmental factors, and IBD status. RESULTS: Firmicutes and Enterobacteriaceae abundances were associated with disease status as expected, but also with treatment and subject characteristics. Microbial function, though, was more consistently perturbed than composition, with 12% of analyzed pathways changed compared with 2% of genera. We identified major shifts in oxidative stress pathways, as well as decreased carbohydrate metabolism and amino acid biosynthesis in favor of nutrient transport and uptake. The microbiome of ileal Crohn's disease was notable for increases in virulence and secretion pathways. CONCLUSIONS: This inferred functional metagenomic information provides the first insights into community-wide microbial processes and pathways that underpin IBD pathogenesis.",
+      "keywords": [
+        "Biology",
+        "Metagenomics",
+        "Microbiome",
+        "Inflammatory bowel disease",
+        "Firmicutes"
+      ],
+      "url": "https://openalex.org/W2143777796",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4224436908",
+      "doi": "https://doi.org/10.1038/s41392-022-00974-4",
+      "title": "Microbiota in health and diseases",
+      "year": 2022,
+      "cited_by_count": 3112,
+      "relevance_score": 892.4158,
+      "authors": [
+        "Kejun Hou",
+        "Zhuo‐Xun Wu",
+        "Xuan-Yu Chen",
+        "Jing‐Quan Wang",
+        "Dongya Zhang",
+        "Chuanxing Xiao",
+        "Dan Zhu",
+        "Jagadish Koya",
+        "Liuya Wei",
+        "Jilin Li",
+        "Zhe‐Sheng Chen"
+      ],
+      "venue": "Signal Transduction and Targeted Therapy",
+      "abstract": "The role of microbiota in health and diseases is being highlighted by numerous studies since its discovery. Depending on the localized regions, microbiota can be classified into gut, oral, respiratory, and skin microbiota. The microbial communities are in symbiosis with the host, contributing to homeostasis and regulating immune function. However, microbiota dysbiosis can lead to dysregulation of bodily functions and diseases including cardiovascular diseases (CVDs), cancers, respiratory diseases, etc. In this review, we discuss the current knowledge of how microbiota links to host health or pathogenesis. We first summarize the research of microbiota in healthy conditions, including the gut-brain axis, colonization resistance and immune modulation. Then, we highlight the pathogenesis of microbiota dysbiosis in disease development and progression, primarily associated with dysregulation of community composition, modulation of host immune response, and induction of chronic inflammation. Finally, we introduce the clinical approaches that utilize microbiota for disease treatment, such as microbiota modulation and fecal microbial transplantation.",
+      "keywords": [
+        "Dysbiosis",
+        "Gut flora",
+        "Immune system",
+        "Immunology",
+        "Pathogenesis"
+      ],
+      "url": "https://openalex.org/W4224436908",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2060741641",
+      "doi": "https://doi.org/10.3389/fimmu.2014.00427",
+      "title": "The Intestinal Microbiome in Early Life: Health and Disease",
+      "year": 2014,
+      "cited_by_count": 1022,
+      "relevance_score": 843.18915,
+      "authors": [
+        "Marie‐Claire Arrieta",
+        "Leah T. Stiemsma",
+        "Nelly Amenyogbe",
+        "Eric Brown",
+        "B. Brett Finlay"
+      ],
+      "venue": "Frontiers in Immunology",
+      "abstract": "Human microbial colonization begins at birth and continues to develop and modulate in species abundance for about 3 years, until the microbiota becomes adult-like. During the same time period, children experience significant developmental changes that influence their health status as well as their immune system. An ever-expanding number of articles associate several diseases with early-life imbalances of the gut microbiota, also referred to as gut microbial dysbiosis. Whether early-life dysbiosis precedes and plays a role in disease pathogenesis, or simply originates from the disease process itself is a question that is beginning to be answered in a few diseases, including IBD, obesity, and asthma. This review describes the gut microbiome structure and function during the formative first years of life, as well as the environmental factors that determine its composition. It also aims to discuss the recent advances in understanding the role of the early-life gut microbiota in the development of immune-mediated, metabolic, and neurological diseases. A greater understanding of how the early-life gut microbiota impacts our immune development could potentially lead to novel microbial-derived therapies that target disease prevention at an early age.",
+      "keywords": [
+        "Dysbiosis",
+        "Microbiome",
+        "Disease",
+        "Gut flora",
+        "Immune system"
+      ],
+      "url": "https://openalex.org/W2060741641",
+      "matched_by": "en"
+    }
+  ]
+}

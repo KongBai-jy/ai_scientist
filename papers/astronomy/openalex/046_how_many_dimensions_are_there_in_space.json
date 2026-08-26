@@ -1,0 +1,126 @@
+{
+  "problem_id": 46,
+  "problem_cn": "宇宙存在多少个维度？",
+  "problem_en": "How many dimensions are there in space?",
+  "category": "天文学",
+  "query_en": "How many dimensions are there in space",
+  "query_cn": "宇宙存在多少个维度",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:45",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1499267374",
+      "doi": "https://doi.org/10.1111/geb.12299",
+      "title": "How many dimensions are needed to accurately assess functional diversity? A pragmatic approach for assessing the quality of functional spaces",
+      "year": 2015,
+      "cited_by_count": 519,
+      "relevance_score": 1169.299,
+      "authors": [
+        "Eva Maire",
+        "Gaël Grenouillet",
+        "Sébastien Brosse",
+        "Sébastien Villéger"
+      ],
+      "venue": "Global Ecology and Biogeography",
+      "abstract": "Abstract Aim Functional diversity is a key facet of biodiversity that is increasingly being measured to quantify its changes following disturbance and to understand its effects on ecosystem functioning. Assessing the functional diversity of assemblages based on species traits requires the building of a functional space (dendrogram or multidimensional space) where indices will be computed. However, there is still no consensus on the best method for measuring the quality of functional spaces. Innovation Here we propose a framework for evaluating the quality of a functional space (i.e. the extent to which it is a faithful representation of the initial functional trait values). Using simulated datasets, we analysed the influence of the number and type of functional traits used and of the number of species studied on the identity and quality of the best functional space. We also tested whether the quality of the functional space affects functional diversity patterns in local assemblages, using simulated datasets and a real study case. Main conclusions The quality of functional space strongly varied between situations. Spaces having at least four dimensions had the highest quality, while functional dendrograms and two‐dimensional functional spaces always had a low quality. Importantly, we showed that using a poor‐quality functional space could led to a biased assessment of functional diversity and false ecological conclusions. Therefore, we advise a pragmatic approach consisting of computing all the possible functional spaces and selecting the most parsimonious one.",
+      "keywords": [
+        "Functional diversity",
+        "Quality (philosophy)",
+        "Space (punctuation)",
+        "Trait",
+        "Diversity (politics)"
+      ],
+      "url": "https://openalex.org/W1499267374",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1889142700",
+      "doi": "https://doi.org/10.4310/atmp.1998.v2.n2.a2",
+      "title": "Anti de Sitter space and holography",
+      "year": 1998,
+      "cited_by_count": 13439,
+      "relevance_score": 969.87463,
+      "authors": [
+        "Edward Witten"
+      ],
+      "venue": "Advances in Theoretical and Mathematical Physics",
+      "abstract": "Recently, it has been proposed by Maldacena that large N limits of certain conformal field theories in d dimensions can be described in terms of supergravity (and string theory) on the product of d 4-1dimensional AdS space with a compact manifold. Here we elaborate on this idea and propose a precise correspondence between conformal field theory observables and those of supergravity: correlation functions in conformal field theory are given by the dependence of the supergravity action on the asymptotic behavior at infinity. In particular, dimensions of operators in conformal field theory are given by masses of particles in supergravity. As quantitative confirmation of this correspondence, we note that the Kaluza-Klein modes of Type IIB supergravity on AdS^ x S 5 match with the chiral operators of Af = 4 super Yang-Mills theory in four dimensions. With some further assumptions, one can deduce a H'amiltonian version of the correspondence and show that the Af = 4 theory has a large N phase transition related to the thermodynamics of AdS black holes.",
+      "keywords": [
+        "De Sitter space",
+        "Anti-de Sitter space",
+        "Space (punctuation)",
+        "de Sitter–Schwarzschild metric",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W1889142700",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2034690972",
+      "doi": "https://doi.org/10.1126/science.185.4145.27",
+      "title": "Resource Partitioning in Ecological Communities",
+      "year": 1974,
+      "cited_by_count": 4131,
+      "relevance_score": 636.201,
+      "authors": [
+        "Thomas W. Schoener"
+      ],
+      "venue": "Science",
+      "abstract": "To understand resource partitioning, essentially a community phenomenon, we require a holistic theory that draws upon models at the individual and population level. Yet some investigators are still content mainly to document differences between species, a procedure of only limited interest. Therefore, it may be useful to conclude with a list of questions appropriate for studies of resource partitioning, questions this article has related to the theory in a preliminary way. 1) What is the mechanism of competition? What is the relative importance of predation? Are differences likely to be caused by pressures toward reproductive isolation? 2) Are niches (utilizations) regularly spaced along a single dimension? 3) How many dimensions are important, and is there a tendency for more dimensions to be added as species number increases? 4) Is dimensional separation complementary? 5) Which dimensions are utilized, how do they rank in importance, and why? How do particular dimensions change in rank as species nuimber increases? 6) What is the relation of dimensional separation to difference in phenotypic indicators? To what extent does the functional relation of phenotype to resource characteristics constrain partitioning? 7) What is the distance between mean position of niches, what is the niche standard deviation, and what is the ratio of the two? What is the niche shape?",
+      "keywords": [
+        "Niche",
+        "Competition (biology)",
+        "Ecology",
+        "Resource (disambiguation)",
+        "Ecological niche"
+      ],
+      "url": "https://openalex.org/W2034690972",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4240791294",
+      "doi": "https://doi.org/10.7551/mitpress/2076.001.0001",
+      "title": "Conceptual Spaces",
+      "year": 2000,
+      "cited_by_count": 1130,
+      "relevance_score": 498.38272,
+      "authors": [
+        "Peter Gärdenfors"
+      ],
+      "venue": "The MIT Press eBooks",
+      "abstract": "Within cognitive science, two approaches currently dominate the problem of modeling representations. The symbolic approach views cognition as computation involving symbolic manipulation. Connectionism, a special case of associationism, models associations using artificial neuron networks. Peter Gärdenfors offers his theory of conceptual representations as a bridge between the symbolic and connectionist approaches. Symbolic representation is particularly weak at modeling concept learning, which is paramount for understanding many cognitive phenomena. Concept learning is closely tied to the notion of similarity, which is also poorly served by the symbolic approach. Gärdenfors's theory of conceptual spaces presents a framework for representing information on the conceptual level. A conceptual space is built up from geometrical structures based on a number of quality dimensions. The main applications of the theory are on the constructive side of cognitive science: as a constructive model the theory can be applied to the development of artificial systems capable of solving cognitive tasks. Gärdenfors also shows how conceptual spaces can serve as an explanatory framework for a number of empirical theories, in particular those concerning concept formation, induction, and semantics. His aim is to present a coherent research program that can be used as a basis for more detailed investigations. Bradford Books imprint",
+      "keywords": [
+        "Connectionism",
+        "Constructive",
+        "Computer science",
+        "The Symbolic",
+        "Representation (politics)"
+      ],
+      "url": "https://openalex.org/W4240791294",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1545761024",
+      "doi": "https://doi.org/10.1007/978-0-387-70914-7",
+      "title": "Functional Analysis, Sobolev Spaces and Partial Differential Equations",
+      "year": 2010,
+      "cited_by_count": 5714,
+      "relevance_score": 484.2904,
+      "authors": [
+        "Haïm Brézis"
+      ],
+      "venue": null,
+      "abstract": "This textbook is a completely revised, updated, and expanded English edition of the important Analyse fonctionnelle (1983). In addition, it contains a wealth of problems and exercises (with solutions)",
+      "keywords": [
+        "Sobolev space",
+        "Partial differential equation",
+        "Functional analysis",
+        "Mathematics",
+        "Mathematical analysis"
+      ],
+      "url": "https://openalex.org/W1545761024",
+      "matched_by": "en"
+    }
+  ]
+}

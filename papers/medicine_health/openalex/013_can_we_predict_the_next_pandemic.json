@@ -1,0 +1,177 @@
+{
+  "problem_id": 13,
+  "problem_cn": "我们能够预测下一场大流行病吗？",
+  "problem_en": "Can we predict the next pandemic?",
+  "category": "医学与健康",
+  "query_en": "Can we predict the next pandemic",
+  "query_cn": "我们能够预测下一场大流行病吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:49",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W3017185871",
+      "doi": "https://doi.org/10.1016/j.ijsu.2020.04.018",
+      "title": "The socio-economic implications of the coronavirus pandemic (COVID-19): A review",
+      "year": 2020,
+      "cited_by_count": 6541,
+      "relevance_score": 766.4479,
+      "authors": [
+        "Maria Nicola",
+        "Zaid Alsafi",
+        "Catrin Sohrabi",
+        "Ahmed Kerwan",
+        "Ahmed Al‐Jabir",
+        "Christos Iosifidis",
+        "Maliha Agha",
+        "Riaz Agha"
+      ],
+      "venue": "International Journal of Surgery",
+      "abstract": "The COVID-19 pandemic has resulted in over 4.3 million confirmed cases and over 290,000 deaths globally. It has also sparked fears of an impending economic crisis and recession. Social distancing, self-isolation and travel restrictions have lead to a reduced workforce across all economic sectors and caused many jobs to be lost. Schools have closed down, and the need for commodities and manufactured products has decreased. In contrast, the need for medical supplies has significantly increased. The food sector is also facing increased demand due to panic-buying and stockpiling of food products. In response to this global outbreak, we summarise the socio-economic effects of COVID-19 on individual aspects of the world economy.",
+      "keywords": [
+        "Pandemic",
+        "Coronavirus disease 2019 (COVID-19)",
+        "Recession",
+        "Social distance",
+        "Outbreak"
+      ],
+      "url": "https://openalex.org/W3017185871",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3015197879",
+      "doi": "https://doi.org/10.1016/s2215-0366(20)30168-1",
+      "title": "Multidisciplinary research priorities for the COVID-19 pandemic: a call for action for mental health science",
+      "year": 2020,
+      "cited_by_count": 6083,
+      "relevance_score": 698.7857,
+      "authors": [
+        "Emily A. Holmes",
+        "Rory C. O’Connor",
+        "V. Hugh Perry",
+        "Irene Tracey",
+        "Simon Wessely",
+        "Louise Arseneault",
+        "Clive Ballard",
+        "Helen Christensen",
+        "Roxane Cohen Silver",
+        "Ian Everall",
+        "Tamsin Ford",
+        "Ann John",
+        "Thomas Kabir",
+        "Kate King",
+        "Ira Madan",
+        "Susan Michie",
+        "Andrew K Przybylski",
+        "Roz Shafran",
+        "Angela Sweeney",
+        "Carol M. Worthman",
+        "Lucy Yardley",
+        "Katherine Cowan",
+        "Claire Cope",
+        "Matthew Hotopf",
+        "Edward T. Bullmore"
+      ],
+      "venue": "The Lancet Psychiatry",
+      "abstract": "",
+      "keywords": [
+        "Coronavirus disease 2019 (COVID-19)",
+        "Pandemic",
+        "Call to action",
+        "Multidisciplinary approach",
+        "2019-20 coronavirus outbreak"
+      ],
+      "url": "https://openalex.org/W3015197879",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2098459942",
+      "doi": "https://doi.org/10.1016/s0140-6736(12)61684-5",
+      "title": "Prediction and prevention of the next pandemic zoonosis",
+      "year": 2012,
+      "cited_by_count": 1096,
+      "relevance_score": 634.312,
+      "authors": [
+        "Stephen S. Morse",
+        "Jonna A. K. Mazet",
+        "Mark Woolhouse",
+        "Colin R. Parrish",
+        "Dennis Carroll",
+        "William B. Karesh",
+        "Carlos Zambrana‐Torrelio",
+        "W. Ian Lipkin",
+        "Peter Daszak"
+      ],
+      "venue": "The Lancet",
+      "abstract": "",
+      "keywords": [
+        "Zoonosis",
+        "Pandemic",
+        "Coronavirus disease 2019 (COVID-19)",
+        "2019-20 coronavirus outbreak",
+        "Virology"
+      ],
+      "url": "https://openalex.org/W2098459942",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3135257712",
+      "doi": "https://doi.org/10.1038/s41562-021-01079-8",
+      "title": "A global panel database of pandemic policies (Oxford COVID-19 Government Response Tracker)",
+      "year": 2021,
+      "cited_by_count": 4837,
+      "relevance_score": 617.1285,
+      "authors": [
+        "Thomas Hale",
+        "Noam Angrist",
+        "Rafael Goldszmidt",
+        "Beatriz Kira",
+        "Anna Petherick",
+        "Toby Phillips",
+        "Samuel Webster",
+        "Emily Cameron-Blake",
+        "Laura Hallas",
+        "Saptarshi Majumdar",
+        "Helen Tatlow"
+      ],
+      "venue": "Nature Human Behaviour",
+      "abstract": "COVID-19 has prompted unprecedented government action around the world. We introduce the Oxford COVID-19 Government Response Tracker (OxCGRT), a dataset that addresses the need for continuously updated, readily usable and comparable information on policy measures. From 1 January 2020, the data capture government policies related to closure and containment, health and economic policy for more than 180 countries, plus several countries’ subnational jurisdictions. Policy responses are recorded on ordinal or continuous scales for 19 policy areas, capturing variation in degree of response. We present two motivating applications of the data, highlighting patterns in the timing of policy adoption and subsequent policy easing and reimposition, and illustrating how the data can be combined with behavioural and epidemiological indicators. This database enables researchers and policymakers to explore the empirical effects of policy responses on the spread of COVID-19 cases and deaths, as well as on economic and social welfare. The Oxford COVID-19 Government Response Tracker (OxCGRT) records data on 19 different government COVID-19 policy indicators for over 190 countries. Covering closure and containment, health and economics measures, it creates an evidence base for effective responses.",
+      "keywords": [
+        "Pandemic",
+        "Coronavirus disease 2019 (COVID-19)",
+        "Government (linguistics)",
+        "2019-20 coronavirus outbreak",
+        "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)"
+      ],
+      "url": "https://openalex.org/W3135257712",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2065069831",
+      "doi": "https://doi.org/10.1038/nature04795",
+      "title": "Strategies for mitigating an influenza pandemic",
+      "year": 2006,
+      "cited_by_count": 2297,
+      "relevance_score": 597.30695,
+      "authors": [
+        "Neil M. Ferguson",
+        "Derek A. T. Cummings",
+        "Christophe Fraser",
+        "James Cajka",
+        "Philip C. Cooley",
+        "Donald S. Burke"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Quarantine",
+        "Pandemic",
+        "Isolation (microbiology)",
+        "Attack rate",
+        "Intervention (counseling)"
+      ],
+      "url": "https://openalex.org/W2065069831",
+      "matched_by": "en"
+    }
+  ]
+}

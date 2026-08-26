@@ -1,0 +1,143 @@
+{
+  "problem_id": 9,
+  "problem_cn": "人类该如何更好治理全球塑料垃圾？",
+  "problem_en": "How can we better manage the world’s plastic waste?",
+  "category": "化学",
+  "query_en": "How can we better manage the world’s plastic waste",
+  "query_cn": "人类该如何更好治理全球塑料垃圾",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:35",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2914665624",
+      "doi": "https://doi.org/10.1057/s41599-018-0212-7",
+      "title": "Future scenarios of global plastic waste generation and disposal",
+      "year": 2019,
+      "cited_by_count": 2307,
+      "relevance_score": 926.95514,
+      "authors": [
+        "Laurent Lebreton",
+        "Anthony L. Andrady"
+      ],
+      "venue": "Humanities and Social Sciences Communications",
+      "abstract": "Abstract The accumulation of mismanaged plastic waste (MPW) in the environment is a global growing concern. Knowing with precision where litter is generated is important to target priority areas for the implementation of mitigation policies. In this study, using country-level data on waste management combined with high-resolution distributions and long-term projections of population and the gross domestic product (GDP), we present projections of global MPW generation at ~1 km resolution from now to 2060. We estimated between 60 and 99 million metric tonnes (Mt) of MPW were produced globally in 2015. In a business-as-usual scenario, this figure could triple to 155–265 Mt y −1 by 2060. The future MPW load will continue to be disproportionately high in African and Asian continents even in the future years. However, we show that this growth in plastic waste can be reduced if developing economies significantly invest in waste management infrastructures as their GDP grows in the future and if efforts are made internationally to reduce the fraction of plastic in municipal solid waste. Using our projections, we also demonstrate that the majority of MPW (91%) are transported via watersheds larger than 100 km 2 suggesting that rivers are major pathways for plastic litter to the ocean.",
+      "keywords": [
+        "Plastic waste",
+        "Tonne",
+        "Litter",
+        "Product (mathematics)",
+        "Population"
+      ],
+      "url": "https://openalex.org/W2914665624",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4317566431",
+      "doi": "https://doi.org/10.1007/s41742-023-00507-z",
+      "title": "Plastic Waste: Challenges and Opportunities to Mitigate Pollution and Effective Management",
+      "year": 2023,
+      "cited_by_count": 850,
+      "relevance_score": 543.49194,
+      "authors": [
+        "Md Golam Kibria",
+        "Nahid Imtiaz Masuk",
+        "Rafat Safayet",
+        "Huy Quoc Nguyen",
+        "Monjur Mourshed"
+      ],
+      "venue": "International Journal of Environmental Research",
+      "abstract": "",
+      "keywords": [
+        "Hazardous waste",
+        "Plastic waste",
+        "Waste management",
+        "Sustainable development",
+        "Business"
+      ],
+      "url": "https://openalex.org/W4317566431",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3135027315",
+      "doi": "https://doi.org/10.1007/s42452-021-04234-y",
+      "title": "The plastic waste problem in Malaysia: management, recycling and disposal of local and global plastic waste",
+      "year": 2021,
+      "cited_by_count": 375,
+      "relevance_score": 422.70538,
+      "authors": [
+        "Hui Ling Chen",
+        "Tapan Kumar Nath",
+        "Siewhui Chong",
+        "Vernon Foo",
+        "Chris Gibbins",
+        "Alex M. Lechner"
+      ],
+      "venue": "SN Applied Sciences",
+      "abstract": "Abstract Plastic waste is one of the world’s most pressing human health and environmental concerns. Plastic constitutes the third highest waste source globally, with the total volume of plastic waste growing in-line with increases in the global population and per capita consumption. Malaysia is tracking global trends in both the overall generation of plastic waste and the consumption of single-use plastics and since 2017 has been the world’s largest importer of plastic waste. These elements create a number of major challenges for the country’s waste management system. This review outlines the current state of plastic waste production and management in Malaysia, including options for landfill, recycling and incineration. It presents information on the scale and both the human and ecological risks of plastic waste in the country (i.e. microplastics, landfill, incineration), outlines key plastic waste management policy initiatives (including plastics alternatives such as biodegradable plastics) and highlights key constraints on the success of these. Significant internal constraints stem from the inconsistent application of policy initiatives by state governments, in addition to the lack of public awareness and interest in household recycling. The paper closes by discussing options for and constraints on the switch to biodegradable alternatives and proposes a model of plastic management based on a circular economy approach and solid waste management hierarchy. Success in reducing the problems posed by plastic in Malaysia will require sustained effort at many levels, but positive experiences in other countries give some cause for optimism.",
+      "keywords": [
+        "Plastic waste",
+        "Incineration",
+        "Waste management",
+        "Plastic pollution",
+        "Business"
+      ],
+      "url": "https://openalex.org/W3135027315",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2891799885",
+      "doi": "https://doi.org/10.1016/j.ejpe.2018.07.003",
+      "title": "Solid waste issue: Sources, composition, disposal, recycling, and valorization",
+      "year": 2018,
+      "cited_by_count": 1686,
+      "relevance_score": 393.16406,
+      "authors": [
+        "Hussein I. Abdel‐Shafy",
+        "Mona S. M. Mansour"
+      ],
+      "venue": "Egyptian Journal of Petroleum",
+      "abstract": "Disposal of solid wastes is a stinging and widespread problem in both urban and rural areas in many developed and developing countries. Municipal solid waste (MSW) collection and disposal is one of the major problems of urban environment in most countries worldwide today. MSW management solutions must be financially sustainable, technically feasible, socially, legally acceptable and environmentally friendly. Solid waste management issue is the biggest challenge to the authorities of both small and large cities’. Valorization of food organic waste is one of the important current research areas. The conventional landfill, incineration, composting, and ways of handeling solid wastes are common as mature technologies for waste disposal. Traditionally, the most commonly used technologies for the treatment and valorization of the organic fraction of MSW are composting and anaerobic digestion (AD). The generation of organic solid waste (OSW); worldwide; is dramatically increasing each year. Most of the OSW’s are composed of agricultural waste, household food waste, human and animal wastes, etc. They are normally handled as animal feed, incinerated or disposed to landfill sites. OAW’s are comprised of materials rich in proteins, minerals, and sugars that could be used in other processes as substrates or raw materials.",
+      "keywords": [
+        "Incineration",
+        "Waste management",
+        "Municipal solid waste",
+        "Biodegradable waste",
+        "Food waste"
+      ],
+      "url": "https://openalex.org/W2891799885",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3129319549",
+      "doi": "https://doi.org/10.1016/j.pecs.2020.100901",
+      "title": "The chemistry of chemical recycling of solid plastic waste via pyrolysis and gasification: State-of-the-art, challenges, and future directions",
+      "year": 2021,
+      "cited_by_count": 699,
+      "relevance_score": 380.88025,
+      "authors": [
+        "Onur Dogu",
+        "Matteo Pelucchi",
+        "Ruben Van de Vijver",
+        "Paul Van Steenberge",
+        "Dagmar D’hooge",
+        "Alberto Cuoci",
+        "Marco Mehl",
+        "Alessio Frassoldati",
+        "Tiziano Faravelli",
+        "Kevin M. Van Geem"
+      ],
+      "venue": "Progress in Energy and Combustion Science",
+      "abstract": "",
+      "keywords": [
+        "Pyrolysis",
+        "Plastic waste",
+        "Waste management",
+        "Municipal solid waste",
+        "Chemistry"
+      ],
+      "url": "https://openalex.org/W3129319549",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "problem_id": 81,
+  "problem_cn": "人类能否制造出类似太阳光宽谱非相干强激光？",
+  "problem_en": "Can humans make intense lasers with incoherence comparable to sunlight?",
+  "category": "物理学",
+  "query_en": "Can humans make intense lasers with incoherence comparable to sunlight",
+  "query_cn": "人类能否制造出类似太阳光宽谱非相干强激光",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:58",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2788217838",
+      "doi": "https://doi.org/10.1080/09500340.2018.1454525",
+      "title": "Light, the universe and everything – 12 Herculean tasks for quantum cowboys and black diamond skiers",
+      "year": 2018,
+      "cited_by_count": 7,
+      "relevance_score": 18.966522,
+      "authors": [
+        "Girish Agarwal",
+        "Roland E. Allen",
+        "Iva Bezděková",
+        "Robert W. Boyd",
+        "Goong Chen",
+        "Ronald Hanson",
+        "Dean L. Hawthorne",
+        "Philip Hemmer",
+        "Moochan B. Kim",
+        "Olga Kocharovskaya",
+        "David M. Lee",
+        "Sebastian K. Lidström",
+        "Sebastian K. Lidström",
+        "Suzy Lidström",
+        "Suzy Lidström",
+        "Harald Losert",
+        "Helmut Maier",
+        "John W. Neuberger",
+        "Miles J. Padgett",
+        "Mark Raizen",
+        "Surjeet Rajendran",
+        "Ernst Rasel",
+        "Wolfgang P. Schleich",
+        "Marlan O. Scully",
+        "Gavriil Shchedrin",
+        "Gennady Shvets",
+        "Alexei V. Sokolov",
+        "Anatoly Svidzinsky",
+        "Ronald L. Walsworth",
+        "Rainer Weiss",
+        "Frank Wilczek",
+        "Alan E. Willner",
+        "Eli Yablonovitch",
+        "Nikolay Zheludev"
+      ],
+      "venue": "Journal of Modern Optics",
+      "abstract": "The Winter Colloquium on the Physics of Quantum Electronics (PQE) has been a seminal force in quantum optics and related areas since 1971. It is rather mind-boggling to recognize how the concepts presented at these conferences have transformed scientific understanding and human society. In January 2017, the participants of PQE were asked to consider the equally important prospects for the future, and to formulate a set of questions representing some of the greatest aspirations in this broad field. The result is this multi-authored paper, in which many of the world’s leading experts address the following fundamental questions: (1) What is the future of gravitational wave astronomy? (2) Are there new quantum phases of matter away from equilibrium that can be found and exploited – such as the time crystal? (3) Quantum theory in uncharted territory: What can we learn? (4) What are the ultimate limits for laser photon energies? (5) What are the ultimate limits to temporal, spatial and optical resolution? (6) What novel roles will atoms play in technology? (7) What applications lie ahead for nitrogen-vacancy centres in diamond? (8) What is the future of quantum coherence, squeezing and entanglement for enhanced super-resolution and sensing? (9) How can we solve (some of) humanity’s biggest problems through new quantum technologies? (10) What new understanding of materials and biological molecules will result from their dynamical characterization with free-electron lasers? (11) What new technologies and fundamental discoveries might quantum optics achieve by the end of this century? (12) What novel topological structures can be created and employed in quantum optics?",
+      "keywords": [
+        "Physics",
+        "Quantum entanglement",
+        "Quantum",
+        "Quantum optics",
+        "Theoretical physics"
+      ],
+      "url": "https://openalex.org/W2788217838",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W780274140",
+      "doi": "https://doi.org/10.5821/dissertation-2117-95070",
+      "title": "GNSS reflectometry for land remote sensing applications",
+      "year": 2013,
+      "cited_by_count": 36,
+      "relevance_score": 10.862996,
+      "authors": [
+        "Alejandro Egido"
+      ],
+      "venue": null,
+      "abstract": "Soil moisture and vegetation biomass are two essential parameters from a scienti c and economical point of view. On one hand, they are key for the understanding of the hydrological and carbon cycle. On the other hand, soil moisture is essential for agricultural applications and water management, and vegetation biomass is crucial for regional development programs. Several remote sensing techniques have been used to measure these two parameters. However, retrieving soil moisture and vegetation biomass with the required accuracy, and the appropriate spatial and temporal resolutions still remains a major challenge. The use of Global Navigation Satellite Systems (GNSS) reflected signals as sources of opportunity for measuring soil moisture and vegetation biomass is assessed in this PhD Thesis. This technique, commonly known as GNSS-Reflectometry (GNSS-R), has gained increasing interest among the scienti c community during the last two decades due to its unique characteristics. Previous experimental works have already shown the capabilities of GNSS-R to sense small reflectivity changes on the surface. The use of the co- and cross-polarized reflected signals was also proposed to mitigate nuisance parameters, such as soil surface roughness, in the determination of soil moisture. However, experimental evidence of the suitability of that technique could not be demonstrated. This work analyses from a theoretical and an experimental point of view the capabilities of polarimetric observations of GNSS reflected signals for monitoring soil moisture and vegetation biomass. The Thesis is structured in four main parts. The fi rst part examines the fundamental aspects of the technique and provides a detailed review of the GNSS-R state of the art for soil moisture and vegetation monitoring. The second part deals with the scattering models from land surfaces. A comprehensive description of the formation of scattered signals from rough surfaces is provided. Simulations with current state of the art models for bare and vegetated soils were performed in order to analyze the scattering components of GNSS reflected signals. A simpli ed scattering model was also developed in order to relate in a straightforward way experimental measurements to soil bio-geophysical parameters. The third part reviews the experimental work performed within this research. The development of a GNSS-R instrument for land applications is described, together with the three experimental campaigns carried out in the frame of this PhD Thesis. The analysis of the GNSS-R and ground truth data is also discussed within this part. As predicted by models, it was observed that GNSS scattered signals from natural surfaces are a combination of a coherent and an incoherent scattering components. A data analysis technique was proposed to separate both scattering contributions. The use of polarimetric observations for the determination of soil moisture was demonstrated to be useful under most soil conditions. It was also observed that forests with high levels of biomass could be observed with GNSS reflected signals. The fourth and last part of the Thesis provides an analysis of the technology perspectives. A GNSS-R End-to-End simulator was used to determine the capabilities of the technique to observe di erent soil reflectivity conditions from a low Earth orbiting satellite. It was determined that high accuracy in the estimation of reflectivity could be achieved within reasonable on-ground resolution, as the coherent scattering component is expected to be the predominant one in a spaceborne scenario. The results obtained in this PhD Thesis show the promising potential of GNSS-R measurements for land remote sensing applications, which could represent an excellent complementary observation for a wide range of Earth Observation missions such as SMOS, SMAP, and the recently approved ESA Earth Explorer Mission Biomass. La humedad del suelo y la biomasa de la vegetaci on son dos parametros clave desde un punto de vista tanto cient co como econ omico. Por una parte son esenciales para el estudio del ciclo del agua y del carbono. Por otra parte, la humedad del suelo es esencial para la gesti on de las cosechas y los recursos h dricos, mientras que la biomasa es un par ametro fundamental para ciertos programas de desarrollo. Varias formas de teledetección se han utilizado para la observaci on remota de estos par ametros, sin embargo, su monitorizaci on con la precisi on y resoluci on necesarias es todav a un importante reto tecnol ogico. Esta Tesis evalua la capacidad de medir humedad del suelo y biomasa de la vegetaci on con señales de Sistemas Satelitales de Posicionamiento Global (GNSS, en sus siglas en ingl es) reflejadas sobre la Tierra. La t ecnica se conoce como Reflectometr í a GNSS (GNSS-R), la cual ha ganado un creciente inter es dentro de la comunidad científ ca durante las dos ultimas d ecadas. Experimentos previos a este trabajo ya demostraron la capacidad de observar cambios en la reflectividad del terreno con GNSS-R. El uso de la componente copolar y contrapolar de la señal reflejada fue propuesto para independizar la medida de humedad del suelo de otros par ametros como la rugosidad del terreno. Sin embargo, no se pudo demostrar una evidencia experimental de la viabilidad de la t ecnica. En este trabajo se analiza desde un punto de vista te orico y experimental el uso de la informaci on polarim etrica de la señales GNSS reflejadas sobre el suelo para la determinaci on de humedad y biomasa de la vegetaci on. La Tesis se estructura en cuatro partes principales. En la primera parte se eval uan los aspectos fundamentales de la t ecnica y se da una revisi on detallada del estado del arte para la observaci on de humedad y vegetaci on. En la segunda parte se discuten los modelos de dispersi on electromagn etica sobre el suelo. Simulaciones con estos modelos fueron realizadas para analizar las componentes coherente e incoherente de la dispersi on de la señal reflejada sobre distintos tipos de terreno. Durante este trabajo se desarroll o un modelo de reflexi on simpli cado para poder relacionar de forma directa las observaciones con los par ametros geof sicos del suelo. La tercera parte describe las campañas experimentales realizadas durante este trabajo y discute el an alisis y la comparaci on de los datos GNSS-R con las mediciones in-situ. Como se predice por los modelos, se comprob o experimentalmente que la señal reflejada est a formada por una componente coherente y otra incoherente. Una t ecnica de an alisis de datos se propuso para la separacióon de estas dos contribuciones. Con los datos de las campañas experimentales se demonstr o el bene cio del uso de la informaci on polarim etrica en las señales GNSS reflejadas para la medici on de humedad del suelo, para la mayor a de las condiciones de rugosidad observadas. Tambi en se demostr o la capacidad de este tipo de observaciones para medir zonas boscosas densamente pobladas. La cuarta parte de la tesis analiza la capacidad de la t ecnica para observar cambios en la reflectividad del suelo desde un sat elite en orbita baja. Los resultados obtenidos muestran que la reflectividad del terreno podr a medirse con gran precisi on ya que la componente coherente del scattering ser a la predominante en ese tipo de escenarios. En este trabajo de doctorado se muestran la potencialidades de la t ecnica GNSS-R para observar remotamente par ametros del suelo tan importantes como la humedad del suelo y la biomasa de la vegetaci on. Este tipo de medidas pueden complementar un amplio rango de misiones de observaci on de la Tierra como SMOS, SMAP, y Biomass, esta ultima recientemente aprobada para la siguiente misi on Earth Explorer de la ESA.",
+      "keywords": [
+        "GNSS applications",
+        "Remote sensing",
+        "Environmental science",
+        "Water content",
+        "Reflectometry"
+      ],
+      "url": "https://openalex.org/W780274140",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2166412531",
+      "doi": null,
+      "title": "Sources and gain in photonic random media",
+      "year": 2012,
+      "cited_by_count": 3,
+      "relevance_score": 9.15727,
+      "authors": [
+        "Ramy G. S. El-Dardiry"
+      ],
+      "venue": "AMOLF Institutional Repository (AMOLF)",
+      "abstract": "Troebele en ondoorzichtige materialen worden steeds vaker ingezet als bouwstenen in de optica. Traditioneel worden de eigenschappen van deze materialen onderzocht door licht van buitenaf op het materiaal te laten schijnen. Ramy El-Dardiry onderzocht hoe wanordelijke materialen interactie vertonen met minuscule lichtbronnen die zich binnenin een dergelijk materiaal bevinden. De hoeveelheid licht die dan wordt uitgezonden blijkt afhankelijk te zijn van zowel het type lichtbron als de optische omgeving. In een driedimensionaal systeem zal het uitgezonden licht doorgaans een diffusieproces ondergaan: het licht verspreidt zich dan gemiddeld genomen even sterk in alle richtingen. In een eendimensionaal materiaal laten experimenten zien hoe elektromagnetische straling door middel van interferentie op een specifieke plaats blijft. Daarnaast toont El-Dardiry met verschillende experimenten hoe een combinatie van geëxciteerde lichtbronnen en wanordelijke terugkoppeling kan leiden tot een zogeheten random laser: een speciale laser waarin de conventionele spiegels geheel ontbreken. De kleur van deze lasers blijkt heel goed te controleren met behulp van absorptie. De ontwikkelde experimentele technieken zijn mogelijk toepasbaar in uiteenlopende vakgebieden, van de nanofotonica tot de verfindustrie.",
+      "keywords": [
+        "Art",
+        "Humanities",
+        "Art history",
+        "Theology",
+        "Philosophy"
+      ],
+      "url": "https://openalex.org/W2166412531",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3045744667",
+      "doi": "https://doi.org/10.3390/books978-3-03842-223-5",
+      "title": "Sensors and Techniques for 3D Object Modeling in Underwater Environments",
+      "year": 2016,
+      "cited_by_count": 4,
+      "relevance_score": 5.3347054,
+      "authors": [
+        "Maas, Hans-Gerd",
+        "Menna, Fabio"
+      ],
+      "venue": null,
+      "abstract": "fbk.eu) in Trento, Italy. His research activities concern the design of new 3D imaging systems based on",
+      "keywords": [
+        "Underwater",
+        "Computer science",
+        "Object (grammar)",
+        "Environmental science",
+        "Geology"
+      ],
+      "url": "https://openalex.org/W3045744667",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3166550103",
+      "doi": null,
+      "title": "Laboratory Manual for Physics of Lasers and Modern Optics, 13th ed",
+      "year": 2014,
+      "cited_by_count": 0,
+      "relevance_score": 4.799145,
+      "authors": [
+        "Stephen Ducharme"
+      ],
+      "venue": "Lincoln (University of Nebraska)",
+      "abstract": "You will encounter challenging puzzles and explore new and exciting physical phenomena. You will be provided with sufficient tools, guidance and other resources, but what you learn depends on your inquisitiveness and creativity. This laboratory course is designed to serve two purposes: 1) To explore a variety of physical principles using the fascinating and diverse behavior of light. 2) To learn some of the principles behind the pervasive and expanding area of optical and laser technology. This course is suitable for students of science, life sciences, and engineering, or any student who is curious about light. The prerequisites are the level of quantitative sophomore Physics 142 or Physics 212 or an equivalent background covering basic electromagnetism and optics. A quantitative laboratory course in the sciences or in engineering is also a prerequisite. Lasers and modern optics is perhaps the fastest growing area of scientific research and technological development. Most professionals in physics, astronomy, other sciences, and most engineering disciplines will employ lasers or modern optical technology at some point in their careers. For example, lasers are used in astronomy, biology, chemistry, dentistry, entertainment, forestry, geology, holography, inspection, laproscopy, medicine, nuclear physics, ophthalmology, physics, recycling, surgery, telecommunications, urology, video, welding, xerography, zoology– the list goes on and on. Experiment 1: ................................. Laser Safety Experiment 2: ....................... Optical Detector Physics Experiment 3: ................ Fundamentals of Laser Operation Experiment 4: ........................... Geometrical Optics Experiment 5: ................................. Polarization Experiment 6: ............................. Gaussian Beams Experiment 7: ............................... Optical Fibers Experiment 8: .................... Semiconductor Diode Lasers Experiment 9: ......................... Optical Spectrometers Experiment 10: ............ Holography and Phase Conjugation Experiment 11: ................. Electro- and Magneto-Optics Experiment 12: ................... Doppler-Free Spectroscopy Experiment 13: ................................ Coherence Experiment 14: ............................... Interference Experiment 15: ................ Diffraction and Fourier Optics",
+      "keywords": [
+        "Laser",
+        "Optics",
+        "Physics",
+        "Engineering physics"
+      ],
+      "url": "https://openalex.org/W3166550103",
+      "matched_by": "en"
+    }
+  ]
+}

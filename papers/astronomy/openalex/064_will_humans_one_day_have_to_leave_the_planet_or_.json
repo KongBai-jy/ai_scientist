@@ -1,0 +1,132 @@
+{
+  "problem_id": 64,
+  "problem_cn": "未来人类是否必须离开地球，否则面临灭亡？",
+  "problem_en": "Will humans one day have to leave the planet (or die trying)?",
+  "category": "天文学",
+  "query_en": "Will humans one day have to leave the planet (or die trying)",
+  "query_cn": "未来人类是否必须离开地球，否则面临灭亡",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:00",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2463126385",
+      "doi": "https://doi.org/10.1215/22011919-3527704",
+      "title": "Cosmoecological Sheep and the Arts of Living on a Damaged Planet",
+      "year": 2016,
+      "cited_by_count": 122,
+      "relevance_score": 162.69579,
+      "authors": [
+        "Vinciane Despret",
+        "Michel Meuret"
+      ],
+      "venue": "Environmental Humanities",
+      "abstract": "Abstract In recent decades, in the South of France some young people from urban backgrounds have chosen to become shepherds and to learn to reconnect with the herding practices that many livestock breeders had abandoned under the pressure of agricultural modernization policies. In some cases they have found themselves entrusted with sheep that are as naive about herding as they themselves were. Before their introduction to transhumance—seasonal movement between pastures—these animals were primarily confined and fed indoors or in small fenced areas. The shepherds had to learn how to lead, how to understand other modes of living, how to teach their sheep what is edible and what is not, and how to form a flock; the sheep had to learn how to “compose with” dogs and humans, to acquire new feeding habits, a new ethos, and moreover, new ways of living in an enlarged world. These practices cannot be reduced to a livestock economy: shepherds consider herding a work of transformation and ecological recuperation—of the land, of the sheep, of ways of being together. Learning the “arts of living on a damaged planet,” as Anna Tsing has termed it, humans and animals are making their own contributions to a new cosmoecology, creating cosmoecological connections and contributing to what Ghassan Hage has called alter-politics.",
+      "keywords": [
+        "Herding",
+        "Livestock",
+        "Ethos",
+        "Modernization theory",
+        "Agriculture"
+      ],
+      "url": "https://openalex.org/W2463126385",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4388833111",
+      "doi": "https://doi.org/10.21201/2023.000001",
+      "title": "Climate Equality: A planet for the 99%",
+      "year": 2023,
+      "cited_by_count": 87,
+      "relevance_score": 143.27911,
+      "authors": [
+        "Ashfaq Khalfan",
+        "Astrid Nilsson Lewis",
+        "Carlos Aguilar",
+        "Jaqueline Persson",
+        "Max Lawson",
+        "Nafkote Dabi",
+        "Safa Jayoussi",
+        "Sunil Acharya"
+      ],
+      "venue": null,
+      "abstract": "The world faces twin crises of climate breakdown and runaway inequality. The richest people, corporations and countries are destroying the world with their huge carbon emissions. Meanwhile, people living in poverty, those experiencing marginalization, and countries in the Global South are those impacted the hardest. Women and girls, Indigenous Peoples, people living in poverty and other groups experiencing discrimination are particularly at a disadvantage. The consequences of climate breakdown are felt in all parts of the world and by most people, yet only the richest people and countries have the wealth, power and influence to protect themselves. With that power comes huge responsibility. If no action is taken, the richest will continue to burn through the carbon we have left to use while keeping the global temperature below the safe limit of 1.5°C, destroying any chance of ending poverty and ensuring equality. The world needs an equal transformation. Only a radical reduction in inequality, transformative climate action and fundamentally shifting our economic goals as a society can save our planet while ensuring wellbeing for all.",
+      "keywords": [
+        "Poverty",
+        "Indigenous",
+        "Inequality",
+        "Development economics",
+        "Extreme poverty"
+      ],
+      "url": "https://openalex.org/W4388833111",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2057530277",
+      "doi": "https://doi.org/10.1586/ecp.11.6",
+      "title": "Green pharmacy and pharmEcovigilance: prescribing and the planet",
+      "year": 2011,
+      "cited_by_count": 84,
+      "relevance_score": 138.03656,
+      "authors": [
+        "Christian G. Daughton",
+        "Ilene S. Ruhoy"
+      ],
+      "venue": "Expert Review of Clinical Pharmacology",
+      "abstract": "Active pharmaceutical ingredients (APIs) are ubiquitous environmental contaminants, resulting primarily from excretion and bathing and from disposal of leftover drugs by consumers and healthcare facilities. Although prudent disposal of leftover drugs has attracted the most attention for reducing API levels in the aquatic environment, a more effective approach would prevent the generation of leftover drugs in the first place. Many aspects of the practice of medicine and pharmacy can be targeted for reducing environmental contamination by APIs. These same modifications--focused on treating humans and the environment as a single, integral patient--could also have collateral outcomes with improved therapeutic outcomes, and with a reduced incidence of unintended poisonings, drug interactions and drug diversion, and lower consumer costs.",
+      "keywords": [
+        "Medicine",
+        "Pharmacy",
+        "Drug",
+        "Intensive care medicine",
+        "Pharmacology"
+      ],
+      "url": "https://openalex.org/W2057530277",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2393569533",
+      "doi": "https://doi.org/10.1353/book.72149",
+      "title": "Reflections on Human Nature",
+      "year": 2019,
+      "cited_by_count": 243,
+      "relevance_score": 132.70598,
+      "authors": [
+        "Arthur O. Lovejoy"
+      ],
+      "venue": "Johns Hopkins University Press eBooks",
+      "abstract": "One of the potential uses of a preface is to explain the title of a book; and at least one word in the present title seems to need some explanation-the word \"re flections.\"The term does not explain whose reflections are in question; but this happens to be a convenient ambiguity, because part of the volume is an attempt at a historical ac count of the conceptions held---chiefly since the seventeenth and eighteenth centuries-of the desires which motivate human behavior, and of the implications of these theories for economics, politics, and ethics.But the book also con tains some observations and critical appraisals by the present author on the same subject, and also some psychological theorems which seem to him unfamiliar and of high im portance-namely, the distinction between terminal and ad jectival values and the peculiarly complex character of the influence exercised by man's self-consciousness upon his af fective and appetitive life.One of the lectures, the third, is wholly devoted to this topic and it manifests itself also in some of the lectures primarily historical in their theme.The lectures were delivered originally on the Cooper Foundation at Swarthmore College in 1941.I regret the excessive time which because of various circumstances has vi PREFACE elapsed between their original deliverance and their present appearance in print.Even after this long interval, the book would hardly have reached publication without the aid of Mr.",
+      "keywords": [
+        "Connotation",
+        "Happiness",
+        "Consciousness",
+        "Epistemology",
+        "Process (computing)"
+      ],
+      "url": "https://openalex.org/W2393569533",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2023015865",
+      "doi": "https://doi.org/10.3758/bf03196322",
+      "title": "Six views of embodied cognition",
+      "year": 2002,
+      "cited_by_count": 4666,
+      "relevance_score": 129.25279,
+      "authors": [
+        "Margaret Wilson"
+      ],
+      "venue": "Psychonomic Bulletin & Review",
+      "abstract": "",
+      "keywords": [
+        "Embodied cognition",
+        "Psychology",
+        "Cognition",
+        "Cognitive psychology",
+        "Cognitive science"
+      ],
+      "url": "https://openalex.org/W2023015865",
+      "matched_by": "en"
+    }
+  ]
+}

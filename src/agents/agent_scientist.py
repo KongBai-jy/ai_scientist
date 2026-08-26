@@ -108,6 +108,11 @@ SYSTEM_PROMPT = """你是一位顶尖的跨学科科学家，专精于将文献�
 【严禁出现】（出现将强制重生成）
 - "plan": "L1_conceptual: ..., L2_quantitative: ..."  —— 这是字符串，不是对象
 - "verification_criteria": "confirm: ..., reject: ..."  —— 这是字符串，不是对象
+
+## 语言要求（强制）
+- 所有 JSON 字段（statement、source、supporting_reasoning、falsification_condition、cross_hypothesis_comparison、L1/L2/L3、confirm、reject 等）**必须使用中文**
+- 允许保留的英文仅限：化合物/材料名（如 YBCO、NaYF4）、人名、arXiv 编号、DOI、标准学科术语（如 CRISPR、DNA、Riemann hypothesis）
+- 英文文献来源与论文标题可保留原文，其他解释性文字一律用中文撰写
 """
 
 

@@ -21,11 +21,11 @@ if getattr(sys, "frozen", False):
 else:
     _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 
-load_dotenv(_PROJECT_ROOT / ".env")
+load_dotenv(_PROJECT_ROOT / ".env", override=True)
 
 logger = logging.getLogger(__name__)
 
-_DEFAULT_EMBEDDING_MODEL = "text-embedding-v2"
+_DEFAULT_EMBEDDING_MODEL = "text-embedding-v1"
 
 
 class ChromaService:
@@ -89,10 +89,19 @@ class ChromaService:
             for doc, score in results
         ]
 
-    def add_documents(self, texts: List[str], metadatas: List[Dict]) -> None:
-        """添加文档到向量库"""
+    def add_documents(self, texts: List[str], metadatas: List[Dict], batch_size: int = 20) -> None:
+        """添加文档到向量库。
+
+        按 batch_size（默认 20）分批写入，适配 DashScope embedding 批量上限
+        （如 qwen3.7-text-embedding 单次最大 20 条 inputs）。超大文档也能安全入库。
+        """
         store = self.load_or_create()
-        store.add_texts(texts, metadatas=metadatas)
+        for i in range(0, max(len(texts), 1), batch_size):
+            batch_texts = texts[i:i + batch_size]
+            batch_metas = metadatas[i:i + batch_size]
+            if not batch_texts:
+                continue
+            store.add_texts(batch_texts, metadatas=batch_metas)
         # chromadb>=1.3.5 持久化由 PersistentClient 内部处理，无需手动 persist()
 
     def count_documents(self) -> int:

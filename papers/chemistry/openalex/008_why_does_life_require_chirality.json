@@ -1,0 +1,140 @@
+{
+  "problem_id": 8,
+  "problem_cn": "为什么生命分子需要手性？",
+  "problem_en": "Why does life require chirality?",
+  "category": "化学",
+  "query_en": "Why does life require chirality",
+  "query_cn": "为什么生命分子需要手性",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:31",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2153900045",
+      "doi": "https://doi.org/10.1002/anie.199511431",
+      "title": "Stereospecific Olefin Polymerization with Chiral Metallocene Catalysts",
+      "year": 1995,
+      "cited_by_count": 2715,
+      "relevance_score": 672.17303,
+      "authors": [
+        "Hans H. Brintzinger",
+        "David M. Fischer",
+        "Rolf Mülhaupt",
+        "Bernhard Rieger",
+        "Robert M. Waymouth"
+      ],
+      "venue": "Angewandte Chemie International Edition in English",
+      "abstract": "Abstract Current studies on novel, metallocenebased catalysts for the polymerization of α‐olefins have far‐reaching implications for the development of new materials as well as for the understanding of basic reaction mechanisms responsible for the growth of a polymer chain at a catalyst center and the control of its stereoregularity. In contrast to heterogeneous Ziegler–Natta catalysts, polymerization by a homogeneous, metallocene‐based catalyst occurs principally at a single type of metal center with a defined coordination environment. This makes it possible to correlate metallocene structures with polymer properties such as molecular weight, stereochemical microstructure, crystallization behavior, and mechanical properties. Homogeneous catalyst systems now afford efficient control of regio‐ and stereoregularities, molecular weights and molecular weight distributions, and comonomer incorporation. By providing a means for the homo‐ and copolymerization of cyclic olefins, the cyclopolymerization of dienes, and access even to functionalized polyolefins, these catalysts greatly expand the range and versatility of technically feasible types of polyolefin materials. For corrigendum see DOI: 10.1002/anie.199513681",
+      "keywords": [
+        "Metallocene",
+        "Comonomer",
+        "Polyolefin",
+        "Post-metallocene catalyst",
+        "Polymerization"
+      ],
+      "url": "https://openalex.org/W2153900045",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2278556855",
+      "doi": "https://doi.org/10.1016/j.ppnp.2016.01.001",
+      "title": "Chiral magnetic and vortical effects in high-energy nuclear collisions—A status report",
+      "year": 2016,
+      "cited_by_count": 746,
+      "relevance_score": 304.26007,
+      "authors": [
+        "Dmitri E. Kharzeev",
+        "Jinfeng Liao",
+        "S. A. Voloshin",
+        "G. Wang"
+      ],
+      "venue": "Progress in Particle and Nuclear Physics",
+      "abstract": "",
+      "keywords": [
+        "Physics",
+        "Quark–gluon plasma",
+        "Particle physics",
+        "Dissipative system",
+        "Quantum chromodynamics"
+      ],
+      "url": "https://openalex.org/W2278556855",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2509940547",
+      "doi": "https://doi.org/10.1111/nph.14178",
+      "title": "Why do plants produce so many terpenoid compounds?",
+      "year": 2016,
+      "cited_by_count": 723,
+      "relevance_score": 289.4795,
+      "authors": [
+        "Eran Pichersky",
+        "Robert A. Raguso"
+      ],
+      "venue": "New Phytologist",
+      "abstract": "All plants synthesize a suite of several hundred terpenoid compounds with roles that include phytohormones, protein modification reagents, anti-oxidants, and more. Different plant lineages also synthesize hundreds of distinct terpenoids, with the total number of such specialized plant terpenoids estimated in the scores of thousands. Phylogenetically restricted terpenoids are implicated in defense or in the attraction of beneficial organisms. A popular hypothesis is that the ability of plants to synthesize new compounds arose incrementally by selection when, as a result of gradual changes in their biotic partners and enemies, the 'old' plant compounds were no longer effective, a process dubbed the 'coevolutionary arms race'. Another hypothesis posits that often the sheer diversity of such compounds provides benefits that a single compound cannot. In this article, we review the unique features of the biosynthetic apparatus of terpenes in plants that facilitate the production of large numbers of distinct terpenoids in each species and how facile genetic and biochemical changes can lead to the further diversification of terpenoids. We then discuss evidence relating to the hypotheses that given ecological functions may be enhanced by the presence of mixtures of terpenes and that the acquisition of new functions by terpenoids may favor their retention once the original functions are lost.",
+      "keywords": [
+        "Terpenoid",
+        "Terpene",
+        "Biology",
+        "Diversification (marketing strategy)",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W2509940547",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2027129466",
+      "doi": "https://doi.org/10.3390/sym6030781",
+      "title": "Chlorophylls, Symmetry, Chirality, and Photosynthesis",
+      "year": 2014,
+      "cited_by_count": 248,
+      "relevance_score": 239.99931,
+      "authors": [
+        "Mathias O. Senge",
+        "Aoife A. Ryan",
+        "Kristie A. Letchford",
+        "Stuart A. MacGowan",
+        "Tamara Mielke"
+      ],
+      "venue": "Symmetry",
+      "abstract": "Chlorophylls are a fundamental class of tetrapyrroles and function as the central reaction center, accessory and photoprotective pigments in photosynthesis. Their unique individual photochemical properties are a consequence of the tetrapyrrole macrocycle, the structural chemistry and coordination behavior of the phytochlorin system, and specific substituent pattern. They achieve their full potential in solar energy conversion by working in concert in highly complex, supramolecular structures such as the reaction centers and light-harvesting complexes of photobiology. The biochemical function of these structures depends on the controlled interplay of structural and functional principles of the apoprotein and pigment cofactors. Chlorophylls and bacteriochlorophylls are optically active molecules with several chiral centers, which are necessary for their natural biological function and the assembly of their supramolecular complexes. However, in many cases the exact role of chromophore stereochemistry in the biological context is unknown. This review gives an overview of chlorophyll research in terms of basic function, biosynthesis and their functional and structural role in photosynthesis. It highlights aspects of chirality and symmetry of chlorophylls to elicit further interest in their role in nature.",
+      "keywords": [
+        "Tetrapyrrole",
+        "Context (archaeology)",
+        "Chromophore",
+        "Supramolecular chemistry",
+        "Chemistry"
+      ],
+      "url": "https://openalex.org/W2027129466",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2096801006",
+      "doi": "https://doi.org/10.1038/nchem.1264",
+      "title": "Selection of supramolecular chirality by application of rotational and magnetic forces",
+      "year": 2012,
+      "cited_by_count": 253,
+      "relevance_score": 212.19818,
+      "authors": [
+        "Norberto Micali",
+        "Hans Engelkamp",
+        "P. G. van Rhee",
+        "Peter C. M. Christianen",
+        "Luigi Monsù Scolaro",
+        "J. C. Maan"
+      ],
+      "venue": "Nature Chemistry",
+      "abstract": "",
+      "keywords": [
+        "Supramolecular chemistry",
+        "Homochirality",
+        "Chemistry",
+        "Chirality (physics)",
+        "Molecule"
+      ],
+      "url": "https://openalex.org/W2096801006",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "problem_id": 84,
+  "problem_cn": "“万物理论”是否能够实现？",
+  "problem_en": "Will there ever be a “theory of everything”?",
+  "category": "物理学",
+  "query_en": "Will there ever be a “theory of everything”",
+  "query_cn": "“万物理论”是否能够实现",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:42",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4388392524",
+      "doi": "https://doi.org/10.1093/oso/9780192807212.001.0001",
+      "title": "New Theories of Everything",
+      "year": 2007,
+      "cited_by_count": 55,
+      "relevance_score": 190.18767,
+      "authors": [
+        "John D. Barrow"
+      ],
+      "venue": null,
+      "abstract": "Abstract Will we ever discover a single scientific theory that tells us everything that has happened, and everything that will happen, on every level in the Universe? The quest for the theory of everything - a single key that unlocks all the secrets of the Universe - is no longer a pipe-dream, but the focus of some of our most exciting research about the structure of the cosmos. But what might such a theory look like? What would it mean? And how close are we to getting there? In New Theories of Everything, John D. Barrow describes the ideas and controversies surrounding the ultimate explanation. Updating his earlier work Theories of Everything with the very latest theories and predictions, he tells of the M-theory of superstrings and multiverses, of speculations about the world as a computer program, and of new ideas of computation and complexity. But this is not solely a book about modern ideas in physics -- Barrow also considers and reflects on the philosophical and cultural consequences of those ideas, and their implications for our own existence in the world. Far from there being a single theory uniquely specifying the constants and forces of nature, the picture today is of a vast landscape of different logically possible laws and constants in many dimensions, of which our own world is but a shadow: a tiny facet of a higher dimensional reality. But this is not to say we should give up in bewilderment: Barrow shows how many rich and illuminating theories and questions arise, and what this may mean for our understanding of our own place in the cosmos.",
+      "keywords": [
+        "Theory of everything (philosophy)",
+        "Epistemology",
+        "Scientific theory",
+        "Shadow (psychology)",
+        "Superstring theory"
+      ],
+      "url": "https://openalex.org/W4388392524",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2031031977",
+      "doi": "https://doi.org/10.1002/cplx.20293",
+      "title": "Toward a semantic general theory of everything",
+      "year": 2009,
+      "cited_by_count": 38,
+      "relevance_score": 131.05609,
+      "authors": [
+        "Alexei V. Samsonovich",
+        "Rebecca Goldin",
+        "Giorgio A. Ascoli"
+      ],
+      "venue": "Complexity",
+      "abstract": "Abstract The notion of a universal semantic cognitive map is introduced as a general indexing space for semantics, useful to reduce semantic relations to geometric and topological relations. As a first step in designing the concept, the notion of semantics is operationalized in terms of human subjective experience and is related to the concept of spatial position. Then synonymy and antonymy are introduced in geometrical terms. Further analysis building on previous studies of the authors indicates that the universal semantic cognitive map should be locally low‐dimensional. This essay ends with a proposal to develop a metric system for subjective experiences based on the outlined approach. We conclude that a computationally defined universal semantic cognitive map is a necessary tool for the emerging new science of the mind: a scientific paradigm that includes subjective experience as an object of study. © 2009 Wiley Periodicals, Inc. Complexity, 2010",
+      "keywords": [
+        "Operationalization",
+        "Computer science",
+        "Semantics (computer science)",
+        "Search engine indexing",
+        "Object (grammar)"
+      ],
+      "url": "https://openalex.org/W2031031977",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2146387620",
+      "doi": "https://doi.org/10.3390/a3040329",
+      "title": "A Complete Theory of Everything (Will Be Subjective)",
+      "year": 2010,
+      "cited_by_count": 25,
+      "relevance_score": 129.36661,
+      "authors": [
+        "Marcus Hütter"
+      ],
+      "venue": "Algorithms",
+      "abstract": "Increasingly encompassing models have been suggested for our world. Theories range from generally accepted to increasingly speculative to apparently bogus. The progression of theories from ego- to geo- to helio-centric models to universe and multiverse theories and beyond was accompanied by a dramatic increase in the sizes of the postulated worlds, with humans being expelled from their center to ever more remote and random locations. Rather than leading to a true theory of everything, this trend faces a turning point after which the predictive power of such theories decreases (actually to zero). Incorporating the location and other capacities of the observer into such theories avoids this problem and allows to distinguish meaningful from predictively meaningless theories. This also leads to a truly complete theory of everything consisting of a (conventional objective) theory of everything plus a (novel subjective) observer process. The observer localization is neither based on the controversial anthropic principle, nor has it anything to do with the quantum-mechanical observation process. The suggested principle is extended to more practical (partial, approximate, probabilistic, parametric) world models (rather than theories of everything). Finally, I provide a justification of Ockham’s razor, and criticize the anthropic principle, the doomsday argument, the no free lunch theorem, and the falsifiability dogma.",
+      "keywords": [
+        "Anthropic principle",
+        "Observer (physics)",
+        "Falsifiability",
+        "Epistemology",
+        "Theory of everything (philosophy)"
+      ],
+      "url": "https://openalex.org/W2146387620",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3004092333",
+      "doi": "https://doi.org/10.1007/jhep05(2020)039",
+      "title": "A little theory of everything, with heavy neutral leptons",
+      "year": 2020,
+      "cited_by_count": 40,
+      "relevance_score": 125.619446,
+      "authors": [
+        "James Cline",
+        "Matteo Puel",
+        "Takashi Toma"
+      ],
+      "venue": "Journal of High Energy Physics",
+      "abstract": "Abstract Recently a new model of “Affleck-Dine inflation” was presented, that produces the baryon asymmetry from a complex inflaton carrying baryon number, while being consistent with constraints from the cosmic microwave background. We adapt this model such that the inflaton carries lepton number, and communicates the lepton asymmetry to the standard model baryons via quasi-Dirac heavy neutral leptons (HNLs) and sphalerons. One of these HNLs, with mass $$ \\underset{\\sim }{<} $$ < ~ 4.5 GeV, can be (partially) asymmetric dark matter (DM), whose asymmetry is determined by that of the baryons. Its stability is directly related to the vanishing of the lightest neutrino mass. Neutrino masses are generated by integrating out heavy sterile neutrinos whose mass is above the inflation scale. The model provides an economical origin for all of the major ingredients missing from the standard model: inflation, baryogenesis, neutrino masses, and dark matter. The HNLs can be probed in fixed-target experiments like SHiP, possibly manifesting $$ N-\\overline{N} $$ N − N ¯ oscillations. A light singlet scalar, needed for depleting the DM symmetric component, can be discovered in beam dump experiments and searches for rare decays, possibly explaining anomalous events recently observed by the KOTO collaboration. The DM HNL is strongly constrained by direct searches, and could have a cosmologically interesting self-interaction cross section.",
+      "keywords": [
+        "Physics",
+        "Particle physics",
+        "Inflaton",
+        "Lepton",
+        "Neutrino"
+      ],
+      "url": "https://openalex.org/W3004092333",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4256549094",
+      "doi": "https://doi.org/10.4324/9780203880289",
+      "title": "From Economics Imperialism to Freakonomics",
+      "year": 2009,
+      "cited_by_count": 235,
+      "relevance_score": 122.984665,
+      "authors": [
+        "Ben Fine",
+        "Dimitris Milonakis"
+      ],
+      "venue": null,
+      "abstract": "Is or has economics ever been the imperial social science? Could or should it ever be so? These are the central concerns of this book. It involves a critical reflection on the process of how economics became the way it is, in terms of a narrow and intolerant orthodoxy, that has, nonetheless, increasingly directed its attention to appropriating the subject matter of other social sciences through the process termed \"economics imperialism\". In other words, the book addresses the shifting boundaries between economics and the other social sciences as seen from the confines of the dismal science, with some reflection on the responses to the economic imperialists by other disciplines. Significantly, an old economics imperialism is identified of the \"as if market\" style most closely associated with Gary Becker, the public choice theory of Buchanan and Tullock and cliometrics. But this has given way to a more \"revolutionary\" form of economics imperialism associated with the information-theoretic economics of Akerlof and Stiglitz, and the new institutional economics of Coase, Wiliamson and North. Embracing one \"new\" field after another, economics imperialism reaches its most extreme version in the form of \"freakonomics\", the economic theory of everything on the basis of the most shallow principles. By way of contrast and as a guiding critical thread, a thorough review is offered of the appropriate principles underpinning political economy and its relationship to social science, and how these have been and continue to be deployed. The case is made for political economy with an interdisciplinary character, able to bridge the gap between economics and other social sciences, and draw upon and interrogate the nature of contemporary capitalism.",
+      "keywords": [
+        "Economics",
+        "Neoclassical economics",
+        "Political science"
+      ],
+      "url": "https://openalex.org/W4256549094",
+      "matched_by": "en"
+    }
+  ]
+}

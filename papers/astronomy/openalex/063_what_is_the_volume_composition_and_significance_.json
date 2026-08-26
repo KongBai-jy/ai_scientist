@@ -1,0 +1,153 @@
+{
+  "problem_id": 63,
+  "problem_cn": "深部生物圈的体积、成分，意义是什么？",
+  "problem_en": "What is the volume, composition, and significance of the deep biosphere?",
+  "category": "天文学",
+  "query_en": "What is the volume, composition, and significance of the deep biosphere",
+  "query_cn": "深部生物圈的体积、成分，意义是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:25:56",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W40925381",
+      "doi": "https://doi.org/10.3133/pp440g",
+      "title": "Chemical composition of rivers and lakes",
+      "year": 1963,
+      "cited_by_count": 746,
+      "relevance_score": 247.37038,
+      "authors": [
+        "D. A. Livingstone"
+      ],
+      "venue": "USGS professional paper",
+      "abstract": "J. Chemistry of rock-forming minerals K. Volcanic emanations, by",
+      "keywords": [
+        "Composition (language)",
+        "Chemical composition",
+        "Environmental science",
+        "Hydrology (agriculture)",
+        "Geography"
+      ],
+      "url": "https://openalex.org/W40925381",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2323286993",
+      "doi": "https://doi.org/10.5670/oceanog.2010.62",
+      "title": "The Geological History of Deep-Sea Volcanoes: Biosphere, Hydrosphere, and Lithosphere Interactions",
+      "year": 2010,
+      "cited_by_count": 149,
+      "relevance_score": 233.66122,
+      "authors": [
+        "Hubert Staudigel",
+        "David A. Clague"
+      ],
+      "venue": "Oceanography",
+      "abstract": "emergence of a submarine volcano near Nukualofa, tonga, March 18, 2009. The eruption column displays two very characteristic features for shallow-submarine eruptions, base surges (light colored) that spread out horizontally at the base and \"cocks' tail\" tephra jets that emerge from the center of the column.",
+      "keywords": [
+        "Hydrosphere",
+        "Biosphere",
+        "Lithosphere",
+        "Volcano",
+        "Geology"
+      ],
+      "url": "https://openalex.org/W2323286993",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3132055612",
+      "doi": "https://doi.org/10.1073/pnas.2011585118",
+      "title": "Climate control on terrestrial biospheric carbon turnover",
+      "year": 2021,
+      "cited_by_count": 171,
+      "relevance_score": 215.18167,
+      "authors": [
+        "Timothy I. Eglinton",
+        "Valier Galy",
+        "Jordon Hemingway",
+        "Xiaojuan Feng",
+        "Hongyan Bao",
+        "Thomas M. Blattmann",
+        "Angela F. Dickens",
+        "Hannah Gies",
+        "Liviu Giosan",
+        "Negar Haghipour",
+        "Pengfei Hou",
+        "Maarten Lupker",
+        "Cameron McIntyre",
+        "Daniel B. Montluçon",
+        "Bernhard Peucker‐Ehrenbrink",
+        "Camilo Ponton",
+        "Enno Schefuß",
+        "Melissa Schwab",
+        "Britta Voß",
+        "Lukas Wacker",
+        "Ying Wu",
+        "Meixun Zhao"
+      ],
+      "venue": "Proceedings of the National Academy of Sciences",
+      "abstract": "C ages, implicating OC cycling within soils as a primary control on exported biomarker ages and revealing a broad distribution of soil OC reactivities. The ubiquitous occurrence of a long-lived soil OC pool suggests soil OC is globally vulnerable to perturbations by future temperature and precipitation increase. Scaling of riverine biospheric-carbon ages with soil OC turnover shows the former can constrain the sensitivity of carbon dynamics to environmental controls on broad spatial scales. Extracting this information from fluvially dominated sedimentary sequences may inform past variations in soil OC turnover in response to anthropogenic and/or climate perturbations. In turn, monitoring riverine OC composition may help detect future climate-change-induced perturbations of soil OC turnover and stocks.",
+      "keywords": [
+        "Environmental science",
+        "Soil carbon",
+        "Soil water",
+        "Carbon cycle",
+        "Terrestrial ecosystem"
+      ],
+      "url": "https://openalex.org/W3132055612",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2909148626",
+      "doi": "https://doi.org/10.1111/nph.15681",
+      "title": "Modelling water fluxes in plants: from tissues to biosphere",
+      "year": 2019,
+      "cited_by_count": 236,
+      "relevance_score": 214.42876,
+      "authors": [
+        "Maurizio Mencuccini",
+        "Stefano Manzoni",
+        "Bradley Christoffersen"
+      ],
+      "venue": "New Phytologist",
+      "abstract": "Contents Summary 1207 I. Introduction 1207 II. A brief history of modelling plant water fluxes 1208 III. Main components of plant water transport models 1208 IV. Stand-scale water fluxes and coupling to climate and soil 1213 V. Water fluxes in terrestrial biosphere models and feedbacks to community dynamics 1215 VI. Outstanding challenges in modelling water fluxes in the soil-plant-atmosphere continuum 1217 Acknowledgements 1218 References 1218 SUMMARY: Models of plant water fluxes have evolved from studies focussed on understanding the detailed structure and functioning of specific components of the soil-plant-atmosphere (SPA) continuum to architectures often incorporated inside eco-hydrological and terrestrial biosphere (TB) model schemes. We review here the historical evolution of this field, examine the basic structure of a simplified individual-based model of plant water transport, highlight selected applications for specific ecological problems and conclude by examining outstanding issues requiring further improvements in modelling vegetation water fluxes. We particularly emphasise issues related to the scaling from tissue-level traits to individual-based predictions of water transport, the representation of nonlinear and hysteretic behaviour in soil-xylem hydraulics and the need to incorporate knowledge of hydraulics within broader frameworks of plant ecological strategies and their consequences for predicting community demography and dynamics.",
+      "keywords": [
+        "Biosphere",
+        "Environmental science",
+        "Transpiration",
+        "Ecology",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2909148626",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2171911230",
+      "doi": "https://doi.org/10.1111/gbi.12100",
+      "title": "Deep‐biosphere consortium of fungi and prokaryotes in Eocene subseafloor basalts",
+      "year": 2014,
+      "cited_by_count": 76,
+      "relevance_score": 186.71141,
+      "authors": [
+        "Stefan Bengtson",
+        "Magnus Ivarsson",
+        "Alberto Astolfo",
+        "Veneta Belivanova",
+        "Curt Broman",
+        "Federica Marone",
+        "Marco Stampanoni"
+      ],
+      "venue": "Geobiology",
+      "abstract": "The deep biosphere of the subseafloor crust is believed to contain a significant part of Earth's biomass, but because of the difficulties of directly observing the living organisms, its composition and ecology are poorly known. We report here a consortium of fossilized prokaryotic and eukaryotic micro-organisms, occupying cavities in deep-drilled vesicular basalt from the Emperor Seamounts, Pacific Ocean, 67.5 m below seafloor (mbsf). Fungal hyphae provide the framework on which prokaryote-like organisms are suspended like cobwebs and iron-oxidizing bacteria form microstromatolites (Frutexites). The spatial inter-relationships show that the organisms were living at the same time in an integrated fashion, suggesting symbiotic interdependence. The community is contemporaneous with secondary mineralizations of calcite partly filling the cavities. The fungal hyphae frequently extend into the calcite, indicating that they were able to bore into the substrate through mineral dissolution. A symbiotic relationship with chemoautotrophs, as inferred for the observed consortium, may be a pre-requisite for the eukaryotic colonization of crustal rocks. Fossils thus open a window to the extant as well as the ancient deep biosphere.",
+      "keywords": [
+        "Biosphere",
+        "Geology",
+        "Calcite",
+        "Seamount",
+        "Basalt"
+      ],
+      "url": "https://openalex.org/W2171911230",
+      "matched_by": "en"
+    }
+  ]
+}

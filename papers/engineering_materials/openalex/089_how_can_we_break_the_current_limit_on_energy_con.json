@@ -1,0 +1,183 @@
+{
+  "problem_id": 89,
+  "problem_cn": "我们能否突破现有能量转换效率上限？",
+  "problem_en": "How can we break the current limit on energy-conversion efficiencies?",
+  "category": "工程与材料科学",
+  "query_en": "How can we break the current limit on energy-conversion efficiencies",
+  "query_cn": "我们能否突破现有能量转换效率上限",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:05",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2911892655",
+      "doi": "https://doi.org/10.1016/j.esr.2019.01.006",
+      "title": "The role of renewable energy in the global energy transformation",
+      "year": 2019,
+      "cited_by_count": 4906,
+      "relevance_score": 785.31506,
+      "authors": [
+        "Dolf Gielen",
+        "Francisco Boshell",
+        "Değer Saygin",
+        "Morgan Bazilian",
+        "Nicholas Wagner",
+        "Ricardo Gorini"
+      ],
+      "venue": "Energy Strategy Reviews",
+      "abstract": "This paper explores the technical and economic characteristics of an accelerated energy transition to 2050, using new datasets for renewable energy. The analysis indicates that energy efficiency and renewable energy technologies are the core elements of that transition, and their synergies are likewise important. Favourable economics, ubiquitous resources, scalable technology, and significant socio-economic benefits underpin such a transition. Renewable energy can supply two-thirds of the total global energy demand, and contribute to the bulk of the greenhouse gas emissions reduction that is needed between now and 2050 for limiting average global surface temperature increase below 2 °C. Enabling policy and regulatory frameworks will need to be adjusted to mobilise the six-fold acceleration of renewables growth that is needed, with the highest growth estimated for wind and solar PV technologies, complemented by a high level of energy efficiency. Still, to ensure the eventual elimination of carbon dioxide emissions will require new technology and innovation, notably for the transport and manufacturing sectors, which remain largely ignored in the international debate. More attention is needed for emerging infrastructure issues such as charging infrastructure and other sector coupling implications.",
+      "keywords": [
+        "Renewable energy",
+        "Environmental economics",
+        "Greenhouse gas",
+        "Energy transition",
+        "Efficient energy use"
+      ],
+      "url": "https://openalex.org/W2911892655",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2972593701",
+      "doi": "https://doi.org/10.1038/s41560-019-0450-y",
+      "title": "Advances and challenges in understanding the electrocatalytic conversion of carbon dioxide to fuels",
+      "year": 2019,
+      "cited_by_count": 2738,
+      "relevance_score": 632.87695,
+      "authors": [
+        "Yuvraj Y. Birdja",
+        "Elena Pérez‐Gallent",
+        "Marta C. Figueiredo",
+        "Adrien J. Göttle",
+        "Federico Calle‐Vallejo",
+        "Marc T. M. Koper"
+      ],
+      "venue": "Nature Energy",
+      "abstract": "",
+      "keywords": [
+        "Electrocatalyst",
+        "Renewable energy",
+        "Electrochemical reduction of carbon dioxide",
+        "Carbon fibers",
+        "Electrochemistry"
+      ],
+      "url": "https://openalex.org/W2972593701",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2410390527",
+      "doi": "https://doi.org/10.1016/j.gloenvcha.2016.05.009",
+      "title": "The Shared Socioeconomic Pathways and their energy, land use, and greenhouse gas emissions implications: An overview",
+      "year": 2016,
+      "cited_by_count": 6689,
+      "relevance_score": 613.7869,
+      "authors": [
+        "Keywan Riahi",
+        "Detlef P. van Vuuren",
+        "Elmar Kriegler",
+        "Jae Edmonds",
+        "Brian C. O’Neill",
+        "Shinichiro Fujimori",
+        "Nico Bauer",
+        "Katherine Calvin",
+        "Rob Dellink",
+        "Oliver Fricko",
+        "Wolfgang Lutz",
+        "Alexander Popp",
+        "Jesús Crespo Cuaresma",
+        "Samir KC",
+        "Marian Leimbach",
+        "Leiwen Jiang",
+        "Tom Kram",
+        "Shilpa Rao",
+        "Johannes Emmerling",
+        "Kristie L. Ebi",
+        "Tomoko Hasegawa",
+        "Peter Havlík",
+        "Florian Humpenöder",
+        "Lara Aleluia Da Silva",
+        "Steve Smith",
+        "Elke Stehfest",
+        "Valentina Bosetti",
+        "Jiyong Eom",
+        "David Gernaat",
+        "Toshihiko Masui",
+        "Joeri Rogelj",
+        "Jessica Strefler",
+        "Laurent Drouet",
+        "Volker Krey",
+        "Gunnar Luderer",
+        "Mathijs Harmsen",
+        "Kiyoshi Takahashi",
+        "Lavinia Baumstark",
+        "Jonathan Doelman",
+        "Mikiko Kainuma",
+        "Zbigniew Klimont",
+        "Giacomo Marangoni",
+        "Hermann Lotze‐Campen",
+        "Michael Obersteiner",
+        "Andrzej Tabeau",
+        "Massimo Tavoni"
+      ],
+      "venue": "Global Environmental Change",
+      "abstract": "This paper presents the overview of the Shared Socioeconomic Pathways (SSPs) and their energy, land use, and emissions implications. The SSPs are part of a new scenario framework, established by the climate change research community in order to facilitate the integrated analysis of future climate impacts, vulnerabilities, adaptation, and mitigation. The pathways were developed over the last years as a joint community effort and describe plausible major global developments that together would lead in the future to different challenges for mitigation and adaptation to climate change. The SSPs are based on five narratives describing alternative socio-economic developments, including sustainable development, regional rivalry, inequality, fossil-fueled development, and middle-of-the-road development. The long-term demographic and economic projections of the SSPs depict a wide uncertainty range consistent with the scenario literature. A multi-model approach was used for the elaboration of the energy, land-use and the emissions trajectories of SSP-based scenarios. The baseline scenarios lead to global energy consumption of 400–1200 EJ in 2100, and feature vastly different land-use dynamics, ranging from a possible reduction in cropland area up to a massive expansion by more than 700 million hectares by 2100. The associated annual CO2 emissions of the baseline scenarios range from about 25 GtCO2 to more than 120 GtCO2 per year by 2100. With respect to mitigation, we find that associated costs strongly depend on three factors: (1) the policy assumptions, (2) the socio-economic narrative, and (3) the stringency of the target. The carbon price for reaching the target of 2.6 W/m2 that is consistent with a temperature change limit of 2 °C, differs in our analysis thus by about a factor of three across the SSP marker scenarios. Moreover, many models could not reach this target from the SSPs with high mitigation challenges. While the SSPs were designed to represent different mitigation and adaptation challenges, the resulting narratives and quantifications span a wide range of different futures broadly representative of the current literature. This allows their subsequent use and development in new assessments and research projects. Critical next steps for the community scenario process will, among others, involve regional and sectoral extensions, further elaboration of the adaptation and impacts dimension, as well as employing the SSP scenarios with the new generation of earth system models as part of the 6th climate model intercomparison project (CMIP6).",
+      "keywords": [
+        "Greenhouse gas",
+        "Baseline (sea)",
+        "Climate change",
+        "Land use",
+        "Natural resource economics"
+      ],
+      "url": "https://openalex.org/W2410390527",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2573377826",
+      "doi": "https://doi.org/10.1126/science.aad4998",
+      "title": "Combining theory and experiment in electrocatalysis: Insights into materials design",
+      "year": 2017,
+      "cited_by_count": 11998,
+      "relevance_score": 551.5712,
+      "authors": [
+        "Zhi Wei Seh",
+        "Jakob Kibsgaard",
+        "Colin F. Dickens",
+        "Ib Chorkendorff",
+        "Jens K. Nørskov",
+        "Thomas F. Jaramillo"
+      ],
+      "venue": "Science",
+      "abstract": "Electrocatalysis plays a central role in clean energy conversion, enabling a number of sustainable processes for future technologies. This review discusses design strategies for state-of-the-art heterogeneous electrocatalysts and associated materials for several different electrochemical transformations involving water, hydrogen, and oxygen, using theory as a means to rationalize catalyst performance. By examining the common principles that govern catalysis for different electrochemical reactions, we describe a systematic framework that clarifies trends in catalyzing these reactions, serving as a guide to new catalyst development while highlighting key gaps that need to be addressed. We conclude by extending this framework to emerging clean energy reactions such as hydrogen peroxide production, carbon dioxide reduction, and nitrogen reduction, where the development of improved catalysts could allow for the sustainable production of a broad range of fuels and chemicals.",
+      "keywords": [
+        "Electrocatalyst",
+        "Computer science",
+        "Nanotechnology",
+        "Materials science",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W2573377826",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2278938776",
+      "doi": "https://doi.org/10.1016/j.erss.2015.12.020",
+      "title": "How long will it take? Conceptualizing the temporal dynamics of energy transitions",
+      "year": 2016,
+      "cited_by_count": 1119,
+      "relevance_score": 435.72815,
+      "authors": [
+        "Benjamin K. Sovacool"
+      ],
+      "venue": "Energy Research & Social Science",
+      "abstract": "Transitioning away from our current global energy system is of paramount importance. The speed at which a transition can take place—its timing, or temporal dynamics—is a critical element of consideration. This study therefore investigates the issue of time in global and national energy transitions by asking: What does the mainstream academic literature suggest about the time scale of energy transitions? Additionally, what does some of the more recent empirical data related to transitions say, or challenge, about conventional views? In answering these questions, the article presents a “mainstream” view of energy transitions as long, protracted affairs, often taking decades to centuries to occur. However, the article then offers some empirical evidence that the predominant view of timing may not always be supported by the evidence. With this in mind, the final part of the article argues for more transparent conceptions and definitions of energy transitions, and it asks for analysis that recognizes the causal complexity underlying them.",
+      "keywords": [
+        "Dynamics (music)",
+        "Energy (signal processing)",
+        "Computer science",
+        "Economic geography",
+        "Statistical physics"
+      ],
+      "url": "https://openalex.org/W2278938776",
+      "matched_by": "en"
+    }
+  ]
+}

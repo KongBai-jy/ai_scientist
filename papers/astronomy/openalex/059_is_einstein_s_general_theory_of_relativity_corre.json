@@ -1,0 +1,176 @@
+{
+  "problem_id": 59,
+  "problem_cn": "爱因斯坦广义相对论完全正确吗？",
+  "problem_en": "Is Einstein’s general theory of relativity correct?",
+  "category": "天文学",
+  "query_en": "Is Einstein’s general theory of relativity correct",
+  "query_cn": "爱因斯坦广义相对论完全正确吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:25:42",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2166436681",
+      "doi": "https://doi.org/10.12942/lrr-2014-4",
+      "title": "The Confrontation between General Relativity and Experiment",
+      "year": 2014,
+      "cited_by_count": 3936,
+      "relevance_score": 1419.2654,
+      "authors": [
+        "Clifford M. Will"
+      ],
+      "venue": "Living Reviews in Relativity",
+      "abstract": "The status of experimental tests of general relativity and of theoretical frameworks for analyzing them is reviewed. Einstein's equivalence principle (EEP) is well supported by experiments such as the Eötvös experiment, tests of special relativity, and the gravitational redshift experiment. Ongoing tests of EEP and of the inverse square law are searching for new interactions arising from unification or quantum gravity. Tests of general relativity at the post-Newtonian level have reached high precision, including the light deflection, the Shapiro time delay, the perihelion advance of Mercury, and the Nordtvedt effect in lunar motion. Gravitational wave damping has been detected in an amount that agrees with general relativity to better than half a percent using the Hulse-Taylor binary pulsar, and other binary pulsar systems have yielded other tests, especially of strong-field effects. When direct observation of gravitational radiation from astrophysical sources begins, new tests of general relativity will be possible.",
+      "keywords": [
+        "Theory of relativity",
+        "Theoretical physics",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W2166436681",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2116923776",
+      "doi": "https://doi.org/10.1088/0264-9381/32/24/243001",
+      "title": "Testing general relativity with present and future astrophysical observations",
+      "year": 2015,
+      "cited_by_count": 1500,
+      "relevance_score": 892.30286,
+      "authors": [
+        "Emanuele Berti",
+        "Enrico Barausse",
+        "Vítor Cardoso",
+        "Leonardo Gualtieri",
+        "Paolo Pani",
+        "Ulrich Sperhake",
+        "Leo C. Stein",
+        "Norbert Wex",
+        "Kent Yagi",
+        "Tessa Baker",
+        "C. P. Burgess",
+        "Flávio S. Coelho",
+        "Daniela D. Doneva",
+        "Antonio De Felice",
+        "Pedro G. Ferreira",
+        "P. C. C. Freire",
+        "James Healy",
+        "Carlos Herdeiro",
+        "Michael Horbatsch",
+        "Burkhard Kleihaus",
+        "Antoine Klein",
+        "Kostas D. Kokkotas",
+        "Jutta Kunz",
+        "Pablo Laguna",
+        "R. N. Lang",
+        "Tjonnie G. F. Li",
+        "T. B. Littenberg",
+        "A. Matas",
+        "Saeed Mirshekari",
+        "H. Okawa",
+        "Eugen Radu",
+        "R. O’Shaughnessy",
+        "B. S. Sathyaprakash",
+        "Chris Van Den Broeck",
+        "Hans A. Winther",
+        "Helvi Witek",
+        "Mir Emad Aghili",
+        "Justin Alsing",
+        "B. Bolen",
+        "L. Bombelli",
+        "Sarah Caudill",
+        "Liang Chen",
+        "Juan Carlos Degollado",
+        "Ryuichi Fujita",
+        "Caixia Gao",
+        "Davide Gerosa",
+        "Saeed Kamali",
+        "Hector O. Silva",
+        "João G. Rosa",
+        "L. Sadeghian",
+        "Marco O. P. Sampaio",
+        "Hajime Sotani",
+        "Miguel Zilhão"
+      ],
+      "venue": "Classical and Quantum Gravity",
+      "abstract": "One century after its formulation, Einstein's general relativity (GR) has made remarkable predictions and turned out to be compatible with all experimental tests. Most of these tests probe the theory in the weak-field regime, and there are theoretical and experimental reasons to believe that GR should be modified when gravitational fields are strong and spacetime curvature is large. The best astrophysical laboratories to probe strong-field gravity are black holes and neutron stars, whether isolated or in binary systems. We review the motivations to consider extensions of GR. We present a (necessarily incomplete) catalog of modified theories of gravity for which strong-field predictions have been computed and contrasted to Einstein's theory, and we summarize our current understanding of the structure and dynamics of compact objects in these theories. We discuss current bounds on modified gravity from binary pulsar and cosmological observations, and we highlight the potential of future gravitational wave measurements to inform us on the behavior of gravity in the strong-field regime.",
+      "keywords": [
+        "Physics",
+        "General relativity",
+        "Tests of general relativity",
+        "Neutron star",
+        "Theoretical physics"
+      ],
+      "url": "https://openalex.org/W2116923776",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4246028735",
+      "doi": "https://doi.org/10.12942/lrr-2006-3",
+      "title": "The Confrontation between General Relativity and Experiment",
+      "year": 2006,
+      "cited_by_count": 1612,
+      "relevance_score": 838.0538,
+      "authors": [
+        "Clifford M. Will"
+      ],
+      "venue": "Living Reviews in Relativity",
+      "abstract": "Abstract The status of experimental tests of general relativity and of theoretical frameworks for analyzing them is reviewed. Einstein’s equivalence principle (EEP) is well supported by experiments such as the Eötvös experiment, tests of special relativity, and the gravitational redshift experiment. Ongoing tests of EEP and of the inverse square law are searching for new interactions arising from unification or quantum gravity. Tests of general relativity at the post-Newtonian level have reached high precision, including the light deflection, the Shapiro time delay, the perihelion advance of Mercury, and the Nordtvedt effect in lunar motion. Gravitational wave damping has been detected in an amount that agrees with general relativity to better than half a percent using the Hulse-Taylor binary pulsar, and other binary pulsar systems have yielded other tests, especially of strong-field effects. When direct observation of gravitational radiation from astrophysical sources begins, new tests of general relativity will be possible.",
+      "keywords": [
+        "Physics",
+        "General relativity",
+        "Tests of general relativity",
+        "Two-body problem in general relativity",
+        "Theory of relativity"
+      ],
+      "url": "https://openalex.org/W4246028735",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2123076672",
+      "doi": "https://doi.org/10.12942/lrr-2010-3",
+      "title": "f(R) Theories",
+      "year": 2010,
+      "cited_by_count": 3894,
+      "relevance_score": 764.54004,
+      "authors": [
+        "Antonio De Felice",
+        "Shinji Tsujikawa"
+      ],
+      "venue": "Living Reviews in Relativity",
+      "abstract": "Over the past decade, f (R) theories have been extensively studied as one of the simplest modifications to General Relativity. In this article we review various applications of f (R) theories to cosmology and gravity -such as inflation, dark energy, local gravity constraints, cosmological perturbations, and spherically symmetric solutions in weak and strong gravitational backgrounds. We present a number of ways to distinguish those theories from General Relativity observationally and experimentally. We also discuss the extension to other modified gravity theories such as Brans-Dicke theory and Gauss-Bonnet gravity, and address models that can satisfy both cosmological and local gravity constraints.",
+      "keywords": [
+        "Physics",
+        "Theoretical physics",
+        "Cosmology",
+        "General relativity",
+        "Gravitation"
+      ],
+      "url": "https://openalex.org/W2123076672",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2171361875",
+      "doi": "https://doi.org/10.1103/physrevd.10.1066",
+      "title": "General relativity with spin and torsion and its deviations from Einstein's theory",
+      "year": 1974,
+      "cited_by_count": 218,
+      "relevance_score": 724.9777,
+      "authors": [
+        "Friedrich W. Hehl",
+        "Paul von der Heyde",
+        "G. David Kerlick"
+      ],
+      "venue": "Physical review. D. Particles, fields, gravitation, and cosmology/Physical review. D. Particles and fields",
+      "abstract": "The field equations of general relativity with spin and torsion (${U}_{4}$ theory) are considered to describe correctly the gravitational properties of matter on a microphysical level. By an averaging procedure one arrives at a macroscopic field equation, which under normal matter densities coincides with Einstein's equation of conventional general relativity. For very high matter densities, even if the spin are randomly distributed, Einstein's equation breaks down and ${U}_{4}$ theory must be applied. It is shown how the singularity theorems of Penrose and Hawking must be modified to apply in ${U}_{4}$ theory. All known cosmological models in ${U}_{4}$ theory which prevent singularities are shown to violate an energy condition of a singularity theorem.",
+      "keywords": [
+        "General relativity",
+        "Physics",
+        "Singularity",
+        "Theory of relativity",
+        "Gravitational singularity"
+      ],
+      "url": "https://openalex.org/W2171361875",
+      "matched_by": "en"
+    }
+  ]
+}

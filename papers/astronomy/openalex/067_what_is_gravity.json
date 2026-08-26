@@ -1,0 +1,128 @@
+{
+  "problem_id": 67,
+  "problem_cn": "引力究竟是什么？",
+  "problem_en": "What is gravity?",
+  "category": "天文学",
+  "query_en": "What is gravity",
+  "query_cn": "引力究竟是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:10",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2006620446",
+      "doi": "https://doi.org/10.1088/0264-9381/8/2/011",
+      "title": "What is observable in classical and quantum gravity?",
+      "year": 1991,
+      "cited_by_count": 462,
+      "relevance_score": 928.82666,
+      "authors": [
+        "Carlo Rovelli"
+      ],
+      "venue": "Classical and Quantum Gravity",
+      "abstract": "The problem of the identification of the observable quantities in quantum gravity (or in any diffeomorphism invariant quantum theory) is considered. The author recalls Einstein's 'hole argument' on the impossibility of a priori identifying spacetime points. He argues that only by explicitly taking into account the physical nature of the bodies that form the reference system and their gravitational interactions one can get well defined gauge-invariant (and 'local') observables and a definition of physical spacetime points. A model is considered in which general relativity is coupled to matter: the matter represents the physical reference system. The gauge-invariant physical observables of this theory are displayed.",
+      "keywords": [
+        "Physics",
+        "Observable",
+        "Diffeomorphism",
+        "Quantum gravity",
+        "Spacetime"
+      ],
+      "url": "https://openalex.org/W2006620446",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4224873304",
+      "doi": "https://doi.org/10.1007/s10714-022-02927-2",
+      "title": "Modified theories of gravity: Why, how and what?",
+      "year": 2022,
+      "cited_by_count": 224,
+      "relevance_score": 679.9756,
+      "authors": [
+        "S. Shankaranarayanan",
+        "Joseph P. Johnson"
+      ],
+      "venue": "General Relativity and Gravitation",
+      "abstract": "",
+      "keywords": [
+        "Physics",
+        "Differential geometry",
+        "Theoretical physics",
+        "Classical mechanics",
+        "Mathematical physics"
+      ],
+      "url": "https://openalex.org/W4224873304",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2732062868",
+      "doi": null,
+      "title": "Reality is not what it seems : the journey to quantum gravity",
+      "year": 2016,
+      "cited_by_count": 246,
+      "relevance_score": 649.2108,
+      "authors": [
+        "Carlo Rovelli"
+      ],
+      "venue": "International Linear Collider",
+      "abstract": "From the best-selling author of Seven Brief Lessons on Physics comes a new book about the mind-bending nature of the universe. What are time and space made of? Where does matter come from? And what exactly is reality? Scientist Carlo Rovelli has spent his whole life exploring these questions and pushing the boundaries of what we know. Here he explains how our image of the world has changed throughout centuries. From Aristotle to Albert Einstein, Michael Faraday to the Higgs boson, he takes us on a wondrous journey to show us that beyond our ever-changing idea of reality is a whole new world that has yet to be discovered.",
+      "keywords": [
+        "Quantum gravity",
+        "Theoretical physics",
+        "Quantum",
+        "Physics",
+        "Quantum mechanics"
+      ],
+      "url": "https://openalex.org/W2732062868",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3102136416",
+      "doi": "https://doi.org/10.5281/zenodo.15042260",
+      "title": "Extended Theories of Gravity",
+      "year": 2010,
+      "cited_by_count": 1329,
+      "relevance_score": 620.5918,
+      "authors": [
+        "Salvatore Capozzıello",
+        "C Francisco S. N. Lobod",
+        "F José P",
+        "Angelo Edificio G Via Cinthia"
+      ],
+      "venue": null,
+      "abstract": "For over a century, we've faced a profound divide in physics: quantum mechanics and general relativity stubbornly refuse to speak the same language, while galaxies spin with a defiant disregard for our gravitational expectations. In this paper, I introduce Systemic Relativity & Logarithmic Gravity – a framework that rethinks how gravity operates by introducing logarithmic corrections that naturally vary with scale. This approach offers an alternative to dark matter while seamlessly recovering the Newtonian behavior we observe in everyday life. The key insight lies in what I call the system-dependent parameter λ – defined as the ratio between a system's gravitational binding energy and the fundamental Planck energy. Unlike other theories that apply fixed corrections (like MOND) or rely on arbitrary mathematical functions, this formulation explains why gravity behaves differently across cosmic scales as a natural consequence of each system's intrinsic properties. What's particularly striking is how these logarithmic gravitational modifications have independently emerged across seemingly disconnected fields – from black hole thermodynamics to quantum gravity approaches – suggesting we're glimpsing something fundamental about reality. The evidence is compelling: when I analyzed 175 galaxies from the SPARC database, the framework reduced rotational velocity prediction errors by half compared to standard Newtonian models. Even more impressively, when applied to the galaxy cluster Abell 2744, it accurately reproduces gravitational lensing patterns and mass distributions where other modified gravity theories struggle. This framework doesn't just explain observations – it makes testable predictions. I outline specific, falsifiable expectations for gravitational lensing and gravitational wave behavior that can be verified through upcoming observations with JWST, LIGO, and LISA. If I'm right that gravity is scale-dependent, then what we've been calling \"dark matter\" may simply be an artifact of our perspective – the result of applying fixed-scale thinking to a universe where gravity itself transforms across the cosmic hierarchy. The implications extend beyond cosmology to challenge our fundamental conception of physical law. Perhaps gravity isn't a universally fixed force but an emergent phenomenon that adapts to the systems it governs – a possibility that might finally bridge the quantum-cosmic divide that",
+      "keywords": [
+        "Physics",
+        "Theoretical physics",
+        "Dark energy",
+        "General relativity",
+        "Equivalence principle (geometric)"
+      ],
+      "url": "https://openalex.org/W3102136416",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2126230473",
+      "doi": "https://doi.org/10.3386/w12516",
+      "title": "Gravity for Dummies and Dummies for Gravity Equations",
+      "year": 2006,
+      "cited_by_count": 1111,
+      "relevance_score": 614.99506,
+      "authors": [
+        "Richard Baldwin",
+        "Daria Taglioni"
+      ],
+      "venue": "National Bureau of Economic Research",
+      "abstract": "This paper provides a minimalist derivation of the gravity equation and uses it to identify three common errors in the literature, what we call the gold, silver and bronze medal errors. The paper provides estimates of the size of the biases taking the currency union trade effect as an example. We generalize Anderson-Van Wincoop's multilateral trade resistance factor (which only works with cross section data) to allow for panel data and then show that it can be dealt with using time-varying country dummies with omitted determinants of bilateral trade being dealt with by time-invariant pair dummies.",
+      "keywords": [
+        "Gravity equation",
+        "Gravity model of trade",
+        "Currency union",
+        "Panel data",
+        "Currency"
+      ],
+      "url": "https://openalex.org/W2126230473",
+      "matched_by": "en"
+    }
+  ]
+}

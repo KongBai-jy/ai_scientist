@@ -1,0 +1,122 @@
+{
+  "problem_id": 118,
+  "problem_cn": "可注射治病纳米机器人能否成为现实？",
+  "problem_en": "Will injectable, disease-fighting nanobots ever be a reality?",
+  "category": "人工智能",
+  "query_en": "Will injectable, disease-fighting nanobots ever be a reality",
+  "query_cn": "可注射治病纳米机器人能否成为现实",
+  "source": "openalex",
+  "collected_at": "2026-08-26T11:07:49",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4363648369",
+      "doi": "https://doi.org/10.26717/bjstr.2023.49.007774",
+      "title": "Disease Fighting Machines Inside the Body: A Review",
+      "year": 2023,
+      "cited_by_count": 1,
+      "relevance_score": 34.82827,
+      "authors": [
+        "Girum Tefera Belachew"
+      ],
+      "venue": "Biomedical Journal of Scientific & Technical Research",
+      "abstract": "Background: Nanotechnology will bring about a revolution in the globe. The National Nanotechnology Initiative (NNI) defines nanotechnology as the study of all particles with a dimension of 100 nanometers or less. One of the main advantages of smaller particles is the rise in the ratio of surface atoms or molecules to total number. Due to their large surface area, which enhances surface activity and alters their biological and physical features, they have many surfaces. Drugs having nanoscalesized active ingredients are referred to as nanotechnology applications in the pharmaceutical sector. They can repair damaged tissue at the cellular level, are helpful in detecting, diagnosing, and treating illness, and are beneficial in treating severe diseases like HIV, cancer, and others. Drugs can now be injected into previously inaccessible areas of the body thanks to smaller drug delivery systems, which are also essential for the treatment and early diagnosis of specific diseases like cancer. Target treatment, a recent development in pharmaceutical administration, improves medical equipment and diagnostic techniques.",
+      "keywords": [
+        "Disease",
+        "Medicine",
+        "Physical medicine and rehabilitation",
+        "Internal medicine"
+      ],
+      "url": "https://openalex.org/W4363648369",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4376137186",
+      "doi": "https://doi.org/10.3390/smartcities6030065",
+      "title": "The Metaverse as a Virtual Model of Platform Urbanism: Its Converging AIoT, XReality, Neurotech, and Nanobiotech and Their Applications, Challenges, and Risks",
+      "year": 2023,
+      "cited_by_count": 54,
+      "relevance_score": 28.197855,
+      "authors": [
+        "Simon Elias Bibri"
+      ],
+      "venue": "Smart Cities",
+      "abstract": "With their exponentially rising computational power, digital platforms are heralding a new era of hybrid intelligence. There has recently been much enthusiasm and hype that the Metaverse has the potential to unlock hybrid intelligence. This is premised on the idea that the Metaverse represents an applied convergence of Artificial Intelligence of Things (AIoT) and Extended Reality (XR) that intersects with urbanism in terms of the distinctive features of platform-mediated everyday life experiences in cities. However, social interaction and its resulting social organization in the Metaverse are mediated and governed by algorithms and thus submitted to—a dream of—complete logical ordering. This raises a plethora of concerns related to the systemic collection and algorithmic processing of users’ personal, brain, and biometric data, i.e., profound societal—and the hardest to predict ethical—implications. Therefore, this study analyzes and synthesizes a large body of scientific literature on the unfolding convergence of AIoT and XR technologies, neurotechnology, and nanobiotechnology in the realm of the Metaverse in order to derive a novel conceptual framework for the Metaverse as an envisioned virtual model of platform urbanism. Further, it examines the key challenges and risks of these converging technologies in relation to the Metaverse and beyond. This study employs thematic analysis and synthesis to cope with multidisciplinary literature. The analysis identifies seven themes: (1) Platformization, (2) platform urbanism, (3) virtual urbanism, (4) XR technologies, (5) AIoT technologies, (6) neurotechnology, and (7) nanobiotechnology. The synthesized evidence reveals that, while neurotechnology and nanobiotechnology have numerous benefits and promising prospects, they raise contentions and controversies stemming from their potential use to inflict harm to human users—if left unchecked—through the black box of the algorithmic mediation underpinning the Metaverse. The findings serve to steer the Metaverse to contribute to human flourishing and wellbeing by adhering to and upholding ethical principles as well as leveraging its underlying disruptive technologies in meaningful ways. They also aid scholars, practitioners, and policymakers in assessing the pros and cons of these technologies, especially their inevitable ramifications.",
+      "keywords": [
+        "Metaverse",
+        "Urbanism",
+        "Computer science",
+        "Dynamism",
+        "Sociology"
+      ],
+      "url": "https://openalex.org/W4376137186",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2157537684",
+      "doi": "https://doi.org/10.14738/tnc.22.131",
+      "title": "Nanorobots in Medicine-A New Dimension in Bio Nanotechnology",
+      "year": 2014,
+      "cited_by_count": 10,
+      "relevance_score": 23.76859,
+      "authors": [
+        "Venkat Narayana Rao"
+      ],
+      "venue": "Transactions on Networks and Communications",
+      "abstract": "Bio-nanotechnology has become a hopeful area of research that is bringing radical advancements and changes in the current century of technological mutiny. It is a one part of Nano technology. It has shown its clear participation in all fields, there is an integral part of the nanos in human science and medicine. Nanomedicine is the process of diagnosing cancers, treating, preventing disease, relieving pain, and of preserving and improving human health using molecular tools and molecular knowledge of the human body. Most of the symptoms such as fever and itching have specific biochemical reasons that can also be controlled, reduced, and eliminated using the appropriate injected nanorobots. This paper mainly concentrates on reviewing role and implementation of nano robots in medical field and how it can replace present medical scenarios with cost reduction along with vision to permanent solutions to many human aliments towards surgery less treatments.",
+      "keywords": [
+        "Nanorobotics",
+        "Nanomedicine",
+        "Nanotechnology",
+        "Human health",
+        "Medicine"
+      ],
+      "url": "https://openalex.org/W2157537684",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1587927503",
+      "doi": null,
+      "title": "A Tiny Problem with Huge Implications - Nanotech Agents as Enablers or Substitutes for Banned Chemical Weapons: Is a New Treaty Needed?",
+      "year": 2009,
+      "cited_by_count": 1,
+      "relevance_score": 15.009417,
+      "authors": [
+        "Evan J. Wallach"
+      ],
+      "venue": "FLASH - Fordham Law Archive of Scholarship & History (Fordham University)",
+      "abstract": "The underlying thesis of this Article is that while smaller-sized particles and separate nano-sized carriers of known agents are clearly covered by the CWC, nanomimics are not as squarely within the relevant provisions. The bulk of this Article deals with that question. Despite the invitation to woolgather, this Article is limited to the tightest possible analytical approach. Part I begins with definitions of chemical and biological agents within existing treaties, and of nanoproducts, including those existing beyond presently-known technical capabilities, but which are at least reasonably conceivable (“nanobots”). Part II provides an overview of treaty law that is potentially applicable to nanobots. It first examines current treaties that are facially applicable to nanoproducts. Because of the possibility that the “all analogous . . . devices” language of the 1925 Geneva Protocol bans nanobots, the Article examines very closely the origin, application, and meaning of that language. A close inspection necessarily involves considerable discussion of pre-1914 treaties, as well as the battles, weapons, tactics, and legal analyses in World War I, and the mass reaction to them, which resulted in a series of treaties implicating chemical weapons after the war ended. Part II then looks briefly at other treaties, conventions, and doctrines of international law that may impact the use of nanobots. Part III briefly examines current theories regarding good faith treaty interpretation and their implications for the utilization of antique (but not necessarily antiquated) doctrines and documents to interpret current law. Part IV then applies the current treaties to nanoproducts, both existing and potential, in light of the preceding discussion, and then turns to a discussion of whether a new treaty, or modifications or clarifications to existing treaties, are advisable.",
+      "keywords": [
+        "Treaty",
+        "Interpretation (philosophy)",
+        "Law",
+        "Political science",
+        "Meaning (existential)"
+      ],
+      "url": "https://openalex.org/W1587927503",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4327925162",
+      "doi": "https://doi.org/10.1163/1821889x-bja10050",
+      "title": "Even Chameleons Stalk Their Prey: Rinonyenga Rinohwarara Rinosumudza Musoro Rawana, Twenty-First Century Imperial Sleights of Hand and the Recolonisation of Africa",
+      "year": 2023,
+      "cited_by_count": 6,
+      "relevance_score": 10.90479,
+      "authors": [
+        "Artwell Nhemachena"
+      ],
+      "venue": "The African Review",
+      "abstract": "Abstract Arguing that chameleons know best how to appear to be stationary even as they are motionary towards targeted flies, at which they suddenly dart their swift tongues once within range, this paper contends that the emergent postbinary world order is a chameleons’ world; it is a world where Africans – deemed, in Eurocentric animistic discourses, to be indistinct from flies – will be increasingly cannibalised. Of course, chameleons use sleights of tongue when they feast on flies but imperialists also use sleights of hand when they want to feast on Africans. Drawing on the Shona (a people of Zimbabwe) proverbial warning rinonyenga rinohwarara rinosumudza musoro rawana (he who courts may trick the subject of courtship, to feel safe and loved, only to become violent once he has achieved his goal), this paper argues that neoimperialism is using sleights of hand to recolonise Africans in the twenty-first century. Postulating a theory of rinonyenga rinohwarara rinosumudza musoro rawana for international relations, society and politics, this paper argues for the application of Ubuntu theory in international relations but with a caveat that imperial chameleon politics and relations premised on trickery are not part of the canons of Ubuntu.",
+      "keywords": [
+        "Courtship",
+        "Shona",
+        "Sociology",
+        "Politics",
+        "Law"
+      ],
+      "url": "https://openalex.org/W4327925162",
+      "matched_by": "en"
+    }
+  ]
+}

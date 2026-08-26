@@ -1,0 +1,146 @@
+{
+  "problem_id": 74,
+  "problem_cn": "量子不确定性原理为什么重要？",
+  "problem_en": "What is quantum uncertainty and why is it important?",
+  "category": "物理学",
+  "query_en": "What is quantum uncertainty and why is it important",
+  "query_cn": "量子不确定性原理为什么重要",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:34",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2781738013",
+      "doi": "https://doi.org/10.22331/q-2018-08-06-79",
+      "title": "Quantum Computing in the NISQ era and beyond",
+      "year": 2018,
+      "cited_by_count": 8585,
+      "relevance_score": 998.83545,
+      "authors": [
+        "John Preskill"
+      ],
+      "venue": "Quantum",
+      "abstract": "Noisy Intermediate-Scale Quantum (NISQ) technology will be available in the near future. Quantum computers with 50-100 qubits may be able to perform tasks which surpass the capabilities of today's classical digital computers, but noise in quantum gates will limit the size of quantum circuits that can be executed reliably. NISQ devices will be useful tools for exploring many-body quantum physics, and may have other useful applications, but the 100-qubit quantum computer will not change the world right away - we should regard it as a significant step toward the more powerful quantum technologies of the future. Quantum technologists should continue to strive for more accurate quantum gates and, eventually, fully fault-tolerant quantum computing.",
+      "keywords": [
+        "Quantum computer",
+        "Computer science",
+        "Qubit",
+        "Quantum gate",
+        "Computer engineering"
+      ],
+      "url": "https://openalex.org/W2781738013",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2948602808",
+      "doi": "https://doi.org/10.1364/aop.361502",
+      "title": "Advances in quantum cryptography",
+      "year": 2020,
+      "cited_by_count": 1878,
+      "relevance_score": 517.58,
+      "authors": [
+        "S. Pirandola",
+        "U. L. Andersen",
+        "L. Banchi",
+        "M. Berta",
+        "D. Bunandar",
+        "R. Colbeck",
+        "D. Englund",
+        "T. Gehring",
+        "C. Lupo",
+        "C. Ottaviani",
+        "J. L. Pereira",
+        "M. Razavi",
+        "J. Shamsul Shaari",
+        "M. Tomamichel",
+        "V. C. Usenko",
+        "G. Vallone",
+        "P. Villoresi",
+        "P. Wallden"
+      ],
+      "venue": "Advances in Optics and Photonics",
+      "abstract": "Quantum cryptography is arguably the fastest growing area in quantum information science. Novel theoretical protocols are designed on a regular basis, security proofs are constantly improving, and experiments are gradually moving from proof-of-principle lab demonstrations to in-field implementations and technological prototypes. In this paper, we provide both a general introduction and a state-of-the-art description of the recent advances in the field, both theoretical and experimental. We start by reviewing protocols of quantum key distribution based on discrete variable systems. Next we consider aspects of device independence, satellite challenges, and protocols based on continuous-variable systems. We will then discuss the ultimate limits of point-to-point private communications and how quantum repeaters and networks may overcome these restrictions. Finally, we will discuss some aspects of quantum cryptography beyond standard quantum key distribution, including quantum random number generators and quantum digital signatures.",
+      "keywords": [
+        "Quantum cryptography",
+        "Quantum key distribution",
+        "Computer science",
+        "Quantum network",
+        "Cryptography"
+      ],
+      "url": "https://openalex.org/W2948602808",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2119046658",
+      "doi": "https://doi.org/10.1103/revmodphys.82.1155",
+      "title": "Introduction to quantum noise, measurement, and amplification",
+      "year": 2010,
+      "cited_by_count": 1984,
+      "relevance_score": 491.37357,
+      "authors": [
+        "Aashish A. Clerk",
+        "Michel Devoret",
+        "S. M. Girvin",
+        "Florian Marquardt",
+        "Robert Schoelkopf"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "The topic of quantum noise has become extremely timely due to the rise of quantum information physics and the resulting interchange of ideas between the condensed matter and atomic, molecular, optical--quantum optics communities. This review gives a pedagogical introduction to the physics of quantum noise and its connections to quantum measurement and quantum amplification. After introducing quantum noise spectra and methods for their detection, the basics of weak continuous measurements are described. Particular attention is given to the treatment of the standard quantum limit on linear amplifiers and position detectors within a general linear-response framework. This approach is shown how it relates to the standard Haus-Caves quantum limit for a bosonic amplifier known in quantum optics and its application to the case of electrical circuits is illustrated, including mesoscopic detectors and resonant cavity detectors.",
+      "keywords": [
+        "Physics",
+        "Quantum limit",
+        "Quantum noise",
+        "Quantum imaging",
+        "Quantum amplifier"
+      ],
+      "url": "https://openalex.org/W2119046658",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2137084802",
+      "doi": "https://doi.org/10.1146/annurev-conmatphys-031214-014726",
+      "title": "Many-Body Localization and Thermalization in Quantum Statistical Mechanics",
+      "year": 2015,
+      "cited_by_count": 2441,
+      "relevance_score": 482.52634,
+      "authors": [
+        "Rahul Nandkishore",
+        "David A. Huse"
+      ],
+      "venue": "Annual Review of Condensed Matter Physics",
+      "abstract": "We review some recent developments in the statistical mechanics of isolated quantum systems. We provide a brief introduction to quantum thermalization, paying particular attention to the eigenstate thermalization hypothesis (ETH) and the resulting single-eigenstate statistical mechanics. We then focus on a class of systems that fail to quantum thermalize and whose eigenstates violate the ETH: These are the many-body Anderson-localized systems; their long-time properties are not captured by the conventional ensembles of quantum statistical mechanics. These systems can forever locally remember information about their local initial conditions and are thus of interest for possibilities of storing quantum information. We discuss key features of many-body localization (MBL) and review a phenomenology of the MBL phase. Single-eigenstate statistical mechanics within the MBL phase reveal dynamically stable ordered phases, and phase transitions among them, that are invisible to equilibrium statistical mechanics and can occur at high energy and low spatial dimensionality, where equilibrium ordering is forbidden.",
+      "keywords": [
+        "Statistical mechanics",
+        "Quantum statistical mechanics",
+        "Physics",
+        "Quantum",
+        "Statistical physics"
+      ],
+      "url": "https://openalex.org/W2137084802",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2619071992",
+      "doi": "https://doi.org/10.1088/1751-8121/aa86c6",
+      "title": "Quantum speed limits: from Heisenberg’s uncertainty principle to optimal quantum control",
+      "year": 2017,
+      "cited_by_count": 578,
+      "relevance_score": 441.62558,
+      "authors": [
+        "Sebastian Deffner",
+        "Steve Campbell"
+      ],
+      "venue": "Journal of Physics A Mathematical and Theoretical",
+      "abstract": "Abstract One of the most widely known building blocks of modern physics is Heisenberg’s indeterminacy principle. Among the different statements of this fundamental property of the full quantum mechanical nature of physical reality, the uncertainty relation for energy and time has a special place. Its interpretation and its consequences have inspired continued research efforts for almost a century. In its modern formulation, the uncertainty relation is understood as setting a fundamental bound on how fast any quantum system can evolve. In this topical review we describe important milestones, such as the Mandelstam–Tamm and the Margolus–Levitin bounds on the quantum speed limit , and summarise recent applications in a variety of current research fields—including quantum information theory, quantum computing, and quantum thermodynamics amongst several others. To bring order and to provide an access point into the many different notions and concepts, we have grouped the various approaches into the minimal time approach and the geometric approach , where the former relies on quantum control theory, and the latter arises from measuring the distinguishability of quantum states. Due to the volume of the literature, this topical review can only present a snapshot of the current state-of-the-art and can never be fully comprehensive. Therefore, we highlight but a few works hoping that our selection can serve as a representative starting point for the interested reader.",
+      "keywords": [
+        "Quantum",
+        "Quantum process",
+        "Uncertainty principle",
+        "Quantum operation",
+        "Quantum information"
+      ],
+      "url": "https://openalex.org/W2619071992",
+      "matched_by": "en"
+    }
+  ]
+}

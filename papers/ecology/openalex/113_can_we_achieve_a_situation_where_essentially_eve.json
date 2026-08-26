@@ -1,0 +1,141 @@
+{
+  "problem_id": 113,
+  "problem_cn": "是否可以实现几乎全部材料循环回收再利用？",
+  "problem_en": "Can we achieve a situation where essentially every material can be recycled and reused?",
+  "category": "生态学",
+  "query_en": "Can we achieve a situation where essentially every material can be recycled and reused",
+  "query_cn": "是否可以实现几乎全部材料循环回收再利用",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:47",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2140923664",
+      "doi": "https://doi.org/10.3990/1.9789036509886",
+      "title": "Construction of engineering ontologies for knowledge sharing and reuse",
+      "year": 1997,
+      "cited_by_count": 695,
+      "relevance_score": 382.6194,
+      "authors": [
+        "W.N. Borst"
+      ],
+      "venue": null,
+      "abstract": "This thesis describes an investigation into the practical use of ontologies for the development of information systems. Ontologies are formal descriptions of shared knowledge in a domain. An ontology can be used as a specification of an information system because it specifies the knowledge that is required for the tasks the information system has to perform. Sharing and reuse of ontologies across different domains and applications can therefore improve information systems design. Ontologies have been a subject for a lot of research carried out in the artificial intelligence community. Although many ontologies have been developed, they fail to demonstrate that ontologies for large and complex domains can be developed that can be used and reused across different applications. There are three reasons for this: (i) many ontologies have not been used to develop a real-life application, (ii) many ontologies have not been reused for different applications in different domains and (iii)many ontologies are merely taxonomies of domain concepts and fail to capture meta-level and tacit background knowledge. As a result, the question whether ontologies can be used and reused for different real-life applications remains open. The aim of our research has therefore been to find the answer to this question.",
+      "keywords": [
+        "IDEF5",
+        "Ontology",
+        "Computer science",
+        "Reuse",
+        "Domain (mathematical analysis)"
+      ],
+      "url": "https://openalex.org/W2140923664",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2095090606",
+      "doi": "https://doi.org/10.1016/s0377-2217(97)00230-0",
+      "title": "Quantitative models for reverse logistics: A review",
+      "year": 1997,
+      "cited_by_count": 1895,
+      "relevance_score": 282.71518,
+      "authors": [
+        "Moritz Fleischmann",
+        "Jacqueline M. Bloemhof‐Ruwaard",
+        "Rommert Dekker",
+        "Erwin van der Laan",
+        "J.A.E.E. van Nunen",
+        "Luk N. Van Wassenhove"
+      ],
+      "venue": "European Journal of Operational Research",
+      "abstract": "",
+      "keywords": [
+        "Reverse logistics",
+        "Reuse",
+        "Computer science",
+        "Context (archaeology)",
+        "Field (mathematics)"
+      ],
+      "url": "https://openalex.org/W2095090606",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1997009914",
+      "doi": "https://doi.org/10.1007/bf03214988",
+      "title": "Recycling of gold from electronics: Cost-effective use through ‘Design for Recycling’",
+      "year": 2010,
+      "cited_by_count": 296,
+      "relevance_score": 272.02783,
+      "authors": [
+        "Christian Hagelüken",
+        "Christopher W. Corti"
+      ],
+      "venue": "Gold bulletin",
+      "abstract": "With over 300 tonnes of gold used in electronics each year, end-of-life electronic equipment offers an important recycling potential for the secondary supply of gold. With gold concentrations reaching 300-350 g/t for mobile phone handsets and 200-250 g/t for computer circuit boards, this “urban mine” is significantly richer than what is available in primary ores. However, the “mineralogy” in scrap products is much different than in the conventional ores in a gold mine: Up to 60 different elements are closely interlinked in complex assemblies and sub-assemblies, and this requires specialised metallurgical processes with extensive offgas treatment to recover gold and a wide range of other metals cost effectively and in an environmentally sound way. Moreover, the logistics to “excavate” and “haul” the scrap products to the concentrator and further to the smelter are much more challenging than in the primary supply chain. Currently, only a small portion of old products is collected and directed into state-of-the art recycling chains. Significant improvements are needed here to fully utilise this secondary metal resource. The importance of the gold content of scrap electronics to the economics of recovery of gold and many other valuable metals is not always appreciated and this impacts on the “design for recycling” approach in selecting materials for new products, particularly in the European Union where the WEEE Directive aims to provide a closed loop economy. With a lower carbon footprint than primary-mined gold, recycled gold represents an important “green” source. The challenges faced in recycling electronic scrap to achieve a closed loop economy are discussed.",
+      "keywords": [
+        "Scrap",
+        "Carbon footprint",
+        "Electronics",
+        "Electronic equipment",
+        "Waste management"
+      ],
+      "url": "https://openalex.org/W1997009914",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2120446525",
+      "doi": "https://doi.org/10.1021/cr068360d",
+      "title": "Synthesis of Transportation Fuels from Biomass: Chemistry, Catalysts, and Engineering",
+      "year": 2006,
+      "cited_by_count": 7638,
+      "relevance_score": 255.26334,
+      "authors": [
+        "George W. Huber",
+        "Sara Iborra",
+        "Avelino Corma"
+      ],
+      "venue": "Chemical Reviews",
+      "abstract": "ADVERTISEMENT RETURN TO ISSUEPREVArticleNEXTSynthesis of Transportation Fuels from Biomass: Chemistry, Catalysts, and EngineeringGeorge W. Huber, Sara Iborra, and Avelino CormaView Author Information Instituto de Tecnología Químicia, UPV-CSIC, Universidad Politénica de Valencia, Avda. de los Naranjos, s/n, Valencia, Spain Cite this: Chem. Rev. 2006, 106, 9, 4044–4098Publication Date (Web):June 27, 2006Publication History Received3 February 2006Published online27 June 2006Published inissue 1 September 2006https://pubs.acs.org/doi/10.1021/cr068360dhttps://doi.org/10.1021/cr068360dresearch-articleACS PublicationsCopyright © 2006 American Chemical SocietyRequest reuse permissionsArticle Views61161Altmetric-Citations6513LEARN ABOUT THESE METRICSArticle Views are the COUNTER-compliant sum of full text article downloads since November 2008 (both PDF and HTML) across all institutions and individuals. These metrics are regularly updated to reflect usage leading up to the last few days.Citations are the number of other articles citing this article, calculated by Crossref and updated daily. Find more information about Crossref citation counts.The Altmetric Attention Score is a quantitative measure of the attention that a research article has received online. Clicking on the donut icon will load a page at altmetric.com with additional details about the score and the social media presence for the given article. Find more information on the Altmetric Attention Score and how the score is calculated. Share Add toView InAdd Full Text with ReferenceAdd Description ExportRISCitationCitation and abstractCitation and referencesMore Options Share onFacebookTwitterWechatLinked InRedditEmail Other access optionsGet e-Alertsclose SUBJECTS:Alcohols,Biofuels,Biomass,Catalysts,Fossil fuels Get e-Alerts",
+      "keywords": [
+        "Citation",
+        "Biomass (ecology)",
+        "Social media",
+        "Library science",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W2120446525",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4322154573",
+      "doi": "https://doi.org/10.1016/j.resconrec.2023.106916",
+      "title": "How much can chemical recycling contribute to plastic waste recycling in Europe? An assessment using material flow analysis modeling",
+      "year": 2023,
+      "cited_by_count": 128,
+      "relevance_score": 249.48993,
+      "authors": [
+        "Irdanto Saputra Lase",
+        "Davide Tonini",
+        "Dario Caro",
+        "Paola Federica Albizzati",
+        "Jorge Cristóbal",
+        "Martijn Roosen",
+        "Marvin Kusenberg",
+        "Kim Ragaert",
+        "Kevin M. Van Geem",
+        "Jo Dewulf",
+        "Steven De Meester"
+      ],
+      "venue": "Resources Conservation and Recycling",
+      "abstract": "• This paper uses prospective material flow analysis (MFA) to investigate plastic recycling in Europe in 2030. • Implementation of mechanical and chemical recycling would improve plastic recycling rate up to 80%. • The MFA clearly distinguish the quantity of plastic-to-plastic recycling from plastic-to-chemicals and plastic-to-fuel. • The highest achievable plastic-to-plastic recycling is 61%. • Implementation of chemical recycling can help to reach recycled content target in 2030. Plastic recycling rate in Europe is low, urging developments in recycling technology and strategies to increase circularity. Mechanical recycling (MR) has been the reference recycling technology for years, but in the near future chemical recycling (CR) options are expected to contribute to improve plastic circularity. This study uses a material flow analysis (MFA) at European level to provide quantitative estimates of the contribution of CR technologies to plastic recycling. Ten most used polymer types from five sectors are selected. A status quo 2018 scenario is modelled and compared to five potential future scenarios (in 2030) of plastic waste treatment, including one that only looks at improved waste collection, sorting, and MR technologies and four exploring developments of CR options. The so-called ‘missing plastics’, i.e., plastic waste generated but currently not accounted for in statistics, is considered in one of the future scenarios. The MFA results are compared by calculating four circularity indicators namely end-of-life recycling rate (EoL-RR), plastic-to-plastic rate, plastic-to-chemicals rate, and plastic-to-fuels rate. The results indicate that in the most optimistic scenario the EoL-RR in 2030 is 73–80% (sum of plastic-to-plastic and plastic-to-chemical rates, excluding plastic-to-fuel rate), in which 41–46% is plastic-to-plastic from MR, 15–38% is plastic-to-plastic from CR and 19–35% is plastic-to-chemicals. The highest achievable plastic-to-plastic rate is estimated to be 61% (46% from MR and 15% from CR). In all future scenarios, the plastic-to-fuel rate is estimated to be 3–6%. The MFA results are also used to estimate potential recycled content availability in 2030, which suggest that closed-loop recycling and processing the ‘missing plastics’ will be necessary to achieve the targets.",
+      "keywords": [
+        "Plastic waste",
+        "Environmental science",
+        "Material flow analysis",
+        "Waste management",
+        "Plastic pollution"
+      ],
+      "url": "https://openalex.org/W4322154573",
+      "matched_by": "en"
+    }
+  ]
+}

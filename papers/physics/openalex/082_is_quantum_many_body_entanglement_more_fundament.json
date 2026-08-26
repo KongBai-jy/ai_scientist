@@ -1,0 +1,136 @@
+{
+  "problem_id": 82,
+  "problem_cn": "量子多体纠缠比量子场论更加基础吗？",
+  "problem_en": "Is quantum many-body entanglement more fundamental than quantum fields?",
+  "category": "物理学",
+  "query_en": "Is quantum many-body entanglement more fundamental than quantum fields",
+  "query_cn": "量子多体纠缠比量子场论更加基础吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:34",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2132764286",
+      "doi": "https://doi.org/10.1038/nature07127",
+      "title": "The quantum internet",
+      "year": 2008,
+      "cited_by_count": 5974,
+      "relevance_score": 2323.404,
+      "authors": [
+        "H. J. Kimble"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Quantum network",
+        "Quantum technology",
+        "Quantum entanglement",
+        "Quantum teleportation",
+        "Quantum metrology"
+      ],
+      "url": "https://openalex.org/W2132764286",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2781738013",
+      "doi": "https://doi.org/10.22331/q-2018-08-06-79",
+      "title": "Quantum Computing in the NISQ era and beyond",
+      "year": 2018,
+      "cited_by_count": 8585,
+      "relevance_score": 2257.4524,
+      "authors": [
+        "John Preskill"
+      ],
+      "venue": "Quantum",
+      "abstract": "Noisy Intermediate-Scale Quantum (NISQ) technology will be available in the near future. Quantum computers with 50-100 qubits may be able to perform tasks which surpass the capabilities of today's classical digital computers, but noise in quantum gates will limit the size of quantum circuits that can be executed reliably. NISQ devices will be useful tools for exploring many-body quantum physics, and may have other useful applications, but the 100-qubit quantum computer will not change the world right away - we should regard it as a significant step toward the more powerful quantum technologies of the future. Quantum technologists should continue to strive for more accurate quantum gates and, eventually, fully fault-tolerant quantum computing.",
+      "keywords": [
+        "Quantum computer",
+        "Computer science",
+        "Qubit",
+        "Quantum gate",
+        "Computer engineering"
+      ],
+      "url": "https://openalex.org/W2781738013",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2559394418",
+      "doi": "https://doi.org/10.1038/nature23474",
+      "title": "Quantum machine learning",
+      "year": 2017,
+      "cited_by_count": 4668,
+      "relevance_score": 1805.072,
+      "authors": [
+        "Jacob Biamonte",
+        "Péter Wittek",
+        "Nicola Pancotti",
+        "Patrick Rebentrost",
+        "Nathan Wiebe",
+        "Seth Lloyd"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Quantum machine learning",
+        "Computer science",
+        "Quantum",
+        "Software",
+        "Field (mathematics)"
+      ],
+      "url": "https://openalex.org/W2559394418",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2137084802",
+      "doi": "https://doi.org/10.1146/annurev-conmatphys-031214-014726",
+      "title": "Many-Body Localization and Thermalization in Quantum Statistical Mechanics",
+      "year": 2015,
+      "cited_by_count": 2441,
+      "relevance_score": 1481.3936,
+      "authors": [
+        "Rahul Nandkishore",
+        "David A. Huse"
+      ],
+      "venue": "Annual Review of Condensed Matter Physics",
+      "abstract": "We review some recent developments in the statistical mechanics of isolated quantum systems. We provide a brief introduction to quantum thermalization, paying particular attention to the eigenstate thermalization hypothesis (ETH) and the resulting single-eigenstate statistical mechanics. We then focus on a class of systems that fail to quantum thermalize and whose eigenstates violate the ETH: These are the many-body Anderson-localized systems; their long-time properties are not captured by the conventional ensembles of quantum statistical mechanics. These systems can forever locally remember information about their local initial conditions and are thus of interest for possibilities of storing quantum information. We discuss key features of many-body localization (MBL) and review a phenomenology of the MBL phase. Single-eigenstate statistical mechanics within the MBL phase reveal dynamically stable ordered phases, and phase transitions among them, that are invisible to equilibrium statistical mechanics and can occur at high energy and low spatial dimensionality, where equilibrium ordering is forbidden.",
+      "keywords": [
+        "Statistical mechanics",
+        "Quantum statistical mechanics",
+        "Physics",
+        "Quantum",
+        "Statistical physics"
+      ],
+      "url": "https://openalex.org/W2137084802",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2161685427",
+      "doi": "https://doi.org/10.1038/ncomms5213",
+      "title": "A variational eigenvalue solver on a photonic quantum processor",
+      "year": 2014,
+      "cited_by_count": 4710,
+      "relevance_score": 1470.1028,
+      "authors": [
+        "Alberto Peruzzo",
+        "Jarrod R. McClean",
+        "Peter Shadbolt",
+        "Man‐Hong Yung",
+        "Xiaoqi Zhou",
+        "Peter J. Love",
+        "Alán Aspuru‐Guzik",
+        "Jeremy L. O’Brien"
+      ],
+      "venue": "Nature Communications",
+      "abstract": "Quantum computers promise to efficiently solve important problems that are intractable on a conventional computer. For quantum systems, where the physical dimension grows exponentially, finding the eigenvalues of certain operators is one such intractable problem and remains a fundamental challenge. The quantum phase estimation algorithm efficiently finds the eigenvalue of a given eigenvector but requires fully coherent evolution. Here we present an alternative approach that greatly reduces the requirements for coherent evolution and combine this method with a new approach to state preparation based on ansätze and classical optimization. We implement the algorithm by combining a highly reconfigurable photonic quantum processor with a conventional computer. We experimentally demonstrate the feasibility of this approach with an example from quantum chemistry—calculating the ground-state molecular energy for He–H+. The proposed approach drastically reduces the coherence time requirements, enhancing the potential of quantum resources available today and in the near future. Quantum computers promise to efficiently solve problems that would be practically impossible with a normal computer. Peruzzo et al. develop a variational computation approach that uses any available quantum resources and, with a photonic quantum processing unit, find the ground-state molecular energy of He–H+.",
+      "keywords": [
+        "Eigenvalues and eigenvectors",
+        "Quantum",
+        "Computer science",
+        "Quantum computer",
+        "Coherence (philosophical gambling strategy)"
+      ],
+      "url": "https://openalex.org/W2161685427",
+      "matched_by": "en"
+    }
+  ]
+}

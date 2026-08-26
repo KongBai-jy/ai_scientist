@@ -1,0 +1,146 @@
+{
+  "problem_id": 103,
+  "problem_cn": "人类能够预测未来吗？",
+  "problem_en": "Is it possible to predict the future?",
+  "category": "神经科学",
+  "query_en": "Is it possible to predict the future",
+  "query_cn": "人类能够预测未来吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:03",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2900855407",
+      "doi": "https://doi.org/10.3389/fpsyt.2018.00580",
+      "title": "Is It Possible to Predict the Future in First-Episode Psychosis?",
+      "year": 2018,
+      "cited_by_count": 92,
+      "relevance_score": 1270.8119,
+      "authors": [
+        "Jaana Suvisaari",
+        "Outi Mantere",
+        "Jaakko Keinänen",
+        "Teemu Mäntylä",
+        "Eva Rikandi",
+        "Maija Lindgren",
+        "Tuula Kieseppä",
+        "Tuukka T. Raij"
+      ],
+      "venue": "Frontiers in Psychiatry",
+      "abstract": "The outcome of first-episode psychosis (FEP) is highly variable, ranging from early sustained recovery to antipsychotic treatment resistance from the onset of illness. For clinicians, a possibility to predict patient outcomes would be highly valuable for the selection of antipsychotic treatment and in tailoring psychosocial treatments and psychoeducation. This selective review summarizes current knowledge of prognostic markers in FEP. We sought potential outcome predictors from clinical and sociodemographic factors, cognition, brain imaging, genetics, and blood-based biomarkers, and we considered different outcomes, like remission, recovery, physical comorbidities, and suicide risk. Based on the review, it is currently possible to predict the future for FEP patients to some extent. Some clinical features-like the longer duration of untreated psychosis (DUP), poor premorbid adjustment, the insidious mode of onset, the greater severity of negative symptoms, comorbid substance use disorders (SUDs), a history of suicide attempts and suicidal ideation and having non-affective psychosis-are associated with a worse outcome. Of the social and demographic factors, male gender, social disadvantage, neighborhood deprivation, dysfunctional family environment, and ethnicity may be relevant. Treatment non-adherence is a substantial risk factor for relapse, but a small minority of patients with acute onset of FEP and early remission may benefit from antipsychotic discontinuation. Cognitive functioning is associated with functional outcomes. Brain imaging currently has limited utility as an outcome predictor, but this may change with methodological advancements. Polygenic risk scores (PRSs) might be useful as one component of a predictive tool, and pharmacogenetic testing is already available and valuable for patients who have problems in treatment response or with side effects. Most blood-based biomarkers need further validation. None of the currently available predictive markers has adequate sensitivity or specificity used alone. However, personalized treatment of FEP will need predictive tools. We discuss some methodologies, such as machine learning (ML), and tools that could lead to the improved prediction and clinical utility of different prognostic markers in FEP. Combination of different markers in ML models with a user friendly interface, or novel findings from e.g., molecular genetics or neuroimaging, may result in computer-assisted clinical applications in the near future.",
+      "keywords": [
+        "Psychoeducation",
+        "Psychosocial",
+        "Psychiatry",
+        "Psychosis",
+        "Suicidal ideation"
+      ],
+      "url": "https://openalex.org/W2900855407",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2153791616",
+      "doi": "https://doi.org/10.1017/s0140525x12000477",
+      "title": "Whatever next? Predictive brains, situated agents, and the future of cognitive science",
+      "year": 2013,
+      "cited_by_count": 6058,
+      "relevance_score": 784.1429,
+      "authors": [
+        "Andy Clark"
+      ],
+      "venue": "Behavioral and Brain Sciences",
+      "abstract": "Brains, it has recently been argued, are essentially prediction machines. They are bundles of cells that support perception and action by constantly attempting to match incoming sensory inputs with top-down expectations or predictions. This is achieved using a hierarchical generative model that aims to minimize prediction error within a bidirectional cascade of cortical processing. Such accounts offer a unifying model of perception and action, illuminate the functional role of attention, and may neatly capture the special contribution of cortical processing to adaptive success. This target article critically examines this \"hierarchical prediction machine\" approach, concluding that it offers the best clue yet to the shape of a unified science of mind and action. Sections 1 and 2 lay out the key elements and implications of the approach. Section 3 explores a variety of pitfalls and challenges, spanning the evidential, the methodological, and the more properly conceptual. The paper ends (sections 4 and 5) by asking how such approaches might impact our more general vision of mind, experience, and agency.",
+      "keywords": [
+        "Situated",
+        "Cognitive science",
+        "Cognition",
+        "Psychology",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W2153791616",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2417483443",
+      "doi": "https://doi.org/10.1186/s13059-016-0974-4",
+      "title": "The Ensembl Variant Effect Predictor",
+      "year": 2016,
+      "cited_by_count": 8904,
+      "relevance_score": 632.5578,
+      "authors": [
+        "William McLaren",
+        "Laurent Gil",
+        "Sarah Hunt",
+        "Harpreet Singh Riat",
+        "Graham R. S. Ritchie",
+        "Anja Thormann",
+        "Paul Flicek",
+        "Fiona Cunningham"
+      ],
+      "venue": "Genome biology",
+      "abstract": "The Ensembl Variant Effect Predictor is a powerful toolset for the analysis, annotation, and prioritization of genomic variants in coding and non-coding regions. It provides access to an extensive collection of genomic annotation, with a variety of interfaces to suit different requirements, and simple options for configuring and extending analysis. It is open source, free to use, and supports full reproducibility of results. The Ensembl Variant Effect Predictor can simplify and accelerate variant interpretation in a wide range of study designs.",
+      "keywords": [
+        "Ensembl",
+        "Annotation",
+        "Prioritization",
+        "Computational biology",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2417483443",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2106578986",
+      "doi": "https://doi.org/10.4161/fly.19695",
+      "title": "A program for annotating and predicting the effects of single nucleotide polymorphisms, SnpEff",
+      "year": 2012,
+      "cited_by_count": 12872,
+      "relevance_score": 616.42145,
+      "authors": [
+        "Pablo Cingolani",
+        "Adrian E. Platts",
+        "Le Lily Wang",
+        "Melissa Coon",
+        "Tung Nguyen",
+        "Luan Wang",
+        "Susan Land",
+        "Xiangyi Lu",
+        "Douglas M. Ruden"
+      ],
+      "venue": "Fly",
+      "abstract": "We describe a new computer program, SnpEff, for rapidly categorizing the effects of variants in genome sequences. Once a genome is sequenced, SnpEff annotates variants based on their genomic locations and predicts coding effects. Annotated genomic locations include intronic, untranslated region, upstream, downstream, splice site, or intergenic regions. Coding effects such as synonymous or non-synonymous amino acid replacement, start codon gains or losses, stop codon gains or losses, or frame shifts can be predicted. Here the use of SnpEff is illustrated by annotating ~356,660 candidate SNPs in ~117 Mb unique sequences, representing a substitution rate of ~1/305 nucleotides, between the Drosophila melanogaster w(1118); iso-2; iso-3 strain and the reference y(1); cn(1) bw(1) sp(1) strain. We show that ~15,842 SNPs are synonymous and ~4,467 SNPs are non-synonymous (N/S ~0.28). The remaining SNPs are in other categories, such as stop codon gains (38 SNPs), stop codon losses (8 SNPs), and start codon gains (297 SNPs) in the 5'UTR. We found, as expected, that the SNP frequency is proportional to the recombination frequency (i.e., highest in the middle of chromosome arms). We also found that start-gain or stop-lost SNPs in Drosophila melanogaster often result in additions of N-terminal or C-terminal amino acids that are conserved in other Drosophila species. It appears that the 5' and 3' UTRs are reservoirs for genetic variations that changes the termini of proteins during evolution of the Drosophila genus. As genome sequencing is becoming inexpensive and routine, SnpEff enables rapid analyses of whole-genome sequencing data to be performed by an individual laboratory.",
+      "keywords": [
+        "Single-nucleotide polymorphism",
+        "Genetics",
+        "Biology",
+        "Computational biology",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W2106578986",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1990199118",
+      "doi": "https://doi.org/10.1016/0001-8791(79)90072-1",
+      "title": "The measurement of organizational commitment",
+      "year": 1979,
+      "cited_by_count": 8769,
+      "relevance_score": 613.26166,
+      "authors": [
+        "Richard T. Mowday",
+        "Richard M. Steers",
+        "Lyman W. Porter"
+      ],
+      "venue": "Journal of Vocational Behavior",
+      "abstract": "",
+      "keywords": [
+        "Organizational commitment",
+        "Psychology",
+        "Applied psychology",
+        "Social psychology"
+      ],
+      "url": "https://openalex.org/W1990199118",
+      "matched_by": "en"
+    }
+  ]
+}

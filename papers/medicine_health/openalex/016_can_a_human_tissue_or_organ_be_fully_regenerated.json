@@ -1,0 +1,132 @@
+{
+  "problem_id": 16,
+  "problem_cn": "人体组织与器官能否实现完全再生？",
+  "problem_en": "Can a human tissue or organ be fully regenerated?",
+  "category": "医学与健康",
+  "query_en": "Can a human tissue or organ be fully regenerated",
+  "query_cn": "人体组织与器官能否实现完全再生",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:20:01",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W3004227146",
+      "doi": "https://doi.org/10.1038/s41598-019-56847-4",
+      "title": "Re-epithelialization and immune cell behaviour in an ex vivo human skin model",
+      "year": 2020,
+      "cited_by_count": 8296,
+      "relevance_score": 717.52216,
+      "authors": [
+        "Ana Rakita",
+        "Nenad Nikolić",
+        "Michael Mildner",
+        "Johannes Matiasek",
+        "Adelheid Elbe‐Bürger"
+      ],
+      "venue": "Scientific Reports",
+      "abstract": "Abstract A large body of literature is available on wound healing in humans. Nonetheless, a standardized ex vivo wound model without disruption of the dermal compartment has not been put forward with compelling justification. Here, we present a novel wound model based on application of negative pressure and its effects for epidermal regeneration and immune cell behaviour. Importantly, the basement membrane remained intact after blister roof removal and keratinocytes were absent in the wounded area. Upon six days of culture, the wound was covered with one to three-cell thick K14 + Ki67 + keratinocyte layers, indicating that proliferation and migration were involved in wound closure. After eight to twelve days, a multi-layered epidermis was formed expressing epidermal differentiation markers (K10, filaggrin, DSG-1, CDSN). Investigations about immune cell-specific manners revealed more T cells in the blister roof epidermis compared to normal epidermis. We identified several cell populations in blister roof epidermis and suction blister fluid that are absent in normal epidermis which correlated with their decrease in the dermis, indicating a dermal efflux upon negative pressure. Together, our model recapitulates the main features of epithelial wound regeneration, and can be applied for testing wound healing therapies and investigating underlying mechanisms.",
+      "keywords": [
+        "Epidermis (zoology)",
+        "Suction blister",
+        "Wound healing",
+        "Ex vivo",
+        "Keratinocyte"
+      ],
+      "url": "https://openalex.org/W3004227146",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2063140011",
+      "doi": "https://doi.org/10.1159/000339613",
+      "title": "Wound Repair and Regeneration",
+      "year": 2012,
+      "cited_by_count": 1891,
+      "relevance_score": 700.3387,
+      "authors": [
+        "J.M. Reinke",
+        "Heiko Sorg"
+      ],
+      "venue": "European Surgical Research",
+      "abstract": "The skin is the biggest organ of the human being and has many functions. Therefore, the healing of a skin wound displays an extraordinary mechanism of cascading cellular functions which is unique in nature. As healing and regeneration processes take place in all parts of the human body, this review focuses on the healing processes of the skin and highlights the classical wound healing phases. While regeneration describes the specific substitution of the tissue, i.e. the superficial epidermis, mucosa or fetal skin, skin repair displays an unspecific form of healing in which the wound heals by fibrosis and scar formation. The first stage of acute wound healing is dedicated to hemostasis and the formation of a provisional wound matrix, which occurs immediately after injury and is completed after some hours. Furthermore, this phase initiates the inflammatory process. The inflammatory phase of the wound healing cascade gets activated during the coagulation phase and can roughly be divided into an early phase with neutrophil recruitment and a late phase with the appearance and transformation of monocytes. In the phase of proliferation the main focus of the healing process lies in the recovering of the wound surface, the formation of granulation tissue and the restoration of the vascular network. Therefore, next to the immigration of local fibroblasts along the fibrin network and the beginning of reepithelialization from the wound edges, neovascularization and angiogenesis get activated by capillary sprouting. The formation of granulation tissue stops through apoptosis of the cells, characterizing a mature wound as avascular as well as acellular. During the maturation of the wound the components of the extracellular matrix undergo certain changes. The physiological endpoint of mammalian wound repair displays the formation of a scar, which is directly linked to the extent of the inflammatory process throughout wound healing.",
+      "keywords": [
+        "Wound healing",
+        "Granulation tissue",
+        "Regeneration (biology)",
+        "Angiogenesis",
+        "Medicine"
+      ],
+      "url": "https://openalex.org/W2063140011",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2069421644",
+      "doi": "https://doi.org/10.1038/nrm3012",
+      "title": "MET signalling: principles and functions in development, organ regeneration and cancer",
+      "year": 2010,
+      "cited_by_count": 1241,
+      "relevance_score": 664.2541,
+      "authors": [
+        "Livio Trusolino",
+        "Andrea Bertotti",
+        "Paolo M. Comoglio"
+      ],
+      "venue": "Nature Reviews Molecular Cell Biology",
+      "abstract": "",
+      "keywords": [
+        "Cell biology",
+        "Receptor tyrosine kinase",
+        "Biology",
+        "Signal transduction",
+        "Signalling"
+      ],
+      "url": "https://openalex.org/W2069421644",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2115062578",
+      "doi": "https://doi.org/10.1161/01.res.0000265074.83288.09",
+      "title": "Adipose-Derived Stem Cells for Regenerative Medicine",
+      "year": 2007,
+      "cited_by_count": 2343,
+      "relevance_score": 580.6792,
+      "authors": [
+        "Jeffrey M. Gimble",
+        "Adam J. Katz",
+        "Bruce A. Bunnell"
+      ],
+      "venue": "Circulation Research",
+      "abstract": "The emerging field of regenerative medicine will require a reliable source of stem cells in addition to biomaterial scaffolds and cytokine growth factors. Adipose tissue represents an abundant and accessible source of adult stem cells with the ability to differentiate along multiple lineage pathways. The isolation, characterization, and preclinical and clinical application of adipose-derived stem cells (ASCs) are reviewed in this article.",
+      "keywords": [
+        "Adipose tissue",
+        "Regenerative medicine",
+        "Stem cell",
+        "Adult stem cell",
+        "Cell biology"
+      ],
+      "url": "https://openalex.org/W2115062578",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4210995852",
+      "doi": "https://doi.org/10.1002/jcp.21172",
+      "title": "Liver regeneration",
+      "year": 2007,
+      "cited_by_count": 1383,
+      "relevance_score": 530.30695,
+      "authors": [
+        "George K. Michalopoulos"
+      ],
+      "venue": "Journal of Cellular Physiology",
+      "abstract": "Liver regeneration after partial hepatectomy is a very complex and well-orchestrated phenomenon. It is carried out by the participation of all mature liver cell types. The process is associated with signaling cascades involving growth factors, cytokines, matrix remodeling, and several feedbacks of stimulation and inhibition of growth related signals. Liver manages to restore any lost mass and adjust its size to that of the organism, while at the same time providing full support for body homeostasis during the entire regenerative process. In situations when hepatocytes or biliary cells are blocked from regeneration, these cell types can function as facultative stem cells for each other.",
+      "keywords": [
+        "Liver regeneration",
+        "Regeneration (biology)",
+        "Cell biology",
+        "Regenerative process",
+        "Homeostasis"
+      ],
+      "url": "https://openalex.org/W4210995852",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "problem_id": 120,
+  "problem_cn": "能否制造拥有主观感知的机器人？",
+  "problem_en": "Will it be possible to create robots with subjective perception (sentient robots)?",
+  "category": "人工智能",
+  "query_en": "Will it be possible to create robots with subjective perception (sentient robots)",
+  "query_cn": "能否制造拥有主观感知的机器人",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:10:10",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2563047483",
+      "doi": null,
+      "title": "The Perception And Measurement Of Human-robot Trust",
+      "year": 2013,
+      "cited_by_count": 139,
+      "relevance_score": 380.30347,
+      "authors": [
+        "Kristin E. Schaefer"
+      ],
+      "venue": "Journal of International Crisis and Risk Communication Research",
+      "abstract": "As robots penetrate further into the everyday environments, trust in these robots becomes a crucial issue. The purpose of this work was to create and validate a reliable scale that could measure changes in an individual’s trust in a robot. Assessment of current trust theory identified measurable antecedents specific to the human, the robot, and the environment. Six experiments subsumed the development of the 40 item trust scale. Scale development included the creation of a 172 item pool. Two experiments identified the robot features and perceived functional characteristics that were related to the classification of a machine as a robot for this item pool. Item pool reduction techniques and subject matter expert (SME) content validation were used to reduce the scale to 40 items. The two final experiments were then conducted to validate the scale. The finalized 40 item pre-post interaction trust scale was designed to measure trust perceptions specific to HRI. The scale measured trust on a 0-100% rating scale and provides a percentage trust score. A 14 item sub-scale of this final version of the test recommended by SMEs may be sufficient for some HRI tasks, and the implications of this proposition were discussed.",
+      "keywords": [
+        "Perception",
+        "Artificial intelligence",
+        "Computer science",
+        "Robot",
+        "Human–robot interaction"
+      ],
+      "url": "https://openalex.org/W2563047483",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2791549227",
+      "doi": "https://doi.org/10.3389/fpsyg.2018.00468",
+      "title": "Anthropomorphism in Human–Robot Co-evolution",
+      "year": 2018,
+      "cited_by_count": 251,
+      "relevance_score": 379.48508,
+      "authors": [
+        "Luisa Damiano",
+        "Paul Dumouchel"
+      ],
+      "venue": "Frontiers in Psychology",
+      "abstract": "Social robotics entertains a particular relationship with anthropomorphism, which it neither sees as a cognitive error, nor as a sign of immaturity. Rather it considers that this common human tendency, which is hypothesized to have evolved because it favoured cooperation among early humans, can be used today to facilitate social interactions between humans and a new type of cooperative and interactive agents – social robots. This approach leads social robotics to focus research on the engineering of robots that activate anthropomorphic projections in users. The objective is to give robots “social presence” and “social behaviors” that are sufficiently credible for human users to engage in comfortable and potentially long-lasting relations with these machines. This choice of ‘applied anthropomorphism’ as a research methodology exposes the artefacts produced by social robotics to ethical condemnation: social robots are judged to be a “cheating” technology, as they generate in users the illusion of reciprocal social and affective relations. This article takes position in this debate, not only developing a series of arguments relevant to philosophy of mind, cognitive sciences, and robotic AI, but also asking what social robotics can teach us about anthropomorphism. On this basis, we propose a theoretical perspective that characterizes anthropomorphism as a basic mechanism of interaction, and rebuts the ethical reflections that a priori condemns “anthropomorphism-based” social robots. To address the relevant ethical issues, we promote a critical experimentally-based ethical approach to social robotics, “synthetic ethics”, which aims at allowing humans to use social robots for two main goals: self-knowledge and moral growth.",
+      "keywords": [
+        "Robotics",
+        "Robot",
+        "Psychology",
+        "Artificial intelligence",
+        "Social robot"
+      ],
+      "url": "https://openalex.org/W2791549227",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2766105414",
+      "doi": "https://doi.org/10.1007/s10676-017-9442-4",
+      "title": "The other question: can and should robots have rights?",
+      "year": 2017,
+      "cited_by_count": 229,
+      "relevance_score": 345.19266,
+      "authors": [
+        "David J. Gunkel"
+      ],
+      "venue": "Ethics and Information Technology",
+      "abstract": "This essay addresses the other side of the robot ethics debate, taking up and investigating the question “Can and should robots have rights?” The examination of this subject proceeds by way of three steps or movements. We begin by looking at and analyzing the form of the question itself. There is an important philosophical difference between the two modal verbs that organize the inquiry— can and should . This difference has considerable history behind it that influences what is asked about and how. Second, capitalizing on this verbal distinction, it is possible to identify four modalities concerning social robots and the question of rights. The second section will identify and critically assess these four modalities as they have been deployed and developed in the current literature. Finally, we will conclude by proposing another alternative, a way of thinking otherwise that effectively challenges the existing rules of the game and provides for other ways of theorizing moral standing that can scale to the unique challenges and opportunities that are confronted in the face of social robots.",
+      "keywords": [
+        "Modalities",
+        "Robot",
+        "Subject (documents)",
+        "Face (sociological concept)",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W2766105414",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3194729176",
+      "doi": "https://doi.org/10.1002/mar.21575",
+      "title": "Robots should be seen and not heard…sometimes: Anthropomorphism and AI service robot interactions",
+      "year": 2021,
+      "cited_by_count": 149,
+      "relevance_score": 322.12634,
+      "authors": [
+        "Kate Letheren",
+        "Jolanda Jetten",
+        "Jonathan Roberts",
+        "Jared Donovan"
+      ],
+      "venue": "Psychology and Marketing",
+      "abstract": "Abstract There is a growing need to understand how consumers will interact with artificially intelligent (AI) domestic service robots, which are currently entering consumer homes at increasing rates, yet without a theoretical understanding of the consumer preferences influencing interaction roles such robots may play within the home. Guided by anthropomorphism theory, this study explores how different levels of robot humanness and social interaction opportunities affect consumers' liking for service robots. A review of the extant literature is conducted, yielding three hypotheses that are tested via 953 responses to an online scenario‐based experiment. Findings indicate that while consumers prefer higher levels of humanness and moderate‐to‐high levels of social interaction opportunity, only some participants liked robots more when dialogue (high‐interaction opportunity) was offered. Resulting from this study is the proposed Humanized‐AI Social Interactivity Framework. The framework extends previous studies in marketing and consumer behavior literature by offering an increased understanding of how households will choose to interact with service robots in domestic environments based on humanness and social interaction. Guidelines for practitioners and two overarching themes for future research emerge from this study. This paper contributes to an increased understanding of potential interactions with service robots in domestic environments.",
+      "keywords": [
+        "Robot",
+        "Interactivity",
+        "Service (business)",
+        "Extant taxon",
+        "Affect (linguistics)"
+      ],
+      "url": "https://openalex.org/W3194729176",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4212976697",
+      "doi": "https://doi.org/10.4324/9780429288159",
+      "title": "Rights for Robots",
+      "year": 2020,
+      "cited_by_count": 107,
+      "relevance_score": 304.56323,
+      "authors": [
+        "Joshua C. Gellers"
+      ],
+      "venue": null,
+      "abstract": "Bringing a unique perspective to the burgeoning ethical and legal issues surrounding the presence of artificial intelligence in our daily lives, the book uses theory and practice on animal rights and the rights of nature to assess the status of robots. Through extensive philosophical and legal analyses, the book explores how rights can be applied to nonhuman entities. This task is completed by developing a framework useful for determining the kinds of personhood for which a nonhuman entity might be eligible, and a critical environmental ethic that extends moral and legal consideration to nonhumans. The framework and ethic are then applied to two hypothetical situations involving real-world technology—animal-like robot companions and humanoid sex robots. Additionally, the book approaches the subject from multiple perspectives, providing a comparative study of legal cases on animal rights and the rights of nature from around the world and insights from structured interviews with leading experts in the field of robotics. Ending with a call to rethink the concept of rights in the Anthropocene, suggestions for further research are made. An essential read for scholars and students interested in robot, animal and environmental law, as well as those interested in technology more generally, the book is a ground-breaking study of an increasingly relevant topic, as robots become ubiquitous in modern society. The Open Access version of this book, available at http://www.taylorfrancis.com/books/e/ISBN, has been made available under a Creative Commons Attribution-Non Commercial-No Derivatives 4.0 license.",
+      "keywords": [
+        "Robot",
+        "Political science",
+        "Computer science",
+        "Psychology",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W4212976697",
+      "matched_by": "en"
+    }
+  ]
+}

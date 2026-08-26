@@ -1,0 +1,130 @@
+{
+  "problem_id": 77,
+  "problem_cn": "是否存在和光子性质完全相反的粒子？",
+  "problem_en": "Are there any particles that behave oppositely to the properties or states of photons?",
+  "category": "物理学",
+  "query_en": "Are there any particles that behave oppositely to the properties or states of photons",
+  "query_cn": "是否存在和光子性质完全相反的粒子",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:45",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2105685140",
+      "doi": "https://doi.org/10.1103/revmodphys.81.109",
+      "title": "The electronic properties of graphene",
+      "year": 2009,
+      "cited_by_count": 24823,
+      "relevance_score": 1664.9828,
+      "authors": [
+        "A. H. Castro Neto",
+        "F. Guinea",
+        "N. M. R. Peres",
+        "Kostya S. Novoselov",
+        "A. K. Geǐm"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "This article reviews the basic theoretical aspects of graphene, a one-atom-thick allotrope of carbon, with unusual two-dimensional Dirac-like electronic excitations. The Dirac electrons can be controlled by application of external electric and magnetic fields, or by altering sample geometry and/or topology. The Dirac electrons behave in unusual ways in tunneling, confinement, and the integer quantum Hall effect. The electronic properties of graphene stacks are discussed and vary with stacking order and number of layers. Edge (surface) states in graphene depend on the edge termination (zigzag or armchair) and affect the physical properties of nanoribbons. Different types of disorder modify the Dirac equation leading to unusual spectroscopic and transport properties. The effects of electron-electron and electron-phonon interactions in single layer and multilayer graphene are also presented.",
+      "keywords": [
+        "Graphene",
+        "Physics",
+        "Condensed matter physics",
+        "Zigzag",
+        "Electron"
+      ],
+      "url": "https://openalex.org/W2105685140",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1998909324",
+      "doi": "https://doi.org/10.1103/physrev.122.345",
+      "title": "Dynamical Model of Elementary Particles Based on an Analogy with Superconductivity. I",
+      "year": 1961,
+      "cited_by_count": 5539,
+      "relevance_score": 736.7316,
+      "authors": [
+        "Y. Nambu",
+        "G. Jona‐Lasinio"
+      ],
+      "venue": "Physical Review",
+      "abstract": "It is suggested that the nucleon mass arises largely as a self-energy of some primary fermion field through the same mechanism as the appearance of energy gap in the theory of superconductivity. The idea can be put into a mathematical formulation utilizing a generalized Hartree-Fock approximation which regards real nucleons as quasi-particle excitations. We consider a simplified model of nonlinear four-fermion interaction which allows a ${\\ensuremath{\\gamma}}_{5}$-gauge group. An interesting consequence of the symmetry is that there arise automatically pseudoscalar zero-mass bound states of nucleon-antinucleon pair which may be regarded as an idealized pion. In addition, massive bound states of nucleon number zero and two are predicted in a simple approximation.The theory contains two parameters which can be explicitly related to observed nucleon mass and the pion-nucleon coupling constant. Some paradoxical aspects of the theory in connection with the ${\\ensuremath{\\gamma}}_{5}$ transformation are discussed in detail.",
+      "keywords": [
+        "Physics",
+        "Nucleon",
+        "Pseudoscalar",
+        "Coupling constant",
+        "Pion"
+      ],
+      "url": "https://openalex.org/W1998909324",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2802066523",
+      "doi": "https://doi.org/10.1103/physrev.124.246",
+      "title": "Dynamical Model of Elementary Particles Based on an Analogy with Superconductivity. II",
+      "year": 1961,
+      "cited_by_count": 2419,
+      "relevance_score": 487.0708,
+      "authors": [
+        "Y. Nambu",
+        "G. Jona‐Lasinio"
+      ],
+      "venue": "Physical Review",
+      "abstract": "Continuing the program developed in a previous paper, a \"superconductive\" solution describing the proton-neutron doublet is obtained from a nonlinear spinor field Lagrangian. We find the pions of finite mass as nucleon-antinucleon bound states by introducing a small bare mass into the Lagrangian which otherwise possesses a certain type of the ${\\ensuremath{\\gamma}}_{5}$ invariance. In addition, heavier mesons and two-nucleon bound states are obtained in the same approximation. On the basis of numerical mass relations, it is suggested that the bare nucleon field is similar to the electron-neutrino field, and further speculations are made concerning the complete description of the baryons and leptons.",
+      "keywords": [
+        "Physics",
+        "Nucleon",
+        "Meson",
+        "Spinor field",
+        "Particle physics"
+      ],
+      "url": "https://openalex.org/W2802066523",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2058874525",
+      "doi": "https://doi.org/10.1088/0034-4885/68/5/r04",
+      "title": "Single-photon sources",
+      "year": 2005,
+      "cited_by_count": 903,
+      "relevance_score": 452.029,
+      "authors": [
+        "Brahim Lounis",
+        "Michel Orrit"
+      ],
+      "venue": "Reports on Progress in Physics",
+      "abstract": "The concept of the photon , central to Einstein's explanation of the photoelectric effect, is exactly 100 years old. Yet, while photons have been detected individually for more than 50 years, devices producing individual photons on demand have only appeared in the last few years. New concepts for single-photon sources, or 'photon guns', have originated from recent progress in the optical detection, characterization and manipulation of single quantum objects. Single emitters usually deliver photons one at a time. This so-called antibunching of emitted photons can arise from various mechanisms, but ensures that the probability of obtaining two or more photons at the same time remains negligible. We briefly recall basic concepts in quantum optics and discuss potential applications of single-photon states to optical processing of quantum information: cryptography, computing and communication. A photon gun's properties are significantly improved by coupling it to a resonant cavity mode, either in the Purcell or strong-coupling regimes. We briefly recall early production of single photons with atomic beams, and the operation principles of macroscopic parametric sources, which are used in an overwhelming majority of quantum-optical experiments. We then review the photophysical and spectroscopic properties and compare the advantages and weaknesses of various single nanometre-scale objects used as single-photon sources: atoms or ions in the gas phase and, in condensed matter, organic molecules, defect centres, semiconductor nanocrystals and heterostructures. As new generations of sources are developed, coupling to cavities and nano-fabrication techniques lead to improved characteristics, delivery rates and spectral ranges. Judging from the brisk pace of recent progress, we expect single photons to soon proceed from demonstrations to applications and to bring with them the first practical uses of quantum information.",
+      "keywords": [
+        "Photon",
+        "Physics",
+        "Single-photon source",
+        "Spontaneous parametric down-conversion",
+        "Quantum technology"
+      ],
+      "url": "https://openalex.org/W2058874525",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2120105133",
+      "doi": "https://doi.org/10.1088/0953-8984/16/25/r01",
+      "title": "Zinc oxide nanostructures: growth, properties and applications",
+      "year": 2004,
+      "cited_by_count": 3666,
+      "relevance_score": 444.1973,
+      "authors": [
+        "Zhong Lin Wang"
+      ],
+      "venue": "Journal of Physics Condensed Matter",
+      "abstract": "Zinc oxide is a unique material that exhibits semiconducting and piezoelectric dual properties. Using a solid–vapour phase thermal sublimation technique, nanocombs, nanorings, nanohelixes/nanosprings, nanobelts, nanowires and nanocages of ZnO have been synthesized under specific growth conditions. These unique nanostructures unambiguously demonstrate that ZnO probably has the richest family of nanostructures among all materials, both in structures and in properties. The nanostructures could have novel applications in optoelectronics, sensors, transducers and biomedical sciences. This article reviews the various nanostructures of ZnO grown by the solid–vapour phase technique and their corresponding growth mechanisms. The application of ZnO nanobelts as nanosensors, nanocantilevers, field effect transistors and nanoresonators is demonstrated.",
+      "keywords": [
+        "Materials science",
+        "Nanostructure",
+        "Nanotechnology",
+        "Nanocages",
+        "Nanowire"
+      ],
+      "url": "https://openalex.org/W2120105133",
+      "matched_by": "en"
+    }
+  ]
+}

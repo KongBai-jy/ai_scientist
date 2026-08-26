@@ -860,9 +860,16 @@ function renderCriticRadar() {
 }
 
 /* ================= 四个 Tab 的渲染 ================= */
+// 证据来源是否可展示：仅保留可溯源的 arXiv / openalex 在线来源，
+// 隐藏 Science_2025（本地中文浓缩库）、本地 PDF、种子锚点等其它来源。
+// 后端仍会检索 Science_2025 参与假设构建，这里只做前端展示层过滤。
+function isOnlineEvidenceSource(source) {
+  return /arxiv|openalex/i.test(String(source || ""));
+}
+
 function renderExplorer(snap) {
   const e = snap.agent_explorer || {};
-  const evidence = e.evidence_list || [];
+  const evidence = (e.evidence_list || []).filter(ev => isOnlineEvidenceSource(ev.source));
   const gaps = e.knowledge_gaps || [];
   const analogies = e.analogies || [];
   return `
@@ -1279,12 +1286,17 @@ function snapshotToMarkdown(snap, allRounds) {
   L.push(`## 一、探索者（Explorer）`, "");
   L.push(`### 问题骨架`, "", e.problem_skelton || "（未提供）", "");
   L.push(`### 证据列表`, "");
-  (e.evidence_list || []).forEach(ev => {
-    const year = evidenceYear(ev);
-    const source = ev.source || "未知";
-    const yearSuffix = year && !String(source).includes(year) ? `, ${year}` : "";
-    L.push(`- ${ev.claim}（来源：${source}${yearSuffix}）`);
-  });
+  const mdEvidence = (e.evidence_list || []).filter(ev => isOnlineEvidenceSource(ev.source));
+  if (mdEvidence.length) {
+    mdEvidence.forEach(ev => {
+      const year = evidenceYear(ev);
+      const source = ev.source || "未知";
+      const yearSuffix = year && !String(source).includes(year) ? `, ${year}` : "";
+      L.push(`- ${ev.claim}（来源：${source}${yearSuffix}）`);
+    });
+  } else {
+    L.push("- （无 arXiv / openalex 在线来源证据）");
+  }
   L.push("");
   L.push(`### 知识缺口`, "");
   (e.knowledge_gaps || []).forEach(g => L.push(`- ${g}`));
@@ -1383,6 +1395,7 @@ function onJobFinished(d) {
     setWorkspaceMode(true);
     renderWorkspace();
     refreshComposer();
+    refreshSuggestionChipsAutomatically(); // 一轮完成：直接展示推荐问题，无需点击输入栏
     document.querySelector(".chat-wrap").scrollTo({ top: 0, behavior: "auto" });
   } else {
     // 后台完成：当前不在该项目，不劫持视图，仅刷新侧栏
@@ -1782,7 +1795,8 @@ function attachSuggestionChips(textareaSelector, containerSelector, mode) {
       }, 12000);
       const qs = (d && Array.isArray(d.questions) ? d.questions : []).filter(q => q && String(q).trim());
       if (!qs.length) { clearBox(); return; }
-      box.innerHTML = qs.map(q => `<button class="suggestion-chip" type="button">${esc(q)}</button>`).join("");
+      const basedon = (d && d.based_on_desc) ? `<div class="suggestion-basedon">${esc(d.based_on_desc)}</div>` : "";
+      box.innerHTML = basedon + qs.map(q => `<button class="suggestion-chip" type="button">${esc(q)}</button>`).join("");
       box.classList.add("show");
       box.querySelectorAll(".suggestion-chip").forEach((btn, i) => {
         btn.onclick = () => appendText(qs[i]);
@@ -1811,6 +1825,15 @@ function attachSuggestionChips(textareaSelector, containerSelector, mode) {
     clearTimeout(timer);
     timer = setTimeout(fetchAndRender, 350);
   });
+
+  // 暴露手动刷新器：供"一轮对话完成"后自动展示推荐问题（无需点击输入栏）
+  if (!window.__suggestRefreshers) window.__suggestRefreshers = {};
+  window.__suggestRefreshers[mode] = fetchAndRender;
+}
+/* 一轮对话完成后自动展示全部输入提示的推荐问题 */
+function refreshSuggestionChipsAutomatically() {
+  const refreshers = window.__suggestRefreshers || {};
+  Object.values(refreshers).forEach(fn => { try { fn(); } catch { /* 静默 */ } });
 }
 attachSuggestionChips("#expertInput", "#composerChips", "feedback");
 attachSuggestionChips("#customQuestion", "#customQuestionChips", "question");

@@ -1,0 +1,145 @@
+{
+  "problem_id": 76,
+  "problem_cn": "为什么时间只单向流逝？",
+  "problem_en": "Why does time seem to flow in only one direction?",
+  "category": "物理学",
+  "query_en": "Why does time seem to flow in only one direction",
+  "query_cn": "为什么时间只单向流逝",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:41",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2169017109",
+      "doi": "https://doi.org/10.1111/j.1469-8137.2008.02436.x",
+      "title": "Mechanisms of plant survival and mortality during drought: why do some plants survive while others succumb to drought?",
+      "year": 2008,
+      "cited_by_count": 4476,
+      "relevance_score": 539.078,
+      "authors": [
+        "Nate G. McDowell",
+        "William T. Pockman",
+        "Craig D. Allen",
+        "David D. Breshears",
+        "Neil S. Cobb",
+        "Thomas E. Kolb",
+        "Jennifer A. Plaut",
+        "John S. Sperry",
+        "Adam G. West",
+        "David G. Williams",
+        "Enrico A. Yépez"
+      ],
+      "venue": "New Phytologist",
+      "abstract": "Severe droughts have been associated with regional-scale forest mortality worldwide. Climate change is expected to exacerbate regional mortality events; however, prediction remains difficult because the physiological mechanisms underlying drought survival and mortality are poorly understood. We developed a hydraulically based theory considering carbon balance and insect resistance that allowed development and examination of hypotheses regarding survival and mortality. Multiple mechanisms may cause mortality during drought. A common mechanism for plants with isohydric regulation of water status results from avoidance of drought-induced hydraulic failure via stomatal closure, resulting in carbon starvation and a cascade of downstream effects such as reduced resistance to biotic agents. Mortality by hydraulic failure per se may occur for isohydric seedlings or trees near their maximum height. Although anisohydric plants are relatively drought-tolerant, they are predisposed to hydraulic failure because they operate with narrower hydraulic safety margins during drought. Elevated temperatures should exacerbate carbon starvation and hydraulic failure. Biotic agents may amplify and be amplified by drought-induced plant stress. Wet multidecadal climate oscillations may increase plant susceptibility to drought-induced mortality by stimulating shifts in hydraulic architecture, effectively predisposing plants to water stress. Climate warming and increased frequency of extreme events will probably cause increased regional mortality episodes. Isohydric and anisohydric water potential regulation may partition species between survival and mortality, and, as such, incorporating this hydraulic framework may be effective for modeling plant survival and mortality under future climate conditions.",
+      "keywords": [
+        "Biology",
+        "Climate change",
+        "Resistance (ecology)",
+        "Drought tolerance",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W2169017109",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2147253850",
+      "doi": "https://doi.org/10.1007/s11263-010-0390-2",
+      "title": "A Database and Evaluation Methodology for Optical Flow",
+      "year": 2010,
+      "cited_by_count": 2239,
+      "relevance_score": 369.25967,
+      "authors": [
+        "Simon Baker",
+        "Daniel Scharstein",
+        "John Lewis",
+        "Stefan Roth",
+        "Michael J. Black",
+        "Richard Szeliski"
+      ],
+      "venue": "International Journal of Computer Vision",
+      "abstract": "The quantitative evaluation of optical flow algorithms by Barron et al. (1994) led to significant advances in performance. The challenges for optical flow algorithms today go beyond the datasets and evaluation methods proposed in that paper. Instead, they center on problems associated with complex natural scenes, including nonrigid motion, real sensor noise, and motion discontinuities. We propose a new set of benchmarks and evaluation methods for the next generation of optical flow algorithms. To that end, we contribute four types of data to test different aspects of optical flow algorithms: (1) sequences with nonrigid motion where the ground-truth flow is determined by tracking hidden fluorescent texture, (2) realistic synthetic sequences, (3) high frame-rate video used to study interpolation error, and (4) modified stereo sequences of static scenes. In addition to the average angular error used by Barron et al., we compute the absolute flow endpoint error, measures for frame interpolation error, improved statistics, and results at motion discontinuities and in textureless regions. In October 2007, we published the performance of several well-known methods on a preliminary version of our data to establish the current state of the art. We also made the data freely available on the web at http://vision.middlebury.edu/flow/ . Subsequently a number of researchers have uploaded their results to our website and published papers using the data. A significant improvement in performance has already been achieved. In this paper we analyze the results obtained to date and draw a large number of conclusions from them.",
+      "keywords": [
+        "Optical flow",
+        "Computer science",
+        "Interpolation (computer graphics)",
+        "Ground truth",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W2147253850",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2149361417",
+      "doi": "https://doi.org/10.1088/0741-3335/47/5/r01",
+      "title": "Zonal flows in plasma—a review",
+      "year": 2005,
+      "cited_by_count": 1956,
+      "relevance_score": 357.287,
+      "authors": [
+        "P. H. Diamond",
+        "S-I Itoh",
+        "K. Itoh",
+        "T. S. Hahm"
+      ],
+      "venue": "Plasma Physics and Controlled Fusion",
+      "abstract": "A comprehensive review of zonal flow phenomena in plasmas is presented. While the emphasis is on zonal flows in laboratory plasmas, planetary zonal flows are discussed as well. The review presents the status of theory, numerical simulation and experiments relevant to zonal flows. The emphasis is on developing an integrated understanding of the dynamics of drift wave–zonal flow turbulence by combining detailed studies of the generation of zonal flows by drift waves, the back-interaction of zonal flows on the drift waves, and the various feedback loops by which the system regulates and organizes itself. The implications of zonal flow phenomena for confinement in, and the phenomena of fusion devices are discussed. Special attention is given to the comparison of experiment with theory and to identifying directions for progress in future research.",
+      "keywords": [
+        "Zonal flow (plasma)",
+        "Turbulence",
+        "Physics",
+        "Plasma",
+        "Flow (mathematics)"
+      ],
+      "url": "https://openalex.org/W2149361417",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2069324329",
+      "doi": "https://doi.org/10.1111/1540-6261.00509",
+      "title": "The Geography of Equity Listing: Why Do Companies List Abroad?",
+      "year": 2002,
+      "cited_by_count": 896,
+      "relevance_score": 342.60275,
+      "authors": [
+        "Marco Pagano",
+        "Ailsa Röell",
+        "Josef Zechner"
+      ],
+      "venue": "The Journal of Finance",
+      "abstract": "This paper documents aggregate trends in the foreign listings of companies, and analyzes their distinctive prelisting characteristics and postlisting performance. In 1986–1997, many European companies listed abroad, mainly on U.S. exchanges, while the number of U.S. companies listed in Europe decreased. European companies that cross‐list tend to be large and recently privatized firms, and expand their foreign sales after listing abroad. They differ sharply depending on where they cross‐list: The U.S. exchanges attract high‐tech and export‐oriented companies that expand rapidly without significant leveraging. Companies cross‐listing within Europe do not grow unusually fast, and increase their leverage after cross‐listing.",
+      "keywords": [
+        "Listing (finance)",
+        "Business",
+        "Leverage (statistics)",
+        "Cross listing",
+        "Equity (law)"
+      ],
+      "url": "https://openalex.org/W2069324329",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2105846236",
+      "doi": "https://doi.org/10.1007/s11747-014-0403-8",
+      "title": "A new criterion for assessing discriminant validity in variance-based structural equation modeling",
+      "year": 2014,
+      "cited_by_count": 35771,
+      "relevance_score": 331.6641,
+      "authors": [
+        "Jörg Henseler",
+        "Christian M. Ringle",
+        "Marko Sarstedt"
+      ],
+      "venue": "Journal of the Academy of Marketing Science",
+      "abstract": "Discriminant validity assessment has become a generally accepted prerequisite for analyzing relationships between latent variables. For variance-based structural equation modeling, such as partial least squares, the Fornell-Larcker criterion and the examination of cross-loadings are the dominant approaches for evaluating discriminant validity. By means of a simulation study, we show that these approaches do not reliably detect the lack of discriminant validity in common research situations. We therefore propose an alternative approach, based on the multitrait-multimethod matrix, to assess discriminant validity: the heterotrait-monotrait ratio of correlations. We demonstrate its superior performance by means of a Monte Carlo simulation study, in which we compare the new approach to the Fornell-Larcker criterion and the assessment of (partial) cross-loadings. Finally, we provide guidelines on how to handle discriminant validity issues in variance-based structural equation modeling.",
+      "keywords": [
+        "Structural equation modeling",
+        "Discriminant validity",
+        "Discriminant",
+        "Latent variable",
+        "Variance (accounting)"
+      ],
+      "url": "https://openalex.org/W2105846236",
+      "matched_by": "en"
+    }
+  ]
+}

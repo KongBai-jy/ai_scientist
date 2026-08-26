@@ -1,0 +1,131 @@
+{
+  "problem_id": 70,
+  "problem_cn": "高温超导微观机理是什么？",
+  "problem_en": "What is the microscopic mechanism for high-temperature superconductivity?",
+  "category": "物理学",
+  "query_en": "What is the microscopic mechanism for high-temperature superconductivity",
+  "query_cn": "高温超导微观机理是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:20",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1973252323",
+      "doi": "https://doi.org/10.1103/revmodphys.79.353",
+      "title": "Scanning tunneling spectroscopy of high-temperature superconductors",
+      "year": 2007,
+      "cited_by_count": 1030,
+      "relevance_score": 544.362,
+      "authors": [
+        "Ø. Fischer",
+        "M. Kugler",
+        "I. Maggio‐Aprile",
+        "Christophe Berthod",
+        "Ch. Renner"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "Tunneling spectroscopy has played a central role in the experimental verification of the microscopic theory of superconductivity in classical superconductors. Initial attempts to apply the same approach to high-temperature superconductors were hampered by various problems related to the complexity of these materials. The use of scanning tunneling microscopy and spectroscopy (STM and STS) on these compounds allowed the main difficulties to be overcome. This success motivated a rapidly growing scientific community to apply this technique to high-temperature superconductors. This paper reviews the experimental highlights obtained over the last decade. The crucial efforts to gain control over the technique and to obtain reproducible results are first recalled. Then a discussion on how the STM and STS techniques have contributed to the study of some of the most unusual and remarkable properties of high-temperature superconductors is presented: the unusually large gap values and the absence of scaling with the critical temperature, the pseudogap and its relation to superconductivity, the unprecedented small size of the vortex cores and its influence on vortex matter, the unexpected electronic properties of the vortex cores, and the combination of atomic resolution and spectroscopy leading to the observation of periodic local density of states modulations in the superconducting and pseudogap states and in the vortex cores.",
+      "keywords": [
+        "Pseudogap",
+        "Superconductivity",
+        "Scanning tunneling spectroscopy",
+        "Condensed matter physics",
+        "Scanning tunneling microscope"
+      ],
+      "url": "https://openalex.org/W1973252323",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1519514903",
+      "doi": "https://doi.org/10.1038/25482",
+      "title": "Quantitative test of a microscopic mechanism of high-temperature superconductivity",
+      "year": 1998,
+      "cited_by_count": 127,
+      "relevance_score": 471.54752,
+      "authors": [
+        "Eugene Demler",
+        "Shou-Cheng Zhang"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Superconductivity",
+        "Condensed matter physics",
+        "Antiferromagnetism",
+        "Condensation",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W1519514903",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2084470984",
+      "doi": "https://doi.org/10.1103/revmodphys.76.263",
+      "title": "Inhomogeneous superconductivity in condensed matter and QCD",
+      "year": 2004,
+      "cited_by_count": 676,
+      "relevance_score": 466.2191,
+      "authors": [
+        "R. Casalbuoni",
+        "Giuseppe Nardulli"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "Inhomogeneous superconductivity arises when the species participating in the pairing phenomenon have different Fermi surfaces with a large enough separation. In these conditions it could be more favorable for each of the pairing fermions to stay close to its Fermi surface and, unlike the usual BCS state, for the Cooper pair to have a nonzero total momentum. For this reason, in this state the gap varies in space, the ground state is inhomogeneous, and a crystalline structure might be formed. This situation was considered for the first time by Fulde and Ferrell (1964) and Larkin and Ovchinnikov (1964), after whom the corresponding state is called the LOFF state. The spontaneous breaking of the space symmetries in the vacuum state is a characteristic feature of this phase and is associated with the presence of long-wavelength excitations of zero mass. The situation described here is of interest both in solid-state and in elementary-particle physics, in particular in quantum chromodynamics at high density and low temperature. This review presents the theoretical approach to the LOFF state and its phenomenological applications using the language of the effective field theories.",
+      "keywords": [
+        "Physics",
+        "Pairing",
+        "Cooper pair",
+        "Fermion",
+        "Condensed matter physics"
+      ],
+      "url": "https://openalex.org/W2084470984",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2041575426",
+      "doi": "https://doi.org/10.1103/physics.1.21",
+      "title": "High-temperature superconductivity in the iron pnictides",
+      "year": 2008,
+      "cited_by_count": 194,
+      "relevance_score": 406.1123,
+      "authors": [
+        "M. R. Norman"
+      ],
+      "venue": "Physics",
+      "abstract": "A new class of high-temperature superconductors has been discovered in layered iron arsenic compounds. Results in this rapidly moving field may shed light on the still unsolved problem of high-temperature cuprate superconductivity.",
+      "keywords": [
+        "Superconductivity",
+        "Cuprate",
+        "Condensed matter physics",
+        "Arsenic",
+        "High-temperature superconductivity"
+      ],
+      "url": "https://openalex.org/W2041575426",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1912136246",
+      "doi": "https://doi.org/10.1103/revmodphys.87.457",
+      "title": "Colloquium : Theory of intertwined orders in high temperature superconductors",
+      "year": 2015,
+      "cited_by_count": 1084,
+      "relevance_score": 404.1978,
+      "authors": [
+        "Eduardo Fradkin",
+        "Steven A. Kivelson",
+        "J. M. Tranquada"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "Understanding high temperature superconductors is a central problem in condensed matter physics. Many experiments have uncovered ordering tendencies which are responsible for the complex phase diagram of high temperature superconductors. This Colloquium discusses the interplay between different order parameters in these materials. Considering the intertwining of these orders leads to new experimentally observable consequences, shedding new light into the physics of these fascinating materials.",
+      "keywords": [
+        "Physics",
+        "Cuprate",
+        "Superconductivity",
+        "Phase diagram",
+        "High-temperature superconductivity"
+      ],
+      "url": "https://openalex.org/W1912136246",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -25,7 +25,7 @@ from models.schemas import (
 from agents.agent_explorer import explore
 from agents.agent_scientist import generate_hypotheses
 from agents.agent_critic import critique, calculate_overall_score
-from models.database import SessionLocal, SnapshotRecord
+from models.database import SessionLocal, SnapshotRecord, USES_MYSQL
 from services.job_manager import PipelineCancelled, RoundLimitError
 
 # 加载项目根目录的 .env
@@ -354,29 +354,32 @@ def run_full_pipeline(
         except Exception as file_err:
             logger.warning(f"快照文件写入失败（不影响本次运行结果）: {file_err}")
 
-        # 写入数据库（失败仅记录日志，不中断主流程）
-        try:
-            db = SessionLocal()
-            record = SnapshotRecord(
-                round=round_label,
-                question=question,
-                overall_score=overall_score,
-                explorer_output=explorer_result.model_dump(),
-                scientist_output=scientist_result.model_dump(),
-                critic_output=critic_result.model_dump(),
-                granularity_stats=granularity_stats,
-                human_feedback=[{"content": feedback}] if feedback else []
-            )
-            db.add(record)
-            db.commit()
-            logger.info(f"   数据库快照已写入 (id={record.id})")
-        except Exception as db_err:
-            logger.warning(f"数据库快照写入失败（降级为仅保存 JSON 文件）: {db_err}")
-            if 'db' in locals():
-                db.rollback()
-        finally:
-            if 'db' in locals():
-                db.close()
+        # 写入数据库（仅当启用了 MySQL 才尝试；未配置/落到 SQLite 时跳过，以 JSON 快照为准）
+        if not USES_MYSQL:
+            logger.info("   未启用 MySQL，跳过数据库快照（仅保存 JSON 文件）")
+        else:
+            try:
+                db = SessionLocal()
+                record = SnapshotRecord(
+                    round=round_label,
+                    question=question,
+                    overall_score=overall_score,
+                    explorer_output=explorer_result.model_dump(),
+                    scientist_output=scientist_result.model_dump(),
+                    critic_output=critic_result.model_dump(),
+                    granularity_stats=granularity_stats,
+                    human_feedback=[{"content": feedback}] if feedback else []
+                )
+                db.add(record)
+                db.commit()
+                logger.info(f"   数据库快照已写入 (id={record.id})")
+            except Exception as db_err:
+                logger.warning(f"数据库快照写入失败（降级为仅保存 JSON 文件）: {db_err}")
+                if 'db' in locals():
+                    db.rollback()
+            finally:
+                if 'db' in locals():
+                    db.close()
 
         logger.info(f"✅ {round_label} 完成，综合得分: {overall_score}")
         logger.info(f"   颗粒度: L1={granularity_stats['L1']}, L2={granularity_stats['L2']}, L3={granularity_stats['L3']}")
@@ -641,6 +644,18 @@ def _build_snapshot_brief(project_id: Optional[str]) -> tuple[str, str]:
     scores = critic_out.get("scores") or {}
     overall = latest.get("overall_score", 0)
 
+    # 短板定向：找出五维中最低的一维，作为 prompt 引导的优先提问方向
+    _weak_dims = ["evidence", "falsifiability", "consistency", "novelty", "cross_domain"]
+    weak_dim, weak_value = None, None
+    for k in _weak_dims:
+        try:
+            v = float(scores.get(k))
+        except (TypeError, ValueError):
+            continue
+        if weak_value is None or v < weak_value:
+            weak_value, weak_dim = v, k
+    weak_hint = f"\n- 薄弱维度: {weak_dim}（{weak_value}）——优先追问如何补强该维度" if weak_dim else ""
+
     brief = f"""【当前研究进展】
 - 最新轮次: {latest.get('round', 'V?')}  综合得分: {overall}
 - 五维评分: evidence={scores.get('evidence', '?')}, falsifiability={scores.get('falsifiability', '?')}, consistency={scores.get('consistency', '?')}, novelty={scores.get('novelty', '?')}, cross_domain={scores.get('cross_domain', '?')}
@@ -648,9 +663,32 @@ def _build_snapshot_brief(project_id: Optional[str]) -> tuple[str, str]:
 {h_brief}
 - Critic 致命缺陷: {top_flaw}
 - Critic 缺失证据:
-{missing_brief}
+{missing_brief}{weak_hint}
 """
     return brief, based_on
+
+
+def _build_covered_brief(project_id: Optional[str]) -> str:
+    """从该项目历史轮次的 human_feedback 中提取“已追问/反馈过的方向”。
+
+    目的：第 4 项改进——让 LLM 避开已覆盖方向、往未探索处走，避免每次生成
+    风格相近的追问。仅在 snapshot 路径（有历史）时有内容。
+    """
+    snaps = get_project_snapshots(project_id)
+    if not snaps:
+        return ""
+    covered: List[str] = []
+    for s in snaps[-5:]:  # 最近 5 轮
+        fb = s.get("human_feedback") or []
+        items = fb if isinstance(fb, list) else []
+        for it in items:
+            c = str(it.get("content") if isinstance(it, dict) else it).strip()
+            if c and c not in covered:
+                covered.append(c[:60])
+    if not covered:
+        return ""
+    lines = "\n".join(f"  - {c}" for c in covered)
+    return f"\n【已追问/反馈过的方向】（请避开重复，往未探索处走）\n{lines}\n"
 
 
 def _build_chroma_brief(context: str) -> tuple[str, str]:
@@ -702,6 +740,17 @@ def _build_chroma_brief(context: str) -> tuple[str, str]:
     return brief, "chroma:top_3"
 
 
+def _based_on_desc(based_on: str) -> str:
+    """把 based_on 标签翻译成前端可展示的资源口径说明（第 6 项透明度）。"""
+    key = based_on.split(":")[0] if ":" in based_on else based_on
+    return {
+        "snapshot": "依据最近一轮研究进展（假设 / Critic 缺陷 / 薄弱维度）",
+        "chroma": "依据文献库检索到的资料片段",
+        "context_only": "仅依据你当前的输入",
+        "error": "",
+    }.get(key, "")
+
+
 def suggest_questions(
     context: str = "",
     mode: str = "question",
@@ -723,7 +772,8 @@ def suggest_questions(
         top_k: 生成数量（1-5）
 
     Returns:
-        {questions: List[str], based_on: "snapshot:Vx" | "chroma:top_3" | "context_only" | "error"}
+        {questions: List[str], dims: List[str], based_on: "snapshot:Vx" | "chroma:top_3" | "context_only" | "error",
+         based_on_desc: str}
     """
     try:
         llm = _get_suggest_llm()
@@ -749,17 +799,28 @@ def suggest_questions(
 
     context_hint = f"\n【用户已输入前缀】（建议应自然延伸此前缀）\n{context}" if context else ""
 
+    # 第 4 项：snapshot 路径时注入“已追问/反馈过的方向”，避免生成重复追问
+    covered_brief = ""
+    if based_on.startswith("snapshot:"):
+        covered_brief = _build_covered_brief(project_id)
+
     system_content = (
         f"你是科研迭代助手。基于当前研究上下文，生成 {top_k} 条用户最可能追问的迭代相关问题。\n\n"
         "要求：\n"
         "1. 每条 15-40 字符，简洁直接\n"
-        "2. 涵盖不同维度：1 个深挖证据/数据，1 个改进方法/实验设计，1 个跨域类比/新视角\n"
-        "3. 直接可执行（用户点击即发送）\n"
-        "4. 仅输出 JSON 数组：[\"问题1\", \"问题2\", \"问题3\"]\n"
-        "5. 不要任何额外说明、不要 markdown 代码块、不要前后空行"
+        "2. 按维度覆盖：1 个 deep_dive（深挖证据/数据），1 个 method（改进方法/实验设计），1 个 cross_domain（跨域类比/新视角）；若上下文提示了【薄弱维度】，请优先对该维度提问\n"
+        "3. 若提供了【已追问/反馈过的方向】，请避开重复、往未探索处延伸\n"
+        "4. 直接可执行（用户点击即发送）\n"
+        "5. 仅输出 JSON 数组，每项含 dim 与 question：\n"
+        "   [{\"dim\":\"deep_dive\",\"question\":\"问题1\"},{\"dim\":\"method\",\"question\":\"问题2\"},{\"dim\":\"cross_domain\",\"question\":\"问题3\"}]\n"
+        "   dim 仅允许 deep_dive | method | cross_domain 之一\n"
+        "6. 不要任何额外说明、不要 markdown 代码块、不要前后空行"
     )
 
-    human_content = f"{snapshot_brief}{context_hint}\n\n【任务】{task_desc}\n"
+    human_content = f"{snapshot_brief}{covered_brief}{context_hint}\n\n【任务】{task_desc}\n"
+
+    # 第 6 项：基于脚本做透明化说明
+    desc = _based_on_desc(based_on)
 
     try:
         from langchain_core.messages import SystemMessage, HumanMessage
@@ -771,15 +832,36 @@ def suggest_questions(
             text = re.sub(r"^```[a-z]*\n?", "", text)
             text = re.sub(r"\n?```$", "", text).strip()
 
-        questions = json.loads(text)
-        if not isinstance(questions, list):
-            questions = []
-        questions = [q.strip() for q in questions if isinstance(q, str) and q.strip()][:top_k]
+        data = json.loads(text)
+        questions: List[str] = []
+        dims: List[str] = []
+        if isinstance(data, list):
+            if all(isinstance(x, str) for x in data):
+                # 兼容旧版纯字符串数组输出
+                questions = [x.strip() for x in data if x.strip()][:top_k]
+            else:
+                for item in data:
+                    if not isinstance(item, dict):
+                        continue
+                    q = str(item.get("question", "")).strip()
+                    dim = str(item.get("dim", "")).strip()
+                    if q and q not in questions:
+                        questions.append(q[:80])
+                        dims.append(dim if dim in {"deep_dive", "method", "cross_domain"} else "other")
 
-        return {"questions": questions, "based_on": based_on}
+        if not questions:
+            return {"questions": [], "dims": [], "based_on": based_on, "based_on_desc": desc,
+                    "error": "LLM 未返回有效问题"}
+
+        return {
+            "questions": questions[:top_k],
+            "dims": (dims or [])[:top_k],
+            "based_on": based_on,
+            "based_on_desc": desc,
+        }
     except Exception as e:
         logger.warning(f"建议生成失败: {e}")
-        return {"questions": [], "based_on": "error", "error": str(e)}
+        return {"questions": [], "dims": [], "based_on": "error", "based_on_desc": "", "error": str(e)}
 
 
 def build_orchestrator_graph():

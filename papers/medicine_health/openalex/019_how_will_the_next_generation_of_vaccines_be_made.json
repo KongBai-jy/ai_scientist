@@ -1,0 +1,134 @@
+{
+  "problem_id": 19,
+  "problem_cn": "下一代疫苗将如何制造？",
+  "problem_en": "How will the next generation of vaccines be made?",
+  "category": "医学与健康",
+  "query_en": "How will the next generation of vaccines be made",
+  "query_cn": "下一代疫苗将如何制造",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:20:12",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2782708334",
+      "doi": "https://doi.org/10.1038/nrd.2017.243",
+      "title": "mRNA vaccines — a new era in vaccinology",
+      "year": 2018,
+      "cited_by_count": 4641,
+      "relevance_score": 799.7472,
+      "authors": [
+        "Norbert Pardi",
+        "Michael J. Hogan",
+        "Frederick Porter",
+        "Drew Weissman"
+      ],
+      "venue": "Nature Reviews Drug Discovery",
+      "abstract": "",
+      "keywords": [
+        "Computational biology",
+        "Cancer vaccine",
+        "Messenger RNA",
+        "Medicine",
+        "Biotechnology"
+      ],
+      "url": "https://openalex.org/W2782708334",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3132264034",
+      "doi": "https://doi.org/10.3390/vaccines9020160",
+      "title": "COVID-19 Vaccine Hesitancy Worldwide: A Concise Systematic Review of Vaccine Acceptance Rates",
+      "year": 2021,
+      "cited_by_count": 2173,
+      "relevance_score": 580.68207,
+      "authors": [
+        "Malik Sallam"
+      ],
+      "venue": "Vaccines",
+      "abstract": "Utility of vaccine campaigns to control coronavirus 2019 disease (COVID-19) is not merely dependent on vaccine efficacy and safety. Vaccine acceptance among the general public and healthcare workers appears to have a decisive role in the successful control of the pandemic. The aim of this review was to provide an up-to-date assessment of COVID-19 vaccination acceptance rates worldwide. A systematic search of the peer-reviewed English survey literature indexed in PubMed was done on 25 December 2020. Results from 31 peer-reviewed published studies met the inclusion criteria and formed the basis for the final COVID-19 vaccine acceptance estimates. Survey studies on COVID-19 vaccine acceptance rates were found from 33 different countries. Among adults representing the general public, the highest COVID-19 vaccine acceptance rates were found in Ecuador (97.0%), Malaysia (94.3%), Indonesia (93.3%) and China (91.3%). However, the lowest COVID-19 vaccine acceptance rates were found in Kuwait (23.6%), Jordan (28.4%), Italy (53.7), Russia (54.9%), Poland (56.3%), US (56.9%), and France (58.9%). Only eight surveys among healthcare workers (doctors and nurses) were found, with vaccine acceptance rates ranging from 27.7% in the Democratic Republic of the Congo to 78.1% in Israel. In the majority of survey studies among the general public stratified per country (29/47, 62%), the acceptance of COVID-19 vaccination showed a level of ≥70%. Low rates of COVID-19 vaccine acceptance were reported in the Middle East, Russia, Africa and several European countries. This could represent a major problem in the global efforts to control the current COVID-19 pandemic. More studies are recommended to address the scope of COVID-19 vaccine hesitancy. Such studies are particularly needed in the Middle East and North Africa, Sub-Saharan Africa, Eastern Europe, Central Asia, Middle and South America. Addressing the scope of COVID-19 vaccine hesitancy in various countries is recommended as an initial step for building trust in COVID-19 vaccination efforts.",
+      "keywords": [
+        "Vaccination",
+        "Medicine",
+        "Pandemic",
+        "Coronavirus disease 2019 (COVID-19)",
+        "Public health"
+      ],
+      "url": "https://openalex.org/W3132264034",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3175628958",
+      "doi": "https://doi.org/10.1038/s41565-021-00931-2",
+      "title": "Extracellular vesicles as a next-generation drug delivery platform",
+      "year": 2021,
+      "cited_by_count": 1929,
+      "relevance_score": 543.8207,
+      "authors": [
+        "Inge K. Herrmann",
+        "Matthew J. A. Wood",
+        "Gregor Fuhrmann"
+      ],
+      "venue": "Nature Nanotechnology",
+      "abstract": "",
+      "keywords": [
+        "Extracellular vesicles",
+        "Extracellular vesicle",
+        "Extracellular",
+        "Vesicle",
+        "Drug delivery"
+      ],
+      "url": "https://openalex.org/W3175628958",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2029884055",
+      "doi": "https://doi.org/10.1038/nm.3409",
+      "title": "Key roles of adjuvants in modern vaccines",
+      "year": 2013,
+      "cited_by_count": 1435,
+      "relevance_score": 530.341,
+      "authors": [
+        "Steven G. Reed",
+        "Mark T. Orr",
+        "Christopher B. Fox"
+      ],
+      "venue": "Nature Medicine",
+      "abstract": "",
+      "keywords": [
+        "Adjuvant",
+        "Vaccine adjuvant",
+        "Medicine",
+        "Tolerability",
+        "Risk analysis (engineering)"
+      ],
+      "url": "https://openalex.org/W2029884055",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3187192250",
+      "doi": "https://doi.org/10.1038/s41577-021-00592-1",
+      "title": "Progress of the COVID-19 vaccine effort: viruses, vaccines and variants versus efficacy, effectiveness and escape",
+      "year": 2021,
+      "cited_by_count": 1203,
+      "relevance_score": 445.53723,
+      "authors": [
+        "John S. Tregoning",
+        "Katie E. Flight",
+        "Sophie L. Higham",
+        "Ziyin Wang",
+        "Benjamin F. Pierce"
+      ],
+      "venue": "Nature reviews. Immunology",
+      "abstract": "",
+      "keywords": [
+        "Pandemic",
+        "Coronavirus disease 2019 (COVID-19)",
+        "Vaccine efficacy",
+        "Virology",
+        "Severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2)"
+      ],
+      "url": "https://openalex.org/W3187192250",
+      "matched_by": "en"
+    }
+  ]
+}

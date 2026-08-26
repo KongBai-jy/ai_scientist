@@ -1,0 +1,150 @@
+{
+  "problem_id": 44,
+  "problem_cn": "细胞可以人工合成吗？",
+  "problem_en": "Can a cell be artificially synthesized?",
+  "category": "生物学",
+  "query_en": "Can a cell be artificially synthesized",
+  "query_cn": "细胞可以人工合成吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:38",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2981731882",
+      "doi": "https://doi.org/10.1016/j.inffus.2019.12.012",
+      "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
+      "year": 2019,
+      "cited_by_count": 9610,
+      "relevance_score": 654.6149,
+      "authors": [
+        "Alejandro Barredo Arrieta",
+        "Natalia Díaz-Rodríguez",
+        "Javier Del Ser",
+        "Adrien Bennetot",
+        "Siham Tabik",
+        "Alberto Barbado",
+        "Salvador García",
+        "Sergio Gil-López",
+        "Daniel Molina",
+        "Richard Benjamins",
+        "Raja Chatila",
+        "Francisco Herrera"
+      ],
+      "venue": "Information Fusion",
+      "abstract": "",
+      "keywords": [
+        "Computer science",
+        "Artificial intelligence",
+        "Taxonomy (biology)",
+        "Field (mathematics)",
+        "Software deployment"
+      ],
+      "url": "https://openalex.org/W2981731882",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2112796928",
+      "doi": "https://doi.org/10.1109/5.726791",
+      "title": "Gradient-based learning applied to document recognition",
+      "year": 1998,
+      "cited_by_count": 59353,
+      "relevance_score": 566.0869,
+      "authors": [
+        "Yann LeCun",
+        "Léon Bottou",
+        "Yoshua Bengio",
+        "Patrick Haffner"
+      ],
+      "venue": "Proceedings of the IEEE",
+      "abstract": "Multilayer neural networks trained with the back-propagation algorithm constitute the best example of a successful gradient based learning technique. Given an appropriate network architecture, gradient-based learning algorithms can be used to synthesize a complex decision surface that can classify high-dimensional patterns, such as handwritten characters, with minimal preprocessing. This paper reviews various methods applied to handwritten character recognition and compares them on a standard handwritten digit recognition task. Convolutional neural networks, which are specifically designed to deal with the variability of 2D shapes, are shown to outperform all other techniques. Real-life document recognition systems are composed of multiple modules including field extraction, segmentation recognition, and language modeling. A new learning paradigm, called graph transformer networks (GTN), allows such multimodule systems to be trained globally using gradient-based methods so as to minimize an overall performance measure. Two systems for online handwriting recognition are described. Experiments demonstrate the advantage of global training, and the flexibility of graph transformer networks. A graph transformer network for reading a bank cheque is also described. It uses convolutional neural network character recognizers combined with global training techniques to provide record accuracy on business and personal cheques. It is deployed commercially and reads several million cheques per day.",
+      "keywords": [
+        "Computer science",
+        "Artificial intelligence",
+        "Convolutional neural network",
+        "Intelligent character recognition",
+        "Handwriting recognition"
+      ],
+      "url": "https://openalex.org/W2112796928",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3004227146",
+      "doi": "https://doi.org/10.1038/s41598-019-56847-4",
+      "title": "Re-epithelialization and immune cell behaviour in an ex vivo human skin model",
+      "year": 2020,
+      "cited_by_count": 8296,
+      "relevance_score": 535.7145,
+      "authors": [
+        "Ana Rakita",
+        "Nenad Nikolić",
+        "Michael Mildner",
+        "Johannes Matiasek",
+        "Adelheid Elbe‐Bürger"
+      ],
+      "venue": "Scientific Reports",
+      "abstract": "Abstract A large body of literature is available on wound healing in humans. Nonetheless, a standardized ex vivo wound model without disruption of the dermal compartment has not been put forward with compelling justification. Here, we present a novel wound model based on application of negative pressure and its effects for epidermal regeneration and immune cell behaviour. Importantly, the basement membrane remained intact after blister roof removal and keratinocytes were absent in the wounded area. Upon six days of culture, the wound was covered with one to three-cell thick K14 + Ki67 + keratinocyte layers, indicating that proliferation and migration were involved in wound closure. After eight to twelve days, a multi-layered epidermis was formed expressing epidermal differentiation markers (K10, filaggrin, DSG-1, CDSN). Investigations about immune cell-specific manners revealed more T cells in the blister roof epidermis compared to normal epidermis. We identified several cell populations in blister roof epidermis and suction blister fluid that are absent in normal epidermis which correlated with their decrease in the dermis, indicating a dermal efflux upon negative pressure. Together, our model recapitulates the main features of epithelial wound regeneration, and can be applied for testing wound healing therapies and investigating underlying mechanisms.",
+      "keywords": [
+        "Epidermis (zoology)",
+        "Suction blister",
+        "Wound healing",
+        "Ex vivo",
+        "Keratinocyte"
+      ],
+      "url": "https://openalex.org/W3004227146",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4235033012",
+      "doi": "https://doi.org/10.1038/35053176",
+      "title": "Synthesizing life",
+      "year": 2001,
+      "cited_by_count": 1672,
+      "relevance_score": 505.71585,
+      "authors": [
+        "Jack W. Szostak",
+        "David P. Bartel",
+        "P. L. Luisi"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Simple (philosophy)",
+        "Abiogenesis",
+        "Engineering ethics",
+        "Epistemology",
+        "Nanotechnology"
+      ],
+      "url": "https://openalex.org/W4235033012",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2620241325",
+      "doi": "https://doi.org/10.1159/000477308",
+      "title": "Heat Shock Protein A12B Protects Vascular Endothelial Cells Against Sepsis-Induced Acute Lung Injury in Mice",
+      "year": 2017,
+      "cited_by_count": 10713,
+      "relevance_score": 497.516,
+      "authors": [
+        "Yi Chen",
+        "Lei Wang",
+        "Qiuxiang Kang",
+        "Xu Zhang",
+        "Guifang Yu",
+        "Xiaojian Wan",
+        "Jiafeng Wang",
+        "Keming Zhu"
+      ],
+      "venue": "Cellular Physiology and Biochemistry",
+      "abstract": "BACKGROUND: Pulmonary endothelial injury is a critical process in the pathogenesis of acute lung injury (ALI) during sepsis. Heat shock protein A12B (HSPA12B) is mainly expressed in endothelial cells and protects against several harmful factors. However, the effects of HSPA12B in sepsis-induced ALI and its potential mechanisms of action remain unclear. METHODS: For in vivo experiments, C57BL/6 mice were randomly divided into four groups (n=15): a sham operation group, a cecal ligation and puncture (CLP) group, a HSPA12B siRNA-CLP group and a negative control (NC) siRNA-CLP group. The mice were treated by nasal inhalation of 2-OMe-modified HSPA12B siRNA or NC siRNA. Sepsis was induced by CLP. Samples were harvested 24 and 48 hours post-CLP surgery. Pathological changes and scoring of lung tissue samples were monitored using hematoxylin and eosin staining. Levels of pro-inflammatory cytokines (e.g., interleukin (IL)-1β, tumor necrosis factor (TNF)-α, and IL-6) and myeloperoxidase activity in bronchoalveolar lavage fluid were analyzed by ELISA. Pulmonary edema was assessed using a wet-to-dry weight ratio. Neutrophils and alveolar macrophages were counted using flow cytometry. Pulmonary endothelial cell apoptosis was detected by TUNEL staining. Expression levels of MAPK family signaling molecules and caspase-3 were measured by Western blot analysis. In addition, 7-day survival was recorded. For in vitro experiments, human umbilical vein endothelial cells were pre-transfected with HSPA12B siRNA or pIRES2-EGFP-HSPA12B-Flag plasmid and treated with lipopolysaccharide; subsequently, the expression levels of MAPK family signaling molecules and caspase-3 were measured by Western blotting. RESULTS: Nasal inhalation of nano-polymer-encapsulated HSPA12B siRNA specifically downregulated mRNA and protein expression levels of HSPA12B in lung tissues. The administration of HSPA12B siRNA aggravated lung pathological injury, upregulated pro-inflammatory cytokine (e.g., IL-1β, TNF-α, and IL-6) expression, and increased myeloperoxidase activity, neutrophil infiltration, pulmonary edema, and pulmonary endothelial cell apoptosis. Additionally, HSPA12B knockdown worsened survival after CLP surgery. The potential protective mechanisms of HSPA12B may involve the inhibition of ERK phosphorylation and caspase-3 activation in vivo and in vitro. CONCLUSION: HSPA12B protected against sepsis-induced ALI. The potential mechanism may be partly due to the inhibition of ERK phosphorylation and caspase-3 activation. These findings provide a potential therapeutic target for treating sepsis.",
+      "keywords": [
+        "Sepsis",
+        "Heat shock protein",
+        "Lung",
+        "Medicine",
+        "Endothelial stem cell"
+      ],
+      "url": "https://openalex.org/W2620241325",
+      "matched_by": "en"
+    }
+  ]
+}

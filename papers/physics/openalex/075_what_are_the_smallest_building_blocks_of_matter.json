@@ -1,0 +1,170 @@
+{
+  "problem_id": 75,
+  "problem_cn": "物质最小的基本构建单元是什么？",
+  "problem_en": "What are the smallest building blocks of matter?",
+  "category": "物理学",
+  "query_en": "What are the smallest building blocks of matter",
+  "query_cn": "物质最小的基本构建单元是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:38",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2122765019",
+      "doi": "https://doi.org/10.1103/physrevd.79.015014",
+      "title": "A theory of dark matter",
+      "year": 2009,
+      "cited_by_count": 1682,
+      "relevance_score": 362.34027,
+      "authors": [
+        "Nima Arkani–Hamed",
+        "Douglas P. Finkbeiner",
+        "Tracy R. Slatyer",
+        "Neal Weiner"
+      ],
+      "venue": "Physical review. D. Particles, fields, gravitation, and cosmology/Physical review. D. Particles and fields",
+      "abstract": "We propose a comprehensive theory of dark matter that explains the recent proliferation of unexpected observations in high-energy astrophysics. Cosmic ray spectra from ATIC and PAMELA require a WIMP (weakly interacting massive particle). with mass ${M}_{\\ensuremath{\\chi}}\\ensuremath{\\sim}500--800\\text{ }\\text{ }\\mathrm{GeV}$ that annihilates into leptons at a level well above that expected from a thermal relic. Signals from WMAP and EGRET reinforce this interpretation. Limits on $\\overline{p}$ and ${\\ensuremath{\\pi}}^{0}\\mathrm{\\text{\\ensuremath{-}}}\\ensuremath{\\gamma}$'s constrain the hadronic channels allowed for dark matter. Taken together, we argue these facts imply the presence of a new force in the dark sector, with a Compton wavelength ${m}_{\\ensuremath{\\phi}}^{\\ensuremath{-}1}\\ensuremath{\\gtrsim}1\\text{ }\\text{ }{\\mathrm{GeV}}^{\\ensuremath{-}1}$. The long range allows a Sommerfeld enhancement to boost the annihilation cross section as required, without altering the weak-scale annihilation cross section during dark matter freeze-out in the early universe. If the dark matter annihilates into the new force carrier $\\ensuremath{\\phi}$, its low mass can make hadronic modes kinematically inaccessible, forcing decays dominantly into leptons. If the force carrier is a non-Abelian gauge boson, the dark matter is part of a multiplet of states, and splittings between these states are naturally generated with size $\\ensuremath{\\alpha}{m}_{\\ensuremath{\\phi}}\\ensuremath{\\sim}\\text{ }\\text{ }\\mathrm{MeV}$, leading to the eXciting dark matter (XDM) scenario previously proposed to explain the positron annihilation in the galactic center observed by the INTEGRAL satellite; the light boson invoked by XDM to mediate a large inelastic scattering cross section is identified with the $\\ensuremath{\\phi}$ here. Somewhat smaller splittings would also be expected, providing a natural source for the parameters of the inelastic dark matter (iDM) explanation for the DAMA annual modulation signal. Since the Sommerfeld enhancement is most significant at low velocities, early dark matter halos at redshift $\\ensuremath{\\sim}10$ potentially produce observable effects on the ionization history of the universe. Because of the enhanced cross section, detection of substructure is more probable than with a conventional WIMP. Moreover, the low velocity dispersion of dwarf galaxies and Milky Way subhalos can increase the substructure annihilation signal by an additional order of magnitude or more.",
+      "keywords": [
+        "Physics",
+        "Dark matter",
+        "Particle physics",
+        "Annihilation",
+        "Weakly interacting massive particles"
+      ],
+      "url": "https://openalex.org/W2122765019",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2403089519",
+      "doi": "https://doi.org/10.1103/revmodphys.90.045002",
+      "title": "History of dark matter",
+      "year": 2018,
+      "cited_by_count": 1236,
+      "relevance_score": 300.59662,
+      "authors": [
+        "Gianfranco Bertone",
+        "Dan Hooper"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "The standard model of modern cosmology is unthinkable without dark matter, although direct detections are still missing. A broad perspective of how dark matter was postulated and became accepted is presented, from prehistory, over observations of galaxy clusters, galaxy rotation curves, the search for baryonic dark matter, possible alternative explanations via modified gravity, up to the hunt for dark matter particles. The interplay is described between observational discoveries and theoretical arguments which led finally to the adoption of this paradigm.",
+      "keywords": [
+        "Physics",
+        "Dark matter",
+        "Galaxy rotation curve",
+        "Astrophysics",
+        "Dark fluid"
+      ],
+      "url": "https://openalex.org/W2403089519",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3002966041",
+      "doi": "https://doi.org/10.1002/adfm.201907795",
+      "title": "Rapid Assembly of Small Materials Building Blocks (Voxels) into Large Functional 3D Metamaterials",
+      "year": 2020,
+      "cited_by_count": 287,
+      "relevance_score": 205.02939,
+      "authors": [
+        "Vincent Hahn",
+        "Pascal Kiefer",
+        "Tobias Frenzel",
+        "Jingyuan Qu",
+        "Eva Blasco",
+        "Christopher Barner‐Kowollik",
+        "Martin Wegener"
+      ],
+      "venue": "Advanced Functional Materials",
+      "abstract": "Abstract Herein, various 3D additive manufacturing approaches are reviewed in terms of two important figures of merit: maximum voxel printing rate and minimum voxel size. Voxel sizes from several 100 µm down to the 100 nm scale are covered. Original results on multifocus two‐photon printing at around voxel printing rates of 10 7 voxels s −1 are presented in this context, which significantly surpass previous best values. These advances are illustrated by and applied to the making of microstructured 3D (chiral) mechanical metamaterials that are composed of more than one‐hundred‐thousand unit cells in three dimensions. Previous best values for unit cells of similar complexity are smaller by two orders of magnitude.",
+      "keywords": [
+        "Voxel",
+        "Materials science",
+        "3D printing",
+        "Context (archaeology)",
+        "Metamaterial"
+      ],
+      "url": "https://openalex.org/W3002966041",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3005821439",
+      "doi": "https://doi.org/10.1088/1361-648x/ab6348",
+      "title": "The 2020 motile active matter roadmap",
+      "year": 2020,
+      "cited_by_count": 490,
+      "relevance_score": 175.79051,
+      "authors": [
+        "Gerhard Gompper",
+        "Roland G. Winkler",
+        "Thomas Speck",
+        "Alexandre Solon",
+        "Cesare Nardini",
+        "Fernando Peruani",
+        "Hartmut Löwen",
+        "Ramin Golestanian",
+        "U. Benjamin Kaupp",
+        "Luis Álvarez",
+        "Thomas Kiørboe",
+        "Eric Lauga",
+        "Wilson C. K. Poon",
+        "Antonio DeSimone",
+        "Santiago Muíños-Landín",
+        "Alexander Fischer",
+        "Nicola Andreas Söker",
+        "Frank Cichos",
+        "Raymond Kapral",
+        "Pierre Gaspard",
+        "Marisol Ripoll",
+        "Francesc Sagués",
+        "Amin Doostmohammadi",
+        "Julia M. Yeomans",
+        "Igor S. Aranson",
+        "Clemens Bechinger",
+        "Holger Stark",
+        "Charlotte K. Hemelrijk",
+        "François Nédélec",
+        "Trinish Sarkar",
+        "Thibault Aryaksama",
+        "Mathilde Lacroix",
+        "Guillaume Duclos",
+        "Victor Yashunsky",
+        "Pascal Silberzan",
+        "Marino Arroyo",
+        "Sohan Kale"
+      ],
+      "venue": "Journal of Physics Condensed Matter",
+      "abstract": "Activity and autonomous motion are fundamental in living and engineering systems. This has stimulated the new field of 'active matter' in recent years, which focuses on the physical aspects of propulsion mechanisms, and on motility-induced emergent collective behavior of a larger number of identical agents. The scale of agents ranges from nanomotors and microswimmers, to cells, fish, birds, and people. Inspired by biological microswimmers, various designs of autonomous synthetic nano- and micromachines have been proposed. Such machines provide the basis for multifunctional, highly responsive, intelligent (artificial) active materials, which exhibit emergent behavior and the ability to perform tasks in response to external stimuli. A major challenge for understanding and designing active matter is their inherent nonequilibrium nature due to persistent energy consumption, which invalidates equilibrium concepts such as free energy, detailed balance, and time-reversal symmetry. Unraveling, predicting, and controlling the behavior of active matter is a truly interdisciplinary endeavor at the interface of biology, chemistry, ecology, engineering, mathematics, and physics. The vast complexity of phenomena and mechanisms involved in the self-organization and dynamics of motile active matter comprises a major challenge. Hence, to advance, and eventually reach a comprehensive understanding, this important research area requires a concerted, synergetic approach of the various disciplines. The 2020 motile active matter roadmap of Journal of Physics: Condensed Matter addresses the current state of the art of the field and provides guidance for both students as well as established scientists in their efforts to advance this fascinating area.",
+      "keywords": [
+        "Active matter",
+        "Physics",
+        "Biology",
+        "Cell biology"
+      ],
+      "url": "https://openalex.org/W3005821439",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2094136845",
+      "doi": "https://doi.org/10.1086/520573",
+      "title": "Formation and Evolution of Galaxy Dark Matter Halos and Their Substructure",
+      "year": 2007,
+      "cited_by_count": 580,
+      "relevance_score": 174.08101,
+      "authors": [
+        "Jurg Diemand",
+        "Michael Kuhlen",
+        "Piero Madau"
+      ],
+      "venue": "The Astrophysical Journal",
+      "abstract": "We use the \"Via Lactea\" simulation to study the co-evolution of a Milky Way-sized ΛCDM halo and its subhalo population. While most of the host halo mass is accreted over the first 6 Gyr in a series of major mergers, the physical mass distribution [not M vir ( z )] remains practically constant since z = 1. The same is true in a large sample of ΛCDM galaxy halos. Subhalo mass loss peaks between the turnaround and virialization epochs of a given mass shell, and the abundance of substructure within the shell freezes afterward. Of the z = 1 subhalos, 97% have a surviving bound remnant at the present epoch. The retained mass fraction is larger for initially lighter subhalos: today satellites with maximum circular velocities V max = 10 km s -1 at z = 1 have about 40% of the mass they had back then. At the first pericenter passage a larger average mass fraction is lost than during each following orbit. Tides remove mass in the substructure from the outside in, leading to higher concentrations compared to field halos of the same mass. This effect, combined with the earlier formation epoch of the inner satellites, results in strongly increasing subhalo concentrations toward the Galactic center. We present individual evolutionary tracks and present-day properties of the likely hosts of the dwarf satellites around the Milky Way. The formation histories of \"field halos\" that lie beyond the Via Lactea host today are found to strongly depend on the density of their environment. This is caused by tidal mass loss that affects many field halos on eccentric orbits.",
+      "keywords": [
+        "Physics",
+        "Astrophysics",
+        "Milky Way",
+        "Substructure",
+        "Halo"
+      ],
+      "url": "https://openalex.org/W2094136845",
+      "matched_by": "en"
+    }
+  ]
+}

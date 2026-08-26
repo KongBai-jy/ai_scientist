@@ -1,0 +1,144 @@
+{
+  "problem_id": 117,
+  "problem_cn": "冷聚变能否实现？",
+  "problem_en": "Will cold fusion ever be possible?",
+  "category": "能源科学",
+  "query_en": "Will cold fusion ever be possible",
+  "query_cn": "冷聚变能否实现",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:10:01",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2098917946",
+      "doi": "https://doi.org/10.1088/0029-5515/41/12/218",
+      "title": "Plasma-material interactions in current tokamaks and their implications for next step fusion reactors",
+      "year": 2001,
+      "cited_by_count": 1365,
+      "relevance_score": 303.55725,
+      "authors": [
+        "G. Federici",
+        "C.H. Skinner",
+        "J.N. Brooks",
+        "J.P. Coad",
+        "C. Grisolia",
+        "A.A. Haasz",
+        "A. Hassanein",
+        "V. Philipps",
+        "C.S. Pitcher",
+        "J. Roth",
+        "W.R. Wampler",
+        "D.G. Whyte"
+      ],
+      "venue": "Nuclear Fusion",
+      "abstract": "View the article online for updates and enhancements.You may also like Plasma-wall interaction, a key issue on the way to a steady state burning fusion device V Philipps - Latest results of Eurofusion plasma-facing components research in the areas of power loading, material erosion and fuel retention M. Reinhart, S. Brezinsek, A.",
+      "keywords": [
+        "Tokamak",
+        "Thermonuclear fusion",
+        "Nuclear engineering",
+        "Fusion power",
+        "Plasma"
+      ],
+      "url": "https://openalex.org/W2098917946",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2166305071",
+      "doi": "https://doi.org/10.1084/jem.134.3.713",
+      "title": "RESPONSE OF CULTURED MACROPHAGES TO MYCOBACTERIUM TUBERCULOSIS , WITH OBSERVATIONS ON FUSION OF LYSOSOMES WITH PHAGOSOMES",
+      "year": 1971,
+      "cited_by_count": 990,
+      "relevance_score": 274.36005,
+      "authors": [
+        "John A. Armstrong",
+        "P. D’Arcy Hart"
+      ],
+      "venue": "The Journal of Experimental Medicine",
+      "abstract": "The cytological response to the ingestion of tubercle bacilli by cultured mouse peritoneal macrophages has been studied by electron microscopy. Methods included a quantitative assessment based on systematic surveying of cell profiles, and of phagosomes and their contained bacteria, encountered in thin sections; classification of the sectioned bacteria into visibly damaged and apparently intact categories; prelabeling of dense granules (secondary lysosomes) with ferritin as an aid to identifying the occurrence and frequency of phagosome-lysosome fusion; and monitoring of bacterial growth and viability by light microscopy and cultural counts. The situations studied were as follows: progressive infection with the multiplying virulent strain H37Rv; ingestion of the same strain previously inactivated by gamma radiation; infection with an attenuated strain (BCG); and a stabilized virulent infection induced by the surfactant Macrocyclon. In the bacterial suspensions used routinely for inoculation, about half the bacilli were viable, matching closely the proportions of intact and damaged organisms identified with the electron microscope. In the inoculated macrophages, some phagosomes containing intact bacilli and others containing damaged bacilli were always to be found; but the proportion of organisms scored as damaged increased, and that of intact organisms decreased, in situations where the population as a whole had been rendered nonviable before inoculation, or where they became so intracellularly as in the late stages of a BCG infection. Evidence of fusion of ferritin-marked lysosomes with some bacterium-containing phagosomes was obtained in all experiments, but a significant difference was regularly observed according to whether the bacilli were damaged or intact. Virtually all phagosomes containing damaged bacilli showed signs of fusion; but when many phagosomes were present containing apparently intact organisms (as with actively multiplying strain H37Rv or with this strain held at a steady level of viability by Macrocyclon, and also with strain BCG at an early stage of that infection), signs of fusion of lysosomes with these phagosomes were infrequent. From these findings it is inferred that intracellular survival of M. tuberculosis in cultured macrophages is associated with a tendency to nonfusion of dense granules with the phagosome, thus avoiding direct exposure of the bacilli to the contents of these organelles. It is suggested, further, that fusion of dense granules with the phagosome, leading to digestion, is determined by recognition of the bacillus as nonviable. The possibility is discussed that the cytological response to different mycobacterial infections may reflect differences of a basic nature between facultative and obligate intracellular parasitism.",
+      "keywords": [
+        "Phagosome",
+        "Microbiology",
+        "Bacilli",
+        "Biology",
+        "Phagocytosis"
+      ],
+      "url": "https://openalex.org/W2166305071",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2081272730",
+      "doi": "https://doi.org/10.1524/ract.2011.1854",
+      "title": "Synthesis of superheavy elements by cold fusion",
+      "year": 2011,
+      "cited_by_count": 154,
+      "relevance_score": 242.27354,
+      "authors": [
+        "S. Hofmann"
+      ],
+      "venue": "Radiochimica Acta",
+      "abstract": "Abstract The new elements from Z = 107 to 112 were synthesized in cold fusion reactions based on targets of lead and bismuth. The principle physical concepts are presented which led to the application of this reaction type in search experiments for new elements. Described are the technical developments from early mechanical devices to experiments with recoil separators. An overview is given of present experiments which use cold fusion for systematic studies and synthesis of new isotopes. Perspectives are also presented for the application of cold fusion reactions in synthesis of elements beyond element 113, the so far heaviest element produced in a cold fusion reaction. Further, the transition of hot fusion to cold fusion is pointed out, which occurs in reactions for synthesis of elements near Z = 126 using actinide targets and beams of neutron rich isotopes of elements from iron to germanium.",
+      "keywords": [
+        "Cold fusion",
+        "Fusion",
+        "Chemistry",
+        "Actinide",
+        "Superheavy Elements"
+      ],
+      "url": "https://openalex.org/W2081272730",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2120613121",
+      "doi": "https://doi.org/10.1101/gad.8.15.1787",
+      "title": "Distinct morphogenetic functions of similar small GTPases: Drosophila Drac1 is involved in axonal outgrowth and myoblast fusion.",
+      "year": 1994,
+      "cited_by_count": 1017,
+      "relevance_score": 236.93793,
+      "authors": [
+        "Liqun Luo",
+        "Yanhong Liao",
+        "Lily Yeh Jan",
+        "Yuh Nung Jan"
+      ],
+      "venue": "Genes & Development",
+      "abstract": "The small GTPases of the Rac/Rho/Cdc42 subfamily are implicated in actin cytoskeleton-membrane interaction in mammalian cells and budding yeast. The in vivo functions of these GTPases in multicellular organisms are not known. We have cloned Drosophila homologs of rac and CDC42, Drac1, and Dcdc42. They share 70% amino acid sequence identity with each other, and both are highly expressed in the nervous system and mesoderm during neuronal and muscle differentiation, respectively. We expressed putative constitutively active and dominant-negative Drac1 proteins in these tissues. When expressed in neurons, Drac1 mutant proteins cause axon outgrowth defects in peripheral neurons without affecting dendrites. When expressed in muscle precursors, they cause complete failure of, or abnormality in, myoblast fusion. Expressions of analogous mutant Dcdc42 proteins cause qualitatively distinct morphological defects, suggesting that similar GTPases in the same subfamily have unique roles in morphogenesis.",
+      "keywords": [
+        "Biology",
+        "Cell biology",
+        "GTPase",
+        "CDC42",
+        "Cytoskeleton"
+      ],
+      "url": "https://openalex.org/W2120613121",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W115673842",
+      "doi": "https://doi.org/10.1002/j.1460-2075.1993.tb06137.x",
+      "title": "Combinatorial generation of variable fusion proteins in the Ewing family of tumours.",
+      "year": 1993,
+      "cited_by_count": 539,
+      "relevance_score": 214.029,
+      "authors": [
+        "Jessica Zucman‐Rossi",
+        "Thomas Melot",
+        "Chantal Desmaze",
+        "Jacques Ghysdael",
+        "Béatrice Plougastel-Douglas",
+        "Martine Peter",
+        "J M Zucker",
+        "Timothy J. Triche",
+        "Denise Sheer",
+        "Claude Turc‐Carel"
+      ],
+      "venue": "The EMBO Journal",
+      "abstract": "",
+      "keywords": [
+        "Biology",
+        "Molecular biology"
+      ],
+      "url": "https://openalex.org/W115673842",
+      "matched_by": "en"
+    }
+  ]
+}

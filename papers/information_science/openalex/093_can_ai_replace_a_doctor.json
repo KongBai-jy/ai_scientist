@@ -1,0 +1,172 @@
+{
+  "problem_id": 93,
+  "problem_cn": "AI可以取代医生吗？",
+  "problem_en": "Can AI replace a doctor?",
+  "category": "信息科学",
+  "query_en": "Can AI replace a doctor",
+  "query_cn": "AI可以取代医生吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:19",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4382992448",
+      "doi": "https://doi.org/10.1177/20552076231186520",
+      "title": "Artificial intelligence in healthcare: Complementing, not replacing, doctors and healthcare providers",
+      "year": 2023,
+      "cited_by_count": 258,
+      "relevance_score": 470.07202,
+      "authors": [
+        "Emre Sezgın"
+      ],
+      "venue": "Digital Health",
+      "abstract": "The utilization of artificial intelligence (AI) in clinical practice has increased and is evidently contributing to improved diagnostic accuracy, optimized treatment planning, and improved patient outcomes. The rapid evolution of AI, especially generative AI and large language models (LLMs), have reignited the discussions about their potential impact on the healthcare industry, particularly regarding the role of healthcare providers. Concerning questions, \"can AI replace doctors?\" and \"will doctors who are using AI replace those who are not using it?\" have been echoed. To shed light on this debate, this article focuses on emphasizing the augmentative role of AI in healthcare, underlining that AI is aimed to complement, rather than replace, doctors and healthcare providers. The fundamental solution emerges with the human-AI collaboration, which combines the cognitive strengths of healthcare providers with the analytical capabilities of AI. A human-in-the-loop (HITL) approach ensures that the AI systems are guided, communicated, and supervised by human expertise, thereby maintaining safety and quality in healthcare services. Finally, the adoption can be forged further by the organizational process informed by the HITL approach to improve multidisciplinary teams in the loop. AI can create a paradigm shift in healthcare by complementing and enhancing the skills of healthcare providers, ultimately leading to improved service quality, patient outcomes, and a more efficient healthcare system.",
+      "keywords": [
+        "Health care",
+        "Human-in-the-loop",
+        "Quality (philosophy)",
+        "Multidisciplinary approach",
+        "Process (computing)"
+      ],
+      "url": "https://openalex.org/W4382992448",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2969625533",
+      "doi": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "year": 2019,
+      "cited_by_count": 4251,
+      "relevance_score": 445.86517,
+      "authors": [
+        "Yogesh K. Dwivedi",
+        "Laurie Hughes",
+        "Elvira Ismagilova",
+        "Gert Aarts",
+        "Crispin Coombs",
+        "Tom Crick",
+        "Yanqing Duan",
+        "Rohita Dwivedi",
+        "John S. Edwards",
+        "Aled Eirug",
+        "Vassilis Galanos",
+        "P. Vigneswara Ilavarasan",
+        "Marijn Janssen",
+        "Paul Jones",
+        "Arpan Kumar Kar",
+        "Hatice Kizgin",
+        "Bianca Kronemann",
+        "Banita Lal",
+        "Biagio Lucini",
+        "Rony Medaglia",
+        "Kenneth Le Meunier‐FitzHugh",
+        "Leslie Caroline Le Meunier-FitzHugh",
+        "Santosh K. Misra",
+        "Emmanuel Mogaji",
+        "Sujeet Kumar Sharma",
+        "Jang Bahadur Singh",
+        "Vishnupriya Raghavan",
+        "Ramakrishnan Raman",
+        "Nripendra P. Rana",
+        "Spyridon Samothrakis",
+        "Jak Spencer",
+        "Kuttimani Tamilmani",
+        "Annie Tubadji",
+        "Paul Walton",
+        "Michael D. Williams"
+      ],
+      "venue": "International Journal of Information Management",
+      "abstract": "As far back as the industrial revolution, significant development in technical innovation has succeeded in transforming numerous manual tasks and processes that had been in existence for decades where humans had reached the limits of physical capacity. Artificial Intelligence (AI) offers this same transformative potential for the augmentation and potential replacement of human tasks and activities within a wide range of industrial, intellectual and social applications. The pace of change for this new AI technological age is staggering, with new breakthroughs in algorithmic machine learning and autonomous decision-making, engendering new opportunities for continued innovation. The impact of AI could be significant, with industries ranging from: finance , healthcare, manufacturing, retail, supply chain , logistics and utilities, all potentially disrupted by the onset of AI technologies. The study brings together the collective insight from a number of leading expert contributors to highlight the significant opportunities, realistic assessment of impact, challenges and potential research agenda posed by the rapid emergence of AI within a number of domains: business and management, government, public sector, and science and technology . This research offers significant and timely insight to AI technology and its impact on the future of industry and society in general, whilst recognising the societal and industrial influence on pace and direction of AI development.",
+      "keywords": [
+        "Pace",
+        "Transformative learning",
+        "Government (linguistics)",
+        "Multidisciplinary approach",
+        "Supply chain"
+      ],
+      "url": "https://openalex.org/W2969625533",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2899768131",
+      "doi": "https://doi.org/10.1371/journal.pmed.1002689",
+      "title": "Machine learning in medicine: Addressing ethical challenges",
+      "year": 2018,
+      "cited_by_count": 864,
+      "relevance_score": 362.3386,
+      "authors": [
+        "Effy Vayena",
+        "Alessandro Blasimme",
+        "I. Glenn Cohen"
+      ],
+      "venue": "PLoS Medicine",
+      "abstract": "A recent United Kingdom survey reports that 63% of the adult population is uncomfortable with allowing personal data to be used to improve healthcare and is unfavorable to artificial intelligence (AI) systems replacing doctors and nurses in tasks they usually perform Another study, conducted in Germany, found that medical students-the doctors of tomorrow-overwhelmingly buy into the promise of AI to improve medicine (83%) but are more skeptical that it will establish conclusive diagnoses in, for instance, imaging exams (56% disagree) When asked about the prospects of AI, United States decision-makers at healthcare organizations are confident that it will improve medicine, but roughly half of them think it will produce fatal errors, will not work properly, and will not meet currently hyped expectations These survey data resonate to the ethical and regulatory challenges that surround AI in healthcare, particularly privacy, data fairness, accountability, transparency, and liability. Successfully addressing these will foster the future of machine learning in medicine (MLm) and its positive impact on healthcare. Ethical and regulatory concerns about MLm can be grouped into three broad categories according to how and where they emerge, namely, around the sources of data needed for MLm and the approaches used in the development and deployment of MLm in clinical practice (for a hypothetical case study, see Fig",
+      "keywords": [
+        "Medicine",
+        "MEDLINE",
+        "Data science",
+        "Engineering ethics",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W2899768131",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2888967035",
+      "doi": "https://doi.org/10.1136/bmjgh-2018-000798",
+      "title": "Artificial intelligence (AI) and global health: how can AI contribute to health in resource-poor settings?",
+      "year": 2018,
+      "cited_by_count": 778,
+      "relevance_score": 343.50336,
+      "authors": [
+        "Brian Wahl",
+        "Aline Cossy-Gantner",
+        "Stefan Germann",
+        "Nina Schwalbe"
+      ],
+      "venue": "BMJ Global Health",
+      "abstract": "The field of artificial intelligence (AI) has evolved considerably in the last 60 years. While there are now many AI applications that have been deployed in high-income country contexts, use in resource-poor settings remains relatively nascent. With a few notable exceptions, there are limited examples of AI being used in such settings. However, there are signs that this is changing. Several high-profile meetings have been convened in recent years to discuss the development and deployment of AI applications to reduce poverty and deliver a broad range of critical public services. We provide a general overview of AI and how it can be used to improve health outcomes in resource-poor settings. We also describe some of the current ethical debates around patient safety and privacy. Despite current challenges, AI holds tremendous promise for transforming the provision of healthcare services in resource-poor settings. Many health system hurdles in such settings could be overcome with the use of AI and other complementary emerging technologies. Further research and investments in the development of AI tools tailored to resource-poor settings will accelerate realising of the full potential of AI for improving global health.",
+      "keywords": [
+        "Software deployment",
+        "Resource (disambiguation)",
+        "Global health",
+        "Poverty",
+        "Health care"
+      ],
+      "url": "https://openalex.org/W2888967035",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4294559022",
+      "doi": "https://doi.org/10.1145/3561048",
+      "title": "Explainable AI (XAI): Core Ideas, Techniques, and Solutions",
+      "year": 2022,
+      "cited_by_count": 1287,
+      "relevance_score": 289.57532,
+      "authors": [
+        "Rudresh Dwivedi",
+        "Devam Dave",
+        "Het Naik",
+        "Smiti Singhal",
+        "Omer Rana",
+        "Pankesh Patel",
+        "Bin Qian",
+        "Zhenyu Wen",
+        "Tejal Shah",
+        "Graham Morgan",
+        "Rajiv Ranjan"
+      ],
+      "venue": "ACM Computing Surveys",
+      "abstract": "As our dependence on intelligent machines continues to grow, so does the demand for more transparent and interpretable models. In addition, the ability to explain the model generally is now the gold standard for building trust and deployment of artificial intelligence systems in critical domains. Explainable artificial intelligence (XAI) aims to provide a suite of machine learning techniques that enable human users to understand, appropriately trust, and produce more explainable models. Selecting an appropriate approach for building an XAI-enabled application requires a clear understanding of the core ideas within XAI and the associated programming frameworks. We survey state-of-the-art programming techniques for XAI and present the different phases of XAI in a typical machine learning development process. We classify the various XAI approaches and, using this taxonomy, discuss the key differences among the existing XAI techniques. Furthermore, concrete examples are used to describe these techniques that are mapped to programming frameworks and software toolkits. It is the intention that this survey will help stakeholders in selecting the appropriate approaches, programming frameworks, and software toolkits by comparing them through the lens of the presented taxonomy.",
+      "keywords": [
+        "Computer science",
+        "Taxonomy (biology)",
+        "Process (computing)",
+        "Software",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W4294559022",
+      "matched_by": "en"
+    }
+  ]
+}

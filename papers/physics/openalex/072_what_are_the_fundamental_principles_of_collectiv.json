@@ -1,0 +1,134 @@
+{
+  "problem_id": 72,
+  "problem_cn": "集体运动的基础原理是什么？",
+  "problem_en": "What are the fundamental principles of collective motion?",
+  "category": "物理学",
+  "query_en": "What are the fundamental principles of collective motion",
+  "query_cn": "集体运动的基础原理是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:27",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1904457290",
+      "doi": "https://doi.org/10.1088/0034-4885/78/5/056601",
+      "title": "Physics of microswimmers—single particle motion and collective behavior: a review",
+      "year": 2015,
+      "cited_by_count": 1396,
+      "relevance_score": 575.4575,
+      "authors": [
+        "J Elgeti",
+        "R G Winkler",
+        "G Gompper"
+      ],
+      "venue": "Reports on Progress in Physics",
+      "abstract": "Locomotion and transport of microorganisms in fluids is an essential aspect of life. Search for food, orientation toward light, spreading of off-spring, and the formation of colonies are only possible due to locomotion. Swimming at the microscale occurs at low Reynolds numbers, where fluid friction and viscosity dominates over inertia. Here, evolution achieved propulsion mechanisms, which overcome and even exploit drag. Prominent propulsion mechanisms are rotating helical flagella, exploited by many bacteria, and snake-like or whip-like motion of eukaryotic flagella, utilized by sperm and algae. For artificial microswimmers, alternative concepts to convert chemical energy or heat into directed motion can be employed, which are potentially more efficient. The dynamics of microswimmers comprises many facets, which are all required to achieve locomotion. In this article, we review the physics of locomotion of biological and synthetic microswimmers, and the collective behavior of their assemblies. Starting from individual microswimmers, we describe the various propulsion mechanism of biological and synthetic systems and address the hydrodynamic aspects of swimming. This comprises synchronization and the concerted beating of flagella and cilia. In addition, the swimming behavior next to surfaces is examined. Finally, collective and cooperate phenomena of various types of isotropic and anisotropic swimmers with and without hydrodynamic interactions are discussed.",
+      "keywords": [
+        "Physics",
+        "Propulsion",
+        "Active matter",
+        "Microscale chemistry",
+        "Collective motion"
+      ],
+      "url": "https://openalex.org/W1904457290",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4403733501",
+      "doi": "https://doi.org/10.62906/bs.book.181",
+      "title": "Inorganic Chemistry: Principles of Structure and Reactivity",
+      "year": 2024,
+      "cited_by_count": 2396,
+      "relevance_score": 423.23135,
+      "authors": [
+        "Haneen Mohammed Abbas Kasar",
+        "Zainab Najib Badr",
+        "Zahraa Sattar Jaber Khnyab",
+        "Adil Saleh Mohammed Jofan"
+      ],
+      "venue": "Bright Sky Publications eBooks",
+      "abstract": "Buy Inorganic Chemistry: Principles of Structure and Reactivity edited by Haneen Mohammed Abbas Kasar, Zainab Najib Badr Abd, Zahraa Sattar Jaber Khnyab and Yasser Ammar Habib Daoud Al-Samarrai at low price.",
+      "keywords": [
+        "Reactivity (psychology)",
+        "Chemistry",
+        "Medicine",
+        "Alternative medicine",
+        "Pathology"
+      ],
+      "url": "https://openalex.org/W4403733501",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1598829572",
+      "doi": "https://doi.org/10.26192/q7w89",
+      "title": "Social Science Research: Principles, Methods and Practices",
+      "year": 2019,
+      "cited_by_count": 2049,
+      "relevance_score": 360.59616,
+      "authors": [
+        "Anol Bhattacherjee",
+        "Toleman, Mark",
+        "Rowling, Samara",
+        "Frederiks, Anita",
+        "Andersen, Nikki"
+      ],
+      "venue": "University of Southern Queensland ePrints (University of Southern Queensland)",
+      "abstract": "This book is designed to introduce doctoral and postgraduate students to the process of conducting scientific research in the social sciences, business, education, public health, and related disciplines. It is a one-stop, comprehensive, and compact source for foundational concepts in behavioural research, and can serve as a standalone text or as a supplement to research readings in any doctoral seminar or research methods class. This book is currently being used as a research text at universities in 216 countries, across six continents and has been translated into seven different languages. To receive updates on this book, including the translated versions, please follow the author on Facebook or Twitter @Anol_B.",
+      "keywords": [
+        "Management science",
+        "Sociology",
+        "Engineering ethics",
+        "Data science",
+        "Social science"
+      ],
+      "url": "https://openalex.org/W1598829572",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3132132623",
+      "doi": "https://doi.org/10.1016/j.spc.2021.02.018",
+      "title": "Principles for a sustainable circular economy",
+      "year": 2021,
+      "cited_by_count": 1304,
+      "relevance_score": 327.50107,
+      "authors": [
+        "Anne P.M. Velenturf",
+        "Phil Purnell"
+      ],
+      "venue": "Sustainable Production and Consumption",
+      "abstract": "The pressure that the human species exerts on the natural environment through the extraction of materials and generation of wastes is widely recognised. Circular economy has emerged as a potential solution to make better use of resources. Positioned as a technology-focused concept that can generate economic gains while alleviating pressure on the environment, circular economy enjoys a positive reception by organisations in public, private and civic sectors and, increasingly, academia alike. However, concerns have been raised regarding some purported circular economy practices being promoted as ‘sustainable’ yet resulting in detrimental impacts on environment and society. We briefly revisit the systems ecology literature that construed the context for both circular economy and sustainable development. Values and principles in core sustainable development literature are analysed to offer a foundation against which circular economy can be discussed. We then analyse and critically reflect upon the strengths, shortcomings and theoretical flaws within the values and principles that emerged from the evolving circular economy literature. We propose a value framework and set of ten principles for the design, implementation and evaluation of a sustainable circular economy. We finish with a call for action for both practitioners and a research agenda for academia.",
+      "keywords": [
+        "Circular economy",
+        "Sustainable development",
+        "Context (archaeology)",
+        "Set (abstract data type)",
+        "Action (physics)"
+      ],
+      "url": "https://openalex.org/W3132132623",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2121538571",
+      "doi": "https://doi.org/10.12759/hsr.37.2012.4.191-222",
+      "title": "Participatory Research Methods: A Methodological Approach in Motion",
+      "year": 2012,
+      "cited_by_count": 881,
+      "relevance_score": 303.02444,
+      "authors": [
+        "Jarg Bergold",
+        "Stefan Thomas"
+      ],
+      "venue": "Social Science Open Access Repository (GESIS – Leibniz Institute for the Social Sciences)",
+      "abstract": "This article serves as an introduction to the FQS special issue 'Participatory Qualitative Research'. In recent years there has been a resurgence of interest in participatory research strategies. The articles in this special issue come from different disciplines. Against the background of concrete empirical research projects, they address numerous conceptual considerations and methodological approaches. After reading the contributions, and engaging with the authors' arguments, the authors were prompted to focus in particular on those areas in which further work needs to be done. They include, on the one hand, fundamental principles of participatory research, such as democratic-theory considerations, the concept of 'safe space', participation issues, and ethical questions. And, on the other hand, the authors focus an practical research considerations regarding the rote and tasks of the various participants; specific methodological approaches; and quality criteria - understood here in the sense of arguments justifying a participatory approach. The authors' aim is to stimulate a broad discussion that does not focus only on participatory research in the narrower sense. Because participatory methodology poses certain knowledge- and research-related questions in a radical way, it has the potential to draw attention to hitherto neglected areas in qualitative methodology and to stimulate their further development.",
+      "keywords": [
+        "Citizen journalism",
+        "Motion (physics)",
+        "Computer science",
+        "Sociology",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W2121538571",
+      "matched_by": "en"
+    }
+  ]
+}

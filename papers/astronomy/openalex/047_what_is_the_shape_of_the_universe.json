@@ -1,0 +1,159 @@
+{
+  "problem_id": 47,
+  "problem_cn": "宇宙的真实形状是什么？",
+  "problem_en": "What is the shape of the universe?",
+  "category": "天文学",
+  "query_en": "What is the shape of the universe",
+  "query_cn": "宇宙的真实形状是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:48",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2073832139",
+      "doi": "https://doi.org/10.1086/300499",
+      "title": "Observational Evidence from Supernovae for an Accelerating Universe and a Cosmological Constant",
+      "year": 1998,
+      "cited_by_count": 19699,
+      "relevance_score": 1508.6794,
+      "authors": [
+        "Adam G. Riess",
+        "A. V. Filippenko",
+        "P. Challis",
+        "A. Clocchiatti",
+        "Alan H. Diercks",
+        "P. Garnavich",
+        "Ron Gilliland",
+        "Craig J. Hogan",
+        "Saurabh W. Jha",
+        "R. Kirshner",
+        "B. Leibundgut",
+        "M. M. Phillips",
+        "David J. Reiss",
+        "B. Schmidt",
+        "R. A. Schommer",
+        "R. Chris Smith",
+        "J. Spyromilio",
+        "C. W. Stubbs",
+        "N. B. Suntzeff",
+        "J. Tonry"
+      ],
+      "venue": "The Astronomical Journal",
+      "abstract": "We present spectral and photometric observations of 10 Type Ia supernovae (SNe Ia) in the redshift range 0.16 ≤ z ≤ 0.62. The luminosity distances of these objects are determined by methods that employ relations between SN Ia luminosity and light curve shape. Combined with previous data from our High- z Supernova Search Team and recent results by Riess et al., this expanded set of 16 high-redshift supernovae and a set of 34 nearby supernovae are used to place constraints on the following cosmological parameters: the Hubble constant ( H 0 ), the mass density (Ω M ), the cosmological constant (i.e., the vacuum energy density, Ω Λ ), the deceleration parameter ( q 0 ), and the dynamical age of the universe ( t 0 ). The distances of the high-redshift SNe Ia are, on average, 10%–15% farther than expected in a low mass density (Ω M = 0.2) universe without a cosmological constant. Different light curve fitting methods, SN Ia subsamples, and prior constraints unanimously favor eternally expanding models with positive cosmological constant (i.e., Ω Λ > 0) and a current acceleration of the expansion (i.e., q 0 < 0). With no prior constraint on mass density other than Ω M ≥ 0, the spectroscopically confirmed SNe Ia are statistically consistent with q 0 < 0 at the 2.8 σ and 3.9 σ confidence levels, and with Ω Λ > 0 at the 3.0 σ and 4.0 σ confidence levels, for two different fitting methods, respectively. Fixing a \"minimal\" mass density, Ω M = 0.2, results in the weakest detection, Ω Λ > 0 at the 3.0 σ confidence level from one of the two methods. For a flat universe prior (Ω M + Ω Λ = 1), the spectroscopically confirmed SNe Ia require Ω Λ > 0 at 7 σ and 9 σ formal statistical significance for the two different fitting methods. A universe closed by ordinary matter (i.e., Ω M = 1) is formally ruled out at the 7 σ to 8 σ confidence level for the two different fitting methods. We estimate the dynamical age of the universe to be 14.2 ± 1.7 Gyr including systematic uncertainties in the current Cepheid distance scale. We estimate the likely effect of several sources of systematic error, including progenitor and metallicity evolution, extinction, sample selection bias, local perturbations in the expansion rate, gravitational lensing, and sample contamination. Presently, none of these effects appear to reconcile the data with Ω Λ = 0 and q 0 ≥ 0.",
+      "keywords": [
+        "Physics",
+        "Astrophysics",
+        "Cosmological constant",
+        "Supernova",
+        "Redshift"
+      ],
+      "url": "https://openalex.org/W2073832139",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2089402107",
+      "doi": "https://doi.org/10.1002/1097-0266(200010/11)21:10/11<1105::aid-smj133>3.0.co;2-e",
+      "title": "Dynamic capabilities: what are they?",
+      "year": 2000,
+      "cited_by_count": 14639,
+      "relevance_score": 881.32996,
+      "authors": [
+        "Kathleen M. Eisenhardt",
+        "Jeffrey A. Martin"
+      ],
+      "venue": "Strategic Management Journal",
+      "abstract": "This paper focuses on dynamic capabilities and, more generally, the resource-based view of the firm. We argue that dynamic capabilities are a set of specific and identifiable processes such as product development, strategic decision making, and alliancing. They are neither vague nor tautological. Although dynamic capabilities are idiosyncratic in their details and path dependent in their emergence, they have significant commonalities across firms (popularly termed ‘best practice’). This suggests that they are more homogeneous, fungible, equifinal, and substitutable than is usually assumed. In moderately dynamic markets, dynamic capabilities resemble the traditional conception of routines. They are detailed, analytic, stable processes with predictable outcomes. In contrast, in high-velocity markets, they are simple, highly experiential and fragile processes with unpredictable outcomes. Finally, well-known learning mechanisms guide the evolution of dynamic capabilities. In moderately dynamic markets, the evolutionary emphasis is on variation. In high-velocity markets, it is on selection. At the level of RBV, we conclude that traditional RBV misidentifies the locus of long-term competitive advantage in dynamic markets, overemphasizes the strategic logic of leverage, and reaches a boundary condition in high-velocity markets. Copyright © 2000 John Wiley & Sons, Ltd.",
+      "keywords": [
+        "Dynamic capabilities",
+        "Leverage (statistics)",
+        "Dynamic decision-making",
+        "Resource (disambiguation)",
+        "Industrial organization"
+      ],
+      "url": "https://openalex.org/W2089402107",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4391285994",
+      "doi": "https://doi.org/10.1007/978-3",
+      "title": "Chapter 12: What does the Anthropocene hold for citizenship?",
+      "year": 2022,
+      "cited_by_count": 11538,
+      "relevance_score": 636.2154,
+      "authors": [
+        "B. Lamizana",
+        "O. Mahjoub",
+        "C. Caucci",
+        "C. Mafuta",
+        "E. Guenther",
+        "G. Cissé",
+        "K. Andersson",
+        "F. Hernández-Sancho"
+      ],
+      "venue": "edoc (University of Basel)",
+      "abstract": "",
+      "keywords": [
+        "Polygon mesh",
+        "Vertex (graph theory)",
+        "Skeleton (computer programming)",
+        "Computer science",
+        "Lying"
+      ],
+      "url": "https://openalex.org/W4391285994",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2114704115",
+      "doi": "https://doi.org/10.1021/ci300415d",
+      "title": "Enumeration of 166 Billion Organic Small Molecules in the Chemical Universe Database GDB-17",
+      "year": 2012,
+      "cited_by_count": 1572,
+      "relevance_score": 624.4273,
+      "authors": [
+        "Lars Ruddigkeit",
+        "Ruud van Deursen",
+        "Lorenz C. Blum",
+        "Jean‐Louis Reymond"
+      ],
+      "venue": "Journal of Chemical Information and Modeling",
+      "abstract": "Drug molecules consist of a few tens of atoms connected by covalent bonds. How many such molecules are possible in total and what is their structure? This question is of pressing interest in medicinal chemistry to help solve the problems of drug potency, selectivity, and toxicity and reduce attrition rates by pointing to new molecular series. To better define the unknown chemical space, we have enumerated 166.4 billion molecules of up to 17 atoms of C, N, O, S, and halogens forming the chemical universe database GDB-17, covering a size range containing many drugs and typical for lead compounds. GDB-17 contains millions of isomers of known drugs, including analogs with high shape similarity to the parent drug. Compared to known molecules in PubChem, GDB-17 molecules are much richer in nonaromatic heterocycles, quaternary centers, and stereoisomers, densely populate the third dimension in shape space, and represent many more scaffold types.",
+      "keywords": [
+        "Chemical space",
+        "PubChem",
+        "Molecule",
+        "Cheminformatics",
+        "Chemical similarity"
+      ],
+      "url": "https://openalex.org/W2114704115",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2166365370",
+      "doi": "https://doi.org/10.1111/j.1365-2966.2004.07881.x",
+      "title": "The physical properties of star-forming galaxies in the low-redshift Universe",
+      "year": 2004,
+      "cited_by_count": 3325,
+      "relevance_score": 589.591,
+      "authors": [
+        "J. Brinchmann",
+        "S. Charlot",
+        "Simon D. M. White",
+        "Christy Tremonti",
+        "Guinevere Kauffmann",
+        "Timothy M. Heckman",
+        "J. Brinkmann"
+      ],
+      "venue": "Monthly Notices of the Royal Astronomical Society",
+      "abstract": "Abstract We present a comprehensive study of the physical properties of ∼ 105 galaxies with measurable star formation in the Sloan Digital Sky Survey (SDSS). By comparing physical information extracted from the emission lines with continuum properties, we build up a picture of the nature of star-forming galaxies at z < 0.2. We develop a method for aperture correction using resolved imaging and show that our method takes out essentially all aperture bias in the star formation rate (SFR) estimates, allowing an accurate estimate of the total SFRs in galaxies. We determine the SFR density to be 1.915+0.02−0.01 (random)+0.14−0.42 (systematic) h7010−2 M⊙ yr−1 Mpc−3 at z= 0.1 (for a Kroupa initial mass function) and we study the distribution of star formation as a function of various physical parameters. The majority of the star formation in the low-redshift Universe takes place in moderately massive galaxies (1010–1011 M⊙), typically in high surface brightness disc galaxies. Roughly 15 per cent of all star formation takes place in galaxies that show some sign of an active nucleus. About 20 per cent occurs in starburst galaxies. By focusing on the SFR per unit mass we show that the present to past average SFR, the Scalo b-parameter, is almost constant over almost three orders of magnitude in mass, declining only at M* > 1010 M⊙. The volume averaged b parameter is 0.408+0.005−0.002 (random)+0.029−0.090 (systematic)h−170. We use this value to constrain the star formation history of the Universe. For the concordance cosmology the present-day Universe is forming stars at at least 1/3 of its past average rate. For an exponentially declining cosmic star formation history this corresponds to a time-scale of 7+0.7−1.5 Gyr. In agreement with other work we find a correlation between b and morphological type, as well as a tight correlation between the 4000-Å break (D4000) and b. We discuss how D4000 can be used to estimate b parameters for high-redshift galaxies.",
+      "keywords": [
+        "Physics",
+        "Astrophysics",
+        "Galaxy",
+        "Star formation",
+        "Redshift"
+      ],
+      "url": "https://openalex.org/W2166365370",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "problem_id": 15,
+  "problem_cn": "我们能否设计制造面向个体的定制化药物？",
+  "problem_en": "Can we design and manufacture medicines customized for individual people?",
+  "category": "医学与健康",
+  "query_en": "Can we design and manufacture medicines customized for individual people",
+  "query_cn": "我们能否设计制造面向个体的定制化药物",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:57",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2767346351",
+      "doi": "https://doi.org/10.1016/j.eng.2017.05.015",
+      "title": "Intelligent Manufacturing in the Context of Industry 4.0: A Review",
+      "year": 2017,
+      "cited_by_count": 2852,
+      "relevance_score": 591.61316,
+      "authors": [
+        "Ray Y. Zhong",
+        "Xun Xu",
+        "Eberhard Klotz",
+        "Stephen T. Newman"
+      ],
+      "venue": "Engineering",
+      "abstract": "Our next generation of industry—Industry 4.0—holds the promise of increased flexibility in manufacturing, along with mass customization, better quality, and improved productivity. It thus enables companies to cope with the challenges of producing increasingly individualized products with a short lead-time to market and higher quality. Intelligent manufacturing plays an important role in Industry 4.0. Typical resources are converted into intelligent objects so that they are able to sense, act, and behave within a smart environment. In order to fully understand intelligent manufacturing in the context of Industry 4.0, this paper provides a comprehensive review of associated topics such as intelligent manufacturing, Internet of Things (IoT)-enabled manufacturing, and cloud manufacturing. Similarities and differences in these topics are highlighted based on our analysis. We also review key technologies such as the IoT, cyber-physical systems (CPSs), cloud computing, big data analytics (BDA), and information and communications technology (ICT) that are used to enable intelligent manufacturing. Next, we describe worldwide movements in intelligent manufacturing, including governmental strategic plans from different countries and strategic plans from major international companies in the European Union, United States, Japan, and China. Finally, we present current challenges and future research directions. The concepts discussed in this paper will spark new ideas in the effort to realize the much-anticipated Fourth Industrial Revolution.",
+      "keywords": [
+        "Context (archaeology)",
+        "Industry 4.0",
+        "Flexibility (engineering)",
+        "Big data",
+        "Advanced manufacturing"
+      ],
+      "url": "https://openalex.org/W2767346351",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2970458529",
+      "doi": "https://doi.org/10.1016/j.matdes.2019.108164",
+      "title": "Review on design and structural optimisation in additive manufacturing: Towards next-generation lightweight structures",
+      "year": 2019,
+      "cited_by_count": 664,
+      "relevance_score": 305.462,
+      "authors": [
+        "János Plocher",
+        "Ajit Panesar"
+      ],
+      "venue": "Materials & Design",
+      "abstract": "As the application of additive manufacturing (AM) reaches an unprecedented scale in both academia and industry, a reflection upon the state-of-the-art developments in the design for additive manufacturing (DfAM) and structural optimisation, becomes vital for successfully shaping the future AM-landscape. A framework, highlighting both the interdependencies between these two central aspects in AM and the necessity for a holistic approach to structural optimization, using lightweight strategies such as topology optimization and/or latticing, was established to summarize the reviewed content. Primarily focusing on isotropic material considerations and basic stiffness-optimal problems, these concepts have already found wide application, bridging the gaps between design and manufacturing as well as academia and industry. In pursuit of streamlining the AM-workflow towards digitally print-ready designs, studies are increasingly investigating mathematically-based structural optimization approaches in conjunction with DfAM-specific constraints, providing a portfolio of solutions like generative design, which is gaining traction in industry. Besides an overview on economically-driven to performance-driven design optimizations, insight into commercial AM-specific software is provided, elucidating potentials and challenges for the community. Despite the abundance of AM design methods to-date, computationally inexpensive solutions for common engineering problems are still scarce, which is constituting one of many key challenges for the future.",
+      "keywords": [
+        "Workflow",
+        "Computer science",
+        "Flexibility (engineering)",
+        "Scalability",
+        "Systems engineering"
+      ],
+      "url": "https://openalex.org/W2970458529",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2988359971",
+      "doi": "https://doi.org/10.1109/access.2019.2953499",
+      "title": "A Survey on Digital Twin: Definitions, Characteristics, Applications, and Design Implications",
+      "year": 2019,
+      "cited_by_count": 1428,
+      "relevance_score": 302.75784,
+      "authors": [
+        "Barbara Rita Barricelli",
+        "Elena Casiraghi",
+        "Daniela Fogli"
+      ],
+      "venue": "IEEE Access",
+      "abstract": "When, in 1956, Artificial Intelligence (AI) was officially declared a research field, no one would have ever predicted the huge influence and impact its description, prediction, and prescription capabilities were going to have on our daily lives. In parallel to continuous advances in AI, the past decade has seen the spread of broadband and ubiquitous connectivity, (embedded) sensors collecting descriptive high dimensional data, and improvements in big data processing techniques and cloud computing. The joint usage of such technologies has led to the creation of digital twins, artificial intelligent virtual replicas of physical systems. Digital Twin (DT) technology is nowadays being developed and commercialized to optimize several manufacturing and aviation processes, while in the healthcare and medicine fields this technology is still at its early development stage. This paper presents the results of a study focused on the analysis of the state-of-the-art definitions of DT, the investigation of the main characteristics that a DT should possess, and the exploration of the domains in which DT applications are currently being developed. The design implications derived from the study are then presented: they focus on socio-technical design aspects and DT lifecycle. Open issues and challenges that require to be addressed in the future are finally discussed.",
+      "keywords": [
+        "Computer science",
+        "Data science",
+        "Cloud computing",
+        "Field (mathematics)",
+        "Big data"
+      ],
+      "url": "https://openalex.org/W2988359971",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2913314997",
+      "doi": "https://doi.org/10.1016/j.jestch.2019.01.006",
+      "title": "Scanning the Industry 4.0: A Literature Review on Technologies for Manufacturing Systems",
+      "year": 2019,
+      "cited_by_count": 1047,
+      "relevance_score": 294.50732,
+      "authors": [
+        "Vítor Alcácer",
+        "Virgílio António Cruz Machado"
+      ],
+      "venue": "Engineering Science and Technology an International Journal",
+      "abstract": "Industry 4.0 leads to the digitalization era. Everything is digital; business models, environments, production systems, machines, operators, products and services. It’s all interconnected inside the digital scene with the corresponding virtual representation. The physical flows will be mapped on digital platforms in a continuous manner. On a higher level of automation, many systems and software are enabling factory communications with the latest trends of information and communication technologies leading to the state-of-the-art factory, not only inside but also outside factory, achieving all elements of the value chain on a real-time engagement. Everything is smart. This disruptive impact on manufacturing companies will allow the smart manufacturing ecosystem paradigm. Industry 4.0 is the turning point to the end of the conventional centralized applications. The Industry 4.0 environment is scanned on this paper, describing the so-called enabling technologies and systems over the manufacturing environment.",
+      "keywords": [
+        "Industry 4.0",
+        "Factory (object-oriented programming)",
+        "Digital manufacturing",
+        "Automation",
+        "Manufacturing engineering"
+      ],
+      "url": "https://openalex.org/W2913314997",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4395049384",
+      "doi": "https://doi.org/10.3390/s24092668",
+      "title": "Additive Manufacturing: A Comprehensive Review",
+      "year": 2024,
+      "cited_by_count": 541,
+      "relevance_score": 291.1198,
+      "authors": [
+        "Longfei Zhou",
+        "Jenna Miller",
+        "Jeremiah Vezza",
+        "Maksim Mayster",
+        "Muhammad Raffay",
+        "Quentin Justice",
+        "Zainab Al Tamimi",
+        "Gavyn Hansotte",
+        "Lavanya Devi Sunkara",
+        "Jessica Bernat"
+      ],
+      "venue": "Sensors",
+      "abstract": "Additive manufacturing has revolutionized manufacturing across a spectrum of industries by enabling the production of complex geometries with unparalleled customization and reduced waste. Beginning as a rapid prototyping tool, additive manufacturing has matured into a comprehensive manufacturing solution, embracing a wide range of materials, such as polymers, metals, ceramics, and composites. This paper delves into the workflow of additive manufacturing, encompassing design, modeling, slicing, printing, and post-processing. Various additive manufacturing technologies are explored, including material extrusion, VAT polymerization, material jetting, binder jetting, selective laser sintering, selective laser melting, direct metal laser sintering, electron beam melting, multi-jet fusion, direct energy deposition, carbon fiber reinforced, laminated object manufacturing, and more, discussing their principles, advantages, disadvantages, material compatibilities, applications, and developing trends. Additionally, the future of additive manufacturing is projected, highlighting potential advancements in 3D bioprinting, 3D food printing, large-scale 3D printing, 4D printing, and AI-based additive manufacturing. This comprehensive survey aims to underscore the transformative impact of additive manufacturing on global manufacturing, emphasizing ongoing challenges and the promising horizon of innovations that could further elevate its role in the manufacturing revolution.",
+      "keywords": [
+        "3D printing",
+        "Rapid prototyping",
+        "Manufacturing engineering",
+        "Ceramic",
+        "Workflow"
+      ],
+      "url": "https://openalex.org/W4395049384",
+      "matched_by": "en"
+    }
+  ]
+}

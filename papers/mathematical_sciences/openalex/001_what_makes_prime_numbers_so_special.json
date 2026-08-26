@@ -1,0 +1,147 @@
+{
+  "problem_id": 1,
+  "problem_cn": "为什么质数如此特殊？",
+  "problem_en": "What makes prime numbers so special?",
+  "category": "数学科学",
+  "query_en": "What makes prime numbers so special",
+  "query_cn": "为什么质数如此特殊",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:08",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2054692642",
+      "doi": "https://doi.org/10.1109/jsac.2014.2328098",
+      "title": "What Will 5G Be?",
+      "year": 2014,
+      "cited_by_count": 8269,
+      "relevance_score": 876.4703,
+      "authors": [
+        "Jeffrey G. Andrews",
+        "Stefano Buzzi",
+        "Wan Choi",
+        "Stephen V. Hanly",
+        "Angel Lozano",
+        "Anthony C. K. Soong",
+        "Jianzhong Charlie Zhang"
+      ],
+      "venue": "IEEE Journal on Selected Areas in Communications",
+      "abstract": "What will 5G be? What it will not be is an incremental advance on 4G. The previous four generations of cellular technology have each been a major paradigm shift that has broken backward compatibility. Indeed, 5G will need to be a paradigm shift that includes very high carrier frequencies with massive bandwidths, extreme base station and device densities, and unprecedented numbers of antennas. However, unlike the previous four generations, it will also be highly integrative: tying any new 5G air interface and spectrum together with LTE and WiFi to provide universal high-rate coverage and a seamless user experience. To support this, the core network will also have to reach unprecedented levels of flexibility and intelligence, spectrum regulation will need to be rethought and improved, and energy and cost efficiencies will become even more critical considerations. This paper discusses all of these topics, identifying key challenges for future research and preliminary 5G standardization activities, while providing a comprehensive overview of the current literature, and in particular of the papers appearing in this special issue.",
+      "keywords": [
+        "Computer science",
+        "Paradigm shift",
+        "Standardization",
+        "Base station",
+        "Telecommunications"
+      ],
+      "url": "https://openalex.org/W2054692642",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4385245566",
+      "doi": "https://doi.org/10.4230/lipics.itp.2023.19",
+      "title": "Exploiting Generative AI to Scale up Intelligent Tutoring Systems",
+      "year": 2023,
+      "cited_by_count": 79074,
+      "relevance_score": 397.09668,
+      "authors": [
+        "Jakubův, Jan",
+        "Chvalovský, Karel",
+        "Goertzel, Zarathustra",
+        "Kaliszyk, Cezary",
+        "Olšák, Mirek",
+        "Piotrowski, Bartosz",
+        "Schulz, Stephan",
+        "Suda, Martin",
+        "Urban, Josef"
+      ],
+      "venue": "DROPS (Schloss Dagstuhl – Leibniz Center for Informatics)",
+      "abstract": "As a present to Mizar on its 50th anniversary, we develop an AI/TP system that automatically proves about 60% of the Mizar theorems in the hammer setting. We also automatically prove 75% of the Mizar theorems when the automated provers are helped by using only the premises used in the human-written Mizar proofs. We describe the methods and large-scale experiments leading to these results. This includes in particular the E and Vampire provers, their ENIGMA and Deepire learning modifications, a number of learning-based premise selection methods, and the incremental loop that interleaves growing a corpus of millions of ATP proofs with training increasingly strong AI/TP systems on them. We also present a selection of Mizar problems that were proved automatically.",
+      "keywords": [
+        "Computer science",
+        "Machine translation",
+        "Transformer",
+        "BLEU",
+        "Encoder"
+      ],
+      "url": "https://openalex.org/W4385245566",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1971765404",
+      "doi": "https://doi.org/10.1080/08870440903194015",
+      "title": "What is an adequate sample size? Operationalising data saturation for theory-based interview studies",
+      "year": 2009,
+      "cited_by_count": 3468,
+      "relevance_score": 332.75635,
+      "authors": [
+        "Jill Francis",
+        "Marie Johnston",
+        "Clare Robertson",
+        "Liz Glidewell",
+        "Vikki Entwistle",
+        "Martin Eccles",
+        "Jeremy Grimshaw"
+      ],
+      "venue": "Psychology and Health",
+      "abstract": "In interview studies, sample size is often justified by interviewing participants until reaching 'data saturation'. However, there is no agreed method of establishing this. We propose principles for deciding saturation in theory-based interview studies (where conceptual categories are pre-established by existing theory). First, specify a minimum sample size for initial analysis (initial analysis sample). Second, specify how many more interviews will be conducted without new ideas emerging (stopping criterion). We demonstrate these principles in two studies, based on the theory of planned behaviour, designed to identify three belief categories (Behavioural, Normative and Control), using an initial analysis sample of 10 and stopping criterion of 3. Study 1 (retrospective analysis of existing data) identified 84 shared beliefs of 14 general medical practitioners about managing patients with sore throat without prescribing antibiotics. The criterion for saturation was achieved for Normative beliefs but not for other beliefs or studywise saturation. In Study 2 (prospective analysis), 17 relatives of people with Paget's disease of the bone reported 44 shared beliefs about taking genetic testing. Studywise data saturation was achieved at interview 17. We propose specification of these principles for reporting data saturation in theory-based interview studies. The principles may be adaptable for other types of studies.",
+      "keywords": [
+        "Psychology",
+        "Sample size determination",
+        "Saturation (graph theory)",
+        "Sample (material)",
+        "Statistics"
+      ],
+      "url": "https://openalex.org/W1971765404",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2116609513",
+      "doi": "https://doi.org/10.1111/j.1539-6053.2008.00033.x",
+      "title": "Helping Doctors and Patients Make Sense of Health Statistics",
+      "year": 2007,
+      "cited_by_count": 1360,
+      "relevance_score": 303.6009,
+      "authors": [
+        "Gerd Gigerenzer",
+        "Wolfgang Gaissmaier",
+        "Elke Kurz‐Milcke",
+        "Lisa M. Schwartz",
+        "Steven Woloshin"
+      ],
+      "venue": "Gothic.net",
+      "abstract": "Many doctors, patients, journalists, and politicians alike do not understand what health statistics mean or draw wrong conclusions without noticing. Collective statistical illiteracy refers to the widespread inability to understand the meaning of numbers. For instance, many citizens are unaware that higher survival rates with cancer screening do not imply longer life, or that the statement that mammography screening reduces the risk of dying from breast cancer by 25% in fact means that 1 less woman out of 1,000 will die of the disease. We provide evidence that statistical illiteracy (a) is common to patients, journalists, and physicians; (b) is created by nontransparent framing of information that is sometimes an unintentional result of lack of understanding but can also be a result of intentional efforts to manipulate or persuade people; and (c) can have serious consequences for health. The causes of statistical illiteracy should not be attributed to cognitive biases alone, but to the emotional nature of the doctor-patient relationship and conflicts of interest in the healthcare system. The classic doctor-patient relation is based on (the physician's) paternalism and (the patient's) trust in authority, which make statistical literacy seem unnecessary; so does the traditional combination of determinism (physicians who seek causes, not chances) and the illusion of certainty (patients who seek certainty when there is none). We show that information pamphlets, Web sites, leaflets distributed to doctors by the pharmaceutical industry, and even medical journals often report evidence in nontransparent forms that suggest big benefits of featured interventions and small harms. Without understanding the numbers involved, the public is susceptible to political and commercial manipulation of their anxieties and hopes, which undermines the goals of informed consent and shared decision making. What can be done? We discuss the importance of teaching statistical thinking and transparent representations in primary and secondary education as well as in medical school. Yet this requires familiarizing children early on with the concept of probability and teaching statistical literacy as the art of solving real-world problems rather than applying formulas to toy problems about coins and dice. A major precondition for statistical literacy is transparent risk communication. We recommend using frequency statements instead of single-event probabilities, absolute risks instead of relative risks, mortality rates instead of survival rates, and natural frequencies instead of conditional probabilities. Psychological research on transparent visual and numerical forms of risk communication, as well as training of physicians in their use, is called for. Statistical literacy is a necessary precondition for an educated citizenship in a technological democracy. Understanding risks and asking critical questions can also shape the emotional climate in a society so that hopes and anxieties are no longer as easily manipulated from outside and citizens can develop a better-informed and more relaxed attitude toward their health.",
+      "keywords": [
+        "Functional illiteracy",
+        "Certainty",
+        "Paternalism",
+        "Health literacy",
+        "Health care"
+      ],
+      "url": "https://openalex.org/W2116609513",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2097673562",
+      "doi": "https://doi.org/10.4007/annals.2008.167.481",
+      "title": "The primes contain arbitrarily long arithmetic progressions",
+      "year": 2008,
+      "cited_by_count": 823,
+      "relevance_score": 294.20587,
+      "authors": [
+        "Benjamin Green",
+        "Terence Tao"
+      ],
+      "venue": "Annals of Mathematics",
+      "abstract": "We prove that there are arbitrarily long arithmetic progressions of primes. There are three major ingredients. The first is Szemerdi's theorem, which asserts that any subset of the integers of positive density contains progressions of arbitrary length. The second, which is the main new ingredient of this paper, is a certain transference principle. This allows us to deduce from Szemerdi's theorem that any subset of a sufficiently pseudorandom set (or measure) of positive relative density contains progressions of arbitrary length. The third ingredient is a recent result of Goldston and Yldrm, which we reproduce here. Using this, one may place (a large fraction of) the primes inside a pseudorandom set of \"almost primes\" (or more precisely, a pseudorandom measure concentrated on almost primes) with positive relative density.",
+      "keywords": [
+        "Mathematics",
+        "Arithmetic",
+        "Arithmetic progression",
+        "Discrete mathematics"
+      ],
+      "url": "https://openalex.org/W2097673562",
+      "matched_by": "en"
+    }
+  ]
+}

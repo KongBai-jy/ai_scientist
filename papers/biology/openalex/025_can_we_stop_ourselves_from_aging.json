@@ -1,0 +1,126 @@
+{
+  "problem_id": 25,
+  "problem_cn": "人类可以停止衰老吗？",
+  "problem_en": "Can we stop ourselves from aging?",
+  "category": "生物学",
+  "query_en": "Can we stop ourselves from aging",
+  "query_cn": "人类可以停止衰老吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:06:54",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4213268897",
+      "doi": "https://doi.org/10.1057/9781137476661",
+      "title": "Seeing Ourselves Through Technology",
+      "year": 2014,
+      "cited_by_count": 306,
+      "relevance_score": 224.72273,
+      "authors": [
+        "Jill Walker Rettberg"
+      ],
+      "venue": "Palgrave Macmillan UK eBooks",
+      "abstract": "This book is open access under a CC BY license. Selfies, blogs and lifelogging devices help us understand ourselves, building on long histories of written, visual and quantitative modes of self-repres",
+      "keywords": [
+        "License",
+        "World Wide Web",
+        "Computer science",
+        "Lifelog",
+        "Human–computer interaction"
+      ],
+      "url": "https://openalex.org/W4213268897",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2094679907",
+      "doi": "https://doi.org/10.1086/319243",
+      "title": "Strontium Isotope Stratigraphy: LOWESS Version 3: Best Fit to the Marine Sr‐Isotope Curve for 0–509 Ma and Accompanying Look‐up Table for Deriving Numerical Age",
+      "year": 2001,
+      "cited_by_count": 1475,
+      "relevance_score": 222.93097,
+      "authors": [
+        "J.M. McArthur",
+        "Richard J. Howarth",
+        "T. R. Bailey"
+      ],
+      "venue": "The Journal of Geology",
+      "abstract": "An improved and updated version of the statistical LOWESS fit to the marine 87Sr/86Sr record and a revised look-up table (V3:10/99; available from j.mcarthur@ucl.ac.uk) based upon it enables straightforward conversion of 87Sr/86Sr to numerical age, and vice versa, for use in strontium isotope stratigraphy (SIS). The table includes 95% confidence intervals on predictions of numerical age from 87Sr/86Sr. This version includes the Triassic and Paleozoic record (0-509 Ma) omitted from previous versions because of the paucity of adequate data at the time of preparation. We highlight differences between the previous versions of the table and the current version and discuss some aspects of the 87Sr/86Sr record that may have geological significance. We give examples of how the table can be used and where it has proven useful.",
+      "keywords": [
+        "Geology",
+        "Isotopes of strontium",
+        "Table (database)",
+        "Stratigraphy",
+        "Paleozoic"
+      ],
+      "url": "https://openalex.org/W2094679907",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2138019504",
+      "doi": "https://doi.org/10.1111/j.1467-9868.2005.00532.x",
+      "title": "Model Selection and Estimation in Regression with Grouped Variables",
+      "year": 2005,
+      "cited_by_count": 7518,
+      "relevance_score": 214.47871,
+      "authors": [
+        "Ming Yuan",
+        "Yi Lin"
+      ],
+      "venue": "Journal of the Royal Statistical Society Series B (Statistical Methodology)",
+      "abstract": "Summary We consider the problem of selecting grouped variables (factors) for accurate prediction in regression. Such a problem arises naturally in many practical situations with the multifactor analysis-of-variance problem as the most important and well-known example. Instead of selecting factors by stepwise backward elimination, we focus on the accuracy of estimation and consider extensions of the lasso, the LARS algorithm and the non-negative garrotte for factor selection. The lasso, the LARS algorithm and the non-negative garrotte are recently proposed regression methods that can be used to select individual variables. We study and propose efficient algorithms for the extensions of these methods for factor selection and show that these extensions give superior performance to the traditional stepwise backward elimination method in factor selection problems. We study the similarities and the differences between these methods. Simulations and real examples are used to illustrate the methods.",
+      "keywords": [
+        "Lasso (programming language)",
+        "Selection (genetic algorithm)",
+        "Stepwise regression",
+        "Feature selection",
+        "Variance (accounting)"
+      ],
+      "url": "https://openalex.org/W2138019504",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1538213855",
+      "doi": null,
+      "title": "\"We Can Learn To Mother Ourselves\": The Queer Survival of Black Feminism",
+      "year": 2010,
+      "cited_by_count": 133,
+      "relevance_score": 208.02931,
+      "authors": [
+        "Alexis Pauline Gumbs"
+      ],
+      "venue": "DukeSpace (Duke University)",
+      "abstract": "\"We Can Learn to Mother Ourselves\": The Queer Survival of Black Feminism 1968-1996 addresses the questions of mothering and survival from a queer, diasporic literary perspective, arguing that the literary practices of Black feminists Audre Lorde, June Jordan, Alexis De Veaux and Barbara Smith enable a counternarrative to a neoliberal logic that criminalizes Black mothering and the survival of Black people outside and after their utility to capital. Treating Audre Lorde and June Jordan as primary theorists of mothering and survival, and Alexis De Veaux and Barbara Smith as key literary historical figures in the queer manifestation of Black feminist modes of literary production, this dissertation uses previously unavailable archival material, and queer of color critique and critical Black diasporic theoretical approaches to create an intergenerative reading practice. An intergenerative reading practice interrupts the social reproduction of meaning and value across time, and places untimely literary moments and products in poetic relationship to each other in order to reveal the possibility of another meaning of life. Ultimately this dissertation functions as a sample narrative towards the alternate meaning of life that the poetic breaks of Black feminist literary production in the queer spaces of counter-cultural markets, classrooms, autonomous publishing collectives make possible, concluding that mothering is indeed a reflexive and queer way of reading the present in the service of a substantively different future in which our outlawed love survives.",
+      "keywords": [
+        "Feminism",
+        "Queer",
+        "Gender studies",
+        "Black feminism",
+        "Queer theory"
+      ],
+      "url": "https://openalex.org/W1538213855",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2168208715",
+      "doi": "https://doi.org/10.1002/ana.20624",
+      "title": "Mitochondria take center stage in aging and neurodegeneration",
+      "year": 2005,
+      "cited_by_count": 956,
+      "relevance_score": 206.6597,
+      "authors": [
+        "M. Flint Beal"
+      ],
+      "venue": "Annals of Neurology",
+      "abstract": "A critical role of mitochondrial dysfunction and oxidative damage has been hypothesized in both aging and neurodegenerative diseases. Much of the evidence has been correlative, but recent evidence has shown that the accumulation of mitochondrial DNA mutations accelerates normal aging, leads to oxidative damage to nuclear DNA, and impairs gene transcription. Furthermore, overexpression of the antioxidant enzyme catalase in mitochondria increases murine life span. There is strong evidence from genetics and transgenic mouse models that mitochondrial dysfunction results in neurodegeneration and may contribute to the pathogenesis of Alzheimer's disease, Parkinson's disease, Huntington's disease, amyotrophic lateral sclerosis, hereditary spastic paraplegia, and cerebellar degenerations. Therapeutic approaches targeting mitochondrial dysfunction and oxidative damage in these diseases therefore have great promise.",
+      "keywords": [
+        "Neurodegeneration",
+        "Amyotrophic lateral sclerosis",
+        "Mitochondrial DNA",
+        "Mitochondrion",
+        "Oxidative stress"
+      ],
+      "url": "https://openalex.org/W2168208715",
+      "matched_by": "en"
+    }
+  ]
+}

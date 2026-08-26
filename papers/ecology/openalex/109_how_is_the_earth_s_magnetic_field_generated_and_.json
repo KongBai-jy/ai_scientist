@@ -1,0 +1,133 @@
+{
+  "problem_id": 109,
+  "problem_cn": "地球磁场如何产生，为什么会漂移？",
+  "problem_en": "How is the Earth's magnetic field generated and why does it drift?",
+  "category": "生态学",
+  "query_en": "How is the Earth's magnetic field generated and why does it drift",
+  "query_cn": "地球磁场如何产生，为什么会漂移",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:28",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2170001576",
+      "doi": "https://doi.org/10.1080/03091929508228992",
+      "title": "Equations governing convection in earth's core and the geodynamo",
+      "year": 1995,
+      "cited_by_count": 521,
+      "relevance_score": 308.08093,
+      "authors": [
+        "S. I. Braginsky",
+        "Paul Roberts"
+      ],
+      "venue": "Geophysical & Astrophysical Fluid Dynamics",
+      "abstract": "Convection in Earth's fluid core is regarded as a small deviation from a well-mixed adiabatic state of uniform chemical composition. The core is modeled as a binary alloy of iron and some lighter constituent, whose precise chemical composition is unknown but which is here assumed to be FeAd, where Ad = Si, O or S. The turbulent transport of heat and light constituent is considered, and a simple ansatz is proposed in which this is modeled by anisotropic diffusion. On this basis, a closed system of equations and boundary conditions is derived that governs core convection and the geodynamo. The dual (thermal + compositional) nature of core convection is reconsidered. It is concluded that compositional convection may not dominate thermal convection, as had previously been argued by Braginsky (Soviet Phys. Dokl., v. 149, p. 8, 1963; Geomag, and Aeron., v. 4, p. 698, 1964), but that the two mechanisms are most probably comparable in importance. The key parameters leading to this conclusion are isolated and estimated. Their uncertainties, which in some cases are large, are highlighted. The energetics and efficiency of the geodynamo are reconsidered and re-estimated. Arguments are advanced that indicate that the mass fraction of the light constituent in the solid inner core may not be small compared with that in the outer core, e.g. about 60%. This tends to favor silicon or sulfur over oxygen as the principal light alloying constituent.",
+      "keywords": [
+        "Outer core",
+        "Dynamo theory",
+        "Convection",
+        "Inner core",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W2170001576",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1991634161",
+      "doi": "https://doi.org/10.1088/0034-4885/46/5/001",
+      "title": "Planetary magnetic fields",
+      "year": 1983,
+      "cited_by_count": 258,
+      "relevance_score": 292.50937,
+      "authors": [
+        "D. J. Stevenson"
+      ],
+      "venue": "Reports on Progress in Physics",
+      "abstract": "As a consequence of the smallness of the electronic fine structure constant, the characteristic time scale for the free diffusive decay of a magnetic field in a planetary core is much less than the age of the Solar System, but the characteristic time scale for thermal diffusion is greater than the age of the Solar System. Consequently, primordial fields and permanent magnetism are small and the only means of providing a substantial planetary magnetic field is the dynamo process. This requires a large region which is fluid, electrically conducting and maintained in a non-uniform motion that includes a substantial RMS vertical component. The attributes of fluidity and conductivity are readily provided in the deep interiors of all planets and most satellites, either in the form of an Fe alloy with a low eutectic temperature (e.g. Fe-S-O in terrestrial bodies and satellites) or by the occupation of conduction states in fluid hydrogen or 'ice' (H 2 O-NH 3 -CH 4 ) in giant planets. It is argued that planetary dynamos are almost certainly maintained by convection (compositional and/or thermal).",
+      "keywords": [
+        "Physics",
+        "Dynamo",
+        "Planet",
+        "Thermal conduction",
+        "Mercury's magnetic field"
+      ],
+      "url": "https://openalex.org/W1991634161",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2007746767",
+      "doi": "https://doi.org/10.1029/jz072i021p05417",
+      "title": "OGO-A magnetic field observations",
+      "year": 1967,
+      "cited_by_count": 284,
+      "relevance_score": 288.4465,
+      "authors": [
+        "J. P. Heppner",
+        "M. Sugiura",
+        "T. L. Skillman",
+        "B. G. Ledley",
+        "M. Campbell"
+      ],
+      "venue": "Journal of Geophysical Research Atmospheres",
+      "abstract": "This paper summarizes the new findings that have come from the intial study of the OGO-A fluxgate magnetometer measurements between 4 and 24.5 RE (earth radii). These include the following: (a) A model magnetic field profile of the cross-sectional structure of the bow shock is derived in terms of the sharpness of the interface, the rise time, and the total time interval occupied by a field pile-up at the shock. Using a simple model to derive the velocity of shock movements, these times are converted to three thickness dimensions roughly of the order < 20, 70, and 250 km, which emphasizes the need for strict definition of the meaning of ‘thickness’ in collisionless shock theories, (b) Superimposed on the average shock structure, (a) above, two classes of field oscillations are frequently observed: coherent circularly polarized waves with frequencies typically between 0.5 and 1.5 cps in the satellite reference frame, and higher frequency fluctuations, >7 cps, which are unresolved by the measurements and whose identity is not known. The coherent oscillation is identified as being in the whistler mode, exists in the form of wave packets, and usually shows a sharp upper frequency cut-off in power spectrum analysis, (c) A series of bow shock crossings during the main phase of the April 18, 1965, magnetic storm occur at an abnormally large distance from the earth principally as a consequence of the strong, 20–27 γ, interplanetary field that lowers the Alfvén Mach number to 1.5. The transition region magnetic field adjacent to the shock interface is exceptionally stable in contrast to a number of theoretical predictions and the typical shocks observed at high Mach numbers, (d) The magnetopause in the sunward hemisphere is most typically observed as a smooth transition over a dimension comparable to the ion cyclotron radius, (e) The correlation of negative bay onsets in the auroral belt with OGO-A observations on the night side of the earth supports more general morphological arguments that the onset originates within the closed magnetosphere or auroral ionosphere and is not dependent on being triggered by a sudden change in the solar wind plasma or field. The view is advanced that the onset results from short-circuiting effects in the ionosphere. (f) At middle latitudes between 5 and 10 RE near the midnight time sector the total field intensity is found to be considerably stronger than predicted by existing field models. This is believed to be caused by high plasma pressures near the equator at similar distances in the same time sector, (g) Near the magnetopause within the local time sector 4h30m-6h30m and geomagnetic latitudes ±15° the magnetospheric field intensity is generally found to be ≤Bt, the field intensity in the adjacent transition region. This condition and the behavior of the field gradient within the magnetosphere leads to the conclusion that a β ≥ 1 condition must persist over this sector of the outer magnetosphere beyond 11 RE. The consequences of the magnetopause being a boundary between two high β regions are noted in terms of boundary instability, plasma entry, and the possible existence of secondary shocks in the transition region. A similar, but not identical, condition may exist in the evening twilight local time sector.",
+      "keywords": [
+        "Physics",
+        "Bow shock (aerodynamics)",
+        "Solar wind",
+        "Magnetic field",
+        "Computational physics"
+      ],
+      "url": "https://openalex.org/W2007746767",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2594556313",
+      "doi": "https://doi.org/10.1029/2002ja009726",
+      "title": "Diamagnetic suppression of component magnetic reconnection at the magnetopause",
+      "year": 2003,
+      "cited_by_count": 283,
+      "relevance_score": 243.20941,
+      "authors": [
+        "M. Swisdak",
+        "B. N. Rogers",
+        "J. F. Drake",
+        "M. A. Shay"
+      ],
+      "venue": "Journal of Geophysical Research Atmospheres",
+      "abstract": "We present particle‐in‐cell simulations of collisionless magnetic reconnection in a system (like the magnetopause) with a large density asymmetry across the current layer. In the presence of an ambient component of the magnetic field perpendicular to the reconnection plane the gradient creates a diamagnetic drift that advects the X‐line with the electron diamagnetic velocity. When the relative drift between the ions and electrons is of the order the Alfvén speed the large scale outflows from the X‐line necessary for fast reconnection cannot develop and the reconnection is suppressed. We discuss how these effects vary with both the plasma β and the shear angle of the reconnecting field and discuss observational evidence for diamagnetic stabilization at the magnetopause.",
+      "keywords": [
+        "Magnetopause",
+        "Magnetic reconnection",
+        "Physics",
+        "Diamagnetism",
+        "Field line"
+      ],
+      "url": "https://openalex.org/W2594556313",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2792265780",
+      "doi": "https://doi.org/10.1002/2017rg000590",
+      "title": "Current Systems in the Earth's Magnetosphere",
+      "year": 2018,
+      "cited_by_count": 160,
+      "relevance_score": 241.7965,
+      "authors": [
+        "Natalia Ganushkina",
+        "M. W. Liemohn",
+        "S. Dubyagin"
+      ],
+      "venue": "Reviews of Geophysics",
+      "abstract": "Abstract The basic structure and dynamics of the primary electric current systems in the Earth's magnetosphere are presented and discussed. In geophysics, the word current is used to describe the flow of mass from one location to another, and its analog of electric current is a flow of charge from one place to another. An electric current is associated with a magnetic field, and they combine with the Earth's internally generated dipolar magnetic field to form the topology of the magnetosphere. The concept of an electric current is reviewed and compared with other approaches to investigate the physics of the magnetosphere. The implications of understanding magnetospheric current systems are discussed, including paths forward for new investigations with the robust set of observations being produced by the numerous scientific and commercial satellites orbiting Earth.",
+      "keywords": [
+        "Magnetosphere",
+        "Physics",
+        "Current (fluid)",
+        "Ring current",
+        "Electric current"
+      ],
+      "url": "https://openalex.org/W2792265780",
+      "matched_by": "en"
+    }
+  ]
+}

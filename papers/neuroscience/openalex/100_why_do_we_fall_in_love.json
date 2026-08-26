@@ -1,0 +1,124 @@
+{
+  "problem_id": 100,
+  "problem_cn": "人类为什么会相爱？",
+  "problem_en": "Why do we fall in love?",
+  "category": "神经科学",
+  "query_en": "Why do we fall in love",
+  "query_cn": "人类为什么会相爱",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:49",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2001126447",
+      "doi": "https://doi.org/10.1080/00201748908602185",
+      "title": "Love and knowledge: Emotion in feminist epistemology",
+      "year": 1989,
+      "cited_by_count": 1390,
+      "relevance_score": 379.78952,
+      "authors": [
+        "Alison M. Jaggar"
+      ],
+      "venue": "Inquiry",
+      "abstract": "This paper argues that, by construing emotion as epistemologically subversive, the Western tradition has tended to obscure the vital role of emotion in the construction of knowledge. The paper begins with an account of emotion that stresses its active, voluntary, and socially constructed aspects, and indicates how emotion is involved in evaluation and observation. It then moves on to show how the myth of dispassionate investigation has functioned historically to undermine the epistemic authority of women as well as other social groups associated culturally with emotion. Finally, the paper sketches some ways in which the emotions of underclass groups, especially women, may contribute to the development of a critical social theory.",
+      "keywords": [
+        "Underclass",
+        "Mythology",
+        "Epistemology",
+        "Psychology",
+        "Emotion work"
+      ],
+      "url": "https://openalex.org/W2001126447",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2012192772",
+      "doi": "https://doi.org/10.1097/00001888-200106000-00013",
+      "title": "The Spirit Catches You and You Fall Down",
+      "year": 2001,
+      "cited_by_count": 487,
+      "relevance_score": 358.17825,
+      "authors": [
+        "Anne Fadiman"
+      ],
+      "venue": "Academic Medicine",
+      "abstract": "Hmong culture … is not Cartesian. Nothing could be more Cartesian than Western medicine. Trying to understand Lia and her family by reading her medical chart (something I spent hundreds of hours doing) was like deconstructing a love sonnet by reducing it to a series of syllogisms. Yet to the residents and pediatricians who had cared for her since she was three months old, there was no guide to Lia's world except her chart. As each of them struggled to make sense of a set of problems that were not expressible in the language they knew, the chart simply grew longer and longer, until it contained more than 400,000 words. Every one of those words reflected its author's intelligence, training and good intentions, but not a single one dealt with the Lees' perception of their daughter's illness. Almost every discussion of cross-cultural medicine that I had ever read quoted a set of eight questions, designed to elicit a patient's “explanatory model,” which were developed by Arthur Kleinman … I thought the Lees might have answered his questions [this way] after Lia's earliest seizures, before any medications had been administered, resisted, or blamed, if they had a good interpreter and had felt sufficiently at ease to tell the truth. To wit: 1. What do you call the problem? Quag dab peg. That means the spirit catches you and you fall down. 2. What do you think has caused the problem? Soul loss. 3. Why do you think it started when it did? Lia's sister Yer slammed the door and Lia's soul was frightened out of her body. 4. What do you think the sickness does? How does it work? It makes Lia shake and fall down. It works because a spirit called a dab is catching her. 5. How severe is the sickness? Will it have a short or long course? Why are you asking us those questions? If you are a good doctor, you should know the answers yourself. 6. What kind of treatment do you think the patient should receive? What are the most important results you hope she receives from this treatment? You should give Lia medicine to take for a week but no longer. After she is well, she should stop taking the medicine. You should not treat her by taking her blood or the fluid from her backbone. Lia should also be treated at home with our Hmong medicines and by sacrificing pigs and chickens. We hope Lia will be healthy, but we are not sure we want her to stop shaking forever because it makes her noble in our culture, and when she grows up she might become a shaman. 7. What are the chief problems the sickness has caused? It has made us sad to see Lia hurt, and it has made us angry at Yer. 8. What do you fear most about the sickness? That Lia's soul will never return.",
+      "keywords": [
+        "Soul",
+        "Nothing",
+        "Psychology",
+        "Medicine",
+        "Philosophy"
+      ],
+      "url": "https://openalex.org/W2012192772",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2989113092",
+      "doi": null,
+      "title": "A General Theory of Love",
+      "year": 2000,
+      "cited_by_count": 284,
+      "relevance_score": 346.20087,
+      "authors": [
+        "Thomas A. Lewis",
+        "Fari Amini",
+        "Richard Lannon"
+      ],
+      "venue": "Medical Entomology and Zoology",
+      "abstract": "hat is love, and why are some people unable to find it? What is loneliness, and why does it hurt?” are the opening words of this important book. These ancient human problems still haunt us, but what do they have to do with medical practice? In this highly readable book, three San Francisco psychiatrists successfully explain new discoveries, insights, and developments in neurobiology during what has been called “The Decade of the Brain,” and by using love as their focal point, they also help us to understand more about love. These three physicians provide welcome counterpoint to Alan Barbour’s observation that efforts to understand the patient as a person are most often relegated to psychiatry, a field which itself seems to have abdicated that goal. The authors show that an understanding of humans and an understanding of neurobiology can be combined successfully: “In this book, we demonstrate that where intellect and emotion clash, the heart often has the greater wisdom. In a pleasing turnabout, science—Reason’s right hand—is proving this so.” pviii The authors ultimately discuss how we might use this knowledge to improve health and medical practice itself. The model of a three-level brain is used throughout the book. This triune brain consists of the brainstem, or reptilian brain, which senses and controls internal functions such as heartbeat and avoidance of threat; the mammalian, or limbic, brain that represents the evolutionary advent of emotion in mammals, the ability to sense and respond to external phenomena; and the cortex, or neocortical brain, which consciously responds to that of which we are cognitively aware. We usually ascribe the most important aspects of our being to the neocortical brain. The authors use descriptions of clinical disorders and evidence from interesting and ingenious experiments to support this triune model of the brain. For example, reptiles are neither emotionally responsive nor playful. By contrast, we mammals can sense the internal state of another mammal and adjust our own physiology to match. This phenomenon of limbic resonance is illustrated by the calming influence a secure mother has on her baby by gazing into her baby’s eyes or by cradling her baby so that it can listen to her heart beating. Although we all have made these observations, their meaning has escaped us, but their subtlety has not. Alfred de Musset is quoted on limbic resonance: My heart, still full of her, Traveled over her face, and found her there no more... I thought to myself that a woman unknown Had adopted by chance that voice and those eyes And I let the chilly statue pass Looking at the skies. The authors move to the arena of relationships: How do we identify those with whom we fall in love? They discuss the profound importance of our earliest experiences, those experiences that we can’t consciously remember but that are nevertheless imprinted on our unconscious and somatic memories. The lasting importance of the emotional content of our early experiences is clearly illustrated by the devastating results of Harry Harlow’s experiments with maternal deprivation of otherwise well-fed and well-cared-for infant monkeys and by Rene Spitz’s observations of similar fates for children raised in foundling homes. The authors ask rhetorically, “Why should human contact—‘gestures and gladness of countenance’—rank with food and water as a physiologic need?” One might consider whether a homesick child had good or insecure interpersonal attachments as an infant; the word homesick has interesting implications. Dean Ornish, MD, helpfully wrote about the delayed medical consequences of homesickness in his book, Love and Survival. A General Theory of Love has an interesting discussion about the roles of serotonin, opiates, and oxytocin; however, the important roles these three neurochemicals play in CNS function are at times incorrectly described as causal instead of as intermediary. Identity, the consciousness of a stable self, is discussed in terms of our expanding knowledge of neurobiology. “The stability of an individual mind–-what we know as identity—exists only because some neural pathways endure.” An interesting discussion follows of the profound importance of various forms of unconscious memory and their formation mechanisms. The important roles of very early, stable, somatic, and emotional unconscious memory is made clear. For instance, many are familiar with the term, but few are aware that blindsight is a literal, well-described visual phenomenon in some blind people. A more obvious New York: Random House; 2000. ISBN: 0375503897. 274 pp; $23.95 “W",
+      "keywords": [
+        "Intellect",
+        "Psychology",
+        "Cognitive science",
+        "Loneliness",
+        "Neuroscience"
+      ],
+      "url": "https://openalex.org/W2989113092",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4211051606",
+      "doi": "https://doi.org/10.1017/cbo9780511489785",
+      "title": "Love Online",
+      "year": 2004,
+      "cited_by_count": 158,
+      "relevance_score": 303.55374,
+      "authors": [
+        "Aaron Ben‐Ze’ev"
+      ],
+      "venue": "Cambridge University Press eBooks",
+      "abstract": "Computers have changed not just the way we work but the way we love. Falling in and out of love, flirting, cheating, even having sex online have all become part of the modern way of living and loving. Yet we know very little about these new types of relationship. How is an online affair where the two people involved may never see or meet each other different from an affair in the real world? Is online sex still cheating on your partner? Why do people tell complete strangers their most intimate secrets? What are the rules of engagement? Will online affairs change the monogamous nature of romantic relationships? These are just some of the questions Professor Aaron Ben Ze'ev, distinguished writer and academic, addresses in this 2004 book, a full-length study of love online. Accessible, shocking, entertaining, enlightening, this book will change the way you look at cyberspace and love forever.",
+      "keywords": [
+        "Flirting",
+        "Falling in love",
+        "Cheating",
+        "Romance",
+        "Cyberspace"
+      ],
+      "url": "https://openalex.org/W4211051606",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2085635751",
+      "doi": "https://doi.org/10.5860/choice.35-5770",
+      "title": "The wealth and poverty of nations: why some are so rich and some so poor",
+      "year": 1998,
+      "cited_by_count": 1943,
+      "relevance_score": 300.1685,
+      "authors": [
+        "David S. Landes"
+      ],
+      "venue": "Choice Reviews Online",
+      "abstract": "\"David S. Landes tells the long, fascinating story of wealth and power throughout the world: the creation of wealth, the paths of winners and losers, the rise and fall of nations. He studies history as a process, attempting to understand how the world's cultures lead to - or retard - economic and military success and material achievement.\" \"Countries of the West, Landes asserts, prospered early through the interplay of a vital, open society focused on work and knowledge, which led to increased productivity, the creation of new technologies, and the pursuit of change. Europe's key advantage lay in invention and know-how, as applied in war, transportation, generation of power, and skill in metalwork. Even such now banal inventions as eyeglasses and the clock were, in their day, powerful levers that tipped the balance of world economic power. Today's new economic winners are following much the same roads to power, while the laggards have somehow failed to duplicate this crucial formula for success.\" \"The key to relieving much of the world's poverty lies in understanding the lessons history has to teach us - lessons uniquely imparted in this towering work of history.\"--BOOK JACKET.",
+      "keywords": [
+        "Poverty",
+        "Development economics",
+        "Economics",
+        "Economic growth"
+      ],
+      "url": "https://openalex.org/W2085635751",
+      "matched_by": "en"
+    }
+  ]
+}

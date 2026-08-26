@@ -1,0 +1,135 @@
+{
+  "problem_id": 37,
+  "problem_cn": "人类情绪起源于哪里？",
+  "problem_en": "Where do human emotions originate?",
+  "category": "生物学",
+  "query_en": "Where do human emotions originate",
+  "query_cn": "人类情绪起源于哪里",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:13",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2105931454",
+      "doi": "https://doi.org/10.1017/s0140525x11000446",
+      "title": "The brain basis of emotion: A meta-analytic review",
+      "year": 2012,
+      "cited_by_count": 2347,
+      "relevance_score": 520.15894,
+      "authors": [
+        "Kristen A. Lindquist",
+        "Tor D. Wager",
+        "Hedy Kober",
+        "Eliza Bliss‐Moreau",
+        "Lisa Feldman Barrett"
+      ],
+      "venue": "Behavioral and Brain Sciences",
+      "abstract": "Researchers have wondered how the brain creates emotions since the early days of psychological science. With a surge of studies in affective neuroscience in recent decades, scientists are poised to answer this question. In this target article, we present a meta-analytic summary of the neuroimaging literature on human emotion. We compare the locationist approach (i.e., the hypothesis that discrete emotion categories consistently and specifically correspond to distinct brain regions) with the psychological constructionist approach (i.e., the hypothesis that discrete emotion categories are constructed of more general brain networks not specific to those categories) to better understand the brain basis of emotion. We review both locationist and psychological constructionist hypotheses of brain-emotion correspondence and report meta-analytic findings bearing on these hypotheses. Overall, we found little evidence that discrete emotion categories can be consistently and specifically localized to distinct brain regions. Instead, we found evidence that is consistent with a psychological constructionist approach to the mind: A set of interacting brain regions commonly involved in basic psychological operations of both an emotional and non-emotional nature are active during emotion experience and perception across a range of discrete emotion categories.",
+      "keywords": [
+        "Psychology",
+        "Basis (linear algebra)",
+        "Cognitive psychology",
+        "Mathematics",
+        "Geometry"
+      ],
+      "url": "https://openalex.org/W2105931454",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2052685640",
+      "doi": "https://doi.org/10.1016/j.tics.2013.09.007",
+      "title": "Interoceptive inference, emotion, and the embodied self",
+      "year": 2013,
+      "cited_by_count": 1849,
+      "relevance_score": 460.83917,
+      "authors": [
+        "Anil K. Seth"
+      ],
+      "venue": "Trends in Cognitive Sciences",
+      "abstract": "The concept of the brain as a prediction machine has enjoyed a resurgence in the context of the Bayesian brain and predictive coding approaches within cognitive science. To date, this perspective has been applied primarily to exteroceptive perception (e.g., vision, audition), and action. Here, I describe a predictive, inferential perspective on interoception: 'interoceptive inference' conceives of subjective feeling states (emotions) as arising from actively-inferred generative (predictive) models of the causes of interoceptive afferents. The model generalizes 'appraisal' theories that view emotions as emerging from cognitive evaluations of physiological changes, and it sheds new light on the neurocognitive mechanisms that underlie the experience of body ownership and conscious selfhood in health and in neuropsychiatric illness.",
+      "keywords": [
+        "Interoception",
+        "Psychology",
+        "Embodied cognition",
+        "Neurocognitive",
+        "Predictive coding"
+      ],
+      "url": "https://openalex.org/W2052685640",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2128472904",
+      "doi": "https://doi.org/10.1038/npp.2009.129",
+      "title": "The Reward Circuit: Linking Primate Anatomy and Human Imaging",
+      "year": 2009,
+      "cited_by_count": 3787,
+      "relevance_score": 362.9343,
+      "authors": [
+        "Suzanne N. Haber",
+        "Brian Knutson"
+      ],
+      "venue": "Neuropsychopharmacology",
+      "abstract": "",
+      "keywords": [
+        "Neuroscience",
+        "Thalamus",
+        "Prefrontal cortex",
+        "Dorsal raphe nucleus",
+        "Basal ganglia"
+      ],
+      "url": "https://openalex.org/W2128472904",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2160453617",
+      "doi": "https://doi.org/10.1111/j.1745-6924.2009.01125.x",
+      "title": "Puzzlingly High Correlations in fMRI Studies of Emotion, Personality, and Social Cognition",
+      "year": 2009,
+      "cited_by_count": 1514,
+      "relevance_score": 343.419,
+      "authors": [
+        "Edward Vul",
+        "Christine R. Harris",
+        "Piotr Winkielman",
+        "Harold Pashler"
+      ],
+      "venue": "Perspectives on Psychological Science",
+      "abstract": "Functional magnetic resonance imaging (fMRI) studiesofemotion, personality, and social cognition have drawn much attention in recent years, with high-profile studies frequently reporting extremely high (e.g., >.8) correlations between brain activation and personality measures. We show that these correlations are higher than should be expected given the (evidently limited) reliability of both fMRI and personality measures. The high correlations are all the more puzzling because method sections rarely contain much detail about how the correlations were obtained. We surveyed authors of 55 articles that reported findings of this kind to determine a few details on how these correlations were computed. More than half acknowledged using a strategy that computes separate correlations for individual voxels and reports means of only those voxels exceeding chosen thresholds. We show how this nonindependent analysis inflates correlations while yielding reassuring-looking scattergrams. This analysis technique was used to obtain the vast majority of the implausibly high correlations in our survey sample. In addition, we argue that, in some cases, other analysis problems likely created entirely spurious correlations. We outline how the data from these studies could be reanalyzed with unbiased methods to provide accurate estimates of the correlations in question and urge authors to perform such reanalyses. The underlying problems described here appear to be common in fMRI research of many kinds-not just in studies of emotion, personality, and social cognition.",
+      "keywords": [
+        "Spurious relationship",
+        "Psychology",
+        "Personality",
+        "Functional magnetic resonance imaging",
+        "Cognitive psychology"
+      ],
+      "url": "https://openalex.org/W2160453617",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2133852590",
+      "doi": "https://doi.org/10.1002/hbm.20180",
+      "title": "Investigating emotion with music: An fMRI study",
+      "year": 2005,
+      "cited_by_count": 1051,
+      "relevance_score": 337.587,
+      "authors": [
+        "Stefan Koelsch",
+        "Thomas Hans Fritz",
+        "D. Yves von Cramon",
+        "Karsten Müller",
+        "Angela D. Friederici"
+      ],
+      "venue": "Human Brain Mapping",
+      "abstract": "The present study used pleasant and unpleasant music to evoke emotion and functional magnetic resonance imaging (fMRI) to determine neural correlates of emotion processing. Unpleasant (permanently dissonant) music contrasted with pleasant (consonant) music showed activations of amygdala, hippocampus, parahippocampal gyrus, and temporal poles. These structures have previously been implicated in the emotional processing of stimuli with (negative) emotional valence; the present data show that a cerebral network comprising these structures can be activated during the perception of auditory (musical) information. Pleasant (contrasted to unpleasant) music showed activations of the inferior frontal gyrus (IFG, inferior Brodmann's area (BA) 44, BA 45, and BA 46), the anterior superior insula, the ventral striatum, Heschl's gyrus, and the Rolandic operculum. IFG activations appear to reflect processes of music-syntactic analysis and working memory operations. Activations of Rolandic opercular areas possibly reflect the activation of mirror-function mechanisms during the perception of the pleasant tunes. Rolandic operculum, anterior superior insula, and ventral striatum may form a motor-related circuitry that serves the formation of (premotor) representations for vocal sound production during the perception of pleasant auditory information. In all of the mentioned structures, except the hippocampus, activations increased over time during the presentation of the musical stimuli, indicating that the effects of emotion processing have temporal dynamics; the temporal dynamics of emotion have so far mainly been neglected in the functional imaging literature.",
+      "keywords": [
+        "Psychology",
+        "Functional magnetic resonance imaging",
+        "Inferior frontal gyrus",
+        "Insula",
+        "Premotor cortex"
+      ],
+      "url": "https://openalex.org/W2133852590",
+      "matched_by": "en"
+    }
+  ]
+}

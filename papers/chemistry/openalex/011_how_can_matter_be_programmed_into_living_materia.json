@@ -1,0 +1,150 @@
+{
+  "problem_id": 11,
+  "problem_cn": "我们能否把物质编程，创造活体材料？",
+  "problem_en": "How can matter be programmed into living materials?",
+  "category": "化学",
+  "query_en": "How can matter be programmed into living materials",
+  "query_cn": "我们能否把物质编程，创造活体材料",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:42",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2141947008",
+      "doi": "https://doi.org/10.1038/nmat2614",
+      "title": "Emerging applications of stimuli-responsive polymer materials",
+      "year": 2010,
+      "cited_by_count": 5690,
+      "relevance_score": 506.70886,
+      "authors": [
+        "Martien A. Cohen Stuart",
+        "Wilhelm T. S. Huck",
+        "Jan Genzer",
+        "Marcus Müller",
+        "Christopher K. Ober",
+        "Manfred Stamm",
+        "Gleb B. Sukhorukov",
+        "Igal Szleifer",
+        "Vladimir V. Tsukruk",
+        "Marek W. Urban",
+        "Françoise M. Winnik",
+        "Stefan Zauscher",
+        "Igor Luzinov",
+        "Sergiy Minko"
+      ],
+      "venue": "Nature Materials",
+      "abstract": "",
+      "keywords": [
+        "Nanotechnology",
+        "Materials science",
+        "Smart material",
+        "Smart polymer",
+        "Drug delivery"
+      ],
+      "url": "https://openalex.org/W2141947008",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2914761006",
+      "doi": "https://doi.org/10.1186/s12916-019-1256-2",
+      "title": "Stigma in health facilities: why it matters and how we can change it",
+      "year": 2019,
+      "cited_by_count": 883,
+      "relevance_score": 477.57745,
+      "authors": [
+        "Laura Nyblade",
+        "Melissa A. Stockton",
+        "Kayla Giger",
+        "Virginia Bond",
+        "Maria L. Ekstrand",
+        "Roger Mc Lean",
+        "Ellen M.H. Mitchell",
+        "LaRon E. Nelson",
+        "Jaime Sapag",
+        "Taweesap Siraprapasiri",
+        "Janet M. Turan",
+        "Edwin Wouters"
+      ],
+      "venue": "BMC Medicine",
+      "abstract": "Stigma in health facilities undermines diagnosis, treatment, and successful health outcomes. Addressing stigma is fundamental to delivering quality healthcare and achieving optimal health. This correspondence article seeks to assess how developments over the past 5 years have contributed to the state of programmatic knowledge-both approaches and methods-regarding interventions to reduce stigma in health facilities, and explores the potential to concurrently address multiple health condition stigmas. It is supported by findings from a systematic review of published articles indexed in PubMed, Psychinfo and Web of Science, and in the United States Agency for International Development's Development Experience Clearinghouse, which was conducted in February 2018 and restricted to the past 5 years. Forty-two studies met inclusion criteria and provided insight on interventions to reduce HIV, mental illness, or substance abuse stigma. Multiple common approaches to address stigma in health facilities emerged, which were implemented in a variety of ways. The literature search identified key gaps including a dearth of stigma reduction interventions in health facilities that focus on tuberculosis, diabetes, leprosy, or cancer; target multiple cadres of staff or multiple ecological levels; leverage interactive technology; or address stigma experienced by health workers. Preliminary results from ongoing innovative responses to these gaps are also described.The current evidence base of stigma reduction in health facilities provides a solid foundation to develop and implement interventions. However, gaps exist and merit further work. Future investment in health facility stigma reduction should prioritize the involvement of clients living with the stigmatized condition or behavior and health workers living with stigmatized conditions and should address both individual and structural level stigma.",
+      "keywords": [
+        "Medicine",
+        "Health information technology",
+        "Medical emergency",
+        "Health care",
+        "Economic growth"
+      ],
+      "url": "https://openalex.org/W2914761006",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2284386481",
+      "doi": "https://doi.org/10.1016/j.npls.2016.01.001",
+      "title": "How to plan and perform a qualitative study using content analysis",
+      "year": 2016,
+      "cited_by_count": 4674,
+      "relevance_score": 430.14014,
+      "authors": [
+        "Mariette Bengtsson"
+      ],
+      "venue": "NursingPlus Open",
+      "abstract": "This paper describes the research process – from planning to presentation, with the emphasis on credibility throughout the whole process – when the methodology of qualitative content analysis is chosen in a qualitative study. The groundwork for the credibility initiates when the planning of the study begins. External and internal resources have to be identified, and the researcher must consider his or her experience of the phenomenon to be studied in order to minimize any bias of his/her own influence. The purpose of content analysis is to organize and elicit meaning from the data collected and to draw realistic conclusions from it. The researcher must choose whether the analysis should be of a broad surface structure (a manifest analysis) or of a deep structure (a latent analysis). Four distinct main stages are described in this paper: the decontextualisation, the recontextualisation, the categorization, and the compilation. This description of qualitative content analysis offers one approach that shows how the general principles of the method can be used.",
+      "keywords": [
+        "Credibility",
+        "Content analysis",
+        "Categorization",
+        "Qualitative research",
+        "Qualitative analysis"
+      ],
+      "url": "https://openalex.org/W2284386481",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2041857964",
+      "doi": "https://doi.org/10.1038/nature01406",
+      "title": "DNA in a material world",
+      "year": 2003,
+      "cited_by_count": 2791,
+      "relevance_score": 402.17746,
+      "authors": [
+        "Nadrian C. Seeman"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "DNA",
+        "Nanotechnology",
+        "Computational biology",
+        "DNA nanotechnology",
+        "Foundation (evidence)"
+      ],
+      "url": "https://openalex.org/W2041857964",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2116663774",
+      "doi": "https://doi.org/10.1016/j.femsre.2004.11.005",
+      "title": "Living in a fungal world: impact of fungi on soil bacterial niche development",
+      "year": 2004,
+      "cited_by_count": 1856,
+      "relevance_score": 378.82922,
+      "authors": [
+        "Wietse de Boer",
+        "Larissa B. Folman",
+        "Richard C. Summerbell",
+        "Lynne Boddy"
+      ],
+      "venue": "FEMS Microbiology Reviews",
+      "abstract": "The colonization of land by plants appears to have coincided with the appearance of mycorrhiza-like fungi. Over evolutionary time, fungi have maintained their prominent role in the formation of mycorrhizal associations. In addition, however, they have been able to occupy other terrestrial niches of which the decomposition of recalcitrant organic matter is perhaps the most remarkable. This implies that, in contrast to that of aquatic organic matter decomposition, bacteria have not been able to monopolize decomposition processes in terrestrial ecosystems. The emergence of fungi in terrestrial ecosystems must have had a strong impact on the evolution of terrestrial bacteria. On the one hand, potential decomposition niches, e.g. lignin degradation, have been lost for bacteria, whereas on the other hand the presence of fungi has itself created new bacterial niches. Confrontation between bacteria and fungi is ongoing, and from studying contemporary interactions, we can learn about the impact that fungi presently have, and have had in the past, on the ecology and evolution of terrestrial bacteria. In the first part of this review, the focus is on niche differentiation between soil bacteria and fungi involved in the decomposition of plant-derived organic matter. Bacteria and fungi are seen to compete for simple plant-derived substrates and have developed antagonistic strategies. For more recalcitrant organic substrates, e.g. cellulose and lignin, both competitive and mutualistic strategies appear to have evolved. In the second part of the review, bacterial niches with respect to the utilization of fungal-derived substrates are considered. Here, several lines of development can be recognized, ranging from mutualistic exudate-consuming bacteria that are associated with fungal surfaces to endosymbiotic and mycophagous bacteria. In some cases, there are indications of fungal specific selection in fungus-associated bacteria, and possible mechanisms for such selection are discussed.",
+      "keywords": [
+        "Ecological niche",
+        "Biology",
+        "Niche",
+        "Organic matter",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W2116663774",
+      "matched_by": "en"
+    }
+  ]
+}

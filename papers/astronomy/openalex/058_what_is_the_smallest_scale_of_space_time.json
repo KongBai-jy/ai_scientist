@@ -1,0 +1,133 @@
+{
+  "problem_id": 58,
+  "problem_cn": "时空最小尺度是多少？",
+  "problem_en": "What is the smallest scale of space-time?",
+  "category": "天文学",
+  "query_en": "What is the smallest scale of space-time",
+  "query_cn": "时空最小尺度是多少",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:25:38",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1686810756",
+      "doi": "https://doi.org/10.48550/arxiv.1409.1556",
+      "title": "Very Deep Convolutional Networks for Large-Scale Image Recognition",
+      "year": 2014,
+      "cited_by_count": 75491,
+      "relevance_score": 1625.8955,
+      "authors": [
+        "Karen Simonyan",
+        "Andrew Zisserman"
+      ],
+      "venue": "arXiv (Cornell University)",
+      "abstract": "In this work we investigate the effect of the convolutional network depth on its accuracy in the large-scale image recognition setting. Our main contribution is a thorough evaluation of networks of increasing depth using an architecture with very small (3x3) convolution filters, which shows that a significant improvement on the prior-art configurations can be achieved by pushing the depth to 16-19 weight layers. These findings were the basis of our ImageNet Challenge 2014 submission, where our team secured the first and the second places in the localisation and classification tracks respectively. We also show that our representations generalise well to other datasets, where they achieve state-of-the-art results. We have made our two best-performing ConvNet models publicly available to facilitate further research on the use of deep visual representations in computer vision.",
+      "keywords": [
+        "Computer science",
+        "Convolution (computer science)",
+        "Convolutional neural network",
+        "Artificial intelligence",
+        "Deep learning"
+      ],
+      "url": "https://openalex.org/W1686810756",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2114613490",
+      "doi": "https://doi.org/10.1136/jnnp.23.1.56",
+      "title": "A RATING SCALE FOR DEPRESSION",
+      "year": 1960,
+      "cited_by_count": 32847,
+      "relevance_score": 1289.1913,
+      "authors": [
+        "M. Hamilton"
+      ],
+      "venue": "Journal of Neurology Neurosurgery & Psychiatry",
+      "abstract": "",
+      "keywords": [
+        "Rating scale",
+        "Depression (economics)",
+        "Scale (ratio)",
+        "Psychology",
+        "Geography"
+      ],
+      "url": "https://openalex.org/W2114613490",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1966078827",
+      "doi": "https://doi.org/10.1021/ct700301q",
+      "title": "GROMACS 4: Algorithms for Highly Efficient, Load-Balanced, and Scalable Molecular Simulation",
+      "year": 2008,
+      "cited_by_count": 16133,
+      "relevance_score": 860.74225,
+      "authors": [
+        "Berk Hess",
+        "Carsten Kutzner",
+        "David van der Spoel",
+        "Erik Lindahl"
+      ],
+      "venue": "Journal of Chemical Theory and Computation",
+      "abstract": "Molecular simulation is an extremely useful, but computationally very expensive tool for studies of chemical and biomolecular systems. Here, we present a new implementation of our molecular simulation toolkit GROMACS which now both achieves extremely high performance on single processors from algorithmic optimizations and hand-coded routines and simultaneously scales very well on parallel machines. The code encompasses a minimal-communication domain decomposition algorithm, full dynamic load balancing, a state-of-the-art parallel constraint solver, and efficient virtual site algorithms that allow removal of hydrogen atom degrees of freedom to enable integration time steps up to 5 fs for atomistic simulations also in parallel. To improve the scaling properties of the common particle mesh Ewald electrostatics algorithms, we have in addition used a Multiple-Program, Multiple-Data approach, with separate node domains responsible for direct and reciprocal space interactions. Not only does this combination of algorithms enable extremely long simulations of large systems but also it provides that simulation performance on quite modest numbers of standard cluster nodes.",
+      "keywords": [
+        "Computer science",
+        "Scalability",
+        "Algorithm",
+        "Computational science",
+        "Node (physics)"
+      ],
+      "url": "https://openalex.org/W1966078827",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1889142700",
+      "doi": "https://doi.org/10.4310/atmp.1998.v2.n2.a2",
+      "title": "Anti de Sitter space and holography",
+      "year": 1998,
+      "cited_by_count": 13439,
+      "relevance_score": 823.2439,
+      "authors": [
+        "Edward Witten"
+      ],
+      "venue": "Advances in Theoretical and Mathematical Physics",
+      "abstract": "Recently, it has been proposed by Maldacena that large N limits of certain conformal field theories in d dimensions can be described in terms of supergravity (and string theory) on the product of d 4-1dimensional AdS space with a compact manifold. Here we elaborate on this idea and propose a precise correspondence between conformal field theory observables and those of supergravity: correlation functions in conformal field theory are given by the dependence of the supergravity action on the asymptotic behavior at infinity. In particular, dimensions of operators in conformal field theory are given by masses of particles in supergravity. As quantitative confirmation of this correspondence, we note that the Kaluza-Klein modes of Type IIB supergravity on AdS^ x S 5 match with the chiral operators of Af = 4 super Yang-Mills theory in four dimensions. With some further assumptions, one can deduce a H'amiltonian version of the correspondence and show that the Af = 4 theory has a large N phase transition related to the thermodynamics of AdS black holes.",
+      "keywords": [
+        "De Sitter space",
+        "Anti-de Sitter space",
+        "Space (punctuation)",
+        "de Sitter–Schwarzschild metric",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W1889142700",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2054692642",
+      "doi": "https://doi.org/10.1109/jsac.2014.2328098",
+      "title": "What Will 5G Be?",
+      "year": 2014,
+      "cited_by_count": 8269,
+      "relevance_score": 694.6695,
+      "authors": [
+        "Jeffrey G. Andrews",
+        "Stefano Buzzi",
+        "Wan Choi",
+        "Stephen V. Hanly",
+        "Angel Lozano",
+        "Anthony C. K. Soong",
+        "Jianzhong Charlie Zhang"
+      ],
+      "venue": "IEEE Journal on Selected Areas in Communications",
+      "abstract": "What will 5G be? What it will not be is an incremental advance on 4G. The previous four generations of cellular technology have each been a major paradigm shift that has broken backward compatibility. Indeed, 5G will need to be a paradigm shift that includes very high carrier frequencies with massive bandwidths, extreme base station and device densities, and unprecedented numbers of antennas. However, unlike the previous four generations, it will also be highly integrative: tying any new 5G air interface and spectrum together with LTE and WiFi to provide universal high-rate coverage and a seamless user experience. To support this, the core network will also have to reach unprecedented levels of flexibility and intelligence, spectrum regulation will need to be rethought and improved, and energy and cost efficiencies will become even more critical considerations. This paper discusses all of these topics, identifying key challenges for future research and preliminary 5G standardization activities, while providing a comprehensive overview of the current literature, and in particular of the papers appearing in this special issue.",
+      "keywords": [
+        "Computer science",
+        "Paradigm shift",
+        "Standardization",
+        "Base station",
+        "Telecommunications"
+      ],
+      "url": "https://openalex.org/W2054692642",
+      "matched_by": "en"
+    }
+  ]
+}

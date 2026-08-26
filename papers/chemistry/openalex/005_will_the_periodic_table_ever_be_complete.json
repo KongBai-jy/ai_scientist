@@ -1,0 +1,180 @@
+{
+  "problem_id": 5,
+  "problem_cn": "元素周期表会有最终完整版吗？",
+  "problem_en": "Will the periodic table ever be complete?",
+  "category": "化学",
+  "query_en": "Will the periodic table ever be complete",
+  "query_cn": "元素周期表会有最终完整版吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:20",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2097764239",
+      "doi": "https://doi.org/10.1002/jcc.24221",
+      "title": "Molcas 8: New capabilities for multiconfigurational quantum chemical calculations across the periodic table",
+      "year": 2015,
+      "cited_by_count": 1468,
+      "relevance_score": 463.37067,
+      "authors": [
+        "Francesco Aquilante",
+        "Jochen Autschbach",
+        "Rebecca K. Carlson",
+        "Liviu F. Chibotaru",
+        "Mickaël G. Delcey",
+        "Luca De Vico",
+        "Ignacio Fdez. Galván",
+        "Nicolas Ferré",
+        "Luis Manuel Frutos",
+        "Laura Gagliardi",
+        "Marco Garavelli",
+        "Angelo Giussani",
+        "Chad E. Hoyer",
+        "Giovanni Li Manni",
+        "Hans Lischka",
+        "Dongxia Ma",
+        "Per‐Åke Malmqvist",
+        "Thomas Müller",
+        "Artur Nenov",
+        "Massimo Olivucci",
+        "Thomas Bondo Pedersen",
+        "Daoling Peng",
+        "Felix Plasser",
+        "Ben Pritchard",
+        "Markus Reiher",
+        "Ivan Rivalta",
+        "Igor Schapiro",
+        "Javier Segarra‐Martí",
+        "Michael Stenrup",
+        "Donald G. Truhlar",
+        "Liviu Ungur",
+        "Alessio Valentini",
+        "Steven Vancoillie",
+        "Valera Veryazov",
+        "Victor P. Vysotskiy",
+        "Oliver Weingart",
+        "Felipe Zapata",
+        "Roland Lindh"
+      ],
+      "venue": "Journal of Computational Chemistry",
+      "abstract": "In this report, we summarize and describe the recent unique updates and additions to the Molcas quantum chemistry program suite as contained in release version 8. These updates include natural and spin orbitals for studies of magnetic properties, local and linear scaling methods for the Douglas-Kroll-Hess transformation, the generalized active space concept in MCSCF methods, a combination of multiconfigurational wave functions with density functional theory in the MC-PDFT method, additional methods for computation of magnetic properties, methods for diabatization, analytical gradients of state average complete active space SCF in association with density fitting, methods for constrained fragment optimization, large-scale parallel multireference configuration interaction including analytic gradients via the interface to the Columbus package, and approximations of the CASPT2 method to be used for computations of large systems. In addition, the report includes the description of a computational machinery for nonlinear optical spectroscopy through an interface to the QM/MM package Cobramm. Further, a module to run molecular dynamics simulations is added, two surface hopping algorithms are included to enable nonadiabatic calculations, and the DQ method for diabatization is added. Finally, we report on the subject of improvements with respects to alternative file options and parallelization.",
+      "keywords": [
+        "Quantum chemical",
+        "Table (database)",
+        "Computational chemistry",
+        "Statistical physics",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W2097764239",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2767044503",
+      "doi": "https://doi.org/10.1016/j.cpc.2018.01.012",
+      "title": "The PseudoDojo: Training and grading a 85 element optimized norm-conserving pseudopotential table",
+      "year": 2018,
+      "cited_by_count": 2189,
+      "relevance_score": 221.96492,
+      "authors": [
+        "Michiel J. van Setten",
+        "Matteo Giantomassi",
+        "Éric Bousquet",
+        "Matthieu J. Verstraete",
+        "D. R. Hamann",
+        "Xavier Gonze",
+        "Gian‐Marco Rignanese"
+      ],
+      "venue": "Computer Physics Communications",
+      "abstract": "",
+      "keywords": [
+        "Pseudopotential",
+        "Rotation formalisms in three dimensions",
+        "Cutoff",
+        "Computer science",
+        "Norm (philosophy)"
+      ],
+      "url": "https://openalex.org/W2767044503",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3081938831",
+      "doi": "https://doi.org/10.1002/lpor.202000215",
+      "title": "Maxwell Meets Marangoni—A Review of Theories on Laser‐Induced Periodic Surface Structures",
+      "year": 2020,
+      "cited_by_count": 527,
+      "relevance_score": 190.1182,
+      "authors": [
+        "Jörn Bonse",
+        "Stephan Gräf"
+      ],
+      "venue": "Laser & Photonics Review",
+      "abstract": "Abstract Surface nanostructuring enables the manipulation of many essential surface properties. With the recent rapid advancements in laser technology, a contactless large‐area processing at rates of up to m 2 s −1 becomes feasible that allows new industrial applications in medicine, optics, tribology, biology, etc. On the other hand, the last two decades enable extremely successful and intense research in the field of so‐called laser‐induced periodic surface structures (LIPSS, ripples). Different types of these structures featuring periods of hundreds of nanometers only—far beyond the optical diffraction limit—up to several micrometers are easily manufactured in a single‐step process and can be widely controlled by a proper choice of the laser processing conditions. From a theoretical point of view, however, a vivid and very controversial debate emerges, whether LIPSS originate from electromagnetic effects or are caused by matter reorganization. This article aims to close a gap in the available literature on LIPSS by reviewing the currently existent theories of LIPSS along with their numerical implementations and by providing a comparison and critical assessment of these approaches.",
+      "keywords": [
+        "Laser",
+        "Surface (topology)",
+        "Marangoni effect",
+        "Field (mathematics)",
+        "Diffraction"
+      ],
+      "url": "https://openalex.org/W3081938831",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2051978340",
+      "doi": "https://doi.org/10.1038/gim.2015.30",
+      "title": "Standards and guidelines for the interpretation of sequence variants: a joint consensus recommendation of the American College of Medical Genetics and Genomics and the Association for Molecular Pathology",
+      "year": 2015,
+      "cited_by_count": 33026,
+      "relevance_score": 178.3219,
+      "authors": [
+        "Sue Richards",
+        "Nazneen Aziz",
+        "Sherri J. Bale",
+        "David Bick",
+        "Soma Das",
+        "Julie M. Gastier‐Foster",
+        "Wayne W. Grody",
+        "Madhuri Hegde",
+        "Elaine Lyon",
+        "Elaine Spector",
+        "Karl V. Voelkerding",
+        "Heidi L. Rehm"
+      ],
+      "venue": "Genetics in Medicine",
+      "abstract": "",
+      "keywords": [
+        "Medical genetics",
+        "Workgroup",
+        "Exome sequencing",
+        "Context (archaeology)",
+        "Exome"
+      ],
+      "url": "https://openalex.org/W2051978340",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2014437371",
+      "doi": "https://doi.org/10.1103/physrev.108.1175",
+      "title": "Theory of Superconductivity",
+      "year": 1957,
+      "cited_by_count": 13145,
+      "relevance_score": 176.30807,
+      "authors": [
+        "J. Bardeen",
+        "Leon N. Cooper",
+        "J. R. Schrieffer"
+      ],
+      "venue": "Physical Review",
+      "abstract": "A theory of superconductivity is presented, based on the fact that the interaction between electrons resulting from virtual exchange of phonons is attractive when the energy difference between the electrons states involved is less than the phonon energy, $\\ensuremath{\\hbar}\\ensuremath{\\omega}$. It is favorable to form a superconducting phase when this attractive interaction dominates the repulsive screened Coulomb interaction. The normal phase is described by the Bloch individual-particle model. The ground state of a superconductor, formed from a linear combination of normal state configurations in which electrons are virtually excited in pairs of opposite spin and momentum, is lower in energy than the normal state by amount proportional to an average ${(\\ensuremath{\\hbar}\\ensuremath{\\omega})}^{2}$, consistent with the isotope effect. A mutually orthogonal set of excited states in one-to-one correspondence with those of the normal phase is obtained by specifying occupation of certain Bloch states and by using the rest to form a linear combination of virtual pair configurations. The theory yields a second-order phase transition and a Meissner effect in the form suggested by Pippard. Calculated values of specific heats and penetration depths and their temperature variation are in good agreement with experiment. There is an energy gap for individual-particle excitations which decreases from about $3.5k{T}_{c}$ at $T=0\\ifmmode^\\circ\\else\\textdegree\\fi{}$K to zero at ${T}_{c}$. Tables of matrix elements of single-particle operators between the excited-state superconducting wave functions, useful for perturbation expansions and calculations of transition probabilities, are given.",
+      "keywords": [
+        "Physics",
+        "Superconductivity",
+        "Excited state",
+        "Electron",
+        "Condensed matter physics"
+      ],
+      "url": "https://openalex.org/W2014437371",
+      "matched_by": "en"
+    }
+  ]
+}

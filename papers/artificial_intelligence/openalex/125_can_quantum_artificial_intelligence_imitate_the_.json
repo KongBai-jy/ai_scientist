@@ -1,0 +1,170 @@
+{
+  "problem_id": 125,
+  "problem_cn": "量子人工智能可以模拟人脑吗？",
+  "problem_en": "Can quantum artificial intelligence imitate the human brain?",
+  "category": "人工智能",
+  "query_en": "Can quantum artificial intelligence imitate the human brain",
+  "query_cn": "量子人工智能可以模拟人脑吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:10:34",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2969625533",
+      "doi": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "year": 2019,
+      "cited_by_count": 4251,
+      "relevance_score": 916.6261,
+      "authors": [
+        "Yogesh K. Dwivedi",
+        "Laurie Hughes",
+        "Elvira Ismagilova",
+        "Gert Aarts",
+        "Crispin Coombs",
+        "Tom Crick",
+        "Yanqing Duan",
+        "Rohita Dwivedi",
+        "John S. Edwards",
+        "Aled Eirug",
+        "Vassilis Galanos",
+        "P. Vigneswara Ilavarasan",
+        "Marijn Janssen",
+        "Paul Jones",
+        "Arpan Kumar Kar",
+        "Hatice Kizgin",
+        "Bianca Kronemann",
+        "Banita Lal",
+        "Biagio Lucini",
+        "Rony Medaglia",
+        "Kenneth Le Meunier‐FitzHugh",
+        "Leslie Caroline Le Meunier-FitzHugh",
+        "Santosh K. Misra",
+        "Emmanuel Mogaji",
+        "Sujeet Kumar Sharma",
+        "Jang Bahadur Singh",
+        "Vishnupriya Raghavan",
+        "Ramakrishnan Raman",
+        "Nripendra P. Rana",
+        "Spyridon Samothrakis",
+        "Jak Spencer",
+        "Kuttimani Tamilmani",
+        "Annie Tubadji",
+        "Paul Walton",
+        "Michael D. Williams"
+      ],
+      "venue": "International Journal of Information Management",
+      "abstract": "As far back as the industrial revolution, significant development in technical innovation has succeeded in transforming numerous manual tasks and processes that had been in existence for decades where humans had reached the limits of physical capacity. Artificial Intelligence (AI) offers this same transformative potential for the augmentation and potential replacement of human tasks and activities within a wide range of industrial, intellectual and social applications. The pace of change for this new AI technological age is staggering, with new breakthroughs in algorithmic machine learning and autonomous decision-making, engendering new opportunities for continued innovation. The impact of AI could be significant, with industries ranging from: finance , healthcare, manufacturing, retail, supply chain , logistics and utilities, all potentially disrupted by the onset of AI technologies. The study brings together the collective insight from a number of leading expert contributors to highlight the significant opportunities, realistic assessment of impact, challenges and potential research agenda posed by the rapid emergence of AI within a number of domains: business and management, government, public sector, and science and technology . This research offers significant and timely insight to AI technology and its impact on the future of industry and society in general, whilst recognising the societal and industrial influence on pace and direction of AI development.",
+      "keywords": [
+        "Pace",
+        "Transformative learning",
+        "Government (linguistics)",
+        "Multidisciplinary approach",
+        "Supply chain"
+      ],
+      "url": "https://openalex.org/W2969625533",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3084021717",
+      "doi": "https://doi.org/10.1016/j.caeai.2020.100001",
+      "title": "Vision, challenges, roles and research issues of Artificial Intelligence in Education",
+      "year": 2020,
+      "cited_by_count": 1309,
+      "relevance_score": 617.3066,
+      "authors": [
+        "Gwo‐Jen Hwang",
+        "Haoran Xie",
+        "Benjamin W. Wah",
+        "Dragan Gašević"
+      ],
+      "venue": "Computers and Education Artificial Intelligence",
+      "abstract": "The rapid advancement of computing technologies has facilitated the implementation of AIED (Artificial Intelligence in Education) applications. AIED refers to the use of AI (Artificial Intelligence) technologies or application programs in educational settings to facilitate teaching, learning, or decision making. With the help of AI technologies, which simulate human intelligence to make inferences, judgments, or predictions, computer systems can provide personalized guidance, supports, or feedback to students as well as assisting teachers or policymakers in making decisions. Although AIED has been identified as the primary research focus in the field of computers and education, the interdisciplinary nature of AIED presents a unique challenge for researchers with different disciplinary backgrounds. In this paper, we present the definition and roles of AIED studies from the perspective of educational needs. We propose a framework to show the considerations of implementing AIED in different learning and teaching settings. The structure can help guide researchers with both computers and education backgrounds in conducting AIED studies. We outline 10 potential research topics in AIED that are of particular interest to this journal. Finally, we describe the type of articles we like to solicit and the management of the submissions.",
+      "keywords": [
+        "Computer science",
+        "Perspective (graphical)",
+        "Field (mathematics)",
+        "Artificial intelligence",
+        "Discipline"
+      ],
+      "url": "https://openalex.org/W3084021717",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2997569720",
+      "doi": "https://doi.org/10.1016/j.eng.2019.08.015",
+      "title": "Artificial Intelligence in Healthcare: Review and Prediction Case Studies",
+      "year": 2020,
+      "cited_by_count": 556,
+      "relevance_score": 411.40744,
+      "authors": [
+        "Guoguang Rong",
+        "Arnaldo Mendez",
+        "Elie Bou Assi",
+        "Bo Zhao",
+        "Mohamad Sawan"
+      ],
+      "venue": "Engineering",
+      "abstract": "Artificial intelligence (AI) has been developing rapidly in recent years in terms of software algorithms, hardware implementation, and applications in a vast number of areas. In this review, we summarize the latest developments of applications of AI in biomedicine, including disease diagnostics, living assistance, biomedical information processing, and biomedical research. The aim of this review is to keep track of new scientific accomplishments, to understand the availability of technologies, to appreciate the tremendous potential of AI in biomedicine, and to provide researchers in related fields with inspiration. It can be asserted that, just like AI itself, the application of AI in biomedicine is still in its early stage. New progress and breakthroughs will continue to push the frontier and widen the scope of AI application, and fast developments are envisioned in the near future. Two case studies are provided to illustrate the prediction of epileptic seizure occurrences and the filling of a dysfunctional urinary bladder.",
+      "keywords": [
+        "Biomedicine",
+        "Scope (computer science)",
+        "Data science",
+        "Computer science",
+        "Artificial intelligence"
+      ],
+      "url": "https://openalex.org/W2997569720",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2017561954",
+      "doi": "https://doi.org/10.2478/jagi-2014-0001",
+      "title": "Artificial General Intelligence: Concept, State of the Art, and Future Prospects",
+      "year": 2014,
+      "cited_by_count": 522,
+      "relevance_score": 404.50488,
+      "authors": [
+        "Ben Goertzel"
+      ],
+      "venue": "Journal of Artificial General Intelligence",
+      "abstract": "Abstract In recent years broad community of researchers has emerged, focusing on the original ambitious goals of the AI field - the creation and study of software or hardware systems with general intelligence comparable to, and ultimately perhaps greater than, that of human beings. This paper surveys this diverse community and its progress. Approaches to defining the concept of Artificial General Intelligence (AGI) are reviewed including mathematical formalisms, engineering, and biology inspired perspectives. The spectrum of designs for AGI systems includes systems with symbolic, emergentist, hybrid and universalist characteristics. Metrics for general intelligence are evaluated, with a conclusion that, although metrics for assessing the achievement of human-level AGI may be relatively straightforward (e.g. the Turing Test, or a robot that can graduate from elementary school or university), metrics for assessing partial progress remain more controversial and problematic.",
+      "keywords": [
+        "Rotation formalisms in three dimensions",
+        "Artificial general intelligence",
+        "Computer science",
+        "Turing",
+        "Field (mathematics)"
+      ],
+      "url": "https://openalex.org/W2017561954",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4287834747",
+      "doi": "https://doi.org/10.3390/bios12080562",
+      "title": "Artificial Intelligence (AI) and Internet of Medical Things (IoMT) Assisted Biomedical Systems for Intelligent Healthcare",
+      "year": 2022,
+      "cited_by_count": 621,
+      "relevance_score": 378.57452,
+      "authors": [
+        "Pandiaraj Manickam",
+        "Siva Ananth Mariappan",
+        "Sindhu Monica Murugesan",
+        "Shekhar Hansda",
+        "Ajeet Kaushik",
+        "Ravikumar B. Shinde",
+        "S. P. Thipperudraswamy"
+      ],
+      "venue": "Biosensors",
+      "abstract": "Artificial intelligence (AI) is a modern approach based on computer science that develops programs and algorithms to make devices intelligent and efficient for performing tasks that usually require skilled human intelligence. AI involves various subsets, including machine learning (ML), deep learning (DL), conventional neural networks, fuzzy logic, and speech recognition, with unique capabilities and functionalities that can improve the performances of modern medical sciences. Such intelligent systems simplify human intervention in clinical diagnosis, medical imaging, and decision-making ability. In the same era, the Internet of Medical Things (IoMT) emerges as a next-generation bio-analytical tool that combines network-linked biomedical devices with a software application for advancing human health. In this review, we discuss the importance of AI in improving the capabilities of IoMT and point-of-care (POC) devices used in advanced healthcare sectors such as cardiac measurement, cancer diagnosis, and diabetes management. The role of AI in supporting advanced robotic surgeries developed for advanced biomedical applications is also discussed in this article. The position and importance of AI in improving the functionality, detection accuracy, decision-making ability of IoMT devices, and evaluation of associated risks assessment is discussed carefully and critically in this review. This review also encompasses the technological and engineering challenges and prospects for AI-based cloud-integrated personalized IoMT devices for designing efficient POC biomedical systems suitable for next-generation intelligent healthcare.",
+      "keywords": [
+        "Computer science",
+        "Artificial intelligence",
+        "The Internet",
+        "Intelligent decision support system",
+        "Health care"
+      ],
+      "url": "https://openalex.org/W4287834747",
+      "matched_by": "en"
+    }
+  ]
+}

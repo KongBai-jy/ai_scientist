@@ -1,0 +1,143 @@
+{
+  "problem_id": 12,
+  "problem_cn": "生命系统繁衍的驱动机制是什么？",
+  "problem_en": "What drives reproduction in living systems?",
+  "category": "化学",
+  "query_en": "What drives reproduction in living systems",
+  "query_cn": "生命系统繁衍的驱动机制是什么",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:45",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2140460700",
+      "doi": "https://doi.org/10.1016/j.tree.2012.07.013",
+      "title": "Impacts of biological invasions: what's what and the way forward",
+      "year": 2012,
+      "cited_by_count": 3333,
+      "relevance_score": 364.16058,
+      "authors": [
+        "Daniel Simberloff",
+        "Jean‐Louis Martin",
+        "Piero Genovesi",
+        "Virginie Maris",
+        "David A. Wardle",
+        "James Aronson",
+        "Franck Courchamp",
+        "Bella Galil",
+        "Emili García‐Berthou",
+        "Michel Pascal",
+        "Petr Pyšek",
+        "Ronaldo Sousa",
+        "Éric Tabacchi",
+        "Montserrat Vilà"
+      ],
+      "venue": "Trends in Ecology & Evolution",
+      "abstract": "",
+      "keywords": [
+        "Scrutiny",
+        "Ecology",
+        "Resource (disambiguation)",
+        "Perception",
+        "Field (mathematics)"
+      ],
+      "url": "https://openalex.org/W2140460700",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2092962028",
+      "doi": "https://doi.org/10.1016/j.tourman.2005.06.002",
+      "title": "Developing creativity in tourist experiences: A solution to the serial reproduction of culture?",
+      "year": 2005,
+      "cited_by_count": 984,
+      "relevance_score": 281.3742,
+      "authors": [
+        "Greg Richards",
+        "Julie Wilson"
+      ],
+      "venue": "Tourism Management",
+      "abstract": "",
+      "keywords": [
+        "Tourism",
+        "Reproduction",
+        "Creativity",
+        "Cultural tourism",
+        "Tourism geography"
+      ],
+      "url": "https://openalex.org/W2092962028",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2108115312",
+      "doi": "https://doi.org/10.1071/mf10269",
+      "title": "Effects of climate change on fish reproduction and early life history stages",
+      "year": 2011,
+      "cited_by_count": 776,
+      "relevance_score": 258.76645,
+      "authors": [
+        "N. W. Pankhurst",
+        "Philip L. Munday"
+      ],
+      "venue": "Marine and Freshwater Research",
+      "abstract": "Seasonal change in temperature has a profound effect on reproduction in fish. Increasing temperatures cue reproductive development in spring-spawning species, and falling temperatures stimulate reproduction in autumn-spawners. Elevated temperatures truncate spring spawning, and delay autumn spawning. Temperature increases will affect reproduction, but the nature of these effects will depend on the period and amplitude of the increase and range from phase-shifting of spawning to complete inhibition of reproduction. This latter effect will be most marked in species that are constrained in their capacity to shift geographic range. Studies from a range of taxa, habitats and temperature ranges all show inhibitory effects of elevated temperature albeit about different environmental set points. The effects are generated through the endocrine system, particularly through the inhibition of ovarian oestrogen production. Larval fishes are usually more sensitive than adults to environmental fluctuations, and might be especially vulnerable to climate change. In addition to direct effects on embryonic duration and egg survival, temperature also influences size at hatching, developmental rate, pelagic larval duration and survival. A companion effect of marine climate change is ocean acidification, which may pose a significant threat through its capacity to alter larval behaviour and impair sensory capabilities. This in turn impacts on population replenishment and connectivity patterns of marine fishes.",
+      "keywords": [
+        "Biology",
+        "Reproduction",
+        "Pelagic zone",
+        "Hatching",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W2108115312",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2256238626",
+      "doi": "https://doi.org/10.1641/0006-3568(2001)051[0025:wdtyco]2.0.co;2",
+      "title": "What Drives the 10-year Cycle of Snowshoe Hares?",
+      "year": 2001,
+      "cited_by_count": 395,
+      "relevance_score": 258.5714,
+      "authors": [
+        "Charles J. Krebs",
+        "Rudy Boonstra",
+        "Stan Boutin",
+        "A. R. E. Sinclair"
+      ],
+      "venue": "BioScience",
+      "abstract": "In 1831 the manager of a Hudson's Bay Company post in northern Ontario wrote to the head office in London. The local Ojibway Indians were starving, he reported, because of a scarcity of “rabbits,” and they were unable to trap for furs because they spent all their time fishing for food (Winterhalder 1980). These shortages of so-called rabbits, which apparently occurred approximately every 10 years, are regularly mentioned in Canadian historical documents from the 18th and 19th centuries. Those rabbits were in fact snowshoe hares (Lepus americanus), and their 10-year cycle is one of the most intriguing features of the ecology of the boreal forest. Ten-year cycles were first analyzed quantitatively when wildlife biologists began to plot the fur trading records of Hudson's Bay Company during the early 1900s. The Hudson's Bay Company, established in 1671, kept meticulous records of the numbers of furs traded from different posts spread across Canada. The most famous time series drawn together from those records was that of Canada lynx (Elton and Nicholson 1942; Figure 1). The lynx is a specialist predator of snowshoe hares, and the rise and fall in lynx numbers mirrors, with a slight time lag, the rise and fall of snowshoe hare populations across the boreal region.",
+      "keywords": [
+        "Snowshoe hare",
+        "Environmental science",
+        "Biology",
+        "Ecology",
+        "Predation"
+      ],
+      "url": "https://openalex.org/W2256238626",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2989347311",
+      "doi": "https://doi.org/10.5465/annals.2017.0033",
+      "title": "The Organizational Reproduction of Inequality",
+      "year": 2019,
+      "cited_by_count": 476,
+      "relevance_score": 256.84647,
+      "authors": [
+        "John Amis",
+        "Johanna Mair",
+        "Kamal A. Munir"
+      ],
+      "venue": "Academy of Management Annals",
+      "abstract": "With societal inequalities continuing to increase and organizations providing the vast majority of people with their income, we wanted to assess the ways in which organizational practices are implicated in the burgeoning of social and economic inequality. Following an integrative review of the literature drawn from across the social sciences, we found that the multiple ways in which five major organizational practices—hiring, role allocation, promotion, compensation, and structuring—are enacted emerged as being central to the reproduction of inequality. We also uncovered how the persistence of these practices, and the inequality they induce, can be largely attributed to a constellation of three highly institutionalized myths, efficiency, meritocracy, and positive globalization. Our analysis further reveals how, as scholars, we bear a corresponding responsibility to reconsider how we engage in research on and teaching about organizations. The implications of this for our future work are discussed.",
+      "keywords": [
+        "Meritocracy",
+        "Reproduction",
+        "Inequality",
+        "Social inequality",
+        "Globalization"
+      ],
+      "url": "https://openalex.org/W2989347311",
+      "matched_by": "en"
+    }
+  ]
+}

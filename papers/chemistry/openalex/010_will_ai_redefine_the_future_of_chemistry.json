@@ -1,0 +1,134 @@
+{
+  "problem_id": 10,
+  "problem_cn": "AI会重新定义化学的未来吗？",
+  "problem_en": "Will AI redefine the future of chemistry?",
+  "category": "化学",
+  "query_en": "Will AI redefine the future of chemistry",
+  "query_cn": "AI会重新定义化学的未来吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:38",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W4390114224",
+      "doi": "https://doi.org/10.3390/ph17010022",
+      "title": "Computer-Aided Drug Design and Drug Discovery: A Prospective Analysis",
+      "year": 2023,
+      "cited_by_count": 305,
+      "relevance_score": 214.14803,
+      "authors": [
+        "Sarfaraz K. Niazi",
+        "Zamara Mariam"
+      ],
+      "venue": "Pharmaceuticals",
+      "abstract": "In the dynamic landscape of drug discovery, Computer-Aided Drug Design (CADD) emerges as a transformative force, bridging the realms of biology and technology. This paper overviews CADDs historical evolution, categorization into structure-based and ligand-based approaches, and its crucial role in rationalizing and expediting drug discovery. As CADD advances, incorporating diverse biological data and ensuring data privacy become paramount. Challenges persist, demanding the optimization of algorithms and robust ethical frameworks. Integrating Machine Learning and Artificial Intelligence amplifies CADDs predictive capabilities, yet ethical considerations and scalability challenges linger. Collaborative efforts and global initiatives, exemplified by platforms like Open-Source Malaria, underscore the democratization of drug discovery. The convergence of CADD with personalized medicine offers tailored therapeutic solutions, though ethical dilemmas and accessibility concerns must be navigated. Emerging technologies like quantum computing, immersive technologies, and green chemistry promise to redefine the future of CADD. The trajectory of CADD, marked by rapid advancements, anticipates challenges in ensuring accuracy, addressing biases in AI, and incorporating sustainability metrics. This paper concludes by highlighting the need for proactive measures in navigating the ethical, technological, and educational frontiers of CADD to shape a healthier, brighter future in drug discovery.",
+      "keywords": [
+        "Expediting",
+        "Computer science",
+        "Data science",
+        "Drug discovery",
+        "Transformative learning"
+      ],
+      "url": "https://openalex.org/W4390114224",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4391033617",
+      "doi": "https://doi.org/10.1016/j.aichem.2024.100049",
+      "title": "Machine learning advancements in organic synthesis: A focused exploration of artificial intelligence applications in chemistry",
+      "year": 2024,
+      "cited_by_count": 89,
+      "relevance_score": 210.4295,
+      "authors": [
+        "Rizvi Syed Aal E Ali",
+        "Jiaolong Meng",
+        "Muhammad Ehtisham Ibraheem Khan",
+        "Xuefeng Jiang"
+      ],
+      "venue": "Artificial Intelligence Chemistry",
+      "abstract": "Artificial intelligence (AI) is driving a revolution in chemistry, reshaping the landscape of molecular design. This review explores AI’s pivotal roles in the field of organic synthesis applications. AI accurately predicts reaction outcomes, controls chemical selectivity, simplifies synthesis planning, accelerates catalyst discovery, and fuels material innovation and so on. It seamlessly integrates data-driven algorithms with chemical intuition to redefine molecular design. As AI chemistry advances, it promises accelerated research, sustainability, and innovative solutions to chemistry’s pressing challenges. The fusion of AI and chemistry is poised to shape the field’s future profoundly, offering new horizons in precision and efficiency. This review encapsulates the transformation of AI in chemistry, marking a pivotal moment where algorithms and data converge to revolutionize the world of molecules.",
+      "keywords": [
+        "Intuition",
+        "Chemistry",
+        "Artificial intelligence",
+        "Nanotechnology",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W4391033617",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4407657137",
+      "doi": "https://doi.org/10.3390/brainsci15020203",
+      "title": "Challenging Cognitive Load Theory: The Role of Educational Neuroscience and Artificial Intelligence in Redefining Learning Efficacy",
+      "year": 2025,
+      "cited_by_count": 252,
+      "relevance_score": 180.77306,
+      "authors": [
+        "Evgenia Gkintoni",
+        "Hera Antonopoulou",
+        "Andrew Sortwell",
+        "Constantinos Halkiopoulos"
+      ],
+      "venue": "Brain Sciences",
+      "abstract": "Background/Objectives: This systematic review integrates Cognitive Load Theory (CLT), Educational Neuroscience (EdNeuro), Artificial Intelligence (AI), and Machine Learning (ML) to examine their combined impact on optimizing learning environments. It explores how AI-driven adaptive learning systems, informed by neurophysiological insights, enhance personalized education for K-12 students and adult learners. This study emphasizes the role of Electroencephalography (EEG), Functional Near-Infrared Spectroscopy (fNIRS), and other neurophysiological tools in assessing cognitive states and guiding AI-powered interventions to refine instructional strategies dynamically. Methods: This study reviews n = 103 papers related to the integration of principles of CLT with AI and ML in educational settings. It evaluates the progress made in neuroadaptive learning technologies, especially the real-time management of cognitive load, personalized feedback systems, and the multimodal applications of AI. Besides that, this research examines key hurdles such as data privacy, ethical concerns, algorithmic bias, and scalability issues while pinpointing best practices for robust and effective implementation. Results: The results show that AI and ML significantly improve Learning Efficacy due to managing cognitive load automatically, providing personalized instruction, and adapting learning pathways dynamically based on real-time neurophysiological data. Deep Learning models such as Convolutional Neural Networks (CNNs), Recurrent Neural Networks (RNNs), and Support Vector Machines (SVMs) improve classification accuracy, making AI-powered adaptive learning systems more efficient and scalable. Multimodal approaches enhance system robustness by mitigating signal variability and noise-related limitations by combining EEG with fMRI, Electrocardiography (ECG), and Galvanic Skin Response (GSR). Despite these advances, practical implementation challenges remain, including ethical considerations, data security risks, and accessibility disparities across learner demographics. Conclusions: AI and ML are epitomes of redefinition potentials that solid ethical frameworks, inclusive design, and scalable methodologies must inform. Future studies will be necessary for refining pre-processing techniques, expanding the variety of datasets, and advancing multimodal neuroadaptive learning for developing high-accuracy, affordable, and ethically responsible AI-driven educational systems. The future of AI-enhanced education should be inclusive, equitable, and effective across various learning populations that would surmount technological limitations and ethical dilemmas.",
+      "keywords": [
+        "Computer science",
+        "Artificial intelligence",
+        "Scalability",
+        "Deep learning",
+        "Machine learning"
+      ],
+      "url": "https://openalex.org/W4407657137",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3095573820",
+      "doi": "https://doi.org/10.1039/c9cs00832b",
+      "title": "How to approach flow chemistry",
+      "year": 2020,
+      "cited_by_count": 250,
+      "relevance_score": 173.8103,
+      "authors": [
+        "Mara Guidi",
+        "Peter H. Seeberger",
+        "Kerry Gilmore"
+      ],
+      "venue": "Chemical Society Reviews",
+      "abstract": "Flow chemistry is a widely explored technology whose intrinsic features both facilitate and provide reproducible access to a broad range of chemical processes that are otherwise inefficient or problematic. At its core, a flow chemistry module is a stable set of conditions - traditionally thought of as an externally applied means of activation/control (e.g. heat or light) - through which reagents are passed. In an attempt to simplify the teaching and dissemination of this field, we envisioned that the key advantages of the technique, such as reproducibility and the correlation between reaction time and position within the reactor, allow for the redefinition of a flow module to a more synthetically relevant one based on the overall induced effect. We suggest a rethinking of the approach to flow modules, distributing them in two subclasses: transformers and generators, which can be described respectively as a set of conditions for either performing a specific transformation or for generating a reactive intermediate. The chemistry achieved by transformers and generators is (ideally) independent of the substrate introduced, meaning that they must be robust to small adjustments necessary for the adaptation to different starting materials and reagents while ensuring the same chemical outcome. These redefined modules can be used for single-step reactions or in multistep processes, where modules can be connected to each other in reconfigurable combinations to create chemical assembly systems (CAS) targeting compounds and libraries sharing structural cores. With this tutorial review, we provide a guide to the overall approach to flow chemistry, discussing the key parameters for the design of transformers and generators as well as the development of chemical assembly systems.",
+      "keywords": [
+        "Chemistry",
+        "Flow chemistry",
+        "Flow (mathematics)",
+        "Range (aeronautics)",
+        "Transformation (genetics)"
+      ],
+      "url": "https://openalex.org/W3095573820",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3047882216",
+      "doi": "https://doi.org/10.3389/fonc.2020.01387",
+      "title": "CRISPR Gene Therapy: Applications, Limitations, and Implications for the Future",
+      "year": 2020,
+      "cited_by_count": 575,
+      "relevance_score": 166.87915,
+      "authors": [
+        "Fathema Uddin",
+        "Charles M. Rudin",
+        "Triparna Sen"
+      ],
+      "venue": "Frontiers in Oncology",
+      "abstract": "A series of recent discoveries harnessing the adaptive immune system of prokaryotes to perform targeted genome editing is having a transformative influence across the biological sciences. The discovery of Clustered Regularly Interspaced Short Palindromic Repeats (CRISPR) and CRISPR-associated (Cas) proteins has expanded the applications of genetic research in thousands of laboratories across the globe and is redefining our approach to gene therapy. Traditional gene therapy has raised some concerns, as its reliance on viral vector delivery of therapeutic transgenes can cause both insertional oncogenesis and immunogenic toxicity. While viral vectors remain a key delivery vehicle, CRISPR technology provides a relatively simple and efficient alternative for site-specific gene editing, obliviating some concerns raised by traditional gene therapy. Although it has apparent advantages, CRISPR/Cas9 brings its own set of limitations which must be addressed for safe and efficient clinical translation. This review focuses on the evolution of gene therapy and the role of CRISPR in shifting the gene therapy paradigm. We review the emerging data of recent gene therapy trials and consider the best strategy to move forward with this powerful but still relatively new technology.",
+      "keywords": [
+        "CRISPR",
+        "Genome editing",
+        "Genetic enhancement",
+        "Computational biology",
+        "Vectors in gene therapy"
+      ],
+      "url": "https://openalex.org/W3047882216",
+      "matched_by": "en"
+    }
+  ]
+}

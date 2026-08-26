@@ -1,0 +1,138 @@
+{
+  "problem_id": 78,
+  "problem_cn": "玻色-爱因斯坦凝聚体会大规模应用吗？",
+  "problem_en": "Will Bose–Einstein condensates be widely used in the future?",
+  "category": "物理学",
+  "query_en": "Will Bose–Einstein condensates be widely used in the future",
+  "query_cn": "玻色-爱因斯坦凝聚体会大规模应用吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:26:48",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1995390360",
+      "doi": "https://doi.org/10.1016/j.physrep.2012.07.005",
+      "title": "Spinor Bose–Einstein condensates",
+      "year": 2012,
+      "cited_by_count": 976,
+      "relevance_score": 1366.4521,
+      "authors": [
+        "Yuki Kawaguchi",
+        "Masahito Ueda"
+      ],
+      "venue": "Physics Reports",
+      "abstract": "",
+      "keywords": [
+        "Spinor",
+        "Physics",
+        "Bose–Einstein condensate",
+        "Dipole",
+        "Spin (aerodynamics)"
+      ],
+      "url": "https://openalex.org/W1995390360",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2039528854",
+      "doi": "https://doi.org/10.1103/physreva.63.023611",
+      "title": "Sonic black holes in dilute Bose-Einstein condensates",
+      "year": 2001,
+      "cited_by_count": 304,
+      "relevance_score": 665.1312,
+      "authors": [
+        "Luis J. Garay",
+        "J. R. Anglin",
+        "J. I. Cirac",
+        "P. Zoller"
+      ],
+      "venue": "Physical Review A",
+      "abstract": "The sonic analog of a gravitational black hole in dilute-gas Bose-Einstein condensates is investigated. It is shown that there exist both dynamically stable and unstable configurations which, in the hydrodynamic limit, exhibit behaviors completely analogous to that of gravitational black holes. The dynamical instabilities involve the creation of quasiparticle pairs in positive and negative energy states. We illustrate these features in two qualitatively different one-dimensional models, namely, a long, thin condensate with an outcoupler laser beam providing an ``atom sink,'' and a tight ring-shaped condensate. We also simulate the creation of a stable sonic black hole by solving the Gross-Pitaevskii equation numerically for a condensate subject to a trapping potential which is adiabatically deformed. A sonic black hole could, in this way, be created experimentally with state-of-the-art or planned technology.",
+      "keywords": [
+        "Physics",
+        "Bose–Einstein condensate",
+        "Quasiparticle",
+        "Black hole (networking)",
+        "Gravitation"
+      ],
+      "url": "https://openalex.org/W2039528854",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2150253565",
+      "doi": "https://doi.org/10.1103/physrevlett.95.170409",
+      "title": "Suppression of Transport of an Interacting Elongated Bose-Einstein Condensate in a Random Potential",
+      "year": 2005,
+      "cited_by_count": 301,
+      "relevance_score": 601.6159,
+      "authors": [
+        "David Clément",
+        "A. F. Varón",
+        "Mathilde Hugbart",
+        "J. A. Retter",
+        "Philippe Bouyer",
+        "Laurent Sanchez-Palencia",
+        "D. M. Gangardt",
+        "G. V. Shlyapnikov",
+        "A. Aspect"
+      ],
+      "venue": "Physical Review Letters",
+      "abstract": "We observe the suppression of the 1D transport of an interacting elongated Bose-Einstein condensate in a random potential with an amplitude that is small compared to the typical energy per atom, dominated by the interaction energy. Numerical calculations reproduce our observations well. We propose a scenario for disorder-induced trapping of the condensate in agreement with our findings.",
+      "keywords": [
+        "Physics",
+        "Bose–Einstein condensate",
+        "Trapping",
+        "Energy transport",
+        "Atom (system on chip)"
+      ],
+      "url": "https://openalex.org/W2150253565",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2092159648",
+      "doi": "https://doi.org/10.1103/revmodphys.74.875",
+      "title": "Nobel Lecture: Bose-Einstein condensation in a dilute gas, the first 70 years and some recent experiments",
+      "year": 2002,
+      "cited_by_count": 818,
+      "relevance_score": 572.30164,
+      "authors": [
+        "Eric Cornell",
+        "Carl Wieman"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "Bose-Einstein condensation, or BEC, has a long and rich history dating from the early 1920s. In this article we will trace briefly over this history and some of the developments in physics that made possible our successful pursuit of BEC in a gas. We will then discuss what was involved in this quest. In this discussion we will go beyond the usual technical description to try and address certain questions that we now hear frequently, but are not covered in our past research papers. These are questions along the lines of: How did you get the idea and decide to pursue it? Did you know it was going to work? How long did it take you and why? We will review some our favorites from among the experiments we have carried out with BEC. There will then be a brief encore on why we are optimistic that BEC can be created with nearly any species of magnetically trappable atom. Throughout this article we will try to explain what makes BEC in a dilute gas so interesting, unique, and experimentally ${\\mathrm{challenging}.}^{1}$",
+      "keywords": [
+        "Physics",
+        "Condensation",
+        "TRACE (psycholinguistics)",
+        "Bose–Einstein condensate",
+        "Einstein"
+      ],
+      "url": "https://openalex.org/W2092159648",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2043478645",
+      "doi": "https://doi.org/10.1103/physreva.68.053613",
+      "title": "Probing semiclassical analog gravity in Bose-Einstein condensates with widely tunable interactions",
+      "year": 2003,
+      "cited_by_count": 187,
+      "relevance_score": 529.99084,
+      "authors": [
+        "Carlos Barceló",
+        "Stefano Liberati",
+        "Matt Visser"
+      ],
+      "venue": "Physical Review A",
+      "abstract": "Bose-Einstein condensates (BEC's) have recently been the subject of considerable study as possible analog models of general relativity. In particular it was shown that the propagation of phase perturbations in a BEC can, under certain conditions, closely mimic the dynamics of scalar quantum fields in curved space-times. In two previous papers [Int. J. Mod. Phys. A 18, 3735 (2003); Int. J. Mod. Phys. D (to be published), e-print gr-qc/0305061] we noted that a varying scattering length in the BEC corresponds to a varying speed of light in the ``effective metric.'' Recent experiments have indeed achieved a controlled tuning of the scattering length in ${}^{85}\\mathrm{Rb}.$ In this paper we shall discuss the prospects for the use of this particular experimental effect to test some of the predictions of semiclassical quantum gravity, for instance, particle production in an expanding universe. We stress that these effects are generally much larger than the Hawking radiation expected from causal horizons, and so there are much better chances for their detection in the near future.",
+      "keywords": [
+        "Semiclassical physics",
+        "Physics",
+        "Bose–Einstein condensate",
+        "General relativity",
+        "Quantum gravity"
+      ],
+      "url": "https://openalex.org/W2043478645",
+      "matched_by": "en"
+    }
+  ]
+}

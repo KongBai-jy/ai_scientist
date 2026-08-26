@@ -1,0 +1,151 @@
+{
+  "problem_id": 94,
+  "problem_cn": "拓扑量子计算能否实现？",
+  "problem_en": "Can topological quantum computing be realized?",
+  "category": "信息科学",
+  "query_en": "Can topological quantum computing be realized",
+  "query_cn": "拓扑量子计算能否实现",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:08:24",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2781738013",
+      "doi": "https://doi.org/10.22331/q-2018-08-06-79",
+      "title": "Quantum Computing in the NISQ era and beyond",
+      "year": 2018,
+      "cited_by_count": 8585,
+      "relevance_score": 1727.9196,
+      "authors": [
+        "John Preskill"
+      ],
+      "venue": "Quantum",
+      "abstract": "Noisy Intermediate-Scale Quantum (NISQ) technology will be available in the near future. Quantum computers with 50-100 qubits may be able to perform tasks which surpass the capabilities of today's classical digital computers, but noise in quantum gates will limit the size of quantum circuits that can be executed reliably. NISQ devices will be useful tools for exploring many-body quantum physics, and may have other useful applications, but the 100-qubit quantum computer will not change the world right away - we should regard it as a significant step toward the more powerful quantum technologies of the future. Quantum technologists should continue to strive for more accurate quantum gates and, eventually, fully fault-tolerant quantum computing.",
+      "keywords": [
+        "Quantum computer",
+        "Computer science",
+        "Qubit",
+        "Quantum gate",
+        "Computer engineering"
+      ],
+      "url": "https://openalex.org/W2781738013",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1552055731",
+      "doi": "https://doi.org/10.1038/nphys1274",
+      "title": "Observation of a large-gap topological-insulator class with a single Dirac cone on the surface",
+      "year": 2009,
+      "cited_by_count": 3794,
+      "relevance_score": 1394.7006,
+      "authors": [
+        "Y. Xia",
+        "Dong Qian",
+        "David Hsieh",
+        "L. Andrew Wray",
+        "Amit Kumar Pal",
+        "Hsin Lin",
+        "Arun Bansil",
+        "D. Grauer",
+        "Y. S. Hor",
+        "R. J. Cava",
+        "M. Zahid Hasan"
+      ],
+      "venue": "Nature Physics",
+      "abstract": "",
+      "keywords": [
+        "Topological insulator",
+        "Physics",
+        "Topology (electrical circuits)",
+        "Topological degeneracy",
+        "Topological order"
+      ],
+      "url": "https://openalex.org/W1552055731",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2595688496",
+      "doi": "https://doi.org/10.1038/nature23268",
+      "title": "Topological quantum chemistry",
+      "year": 2017,
+      "cited_by_count": 1644,
+      "relevance_score": 1036.2614,
+      "authors": [
+        "Barry Bradlyn",
+        "Luis Elcoro",
+        "Jennifer Cano",
+        "Maia G. Vergniory",
+        "Zhijun Wang",
+        "Claudia Felser",
+        "M. I. Aroyo",
+        "B. Andrei Bernevig"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Topological insulator",
+        "Topology (electrical circuits)",
+        "Theoretical physics",
+        "Position and momentum space",
+        "Physics"
+      ],
+      "url": "https://openalex.org/W2595688496",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4211161891",
+      "doi": "https://doi.org/10.1103/revmodphys.91.015006",
+      "title": "Topological photonics",
+      "year": 2019,
+      "cited_by_count": 3697,
+      "relevance_score": 1008.84625,
+      "authors": [
+        "Tomoki Ozawa",
+        "Hannah M. Price",
+        "A. Amo",
+        "Nathan Goldman",
+        "Mohammad Hafezi",
+        "Ling Lü",
+        "Mikael C. Rechtsman",
+        "David Schuster",
+        "Jonathan Simon",
+        "Oded Zilberberg",
+        "Iacopo Carusotto"
+      ],
+      "venue": "Reviews of Modern Physics",
+      "abstract": "The robustness of the integer quantum Hall effect of electron systems is due to the existence of a topological invariant that characterizes the variation of the electron wave function over the Brillouin zone. Topological phenomena are generic features of waves in periodic media, and this article reviews how photonic systems such as waveguide arrays and photonic metamaterials allow exploration and application of topological effects in new physical regimes and in new devices.",
+      "keywords": [
+        "Physics",
+        "Photonics",
+        "Topology (electrical circuits)",
+        "Theoretical physics",
+        "Quantum mechanics"
+      ],
+      "url": "https://openalex.org/W4211161891",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2031028572",
+      "doi": "https://doi.org/10.1103/physrevb.76.045302",
+      "title": "Topological insulators with inversion symmetry",
+      "year": 2007,
+      "cited_by_count": 4251,
+      "relevance_score": 1001.9163,
+      "authors": [
+        "Liang Fu",
+        "C. L. Kane"
+      ],
+      "venue": "Physical Review B",
+      "abstract": "Topological insulators are materials with a bulk excitation gap generated by the spin-orbit interaction that are different from conventional insulators. This distinction is characterized by ${Z}_{2}$ topological invariants, which characterize the ground state. In two dimensions, there is a single ${Z}_{2}$ invariant that distinguishes the ordinary insulator from the quantum spin-Hall phase. In three dimensions, there are four ${Z}_{2}$ invariants that distinguish the ordinary insulator from ``weak'' and ``strong'' topological insulators. These phases are characterized by the presence of gapless surface (or edge) states. In the two-dimensional quantum spin-Hall phase and the three-dimensional strong topological insulator, these states are robust and are insensitive to weak disorder and interactions. In this paper, we show that the presence of inversion symmetry greatly simplifies the problem of evaluating the ${Z}_{2}$ invariants. We show that the invariants can be determined from the knowledge of the parity of the occupied Bloch wave functions at the time-reversal invariant points in the Brillouin zone. Using this approach, we predict a number of specific materials that are strong topological insulators, including the semiconducting alloy ${\\mathrm{Bi}}_{1\\ensuremath{-}x}{\\mathrm{Sb}}_{x}$ as well as $\\ensuremath{\\alpha}\\text{\\ensuremath{-}}\\mathrm{Sn}$ and HgTe under uniaxial strain. This paper also includes an expanded discussion of our formulation of the topological insulators in both two and three dimensions, as well as implications for experiments.",
+      "keywords": [
+        "Topological insulator",
+        "Physics",
+        "Gapless playback",
+        "Topological order",
+        "Brillouin zone"
+      ],
+      "url": "https://openalex.org/W2031028572",
+      "matched_by": "en"
+    }
+  ]
+}

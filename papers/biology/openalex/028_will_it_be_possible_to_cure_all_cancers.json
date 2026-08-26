@@ -1,0 +1,151 @@
+{
+  "problem_id": 28,
+  "problem_cn": "我们是否可以治愈全部癌症？",
+  "problem_en": "Will it be possible to cure all cancers?",
+  "category": "生物学",
+  "query_en": "Will it be possible to cure all cancers",
+  "query_cn": "我们是否可以治愈全部癌症",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:11",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2917837889",
+      "doi": "https://doi.org/10.3322/caac.21262",
+      "title": "Global cancer statistics, 2012",
+      "year": 2015,
+      "cited_by_count": 27417,
+      "relevance_score": 1438.3264,
+      "authors": [
+        "Lindsey A. Torre",
+        "Freddie Bray",
+        "Rebecca L. Siegel",
+        "Jacques Ferlay",
+        "Joannie Lortet‐Tieulent",
+        "Ahmedin Jemal"
+      ],
+      "venue": "CA A Cancer Journal for Clinicians",
+      "abstract": "Cancer constitutes an enormous burden on society in more and less economically developed countries alike. The occurrence of cancer is increasing because of the growth and aging of the population, as well as an increasing prevalence of established risk factors such as smoking, overweight, physical inactivity, and changing reproductive patterns associated with urbanization and economic development. Based on GLOBOCAN estimates, about 14.1 million new cancer cases and 8.2 million deaths occurred in 2012 worldwide. Over the years, the burden has shifted to less developed countries, which currently account for about 57% of cases and 65% of cancer deaths worldwide. Lung cancer is the leading cause of cancer death among males in both more and less developed countries, and has surpassed breast cancer as the leading cause of cancer death among females in more developed countries; breast cancer remains the leading cause of cancer death among females in less developed countries. Other leading causes of cancer death in more developed countries include colorectal cancer among males and females and prostate cancer among males. In less developed countries, liver and stomach cancer among males and cervical cancer among females are also leading causes of cancer death. Although incidence rates for all cancers combined are nearly twice as high in more developed than in less developed countries in both males and females, mortality rates are only 8% to 15% higher in more developed countries. This disparity reflects regional differences in the mix of cancers, which is affected by risk factors and detection practices, and/or the availability of treatment. Risk factors associated with the leading causes of cancer death include tobacco use (lung, colorectal, stomach, and liver cancer), overweight/obesity and physical inactivity (breast and colorectal cancer), and infection (liver, stomach, and cervical cancer). A substantial portion of cancer cases and deaths could be prevented by broadly applying effective prevention measures, such as tobacco control, vaccination, and the use of early detection tests.",
+      "keywords": [
+        "Medicine",
+        "Cancer",
+        "Statistics",
+        "Internal medicine",
+        "Mathematics"
+      ],
+      "url": "https://openalex.org/W2917837889",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2911188335",
+      "doi": "https://doi.org/10.3322/caac.21551",
+      "title": "Cancer statistics, 2019",
+      "year": 2019,
+      "cited_by_count": 21010,
+      "relevance_score": 1355.649,
+      "authors": [
+        "Rebecca L. Siegel",
+        "Kimberly D. Miller",
+        "Ahmedin Jemal"
+      ],
+      "venue": "CA A Cancer Journal for Clinicians",
+      "abstract": "Each year, the American Cancer Society estimates the numbers of new cancer cases and deaths that will occur in the United States and compiles the most recent data on cancer incidence, mortality, and survival. Incidence data, available through 2015, were collected by the Surveillance, Epidemiology, and End Results Program; the National Program of Cancer Registries; and the North American Association of Central Cancer Registries. Mortality data, available through 2016, were collected by the National Center for Health Statistics. In 2019, 1,762,450 new cancer cases and 606,880 cancer deaths are projected to occur in the United States. Over the past decade of data, the cancer incidence rate (2006-2015) was stable in women and declined by approximately 2% per year in men, whereas the cancer death rate (2007-2016) declined annually by 1.4% and 1.8%, respectively. The overall cancer death rate dropped continuously from 1991 to 2016 by a total of 27%, translating into approximately 2,629,200 fewer cancer deaths than would have been expected if death rates had remained at their peak. Although the racial gap in cancer mortality is slowly narrowing, socioeconomic inequalities are widening, with the most notable gaps for the most preventable cancers. For example, compared with the most affluent counties, mortality rates in the poorest counties were 2-fold higher for cervical cancer and 40% higher for male lung and liver cancers during 2012-2016. Some states are home to both the wealthiest and the poorest counties, suggesting the opportunity for more equitable dissemination of effective cancer prevention, early detection, and treatment strategies. A broader application of existing cancer control knowledge with an emphasis on disadvantaged groups would undoubtedly accelerate progress against cancer.",
+      "keywords": [
+        "Cancer",
+        "Medicine",
+        "Demography",
+        "Mortality rate",
+        "Epidemiology"
+      ],
+      "url": "https://openalex.org/W2911188335",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2020830322",
+      "doi": "https://doi.org/10.3322/canjclin.55.2.74",
+      "title": "Global Cancer Statistics, 2002",
+      "year": 2005,
+      "cited_by_count": 18419,
+      "relevance_score": 1190.4261,
+      "authors": [
+        "Donald Maxwell Parkin",
+        "Freddie Bray",
+        "Jacques Ferlay",
+        "Paola Pisani"
+      ],
+      "venue": "CA A Cancer Journal for Clinicians",
+      "abstract": "Estimates of the worldwide incidence, mortality and prevalence of 26 cancers in the year 2002 are now available in the GLOBOCAN series of the International Agency for Research on Cancer. The results are presented here in summary form, including the geographic variation between 20 large \"areas\" of the world. Overall, there were 10.9 million new cases, 6.7 million deaths, and 24.6 million persons alive with cancer (within three years of diagnosis). The most commonly diagnosed cancers are lung (1.35 million), breast (1.15 million), and colorectal (1 million); the most common causes of cancer death are lung cancer (1.18 million deaths), stomach cancer (700,000 deaths), and liver cancer (598,000 deaths). The most prevalent cancer in the world is breast cancer (4.4 million survivors up to 5 years following diagnosis). There are striking variations in the risk of different cancers by geographic area. Most of the international variation is due to exposure to known or suspected risk factors related to lifestyle or environment, and provides a clear challenge to prevention.",
+      "keywords": [
+        "Cancer",
+        "Medicine",
+        "Breast cancer",
+        "Lung cancer",
+        "International agency"
+      ],
+      "url": "https://openalex.org/W2020830322",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2102085111",
+      "doi": "https://doi.org/10.1038/35102167",
+      "title": "Stem cells, cancer, and cancer stem cells",
+      "year": 2001,
+      "cited_by_count": 9754,
+      "relevance_score": 1032.2429,
+      "authors": [
+        "Tannishtha Reya",
+        "Sean J. Morrison",
+        "Michael F. Clarke",
+        "Irving L. Weissman"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Stem cell",
+        "Cancer stem cell",
+        "Haematopoiesis",
+        "Biology",
+        "Cell biology"
+      ],
+      "url": "https://openalex.org/W2102085111",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2145150141",
+      "doi": "https://doi.org/10.1089/thy.2015.0020",
+      "title": "2015 American Thyroid Association Management Guidelines for Adult Patients with Thyroid Nodules and Differentiated Thyroid Cancer: The American Thyroid Association Guidelines Task Force on Thyroid Nodules and Differentiated Thyroid Cancer",
+      "year": 2015,
+      "cited_by_count": 16638,
+      "relevance_score": 843.07465,
+      "authors": [
+        "Bryan R. Haugen",
+        "Erik K. Alexander",
+        "Keith C. Bible",
+        "Gerard M. Doherty",
+        "Susan J. Mandel",
+        "Yuri E. Nikiforov",
+        "Furio Pacini",
+        "Gregory W. Randolph",
+        "Anna M. Sawka",
+        "Martin Schlumberger",
+        "Kathryn G. Schuff",
+        "Steven I. Sherman",
+        "Julie Ann Sosa",
+        "David L. Steward",
+        "R. Michael Tuttle",
+        "Leonard Wartofsky"
+      ],
+      "venue": "Thyroid",
+      "abstract": "BACKGROUND: Thyroid nodules are a common clinical problem, and differentiated thyroid cancer is becoming increasingly prevalent. Since the American Thyroid Association's (ATA's) guidelines for the management of these disorders were revised in 2009, significant scientific advances have occurred in the field. The aim of these guidelines is to inform clinicians, patients, researchers, and health policy makers on published evidence relating to the diagnosis and management of thyroid nodules and differentiated thyroid cancer. METHODS: The specific clinical questions addressed in these guidelines were based on prior versions of the guidelines, stakeholder input, and input of task force members. Task force panel members were educated on knowledge synthesis methods, including electronic database searching, review and selection of relevant citations, and critical appraisal of selected studies. Published English language articles on adults were eligible for inclusion. The American College of Physicians Guideline Grading System was used for critical appraisal of evidence and grading strength of recommendations for therapeutic interventions. We developed a similarly formatted system to appraise the quality of such studies and resultant recommendations. The guideline panel had complete editorial independence from the ATA. Competing interests of guideline task force members were regularly updated, managed, and communicated to the ATA and task force members. RESULTS: The revised guidelines for the management of thyroid nodules include recommendations regarding initial evaluation, clinical and ultrasound criteria for fine-needle aspiration biopsy, interpretation of fine-needle aspiration biopsy results, use of molecular markers, and management of benign thyroid nodules. Recommendations regarding the initial management of thyroid cancer include those relating to screening for thyroid cancer, staging and risk assessment, surgical management, radioiodine remnant ablation and therapy, and thyrotropin suppression therapy using levothyroxine. Recommendations related to long-term management of differentiated thyroid cancer include those related to surveillance for recurrent disease using imaging and serum thyroglobulin, thyroid hormone therapy, management of recurrent and metastatic disease, consideration for clinical trials and targeted therapy, as well as directions for future research. CONCLUSIONS: We have developed evidence-based recommendations to inform clinical decision-making in the management of thyroid nodules and differentiated thyroid cancer. They represent, in our opinion, contemporary optimal care for patients with these disorders.",
+      "keywords": [
+        "Thyroid nodules",
+        "Thyroid cancer",
+        "Medicine",
+        "Guideline",
+        "Thyroid"
+      ],
+      "url": "https://openalex.org/W2145150141",
+      "matched_by": "en"
+    }
+  ]
+}

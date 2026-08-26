@@ -1,0 +1,164 @@
+{
+  "problem_id": 119,
+  "problem_cn": "人类智力存在上限吗？",
+  "problem_en": "Is there a limit to human intelligence?",
+  "category": "人工智能",
+  "query_en": "Is there a limit to human intelligence",
+  "query_cn": "人类智力存在上限吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:10:06",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2969625533",
+      "doi": "https://doi.org/10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "year": 2019,
+      "cited_by_count": 4251,
+      "relevance_score": 785.5456,
+      "authors": [
+        "Yogesh K. Dwivedi",
+        "Laurie Hughes",
+        "Elvira Ismagilova",
+        "Gert Aarts",
+        "Crispin Coombs",
+        "Tom Crick",
+        "Yanqing Duan",
+        "Rohita Dwivedi",
+        "John S. Edwards",
+        "Aled Eirug",
+        "Vassilis Galanos",
+        "P. Vigneswara Ilavarasan",
+        "Marijn Janssen",
+        "Paul Jones",
+        "Arpan Kumar Kar",
+        "Hatice Kizgin",
+        "Bianca Kronemann",
+        "Banita Lal",
+        "Biagio Lucini",
+        "Rony Medaglia",
+        "Kenneth Le Meunier‐FitzHugh",
+        "Leslie Caroline Le Meunier-FitzHugh",
+        "Santosh K. Misra",
+        "Emmanuel Mogaji",
+        "Sujeet Kumar Sharma",
+        "Jang Bahadur Singh",
+        "Vishnupriya Raghavan",
+        "Ramakrishnan Raman",
+        "Nripendra P. Rana",
+        "Spyridon Samothrakis",
+        "Jak Spencer",
+        "Kuttimani Tamilmani",
+        "Annie Tubadji",
+        "Paul Walton",
+        "Michael D. Williams"
+      ],
+      "venue": "International Journal of Information Management",
+      "abstract": "As far back as the industrial revolution, significant development in technical innovation has succeeded in transforming numerous manual tasks and processes that had been in existence for decades where humans had reached the limits of physical capacity. Artificial Intelligence (AI) offers this same transformative potential for the augmentation and potential replacement of human tasks and activities within a wide range of industrial, intellectual and social applications. The pace of change for this new AI technological age is staggering, with new breakthroughs in algorithmic machine learning and autonomous decision-making, engendering new opportunities for continued innovation. The impact of AI could be significant, with industries ranging from: finance , healthcare, manufacturing, retail, supply chain , logistics and utilities, all potentially disrupted by the onset of AI technologies. The study brings together the collective insight from a number of leading expert contributors to highlight the significant opportunities, realistic assessment of impact, challenges and potential research agenda posed by the rapid emergence of AI within a number of domains: business and management, government, public sector, and science and technology . This research offers significant and timely insight to AI technology and its impact on the future of industry and society in general, whilst recognising the societal and industrial influence on pace and direction of AI development.",
+      "keywords": [
+        "Pace",
+        "Transformative learning",
+        "Government (linguistics)",
+        "Multidisciplinary approach",
+        "Supply chain"
+      ],
+      "url": "https://openalex.org/W2969625533",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2953532875",
+      "doi": "https://doi.org/10.7861/futurehosp.6-2-94",
+      "title": "The potential for artificial intelligence in healthcare",
+      "year": 2019,
+      "cited_by_count": 3766,
+      "relevance_score": 621.0266,
+      "authors": [
+        "Thomas H. Davenport",
+        "Ravi Kalakota"
+      ],
+      "venue": "Future Healthcare Journal",
+      "abstract": "The complexity and rise of data in healthcare means that artificial intelligence (AI) will increasingly be applied within the field. Several types of AI are already being employed by payers and providers of care, and life sciences companies. The key categories of applications involve diagnosis and treatment recommendations, patient engagement and adherence, and administrative activities. Although there are many instances in which AI can perform healthcare tasks as well or better than humans, implementation factors will prevent large-scale automation of healthcare professional jobs for a considerable period. Ethical issues in the application of AI to healthcare are also discussed.",
+      "keywords": [
+        "Health care",
+        "Key (lock)",
+        "Field (mathematics)",
+        "Automation",
+        "Scale (ratio)"
+      ],
+      "url": "https://openalex.org/W2953532875",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1985683154",
+      "doi": "https://doi.org/10.2307/1575314",
+      "title": "Mind Children: The Future of Robot and Human Intelligence",
+      "year": 1991,
+      "cited_by_count": 1280,
+      "relevance_score": 605.316,
+      "authors": [
+        "Fred Truck",
+        "Hans Moravec"
+      ],
+      "venue": "Leonardo",
+      "abstract": "Imagine attending a lecture at the turn of the twentieth century in which Orville Wright speculates about the future of transportation, or one in which Alexander Graham Bell envisages satellite communications and global data banks. Mind Children, written by an internationally renowned roboticist, offers a comparable experience-a mind-boggling glimpse of a world we may soon share with our artificial progeny. Filled with fresh ideas and insights, this book is one of the most engaging and controversial visions of the future ever written by a serious scholar. Hans Moravec convincingly argues that we are approaching a watershed in the history of life-a time when the boundaries between biological and postbiological intelligence will begin to dissolve. Within forty years, Moravec believes, we will achieve human equivalence in our machines, not only in their capacity to reason but also in their ability to perceive, interact with, and change their complex environment. The critical factor is mobility. A computer rooted to one place is doomed to static iterations, whereas a machine on the prowl, like a mobile organism, must evolve a richer fund of knowledge about an ever-changing world upon which to base its actions. In order to achieve anything near human equivalence, robots will need, at the least, the capacity to perform ten trillion calculations per second. Given the trillion-fold increase in computational power since the end of the nineteenth century, and the promise of exotic technologies far surpassing the now-familiar lasers and even superconductors, Moravec concludes that our hardware will have no trouble meeting this forty-year timetable. But human equivalence is just the beginning, not an upper bound. Once the tireless thinking capacity of robots is directed to the problem of their own improvement and reproduction, even the sky will not limit their voracious exploration of the universe. In the concluding chapters Moravec challenges us to imagine with him the possibilities and pitfalls of such a scenario. Rather than warning us of takeover by robots, the author invites us, as we approach the end of this millennium, to speculate about a plausible, wonderful postbiological future and the ways in which our minds might participate in its unfolding.",
+      "keywords": [
+        "Cognitive science",
+        "Robot",
+        "Human intelligence",
+        "Psychology",
+        "Human–computer interaction"
+      ],
+      "url": "https://openalex.org/W1985683154",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3017131514",
+      "doi": "https://doi.org/10.1109/access.2020.2988510",
+      "title": "Artificial Intelligence in Education: A Review",
+      "year": 2020,
+      "cited_by_count": 3722,
+      "relevance_score": 603.99005,
+      "authors": [
+        "Lijia Chen",
+        "Pingping Chen",
+        "Zhijian Lin"
+      ],
+      "venue": "IEEE Access",
+      "abstract": "The purpose of this study was to assess the impact of Artificial Intelligence (AI) on education. Premised on a narrative and framework for assessing AI identified from a preliminary analysis, the scope of the study was limited to the application and effects of AI in administration, instruction, and learning. A qualitative research approach, leveraging the use of literature review as a research design and approach was used and effectively facilitated the realization of the study purpose. Artificial intelligence is a field of study and the resulting innovations and developments that have culminated in computers, machines, and other artifacts having human-like intelligence characterized by cognitive abilities, learning, adaptability, and decision-making capabilities. The study ascertained that AI has extensively been adopted and used in education, particularly by education institutions, in different forms. AI initially took the form of computer and computer related technologies, transitioning to web-based and online intelligent education systems, and ultimately with the use of embedded computer systems, together with other technologies, the use of humanoid robots and web-based chatbots to perform instructors' duties and functions independently or with instructors. Using these platforms, instructors have been able to perform different administrative functions, such as reviewing and grading students' assignments more effectively and efficiently, and achieve higher quality in their teaching activities. On the other hand, because the systems leverage machine learning and adaptability, curriculum and content has been customized and personalized in line with students' needs, which has fostered uptake and retention, thereby improving learners experience and overall quality of learning.",
+      "keywords": [
+        "Computer science",
+        "Adaptability",
+        "Personalized learning",
+        "Artificial intelligence",
+        "Curriculum"
+      ],
+      "url": "https://openalex.org/W3017131514",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2981863007",
+      "doi": "https://doi.org/10.1186/s41239-019-0171-0",
+      "title": "Systematic review of research on artificial intelligence applications in higher education – where are the educators?",
+      "year": 2019,
+      "cited_by_count": 6003,
+      "relevance_score": 531.5276,
+      "authors": [
+        "Olaf Zawacki‐Richter",
+        "Victoria I. Marín",
+        "Melissa Bond",
+        "Franziska Gouverneur"
+      ],
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "abstract": "Abstract According to various international reports, Artificial Intelligence in Education (AIEd) is one of the currently emerging fields in educational technology. Whilst it has been around for about 30 years, it is still unclear for educators how to make pedagogical advantage of it on a broader scale, and how it can actually impact meaningfully on teaching and learning in higher education. This paper seeks to provide an overview of research on AI applications in higher education through a systematic review. Out of 2656 initially identified publications for the period between 2007 and 2018, 146 articles were included for final synthesis, according to explicit inclusion and exclusion criteria. The descriptive results show that most of the disciplines involved in AIEd papers come from Computer Science and STEM, and that quantitative methods were the most frequently used in empirical studies. The synthesis of results presents four areas of AIEd applications in academic support services, and institutional and administrative services: 1. profiling and prediction, 2. assessment and evaluation, 3. adaptive systems and personalisation, and 4. intelligent tutoring systems. The conclusions reflect on the almost lack of critical reflection of challenges and risks of AIEd, the weak connection to theoretical pedagogical perspectives, and the need for further exploration of ethical and educational approaches in the application of AIEd in higher education.",
+      "keywords": [
+        "Personalization",
+        "Profiling (computer programming)",
+        "Higher education",
+        "Scale (ratio)",
+        "Inclusion (mineral)"
+      ],
+      "url": "https://openalex.org/W2981863007",
+      "matched_by": "en"
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "problem_id": 31,
+  "problem_cn": "恐龙体型为什么可以长得如此巨大？",
+  "problem_en": "Why did dinosaurs grow to be so big?",
+  "category": "生物学",
+  "query_en": "Why did dinosaurs grow to be so big",
+  "query_cn": "恐龙体型为什么可以长得如此巨大",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:07:25",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2090710319",
+      "doi": "https://doi.org/10.1111/j.1469-185x.2010.00137.x",
+      "title": "Biology of the sauropod dinosaurs: the evolution of gigantism",
+      "year": 2010,
+      "cited_by_count": 424,
+      "relevance_score": 391.48688,
+      "authors": [
+        "P. Martin Sander",
+        "Andreas Christian",
+        "Marcus Clauß",
+        "Regina Fechner",
+        "Carole T. Gee",
+        "Eva-Maria Griebeler",
+        "Hanns‐Christian Gunga",
+        "Jürgen Hummel",
+        "Heinrich Mallison",
+        "Steven F. Perry",
+        "Holger Preuschoft",
+        "Oliver W. M. Rauhut",
+        "Kristian Remes",
+        "Thomas Tütken",
+        "Oliver Wings",
+        "U. Witzel"
+      ],
+      "venue": "Biological reviews/Biological reviews of the Cambridge Philosophical Society",
+      "abstract": "The herbivorous sauropod dinosaurs of the Jurassic and Cretaceous periods were the largest terrestrial animals ever, surpassing the largest herbivorous mammals by an order of magnitude in body mass. Several evolutionary lineages among Sauropoda produced giants with body masses in excess of 50 metric tonnes by conservative estimates. With body mass increase driven by the selective advantages of large body size, animal lineages will increase in body size until they reach the limit determined by the interplay of bauplan, biology, and resource availability. There is no evidence, however, that resource availability and global physicochemical parameters were different enough in the Mesozoic to have led to sauropod gigantism. We review the biology of sauropod dinosaurs in detail and posit that sauropod gigantism was made possible by a specific combination of plesiomorphic characters (phylogenetic heritage) and evolutionary innovations at different levels which triggered a remarkable evolutionary cascade. Of these key innovations, the most important probably was the very long neck, the most conspicuous feature of the sauropod bauplan. Compared to other herbivores, the long neck allowed more efficient food uptake than in other large herbivores by covering a much larger feeding envelope and making food accessible that was out of the reach of other herbivores. Sauropods thus must have been able to take up more energy from their environment than other herbivores. The long neck, in turn, could only evolve because of the small head and the extensive pneumatization of the sauropod axial skeleton, lightening the neck. The small head was possible because food was ingested without mastication. Both mastication and a gastric mill would have limited food uptake rate. Scaling relationships between gastrointestinal tract size and basal metabolic rate (BMR) suggest that sauropods compensated for the lack of particle reduction with long retention times, even at high uptake rates. The extensive pneumatization of the axial skeleton resulted from the evolution of an avian-style respiratory system, presumably at the base of Saurischia. An avian-style respiratory system would also have lowered the cost of breathing, reduced specific gravity, and may have been important in removing excess body heat. Another crucial innovation inherited from basal dinosaurs was a high BMR. This is required for fueling the high growth rate necessary for a multi-tonne animal to survive to reproductive maturity. The retention of the plesiomorphic oviparous mode of reproduction appears to have been critical as well, allowing much faster population recovery than in megaherbivore mammals. Sauropods produced numerous but small offspring each season while land mammals show a negative correlation of reproductive output to body size. This permitted lower population densities in sauropods than in megaherbivore mammals but larger individuals. Our work on sauropod dinosaurs thus informs us about evolutionary limits to body size in other groups of herbivorous terrestrial tetrapods. Ectothermic reptiles are strongly limited by their low BMR, remaining small. Mammals are limited by their extensive mastication and their vivipary, while ornithsichian dinosaurs were only limited by their extensive mastication, having greater average body sizes than mammals.",
+      "keywords": [
+        "Gigantism",
+        "Biology",
+        "Evolutionary biology",
+        "Biological evolution",
+        "Zoology"
+      ],
+      "url": "https://openalex.org/W2090710319",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W1515034626",
+      "doi": "https://doi.org/10.1111/brv.12128",
+      "title": "The extinction of the dinosaurs",
+      "year": 2014,
+      "cited_by_count": 184,
+      "relevance_score": 306.26892,
+      "authors": [
+        "Stephen L. Brusatte",
+        "Richard J. Butler",
+        "Paul M. Barrett",
+        "Matthew T. Carrano",
+        "David C. Evans",
+        "Graeme T. Lloyd",
+        "Philip D. Mannion",
+        "Mark A. Norell",
+        "Daniel J. Peppe",
+        "Paul Upchurch",
+        "Thomas E. Williamson"
+      ],
+      "venue": "Biological reviews/Biological reviews of the Cambridge Philosophical Society",
+      "abstract": "Non-avian dinosaurs went extinct 66 million years ago, geologically coincident with the impact of a large bolide (comet or asteroid) during an interval of massive volcanic eruptions and changes in temperature and sea level. There has long been fervent debate about how these events affected dinosaurs. We review a wealth of new data accumulated over the past two decades, provide updated and novel analyses of long-term dinosaur diversity trends during the latest Cretaceous, and discuss an emerging consensus on the extinction's tempo and causes. Little support exists for a global, long-term decline across non-avian dinosaur diversity prior to their extinction at the end of the Cretaceous. However, restructuring of latest Cretaceous dinosaur faunas in North America led to reduced diversity of large-bodied herbivores, perhaps making communities more susceptible to cascading extinctions. The abruptness of the dinosaur extinction suggests a key role for the bolide impact, although the coarseness of the fossil record makes testing the effects of Deccan volcanism difficult.",
+      "keywords": [
+        "Extinction (optical mineralogy)",
+        "Geology",
+        "Paleontology",
+        "Geography"
+      ],
+      "url": "https://openalex.org/W1515034626",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2176430550",
+      "doi": "https://doi.org/10.1671/0272-4634(2004)024[0555:gisdap]2.0.co;2",
+      "title": "Growth in small dinosaurs and pterosaurs: the evolution of archosaurian growth strategies",
+      "year": 2004,
+      "cited_by_count": 215,
+      "relevance_score": 267.23834,
+      "authors": [
+        "Kevin Padian",
+        "John R. Horner",
+        "Armand de Ricqlès"
+      ],
+      "venue": "Journal of Vertebrate Paleontology",
+      "abstract": "Histological evidence of the bones of pterosaurs and dinosaurs indicates that the typically large forms of these groups grew at rates more comparable to those of birds and mammals than to those of other living reptiles. However, Scutellosaurus, a small, bipedal, basal thyreophoran ornithischian dinosaur of the Early Jurassic, shows histological features in its skeletal tissues that suggest relatively lower growth rates than in those of larger dinosaurs. In these respects Scutellosaurus, like other small dinosaurs such as Orodromeus and some basal birds, is more like young, rapidly growing crocodiles than larger, more derived ornithischians (hadrosaurs) and all saurischians (sauropods and theropods). Similar patterns can be seen in small, mostly basal pterosaurs such as Eudimorphodon and Rhamphorhynchus. However, superficial similarities to crocodile bone growth belie some important differences, which are most usefully interpreted in phylogenetic and ontogenetic contexts. Large size evolved secondarily in several dinosaurian and pterosaurian lineages. We hypothesize that this larger size was made possible by rapid growth strategies that are reflected by characteristic highly vascularized fibro-lamellar bone tissues that comprise most of the cortex. Dinosaurs and pterosaurs, like other tetrapodes, generally grew more quickly in early stages and more slowly as growth neared completion. As in other vertebrate groups, taxa of small adult size may have grown at lower rates or for shorter durations than larger taxa did. Phylogenetic patterns suggest that by themselves, the low vascularity and inferred low growth rates seen in small dinosaurs and pterosaurs are not good indicators of thermometabolic regime, because they are correlated so strongly with size. They may reflect mechanical exigencies of small size rather than especially lower growth rates, tied to the process of deposition of particular kinds of bone tissues. The evolution of life history strategies in dinosaurs and pterosaurs, as they relate to rates of growth and adult body sizes, will be better understood as more complete histological studies place these data into phylogenetic and ontogenetic contexts.",
+      "keywords": [
+        "Biology",
+        "Vertebrate",
+        "Ontogeny",
+        "Zoology",
+        "Anatomy"
+      ],
+      "url": "https://openalex.org/W2176430550",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2127568739",
+      "doi": "https://doi.org/10.1146/annurev-earth-042711-105515",
+      "title": "Paleobiology of Herbivorous Dinosaurs",
+      "year": 2014,
+      "cited_by_count": 125,
+      "relevance_score": 242.25587,
+      "authors": [
+        "Paul M. Barrett"
+      ],
+      "venue": "Annual Review of Earth and Planetary Sciences",
+      "abstract": "Herbivorous dinosaurs were abundant, species-rich components of Late Triassic–Cretaceous terrestrial ecosystems. Obligate high-fiber herbivory evolved independently on several occasions within Dinosauria, through the intermediary step of omnivory. Anatomical character complexes associated with this diet exhibit high levels of convergence and morphological disparity, and may have evolved by correlated progression. Dinosaur faunas changed markedly during the Mesozoic, from early faunas dominated by taxa with simple, uniform feeding mechanics to Cretaceous biomes including diverse sophisticated sympatric herbivores; the environmental and biological drivers causing these changes remain unclear. Isotopic, taphonomic, and anatomical evidence implies that niche partitioning reduced competition between sympatric herbivores, via morphological differentiation, dietary preferences, and habitat selection. Large body size in dinosaur herbivores is associated with low plant productivity, and gave these animals prominent roles as ecosystem engineers. Although dinosaur herbivores lived through several major events in floral evolution, there is currently no evidence for plant-dinosaur coevolutionary interactions.",
+      "keywords": [
+        "Herbivore",
+        "Biology",
+        "Ecology",
+        "Sympatric speciation",
+        "Ecosystem"
+      ],
+      "url": "https://openalex.org/W2127568739",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W3084255056",
+      "doi": "https://doi.org/10.1016/j.jtbi.2020.110485",
+      "title": "Why did sauropod dinosaurs grow so big? – A possible answer from the life history theory",
+      "year": 2020,
+      "cited_by_count": 2,
+      "relevance_score": 226.0779,
+      "authors": [
+        "Yuki Kanayama",
+        "Yoh Iwasa"
+      ],
+      "venue": "Journal of Theoretical Biology",
+      "abstract": "",
+      "keywords": [
+        "Reproduction",
+        "Biology",
+        "Predation",
+        "Life history",
+        "Ecology"
+      ],
+      "url": "https://openalex.org/W3084255056",
+      "matched_by": "en"
+    }
+  ]
+}

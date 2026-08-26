@@ -1,0 +1,153 @@
+{
+  "problem_id": 61,
+  "problem_cn": "脉冲星如何形成？",
+  "problem_en": "How are pulsars formed?",
+  "category": "天文学",
+  "query_en": "How are pulsars formed",
+  "query_cn": "脉冲星如何形成",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:25:49",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2995178730",
+      "doi": "https://doi.org/10.3847/2041-8213/ab481c",
+      "title": "A NICER View of PSR J0030+0451: Millisecond Pulsar Parameter Estimation",
+      "year": 2019,
+      "cited_by_count": 1678,
+      "relevance_score": 585.658,
+      "authors": [
+        "T. E. Riley",
+        "A. L. Watts",
+        "S. Bogdanov",
+        "P. S. Ray",
+        "R. M. Ludlam",
+        "S. Guillot",
+        "Z. Arzoumanian",
+        "C. L. Baker",
+        "A. V. Bilous",
+        "D. Chakrabarty",
+        "K. C. Gendreau",
+        "A. K. Harding",
+        "W. C. G. Ho",
+        "J. M. Lattimer",
+        "S. M. Morsink",
+        "T. E. Strohmayer"
+      ],
+      "venue": "The Astrophysical Journal Letters",
+      "abstract": "Abstract We report on Bayesian parameter estimation of the mass and equatorial radius of the millisecond pulsar PSR J0030+0451, conditional on pulse-profile modeling of Neutron Star Interior Composition Explorer X-ray spectral-timing event data. We perform relativistic ray-tracing of thermal emission from hot regions of the pulsar’s surface. We assume two distinct hot regions based on two clear pulsed components in the phase-folded pulse-profile data; we explore a number of forms (morphologies and topologies) for each hot region, inferring their parameters in addition to the stellar mass and radius. For the family of models considered, the evidence (prior predictive probability of the data) strongly favors a model that permits both hot regions to be located in the same rotational hemisphere. Models wherein both hot regions are assumed to be simply connected circular single-temperature spots, in particular those where the spots are assumed to be reflection-symmetric with respect to the stellar origin, are strongly disfavored. For the inferred configuration, one hot region subtends an angular extent of only a few degrees (in spherical coordinates with origin at the stellar center) and we are insensitive to other structural details; the second hot region is far more azimuthally extended in the form of a narrow arc, thus requiring a larger number of parameters to describe. The inferred mass M and equatorial radius R eq are, respectively, 1.34 − 0.16 + 0.15 M ⊙ and 12.71 − 1.19 + 1.14 km , while the compactness GM / R eq c 2 = 0.156 − 0.010 + 0.008 is more tightly constrained; the credible interval bounds reported here are approximately the 16% and 84% quantiles in marginal posterior mass.",
+      "keywords": [
+        "Physics",
+        "Millisecond pulsar",
+        "RADIUS",
+        "Astrophysics",
+        "Pulsar"
+      ],
+      "url": "https://openalex.org/W2995178730",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2157358283",
+      "doi": "https://doi.org/10.1111/j.1365-2966.2006.10302.x",
+      "title": "tempo2, a new pulsar-timing package - I. An overview",
+      "year": 2006,
+      "cited_by_count": 1208,
+      "relevance_score": 515.684,
+      "authors": [
+        "G. Hobbs",
+        "Roderick Edwards",
+        "R. N. Manchester"
+      ],
+      "venue": "Monthly Notices of the Royal Astronomical Society",
+      "abstract": "Contemporary pulsar-timing experiments have reached a sensitivity level where systematic errors introduced by existing analysis procedures are limiting the achievable science. We have developed TEMPO2, a new pulsar-timing package that contains propagation and other relevant effects implemented at the 1-ns level of precision (a factor of 100 more precise than previously obtainable). In contrast with earlier timing packages, TEMPO2 is compliant with the general relativistic framework of the IAU 1991 and 2000 resolutions and hence uses the International Celestial Reference System, Barycentric Coordinate Time and up-to-date precession, nutation and polar motion models. TEMPO2 provides a generic and extensible set of tools to aid in the analysis and visualization of pulsar-timing data. We provide an overview of the timing model, its accuracy and differences relative to earlier work. We also present a new scheme for predictive use of the timing model that removes existing processing artefacts by properly modelling the frequency dependence of pulse phase.",
+      "keywords": [
+        "Pulsar",
+        "Physics",
+        "Ephemeris",
+        "Nutation",
+        "Precession"
+      ],
+      "url": "https://openalex.org/W2157358283",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2762340391",
+      "doi": "https://doi.org/10.1086/313060",
+      "title": "Observations of Accreting Pulsars",
+      "year": 1997,
+      "cited_by_count": 752,
+      "relevance_score": 509.21158,
+      "authors": [
+        "Lars Bildsten",
+        "Deepto Chakrabarty",
+        "John Chiu",
+        "Mark H. Finger",
+        "Danny T. Koh",
+        "Robert W. Nelson",
+        "Thomas A. Prince",
+        "Bradley C. Rubin",
+        "Donia Scott",
+        "M. T. Stollberg",
+        "Brian Vaughan",
+        "C. A. Wilson",
+        "Robert Wilson"
+      ],
+      "venue": "The Astrophysical Journal Supplement Series",
+      "abstract": "We summarize 5 years of continuous monitoring of accretion-powered pulsars with the Burst and Transient Source Experiment (BATSE) on the Compton Gamma Ray Observatory . Our 20-70 keV observations have determined or refined the orbital parameters of 13 binaries, discovered five new transient accreting pulsars, measured the pulsed flux history during outbursts of 12 transients (GRO J1744-28, 4U 0115+634, GRO J1750-27, GS 0834-430, 2S 1417-624, GRO J1948+32, EXO 2030+375, GRO J1008-57, A0535+26, GRO J2058+42, 4U 1145-619, and A1118-616), and also measured the accretion torque history during outbursts of six of those transients whose orbital parameters were also known. We have also continuously measured the pulsed flux and spin frequency for eight persistently accreting pulsars (Her X-1, Cen X-3, Vela X-1, OAO 1657-415, GX 301-2, 4U 1626-67, 4U 1538-52, and GX 1+4). Because of their continuity and uniformity over a long baseline, BATSE observations have provided new insights into the long-term behavior of accreting magnetic neutron stars. We have found that all accreting pulsars show stochastic variations in their spin frequencies and luminosities, including those displaying secular spin-up or spin-down on long timescales, which blurs the conventional distinction between disk-fed and wind-fed binaries. Pulsed flux and accretion torque are strongly correlated in outbursts of transient accreting pulsars but are uncorrelated, or even anticorrelated, in persistent sources. We describe daily folded pulse profiles, frequency, and flux measurements that are available through the Compton Observatory Science Support Center at NASA/Goddard Space Flight Center.",
+      "keywords": [
+        "Pulsar",
+        "Physics",
+        "Astrophysics",
+        "Neutron star",
+        "Accretion (finance)"
+      ],
+      "url": "https://openalex.org/W2762340391",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2090241270",
+      "doi": "https://doi.org/10.1086/501516",
+      "title": "Birth and Evolution of Isolated Radio Pulsars",
+      "year": 2006,
+      "cited_by_count": 745,
+      "relevance_score": 469.54654,
+      "authors": [
+        "Claude‐Andre Faucher‐Giguere",
+        "Victoria M. Kaspi"
+      ],
+      "venue": "The Astrophysical Journal",
+      "abstract": "We investigate the birth and evolution of Galactic isolated radio pulsars. We begin by estimating their birth space velocity distribution from proper-motion measurements of Brisken and coworkers. We find no evidence for multimodality of the distribution and favor one in which the absolute one-dimensional velocity components are exponentially distributed and with a three-dimensional mean velocity of 380 km s -1 . We then proceed with a Monte Carlo-based population synthesis, modeling the birth properties of the pulsars, their time evolution, and their detection in the Parkes and Swinburne Multibeam surveys. We present a population model that appears generally consistent with the observations. Our results suggest that pulsars are born in the spiral arms, with a galactocentric radial distribution that is well described by the functional form proposed by Yusifov & Küçük, in which the pulsar surface density peaks at radius ~3 kpc. The birth spin period distribution extends to several hundred milliseconds, with no evidence of multimodality. Models that assume the radio luminosities of pulsars to be independent of the spin periods and period derivatives are inadequate, as they lead to the detection of too many old simulated pulsars in our simulations. Dithered radio luminosities proportional to the square root of the spin-down luminosity accommodate the observations well and provide a natural mechanism for the pulsars to dim uniformly as they approach the death line, avoiding an observed pileup on the latter. There is no evidence for significant torque decay (due to magnetic field decay or otherwise) over the lifetime of the pulsars as radio sources (~100 Myr). Finally, we estimate the pulsar birthrate and total number of pulsars in the Galaxy.",
+      "keywords": [
+        "Physics",
+        "Pulsar",
+        "Astrophysics",
+        "Millisecond pulsar",
+        "Population"
+      ],
+      "url": "https://openalex.org/W2090241270",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2159450174",
+      "doi": "https://doi.org/10.12942/lrr-2008-8",
+      "title": "Binary and Millisecond Pulsars",
+      "year": 2008,
+      "cited_by_count": 613,
+      "relevance_score": 459.60623,
+      "authors": [
+        "Duncan R. Lorimer"
+      ],
+      "venue": "Living Reviews in Relativity",
+      "abstract": "We review the main properties, demographics and applications of binary and millisecond radio pulsars. Our knowledge of these exciting objects has greatly increased in recent years, mainly due to successful surveys which have brought the known pulsar population to over 1800. There are now 83 binary and millisecond pulsars associated with the disk of our Galaxy, and a further 140 pulsars in 26 of the Galactic globular clusters. Recent highlights include the discovery of the young relativistic binary system PSR J1906+0746, a rejuvination in globular cluster pulsar research including growing numbers of pulsars with masses in excess of 1.5 M ⊙ , a precise measurement of relativistic spin precession in the double pulsar system and a Galactic millisecond pulsar in an eccentric ( e = 0.44) orbit around an unevolved companion.",
+      "keywords": [
+        "Physics",
+        "Binary number",
+        "Millisecond pulsar",
+        "Pulsar",
+        "Astrophysics"
+      ],
+      "url": "https://openalex.org/W2159450174",
+      "matched_by": "en"
+    }
+  ]
+}

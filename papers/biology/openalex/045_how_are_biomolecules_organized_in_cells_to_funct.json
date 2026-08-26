@@ -1,0 +1,131 @@
+{
+  "problem_id": 45,
+  "problem_cn": "细胞内部的生物大分子，如何有序高效完成生命活动？",
+  "problem_en": "How are biomolecules organized in cells to function orderly and effectively?",
+  "category": "生物学",
+  "query_en": "How are biomolecules organized in cells to function orderly and effectively",
+  "query_cn": "细胞内部的生物大分子，如何有序高效完成生命活动",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:24:42",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W3124535662",
+      "doi": "https://doi.org/10.1016/j.jbc.2021.100320",
+      "title": "Zinc transporters and their functional integration in mammalian cells",
+      "year": 2021,
+      "cited_by_count": 242,
+      "relevance_score": 137.03668,
+      "authors": [
+        "Taiho Kambe",
+        "KM Taylor",
+        "Dax Fu"
+      ],
+      "venue": "Journal of Biological Chemistry",
+      "abstract": "Zinc is a ubiquitous biological metal in all living organisms. The spatiotemporal zinc dynamics in cells provide crucial cellular signaling opportunities, but also challenges for intracellular zinc homeostasis with broad disease implications. Zinc transporters play a central role in regulating cellular zinc balance and subcellular zinc distributions. The discoveries of two complementary families of mammalian zinc transporters (ZnTs and ZIPs) in the mid-1990s spurred much speculation on their metal selectivity and cellular functions. After two decades of research, we have arrived at a biochemical description of zinc transport. However, in vitro functions are fundamentally different from those in living cells, where mammalian zinc transporters are directed to specific subcellular locations, engaged in dedicated macromolecular machineries, and connected with diverse cellular processes. Hence, the molecular functions of individual zinc transporters are reshaped and deeply integrated in cells to promote the utilization of zinc chemistry to perform enzymatic reactions, tune cellular responsiveness to pathophysiologic signals, and safeguard cellular homeostasis. At present, the underlying mechanisms driving the functional integration of mammalian zinc transporters are largely unknown. This knowledge gap has motivated a shift of the research focus from in vitro studies of purified zinc transporters to in cell studies of mammalian zinc transporters in the context of their subcellular locations and protein interactions. In this review, we will outline how knowledge of zinc transporters has been accumulated from in-test-tube to in-cell studies, highlighting new insights and paradigm shifts in our understanding of the molecular and cellular basis of mammalian zinc transporter functions.",
+      "keywords": [
+        "Transporter",
+        "Cell biology",
+        "Zinc",
+        "Chemistry",
+        "Computational biology"
+      ],
+      "url": "https://openalex.org/W3124535662",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4212940766",
+      "doi": "https://doi.org/10.1186/s12964-022-00821-7",
+      "title": "Intrinsically disordered proteins play diverse roles in cell signaling",
+      "year": 2022,
+      "cited_by_count": 223,
+      "relevance_score": 127.19983,
+      "authors": [
+        "Sarah E. Bondos",
+        "A. Keith Dunker",
+        "Vladimir N. Uversky"
+      ],
+      "venue": "Cell Communication and Signaling",
+      "abstract": "or chemokine proteins) and physical stimuli (e.g., sheer stress, light). Together, these pathways form an extensive communication network that regulates basic cell activities and coordinates the function of multiple cells or tissues. The process of cell signaling imposes many demands on the proteins that comprise these pathways, including the abilities to form active and inactive states, and to engage in multiple protein interactions. Furthermore, successful signaling often requires amplifying the signal, regulating or tuning the response to the signal, combining information sourced from multiple pathways, all while ensuring fidelity of the process. This sensitivity, adaptability, and tunability are possible, in part, due to the inclusion of intrinsically disordered regions in many proteins involved in cell signaling. The goal of this collection is to highlight the many roles of intrinsic disorder in cell signaling. Following an overview of resources that can be used to study intrinsically disordered proteins, this review highlights the critical role of intrinsically disordered proteins for signaling in widely diverse organisms (animals, plants, bacteria, fungi), in every category of cell signaling pathway (autocrine, juxtacrine, intracrine, paracrine, and endocrine) and at each stage (ligand, receptor, transducer, effector, terminator) in the cell signaling process. Thus, a cell signaling pathway cannot be fully described without understanding how intrinsically disordered protein regions contribute to its function. The ubiquitous presence of intrinsic disorder in different stages of diverse cell signaling pathways suggest that more mechanisms by which disorder modulates intra- and inter-cell signals remain to be discovered.",
+      "keywords": [
+        "Signal transduction",
+        "Variety (cybernetics)",
+        "Signaling proteins",
+        "Cell biology",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W4212940766",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4391057181",
+      "doi": "https://doi.org/10.1016/j.jare.2024.01.016",
+      "title": "The role of endothelial cell–pericyte interactions in vascularization and diseases",
+      "year": 2024,
+      "cited_by_count": 110,
+      "relevance_score": 91.68342,
+      "authors": [
+        "Li Gan",
+        "Junjie Gao",
+        "Peng Ding",
+        "Youshui Gao"
+      ],
+      "venue": "Journal of Advanced Research",
+      "abstract": "BACKGROUND: Endothelial cells (ECs) and pericytes (PCs) are crucial components of the vascular system, with ECs lining the inner layer of blood vessels and PCs surrounding capillaries to regulate blood flow and angiogenesis. Intercellular communication between ECs and PCs is vital for the formation, stability, and function of blood vessels. Various signaling pathways, such as the vascular endothelial growth factor/vascular endothelial growth factor receptor pathway and the platelet-derived growth factor-B/platelet-derived growth factor receptor-β pathway, play roles in communication between ECs and PCs. Dysfunctional communication between these cells is associated with various diseases, including vascular diseases, central nervous system disorders, and certain types of cancers. AIM OF REVIEW: This review aimed to explore the diverse roles of ECs and PCs in the formation and reshaping of blood vessels. This review focused on the essential signaling pathways that facilitate communication between these cells and investigated how disruptions in these pathways may contribute to disease. Additionally, the review explored potential therapeutic targets, future research directions, and innovative approaches, such as investigating the impact of EC-PCs in novel systemic diseases, addressing resistance to antiangiogenic drugs, and developing novel antiangiogenic medications to enhance therapeutic efficacy. KEY SCIENTIFIC CONCEPTS OF REVIEW: Disordered EC-PC intercellular signaling plays a role in abnormal blood vessel formation, thus contributing to the progression of various diseases and the development of resistance to antiangiogenic drugs. Therefore, studies on EC-PC intercellular interactions have high clinical relevance.",
+      "keywords": [
+        "Angiogenesis",
+        "Pericyte",
+        "Signal transduction",
+        "Cancer research",
+        "Growth factor"
+      ],
+      "url": "https://openalex.org/W4391057181",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2299866789",
+      "doi": "https://doi.org/10.3390/gels2010012",
+      "title": "Controlling Cell Functions and Fate with Surfaces and Hydrogels: The Role of Material Features in Cell Adhesion and Signal Transduction",
+      "year": 2016,
+      "cited_by_count": 31,
+      "relevance_score": 81.551025,
+      "authors": [
+        "Maurizio Ventre",
+        "Paolo A. Netti"
+      ],
+      "venue": "Gels",
+      "abstract": "In their natural environment, cells are constantly exposed to a cohort of biochemical and biophysical signals that govern their functions and fate. Therefore, materials for biomedical applications, either in vivo or in vitro, should provide a replica of the complex patterns of biological signals. Thus, the development of a novel class of biomaterials requires, on the one side, the understanding of the dynamic interactions occurring at the interface of cells and materials; on the other, it requires the development of technologies able to integrate multiple signals precisely organized in time and space. A large body of studies aimed at investigating the mechanisms underpinning cell-material interactions is mostly based on 2D systems. While these have been instrumental in shaping our understanding of the recognition of and reaction to material stimuli, they lack the ability to capture central features of the natural cellular environment, such as dimensionality, remodelling and degradability. In this work, we review the fundamental traits of material signal sensing and cell response. We then present relevant technologies and materials that enable fabricating systems able to control various aspects of cell behavior, and we highlight potential differences that arise from 2D and 3D settings.",
+      "keywords": [
+        "Self-healing hydrogels",
+        "Cell fate determination",
+        "Cell adhesion",
+        "Cell type",
+        "Nanotechnology"
+      ],
+      "url": "https://openalex.org/W2299866789",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4312077276",
+      "doi": "https://doi.org/10.1063/5.0103151",
+      "title": "Self-organized computation in the far-from-equilibrium cell",
+      "year": 2022,
+      "cited_by_count": 14,
+      "relevance_score": 75.72451,
+      "authors": [
+        "Jeremy L. England"
+      ],
+      "venue": "Biophysics Reviews",
+      "abstract": "Recent progress in our understanding of the physics of self-organization in active matter has pointed to the possibility of spontaneous collective behaviors that effectively compute things about the patterns in the surrounding patterned environment. Here, we describe this progress and speculate about its implications for our understanding of the internal organization of the living cell.",
+      "keywords": [
+        "Autocatalytic reaction",
+        "Active matter",
+        "Self-organization",
+        "Computation",
+        "Living matter"
+      ],
+      "url": "https://openalex.org/W4312077276",
+      "matched_by": "en"
+    }
+  ]
+}

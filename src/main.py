@@ -408,7 +408,9 @@ async def suggest_questions_api(request: SuggestQuestionsRequest):
     return {
         "success": True,
         "questions": result.get("questions", []),
+        "dims": result.get("dims", []),
         "based_on": result.get("based_on", "context_only"),
+        "based_on_desc": result.get("based_on_desc", ""),
         "error": result.get("error"),
     }
 

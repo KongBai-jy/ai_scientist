@@ -1,0 +1,141 @@
+{
+  "problem_id": 105,
+  "problem_cn": "非人类动物有多聪明？",
+  "problem_en": "How smart are nonhuman animals?",
+  "category": "神经科学",
+  "query_en": "How smart are nonhuman animals",
+  "query_cn": "非人类动物有多聪明",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:13",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2102637432",
+      "doi": "https://doi.org/10.1128/cmr.00041-08",
+      "title": "Gastric Helicobacters in Domestic Animals and Nonhuman Primates and Their Significance for Human Health",
+      "year": 2009,
+      "cited_by_count": 330,
+      "relevance_score": 342.0291,
+      "authors": [
+        "Freddy Haesebrouck",
+        "Frank Pasmans",
+        "Bram Flahou",
+        "Koen Chiers",
+        "Margo Baele",
+        "Tom Meyns",
+        "Annemie Decostere",
+        "Richard Ducatelle"
+      ],
+      "venue": "Clinical Microbiology Reviews",
+      "abstract": "Helicobacters other than Helicobacter pylori have been associated with gastritis, gastric ulcers, and gastric mucosa-associated lymphoid tissue lymphoma in humans. These very fastidious microorganisms with a typical large spiral-shaped morphology were provisionally designated \"H. heilmannii,\" but in fact they comprise at least five different Helicobacter species, all of which are known to colonize the gastric mucosa of animals. H. suis, which has been isolated from the stomachs of pigs, is the most prevalent gastric non-H. pylori Helicobacter species in humans. Other gastric non-H. pylori helicobacters colonizing the human stomach are H. felis, H. salomonis, H. bizzozeronii, and the still-uncultivable \"Candidatus Helicobacter heilmannii.\" These microorganisms are often detected in the stomachs of dogs and cats. \"Candidatus Helicobacter bovis\" is highly prevalent in the abomasums of cattle but has only occasionally been detected in the stomachs of humans. There are clear indications that gastric non-H. pylori Helicobacter infections in humans originate from animals, and it is likely that transmission to humans occurs through direct contact. Little is known about the virulence factors of these microorganisms. The recent successes with in vitro isolation of non-H. pylori helicobacters from domestic animals open new perspectives for studying these microorganisms and their interactions with the host.",
+      "keywords": [
+        "Biology",
+        "Helicobacter",
+        "Helicobacter pylori",
+        "Microbiology",
+        "Gastric mucosa"
+      ],
+      "url": "https://openalex.org/W2102637432",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2033978775",
+      "doi": "https://doi.org/10.1038/nature05511",
+      "title": "Fish can infer social rank by observation alone",
+      "year": 2007,
+      "cited_by_count": 562,
+      "relevance_score": 250.89577,
+      "authors": [
+        "Logan Grosenick",
+        "Tricia S. Clement",
+        "Russell D. Fernald"
+      ],
+      "venue": "Nature",
+      "abstract": "",
+      "keywords": [
+        "Transitive relation",
+        "Fish <Actinopterygii>",
+        "Hierarchy",
+        "Inference",
+        "Rank (graph theory)"
+      ],
+      "url": "https://openalex.org/W2033978775",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2902543072",
+      "doi": "https://doi.org/10.1016/j.scs.2018.11.033",
+      "title": "Can cities become smart without being sustainable? A systematic review of the literature",
+      "year": 2018,
+      "cited_by_count": 695,
+      "relevance_score": 229.89505,
+      "authors": [
+        "Tan Yiğitcanlar",
+        "Md. Kamruzzaman",
+        "Marcus Foth",
+        "Jamile Sabatini‐Marques",
+        "Eduardo da Costa",
+        "Giuseppe Ioppolo"
+      ],
+      "venue": "Sustainable Cities and Society",
+      "abstract": "Smart cities are widely seen as localities that actively embrace new technologies to achieve desired urban outcomes. Despite sustainability often claimed to be a desired outcome of smart city initiatives, little evidence exists how sustainability outcomes are incorporated or achieved within the smart city initiatives. This paper aims to address the question of whether cities can become smart without actually being sustainable. The study undertakes a systematic review of the smart and sustainable cities literature. The analysis highlights an expectation in the reviewed academic literature for cities to become sustainable first in order to be considered truly smart. The results point to major challenges of smart cities in delivering sustainable outcomes: (a) Smart city policies are characterised by heavy technocentricity; (b) Smart city practices involve complexities, and; (c) Smart city notions are conceptualised in an ad-hoc manner. The findings provide evidence that the current smart city practice fails to incorporate an overarching sustainability goal that is progressive and genuine. This, then, highlights the need for a post-anthropocentric approach in practice and policymaking for the development of truly smart and sustainable cities. The findings seek to stimulate prospective research and further critical debates on this topic.",
+      "keywords": [
+        "Sustainability",
+        "Smart city",
+        "Urban sustainability",
+        "Sustainable development",
+        "Smart growth"
+      ],
+      "url": "https://openalex.org/W2902543072",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2286968510",
+      "doi": "https://doi.org/10.1124/pr.115.011163",
+      "title": "Sex Differences in Animal Models: Focus on Addiction",
+      "year": 2016,
+      "cited_by_count": 757,
+      "relevance_score": 220.54132,
+      "authors": [
+        "Jill B. Becker",
+        "George F. Koob"
+      ],
+      "venue": "Pharmacological Reviews",
+      "abstract": "",
+      "keywords": [
+        "Focus (optics)",
+        "Addiction",
+        "Psychology",
+        "Neuroscience",
+        "Biology"
+      ],
+      "url": "https://openalex.org/W2286968510",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2014031369",
+      "doi": "https://doi.org/10.1523/jneurosci.3878-07.2007",
+      "title": "Systemic and Nasal Delivery of Orexin-A (Hypocretin-1) Reduces the Effects of Sleep Deprivation on Cognitive Performance in Nonhuman Primates",
+      "year": 2007,
+      "cited_by_count": 266,
+      "relevance_score": 192.46701,
+      "authors": [
+        "Sam A. Deadwyler",
+        "Linda J. Porrino",
+        "Jerome M. Siegel",
+        "Robert E. Hampson"
+      ],
+      "venue": "Journal of Neuroscience",
+      "abstract": "Hypocretin-1 (orexin-A) was administered to sleep-deprived (30-36 h) rhesus monkeys immediately preceding testing on a multi-image delayed match-to-sample (DMS) short-term memory task. The DMS task used multiple delays and stimulus images and effectively measures cognitive defects produced by sleep deprivation (Porrino et al., 2005). Two methods of administration of orexin-A were tested, intravenous injections (2.5-10.0 microg/kg, i.v.) and a novel method developed for nasal delivery via an atomizer spray mist to the nostrils (dose estimated 1.0 microg/kg). Results showed that orexin-A delivered via the intravenous and nasal routes significantly improved performance in sleep-deprived monkeys; however, the nasal delivery method was significantly more effective than the highest dose (10 microg/kg) of intravenous orexin-A tested. The improvement in performance by orexin-A was specific to trials classified as high versus low cognitive load as determined by performance difficulty under normal testing conditions. Except for the maximum intravenous dose (10 microg/kg), neither delivery method affected task performance in alert non-sleep-deprived animals. The improved performance in sleep-deprived animals was accompanied by orexin-A related alterations in local cerebral glucose metabolism (CMRglc) in specific brain regions shown previously to be engaged by the task and impaired by sleep deprivation (Porrino et al., 2005). Consistent with the differential effects on performance, nasal delivered orexin-A produced a more pronounced reversal of sleep deprivation induced changes in brain metabolic activity (CMRglc) than intravenous orexin-A. These findings provide strong evidence for the effectiveness of intranasal orexin-A in alleviating cognitive deficits produced by loss of sleep.",
+      "keywords": [
+        "Orexin",
+        "Sleep deprivation",
+        "Sleep (system call)",
+        "Orexin-A",
+        "Neuroscience"
+      ],
+      "url": "https://openalex.org/W2014031369",
+      "matched_by": "en"
+    }
+  ]
+}

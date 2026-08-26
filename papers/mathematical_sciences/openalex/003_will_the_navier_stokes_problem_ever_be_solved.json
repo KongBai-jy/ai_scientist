@@ -1,0 +1,136 @@
+{
+  "problem_id": 3,
+  "problem_cn": "纳维-斯托克斯方程能够被彻底解决吗？",
+  "problem_en": "Will the Navier–Stokes problem ever be solved?",
+  "category": "数学科学",
+  "query_en": "Will the Navier–Stokes problem ever be solved",
+  "query_cn": "纳维-斯托克斯方程能够被彻底解决吗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T13:19:14",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W1968136659",
+      "doi": "https://doi.org/10.1002/fld.1650110509",
+      "title": "On the theory of semi‐implicit projection methods for viscous incompressible flow and its implementation via a finite element method that also introduces a nearly consistent mass matrix. Part 1: Theory",
+      "year": 1990,
+      "cited_by_count": 454,
+      "relevance_score": 296.26422,
+      "authors": [
+        "Philip Gresho"
+      ],
+      "venue": "International Journal for Numerical Methods in Fluids",
+      "abstract": "Abstract Ever since the time of Chorin's classic 1968 paper on projection methods, there have been lingering and poorly understood issues related to the best—or even proper or appropriate—boundary conditions (BCs) that should be (or could be) applied to the ‘intermediate’ velocity when the viscous terms in the incompressible Navier–Stokes equations are treated with an implicit time integration method and a Poisson equation is solved as part of a ‘time step’. These issues also pervade all related methods that uncouple the equations by ‘splitting’ the pressure computation from that of the velocity—at least in the presence of solid boundaries and (again) when implicit treatment of the viscous terms is employed. This paper is intended to clarify these issues by showing which intermediate BCs are ‘best’ and why some that are not work well anyway. In particular we show that all intermediate BCs must cause problems related to the regularity of the solution near boundaries, but that a near‐miraculous recovery occurs such that accurate results are nevertheless achieved beyond the spurious boundary layer introduced by such methods. The mechanism for this ‘miracle’ is related to the existence of a higher‐order equation that is actually satisfied by the pressure. All that is required then for projection (splitting, fractional step, etc.) methods to work well is that the spurious boundary layer be thin—as has been largely observed in practice.",
+      "keywords": [
+        "Spurious relationship",
+        "Mathematics",
+        "Finite element method",
+        "Projection (relational algebra)",
+        "Compressibility"
+      ],
+      "url": "https://openalex.org/W1968136659",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2611125018",
+      "doi": "https://doi.org/10.1016/j.cpc.2018.03.026",
+      "title": "AFiD-GPU: A versatile Navier–Stokes solver for wall-bounded turbulent flows on GPU clusters",
+      "year": 2018,
+      "cited_by_count": 126,
+      "relevance_score": 289.4053,
+      "authors": [
+        "Xiaojue Zhu",
+        "Everett Phillips",
+        "Vamsi Spandan",
+        "John Donners",
+        "Gregory Ruetsch",
+        "Joshua Romero",
+        "Rodolfo Ostilla–Mónico",
+        "Yantao Yang",
+        "Detlef Lohse",
+        "Roberto Verzicco",
+        "Massimiliano Fatica",
+        "Richard J. A. M. Stevens"
+      ],
+      "venue": "Computer Physics Communications",
+      "abstract": "",
+      "keywords": [
+        "Solver",
+        "Bounded function",
+        "Navier–Stokes equations",
+        "Computational science",
+        "Computer science"
+      ],
+      "url": "https://openalex.org/W2611125018",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2118281587",
+      "doi": "https://doi.org/10.4007/annals.2011.173.2.9",
+      "title": "Global regularity for some classes of large solutions to the Navier-Stokes equations",
+      "year": 2011,
+      "cited_by_count": 146,
+      "relevance_score": 273.32654,
+      "authors": [
+        "J CHEMIN",
+        "Isabelle Gallagher",
+        "Marius Paicu"
+      ],
+      "venue": "Annals of Mathematics",
+      "abstract": "In previous works by the first two authors, classes of initial data to the three-dimensional, incompressible Navier-Stokes equations were presented, generating a global smooth solution although the norm of the initial data may be chosen arbitrarily large. The main feature of the initial data considered in one of those studies is that it varies slowly in one direction, though in some sense it is \"well-prepared\" (its norm is large but does not depend on the slow parameter). The aim of this article is to generalize that setting to an \"ill prepared\" situation (the norm blows up as the small parameter goes to zero). As in those works, the proof uses the special structure of the nonlinear term of the equation.",
+      "keywords": [
+        "Mathematics",
+        "Navier–Stokes equations",
+        "Mathematical analysis",
+        "Applied mathematics",
+        "Compressibility"
+      ],
+      "url": "https://openalex.org/W2118281587",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2090371759",
+      "doi": "https://doi.org/10.1007/bf02392295",
+      "title": "On Leray’s problem of steady Navier-Stokes flow past a body in the plane",
+      "year": 1988,
+      "cited_by_count": 80,
+      "relevance_score": 244.91666,
+      "authors": [
+        "C. J. Amick"
+      ],
+      "venue": "Acta Mathematica",
+      "abstract": "2. FLow I N T H E U N B O U N D E D D O M A I N ~') . . . . . . . . . . . . . . . . 8 0 2.1. Properties of the vorticity and its level-sets . . . . . . . . . . 81 2.2. Boundedness of the velocity, convergence of 7, and additional properties of the vorticity . . . . . . . . . . . . . . . . . . . . 89 2.3. Convergence and decay rates in sectors . . . . . . . . . . . . 98 2.4. Convergence of the speed . . . . . . . . . . . . . . . . . . . 103 2.5. Some monotonicity results and decay rates for the vorticity . 105",
+      "keywords": [
+        "Mathematics",
+        "Plane (geometry)",
+        "Flow (mathematics)",
+        "Mathematical analysis",
+        "Navier–Stokes equations"
+      ],
+      "url": "https://openalex.org/W2090371759",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2073685945",
+      "doi": "https://doi.org/10.1016/j.jcp.2012.07.039",
+      "title": "Energy-conserving Runge–Kutta methods for the incompressible Navier–Stokes equations",
+      "year": 2012,
+      "cited_by_count": 89,
+      "relevance_score": 229.29927,
+      "authors": [
+        "Benjamin Sanderse"
+      ],
+      "venue": "Journal of Computational Physics",
+      "abstract": "",
+      "keywords": [
+        "Runge–Kutta methods",
+        "Mathematics",
+        "Discretization",
+        "Navier–Stokes equations",
+        "Applied mathematics"
+      ],
+      "url": "https://openalex.org/W2073685945",
+      "matched_by": "en"
+    }
+  ]
+}

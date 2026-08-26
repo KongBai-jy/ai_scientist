@@ -1,0 +1,141 @@
+{
+  "problem_id": 106,
+  "problem_cn": "复杂精神障碍能否更有效诊断、治疗？",
+  "problem_en": "Can we more effectively diagnose and treat complex mental disorders?",
+  "category": "神经科学",
+  "query_en": "Can we more effectively diagnose and treat complex mental disorders",
+  "query_cn": "复杂精神障碍能否更有效诊断、治疗",
+  "source": "openalex",
+  "collected_at": "2026-08-26T14:09:19",
+  "paper_count": 5,
+  "papers": [
+    {
+      "openalex_id": "https://openalex.org/W2582550385",
+      "doi": "https://doi.org/10.1002/wps.20375",
+      "title": "A network theory of mental disorders",
+      "year": 2017,
+      "cited_by_count": 3482,
+      "relevance_score": 1068.8418,
+      "authors": [
+        "Denny Borsboom"
+      ],
+      "venue": "World Psychiatry",
+      "abstract": "In recent years, the network approach to psychopathology has been advanced as an alternative way of conceptualizing mental disorders. In this approach, mental disorders arise from direct interactions between symptoms. Although the network approach has led to many novel methodologies and substantive applications, it has not yet been fully articulated as a scientific theory of mental disorders. The present paper aims to develop such a theory, by postulating a limited set of theoretical principles regarding the structure and dynamics of symptom networks. At the heart of the theory lies the notion that symptoms of psychopathology are causally connected through myriads of biological, psychological and societal mechanisms. If these causal relations are sufficiently strong, symptoms can generate a level of feedback that renders them self-sustaining. In this case, the network can get stuck in a disorder state. The network theory holds that this is a general feature of mental disorders, which can therefore be understood as alternative stable states of strongly connected symptom networks. This idea naturally leads to a comprehensive model of psychopathology, encompassing a common explanatory model for mental disorders, as well as novel definitions of associated concepts such as mental health, resilience, vulnerability and liability. In addition, the network theory has direct implications for how to understand diagnosis and treatment, and suggests a clear agenda for future research in psychiatry and associated disciplines.",
+      "keywords": [
+        "Psychopathology",
+        "Network theory",
+        "Vulnerability (computing)",
+        "Psychology",
+        "Mental health"
+      ],
+      "url": "https://openalex.org/W2582550385",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2769724041",
+      "doi": "https://doi.org/10.1177/0333102413485658",
+      "title": "The International Classification of Headache Disorders, 3rd edition (beta version)",
+      "year": 2013,
+      "cited_by_count": 8273,
+      "relevance_score": 731.32153,
+      "authors": [
+        "Ettlin, Dominik A"
+      ],
+      "venue": "Cephalalgia",
+      "abstract": "eISSN 1468-2982.",
+      "keywords": [
+        "Medicine",
+        "International Classification of Headache Disorders",
+        "BETA (programming language)",
+        "Headache Disorders",
+        "Medical physics"
+      ],
+      "url": "https://openalex.org/W2769724041",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2598210266",
+      "doi": "https://doi.org/10.1017/s003329171700040x",
+      "title": "Virtual reality in the assessment, understanding, and treatment of mental health disorders",
+      "year": 2017,
+      "cited_by_count": 1438,
+      "relevance_score": 592.41626,
+      "authors": [
+        "Daniel Freeman",
+        "Sarah Reeve",
+        "Abigail Robinson",
+        "Anke Ehlers",
+        "David M. Clark",
+        "Bernhard Spanlang",
+        "Mel Slater"
+      ],
+      "venue": "Psychological Medicine",
+      "abstract": "Mental health problems are inseparable from the environment. With virtual reality (VR), computer-generated interactive environments, individuals can repeatedly experience their problematic situations and be taught, via evidence-based psychological treatments, how to overcome difficulties. VR is moving out of specialist laboratories. Our central aim was to describe the potential of VR in mental health, including a consideration of the first 20 years of applications. A systematic review of empirical studies was conducted. In all, 285 studies were identified, with 86 concerning assessment, 45 theory development, and 154 treatment. The main disorders researched were anxiety (n = 192), schizophrenia (n = 44), substance-related disorders (n = 22) and eating disorders (n = 18). There are pioneering early studies, but the methodological quality of studies was generally low. The gaps in meaningful applications to mental health are extensive. The most established finding is that VR exposure-based treatments can reduce anxiety disorders, but there are numerous research and treatment avenues of promise. VR was found to be a much-misused term, often applied to non-interactive and non-immersive technologies. We conclude that VR has the potential to transform the assessment, understanding and treatment of mental health problems. The treatment possibilities will only be realized if - with the user experience at the heart of design - the best immersive VR technology is combined with targeted translational interventions. The capability of VR to simulate reality could greatly increase access to psychological therapies, while treatment outcomes could be enhanced by the technology's ability to create new realities. VR may merit the level of attention given to neuroimaging.",
+      "keywords": [
+        "Virtual reality",
+        "Psychological intervention",
+        "Mental health",
+        "Anxiety",
+        "Psychology"
+      ],
+      "url": "https://openalex.org/W2598210266",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W2266871031",
+      "doi": "https://doi.org/10.1016/s2215-0366(15)00505-2",
+      "title": "Estimating the true global burden of mental illness",
+      "year": 2016,
+      "cited_by_count": 2550,
+      "relevance_score": 583.3243,
+      "authors": [
+        "Daniel Vigo",
+        "Graham Thornicroft",
+        "Rifat Atun"
+      ],
+      "venue": "The Lancet Psychiatry",
+      "abstract": "",
+      "keywords": [
+        "Mental illness",
+        "Burden of disease",
+        "Disease burden",
+        "Medicine",
+        "Psychiatry"
+      ],
+      "url": "https://openalex.org/W2266871031",
+      "matched_by": "en"
+    },
+    {
+      "openalex_id": "https://openalex.org/W4390793092",
+      "doi": "https://doi.org/10.1002/wps.21160",
+      "title": "The social determinants of mental health and disorder: evidence, prevention and recommendations",
+      "year": 2024,
+      "cited_by_count": 1177,
+      "relevance_score": 560.4678,
+      "authors": [
+        "James B. Kirkbride",
+        "Deidre M. Anglin",
+        "Ian Colman",
+        "Jennifer Dykxhoorn",
+        "Peter B. Jones",
+        "Praveetha Patalay",
+        "Alexandra Pitman",
+        "Emma Soneson",
+        "Thomas Steare",
+        "Talen Wright",
+        "Siân Lowri Griffiths"
+      ],
+      "venue": "World Psychiatry",
+      "abstract": "People exposed to more unfavourable social circumstances are more vulnerable to poor mental health over their life course, in ways that are often determined by structural factors which generate and perpetuate intergenerational cycles of disadvantage and poor health. Addressing these challenges is an imperative matter of social justice. In this paper we provide a roadmap to address the social determinants that cause mental ill health. Relying as far as possible on high-quality evidence, we first map out the literature that supports a causal link between social determinants and later mental health outcomes. Given the breadth of this topic, we focus on the most pervasive social determinants across the life course, and those that are common across major mental disorders. We draw primarily on the available evidence from the Global North, acknowledging that other global contexts will face both similar and unique sets of social determinants that will require equitable attention. Much of our evidence focuses on mental health in groups who are marginalized, and thus often exposed to a multitude of intersecting social risk factors. These groups include refugees, asylum seekers and displaced persons, as well as ethnoracial minoritized groups; lesbian, gay, bisexual, transgender and queer (LGBTQ+) groups; and those living in poverty. We then introduce a preventive framework for conceptualizing the link between social determinants and mental health and disorder, which can guide much needed primary prevention strategies capable of reducing inequalities and improving population mental health. Following this, we provide a review of the evidence concerning candidate preventive strategies to intervene on social determinants of mental health. These interventions fall broadly within the scope of universal, selected and indicated primary prevention strategies, but we also briefly review important secondary and tertiary strategies to promote recovery in those with existing mental disorders. Finally, we provide seven key recommendations, framed around social justice, which constitute a roadmap for action in research, policy and public health. Adoption of these recommendations would provide an opportunity to advance efforts to intervene on modifiable social determinants that affect population mental health.",
+      "keywords": [
+        "Mental health",
+        "Social determinants of health",
+        "Poverty",
+        "Medicine",
+        "Mental illness"
+      ],
+      "url": "https://openalex.org/W4390793092",
+      "matched_by": "en"
+    }
+  ]
+}

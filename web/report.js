@@ -252,15 +252,6 @@ function snapshotToMarkdown(snap, allRounds) {
   return L.join("\n");
 }
 
-function setupRoundSelect(all) {
-  const sel = $("#roundSelect");
-  sel.innerHTML = all.map(r => `<option value="${esc(r.round)}">${esc(r.round)} · 综合 ${fmtScore(r.overall_score)}</option>`).join("");
-  sel.onchange = () => {
-    const snap = state.snapshots.find(x => x.round === sel.value);
-    if (snap) { state.current = snap; render(snap, state.snapshots); }
-  };
-}
-
 (async () => {
   try {
     const all = await loadSnapshots();
@@ -269,8 +260,6 @@ function setupRoundSelect(all) {
     const param = new URLSearchParams(location.search).get("round");
     const snap = all.find(x => x.round === param) || all[all.length - 1];
     state.current = snap;
-    setupRoundSelect(all);
-    $("#roundSelect").value = snap.round;
     render(snap, all);
   } catch (e) {
     $("#paper").innerHTML = `<div class="loading">${esc(e.message)}</div>`;

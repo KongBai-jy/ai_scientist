@@ -115,13 +115,18 @@ _POOL_MULTIPLIER = 4
 def _hybrid_retrieve(
     chroma: ChromaService,
     question: str,
-    top_k: int = 5,
+    top_k: int = 3,
 ) -> List[Dict[str, Any]]:
-    """分来源融合检索：本地知识库 + 至少 1 条 arXiv 在线文献。
+    """分来源融合检索：按相似度取前 top_k 条，不强制来源配额。
 
     思路：一次相似度检索取扩大后的候选池（不增加 embedding 调用），
-    按 metadata 是否含 arxiv_id 区分「arXiv 在线文献」与「本地/Science 文献」。
-    组合时保证 arXiv 来源至少 1 条参与证据生成，剩余名额给本地高相关文献。
+    按 metadata 是否含 arxiv_id / openalex_id 区分三桶：
+      - arXiv 在线文献（arxiv_id）
+      - OpenAlex 离线文献（openalex_id）
+      - 其他（Science_2025 / 本地 PDF，二者皆无专有 ID）
+    组合策略：若候选池内存在 arXiv 文献，则优先纳入至少 1 条 arXiv（非强制兜底），
+    剩余名额再按「OpenAlex + 其他」合并后的相似度排序依次追加，
+    最终返回结果总数 ≤ top_k 条，不再限定 OpenAlex 与 arXiv 的固定比例。
 
     Args:
         chroma: 向量库服务
@@ -135,9 +140,10 @@ def _hybrid_retrieve(
     pool = chroma.similarity_search(question, k=pool_size)
 
     arxiv = [r for r in pool if r["metadata"].get("arxiv_id")]
-    local = [r for r in pool if not r["metadata"].get("arxiv_id")]
+    openalex = [r for r in pool if r["metadata"].get("openalex_id")]
+    other = [r for r in pool if not r["metadata"].get("arxiv_id") and not r["metadata"].get("openalex_id")]
     logger.info(
-        f"分来源检索: 候选 {len(pool)} 条（arXiv={len(arxiv)}，本地/Science={len(local)}）"
+        f"分来源检索: 候选 {len(pool)} 条（arXiv={len(arxiv)}，OpenAlex={len(openalex)}，其他={len(other)}）"
     )
 
     merged: List[Dict[str, Any]] = []
@@ -149,7 +155,7 @@ def _hybrid_retrieve(
         for r in results:
             if added >= limit:
                 break
-            key = (r["metadata"].get("source"), r["content"][:40])
+            key = (r["metadata"].get("source"), r["metadata"].get("openalex_id"), r["metadata"].get("arxiv_id"), r["content"][:40])
             if key in seen:
                 continue
             seen.add(key)
@@ -157,20 +163,38 @@ def _hybrid_retrieve(
             added += 1
         return added
 
-    # 至少 1 条 arXiv 在线文献参与
-    n_arxiv = min(1, len(arxiv))
-    _add(arxiv, n_arxiv)
-    # 剩余名额由本地/Science 高相关文献填充
-    _add(local, top_k - n_arxiv)
+    n_arxiv = 0
+    # 1) 若存在 arXiv 在线文献，优先纳入至少 1 条（非强制兜底，池中无则跳过）
+    if len(arxiv) > 0:
+        n_arxiv = _add(arxiv, 1)
 
-    if n_arxiv > 0:
-        logger.info(f"已纳入 {n_arxiv} 条 arXiv 在线文献参与假设构建")
+    # 2) 剩余名额：合并 OpenAlex + 其他按原有相似度排序依次追加，直到填满 top_k
+    remaining = top_k - len(merged)
+    if remaining > 0:
+        # 合并 openalex + other，保持它们在 pool 中的原始相对相似度顺序
+        # （先构造一个 content[:40] 辅助映射，用于快速定位顺序）
+        order_map = {}
+        for idx, r in enumerate(pool):
+            k = r["content"][:40]
+            if k not in order_map:
+                order_map[k] = idx
+        rest = openalex + other
+        rest_sorted = sorted(rest, key=lambda r: order_map.get(r["content"][:40], 10**9))
+        _add(rest_sorted, remaining)
+
+    n_openalex = sum(1 for r in merged if r["metadata"].get("openalex_id"))
+    n_arxiv_actual = sum(1 for r in merged if r["metadata"].get("arxiv_id"))
+    n_other = len(merged) - n_openalex - n_arxiv_actual
+
+    if n_arxiv_actual > 0:
+        logger.info(f"已纳入 {n_arxiv_actual} 条 arXiv 在线文献参与假设构建")
+    logger.info(f"证据来源构成: arXiv={n_arxiv_actual}, OpenAlex={n_openalex}, 其他={n_other}（共 {len(merged)} 条）")
     return merged
 
 
 def explore(
     question: str,
-    top_k: int = 5,
+    top_k: int = 3,
     max_retries: int = 3
 ) -> ExplorerOutput:
     """

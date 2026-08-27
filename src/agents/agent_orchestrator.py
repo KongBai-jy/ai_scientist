@@ -38,6 +38,11 @@ else:
 load_dotenv(_PROJECT_ROOT / ".env")
 logger = logging.getLogger(__name__)
 
+# 在线检索的 arXiv 临时文献：跑完 pipeline 后是否保留在向量库中。
+# KEEP_SEARCHED_PAPERS=true 时保留（入库即长期生效，不再清理）；
+# 否则执行策略 B（精确清理本次塞入的临时文献，避免污染长期知识库）。
+KEEP_SEARCHED_PAPERS = os.getenv("KEEP_SEARCHED_PAPERS", "false").strip().lower() in {"1", "true", "yes"}
+
 
 # ============================================================
 # 1. 配置
@@ -387,8 +392,9 @@ def run_full_pipeline(
         return snapshot
     finally:
         # ====== 精确清理本次塞入的临时文献（策略 B）======
-        # 即使 pipeline 失败/取消也执行清理，避免污染长期知识库
-        if _paper_svc is not None:
+        # 仅当 KEEP_SEARCHED_PAPERS=false 时清理；设为 true 则在线检索的文献保留入库。
+        # 即使 pipeline 失败/取消也执行清理，避免污染长期知识库（开关为 false 时）。
+        if _paper_svc is not None and not KEEP_SEARCHED_PAPERS:
             try:
                 post_arxiv_ids = _paper_svc.get_existing_arxiv_ids()
                 new_ids = post_arxiv_ids - _pre_arxiv_ids

@@ -811,62 +811,114 @@ class PaperSearchService:
 
     @staticmethod
     def _translate_to_english(text: str) -> Optional[str]:
-        """调用 DashScope（或系统 LLM）将中文 query 翻译为 3-6 个英文关键词"""
+        """调用 DashScope（或系统 LLM）将中文 query 翻译为 3-6 个英文关键词。
+
+        多层兜底保证中文仍能产出英文 query：
+          1) 先用 sci2025_problems.json 的「中文-英文」离线对照做精确匹配（快、稳）；
+          2) 匹配不到才调用 DashScope 翻译（qwen3.5-plus 等推理模型响应偶发超时，
+             故对本次调用做最多 MAX_ATTEMPTS 次重试，并兼容 reasoning_content）；
+          3) 仍失败则返回 None，由上层走原有降级。
+        """
+        import os
+        from dotenv import load_dotenv
+        from pathlib import Path
+
+        # 加载项目根目录 .env（如果还没加载）
+        _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+        load_dotenv(_PROJECT_ROOT / ".env", override=False)
+
+        def _normalize(s: str) -> str:
+            return re.sub(r"[^\w\u4e00-\u9fff]+", "", (s or "")).lower()
+
+        # ===== 1) 离线中英对照兜底 =====
         try:
-            import os
-            from dotenv import load_dotenv
-            from pathlib import Path
+            problems_path = _PROJECT_ROOT / "data" / "sci2025_problems.json"
+            if problems_path.exists():
+                import json as _json
+                with open(problems_path, "r", encoding="utf-8") as _f:
+                    problems = _json.load(_f)
+                needle = _normalize(text)
+                for p in problems:
+                    if _normalize(p.get("cn", "")) == needle and p.get("en"):
+                        en = p["en"]
+                        # 用英文问题提取关键词 term 做 arXiv query
+                        terms = re.findall(r"[a-zA-Z0-9]+(?:[\-'][a-zA-Z0-9]+)*", en)
+                        if terms:
+                            logger.info(f"离线对照翻译命中: {en!r}")
+                            return PaperSearchService._truncate_query_terms(" ".join(terms), caller="offline_match")
+        except Exception as _off:
+            logger.debug(f"离线对照翻译异常（忽略）: {_off}")
 
-            # 加载项目根目录 .env（如果还没加载）
-            _PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-            load_dotenv(_PROJECT_ROOT / ".env", override=False)
-
-            api_key = (
-                os.getenv("DASHSCOPE_API_KEY")
-                or os.getenv("DASHSCOPE_API_KEY_EMBEDDING")
-            )
-            if not api_key:
-                logger.warning("无 DASHSCOPE_API_KEY，跳过中文翻译")
-                return None
-
-            model = os.getenv("QWEN_MODEL", "qwen-plus")
-            prompt = (
-                "将下面的科学研究问题翻译成 3-6 个英文关键词短语，"
-                "这些关键词将用于 arXiv 文献检索。\n"
-                "要求：只输出关键词，用英文逗号分隔，不要其他文字。\n"
-                f"问题：{text}"
-            )
-            resp = httpx.post(
-                "https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions",
-                headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "Content-Type": "application/json",
-                },
-                json={
-                    "model": model,
-                    "messages": [{"role": "user", "content": prompt}],
-                    "temperature": 0.1,
-                    "max_tokens": 128,
-                },
-                timeout=15,
-            )
-            resp.raise_for_status()
-            data = resp.json()
-            content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
-            content = content.strip()
-            # 清理可能的引号、序号和末尾句号
-            content = re.sub(r"^[\d\.\)\s]+", "", content)
-            content = re.sub(r"[\"'`]", "", content)
-            content = content.rstrip(".。")
-            # 将逗号分隔符替换为空格，让 arXiv 把所有关键词作为一个联合 query
-            # 例如 "YBCO, high-temperature superconductivity" → "YBCO high-temperature superconductivity"
-            content = re.sub(r"[,，;；]", " ", content)
-            content = re.sub(r"\s+", " ", content).strip()
-            # 出口限词（避免过长 query 触发 arXiv 严格配额）
-            return PaperSearchService._truncate_query_terms(content, caller="translate") or None
-        except Exception as e:
-            logger.warning(f"中文翻译失败（将使用降级策略）: {e}")
+        # ===== 2) LLM 翻译（带重试） =====
+        api_key = (
+            os.getenv("DASHSCOPE_API_KEY")
+            or os.getenv("DASHSCOPE_API_KEY_EMBEDDING")
+        )
+        if not api_key:
+            logger.warning("无 DASHSCOPE_API_KEY，跳过中文翻译")
             return None
+
+        model = os.getenv("QWEN_MODEL", "qwen-plus")
+        # 优先使用 .env 配置的 DashScope 私有化/专属 endpoint；
+        # 兜底用公网 compatible-mode 域名（部分账号需在专属 workspace 内调用）。
+        base = os.getenv("DASHSCOPE_API_BASE", "") or "https://dashscope.aliyuncs.com/compatible-mode/v1"
+        base = base.rstrip("/")
+        prompt = (
+            "将下面的科学研究问题翻译成 3-6 个英文关键词短语，"
+            "这些关键词将用于 arXiv 文献检索。\n"
+            "要求：只输出关键词，用英文逗号分隔，不要其他文字、不要解释。\n"
+            f"问题：{text}"
+        )
+
+        MAX_ATTEMPTS = 3
+        last_err: Optional[Exception] = None
+        for attempt in range(1, MAX_ATTEMPTS + 1):
+            try:
+                resp = httpx.post(
+                    f"{base}/chat/completions",
+                    headers={
+                        "Authorization": f"Bearer {api_key}",
+                        "Content-Type": "application/json",
+                    },
+                    json={
+                        "model": model,
+                        "messages": [{"role": "user", "content": prompt}],
+                        "temperature": 0.1,
+                        # qwen3.5-plus 等推理模型生成 final 前会先输出大量
+                        # reasoning tokens，故放大 max_tokens 与 timeout，否则
+                        # content 全被思考占满且 15s 读超时等不到首个输出字节。
+                        "max_tokens": 300,
+                    },
+                    timeout=90,
+                )
+                resp.raise_for_status()
+                data = resp.json()
+                message = data.get("choices", [{}])[0].get("message", {}) or {}
+                # 兼容推理模型：可从 reasoning_content / content 取文本
+                content = (message.get("content") or message.get("reasoning_content") or "").strip()
+                if not content:
+                    last_err = RuntimeError("翻译返回空内容")
+                    continue
+                # 清理可能的引号、序号和末尾句号
+                content = re.sub(r"^[\d\.\)\s]+", "", content)
+                content = re.sub(r"[\"'`]", "", content)
+                content = content.rstrip(".。")
+                # 将逗号分隔符替换为空格，让 arXiv 把所有关键词作为一个联合 query
+                content = re.sub(r"[,，;；]", " ", content)
+                content = re.sub(r"\s+", " ", content).strip()
+                # 出口限词（避免过长 query 触发 arXiv 严格配额）
+                return PaperSearchService._truncate_query_terms(content, caller="translate") or None
+            except httpx.TransportError as e:
+                last_err = e
+                logger.warning(f"中文翻译调用失败（第 {attempt}/{MAX_ATTEMPTS} 次）: {e}")
+                continue
+            except Exception as e:
+                last_err = e
+                logger.warning(f"中文翻译异常（第 {attempt}/{MAX_ATTEMPTS} 次）: {e}")
+                continue
+
+        logger.warning(f"中文翻译失败（将使用降级策略）: {last_err}")
+        return None
 
     # ============================================================
     # arXiv 检索

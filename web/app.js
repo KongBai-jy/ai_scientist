@@ -282,16 +282,24 @@ function currentPaperGranularity() {
   const sel = $("#paperGranularity");
   return sel && (sel.value === "full") ? "full" : "fast";
 }
+function currentAutoSearchPapers() {
+  const ckb = $("#autoSearchPapers");
+  return !!(ckb && ckb.checked);
+}
 async function apiCreateJob(question, feedback, round, projectId) {
+  const payloadBase = {
+    paper_granularity: currentPaperGranularity(),
+    auto_search_papers: currentAutoSearchPapers(),
+  };
   if (feedback) {
     return apiFetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, paper_granularity: currentPaperGranularity() }),
+      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, ...payloadBase }),
     }, 15000);
   }
   return apiFetch("/api/run", {
     method: "POST",
-    body: JSON.stringify({ question, initial_round: round, project_id: projectId, paper_granularity: currentPaperGranularity() }),
+    body: JSON.stringify({ question, initial_round: round, project_id: projectId, ...payloadBase }),
   }, 15000);
 }
 async function apiJobStatus(jobId) {

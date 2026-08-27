@@ -1,5 +1,18 @@
-@echo off
+﻿@echo off
+chcp 65001 >nul
 setlocal EnableExtensions EnableDelayedExpansion
+
+rem === Entry guard: prevent window from closing on double-click ===
+rem When Explorer double-clicks a .bat, it uses cmd.exe /C which closes the window on exit.
+rem Detect this and self-restart with cmd /K to keep the window open for error inspection.
+set "_BAT=%~f0"
+set "_IS_DOUBLE_CLICK=0"
+echo %CMDCMDLINE% | findstr /I /C:" /c " | findstr /I /C:"%_BAT%" >nul 2>&1
+if not errorlevel 1 set "_IS_DOUBLE_CLICK=1"
+if "%_IS_DOUBLE_CLICK%"=="1" (
+    start "AI Scientist Launcher" "%COMSPEC%" /K """%_BAT%"" %*"
+    exit /b 0
+)
 
 cd /d "%~dp0"
 title AI Scientist - http://127.0.0.1:8848/static/index.html
@@ -12,7 +25,7 @@ for /f "tokens=5" %%P in ('netstat -ano ^| findstr /R /C:":8848 .*LISTENING"') d
     )
 )
 
-rem 兼容 .venv（带点）与 venv（无点）两种虚拟环境命名
+rem Support both .venv and venv directory names
 set "PYTHON_EXE="
 if exist "%~dp0.venv\Scripts\python.exe" set "PYTHON_EXE=%~dp0.venv\Scripts\python.exe"
 if not defined PYTHON_EXE if exist "%~dp0venv\Scripts\python.exe" set "PYTHON_EXE=%~dp0venv\Scripts\python.exe"
@@ -21,15 +34,23 @@ if not defined PYTHON_EXE (
     set "PYTHON_EXE=python"
 )
 
-rem The batch file opens the browser itself after the page is reachable.
 set "AUTO_OPEN_BROWSER=0"
 set "TEST_URL=http://127.0.0.1:8848/static/index.html"
 
+set "BOOT_LOG=%~dp0data\boot.log"
+if not exist "%~dp0data" mkdir "%~dp0data"
+del /q "%BOOT_LOG%" >nul 2>&1
+
 echo [2/2] Starting AI Scientist...
 echo URL: %TEST_URL%
+echo (Launch log: %BOOT_LOG%)
 echo.
 
-start "AI Scientist Server" /min "%PYTHON_EXE%" "%~dp0src\main.py"
+rem Start backend service via _boot_runner.py (tee: stdout/stderr to both console and boot.log)
+rem Using cmd /k keeps the server window open on crash so you can see the Traceback.
+set "RUNNER_PY=%~dp0scripts\_boot_runner.py"
+set "_SRV_CMD="%PYTHON_EXE%" "%RUNNER_PY%" "%BOOT_LOG%" "%PYTHON_EXE%" "%~dp0src\main.py""
+start "AI Scientist Server" /NORMAL "%COMSPEC%" /S /K %_SRV_CMD%
 
 echo Waiting for the web service...
 powershell.exe -NoProfile -ExecutionPolicy Bypass -Command ^
@@ -38,7 +59,17 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -Command ^
 if errorlevel 1 (
     echo.
     echo The service did not become ready within 45 seconds.
-    echo Check the minimized "AI Scientist Server" window for details.
+    echo.
+    echo ====== Last lines of boot log ======
+    if exist "%BOOT_LOG%" (
+        powershell.exe -NoProfile -Command "Get-Content '%BOOT_LOG%' -Tail 40"
+    ) else (
+        echo (no boot log found — server process may not have started at all)
+    )
+    echo ===================================
+    echo.
+    echo Opening full boot log in notepad...
+    if exist "%BOOT_LOG%" ( start notepad "%BOOT_LOG%" )
     pause
     exit /b 1
 )

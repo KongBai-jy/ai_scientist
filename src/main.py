@@ -123,7 +123,7 @@ class RunRequest(BaseModel):
     feedback: Optional[str] = Field(None, description="专家反馈（迭代时传入）")
     initial_round: str = Field("V1", description="轮次标签")
     project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
-    auto_search_papers: bool = Field(True, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认开启）")
+    auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认关闭，避免演示时在线下载 PDF 拖慢）")
     paper_granularity: str = Field("fast", description="arXiv 文献入库粒度：fast=摘要模式(省token,默认)，full=全文模式(证据更细)")
 
 
@@ -132,7 +132,7 @@ class FeedbackRequest(BaseModel):
     feedback: str = Field(..., min_length=3)
     current_round: str = Field(..., pattern=r"^V[1-3]$")
     project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
-    auto_search_papers: bool = Field(True, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认开启）")
+    auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认关闭，避免演示时在线下载 PDF 拖慢）")
     paper_granularity: str = Field("fast", description="arXiv 文献入库粒度：fast=摘要模式(省token,默认)，full=全文模式(证据更细)")
 
 
@@ -512,15 +512,24 @@ def _free_port(port: int) -> None:
     import subprocess
 
     try:
-        out = subprocess.run(
+        _res = subprocess.run(
             ["netstat", "-ano"],
-            capture_output=True, text=True, timeout=10,
-        ).stdout
+            capture_output=True, timeout=10,
+        )
+        _raw = _res.stdout or b""
+        # Windows 默认命令行编码可能是 GBK/CP936，并且输出头部可能含 BOM 类字节；
+        # 这里优先按 utf-8 容错解码，失败则回退到 mbcs 再容错。
+        for _enc in ("utf-8", "mbcs"):
+            try:
+                out = _raw.decode(_enc, errors="replace")
+                break
+            except Exception:
+                out = ""
     except Exception:
         return  # 无法查询端口状态时不阻塞启动（uvicorn 会给出标准报错）
 
     pids = set()
-    for line in out.splitlines():
+    for line in (out or "").splitlines():
         if f":{port} " in line and "LISTENING" in line:
             parts = line.split()
             try:

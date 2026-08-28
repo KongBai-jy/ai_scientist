@@ -7,7 +7,8 @@
 ## 核心能力
 
 - **多智能体研究流水线**：Explorer、Scientist、Critic 分工协作。
-- **检索增强生成**：使用 Chroma 向量库检索本地科学文献和种子知识。
+- **检索增强生成**：使用 Chroma 向量库检索本地科学文献和种子知识；默认给出一条文献按相似度取 **Top-3** 证据（含至少 1 条 arXiv 在线文献），不再强制限定 OpenAlex/arXiv 来源比例。
+- **科学问题集支持**：内置《Science 125 题》中英对照库与 OpenAlex 离线预采集（593 篇/1337 chunks），中文问题可离线命中再回退 LLM 翻译，确保能命中 arXiv 在线检索。
 - **可验证假设生成**：输出假设陈述、推论逻辑、可证伪条件及 L1/L2/L3 研究计划。
 - **五维质量评审**：从证据、可证伪性、理论一致性、新颖度和跨域适配度进行评分。
 - **人在回路迭代**：专家反馈可触发 V1 → V2 → V3 全链路重新研究。
@@ -81,10 +82,10 @@ pip install -r requirements.txt
 # 阿里云百炼
 DASHSCOPE_API_KEY=your_dashscope_api_key
 DASHSCOPE_API_BASE=https://dashscope.aliyuncs.com/compatible-mode/v1
-QWEN_MODEL=qwen-max
+QWEN_MODEL=qwen-plus   # 建议 qwen-plus；当前本地 .env 实测用 qwen3.7-plus
 
 # 向量模型；可按百炼账号可用模型调整
-QWEN_MODEL_EMBEDDING=text-embedding-v3
+QWEN_MODEL_EMBEDDING=qwen3.7-text-embedding
 DASHSCOPE_API_KEY_EMBEDDING=
 
 # 服务
@@ -93,6 +94,13 @@ AUTO_OPEN_BROWSER=1
 
 # 本地向量库
 CHROMA_DB_PATH=./data/chroma_db
+CHROMA_COLLECTION_NAME=ai_scientist_literature
+
+# 在线检索文献保留开关：true 保留（供 125 题全量复用证据），false 精确清理本次临时文献
+KEEP_SEARCHED_PAPERS=false
+
+# OpenAlex 礼貌池邮箱（离线采集 X-Token/mailto，可选）
+OPENALEX_EMAIL=
 
 # 默认无需配置，系统会使用 SQLite
 # DATABASE_URL=sqlite:///data/ai_scientist.db
@@ -110,10 +118,10 @@ start.bat
 
 脚本会结束占用 `8848` 端口的旧进程、启动服务，等待页面可访问后自动打开浏览器。
 
-也可以手动启动：
+也可以手动启动（**必须用项目 venv 内的 python，并从项目根目录运行**，否则会因缺少 `langchain_chroma` 等依赖或找不到 `src.main` 而失败）：
 
 ```bash
-python src/main.py
+venv\Scripts\python.exe src\main.py
 ```
 
 然后访问：
@@ -140,12 +148,15 @@ http://127.0.0.1:8848/static/index.html
 |---|---:|---|---|
 | `DASHSCOPE_API_KEY` | 是 | — | 阿里云百炼 API Key |
 | `DASHSCOPE_API_BASE` | 否 | 百炼兼容接口 | OpenAI 兼容 API 地址 |
-| `QWEN_MODEL` | 否 | `qwen-max` | Explorer、Scientist、Critic 使用的模型 |
-| `QWEN_MODEL_EMBEDDING` | 否 | 项目配置值 | Chroma 文档向量模型 |
+| `QWEN_MODEL` | 否 | `qwen-plus` | Explorer、Scientist、Critic 使用的模型（本地实测 `qwen3.7-plus`） |
+| `QWEN_MODEL_EMBEDDING` | 否 | 项目配置值 | Chroma 文档向量模型（`qwen3.7-text-embedding`，1024 维） |
 | `DASHSCOPE_API_KEY_EMBEDDING` | 否 | 主 API Key | 独立的 Embedding API Key |
 | `PORT` | 否 | `8848` | Web 服务端口 |
 | `AUTO_OPEN_BROWSER` | 否 | `1` | 启动后是否自动打开浏览器 |
 | `CHROMA_DB_PATH` | 否 | `./data/chroma_db` | Chroma 持久化目录 |
+| `CHROMA_COLLECTION_NAME` | 否 | `ai_scientist_literature` | Chroma collection 名称 |
+| `KEEP_SEARCHED_PAPERS` | 否 | `false` | 在线检索（arXiv）入库文献跑完后是否保留在向量库 |
+| `OPENALEX_EMAIL` | 否 | — | 离线 OpenAlex 采集礼貌池邮箱（提升 QPS） |
 | `DATABASE_URL` | 否 | SQLite | SQLAlchemy 数据库连接地址 |
 
 如需使用 MySQL，可以配置 `DATABASE_URL`，或提供以下变量：

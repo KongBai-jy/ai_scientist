@@ -63,8 +63,10 @@ CORS 已开放（allow_origins=["*"]）
 
 ```json
 {
-  "question": "关于高温超导材料的研究：如何提升 YBCO 体系的超导转变温度(Tc)？",
-  "initial_round": "V1"
+  "question": "人类情绪起源于哪里？",
+  "initial_round": "V1",
+  "auto_search_papers": false,
+  "paper_granularity": "fast"
 }
 ```
 
@@ -73,6 +75,8 @@ CORS 已开放（allow_origins=["*"]）
 | `question` | string | ✅ | 长度 ≥ 5 字符 | 科学问题 |
 | `feedback` | string | ❌ | 长度 ≥ 3 字符 | 迭代时填，首次运行不填 |
 | `initial_round` | string | ❌ | 默认 `"V1"` | 轮次标签，可选 `V1`/`V2`/`V3` |
+| `auto_search_papers` | bool | ❌ | 默认 `false` | 是否在 pipeline 前自动检索 arXiv 文献入库（跑完按 KEEP_SEARCHED_PAPERS 清理） |
+| `paper_granularity` | string | ❌ | 默认 `"fast"` | arXiv 入库粒度：`fast`=摘要模式(省 token)、`full`=全文模式(证据更细) |
 
 > ⚠️ **首次运行时不要传 `feedback` 字段**（或传 `null`），否则会触发迭代逻辑而非首次生成。
 
@@ -578,6 +582,8 @@ interface RunRequest {
   question: string;           // ≥5 字符
   feedback?: string;          // 迭代时填，≥3 字符
   initial_round?: 'V1' | 'V2' | 'V3';  // 默认 V1
+  auto_search_papers?: boolean;   // 默认 false，是否自动检索 arXiv 入库
+  paper_granularity?: 'fast' | 'full';  // 默认 'fast'，arXiv 入库粒度
 }
 
 interface FeedbackRequest {
@@ -759,3 +765,4 @@ interface ApiError {
 | 日期 | 版本 | 变更内容 |
 |------|------|---------|
 | 2026-08-15 | v1.0 | 初始版本，基于后端实测数据编写 |
+| 2026-08-27 | v1.1 | `/api/run` 与 `/api/feedback` 新增 `auto_search_papers`（默认 false）、`paper_granularity`（默认 fast）；补充 request body 与 TypeScript 类型 |

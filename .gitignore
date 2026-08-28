@@ -93,3 +93,6 @@ Desktop.ini
 *.bak
 *.tmp
 *.temp
+
+# --- 更多文件 ---
+.trae/

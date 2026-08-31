@@ -161,6 +161,10 @@ def critique(
     # 迭代评审上下文：告诉 Critic 本轮应比上一轮更好
     iterative_context = ""
     if round_label != "V1" and prev_scores:
+        prev_total = sum(prev_scores.values()) / len(prev_scores) if prev_scores else 0
+        weak_dims = sorted(prev_scores.items(), key=lambda x: x[1])[:2]
+        weak_desc = ", ".join([f"{d}({v})" for d, v in weak_dims])
+
         iterative_context = f"""
 【迭代评审上下文】
 当前是 {round_label} 迭代评审。上一轮（V{int(round_label[1:])-1}）五维评分为：
@@ -169,11 +173,14 @@ def critique(
 - consistency: {prev_scores.get('consistency', 'N/A')}
 - novelty: {prev_scores.get('novelty', 'N/A')}
 - cross_domain: {prev_scores.get('cross_domain', 'N/A')}
+- 上轮均分: {prev_total:.1f}
 
-本轮假设声称已针对上一轮缺陷做了改进。请重点验证改进是否真正到位：
-1. 如果上一轮 evidence 低分，本轮是否提供了更强的证据支撑？
-2. 如果上一轮 falsifiability 低分，本轮的可证伪条件是否更具体？
-3. 如果本轮质量未明显改善，应保持严厉评分，不要因为"迭代"而放松标准。
+## 评分原则（最高优先级）
+1. **关注相对改进而非绝对分数**：重点评估本轮相比上一轮的改进幅度，而非单纯追求高分。如果某维度已有改善（哪怕幅度不大），应在评分中体现正向变化。
+2. **保护已有优势维度**：上一轮得分 ≥ 8 的维度，除非本轮出现严重退化，否则不应大幅扣分（降幅不超过 1.5 分）。
+3. **聚焦薄弱维度突破**：上一轮最弱的两个维度（{weak_desc}）是本轮改进的重点。如果这些维度有实质性改善，即使其他维度略有波动，综合评分仍应体现进步。
+4. **避免矫枉过正惩罚**：如果 Scientist 为修复某一缺陷而在其他方面做了合理权衡（如为增强可证伪性而牺牲部分新颖度），不应视为退步。
+5. **评分锚定**：本轮各维度评分与上一轮的差值应在 [-2, +3] 范围内，超出此范围需在 detailed_review 中给出充分理由。
 """
 
     messages = [

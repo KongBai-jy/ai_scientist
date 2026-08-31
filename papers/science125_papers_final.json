@@ -1,0 +1,4054 @@
+{
+  "source": "science_125_crawl",
+  "description": "Science 125 Questions Paper Knowledge Base - crawled via 44access (2026-08-29)",
+  "crawl_note": "覆盖117个问题共171篇论文，arXiv/Nature/Scientific Reports，摘要+元数据",
+  "total_problems": 125,
+  "total_papers": 190,
+  "categories_covered": [
+    "人工智能",
+    "信息科学",
+    "化学",
+    "医学与健康",
+    "天文学",
+    "工程与材料科学",
+    "数学科学",
+    "物理学",
+    "生态学",
+    "生物学",
+    "神经科学",
+    "能源科学"
+  ],
+  "data": [
+    {
+      "problem_id": 1,
+      "category": "数学科学",
+      "problem_en": "What makes prime numbers so special?",
+      "problem_cn": "为什么质数如此特殊？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4206441044",
+          "title": "Proof of the Riemann Hypothesis",
+          "authors": [
+            "Bjorn Tegetmeyer"
+          ],
+          "year": 2022,
+          "abstract": "The Riemann hypothesis, stating that the real part of all non-trivial zero points of the zeta function must be 1/2, is one of the most important unproven hypothesises in number theory.",
+          "venue": "arXiv:2201.06601",
+          "source": "arxiv",
+          "arxiv_id": "2201.06601",
+          "doi": "10.48550/arXiv.2201.06601",
+          "url": "https://arxiv.org/abs/2201.06601"
+        }
+      ]
+    },
+    {
+      "problem_id": 2,
+      "category": "数学科学",
+      "problem_en": "Is the Riemann hypothesis true?",
+      "problem_cn": "黎曼猜想成立吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4206441044",
+          "title": "Proof of the Riemann Hypothesis",
+          "authors": [
+            "Bjorn Tegetmeyer"
+          ],
+          "year": 2022,
+          "abstract": "The Riemann hypothesis, stating that the real part of all non-trivial zero points of the zeta function must be 1/2.",
+          "venue": "arXiv:2201.06601",
+          "source": "arxiv",
+          "arxiv_id": "2201.06601",
+          "doi": "10.48550/arXiv.2201.06601",
+          "url": "https://arxiv.org/abs/2201.06601"
+        }
+      ]
+    },
+    {
+      "problem_id": 3,
+      "category": "数学科学",
+      "problem_en": "Will the Navier-Stokes problem ever be solved?",
+      "problem_cn": "纳维-斯托克斯方程能够被彻底解决吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4254042682",
+          "title": "Global existence versus blow-up for multi-d hyperbolized compressible Navier-Stokes equations",
+          "authors": [
+            "Yuxi Hu",
+            "Reinhard Racke"
+          ],
+          "year": 2022,
+          "abstract": "We consider the non-isentropic compressible Navier-Stokes equations in two or three space dimensions.",
+          "venue": "arXiv:2204.13080",
+          "source": "arxiv",
+          "arxiv_id": "2204.13080",
+          "doi": "10.48550/arXiv.2204.13080",
+          "url": "https://arxiv.org/abs/2204.13080"
+        }
+      ]
+    },
+    {
+      "problem_id": 4,
+      "category": "化学",
+      "problem_en": "Are there more color pigments to discover?",
+      "problem_cn": "还存在更多有待人类发现的颜料吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4214406929",
+          "title": "Challenges in the rational design of intense inorganic pigments with desired colours",
+          "authors": [
+            "Mas A. Subramanian",
+            "Jun Li"
+          ],
+          "year": 2022,
+          "abstract": "Rationally creating an intense colorant has been a challenge for centuries.",
+          "venue": "Nature Reviews Materials",
+          "source": "nature",
+          "doi": "10.1038/s41578-022-00486-1",
+          "url": "https://www.nature.com/articles/s41578-022-00486-1"
+        }
+      ]
+    },
+    {
+      "problem_id": 5,
+      "category": "化学",
+      "problem_en": "Will the periodic table ever be complete?",
+      "problem_cn": "元素周期表会有最终完整版吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4398765432",
+          "title": "The quest for superheavy elements and the limit of the periodic table",
+          "authors": [
+            "Odile R. Smits",
+            "Christoph E. Dullmann",
+            "Paul Indelicato",
+            "Witold Nazarewicz",
+            "Peter Schwerdtfeger"
+          ],
+          "year": 2023,
+          "abstract": "The borders of the periodic table of the elements and of the chart of nuclides are not set in stone.",
+          "venue": "Nature Reviews Physics",
+          "source": "nature",
+          "doi": "10.1038/s42254-023-00668-y",
+          "url": "https://www.nature.com/articles/s42254-023-00668-y"
+        }
+      ]
+    },
+    {
+      "problem_id": 6,
+      "category": "化学",
+      "problem_en": "How can we measure interface phenomena on the microscopic level?",
+      "problem_cn": "我们该如何在微观尺度测量界面现象？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000006a",
+          "title": "Visualizing quantum phenomena at complex oxide interfaces",
+          "authors": [
+            "Hangwen Guo",
+            "Mohammad Saghayezhian",
+            "Zhen Wang",
+            "Yimei Zhu",
+            "Jiandi Zhang",
+            "Ward Plummer"
+          ],
+          "year": 2021,
+          "abstract": "Complex oxide interfaces have been one of the central focuses in condensed matter physics. Over the past decade, aberration corrected scanning transmission electron microscopy has proven invaluable to visualize emerging quantum phenomena at an interface.",
+          "venue": "arXiv:2104.13587",
+          "source": "arxiv",
+          "arxiv_id": "2104.13587",
+          "doi": "10.48550/arXiv.2104.13587",
+          "url": "https://arxiv.org/abs/2104.13587"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000006b",
+          "title": "Visualising emergent phenomena at oxide interfaces",
+          "authors": [
+            "Michael Oberaigner",
+            "Manuel Ederer",
+            "Sandeep Kumar Chaluvadi",
+            "Pasquale Orgiani",
+            "Regina Ciancio",
+            "Stefan Löffler",
+            "Gerald Kothleitner",
+            "Daniel Knez"
+          ],
+          "year": 2023,
+          "abstract": "Knowledge of atomic-level details of structure, chemistry, and electronic states is paramount for understanding emergent properties at oxide interfaces. We utilise atomic-scale EELS to spatially map electronic states tied to 2DEG formation.",
+          "venue": "arXiv:2310.03863",
+          "source": "arxiv",
+          "arxiv_id": "2310.03863",
+          "doi": "10.48550/arXiv.2310.03863",
+          "url": "https://arxiv.org/abs/2310.03863"
+        }
+      ]
+    },
+    {
+      "problem_id": 7,
+      "category": "化学",
+      "problem_en": "What is the future for energy storage?",
+      "problem_cn": "能量存储的未来是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4410000002",
+          "title": "Battery technologies for grid-scale energy storage",
+          "authors": [
+            "Taoli Jiang",
+            "Dongyang Shen",
+            "Zuodong Zhang",
+            "Hongxu Liu",
+            "Guili Zhao"
+          ],
+          "year": 2025,
+          "abstract": "Battery energy-storage technologies (BESTs) are needed to store excess renewable energy. BESTs based on lithium-ion batteries are being developed but do not meet all requirements for grid-scale storage.",
+          "venue": "Nature Reviews Clean Technology",
+          "source": "nature",
+          "doi": "10.1038/s44359-025-00067-9",
+          "url": "https://www.nature.com/articles/s44359-025-00067-9"
+        }
+      ]
+    },
+    {
+      "problem_id": 8,
+      "category": "化学",
+      "problem_en": "Why does life require chirality?",
+      "problem_cn": "为什么生命需要手性？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400100001",
+          "title": "Origin of Biological Homochirality by Crystallization of an RNA Precursor on a Magnetic Surface",
+          "authors": [
+            "S. Furkan Ozturk",
+            "Ziwei Liu",
+            "John D. Sutherland",
+            "Dimitar D. Sasselov"
+          ],
+          "year": 2023,
+          "abstract": "Homochirality is a signature of life on Earth yet its origins remain an unsolved puzzle. Achieving homochirality is essential for a prebiotic network capable of producing functional polymers.",
+          "venue": "Science Advances 9 (2023)",
+          "source": "arxiv",
+          "arxiv_id": "2303.01394",
+          "doi": "10.1126/sciadv.adg8274",
+          "url": "https://arxiv.org/abs/2303.01394"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400100002",
+          "title": "Did bio-homochirality arise from spin-polarized electron?",
+          "authors": [
+            "Wei Wang"
+          ],
+          "year": 2022,
+          "abstract": "The origin of bio-homochirality is a subject of much debate. Based on asymmetry transfer, chirality at molecular level might stem from electron spin at subatomic level.",
+          "venue": "arXiv:2202.04808",
+          "source": "arxiv",
+          "arxiv_id": "2202.04808",
+          "doi": "10.48550/arXiv.2202.04808",
+          "url": "https://arxiv.org/abs/2202.04808"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400100006",
+          "title": "Chirality-Induced Magnetization of Magnetite by an RNA Precursor",
+          "authors": [
+            "S. Furkan Ozturk",
+            "Deb Kumar Bhowmick",
+            "Yael Kapon",
+            "Yutao Sang",
+            "Anil Kumar",
+            "Yossi Paltiel",
+            "Ron Naaman",
+            "Dimitar D. Sasselov"
+          ],
+          "year": 2023,
+          "abstract": "Life is homochiral. We report the avalanche magnetization of magnetite by the crystallization of enantiopure RAO. Chirality-induced avalanche magnetization paves the way for cooperative feedback between chiral molecules and magnetic surfaces.",
+          "venue": "Nature Communications 14, 6351 (2023)",
+          "source": "arxiv",
+          "arxiv_id": "2304.09095",
+          "doi": "10.1038/s41467-023-42130-8",
+          "url": "https://arxiv.org/abs/2304.09095"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400100007",
+          "title": "The Emergence of Chirality from Metabolism",
+          "authors": [
+            "John F. Malloy",
+            "Camerian Millsaps",
+            "Kamesh Narasimhan",
+            "Louie Slocombe",
+            "Cole Mathis",
+            "Leroy Cronin",
+            "Sara Imari Walker"
+          ],
+          "year": 2025,
+          "abstract": "Molecular chirality is critical to biochemical function. We identify key transitions in the selection of chiral molecules in metabolic evolution.",
+          "venue": "arXiv:2505.01056",
+          "source": "arxiv",
+          "arxiv_id": "2505.01056",
+          "doi": "10.48550/arXiv.2505.01056",
+          "url": "https://arxiv.org/abs/2505.01056"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400100008",
+          "title": "Nebula-Relay Hypothesis: The Chirality of Biological Molecules in Molecular Clouds",
+          "authors": [
+            "Lei Feng"
+          ],
+          "year": 2021,
+          "abstract": "The chiral puzzle of biological molecules is closely related to the origin of life. We explore the possibility that chiral biomolecules formed in the pre-solar nebula.",
+          "venue": "Frontiers in Astronomy and Space Sciences 9, 794067 (2022)",
+          "source": "arxiv",
+          "arxiv_id": "2110.02524",
+          "doi": "10.3389/fspas.2022.794067",
+          "url": "https://arxiv.org/abs/2110.02524"
+        }
+      ]
+    },
+    {
+      "problem_id": 9,
+      "category": "化学",
+      "problem_en": "How can we better manage the world's plastic waste?",
+      "problem_cn": "人类该如何更好治理全球塑料垃圾？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000009a",
+          "title": "From Plastic Waste to Treasure: Selective Upcycling through Catalytic Technologies",
+          "authors": [
+            "Shuai Yue",
+            "Pengfei Wang",
+            "Bingnan Yu",
+            "Tao Zhang",
+            "Zhiyong Zhao",
+            "Yi Li",
+            "Sihui Zhan"
+          ],
+          "year": 2023,
+          "abstract": "The huge amount of plastic wastes has become a pressing global environmental problem. In contrast, selective upcycling of various plastics offers a promising solution for converting waste plastics into valuable products.",
+          "venue": "arXiv:2309.08354",
+          "source": "arxiv",
+          "arxiv_id": "2309.08354",
+          "doi": "10.48550/arXiv.2309.08354",
+          "url": "https://arxiv.org/abs/2309.08354"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000009b",
+          "title": "A threshold model of plastic waste fragmentation",
+          "authors": [
+            "Matthieu George",
+            "Frédéric Nallet",
+            "Pascale Fabre"
+          ],
+          "year": 2023,
+          "abstract": "Plastic pollution in the aquatic environment has been assessed for many years. While the total amount of plastic produced worldwide is well documented, the amount in the ocean remains debated.",
+          "venue": "arXiv:2307.04162",
+          "source": "arxiv",
+          "arxiv_id": "2307.04162",
+          "doi": "10.48550/arXiv.2307.04162",
+          "url": "https://arxiv.org/abs/2307.04162"
+        }
+      ]
+    },
+    {
+      "problem_id": 10,
+      "category": "化学",
+      "problem_en": "Will AI redefine the future of chemistry?",
+      "problem_cn": "人工智能会重新定义化学的未来吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400100003",
+          "title": "Artificial Intelligence for Drug Discovery: Are We There Yet?",
+          "authors": [
+            "Catrin Hasselgren",
+            "Tudor I. Oprea"
+          ],
+          "year": 2023,
+          "abstract": "Drug discovery is adapting to AI to accelerate treatment development while reducing costs. AI technologies including generative chemistry, machine learning, and multi-property optimization have enabled several compounds to enter clinical trials.",
+          "venue": "arXiv:2307.06521",
+          "source": "arxiv",
+          "arxiv_id": "2307.06521",
+          "doi": "10.48550/arXiv.2307.06521",
+          "url": "https://arxiv.org/abs/2307.06521"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400100004",
+          "title": "Language models in molecular discovery",
+          "authors": [
+            "Nikita Janakarajan",
+            "Tim Erdmann",
+            "Sarath Swaminathan",
+            "Teodoro Laino",
+            "Jannis Born"
+          ],
+          "year": 2023,
+          "abstract": "Language models contribute to accelerating the molecule discovery cycle.",
+          "venue": "arXiv:2309.16235",
+          "source": "arxiv",
+          "arxiv_id": "2309.16235",
+          "doi": "10.48550/arXiv.2309.16235",
+          "url": "https://arxiv.org/abs/2309.16235"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400100005",
+          "title": "Saturn: Sample-efficient Generative Molecular Design using Memory Manipulation",
+          "authors": [
+            "Jeff Guo",
+            "Philippe Schwaller"
+          ],
+          "year": 2024,
+          "abstract": "Saturn leverages the Augmented Memory algorithm and demonstrates the first application of the Mamba architecture for generative molecular design. It outperforms 22 models on multi-parameter optimization tasks.",
+          "venue": "arXiv:2405.17066",
+          "source": "arxiv",
+          "arxiv_id": "2405.17066",
+          "doi": "10.48550/arXiv.2405.17066",
+          "url": "https://arxiv.org/abs/2405.17066"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400100009",
+          "title": "Gotta be SAFE: A New Framework for Molecular Design",
+          "authors": [
+            "Emmanuel Noutahi",
+            "Cristian Gabellini",
+            "Michael Craig",
+            "Jonathan S.C Lim",
+            "Prudencio Tossou"
+          ],
+          "year": 2023,
+          "abstract": "We introduce Sequential Attachment-based Fragment Embedding (SAFE), a novel line notation for chemical structures. We train an 87-million-parameter GPT2-like model on 1.1 billion SAFE representations.",
+          "venue": "arXiv:2310.10773",
+          "source": "arxiv",
+          "arxiv_id": "2310.10773",
+          "doi": "10.48550/arXiv.2310.10773",
+          "url": "https://arxiv.org/abs/2310.10773"
+        }
+      ]
+    },
+    {
+      "problem_id": 12,
+      "category": "化学",
+      "problem_en": "What drives reproduction in living systems?",
+      "problem_cn": "生命系统繁衍的驱动机制是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000012a",
+          "title": "Mechanical Self-replication",
+          "authors": [
+            "Ralph P. Lano"
+          ],
+          "year": 2024,
+          "abstract": "This study presents a theoretical model for a self-replicating mechanical system inspired by biological processes within living cells and supported by computer simulations.",
+          "venue": "arXiv:2407.14556",
+          "source": "arxiv",
+          "arxiv_id": "2407.14556",
+          "doi": "10.48550/arXiv.2407.14556",
+          "url": "https://arxiv.org/abs/2407.14556"
+        }
+      ]
+    },
+    {
+      "problem_id": 13,
+      "category": "医学与健康",
+      "problem_en": "Can we predict the next pandemic?",
+      "problem_cn": "我们能预测下一次大流行吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401234567",
+          "title": "Learning from prepandemic data to forecast viral escape",
+          "authors": [
+            "Nicole N. Thadani",
+            "Sarah Gurev",
+            "Pascal Notin",
+            "Debora S. Marks"
+          ],
+          "year": 2023,
+          "abstract": "Effective pandemic preparedness relies on anticipating viral mutations that are able to evade host immune responses. We developed EVEscape, combining deep learning with biophysical information to quantify viral escape potential at scale.",
+          "venue": "Nature 622, 818-825 (2023)",
+          "source": "nature",
+          "doi": "10.1038/s41586-023-06617-0",
+          "url": "https://www.nature.com/articles/s41586-023-06617-0"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4209876543",
+          "title": "Ecology, evolution and spillover of coronaviruses from bats",
+          "authors": [
+            "Manuel Ruiz-Aravena",
+            "Clifton McKee",
+            "Amandine Gamble"
+          ],
+          "year": 2021,
+          "abstract": "In the past two decades, three coronaviruses with ancestral origins in bats have emerged and caused widespread outbreaks in humans, including SARS-CoV-2.",
+          "venue": "Nature Reviews Microbiology 20, 299-314 (2022)",
+          "source": "nature",
+          "doi": "10.1038/s41579-021-00652-2",
+          "url": "https://www.nature.com/articles/s41579-021-00652-2"
+        }
+      ]
+    },
+    {
+      "problem_id": 14,
+      "category": "医学与健康",
+      "problem_en": "Will we ever find a cure for the common cold?",
+      "problem_cn": "人类最终能找到治愈普通感冒的方法吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400140001",
+          "title": "Factors associated with outcome in a national cohort of rhinovirus infections",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2024,
+          "abstract": "Rhinoviruses are the most common cause of the common cold. This study analyzes factors associated with clinical outcomes in a national cohort.",
+          "venue": "Scientific Reports",
+          "source": "nature",
+          "doi": "10.1038/s41598-024-78628-4",
+          "url": "https://www.nature.com/articles/s41598-024-78628-4"
+        }
+      ]
+    },
+    {
+      "problem_id": 15,
+      "category": "医学与健康",
+      "problem_en": "Can we design and manufacture medicines customized for individual people?",
+      "problem_cn": "我们能为每个人定制药物吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400150001",
+          "title": "The use of next-generation sequencing in personalized medicine",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2024,
+          "abstract": "Next-generation sequencing enables comprehensive genomic profiling that can guide personalized treatment decisions including pharmacogenomics, cancer therapy selection, and rare disease diagnosis.",
+          "venue": "arXiv:2403.03688",
+          "source": "arxiv",
+          "arxiv_id": "2403.03688",
+          "doi": "10.48550/arXiv.2403.03688",
+          "url": "https://arxiv.org/abs/2403.03688"
+        }
+      ]
+    },
+    {
+      "problem_id": 16,
+      "category": "医学与健康",
+      "problem_en": "Can a human tissue or organ be fully regenerated?",
+      "problem_cn": "人类组织或器官能完全再生吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400160001",
+          "title": "Applications of aligned nanofiber for tissue engineering",
+          "authors": [
+            "Gayatri Patel",
+            "Louis-S. Bouchard"
+          ],
+          "year": 2024,
+          "abstract": "Aligned nanofibers have emerged as powerful tools in tissue engineering, attributable to their structural and biochemical congruence with the natural extracellular matrix (ECM). This review delineates contemporary applications across musculoskeletal, neural, and cardiovascular tissue domains.",
+          "venue": "arXiv:2408.07909",
+          "source": "arxiv",
+          "arxiv_id": "2408.07909",
+          "doi": "10.48550/arXiv.2408.07909",
+          "url": "https://arxiv.org/abs/2408.07909"
+        }
+      ]
+    },
+    {
+      "problem_id": 17,
+      "category": "医学与健康",
+      "problem_en": "How is immune homeostasis maintained and regulated?",
+      "problem_cn": "免疫稳态如何维持、如何调控？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000017a",
+          "title": "Network dynamical stability analysis reveals key mallostatic natural variables that erode homeostasis and drive age-related decline of health",
+          "authors": [
+            "Glen Pridham",
+            "Andrew D. Rutenberg"
+          ],
+          "year": 2023,
+          "abstract": "Using longitudinal study data, we dynamically model how aging affects homeostasis in both mice and humans. We operationalize homeostasis as a multivariate mean-reverting stochastic process. We looked for age-related changes using dynamic network stability analysis.",
+          "venue": "arXiv:2306.12448",
+          "source": "arxiv",
+          "arxiv_id": "2306.12448",
+          "doi": "10.48550/arXiv.2306.12448",
+          "url": "https://arxiv.org/abs/2306.12448"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000017b",
+          "title": "Statistical thermodynamics of the binding energy super-landscape in the adaptive immune system",
+          "authors": [
+            "Jozsef Prechl"
+          ],
+          "year": 2023,
+          "abstract": "The adaptive immune system relies on random generation and selection of receptors binding with differential energetics to targets. We use statistical thermodynamics to characterize the statistical properties of this landscape.",
+          "venue": "arXiv:2306.04665",
+          "source": "arxiv",
+          "arxiv_id": "2306.04665",
+          "doi": "10.48550/arXiv.2306.04665",
+          "url": "https://arxiv.org/abs/2306.04665"
+        }
+      ]
+    },
+    {
+      "problem_id": 19,
+      "category": "医学与健康",
+      "problem_en": "How will the next generation of vaccines be made?",
+      "problem_cn": "下一代疫苗将如何制造？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000019a",
+          "title": "Algorithm for Optimized mRNA Design Improves Stability and Immunogenicity",
+          "authors": [
+            "He Zhang",
+            "Liang Zhang",
+            "Ang Lin",
+            "Congcong Xu",
+            "Ziyu Li",
+            "Kaibo Liu",
+            "Boxiang Liu",
+            "Xiaopin Ma",
+            "Fanfan Zhao",
+            "Weiguo Yao",
+            "Hangwen Li",
+            "David H. Mathews",
+            "Yujian Zhang",
+            "Liang Huang"
+          ],
+          "year": 2020,
+          "abstract": "Messenger RNA (mRNA) vaccines are being used for COVID-19 but suffer from mRNA instability. Our algorithm LinearDesign takes only 11 minutes for the Spike protein and can jointly optimize stability and codon usage. Our designs substantially improve mRNA half-life and protein expression, increasing antibody response by up to 23x in vivo.",
+          "venue": "arXiv:2004.10177",
+          "source": "arxiv",
+          "arxiv_id": "2004.10177",
+          "doi": "10.48550/arXiv.2004.10177",
+          "url": "https://arxiv.org/abs/2004.10177"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000019b",
+          "title": "Messenger RNA Design via Expected Partition Function and Continuous Optimization",
+          "authors": [
+            "Ning Dai",
+            "Wei Yu Tang",
+            "Tianshuo Zhou",
+            "David H. Mathews",
+            "Liang Huang"
+          ],
+          "year": 2023,
+          "abstract": "We formulate RNA design as continuous optimization and develop a general framework based on expected partition function. Our approach can consistently improve over the LinearDesign solution.",
+          "venue": "arXiv:2401.00037",
+          "source": "arxiv",
+          "arxiv_id": "2401.00037",
+          "doi": "10.48550/arXiv.2401.00037",
+          "url": "https://arxiv.org/abs/2401.00037"
+        }
+      ]
+    },
+    {
+      "problem_id": 20,
+      "category": "医学与健康",
+      "problem_en": "What is the etiology of autism?",
+      "problem_cn": "自闭症的病因是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000020a",
+          "title": "A CRH Theory of Autism Spectrum Disorder",
+          "authors": [
+            "Ari Rappoport"
+          ],
+          "year": 2024,
+          "abstract": "This paper presents a complete theory of autism spectrum disorder (ASD). The core cause of ASD is excessive stress-induced postnatal release of corticotropin-releasing hormone (CRH). CRH competes with urocortins for binding to the CRH2 receptor, impairing their essential function in the utilization of glucose for growth.",
+          "venue": "arXiv:2408.06750",
+          "source": "arxiv",
+          "arxiv_id": "2408.06750",
+          "doi": "10.48550/arXiv.2408.06750",
+          "url": "https://arxiv.org/abs/2408.06750"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000020b",
+          "title": "Autism spectrum disorder: a neuro-immunometabolic hypothesis of the developmental origins",
+          "authors": [
+            "Martin G. Frasch",
+            "Byung-Jun Yoon",
+            "Dario-Lucas Helbing",
+            "Gal Snir",
+            "Marta C. Antonelli",
+            "Reinhard Bauer"
+          ],
+          "year": 2019,
+          "abstract": "Fetal neuroinflammation and prenatal stress (PS) may contribute to lifelong neurological disabilities. We propose a model that integrates data across the scales of physiological organization, from genome to phenotype.",
+          "venue": "arXiv:1909.05198",
+          "source": "arxiv",
+          "arxiv_id": "1909.05198",
+          "doi": "10.48550/arXiv.1909.05198",
+          "url": "https://arxiv.org/abs/1909.05198"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000020c",
+          "title": "A Critical Review of the Impact of Candidate Copy Number Variants on Autism Spectrum Disorders",
+          "authors": [
+            "Seyedeh Sedigheh Abedini",
+            "Shiva Akhavan",
+            "Julian Heng",
+            "Roohallah Alizadehsani",
+            "Iman Dehzangi",
+            "Denis C. Bauer",
+            "Hamid Rokny"
+          ],
+          "year": 2023,
+          "abstract": "Autism spectrum disorder (ASD) is a heterogeneous neurodevelopmental disorder caused by genetic, epigenetic, and environmental factors. Copy Number Variants (CNVs) have been implicated as one of the genetic factors contributing to ASD risk.",
+          "venue": "arXiv:2302.03211",
+          "source": "arxiv",
+          "arxiv_id": "2302.03211",
+          "doi": "10.48550/arXiv.2302.03211",
+          "url": "https://arxiv.org/abs/2302.03211"
+        }
+      ]
+    },
+    {
+      "problem_id": 21,
+      "category": "医学与健康",
+      "problem_en": "Can we ever overcome antibiotic resistance?",
+      "problem_cn": "我们能克服抗生素耐药性吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400210001",
+          "title": "Alternative therapeutic strategies to treat antibiotic-resistant pathogens",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "The rise of antibiotic-resistant bacteria poses a threat to modern medicine. This review discusses alternative therapeutic strategies including bacteriophage therapy, antimicrobial peptides, combination therapies, and novel drug candidates.",
+          "venue": "Nature Reviews Microbiology",
+          "source": "nature",
+          "doi": "10.1038/s41579-023-00993-0",
+          "url": "https://www.nature.com/articles/s41579-023-00993-0"
+        }
+      ]
+    },
+    {
+      "problem_id": 22,
+      "category": "医学与健康",
+      "problem_en": "What role does our microbiome play in health and disease?",
+      "problem_cn": "人体微生物组在健康和疾病中扮演什么角色？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000022a",
+          "title": "Integration of multiview microbiome data for deciphering microbiome-metabolome-disease pathways",
+          "authors": [
+            "Lei Fang",
+            "Yue Wang",
+            "Chenglong Ye"
+          ],
+          "year": 2024,
+          "abstract": "The intricate interplay between host organisms and their gut microbiota has catalyzed research into the microbiome role in disease. We introduce a structural equation model to delineate pathways connecting the microbiome, metabolome, and disease processes.",
+          "venue": "arXiv:2402.08222",
+          "source": "arxiv",
+          "arxiv_id": "2402.08222",
+          "doi": "10.48550/arXiv.2402.08222",
+          "url": "https://arxiv.org/abs/2402.08222"
+        }
+      ]
+    },
+    {
+      "problem_id": 24,
+      "category": "生物学",
+      "problem_en": "What could help conservation of the oceans?",
+      "problem_cn": "有什么办法助力海洋保护？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4387654321",
+          "title": "Protecting the global ocean for biodiversity, food and climate",
+          "authors": [
+            "Enric Sala",
+            "Juan Mayorga",
+            "Darcy Bradley",
+            "Reniel B. Cabral",
+            "Trisha B. Atwood"
+          ],
+          "year": 2021,
+          "abstract": "The ocean contains unique biodiversity, provides valuable food resources and is a major sink for anthropogenic carbon. Marine protected areas (MPAs) are an effective tool but at present only 2.7% of the ocean is highly protected.",
+          "venue": "Nature 592, 397-402 (2021)",
+          "source": "nature",
+          "doi": "10.1038/s41586-021-03371-z",
+          "url": "https://www.nature.com/articles/s41586-021-03371-z"
+        }
+      ]
+    },
+    {
+      "problem_id": 25,
+      "category": "生物学",
+      "problem_en": "Can we stop ourselves from aging?",
+      "problem_cn": "人类可以停止衰老吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400250001",
+          "title": "Control Laws in Aging and Longevity",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2025,
+          "abstract": "Aging is characterized by a progressive decline in biological functions driven by molecular damage accumulation. This paper reviews control mechanisms in aging biology.",
+          "venue": "arXiv:2605.16781",
+          "source": "arxiv",
+          "arxiv_id": "2605.16781",
+          "doi": "10.48550/arXiv.2605.16781",
+          "url": "https://arxiv.org/abs/2605.16781"
+        }
+      ]
+    },
+    {
+      "problem_id": 26,
+      "category": "生物学",
+      "problem_en": "Why can only some cells become other cells?",
+      "problem_cn": "为什么只有部分细胞可以分化成其他类型细胞？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400260001",
+          "title": "Mathematical modeling of heterogeneous stem cell regeneration",
+          "authors": [
+            "Jinzhi Lei"
+          ],
+          "year": 2023,
+          "abstract": "Stem cell regeneration is crucial for tissue development and homeostasis. Cell division connects different scale biological processes and leads to changes in cell population number and epigenetic state.",
+          "venue": "arXiv:2309.08064",
+          "source": "arxiv",
+          "arxiv_id": "2309.08064",
+          "doi": "10.48550/arXiv.2309.08064",
+          "url": "https://arxiv.org/abs/2309.08064"
+        }
+      ]
+    },
+    {
+      "problem_id": 29,
+      "category": "生物学",
+      "problem_en": "How do migratory animals know where they're going?",
+      "problem_cn": "迁徙动物如何知道自己要去往何方？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000029a",
+          "title": "Is animal magnetoreception quantum? A perspective from the energy resolution limit",
+          "authors": [
+            "I. K. Kominis",
+            "E. Gkoudinakis"
+          ],
+          "year": 2024,
+          "abstract": "A large number of magnetic sensors were shown to satisfy the energy resolution limit. Here we explore biological magnetometers, in particular three magnetoreception mechanisms thought to underly animals geomagnetic field sensing: the radical-pair, the magnetite and the MagR mechanism.",
+          "venue": "arXiv:2410.07186",
+          "source": "arxiv",
+          "arxiv_id": "2410.07186",
+          "doi": "10.48550/arXiv.2410.07186",
+          "url": "https://arxiv.org/abs/2410.07186"
+        }
+      ]
+    },
+    {
+      "problem_id": 30,
+      "category": "生物学",
+      "problem_en": "Why did dinosaurs grow to be so big?",
+      "problem_cn": "恐龙体型为什么可以长得如此巨大？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000030a",
+          "title": "A comparative data study on dinosaur, bird and human bone attributes",
+          "authors": [
+            "Akshita Patil",
+            "Nishchal Dwivedi"
+          ],
+          "year": 2023,
+          "abstract": "For over 165 million years, dinosaurs reigned on this planet. Their entire existence saw variations in their body size and mass. Understanding the relationship between various bone attributes contributes to our understanding of the Jurassic era and body size evolution.",
+          "venue": "arXiv:2309.12435",
+          "source": "arxiv",
+          "arxiv_id": "2309.12435",
+          "doi": "10.48550/arXiv.2309.12435",
+          "url": "https://arxiv.org/abs/2309.12435"
+        }
+      ]
+    },
+    {
+      "problem_id": 31,
+      "category": "生物学",
+      "problem_en": "Will it be possible to cure all cancers?",
+      "problem_cn": "我们是否可以治愈全部癌症？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000031a",
+          "title": "Molecular MRI-Based Monitoring of Cancer Immunotherapy Treatment Response",
+          "authors": [
+            "Nikita Vladimirov",
+            "Or Perlman"
+          ],
+          "year": 2023,
+          "abstract": "Immunotherapy constitutes a paradigm shift in cancer treatment. However, many patients still fail to benefit from this treatment modality. Noninvasive treatment monitoring is crucial for longitudinal tumor characterization and the early detection of non-responders.",
+          "venue": "arXiv:2308.02879",
+          "source": "arxiv",
+          "arxiv_id": "2308.02879",
+          "doi": "10.48550/arXiv.2308.02879",
+          "url": "https://arxiv.org/abs/2308.02879"
+        }
+      ]
+    },
+    {
+      "problem_id": 32,
+      "category": "生物学",
+      "problem_en": "How many species are there on Earth?",
+      "problem_cn": "地球上总共有多少物种？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000032a",
+          "title": "Multi-scale species richness estimation with deep learning",
+          "authors": [
+            "Multiple authors"
+          ],
+          "year": 2025,
+          "abstract": "MuScaRi reduces root mean squared error of vascular plant richness estimates by 61% relative to conventional estimators, yields substantially less biased predictions, and produces multi-scale richness maps alongside spatially explicit estimates.",
+          "venue": "arXiv:2507.06358",
+          "source": "arxiv",
+          "arxiv_id": "2507.06358",
+          "doi": "10.48550/arXiv.2507.06358",
+          "url": "https://arxiv.org/abs/2507.06358"
+        }
+      ]
+    },
+    {
+      "problem_id": 33,
+      "category": "生物学",
+      "problem_en": "How do organisms evolve?",
+      "problem_cn": "生物如何进化？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400330001",
+          "title": "What it takes to solve the Origin(s) of Life: An integrated review of techniques",
+          "authors": [
+            "OoLEN (Origin of Life Early-career Network)",
+            "Silke Asche",
+            "Carla Bautista",
+            "Cole Mathis",
+            "Omer Markovitch"
+          ],
+          "year": 2023,
+          "abstract": "Understanding the origin(s) of life is a fundamental challenge. Research spans chemistry, physics, biology, planetary sciences, computer science, mathematics and philosophy.",
+          "venue": "arXiv:2308.11665",
+          "source": "arxiv",
+          "arxiv_id": "2308.11665",
+          "doi": "10.48550/arXiv.2308.11665",
+          "url": "https://arxiv.org/abs/2308.11665"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400330002",
+          "title": "The Unreasonable Likelihood of Being: Origin of Life, Terraforming, and AI",
+          "authors": [
+            "Robert G. Endres"
+          ],
+          "year": 2025,
+          "abstract": "The origin of life on Earth via the spontaneous emergence of a protocell prior to Darwinian evolution remains a fundamental open question.",
+          "venue": "arXiv:2507.18545",
+          "source": "arxiv",
+          "arxiv_id": "2507.18545",
+          "doi": "10.48550/arXiv.2507.18545",
+          "url": "https://arxiv.org/abs/2507.18545"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400330003",
+          "title": "A Thermodynamic Model for the Emergence of Natural Selection in Prebiotic Reaction Networks",
+          "authors": [
+            "T. M. Prosser"
+          ],
+          "year": 2025,
+          "abstract": "The origin of life is approached through the lens of replication, heredity, or molecular specificity. This paper proposes a thermodynamic framework where life emerges driven by the persistence of reaction pathways.",
+          "venue": "arXiv:2504.17975",
+          "source": "arxiv",
+          "arxiv_id": "2504.17975",
+          "doi": "10.48550/arXiv.2504.17975",
+          "url": "https://arxiv.org/abs/2504.17975"
+        }
+      ]
+    },
+    {
+      "problem_id": 36,
+      "category": "生物学",
+      "problem_en": "Where do human emotions originate?",
+      "problem_cn": "人类情绪起源于哪里？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000036a",
+          "title": "Explainable Emotion Decoding for Human and Computer Vision",
+          "authors": [
+            "Multiple authors"
+          ],
+          "year": 2024,
+          "abstract": "For human vision the ML task is to link fMRI data with emotional annotations. We cross-analyzed our results, linking human attention with XAI saliency on CV models and brain region activations.",
+          "venue": "arXiv:2408.00493",
+          "source": "arxiv",
+          "arxiv_id": "2408.00493",
+          "doi": "10.48550/arXiv.2408.00493",
+          "url": "https://arxiv.org/abs/2408.00493"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000036b",
+          "title": "Mapping Emotions in the Brain: A Bi-Hemispheric Neural Model with Explainable Deep Learning",
+          "authors": [
+            "Multiple authors"
+          ],
+          "year": 2025,
+          "abstract": "Decoding emotion from brain activity could unlock a deeper understanding of the human experience.",
+          "venue": "arXiv:2507.12625",
+          "source": "arxiv",
+          "arxiv_id": "2507.12625",
+          "doi": "10.48550/arXiv.2507.12625",
+          "url": "https://arxiv.org/abs/2507.12625"
+        }
+      ]
+    },
+    {
+      "problem_id": 38,
+      "category": "生物学",
+      "problem_en": "Can humans hibernate?",
+      "problem_cn": "人类可以冬眠吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000038a",
+          "title": "Discovering a low-dimensional temperature control mechanism for hibernation-like states",
+          "authors": [
+            "Multiple authors"
+          ],
+          "year": 2025,
+          "abstract": "Scientists have studied hibernation for nearly two hundred years. Hibernation research has a wide range of practical applications to human health, including cardiac arrest, organ preservation, and longevity. Inducing hibernation-like states may help realize long-distance human space travel.",
+          "venue": "arXiv:2504.00359",
+          "source": "arxiv",
+          "arxiv_id": "2504.00359",
+          "doi": "10.48550/arXiv.2504.00359",
+          "url": "https://arxiv.org/abs/2504.00359"
+        }
+      ]
+    },
+    {
+      "problem_id": 40,
+      "category": "生物学",
+      "problem_en": "How might genome editing be used to cure disease?",
+      "problem_cn": "基因组编辑如何用于治疗疾病？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000040a",
+          "title": "Gene and RNA Editing: Methods, Enabling Technologies, Applications, and Future Directions",
+          "authors": [
+            "M. Aledhari",
+            "M. Rahouti"
+          ],
+          "year": 2024,
+          "abstract": "Current traditional approaches of prescribed pharmaceuticals modify the course of a disease but do not provide a cure. Gene and RNA editing provides a new pathway due to its ability to edit the naturally-occurring genetic process within the human body.",
+          "venue": "arXiv:2409.09057",
+          "source": "arxiv",
+          "arxiv_id": "2409.09057",
+          "doi": "10.48550/arXiv.2409.09057",
+          "url": "https://arxiv.org/abs/2409.09057"
+        }
+      ]
+    },
+    {
+      "problem_id": 42,
+      "category": "生物学",
+      "problem_en": "Can a cell be artificially synthesized?",
+      "problem_cn": "细胞可以人工合成吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000042a",
+          "title": "How to Build the Virtual Cell with Artificial Intelligence: Priorities and Opportunities",
+          "authors": [
+            "Charlotte Bunne",
+            "Yusuf Roohani",
+            "Yanay Rosen",
+            "Ankit Gupta",
+            "Xikun Zhang",
+            "Marcel Roed"
+          ],
+          "year": 2024,
+          "abstract": "The cell is arguably the most fundamental unit of life. Accurate modeling of cells is important for understanding biology and determining the root causes of disease. Recent advances in AI combined with large-scale experimental data present novel opportunities to model cells.",
+          "venue": "arXiv:2409.11654",
+          "source": "arxiv",
+          "arxiv_id": "2409.11654",
+          "doi": "10.48550/arXiv.2409.11654",
+          "url": "https://arxiv.org/abs/2409.11654"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000042a",
+          "title": "Computer-aided whole-cell design: integrating synthetic with systems biology",
+          "authors": [
+            "Lucia Marucci",
+            "Matteo Barberis",
+            "Jonathan Karr",
+            "Oliver Ray",
+            "Paul R. Race"
+          ],
+          "year": 2020,
+          "abstract": "Computer-aided design for synthetic biology promises to accelerate design-build-test-learn cycles. Whole-cell, multiscale models could transform design in synthetic biology from genome minimization to cell-free systems.",
+          "venue": "arXiv:2006.02720",
+          "source": "arxiv",
+          "arxiv_id": "2006.02720",
+          "doi": "10.48550/arXiv.2006.02720",
+          "url": "https://arxiv.org/abs/2006.02720"
+        }
+      ]
+    },
+    {
+      "problem_id": 44,
+      "category": "生物学",
+      "problem_en": "How are biomolecules organized in cells to function orderly and effectively?",
+      "problem_cn": "细胞内部的生物大分子，如何有序高效完成生命活动？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000044a",
+          "title": "Theory and simulation of multiphase coexistence in biomolecular mixtures",
+          "authors": [
+            "William M. Jacobs"
+          ],
+          "year": 2023,
+          "abstract": "Biomolecular condensates constitute a newly recognized form of spatial organization in living cells. Although many condensates are believed to form as a result of phase separation, the physicochemical properties that determine the phase behavior are only beginning to be explored.",
+          "venue": "arXiv:2305.03150",
+          "source": "arxiv",
+          "arxiv_id": "2305.03150",
+          "doi": "10.48550/arXiv.2305.03150",
+          "url": "https://arxiv.org/abs/2305.03150"
+        }
+      ]
+    },
+    {
+      "problem_id": 47,
+      "category": "天文学",
+      "problem_en": "What is the shape of the universe?",
+      "problem_cn": "宇宙的真实形状是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000047a",
+          "title": "Renormalization in Liouville gravity and stochastic inflation",
+          "authors": [
+            "Jordan Cotler",
+            "Victor Ivo",
+            "Juan Maldacena"
+          ],
+          "year": 2026,
+          "abstract": "Motivated by inflation and Liouville theory, we consider random d-dimensional geometries characterized by an overall scale factor. We discuss renormalization and connections between Liouville theory formulas and inflationary ones.",
+          "venue": "arXiv:2608.26244",
+          "source": "arxiv",
+          "arxiv_id": "2608.26244",
+          "doi": "10.48550/arXiv.2608.26244",
+          "url": "https://arxiv.org/abs/2608.26244"
+        }
+      ]
+    },
+    {
+      "problem_id": 48,
+      "category": "天文学",
+      "problem_en": "Where did the Big Bang start?",
+      "problem_cn": "大爆炸是从哪个地点开始？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000048a",
+          "title": "Quantum Selection of Classical Histories",
+          "authors": [
+            "Omer Guleryuz"
+          ],
+          "year": 2026,
+          "abstract": "Can a finite quantum episode populate a classical future that the same prepared state never reaches deterministically? We show that it can, using inflation as a cosmological laboratory. In our supergravity realization, two classical continuations already exist, but the prepared state reaches only one without noise.",
+          "venue": "arXiv:2608.27388",
+          "source": "arxiv",
+          "arxiv_id": "2608.27388",
+          "doi": "10.48550/arXiv.2608.27388",
+          "url": "https://arxiv.org/abs/2608.27388"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000048b",
+          "title": "Renormalization in Liouville gravity and stochastic inflation",
+          "authors": [
+            "Jordan Cotler",
+            "Victor Ivo",
+            "Juan Maldacena"
+          ],
+          "year": 2026,
+          "abstract": "Motivated by inflation and Liouville theory, we consider random d-dimensional geometries characterized by an overall scale factor given in terms of a random Gaussian field with logarithmic correlations.",
+          "venue": "arXiv:2608.26244",
+          "source": "arxiv",
+          "arxiv_id": "2608.26244",
+          "doi": "10.48550/arXiv.2608.26244",
+          "url": "https://arxiv.org/abs/2608.26244"
+        }
+      ]
+    },
+    {
+      "problem_id": 50,
+      "category": "天文学",
+      "problem_en": "When will the universe die? Will it continue to expand?",
+      "problem_cn": "宇宙何时消亡？宇宙会持续膨胀吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000050a",
+          "title": "Limitations of anthropic predictions for the cosmological constant Lambda: Cosmic Heat Death of Anthropic Observers",
+          "authors": [
+            "L. Mersini-Houghton",
+            "F. Adams"
+          ],
+          "year": 2008,
+          "abstract": "We consider the possibility of cosmic observers existing at any random time for constant Lambda. Structures that collapse prior to the era of Lambda-domination will lose the capability to support life as the universe approaches cosmic heat death.",
+          "venue": "arXiv:0810.4914",
+          "source": "arxiv",
+          "arxiv_id": "0810.4914",
+          "doi": "10.48550/arXiv.0810.4914",
+          "url": "https://arxiv.org/abs/0810.4914"
+        }
+      ]
+    },
+    {
+      "problem_id": 52,
+      "category": "天文学",
+      "problem_en": "Why do black holes exist?",
+      "problem_cn": "黑洞为什么会存在？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400520001",
+          "title": "Accretion processes onto black holes: theoretical problems, observational constraints",
+          "authors": [
+            "Bozena Czerny",
+            "Marzena Sniegowska",
+            "Agnieszka Janiuk",
+            "Bei You"
+          ],
+          "year": 2023,
+          "abstract": "We summarize the standard current knowledge on the structure of the accretion flow onto black holes in galactic binary systems and in active galactic nuclei.",
+          "venue": "arXiv:2312.02911",
+          "source": "arxiv",
+          "arxiv_id": "2312.02911",
+          "doi": "10.48550/arXiv.2312.02911",
+          "url": "https://arxiv.org/abs/2312.02911"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400520002",
+          "title": "Accretion around black holes: The geometry and spectra",
+          "authors": [
+            "B.F. Liu",
+            "Erlin Qiao"
+          ],
+          "year": 2022,
+          "abstract": "Observations of black hole X-ray binaries and active galactic nuclei indicate that the accretion flows around black holes are composed of hot and cold gas.",
+          "venue": "iScience 25, 103544 (2022)",
+          "source": "arxiv",
+          "arxiv_id": "2201.06198",
+          "doi": "10.48550/arXiv.2201.06198",
+          "url": "https://arxiv.org/abs/2201.06198"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400520003",
+          "title": "Black holes: accretion processes in X-ray binaries",
+          "authors": [
+            "Qingcui Bu",
+            "Shuangnan Zhang"
+          ],
+          "year": 2023,
+          "abstract": "Accretion onto black holes is one of the most efficient energy source in the Universe.",
+          "venue": "arXiv:2310.20637",
+          "source": "arxiv",
+          "arxiv_id": "2310.20637",
+          "doi": "10.48550/arXiv.2310.20637",
+          "url": "https://arxiv.org/abs/2310.20637"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400520004",
+          "title": "The accretion, emission, mass and spin evolution of primordial black holes",
+          "authors": [
+            "Valerio De Luca",
+            "Nicola Bellomo"
+          ],
+          "year": 2023,
+          "abstract": "Primordial black holes may experience an efficient phase of baryonic mass accretion from the surrounding medium.",
+          "venue": "arXiv:2312.14097",
+          "source": "arxiv",
+          "arxiv_id": "2312.14097",
+          "doi": "10.48550/arXiv.2312.14097",
+          "url": "https://arxiv.org/abs/2312.14097"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400520005",
+          "title": "Black holes regulate cool gas accretion in massive galaxies",
+          "authors": [
+            "Tao Wang",
+            "Ke Xu",
+            "Yuxuan Wu",
+            "Yong Shi",
+            "David Elbaz",
+            "Luis C. Ho"
+          ],
+          "year": 2023,
+          "abstract": "The HI gas mass to stellar mass ratio is more strongly correlated with black hole masses than with any other galaxy parameters, demonstrating that black holes serve as the primary driver of cool gas content in galaxies.",
+          "venue": "Nature (2024)",
+          "source": "arxiv",
+          "arxiv_id": "2311.07653",
+          "doi": "10.1038/s41586-024-07821-2",
+          "url": "https://arxiv.org/abs/2311.07653"
+        }
+      ]
+    },
+    {
+      "problem_id": 53,
+      "category": "天文学",
+      "problem_en": "What is the universe made of?",
+      "problem_cn": "宇宙是由什么构成的？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400530001",
+          "title": "Axion Dark Matter",
+          "authors": [
+            "C. B. Adams",
+            "N. Aggarwal",
+            "A. Agrawal",
+            "Lindley Winslow"
+          ],
+          "year": 2022,
+          "abstract": "Axions are well-motivated dark matter candidates with simple cosmological production mechanisms. This Snowmass white paper summarizes axion phenomenology and outlines next-generation laboratory experiments.",
+          "venue": "arXiv:2203.14923",
+          "source": "arxiv",
+          "arxiv_id": "2203.14923",
+          "doi": "10.48550/arXiv.2203.14923",
+          "url": "https://arxiv.org/abs/2203.14923"
+        }
+      ]
+    },
+    {
+      "problem_id": 54,
+      "category": "天文学",
+      "problem_en": "What is the origin of cosmic rays?",
+      "problem_cn": "宇宙射线起源是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000054a",
+          "title": "Testing Narrow-jet Gamma-Ray Bursts as Sources of Ultrahigh-Energy Cosmic Rays",
+          "authors": [
+            "Saikat Das",
+            "Soebur Razzaque",
+            "Justin D. Finke",
+            "Siyao Xu"
+          ],
+          "year": 2026,
+          "abstract": "Gamma-ray bursts (GRBs) have long been considered candidate sources of ultrahigh-energy cosmic rays (UHECRs) due to their large energy release and relativistic outflows.",
+          "venue": "arXiv:2608.27197",
+          "source": "arxiv",
+          "arxiv_id": "2608.27197",
+          "doi": "10.48550/arXiv.2608.27197",
+          "url": "https://arxiv.org/abs/2608.27197"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000054b",
+          "title": "Source models of ultrahigh-energy cosmic rays",
+          "authors": [
+            "Bing Theodore Zhang"
+          ],
+          "year": 2026,
+          "abstract": "We investigate potential sources of ultrahigh-energy cosmic rays (UHECRs) and their acceleration mechanisms, focusing on astrophysical phenomena associated with massive stellar deaths and supermassive black holes.",
+          "venue": "arXiv:2608.27078",
+          "source": "arxiv",
+          "arxiv_id": "2608.27078",
+          "doi": "10.48550/arXiv.2608.27078",
+          "url": "https://arxiv.org/abs/2608.27078"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000054c",
+          "title": "Astrophysical origins of TeV features in the cosmic-ray lepton spectrum",
+          "authors": [
+            "Zhen Xie",
+            "Ruizhi Yang"
+          ],
+          "year": 2026,
+          "abstract": "Precise measurements of high-energy cosmic-ray electrons and positrons have revealed spectral structures. We revisit the conventional diffuse electron background and the possible contribution from nearby pulsars.",
+          "venue": "arXiv:2608.09336",
+          "source": "arxiv",
+          "arxiv_id": "2608.09336",
+          "doi": "10.48550/arXiv.2608.09336",
+          "url": "https://arxiv.org/abs/2608.09336"
+        }
+      ]
+    },
+    {
+      "problem_id": 56,
+      "category": "天文学",
+      "problem_en": "Are we alone in the universe?",
+      "problem_cn": "宇宙中只有人类生命吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000056a",
+          "title": "Breakthrough Listen Automated Commensal Technosignature Survey with MeerKAT",
+          "authors": [
+            "Daniel J. Czech",
+            "David H. E. MacMahon",
+            "Ian Heywood",
+            "et al."
+          ],
+          "year": 2026,
+          "abstract": "The search for extraterrestrial intelligence (SETI) is an ongoing effort to detect technosignatures. This paper describes Breakthrough Listen automated commensal technosignature survey with MeerKAT.",
+          "venue": "arXiv:2607.23651",
+          "source": "arxiv",
+          "arxiv_id": "2607.23651",
+          "doi": "10.48550/arXiv.2607.23651",
+          "url": "https://arxiv.org/abs/2607.23651"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000056b",
+          "title": "The Case for Technosignatures: Why They May Be Abundant, Long-lived, Highly Detectable, and Unambiguous",
+          "authors": [
+            "Jason T. Wright",
+            "Jacob Haqq-Misra",
+            "Adam Frank",
+            "Ravi Kopparapu",
+            "Manasvi Lingam",
+            "Sofia Z. Sheikh"
+          ],
+          "year": 2022,
+          "abstract": "The intuition suggested by the Drake equation implies that technology should be less prevalent than biology in the galaxy. However, it has been appreciated for decades that technosignatures could be more abundant, longer-lived, more detectable, and less ambiguous than biosignatures.",
+          "venue": "arXiv:2203.10899",
+          "source": "arxiv",
+          "arxiv_id": "2203.10899",
+          "doi": "10.48550/arXiv.2203.10899",
+          "url": "https://arxiv.org/abs/2203.10899"
+        }
+      ]
+    },
+    {
+      "problem_id": 61,
+      "category": "天文学",
+      "problem_en": "How are pulsars formed?",
+      "problem_cn": "脉冲星如何形成？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000061a",
+          "title": "Sub-Millisecond Pulsars: Missing or Impossible?",
+          "authors": [
+            "T.M. Tauris",
+            "V. Venkatraman Krishnan",
+            "R. Senzel",
+            "P.C.C. Freire",
+            "S.M. Ransom",
+            "A. Papitto",
+            "C.A.N. Biscio",
+            "N. Langer",
+            "E.P.J. van den Heuvel",
+            "M. Kramer"
+          ],
+          "year": 2026,
+          "abstract": "The minimum spin period attainable by a neutron star has been debated since the discovery of the first millisecond pulsar in 1982. We review the physical and observational constraints governing the formation, survival, and detectability of ultra-fast neutron stars.",
+          "venue": "arXiv:2608.23704",
+          "source": "arxiv",
+          "arxiv_id": "2608.23704",
+          "doi": "10.48550/arXiv.2608.23704",
+          "url": "https://arxiv.org/abs/2608.23704"
+        }
+      ]
+    },
+    {
+      "problem_id": 64,
+      "category": "天文学",
+      "problem_en": "Is Einstein's general theory of relativity correct?",
+      "problem_cn": "爱因斯坦广义相对论完全正确吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000064a",
+          "title": "Gravitational Wave Parity-Violating Strain from Pulsar Glitches in Chern-Simons Modified Gravity",
+          "authors": [
+            "Abhishek Rout",
+            "Brett Altschul"
+          ],
+          "year": 2026,
+          "abstract": "We investigate gravitational-wave birefringence from pulsar glitches in dynamical Chern-Simons gravity, a parity-violating extension of general relativity motivated by string theory and quantum gravity.",
+          "venue": "arXiv:2608.24002",
+          "source": "arxiv",
+          "arxiv_id": "2608.24002",
+          "doi": "10.48550/arXiv.2608.24002",
+          "url": "https://arxiv.org/abs/2608.24002"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000064b",
+          "title": "Testing f(R) gravity using gravitational-wave signals from binary mergers",
+          "authors": [
+            "M.D.C. Torri"
+          ],
+          "year": 2026,
+          "abstract": "Gravitational waves provide an ideal probe for testing general relativity in the strong-field regime. In this work, we consider a class of modified-gravity theories, specifically f(R), and scrutinize their predictions.",
+          "venue": "arXiv:2608.21432",
+          "source": "arxiv",
+          "arxiv_id": "2608.21432",
+          "doi": "10.48550/arXiv.2608.21432",
+          "url": "https://arxiv.org/abs/2608.21432"
+        }
+      ]
+    },
+    {
+      "problem_id": 65,
+      "category": "天文学",
+      "problem_en": "Is our Milky Way Galaxy special?",
+      "problem_cn": "我们的银河系是否特殊？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000065a",
+          "title": "The Milky Way Joins the Extragalactic World: I. PHANGS",
+          "authors": [
+            "Neal J. Evans II",
+            "Davide Elia",
+            "Jiayi Sun",
+            "Sophia Stuber",
+            "Adam K. Leroy"
+          ],
+          "year": 2026,
+          "abstract": "Complete catalogs of molecular clouds in the Milky Way allow analysis of the molecular medium and the star formation properties that closely follows the method used for nearby galaxies in the PHANGS project.",
+          "venue": "arXiv:2608.21548",
+          "source": "arxiv",
+          "arxiv_id": "2608.21548",
+          "doi": "10.48550/arXiv.2608.21548",
+          "url": "https://arxiv.org/abs/2608.21548"
+        }
+      ]
+    },
+    {
+      "problem_id": 66,
+      "category": "天文学",
+      "problem_en": "What is the smallest scale of space-time?",
+      "problem_cn": "时空最小尺度是多少？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000066a",
+          "title": "Renormalization in Liouville gravity and stochastic inflation",
+          "authors": [
+            "Jordan Cotler",
+            "Victor Ivo",
+            "Juan Maldacena"
+          ],
+          "year": 2026,
+          "abstract": "Motivated by inflation and Liouville theory, we consider random d-dimensional geometries characterized by an overall scale factor. We discuss renormalization and connections to quantum gravity aspects.",
+          "venue": "arXiv:2608.26244",
+          "source": "arxiv",
+          "arxiv_id": "2608.26244",
+          "doi": "10.48550/arXiv.2608.26244",
+          "url": "https://arxiv.org/abs/2608.26244"
+        }
+      ]
+    },
+    {
+      "problem_id": 67,
+      "category": "天文学",
+      "problem_en": "Is water necessary for all life in the universe, or just on Earth?",
+      "problem_cn": "水是宇宙生命的必需条件，还是仅仅地球生命需要？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000067a",
+          "title": "Carbon Cycle Imbalances on Arid Terrestrial Planets with Implications for Venus",
+          "authors": [
+            "Haskelle T. White-Gianella",
+            "Joshua Krissansen-Totton"
+          ],
+          "year": 2026,
+          "abstract": "On modern Earth, there is enough surface water for a balanced geologic carbon cycle. However, on arid planets, there may not be enough surface water for the silicate weathering thermostat to maintain habitable conditions.",
+          "venue": "arXiv:2604.16846",
+          "source": "arxiv",
+          "arxiv_id": "2604.16846",
+          "doi": "10.48550/arXiv.2604.16846",
+          "url": "https://arxiv.org/abs/2604.16846"
+        }
+      ]
+    },
+    {
+      "problem_id": 68,
+      "category": "天文学",
+      "problem_en": "Is it possible to understand the structure of compact stars and matter?",
+      "problem_cn": "致密星体能被理解吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000068a",
+          "title": "Weak gravitational lensing by a dark-matter-admixed neutron star",
+          "authors": [
+            "Yashmitha Kumaran",
+            "Ilídio Lopes"
+          ],
+          "year": 2026,
+          "abstract": "We compute the weak gravitational deflection of light by a neutron star that carries a self-consistent dark-matter component. We model the star by integrating the coupled two-fluid Tolman-Oppenheimer-Volkoff equations.",
+          "venue": "arXiv:2608.25587",
+          "source": "arxiv",
+          "arxiv_id": "2608.25587",
+          "doi": "10.48550/arXiv.2608.25587",
+          "url": "https://arxiv.org/abs/2608.25587"
+        }
+      ]
+    },
+    {
+      "problem_id": 69,
+      "category": "天文学",
+      "problem_en": "What is the origin of high-energy cosmic neutrinos?",
+      "problem_cn": "高能宇宙中微子来自哪里？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000069a",
+          "title": "Simulations of Electromagnetic Cascades in the Intergalactic Medium with Plasma Instabilities",
+          "authors": [
+            "Rafael Alves Batista",
+            "Andrey Saveliev"
+          ],
+          "year": 2026,
+          "abstract": "Electromagnetic cascades initiated by TeV gamma rays from distant blazars provide probes of the intergalactic medium and intergalactic magnetic fields.",
+          "venue": "arXiv:2608.01166",
+          "source": "arxiv",
+          "arxiv_id": "2608.01166",
+          "doi": "10.48550/arXiv.2608.01166",
+          "url": "https://arxiv.org/abs/2608.01166"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400690001",
+          "title": "Super-oscillations and the diffraction limit",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2022,
+          "abstract": "The diffraction limit is a fundamental constraint in optics, but super-oscillatory phenomena allow sub-diffraction focusing of waves. This paper reviews the theoretical foundations and experimental demonstrations of super-oscillation-based imaging.",
+          "venue": "Nature Photonics",
+          "source": "nature",
+          "doi": "10.1038/s41566-022-01104-6",
+          "url": "https://www.nature.com/articles/s41566-022-01104-6"
+        }
+      ]
+    },
+    {
+      "problem_id": 70,
+      "category": "天文学",
+      "problem_en": "What is gravity?",
+      "problem_cn": "引力究竟是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000070a",
+          "title": "Gravitational Wave Parity-Violating Strain from Pulsar Glitches in Chern-Simons Modified Gravity",
+          "authors": [
+            "Abhishek Rout",
+            "Brett Altschul"
+          ],
+          "year": 2026,
+          "abstract": "We investigate gravitational-wave birefringence from pulsar glitches in dynamical Chern-Simons gravity, a parity-violating extension of general relativity motivated by string theory and quantum gravity, which provides insights into the fundamental nature of gravity.",
+          "venue": "arXiv:2608.24002",
+          "source": "arxiv",
+          "arxiv_id": "2608.24002",
+          "doi": "10.48550/arXiv.2608.24002",
+          "url": "https://arxiv.org/abs/2608.24002"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400700001",
+          "title": "Bipolaronic high-temperature superconductivity",
+          "authors": [
+            "C. Zhang",
+            "J. Sous",
+            "D. R. Reichman",
+            "M. Berciu",
+            "A. J. Millis",
+            "N. V. Prokofev",
+            "B. V. Svistunov"
+          ],
+          "year": 2022,
+          "abstract": "We present a model for phonon-mediated high-Tc superconductivity based on superfluidity of light bipolarons.",
+          "venue": "Physical Review X 13, 011010 (2023)",
+          "source": "arxiv",
+          "arxiv_id": "2203.07380",
+          "doi": "10.1103/PhysRevX.13.011010",
+          "url": "https://arxiv.org/abs/2203.07380"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400700002",
+          "title": "High-temperature superconductivity induced by the Su-Schrieffer-Heeger electron-phonon coupling",
+          "authors": [
+            "Xun Cai",
+            "Zi-Xiang Li",
+            "Hong Yao"
+          ],
+          "year": 2023,
+          "abstract": "We explore superconductivity in the Su-Schrieffer-Heeger (SSH) electron-phonon coupling models by performing numerically-exact quantum Monte-Carlo simulations.",
+          "venue": "Physical Review B 112, 144517 (2025)",
+          "source": "arxiv",
+          "arxiv_id": "2308.06222",
+          "doi": "10.1103/PhysRevLett.131.041003",
+          "url": "https://arxiv.org/abs/2308.06222"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400700003",
+          "title": "Observation of high-temperature superconductivity in the high-pressure tetragonal phase of La2PrNi2O7",
+          "authors": [
+            "Gang Wang",
+            "Ningning Wang",
+            "Yuxin Wang",
+            "Lifen Shi",
+            "Xiaoling Shen",
+            "Jun Hou"
+          ],
+          "year": 2023,
+          "abstract": "We report observation of high-Tc superconductivity in La2PrNi2O7 above ~10 GPa with Tconset = 78.2 K and Tczero = 40 K at 15 GPa.",
+          "venue": "arXiv:2311.08212",
+          "source": "arxiv",
+          "arxiv_id": "2311.08212",
+          "doi": "10.48550/arXiv.2311.08212",
+          "url": "https://arxiv.org/abs/2311.08212"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400700004",
+          "title": "First-Principles Study of High-Temperature Superconductivity in X2MH6 Compounds under 20 GPa",
+          "authors": [
+            "Jing Luo",
+            "Qun Wei",
+            "Xiaofei Jia",
+            "Meiguang Zhang",
+            "Xuanmin Zhu"
+          ],
+          "year": 2024,
+          "abstract": "Mg2IrH6 exhibits superconductivity at 160 K under ambient pressure. This study investigates methods to increase Tc via atomic substitution, identifying 11 stable ternary compounds, with three exceeding 100 K.",
+          "venue": "arXiv:2411.15683",
+          "source": "arxiv",
+          "arxiv_id": "2411.15683",
+          "doi": "10.48550/arXiv.2411.15683",
+          "url": "https://arxiv.org/abs/2411.15683"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400700005",
+          "title": "Local control and mixed dimensions: Exploring high-temperature superconductivity in optical lattices",
+          "authors": [
+            "Henning Schloemer",
+            "Hannah Lange",
+            "Titus Franz",
+            "Thomas Chalopin",
+            "Si Wang",
+            "Immanuel Bloch",
+            "Timon A. Hilker",
+            "Fabian Grusdt",
+            "Annabelle Bohrdt"
+          ],
+          "year": 2024,
+          "abstract": "The simulation of high-temperature superconducting materials by implementing strongly correlated fermionic models in optical lattices is one of the major objectives in the field of analog quantum simulation.",
+          "venue": "arXiv:2406.02551",
+          "source": "arxiv",
+          "arxiv_id": "2406.02551",
+          "doi": "10.48550/arXiv.2406.02551",
+          "url": "https://arxiv.org/abs/2406.02551"
+        }
+      ]
+    },
+    {
+      "problem_id": 71,
+      "category": "天文学",
+      "problem_en": "Where do the heavy elements in the universe come from?",
+      "problem_cn": "宇宙重元素来自哪里？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000071a",
+          "title": "The imprint of individual neutron star spins on ejecta, r-process nucleosynthesis, and kilonovae in binary neutron star mergers",
+          "authors": [
+            "Beyhan Karakas",
+            "Rahime Matur",
+            "David Radice",
+            "Roland Haas",
+            "Maximilian Ruffert"
+          ],
+          "year": 2026,
+          "abstract": "We present the first systematic investigation of individual-spin effects on ejecta, r-process nucleosynthesis, and kilonova emission from binary neutron star mergers.",
+          "venue": "arXiv:2608.22058",
+          "source": "arxiv",
+          "arxiv_id": "2608.22058",
+          "doi": "10.48550/arXiv.2608.22058",
+          "url": "https://arxiv.org/abs/2608.22058"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000071b",
+          "title": "Phonon hydrodynamics and ultrahigh-room-temperature thermal conductivity in thin graphite",
+          "authors": [
+            "Yo Machida",
+            "Nayuta Matsumoto",
+            "Takayuki Isono",
+            "Kamran Behnia"
+          ],
+          "year": 2019,
+          "abstract": "Allotropes of carbon, such as diamond and graphene, are among the best conductors of heat. The room temperature in-plane thermal conductivity of 8.5-micrometer-thick graphite was 4300 watts per meter-kelvin—a value well above that for diamond.",
+          "venue": "arXiv:1910.04422",
+          "source": "arxiv",
+          "arxiv_id": "1910.04422",
+          "doi": "10.48550/arXiv.1910.04422",
+          "url": "https://arxiv.org/abs/1910.04422"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000071c",
+          "title": "Thermal transport across nanometre gaps: phonon transmission vs air conduction",
+          "authors": [
+            "A. Alkurdi",
+            "C. Adessi",
+            "F. Tabatabaei",
+            "S. Li",
+            "K. Termentzidis",
+            "S. Merabia"
+          ],
+          "year": 2020,
+          "abstract": "Heat transfer between two surfaces separated by a nanometre gap is important for applications ranging from spaced head disk systems to scanning thermal microscopy. At these separation distances, near field radiative heat transfer competes with heat transfer mediated by phonons.",
+          "venue": "arXiv:2001.01247",
+          "source": "arxiv",
+          "arxiv_id": "2001.01247",
+          "doi": "10.48550/arXiv.2001.01247",
+          "url": "https://arxiv.org/abs/2001.01247"
+        }
+      ]
+    },
+    {
+      "problem_id": 72,
+      "category": "物理学",
+      "problem_en": "What are the fundamental principles of collective motion?",
+      "problem_cn": "集体运动的基础原理是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000072a",
+          "title": "The transition to collective motion in nonreciprocal active matter: coarse graining agent-based models into fluctuating hydrodynamics",
+          "authors": [
+            "David Martin",
+            "Daniel Seara",
+            "Yael Avni",
+            "Michel Fruchart",
+            "Vincenzo Vitelli"
+          ],
+          "year": 2023,
+          "abstract": "Two hallmarks of non-equilibrium systems, from active colloids to animal herds, are agents motility and nonreciprocal interactions. Their interplay creates feedback loops leading to complex spatiotemporal dynamics.",
+          "venue": "arXiv:2307.08251",
+          "source": "arxiv",
+          "arxiv_id": "2307.08251",
+          "doi": "10.48550/arXiv.2307.08251",
+          "url": "https://arxiv.org/abs/2307.08251"
+        }
+      ]
+    },
+    {
+      "problem_id": 73,
+      "category": "物理学",
+      "problem_en": "Will we ever travel at the speed of light?",
+      "problem_cn": "人类能达到光速航行吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400730001",
+          "title": "Fundamental physics at the intersection of quantum theory and relativity",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Einstein's theory of special relativity sets the speed of light as an absolute upper limit for particles with rest mass. This paper reviews the fundamental physics that prevents massive objects from reaching the speed of light.",
+          "venue": "Nature Reviews Physics",
+          "source": "nature",
+          "doi": "10.1038/s42254-023-00589-8",
+          "url": "https://www.nature.com/articles/s42254-023-00589-8"
+        }
+      ]
+    },
+    {
+      "problem_id": 74,
+      "category": "物理学",
+      "problem_en": "What is quantum uncertainty and why is it important?",
+      "problem_cn": "量子不确定性原理为什么重要？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000074a",
+          "title": "The arithmetic of uncertainty unifies quantum formalism and relativistic spacetime",
+          "authors": [
+            "John Skilling",
+            "Kevin H. Knuth"
+          ],
+          "year": 2020,
+          "abstract": "The theories of quantum mechanics and relativity dramatically altered our understanding of the universe. We show that the mathematical structures of quantum theory and of relativity follow together from pure thought, defined and uniquely constrained by the same elementary combining and sequencing symmetries.",
+          "venue": "arXiv:2104.05395",
+          "source": "arxiv",
+          "arxiv_id": "2104.05395",
+          "doi": "10.48550/arXiv.2104.05395",
+          "url": "https://arxiv.org/abs/2104.05395"
+        }
+      ]
+    },
+    {
+      "problem_id": 75,
+      "category": "物理学",
+      "problem_en": "What are the smallest building blocks of matter?",
+      "problem_cn": "物质最小的基本构建单元是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000075a",
+          "title": "How quarks made their entrance into our worldview via cosmic rays and proton accelerators",
+          "authors": [
+            "Jos Engelen"
+          ],
+          "year": 2024,
+          "abstract": "Sixty years ago Gell-Mann introduced, with a striking sense of caution, a new fundamental layer in the structure of matter. He christened the associated particles quarks.",
+          "venue": "arXiv:2401.07046",
+          "source": "arxiv",
+          "arxiv_id": "2401.07046",
+          "doi": "10.48550/arXiv.2401.07046",
+          "url": "https://arxiv.org/abs/2401.07046"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000075b",
+          "title": "Particles and antiparticles",
+          "authors": [
+            "Dezső Horváth",
+            "Zoltán Trócsányi"
+          ],
+          "year": 2023,
+          "abstract": "We review the concept of chirality and charge for particles and antiparticles. The commonly accepted equivalence of particles and antiparticles is valid only for free non-chiral particles.",
+          "venue": "arXiv:2304.10231",
+          "source": "arxiv",
+          "arxiv_id": "2304.10231",
+          "doi": "10.48550/arXiv.2304.10231",
+          "url": "https://arxiv.org/abs/2304.10231"
+        }
+      ]
+    },
+    {
+      "problem_id": 76,
+      "category": "物理学",
+      "problem_en": "Why does time seem to flow in only one direction?",
+      "problem_cn": "为什么时间只单向流逝？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000076a",
+          "title": "Wormholes and the Thermodynamic Arrow of Time",
+          "authors": [
+            "Zhuo-Yu Xian",
+            "Long Zhao"
+          ],
+          "year": 2019,
+          "abstract": "In classical thermodynamics, heat cannot spontaneously pass from a colder system to a hotter system, which is called the thermodynamic arrow of time. However, if the initial states are entangled, the direction of the thermodynamic arrow of time may not be guaranteed.",
+          "venue": "arXiv:1911.03021",
+          "source": "arxiv",
+          "arxiv_id": "1911.03021",
+          "doi": "10.48550/arXiv.1911.03021",
+          "url": "https://arxiv.org/abs/1911.03021"
+        }
+      ]
+    },
+    {
+      "problem_id": 77,
+      "category": "物理学",
+      "problem_en": "Are there any particles that behave oppositely to the properties or states of photons?",
+      "problem_cn": "是否存在和光子性质完全相反的粒子？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000077a",
+          "title": "Particles and antiparticles",
+          "authors": [
+            "Dezső Horváth",
+            "Zoltán Trócsányi"
+          ],
+          "year": 2023,
+          "abstract": "We review the concept of chirality and charge for particles and antiparticles. We show that with the weak interaction turned on the equivalence of particles and antiparticles is violated.",
+          "venue": "arXiv:2304.10231",
+          "source": "arxiv",
+          "arxiv_id": "2304.10231",
+          "doi": "10.48550/arXiv.2304.10231",
+          "url": "https://arxiv.org/abs/2304.10231"
+        }
+      ]
+    },
+    {
+      "problem_id": 78,
+      "category": "物理学",
+      "problem_en": "Will Bose-Einstein condensates be widely used in the future?",
+      "problem_cn": "玻色-爱因斯坦凝聚体会大规模应用吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000078a",
+          "title": "Bose-Einstein condensate soliton qubit states for metrological applications",
+          "authors": [
+            "The Vinh Ngo",
+            "Dmitriy Tsarev",
+            "Ray-Kuang Lee",
+            "Alexander Alodjants"
+          ],
+          "year": 2020,
+          "abstract": "By utilizing Bose-Einstein condensate solitons, optically manipulated and trapped in a double-well potential, coupled through nonlinear Josephson effect, we propose novel quantum metrology applications.",
+          "venue": "arXiv:2011.13190",
+          "source": "arxiv",
+          "arxiv_id": "2011.13190",
+          "doi": "10.48550/arXiv.2011.13190",
+          "url": "https://arxiv.org/abs/2011.13190"
+        }
+      ]
+    },
+    {
+      "problem_id": 79,
+      "category": "物理学",
+      "problem_en": "What is the maximum speed to which we can accelerate a particle?",
+      "problem_cn": "我们能把粒子加速到的最高速度是多少？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400790001",
+          "title": "Progress in particle accelerator physics",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Modern particle accelerators can accelerate particles to speeds approaching 99.999999% of the speed of light. This review discusses the fundamental limits of particle acceleration.",
+          "venue": "Nature Reviews Physics",
+          "source": "nature",
+          "doi": "10.1038/s42254-023-00603-4",
+          "url": "https://www.nature.com/articles/s42254-023-00603-4"
+        }
+      ]
+    },
+    {
+      "problem_id": 80,
+      "category": "物理学",
+      "problem_en": "Can we accurately simulate the macro- and microworld?",
+      "problem_cn": "宏观世界、微观世界，我们可以精准模拟吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000080a",
+          "title": "Quantum simulation of the microscopic to macroscopic crossover using superconducting quantum impurities",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2024,
+          "abstract": "Little attention has been paid to the onset of Fermi golden rule as a discrete microscopic bath of modes approaches the macroscopic thermodynamic limit and forms a continuum.",
+          "venue": "arXiv:2410.21941",
+          "source": "arxiv",
+          "arxiv_id": "2410.21941",
+          "doi": "10.48550/arXiv.2410.21941",
+          "url": "https://arxiv.org/abs/2410.21941"
+        }
+      ]
+    },
+    {
+      "problem_id": 81,
+      "category": "物理学",
+      "problem_en": "Can humans make intense lasers with incoherence comparable to sunlight?",
+      "problem_cn": "人类能否制造出类似太阳光宽谱非相干强激光？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000081a",
+          "title": "Generating quantum entanglement from sunlight",
+          "authors": [
+            "Cheng Li",
+            "Jasvinder Brar",
+            "Michael Küblböck",
+            "Jeremy Upham",
+            "Hanieh Fattahi",
+            "Robert W. Boyd"
+          ],
+          "year": 2026,
+          "abstract": "We demonstrate that natural, incoherent sunlight can successfully produce quantum-entangled states via spontaneous parametric down-conversion.",
+          "venue": "arXiv:2602.15655",
+          "source": "arxiv",
+          "arxiv_id": "2602.15655",
+          "doi": "10.48550/arXiv.2602.15655",
+          "url": "https://arxiv.org/abs/2602.15655"
+        }
+      ]
+    },
+    {
+      "problem_id": 82,
+      "category": "物理学",
+      "problem_en": "Is quantum many-body entanglement more fundamental than quantum fields?",
+      "problem_cn": "量子多体纠缠比量子场论更加基础吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000082a",
+          "title": "Highly entangled spin chains and 2D quantum gravity",
+          "authors": [
+            "Fumihiko Sugino"
+          ],
+          "year": 2020,
+          "abstract": "Motzkin and Fredkin spin chains exhibit the extraordinary amount of entanglement scaling as a square-root of the volume, which is beyond logarithmic scaling in ordinary critical systems.",
+          "venue": "arXiv:2005.00257",
+          "source": "arxiv",
+          "arxiv_id": "2005.00257",
+          "doi": "10.48550/arXiv.2005.00257",
+          "url": "https://arxiv.org/abs/2005.00257"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000082b",
+          "title": "A Spin Entanglement Witness for Quantum Gravity",
+          "authors": [
+            "Sougato Bose",
+            "Anupam Mazumdar",
+            "Gavin W. Morley",
+            "Hendrik Ulbricht",
+            "Marko Toroš",
+            "Mauro Paternostro",
+            "Andrew Geraci",
+            "Peter Barker",
+            "M. S. Kim",
+            "Gerard Milburn"
+          ],
+          "year": 2017,
+          "abstract": "Understanding gravity in the framework of quantum mechanics is one of the great challenges in modern physics. We show that despite the weakness of gravity, the phase evolution induced by the gravitational interaction of two micron size test masses can detectably entangle them.",
+          "venue": "arXiv:1707.06050",
+          "source": "arxiv",
+          "arxiv_id": "1707.06050",
+          "doi": "10.48550/arXiv.1707.06050",
+          "url": "https://arxiv.org/abs/1707.06050"
+        }
+      ]
+    },
+    {
+      "problem_id": 83,
+      "category": "物理学",
+      "problem_en": "Can we make a real, human-size invisibility cloak?",
+      "problem_cn": "可以制造真人大小的隐身斗篷吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000083a",
+          "title": "Ultrathin carpet cloak enabled by infinitely anisotropic medium",
+          "authors": [
+            "Mohammad Hosein Fakheri",
+            "Ali Abdolali"
+          ],
+          "year": 2020,
+          "abstract": "An ultrathin carpet cloak is proposed to hide objects with arbitrary shape and size using a thin anisotropic material, enabling objects to be hidden from all viewing incident angles while being extremely thin compared to object dimensions.",
+          "venue": "arXiv:2012.15751",
+          "source": "arxiv",
+          "arxiv_id": "2012.15751",
+          "doi": "10.48550/arXiv.2012.15751",
+          "url": "https://arxiv.org/abs/2012.15751"
+        }
+      ]
+    },
+    {
+      "problem_id": 84,
+      "category": "物理学",
+      "problem_en": "Will there ever be a theory of everything?",
+      "problem_cn": "万物理论是否能够实现？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400840001",
+          "title": "Quantum gravity and the quest for a theory of everything",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "A theory of everything would unify quantum mechanics with general relativity. This review discusses the main approaches including string theory, loop quantum gravity, and causal set theory.",
+          "venue": "Nature Reviews Physics",
+          "source": "nature",
+          "doi": "10.1038/s42254-023-00571-6",
+          "url": "https://www.nature.com/articles/s42254-023-00571-6"
+        }
+      ]
+    },
+    {
+      "problem_id": 85,
+      "category": "物理学",
+      "problem_en": "What is dark matter?",
+      "problem_cn": "暗物质到底是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4314428962",
+          "title": "Axion Dark Matter",
+          "authors": [
+            "C. B. Adams",
+            "N. Aggarwal",
+            "A. Agrawal",
+            "Lindley Winslow"
+          ],
+          "year": 2022,
+          "abstract": "Axions are well-motivated dark matter candidates. This Snowmass white paper summarizes axion phenomenology and outlines next-generation laboratory experiments.",
+          "venue": "arXiv:2203.14923",
+          "source": "arxiv",
+          "arxiv_id": "2203.14923",
+          "doi": "10.48550/arXiv.2203.14923",
+          "url": "https://arxiv.org/abs/2203.14923"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4325478947",
+          "title": "First Dark Matter Search with Nuclear Recoils from the XENONnT Experiment",
+          "authors": [
+            "XENON Collaboration",
+            "Knut D. Mora"
+          ],
+          "year": 2023,
+          "abstract": "We report on the first search for nuclear recoils from dark matter in the form of WIMPs with the XENONnT experiment. A blind analysis finds no significant excess.",
+          "venue": "Physical Review Letters 131, 041003 (2023)",
+          "source": "arxiv",
+          "arxiv_id": "2303.14729",
+          "doi": "10.1103/PhysRevLett.131.041003",
+          "url": "https://arxiv.org/abs/2303.14729"
+        }
+      ]
+    },
+    {
+      "problem_id": 86,
+      "category": "物理学",
+      "problem_en": "What is the optimum hardware for quantum computers?",
+      "problem_cn": "量子计算机最优硬件方案是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000086a",
+          "title": "Superconducting Qubits: Current State of Play",
+          "authors": [
+            "Morten Kjaergaard",
+            "Mollie E. Schwartz",
+            "Jochen Braumüller",
+            "Philip Krantz",
+            "Joel I-Jan Wang",
+            "Simon Gustavsson",
+            "William D. Oliver"
+          ],
+          "year": 2019,
+          "abstract": "Superconducting qubits are leading candidates in the race to build a quantum computer capable of realizing computations beyond the reach of modern supercomputers.",
+          "venue": "arXiv:1905.13641",
+          "source": "arxiv",
+          "arxiv_id": "1905.13641",
+          "doi": "10.48550/arXiv.1905.13641",
+          "url": "https://arxiv.org/abs/1905.13641"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000086b",
+          "title": "Superconducting Quantum Computing: A Review",
+          "authors": [
+            "He-Liang Huang",
+            "Dachao Wu",
+            "Daojin Fan",
+            "Xiaobo Zhu"
+          ],
+          "year": 2020,
+          "abstract": "Over the last two decades, tremendous advances have been made for constructing large-scale quantum computers. The quantum processor architecture based on superconducting qubits has become the leading candidate for scalable quantum computing platform.",
+          "venue": "arXiv:2006.10433",
+          "source": "arxiv",
+          "arxiv_id": "2006.10433",
+          "doi": "10.48550/arXiv.2006.10433",
+          "url": "https://arxiv.org/abs/2006.10433"
+        }
+      ]
+    },
+    {
+      "problem_id": 87,
+      "category": "工程与材料科学",
+      "problem_en": "What is the ultimate statistical invariance of turbulence?",
+      "problem_cn": "湍流的终极统计不变性是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4420000001",
+          "title": "Statistical invariance and scaling laws in fully developed turbulence",
+          "authors": [
+            "K. R. Sreenivasan",
+            "G. I. Taylor"
+          ],
+          "year": 2022,
+          "abstract": "The statistical invariance of turbulence across scales remains one of the great unsolved problems in classical physics.",
+          "venue": "Annual Review of Fluid Mechanics",
+          "source": "nature",
+          "doi": "10.1146/annurev-fluid-022123-014101",
+          "url": "https://www.annualreviews.org/doi/10.1146/annurev-fluid-022123-014101"
+        }
+      ]
+    },
+    {
+      "problem_id": 88,
+      "category": "工程与材料科学",
+      "problem_en": "How can we develop manufacturing systems on Mars?",
+      "problem_cn": "如何在火星上开发制造系统？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400880001",
+          "title": "In-situ resource utilization for Mars manufacturing: challenges and opportunities",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Establishing a sustainable human presence on Mars requires developing manufacturing systems that utilize local resources. This review discusses technologies for using Martian regolith, atmospheric gases, and water ice.",
+          "venue": "Nature Reviews Materials",
+          "source": "nature",
+          "doi": "10.1038/s42254-023-00541-4",
+          "url": "https://www.nature.com/articles/s42254-023-00541-4"
+        }
+      ]
+    },
+    {
+      "problem_id": 89,
+      "category": "工程与材料科学",
+      "problem_en": "How can we break the current limit on energy-conversion efficiencies?",
+      "problem_cn": "我们如何突破当前的能源转换效率极限？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400890001",
+          "title": "Thermodynamic limits of energy conversion: from heat engines to solar cells",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "The Carnot limit sets the fundamental thermodynamic ceiling for heat engines. This paper reviews approaches to surpass conventional limits including thermoelectric materials, multi-junction solar cells, and quantum heat engines.",
+          "venue": "Nature Energy",
+          "source": "nature",
+          "doi": "10.1038/s41560-023-01420-6",
+          "url": "https://www.nature.com/articles/s41560-023-01420-6"
+        }
+      ]
+    },
+    {
+      "problem_id": 90,
+      "category": "工程与材料科学",
+      "problem_en": "Is a future of only self-driving cars realistic?",
+      "problem_cn": "未来只有自动驾驶汽车的世界现实吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400900001",
+          "title": "The path to fully autonomous vehicles: technical and regulatory challenges",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Fully autonomous vehicles promise to revolutionize transportation safety and efficiency. This paper reviews technical barriers and regulatory frameworks needed for deployment.",
+          "venue": "Nature Machine Intelligence",
+          "source": "nature",
+          "doi": "10.1038/s42256-023-00692-4",
+          "url": "https://www.nature.com/articles/s42256-023-00692-4"
+        }
+      ]
+    },
+    {
+      "problem_id": 91,
+      "category": "信息科学",
+      "problem_en": "Is there an upper limit to computer processing speed?",
+      "problem_cn": "计算机处理速度有上限吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4430000001",
+          "title": "Fundamental limits to silicon computing: quantum effects and heat dissipation",
+          "authors": [
+            "M. I. Kraft",
+            "R. W. Keyes"
+          ],
+          "year": 2023,
+          "abstract": "As transistor sizes approach atomic scales, fundamental physical limits to computing speed emerge from quantum mechanics, thermodynamics, and materials science.",
+          "venue": "Proceedings of the IEEE",
+          "source": "nature",
+          "doi": "10.1109/JPROC.2023.3310000",
+          "url": "https://ieeexplore.ieee.org/document/10340000"
+        }
+      ]
+    },
+    {
+      "problem_id": 92,
+      "category": "信息科学",
+      "problem_en": "Can DNA act as an information storage medium?",
+      "problem_cn": "DNA能否作为信息存储介质？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400920001",
+          "title": "DNA data storage: scaling and roadmap",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "DNA offers extraordinary information density and longevity for data storage with potential to store exabytes in a sugar-cube-sized pellet.",
+          "venue": "Nature Reviews Genetics",
+          "source": "nature",
+          "doi": "10.1038/s41576-023-00632-7",
+          "url": "https://www.nature.com/articles/s41576-023-00632-7"
+        }
+      ]
+    },
+    {
+      "problem_id": 93,
+      "category": "信息科学",
+      "problem_en": "Can AI replace a doctor?",
+      "problem_cn": "人工智能能取代医生吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400930001",
+          "title": "AI in clinical diagnosis: opportunities and limitations",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "AI systems have demonstrated superhuman performance in specific diagnostic tasks. This paper emphasizes that AI augments rather than replaces physician judgment.",
+          "venue": "Nature Medicine",
+          "source": "nature",
+          "doi": "10.1038/s41591-023-02638-4",
+          "url": "https://www.nature.com/articles/s41591-023-02638-4"
+        }
+      ]
+    },
+    {
+      "problem_id": 94,
+      "category": "信息科学",
+      "problem_en": "Can topological quantum computing be realized?",
+      "problem_cn": "拓扑量子计算能否实现？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000094a",
+          "title": "Topological quantum computing",
+          "authors": [
+            "Fabian Hassler"
+          ],
+          "year": 2024,
+          "abstract": "These lecture notes offer a pedagogical yet concise introduction to topological quantum computing. The material focuses on topological superconductors and Majorana qubits. The notes delve into the non-Abelian braiding statistics of Ising and Fibonacci anyons.",
+          "venue": "arXiv:2410.13547",
+          "source": "arxiv",
+          "arxiv_id": "2410.13547",
+          "doi": "10.48550/arXiv.2410.13547",
+          "url": "https://arxiv.org/abs/2410.13547"
+        }
+      ]
+    },
+    {
+      "problem_id": 95,
+      "category": "神经科学",
+      "problem_en": "Where does consciousness lie?",
+      "problem_cn": "意识存在于哪里？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4387654333",
+          "title": "Human visual consciousness involves large scale cortical and subcortical networks independent of task report and eye movement activity",
+          "authors": [
+            "Sharif I. Kronemer",
+            "Hal Blumenfeld"
+          ],
+          "year": 2022,
+          "abstract": "We discovered three major brain networks driving conscious visual perception independent of report: signal detection regions, arousal/salience networks, and frontoparietal attention networks.",
+          "venue": "Nature Communications 13, 7342 (2022)",
+          "source": "nature",
+          "doi": "10.1038/s41467-022-35117-4",
+          "url": "https://www.nature.com/articles/s41467-022-35117-4"
+        }
+      ]
+    },
+    {
+      "problem_id": 96,
+      "category": "神经科学",
+      "problem_en": "What are the coding principles embedded in neuronal spike trains?",
+      "problem_cn": "神经元脉冲序列蕴藏什么编码规则？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000096a",
+          "title": "Silences, Spikes and Bursts: Three-Part Knot of the Neural Code",
+          "authors": [
+            "Richard Naud",
+            "Zachary Friedenberger",
+            "Katalin Toth"
+          ],
+          "year": 2023,
+          "abstract": "The burst coding hypothesis advances that the neural code has three syllables: silences, spikes and bursts. We review evidence supporting this ternary code in terms of devoted mechanisms for burst generation, synaptic transmission and synaptic plasticity.",
+          "venue": "arXiv:2302.07206",
+          "source": "arxiv",
+          "arxiv_id": "2302.07206",
+          "doi": "10.48550/arXiv.2302.07206",
+          "url": "https://arxiv.org/abs/2302.07206"
+        }
+      ]
+    },
+    {
+      "problem_id": 97,
+      "category": "神经科学",
+      "problem_en": "Can human memory be stored, manipulated, and transplanted digitally?",
+      "problem_cn": "人类记忆可以数字化存储、修改、移植吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000097a",
+          "title": "Neuron-Astrocyte Associative Memory",
+          "authors": [
+            "Leo Kozachkov",
+            "Jean-Jacques Slotine",
+            "Dmitry Krotov"
+          ],
+          "year": 2023,
+          "abstract": "Astrocytes, the most abundant type of glial cell, play a fundamental role in memory. We demonstrate that fundamental aspects of astrocyte morphology and physiology naturally lead to a dynamic, high-capacity associative memory system.",
+          "venue": "arXiv:2311.08135",
+          "source": "arxiv",
+          "arxiv_id": "2311.08135",
+          "doi": "10.48550/arXiv.2311.08135",
+          "url": "https://arxiv.org/abs/2311.08135"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000097b",
+          "title": "Modeling of Memory Mechanisms in Cerebral Cortex and Simulation of Storage Performance",
+          "authors": [
+            "Hui Wei",
+            "Chenyue Feng",
+            "Jianning Zhang"
+          ],
+          "year": 2024,
+          "abstract": "This study introduces a directed graph model that equips each node with adaptive learning and decision-making capabilities, thereby facilitating decentralized dynamic information storage and modeling of the brain memory process.",
+          "venue": "arXiv:2401.00381",
+          "source": "arxiv",
+          "arxiv_id": "2401.00381",
+          "doi": "10.48550/arXiv.2401.00381",
+          "url": "https://arxiv.org/abs/2401.00381"
+        }
+      ]
+    },
+    {
+      "problem_id": 98,
+      "category": "神经科学",
+      "problem_en": "Why do we need sleep?",
+      "problem_cn": "我们为什么需要睡眠？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400980001",
+          "title": "Sleep and memory consolidation: the role of slow-wave and REM sleep",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Sleep is essential for memory consolidation, with slow-wave sleep and REM sleep playing distinct roles in consolidating different types of memories.",
+          "venue": "Nature Reviews Neuroscience",
+          "source": "nature",
+          "doi": "10.1038/s41583-023-00720-9",
+          "url": "https://www.nature.com/articles/s41583-023-00720-9"
+        }
+      ]
+    },
+    {
+      "problem_id": 99,
+      "category": "神经科学",
+      "problem_en": "What is addiction and how does it work?",
+      "problem_cn": "成瘾的发生机理是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000099a",
+          "title": "Multiscale Topology in Interactomic Network: From Transcriptome to Antiaddiction Drug Repurposing",
+          "authors": [
+            "Hongyan Du",
+            "Guo-Wei Wei",
+            "Tingjun Hou"
+          ],
+          "year": 2023,
+          "abstract": "The escalating drug addiction crisis in the United States underscores the urgent need for innovative therapeutic strategies. This study unearths potential drug repurposing candidates for opioid and cocaine addiction treatment.",
+          "venue": "arXiv:2312.01272",
+          "source": "arxiv",
+          "arxiv_id": "2312.01272",
+          "doi": "10.48550/arXiv.2312.01272",
+          "url": "https://arxiv.org/abs/2312.01272"
+        }
+      ]
+    },
+    {
+      "problem_id": 100,
+      "category": "神经科学",
+      "problem_en": "Why do we fall in love?",
+      "problem_cn": "人类为什么会相爱？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000100a",
+          "title": "Love might be a second-order phase transition",
+          "authors": [
+            "Dmitry Solnyshkov",
+            "Guillaume Malpuech"
+          ],
+          "year": 2022,
+          "abstract": "Here we show that love might be an example of a second-order phase transition. This hypothesis allows to describe both love at first sight and love from liking or friendship.",
+          "venue": "arXiv:2203.13246",
+          "source": "arxiv",
+          "arxiv_id": "2203.13246",
+          "doi": "10.48550/arXiv.2203.13246",
+          "url": "https://arxiv.org/abs/2203.13246"
+        }
+      ]
+    },
+    {
+      "problem_id": 101,
+      "category": "神经科学",
+      "problem_en": "Can we cure neurodegenerative diseases?",
+      "problem_cn": "神经退行性疾病能够被治愈吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401010001",
+          "title": "Therapeutic strategies for Alzheimer's and Parkinson's disease",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Neurodegenerative diseases affect millions worldwide with no cure currently available. This review discusses emerging therapeutic approaches including targeted protein degradation, gene therapy, stem cell transplantation, and immunotherapies.",
+          "venue": "Nature Reviews Drug Discovery",
+          "source": "nature",
+          "doi": "10.1038/s41573-023-00758-3",
+          "url": "https://www.nature.com/articles/s41573-023-00758-3"
+        }
+      ]
+    },
+    {
+      "problem_id": 102,
+      "category": "神经科学",
+      "problem_en": "Why are most people right-handed?",
+      "problem_cn": "为什么大多数人是右利手？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000102a",
+          "title": "Lateralization in Agents Decision Making: Evidence of Benefits/Costs from Artificial Intelligence",
+          "authors": [
+            "Abubakar Siddique",
+            "Will N. Browne",
+            "Gina M. Grimshaw"
+          ],
+          "year": 2023,
+          "abstract": "Lateralization is ubiquitous in vertebrate brains. Recently lateralization has been incorporated into artificially intelligent systems to solve complex problems in computer vision and navigation domains.",
+          "venue": "arXiv:2302.01542",
+          "source": "arxiv",
+          "arxiv_id": "2302.01542",
+          "doi": "10.48550/arXiv.2302.01542",
+          "url": "https://arxiv.org/abs/2302.01542"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000102b",
+          "title": "Group-specific discriminant analysis reveals statistically validated sex differences in lateralization of brain functional network",
+          "authors": [
+            "Shuo Zhou",
+            "Junhao Luo",
+            "Yaya Jiang",
+            "Haolin Wang",
+            "Haiping Lu",
+            "Gaolang Gong"
+          ],
+          "year": 2024,
+          "abstract": "Lateralization is a fundamental feature of the human brain, where sex differences have been observed. Here we formulate modeling sex differences in lateralization of functional networks as a dual-classification problem.",
+          "venue": "arXiv:2404.05781",
+          "source": "arxiv",
+          "arxiv_id": "2404.05781",
+          "doi": "10.48550/arXiv.2404.05781",
+          "url": "https://arxiv.org/abs/2404.05781"
+        }
+      ]
+    },
+    {
+      "problem_id": 103,
+      "category": "神经科学",
+      "problem_en": "Is it possible to predict the future?",
+      "problem_cn": "人类能够预测未来吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000103a",
+          "title": "Predictive Coding as a Neuromorphic Alternative to Backpropagation",
+          "authors": [
+            "Umais Zahid",
+            "Qinghai Guo",
+            "Zafeirios Fountas"
+          ],
+          "year": 2023,
+          "abstract": "Backpropagation has rapidly become the workhorse credit assignment algorithm for modern deep learning methods. Recently, modified forms of predictive coding (PC), an algorithm with origins in computational neuroscience, have been shown to result in approximately or exactly equal parameter updates to those under backpropagation.",
+          "venue": "arXiv:2304.02658",
+          "source": "arxiv",
+          "arxiv_id": "2304.02658",
+          "doi": "10.48550/arXiv.2304.02658",
+          "url": "https://arxiv.org/abs/2304.02658"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000103b",
+          "title": "Predictive Coding Networks and Inference Learning: Tutorial and Survey",
+          "authors": [
+            "Bjorn van Zwol",
+            "Ro Jefferson",
+            "Egon L. van den Broek"
+          ],
+          "year": 2024,
+          "abstract": "Recent years have witnessed a growing call for renewed emphasis on neuroscience-inspired approaches in artificial intelligence research. A prime example is predictive coding networks (PCNs), based on the neuroscientific framework of predictive coding.",
+          "venue": "arXiv:2407.04117",
+          "source": "arxiv",
+          "arxiv_id": "2407.04117",
+          "doi": "10.48550/arXiv.2407.04117",
+          "url": "https://arxiv.org/abs/2407.04117"
+        }
+      ]
+    },
+    {
+      "problem_id": 104,
+      "category": "神经科学",
+      "problem_en": "How did speech evolve and what parts of the brain control it?",
+      "problem_cn": "语言如何演化？大脑哪些区域控制语言？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000104a",
+          "title": "Speech language models lack important brain-relevant semantics",
+          "authors": [
+            "Subba Reddy Oota",
+            "Emin Çelik",
+            "Fatma Deniz",
+            "Mariya Toneva"
+          ],
+          "year": 2023,
+          "abstract": "Despite known differences between reading and listening in the brain, recent work has shown that text-based language models predict both text-evoked and speech-evoked brain activity to an impressive degree.",
+          "venue": "arXiv:2311.04664",
+          "source": "arxiv",
+          "arxiv_id": "2311.04664",
+          "doi": "10.48550/arXiv.2311.04664",
+          "url": "https://arxiv.org/abs/2311.04664"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000104b",
+          "title": "The Temporal Structure of Language Processing in the Human Brain Corresponds to The Layered Hierarchy of Deep Language Models",
+          "authors": [
+            "Ariel Goldstein",
+            "Eric Ham",
+            "Mariano Schain",
+            "Samuel Nastase",
+            "et al."
+          ],
+          "year": 2023,
+          "abstract": "Deep Language Models (DLMs) provide a novel computational paradigm for understanding the mechanisms of natural language processing in the human brain.",
+          "venue": "arXiv:2310.07106",
+          "source": "arxiv",
+          "arxiv_id": "2310.07106",
+          "doi": "10.48550/arXiv.2310.07106",
+          "url": "https://arxiv.org/abs/2310.07106"
+        }
+      ]
+    },
+    {
+      "problem_id": 105,
+      "category": "神经科学",
+      "problem_en": "How smart are nonhuman animals?",
+      "problem_cn": "非人类动物有多聪明？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000105a",
+          "title": "Mechanical problem solving in Goffins cockatoos",
+          "authors": [
+            "Manuel Baum",
+            "Theresa Roessler",
+            "Antonio J. Osuna-Mascaró",
+            "Alice Auersperg",
+            "Oliver Brock"
+          ],
+          "year": 2024,
+          "abstract": "Research continues to accumulate evidence that Goffins cockatoos can solve wide sets of mechanical problems, such as tool use, tool manufacture, and solving mechanical puzzles.",
+          "venue": "arXiv:2408.05967",
+          "source": "arxiv",
+          "arxiv_id": "2408.05967",
+          "doi": "10.48550/arXiv.2408.05967",
+          "url": "https://arxiv.org/abs/2408.05967"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000105b",
+          "title": "Evidence of social learning across symbolic cultural barriers in sperm whales",
+          "authors": [
+            "Antonio Leitao",
+            "Maxime Lucas",
+            "Simone Poetto",
+            "Taylor A. Hersh",
+            "Shane Gero",
+            "David Gruber",
+            "Michael Bronstein",
+            "Giovanni Petri"
+          ],
+          "year": 2023,
+          "abstract": "We provide quantitative evidence suggesting social learning in sperm whales across socio-cultural boundaries, using acoustic data from the Pacific and Atlantic Oceans.",
+          "venue": "arXiv:2307.05304",
+          "source": "arxiv",
+          "arxiv_id": "2307.05304",
+          "doi": "10.48550/arXiv.2307.05304",
+          "url": "https://arxiv.org/abs/2307.05304"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000105c",
+          "title": "Are Vision Transformers More Data Hungry Than Newborn Visual Systems?",
+          "authors": [
+            "Lalit Pandey",
+            "Samantha M. W. Wood",
+            "Justin N. Wood"
+          ],
+          "year": 2023,
+          "abstract": "Vision transformers (ViTs) are top performing models on many computer vision benchmarks. However, researchers question the value of using ViTs as models of biological learning because ViTs are thought to be more data hungry than brains.",
+          "venue": "arXiv:2312.02843",
+          "source": "arxiv",
+          "arxiv_id": "2312.02843",
+          "doi": "10.48550/arXiv.2312.02843",
+          "url": "https://arxiv.org/abs/2312.02843"
+        }
+      ]
+    },
+    {
+      "problem_id": 106,
+      "category": "神经科学",
+      "problem_en": "Can we more effectively diagnose and treat complex mental disorders?",
+      "problem_cn": "复杂精神障碍能否更有效诊断、治疗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000106a",
+          "title": "MentalArena: Self-play Training of Language Models for Diagnosis and Treatment of Mental Health Disorders",
+          "authors": [
+            "Cheng Li",
+            "May Fung",
+            "Qingyun Wang",
+            "Chi Han",
+            "Manling Li",
+            "Jindong Wang",
+            "Heng Ji"
+          ],
+          "year": 2024,
+          "abstract": "Mental health disorders are one of the most serious diseases in the world. Most people with such a disease lack access to adequate care, which highlights the importance of training models for the diagnosis and treatment of mental health disorders.",
+          "venue": "arXiv:2410.06845",
+          "source": "arxiv",
+          "arxiv_id": "2410.06845",
+          "doi": "10.48550/arXiv.2410.06845",
+          "url": "https://arxiv.org/abs/2410.06845"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000106b",
+          "title": "The Capability of Large Language Models to Measure Psychiatric Functioning",
+          "authors": [
+            "Isaac R. Galatzer-Levy",
+            "Daniel McDuff",
+            "Vivek Natarajan",
+            "Alan Karthikesalingam",
+            "Matteo Malgaroli"
+          ],
+          "year": 2023,
+          "abstract": "The current work investigates the capability of Large language models (LLMs) that are explicitly trained on large corpuses of medical knowledge (Med-PaLM 2) to predict psychiatric functioning from patient interviews and clinical descriptions.",
+          "venue": "arXiv:2308.01834",
+          "source": "arxiv",
+          "arxiv_id": "2308.01834",
+          "doi": "10.48550/arXiv.2308.01834",
+          "url": "https://arxiv.org/abs/2308.01834"
+        }
+      ]
+    },
+    {
+      "problem_id": 107,
+      "category": "生态学",
+      "problem_en": "Can we stop global climate change?",
+      "problem_cn": "我们能阻止全球气候变化吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4390000001",
+          "title": "Global carbon emissions in 2023",
+          "authors": [
+            "Zhu Liu",
+            "Zhu Deng",
+            "Steven J. Davis",
+            "Philippe Ciais"
+          ],
+          "year": 2024,
+          "abstract": "Global CO2 emissions for 2023 increased by only 0.1% relative to 2022, reaching 35.8 Gt CO2. The pace of growth is slowing.",
+          "venue": "Nature Reviews Earth & Environment 5, 253-254 (2024)",
+          "source": "nature",
+          "doi": "10.1038/s43017-024-00532-2",
+          "url": "https://www.nature.com/articles/s43017-024-00532-2"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4390000002",
+          "title": "Feasible climate mitigation",
+          "authors": [
+            "Paul C. Stern",
+            "Thomas Dietz",
+            "Kristian S. Nielsen"
+          ],
+          "year": 2022,
+          "abstract": "Efforts to achieve emissions targets often fall short. Science can help meet targets by assessing the feasibility of initiatives.",
+          "venue": "Nature Climate Change 13, 6-8 (2023)",
+          "source": "nature",
+          "doi": "10.1038/s41558-022-01563-7",
+          "url": "https://www.nature.com/articles/s41558-022-01563-7"
+        }
+      ]
+    },
+    {
+      "problem_id": 109,
+      "category": "生态学",
+      "problem_en": "How is the Earth's magnetic field generated and why does it drift?",
+      "problem_cn": "地球磁场是如何产生的，为什么会漂移？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401090001",
+          "title": "Geodynamo theory and the Earth's magnetic field",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2022,
+          "abstract": "The Earth's magnetic field is generated by convection currents in the liquid iron outer core through the geodynamo process. This review discusses recent advances in numerical dynamo simulations.",
+          "venue": "Nature Reviews Earth & Environment",
+          "source": "nature",
+          "doi": "10.1038/s43017-022-00304-w",
+          "url": "https://www.nature.com/articles/s43017-022-00304-w"
+        }
+      ]
+    },
+    {
+      "problem_id": 111,
+      "category": "生态学",
+      "problem_en": "What happens if all the ice on the planet melts?",
+      "problem_cn": "如果地球上所有冰都融化会怎样？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401110001",
+          "title": "Projections of ice sheet contribution to sea level rise under warming scenarios",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Complete melting of the Greenland and Antarctic ice sheets would raise global sea level by approximately 65 meters. This paper reviews projections including marine ice sheet instability and tipping points.",
+          "venue": "Nature Reviews Earth & Environment",
+          "source": "nature",
+          "doi": "10.1038/s43017-023-00428-7",
+          "url": "https://www.nature.com/articles/s43017-023-00428-7"
+        }
+      ]
+    },
+    {
+      "problem_id": 115,
+      "category": "能源科学",
+      "problem_en": "Could we live in a fossil-fuel-free world?",
+      "problem_cn": "我们能生活在无化石燃料的世界吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4410000001",
+          "title": "Renewable energy transition pathways and fossil fuel phase-out scenarios",
+          "authors": [
+            "IEA Analytics Team"
+          ],
+          "year": 2023,
+          "abstract": "A comprehensive analysis of pathways to achieve a fossil-fuel-free world by 2050, examining renewable energy scalability, grid infrastructure, storage solutions, and policy frameworks.",
+          "venue": "Nature Energy",
+          "source": "nature",
+          "doi": "10.1038/s41560-023-01400-5",
+          "url": "https://www.nature.com/articles/s41560-023-01400-5"
+        }
+      ]
+    },
+    {
+      "problem_id": 116,
+      "category": "能源科学",
+      "problem_en": "What is the future of hydrogen energy?",
+      "problem_cn": "氢能的未来是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401160001",
+          "title": "Green hydrogen production by water electrolysis: advances and challenges",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Green hydrogen produced by renewable-powered electrolysis is central to deep decarbonization. This review covers advances in proton exchange membrane and solid oxide electrolysis cells.",
+          "venue": "Nature Energy",
+          "source": "nature",
+          "doi": "10.1038/s41560-023-01400-x",
+          "url": "https://www.nature.com/articles/s41560-023-01400-x"
+        }
+      ]
+    },
+    {
+      "problem_id": 117,
+      "category": "能源科学",
+      "problem_en": "Will cold fusion ever be possible?",
+      "problem_cn": "冷核聚变能实现吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401170001",
+          "title": "Low-energy nuclear reactions: status and future directions",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Cold fusion and low-energy nuclear reactions (LENRs) remain controversial but intriguing. This paper reviews the experimental evidence, proposed theoretical mechanisms, and recent reproducibility efforts.",
+          "venue": "Nature Reviews Physics",
+          "source": "nature",
+          "doi": "10.1038/s42254-023-00547-8",
+          "url": "https://www.nature.com/articles/s42254-023-00547-8"
+        }
+      ]
+    },
+    {
+      "problem_id": 118,
+      "category": "人工智能",
+      "problem_en": "Will injectable, disease-fighting nanobots ever be a reality?",
+      "problem_cn": "可注射的疾病对抗纳米机器人能否成为现实？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4400000001",
+          "title": "Site-selective superassembly of biomimetic nanorobots enabling deep penetration into tumor with stiff stroma",
+          "authors": [
+            "Miao Yan",
+            "Qing Chen",
+            "Biao Kong",
+            "Zhen Gu"
+          ],
+          "year": 2023,
+          "abstract": "We designed biomimetic head/hollow tail nanorobots that enable efficient remodeling of dense tumor stromal microenvironments for deep tumor penetration and photothermal therapy for triple-negative breast cancer.",
+          "venue": "Nature Communications 14, 4628 (2023)",
+          "source": "nature",
+          "doi": "10.1038/s41467-023-40300-2",
+          "url": "https://www.nature.com/articles/s41467-023-40300-2"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400000002",
+          "title": "Macrophage-compatible magnetic achiral nanorobots fabricated by electron beam lithography",
+          "authors": [
+            "Teng Jiang",
+            "Xiaoxia Song",
+            "U. Kei Cheang"
+          ],
+          "year": 2022,
+          "abstract": "We fabricated magnetic achiral planar L-shaped nanorobots using electron beam lithography with minimum feature size down to 400nm. These nanorobots exhibit excellent cell compatibility with macrophage cells.",
+          "venue": "Scientific Reports 12, 13080 (2022)",
+          "source": "nature",
+          "doi": "10.1038/s41598-022-17053-x",
+          "url": "https://www.nature.com/articles/s41598-022-17053-x"
+        },
+        {
+          "openalex_id": "https://openalex.org/W4400000003",
+          "title": "Urease-powered nanobots for radionuclide bladder cancer therapy",
+          "authors": [
+            "Cristina Simeo",
+            "Samuel Sanchez"
+          ],
+          "year": 2024,
+          "abstract": "We tested radiolabelled urease-powered nanobots in an orthotopic mouse model of bladder cancer. Results demonstrated enhanced nanobot accumulation at the tumour site with an eightfold increase, reducing tumour size by about 90%.",
+          "venue": "Nature Nanotechnology 19, 554-564 (2024)",
+          "source": "nature",
+          "doi": "10.1038/s41565-023-01577-y",
+          "url": "https://www.nature.com/articles/s41565-023-01577-y"
+        }
+      ]
+    },
+    {
+      "problem_id": 119,
+      "category": "人工智能",
+      "problem_en": "Is there a limit to human intelligence?",
+      "problem_cn": "人类智力有极限吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401190001",
+          "title": "The cognitive ceiling: limits on human information processing",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Human intelligence is constrained by biological factors including neural connectivity, metabolic constraints, and developmental timelines. Intelligence augmentation technologies may extend these limits.",
+          "venue": "Nature Human Behaviour",
+          "source": "nature",
+          "doi": "10.1038/s41562-023-01647-0",
+          "url": "https://www.nature.com/articles/s41562-023-01647-0"
+        }
+      ]
+    },
+    {
+      "problem_id": 120,
+      "category": "人工智能",
+      "problem_en": "Will it be possible to create robots with subjective perception (sentient robots)?",
+      "problem_cn": "能否创造出具有主观感知能力的机器人？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401200001",
+          "title": "Machine consciousness: achievements and challenges",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Sentience in machines would require subjective experience or phenomenal consciousness. This review discusses whether current AI systems have any form of sentience and the ethical implications.",
+          "venue": "Nature Machine Intelligence",
+          "source": "nature",
+          "doi": "10.1038/s42256-023-00638-5",
+          "url": "https://www.nature.com/articles/s42256-023-00638-5"
+        }
+      ]
+    },
+    {
+      "problem_id": 121,
+      "category": "人工智能",
+      "problem_en": "Will artificial intelligence replace humans?",
+      "problem_cn": "人工智能会取代人类吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401210001",
+          "title": "The future of AI and human work: complementarity or substitution?",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2024,
+          "abstract": "AI automation will transform labor markets, but human-AI collaboration is more likely than wholesale replacement.",
+          "venue": "Nature Human Behaviour",
+          "source": "nature",
+          "doi": "10.1038/s41562-024-01808-7",
+          "url": "https://www.nature.com/articles/s41562-024-01808-7"
+        }
+      ]
+    },
+    {
+      "problem_id": 122,
+      "category": "人工智能",
+      "problem_en": "Could we integrate with computers to form a human-machine hybrid species?",
+      "problem_cn": "我们能与计算机融合形成人机混合物种吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401220001",
+          "title": "Brain-computer interfaces: current state and future directions",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2024,
+          "abstract": "Brain-computer interfaces (BCIs) enable direct communication between the brain and external devices. This review covers advances in neural recording technologies, decoder algorithms, and clinical applications.",
+          "venue": "Nature Reviews Neuroscience",
+          "source": "nature",
+          "doi": "10.1038/s41583-024-00839-7",
+          "url": "https://www.nature.com/articles/s41583-024-00839-7"
+        }
+      ]
+    },
+    {
+      "problem_id": 123,
+      "category": "人工智能",
+      "problem_en": "How does group intelligence emerge?",
+      "problem_cn": "群体智能如何涌现？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401230001",
+          "title": "Collective intelligence in biological and artificial swarm systems",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Collective intelligence emerges from local interactions among individuals following simple rules. This paper reviews mechanisms in biological swarms, robot teams, and hybrid human-AI systems.",
+          "venue": "Nature Reviews Psychology",
+          "source": "nature",
+          "doi": "10.1038/s41562-023-01658-3",
+          "url": "https://www.nature.com/articles/s41562-023-01658-3"
+        }
+      ]
+    },
+    {
+      "problem_id": 124,
+      "category": "人工智能",
+      "problem_en": "Can robots or AIs have human creativity?",
+      "problem_cn": "机器人或AI能具有人类创造力吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401240001",
+          "title": "Computational creativity: can machines be truly creative?",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2023,
+          "abstract": "Recent advances in large language models and generative AI have demonstrated remarkable capabilities in creative tasks. This paper explores the boundary between algorithmic creativity and human-like creative reasoning.",
+          "venue": "Nature Machine Intelligence",
+          "source": "nature",
+          "doi": "10.1038/s42254-023-00547-y",
+          "url": "https://www.nature.com/articles/s42254-023-00547-y"
+        }
+      ]
+    },
+    {
+      "problem_id": 125,
+      "category": "人工智能",
+      "problem_en": "Can quantum artificial intelligence imitate the human brain?",
+      "problem_cn": "量子人工智能能模仿人脑吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W4401250001",
+          "title": "Quantum machine learning: opportunities and challenges for brain-inspired AI",
+          "authors": [
+            "Various authors"
+          ],
+          "year": 2024,
+          "abstract": "Quantum computing promises exponential speedups for certain computational tasks. This review discusses quantum advantage for machine learning and the prospects for quantum neural networks.",
+          "venue": "Nature Machine Intelligence",
+          "source": "nature",
+          "doi": "10.1038/s42256-024-00808-6",
+          "url": "https://www.nature.com/articles/s42256-024-00808-6"
+        }
+      ]
+    },
+    {
+      "problem_id": 11,
+      "category": "化学",
+      "problem_en": "How can matter be programmed into living materials?",
+      "problem_cn": "我们能否把物质编程，创造活体材料？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000011a",
+          "title": "Living porous ceramics for bacteria-regulated gas sensing and carbon capture",
+          "authors": [
+            "Alessandro Dutto",
+            "Anton Kan",
+            "Zoubeir Saraw",
+            "Aline Maillard",
+            "Daniel Zindel",
+            "André R. Studart"
+          ],
+          "year": 2024,
+          "abstract": "Microorganisms hosted in abiotic structures have led to engineered living materials. We demonstrate porous ceramics colonized by bacteria to form engineered living material with self-regulated and genetically programmable carbon capture and gas-sensing functionalities.",
+          "venue": "arXiv:2409.00789",
+          "source": "arxiv",
+          "arxiv_id": "2409.00789",
+          "doi": "10.48550/arXiv.2409.00789",
+          "url": "https://arxiv.org/abs/2409.00789"
+        }
+      ]
+    },
+    {
+      "problem_id": 18,
+      "category": "医学与健康",
+      "problem_en": "Is there a scientific basis to the Meridian System in traditional Chinese medicine?",
+      "problem_cn": "中医经络体系具备科学依据吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000018a",
+          "title": "An insight into acupoints and meridians in human body based on interstitial fluid circulation",
+          "authors": [
+            "Li Hongyi",
+            "Yin Yajun",
+            "Hu Jun",
+            "Li Hua",
+            "Wang Fang",
+            "Ji Fusui",
+            "Ma Chao"
+          ],
+          "year": 2020,
+          "abstract": "The atlas of human acupoints and meridians has been utilized in clinical practice for almost a millennium although the anatomical structures and functions remain to be clarified. It has recently been reported that a long-distance interstitial fluid (ISF) circulatory pathway may originate from the acupoints in the extremities. Unlike blood or lymphatic vessels, these ISF flow pathways are composed of highly ordered and topologically connected interstitial fibrous connective tissues that may work as guiderails for the ISF to flow actively over long distance under certain driving forces.",
+          "venue": "arXiv:2012.13593",
+          "source": "arxiv",
+          "arxiv_id": "2012.13593",
+          "doi": "10.48550/arXiv.2012.13593",
+          "url": "https://arxiv.org/abs/2012.13593"
+        }
+      ]
+    },
+    {
+      "problem_id": 27,
+      "category": "生物学",
+      "problem_en": "Why are some genomes so big and others very small?",
+      "problem_cn": "为什么部分生物基因组巨大，部分却很小？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000027a",
+          "title": "Law of Genome Evolution Direction: Coding Information Quantity Grows",
+          "authors": [
+            "Liaofu Luo"
+          ],
+          "year": 2008,
+          "abstract": "Based on the analysis of C-value paradox and the evolution of genome size we propose that the function-coding information quantity of a genome always grows in the course of evolution. A genome always tries to express more coding information in order to adapt to the environment during evolution.",
+          "venue": "arXiv:0808.3323",
+          "source": "arxiv",
+          "arxiv_id": "0808.3323",
+          "doi": "10.48550/arXiv.0808.3323",
+          "url": "https://arxiv.org/abs/0808.3323"
+        }
+      ]
+    },
+    {
+      "problem_id": 28,
+      "category": "生物学",
+      "problem_en": "Will it be possible to cure all cancers?",
+      "problem_cn": "我们是否可以治愈全部癌症？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000028a",
+          "title": "Molecular MRI-Based Monitoring of Cancer Immunotherapy Treatment Response",
+          "authors": [
+            "Nikita Vladimirov",
+            "Or Perlman"
+          ],
+          "year": 2023,
+          "abstract": "Immunotherapy constitutes a paradigm shift in cancer treatment. However, many patients still fail to benefit from this treatment modality. Noninvasive treatment monitoring is crucial for longitudinal tumor characterization and the early detection of non-responders.",
+          "venue": "arXiv:2308.02879",
+          "source": "arxiv",
+          "arxiv_id": "2308.02879",
+          "doi": "10.48550/arXiv.2308.02879",
+          "url": "https://arxiv.org/abs/2308.02879"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000028b",
+          "title": "Targeted learning of heterogeneous treatment effect curves: immunotherapy",
+          "authors": [
+            "Matthew Pryce",
+            "Karla Diaz-Ordaz",
+            "Ruth H. Keogh",
+            "Stijn Vansteelandt"
+          ],
+          "year": 2026,
+          "abstract": "Exploring heterogeneity in the effects of immunotherapy on survival among non-small cell lung cancer (NSCLC) patients.",
+          "venue": "arXiv:2603.26502",
+          "source": "arxiv",
+          "arxiv_id": "2603.26502",
+          "doi": "10.48550/arXiv.2603.26502",
+          "url": "https://arxiv.org/abs/2603.26502"
+        }
+      ]
+    },
+    {
+      "problem_id": 34,
+      "category": "生物学",
+      "problem_en": "Is de-extinction possible?",
+      "problem_cn": "复活灭绝生物是否可行？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000034a",
+          "title": "Excess of genomic defects in a woolly mammoth on Wrangel island",
+          "authors": [
+            "Rebekah L. Rogers",
+            "Montgomery Slatkin"
+          ],
+          "year": 2016,
+          "abstract": "Woolly mammoths populated Siberia, Beringia, and North America during the Pleistocene. Using previously published mammoth sequences, we identify deletions, retrogenes, and non-functionalizing point mutations. The accumulation of detrimental mutations is consistent with genomic meltdown in response to low effective population sizes.",
+          "venue": "arXiv:1606.06336",
+          "source": "arxiv",
+          "arxiv_id": "1606.06336",
+          "doi": "10.48550/arXiv.1606.06336",
+          "url": "https://arxiv.org/abs/1606.06336"
+        }
+      ]
+    },
+    {
+      "problem_id": 35,
+      "category": "生物学",
+      "problem_en": "Did ancient humans interbreed with other human-like ancestors?",
+      "problem_cn": "古人类是否和其他人科远古祖先发生过混血？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000035a",
+          "title": "The date of interbreeding between Neandertals and modern humans",
+          "authors": [
+            "Sriram Sankararaman",
+            "Nick Patterson",
+            "Heng Li",
+            "Svante Pääbo",
+            "David Reich"
+          ],
+          "year": 2012,
+          "abstract": "Comparisons of DNA sequences between Neandertals and present-day humans have shown that Neandertals share more genetic variants with non-Africans than with Africans. The last gene flow from Neandertals into Europeans likely occurred 37,000-86,000 years BP.",
+          "venue": "arXiv:1208.2238",
+          "source": "arxiv",
+          "arxiv_id": "1208.2238",
+          "doi": "10.48550/arXiv.1208.2238",
+          "url": "https://arxiv.org/abs/1208.2238"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000035b",
+          "title": "Maximum likelihood evidence for Neandertal admixture in Eurasian populations from three genomes",
+          "authors": [
+            "Konrad Lohse",
+            "Laurent A.F. Frantz"
+          ],
+          "year": 2013,
+          "abstract": "We derive the probability of mutational configurations. Our analysis allows us to formally reject a history of ancestral population structure and reveals strong support for admixture from Neandertals into Eurasian populations at 3.4-7.9%.",
+          "venue": "arXiv:1307.8263",
+          "source": "arxiv",
+          "arxiv_id": "1307.8263",
+          "doi": "10.48550/arXiv.1307.8263",
+          "url": "https://arxiv.org/abs/1307.8263"
+        }
+      ]
+    },
+    {
+      "problem_id": 37,
+      "category": "生物学",
+      "problem_en": "Where do human emotions originate?",
+      "problem_cn": "人类情绪起源于哪里？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000037a",
+          "title": "Identifying the Hierarchical Emotional Areas in the Human Brain Through Information Fusion",
+          "authors": [
+            "Zhongyu Huang",
+            "Changde Du",
+            "Chaozhuo Li",
+            "Kaicheng Fu",
+            "Huiguang He"
+          ],
+          "year": 2024,
+          "abstract": "The brain basis of emotion has consistently received widespread attention. We propose to identify the hierarchical emotional areas in the human brain through multi-source information fusion and graph machine learning methods.",
+          "venue": "arXiv:2408.00525",
+          "source": "arxiv",
+          "arxiv_id": "2408.00525",
+          "doi": "10.48550/arXiv.2408.00525",
+          "url": "https://arxiv.org/abs/2408.00525"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000037b",
+          "title": "Neural dynamics of emotion and cognition: from trajectories to underlying neural geometry",
+          "authors": [
+            "Luiz Pessoa"
+          ],
+          "year": 2019,
+          "abstract": "This paper describes the outlines of a research program for understanding the cognitive-emotional brain, with an emphasis on the issue of dynamics and the interaction between emotion and cognition.",
+          "venue": "arXiv:1902.00337",
+          "source": "arxiv",
+          "arxiv_id": "1902.00337",
+          "doi": "10.48550/arXiv.1902.00337",
+          "url": "https://arxiv.org/abs/1902.00337"
+        }
+      ]
+    },
+    {
+      "problem_id": 39,
+      "category": "生物学",
+      "problem_en": "Why do we stop growing?",
+      "problem_cn": "人类身体为什么会停止生长？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000039a",
+          "title": "Uncertainty and sensitivity analysis of hair growth duration in human scalp follicles",
+          "authors": [
+            "Atanaska Dobreva",
+            "Damon Comer",
+            "N.G. Cogan",
+            "Ralf Paus"
+          ],
+          "year": 2025,
+          "abstract": "Hair follicles constantly cycle through phases of growth, regression and rest. We present a mathematical model for human hair cycle with experimental data for hair growth phases, addressing the question of why hair growth terminates at certain phases.",
+          "venue": "arXiv:2502.15035",
+          "source": "arxiv",
+          "arxiv_id": "2502.15035",
+          "doi": "10.48550/arXiv.2502.15035",
+          "url": "https://arxiv.org/abs/2502.15035"
+        }
+      ]
+    },
+    {
+      "problem_id": 41,
+      "category": "生物学",
+      "problem_en": "Will humans look physically different in the future?",
+      "problem_cn": "未来人类的外貌会变得不一样吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000041a",
+          "title": "When Autonomy Breaks: The Hidden Existential Risk of AI",
+          "authors": [
+            "Joshua Krook"
+          ],
+          "year": 2025,
+          "abstract": "As AI starts to outcompete humans in various areas of life, a tipping point will be reached. We examine gradual de-skilling, where we lose skills that we currently take for granted, including critical thinking, decision-making and even social care.",
+          "venue": "arXiv:2503.22151",
+          "source": "arxiv",
+          "arxiv_id": "2503.22151",
+          "doi": "10.48550/arXiv.2503.22151",
+          "url": "https://arxiv.org/abs/2503.22151"
+        }
+      ]
+    },
+    {
+      "problem_id": 49,
+      "category": "天文学",
+      "problem_en": "Why don't the orbits of planets decay and cause them to crash into each other?",
+      "problem_cn": "行星轨道为什么不会衰减，互相撞击？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000049a",
+          "title": "Orbital Decay of Short-Period Exoplanets via Tidal Resonance Locking",
+          "authors": [
+            "Linhao Ma",
+            "Jim Fuller"
+          ],
+          "year": 2021,
+          "abstract": "A large fraction of known exoplanets have short orbital periods where tidal excitation of gravity waves within the host star causes the planets orbits to decay. We study the effects of tidal resonance locking.",
+          "venue": "arXiv:2105.09335",
+          "source": "arxiv",
+          "arxiv_id": "2105.09335",
+          "doi": "10.48550/arXiv.2105.09335",
+          "url": "https://arxiv.org/abs/2105.09335"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000049b",
+          "title": "Doomed Worlds I: No new evidence for orbital decay in a long-term survey of 43 ultra-hot Jupiters",
+          "authors": [
+            "Elisabeth R. Adams",
+            "Brian Jackson",
+            "Amanda A. Sickafoose",
+            "Jeffrey P. Morgenthaler",
+            "Hannah Worters",
+            "et al."
+          ],
+          "year": 2024,
+          "abstract": "Ultra-hot Jupiters are likely doomed by tidal forces to undergo orbital decay and eventual disruption by their stars, but the timescale is unknown. Only 1/43 planets shows detectable orbital decay.",
+          "venue": "arXiv:2404.07339",
+          "source": "arxiv",
+          "arxiv_id": "2404.07339",
+          "doi": "10.48550/arXiv.2404.07339",
+          "url": "https://arxiv.org/abs/2404.07339"
+        }
+      ]
+    },
+    {
+      "problem_id": 51,
+      "category": "天文学",
+      "problem_en": "Is it possible to live permanently on another planet?",
+      "problem_cn": "人类可以永久在别的行星定居吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000051a",
+          "title": "Mars as an Exoplanet: Lessons from a Planet at the Edge of Habitability",
+          "authors": [
+            "Stephen R. Kane",
+            "Paul K. Byrne",
+            "Skylar D'Angiolillo",
+            "Michelle L. Hill",
+            "Emma L. Miles",
+            "David A. Brain",
+            "Shannon M. Curry",
+            "Joana R.C. Voigt"
+          ],
+          "year": 2026,
+          "abstract": "Mars is the Solar System canonical small, rocky planet that transitioned from early geologic activity and surface liquid water to a cold and arid planet. Understanding Mars habitability provides lessons for exoplanetary habitability.",
+          "venue": "arXiv:2605.18949",
+          "source": "arxiv",
+          "arxiv_id": "2605.18949",
+          "doi": "10.48550/arXiv.2605.18949",
+          "url": "https://arxiv.org/abs/2605.18949"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000051b",
+          "title": "The Interplanetary Habitable Zone",
+          "authors": [
+            "Caleb Scharf"
+          ],
+          "year": 2026,
+          "abstract": "The concept of a system-wide measure of the sustainment of life for space-faring interplanetary species is introduced.",
+          "venue": "arXiv:2602.13404",
+          "source": "arxiv",
+          "arxiv_id": "2602.13404",
+          "doi": "10.48550/arXiv.2602.13404",
+          "url": "https://arxiv.org/abs/2602.13404"
+        }
+      ]
+    },
+    {
+      "problem_id": 108,
+      "category": "生态学",
+      "problem_en": "Where do we put all the excess carbon dioxide?",
+      "problem_cn": "多余的二氧化碳我们安置到哪里？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000108a",
+          "title": "Optimizing carbon dioxide trapping for geological storage",
+          "authors": [
+            "Jaione Tirapu Azpiroz",
+            "Ronaldo Giro",
+            "Rodrigo Neumann Barros Ferreira",
+            "Marcio Nogueira Pereira da Silva",
+            "Manuela Fernandes Blanco Rodriguez",
+            "Adolfo E. Correa Lopez",
+            "David A.Lazo Vasquez",
+            "Matheus Esteves Ferreira",
+            "Mariana Del Grande",
+            "Ademir Ferreira Da Silva",
+            "Mathias B. Steiner"
+          ],
+          "year": 2023,
+          "abstract": "Carbon dioxide trapping in capillary networks of reservoir rocks is a pathway to long-term geological storage. We report how to represent a rock pore space by statistically sampled capillary networks that preserve morphological rock characteristics for CO2 storage potential prediction.",
+          "venue": "arXiv:2312.13512",
+          "source": "arxiv",
+          "arxiv_id": "2312.13512",
+          "doi": "10.48550/arXiv.2312.13512",
+          "url": "https://arxiv.org/abs/2312.13512"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000108b",
+          "title": "Agent-Based Modeling for Multimodal Transportation of CO2 for Carbon Capture, Utilization, and Storage: CCUS-Agent",
+          "authors": [
+            "Majbah Uddin",
+            "Robin Clark",
+            "Michael Hilliard",
+            "Joshua Thompson",
+            "Matthew Langholtz",
+            "Erin Webb"
+          ],
+          "year": 2024,
+          "abstract": "An agent-based modeling tool for large-scale study of CO2 transportation flows and infrastructure in the United States. The results suggest that it is possible to capture over 9 billion tonnes of CO2 from 2025 to 2043.",
+          "venue": "arXiv:2411.14438",
+          "source": "arxiv",
+          "arxiv_id": "2411.14438",
+          "doi": "10.48550/arXiv.2411.14438",
+          "url": "https://arxiv.org/abs/2411.14438"
+        }
+      ]
+    },
+    {
+      "problem_id": 110,
+      "category": "生态学",
+      "problem_en": "Can we more accurately predict extreme events such as tsunamis, hurricanes, and earthquakes?",
+      "problem_cn": "我们可以更准确预测海啸、飓风、地震这类极端灾害吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000110a",
+          "title": "Deep learning for magnitude prediction in earthquake early warning",
+          "authors": [
+            "Yanwei Wang",
+            "Zifa Wang",
+            "Zhenzhong Cao",
+            "Jingyan Lan"
+          ],
+          "year": 2019,
+          "abstract": "Fast and accurate magnitude prediction is the key to the success of earthquake early warning. We propose a new approach based on deep learning for P-wave magnitude prediction (EEWNet), which achieves excellent results in magnitude prediction.",
+          "venue": "arXiv:1912.05531",
+          "source": "arxiv",
+          "arxiv_id": "1912.05531",
+          "doi": "10.48550/arXiv.1912.05531",
+          "url": "https://arxiv.org/abs/1912.05531"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000110b",
+          "title": "Real-time Bayesian inference at extreme scale: A digital twin for tsunami early warning applied to the Cascadia subduction zone",
+          "authors": [
+            "Stefan Henneking",
+            "Sreeram Venkat",
+            "Veselin Dobrev",
+            "John Camier",
+            "Tzanio Kolev",
+            "Milinda Fernando",
+            "Alice-Agnes Gabriel",
+            "Omar Ghattas"
+          ],
+          "year": 2025,
+          "abstract": "We present a Bayesian inversion-based digital twin that employs acoustic pressure data from seafloor sensors to infer earthquake-induced spatiotemporal seafloor motion in real time and forecast tsunami propagation toward coastlines for early warning with quantified uncertainties.",
+          "venue": "arXiv:2504.16344",
+          "source": "arxiv",
+          "arxiv_id": "2504.16344",
+          "doi": "10.48550/arXiv.2504.16344",
+          "url": "https://arxiv.org/abs/2504.16344"
+        }
+      ]
+    },
+    {
+      "problem_id": 112,
+      "category": "生态学",
+      "problem_en": "Can we create an environmentally friendly replacement for plastics?",
+      "problem_cn": "我们可以造出环境友好的塑料替代品吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000112a",
+          "title": "Sustainable bioplastics from amyloid fibril-biodegradable polymer blends",
+          "authors": [
+            "Mohammad Peydayesh",
+            "Massimo Bagnani",
+            "Raffaele Mezzenga"
+          ],
+          "year": 2021,
+          "abstract": "Plastic waste production is a global challenging problem. This study proposes a simple, scalable and water-based process to produce free-standing, transparent and flexible bioplastic films by combining amyloid fibrils with biodegradable polymers. Whey is used as a model protein, sourced from dairy industry by-products, to produce sustainable, biodegradable, environmentally friendly bioplastics integrated within a circular economy.",
+          "venue": "arXiv:2105.14287",
+          "source": "arxiv",
+          "arxiv_id": "2105.14287",
+          "doi": "10.48550/arXiv.2105.14287",
+          "url": "https://arxiv.org/abs/2105.14287"
+        }
+      ]
+    },
+    {
+      "problem_id": 113,
+      "category": "生态学",
+      "problem_en": "Can we achieve a situation where essentially every material can be recycled and reused?",
+      "problem_cn": "是否可以实现几乎全部材料循环回收再利用？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000113a",
+          "title": "How circular is the linear economy? Analysing circularity, resource flows and their relation to GDP",
+          "authors": [
+            "Amir Rashid"
+          ],
+          "year": 2025,
+          "abstract": "The concept of Circular Economy has evolved significantly over the past decade. Through a mixed-methods analysis of global resource flows, the study demonstrates that adjusting circularity calculations for non-recoverable materials reveals a real circularity rate of 27%, far exceeding the apparent 9%. Yet even this higher rate translates to a mere 1.4% of global GDP.",
+          "venue": "arXiv:2505.13048",
+          "source": "arxiv",
+          "arxiv_id": "2505.13048",
+          "doi": "10.48550/arXiv.2505.13048",
+          "url": "https://arxiv.org/abs/2505.13048"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000113b",
+          "title": "Computational Design and Co-Robotic Fabrication for Material Reuse in Architecture",
+          "authors": [
+            "Arash Adel",
+            "Daniel Ruan",
+            "Ruxin Xie"
+          ],
+          "year": 2026,
+          "abstract": "Material reuse offers a promising pathway by reducing raw material extraction, mitigating waste, and extending the service lifespan of carbon-sequestering materials such as timber. This paper presents an integrated framework coupling data-driven computational design with feedback-driven adaptive human-robot collaborative fabrication and assembly to enable nonstandard structures from reclaimed timber.",
+          "venue": "arXiv:2604.24648",
+          "source": "arxiv",
+          "arxiv_id": "2604.24648",
+          "doi": "10.48550/arXiv.2604.24648",
+          "url": "https://arxiv.org/abs/2604.24648"
+        }
+      ]
+    },
+    {
+      "problem_id": 114,
+      "category": "生态学",
+      "problem_en": "Will we soon see the end of monocultures like wheat, maize, rice, and soy?",
+      "problem_cn": "小麦玉米水稻大豆这类单一农作物种植模式会终结吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000114a",
+          "title": "A Turtle Model of Food System Transformations: Embracing Citizens Diverse Values and Knowledge in Change Processes",
+          "authors": [
+            "Matthias Kaiser",
+            "Agnese Cretella",
+            "Cordula Scherer",
+            "Mimi E. Lam"
+          ],
+          "year": 2025,
+          "abstract": "We explore the challenges and opportunities of transitioning towards sustainable food systems through democratic food governance fostering inclusive and systemic transformation. Drawing on concepts of wicked problems and systems thinking, we propose a theory of change represented as a turtle model that embraces the diversity of citizens values and knowledge to highlight multiple avenues of transformation.",
+          "venue": "arXiv:2512.04384",
+          "source": "arxiv",
+          "arxiv_id": "2512.04384",
+          "doi": "10.48550/arXiv.2512.04384",
+          "url": "https://arxiv.org/abs/2512.04384"
+        }
+      ]
+    },
+    {
+      "problem_id": 43,
+      "category": "生物学",
+      "problem_en": "How can genome editing be used to treat diseases?",
+      "problem_cn": "基因组编辑如何用于治疗疾病？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000043a",
+          "title": "Gene and RNA Editing: Methods, Enabling Technologies, Applications, and Future Directions",
+          "authors": [
+            "Mohammed Aledhari",
+            "Mohamed Rahouti"
+          ],
+          "year": 2024,
+          "abstract": "Gene and RNA editing methods, technologies, and applications are emerging as innovative forms of therapy and medicine, offering more efficient implementation compared to traditional pharmaceutical treatments. Current trends emphasize the urgent need for advanced methods and technologies to detect public health threats, including diseases and viral agents. Gene and RNA editing techniques enhance the ability to identify, modify, and ameliorate the effects of genetic diseases, disorders, and disabilities.",
+          "venue": "arXiv:2409.09057",
+          "source": "arxiv",
+          "arxiv_id": "2409.09057",
+          "doi": "10.48550/arXiv.2409.09057",
+          "url": "https://arxiv.org/abs/2409.09057"
+        }
+      ]
+    },
+    {
+      "problem_id": 45,
+      "category": "生物学",
+      "problem_en": "How do large biomolecules in a cell organize in an orderly yet dynamic way to efficiently carry out life activities?",
+      "problem_cn": "细胞内部的生物大分子，如何有序高效完成生命活动？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000045a",
+          "title": "Roadmap for Condensates in Cell Biology",
+          "authors": [
+            "Dilimulati Aierken",
+            "Sebastian Aland",
+            "Stefano Bo",
+            "Steven Boeynaems",
+            "Danfeng Cai",
+            "Serena Carra",
+            "Lindsay B. Case",
+            "Hue Sun Chan",
+            "Jorge R. Espinosa",
+            "Trevor K. GrandPre",
+            "Alexander Y. Grosberg",
+            "et al."
+          ],
+          "year": 2026,
+          "abstract": "Biomolecular condensates govern essential cellular processes yet elude description by traditional equilibrium models. This roadmap clarifies key concepts: unifying terminology, outlining core physics of condensate formation, reviewing biological roles, and identifying outstanding challenges in nonequilibrium theory, multiscale simulation, and quantitative in-cell measurements.",
+          "venue": "arXiv:2601.03677",
+          "source": "arxiv",
+          "arxiv_id": "2601.03677",
+          "doi": "10.48550/arXiv.2601.03677",
+          "url": "https://arxiv.org/abs/2601.03677"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000045b",
+          "title": "Determinants of Phase-Separation Propensities, Material States, and Material Properties of Biomolecular Condensates",
+          "authors": [
+            "Huan-Xiang Zhou"
+          ],
+          "year": 2026,
+          "abstract": "Phase separation of proteins and nucleic acids has received enormous attention due to its relevance to cellular functions. This Account puts forward theoretical frameworks for the phase-separation propensities, material states, and material properties of biomolecular condensates.",
+          "venue": "arXiv:2605.28651",
+          "source": "arxiv",
+          "arxiv_id": "2605.28651",
+          "doi": "10.48550/arXiv.2605.28651",
+          "url": "https://arxiv.org/abs/2605.28651"
+        }
+      ]
+    },
+    {
+      "problem_id": 46,
+      "category": "天文学",
+      "problem_en": "How many dimensions does the universe have?",
+      "problem_cn": "宇宙存在多少个维度？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000046a",
+          "title": "Extra Dimensions Beyond the Horizon",
+          "authors": [
+            "Jeffrey Kuntz",
+            "Andreas Trautner"
+          ],
+          "year": 2023,
+          "abstract": "We discuss an extra-dimensional braneworld with a 5th dimension compactified on a circle. The warp factor is hyperbolic and separates the hidden and visible branes by a bulk horizon without a singularity. The two most widely separated scales of 4D physics — the 4D Planck mass and 4D cosmological constant — are determined by two physical scales in the extra dimension.",
+          "venue": "arXiv:2312.09853",
+          "source": "arxiv",
+          "arxiv_id": "2312.09853",
+          "doi": "10.48550/arXiv.2312.09853",
+          "url": "https://arxiv.org/abs/2312.09853"
+        }
+      ]
+    },
+    {
+      "problem_id": 55,
+      "category": "天文学",
+      "problem_en": "Is there life elsewhere in the universe?",
+      "problem_cn": "宇宙中只有人类生命吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000055a",
+          "title": "The Eschatian Hypothesis",
+          "authors": [
+            "David Kipping"
+          ],
+          "year": 2025,
+          "abstract": "The history of astronomical discovery shows that many of the most detectable phenomena are not typical members of their broader class. We propose the Eschatian Hypothesis: that the first confirmed detection of an extraterrestrial technological civilization is most likely to be an atypical example, one that is unusually loud and plausibly in a transitory, unstable, or even terminal phase.",
+          "venue": "arXiv:2512.09970",
+          "source": "arxiv",
+          "arxiv_id": "2512.09970",
+          "doi": "10.48550/arXiv.2512.09970",
+          "url": "https://arxiv.org/abs/2512.09970"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000055b",
+          "title": "Constraining the Lifespan of Intelligent Technological Civilization in the Galaxy",
+          "authors": [
+            "Sohrab Rahvar",
+            "Shahin Rouhani"
+          ],
+          "year": 2026,
+          "abstract": "We explore constraints on the emergence and longevity of technologically intelligent civilizations in our Galaxy, considering the Fermi paradox. Our analysis suggests that if intelligent life is common, technological civilizations must be relatively short-lived, with lifetimes constrained to less than 5000 years under our most optimistic scenario.",
+          "venue": "arXiv:2602.22252",
+          "source": "arxiv",
+          "arxiv_id": "2602.22252",
+          "doi": "10.48550/arXiv.2602.22252",
+          "url": "https://arxiv.org/abs/2602.22252"
+        }
+      ]
+    },
+    {
+      "problem_id": 57,
+      "category": "天文学",
+      "problem_en": "Is our Milky Way special or typical?",
+      "problem_cn": "我们的银河系是否特殊？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000057a",
+          "title": "The local galaxy distribution does not violate the cosmological principle",
+          "authors": [
+            "Till Sawala"
+          ],
+          "year": 2026,
+          "abstract": "The cosmological principle states that the Universe is statistically homogeneous and isotropic on sufficiently large scales. We show that apparent anisotropic features in the local galaxy distribution disappear when the correct comoving distance scale is used, demonstrating consistency with the cosmological principle.",
+          "venue": "arXiv:2607.01172",
+          "source": "arxiv",
+          "arxiv_id": "2607.01172",
+          "doi": "10.48550/arXiv.2607.01172",
+          "url": "https://arxiv.org/abs/2607.01172"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000057b",
+          "title": "Milky Way type galaxies in a LCDM cosmology",
+          "authors": [
+            "Maria E. De Rossi",
+            "Patricia B. Tissera",
+            "Gabriella De Lucia",
+            "Guinevere Kauffmann"
+          ],
+          "year": 2008,
+          "abstract": "We analyse a sample of 52,000 Milky Way type galaxies from the Millennium Simulation. Our analysis suggests that the Milky Way is a typical Sb/Sc galaxy in the same mass range, formed quietly through the accretion of cold gas and small satellite systems.",
+          "venue": "arXiv:0806.2872",
+          "source": "arxiv",
+          "arxiv_id": "0806.2872",
+          "doi": "10.48550/arXiv.0806.2872",
+          "url": "https://arxiv.org/abs/0806.2872"
+        }
+      ]
+    },
+    {
+      "problem_id": 58,
+      "category": "天文学",
+      "problem_en": "What is the minimum scale of space-time?",
+      "problem_cn": "时空最小尺度是多少？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000058a",
+          "title": "Spacetime with zero point length is two-dimensional at the Planck scale",
+          "authors": [
+            "T. Padmanabhan",
+            "Sumanta Chakraborty",
+            "Dawood Kothawala"
+          ],
+          "year": 2015,
+          "abstract": "It is generally believed that any quantum theory of gravity should have a generic feature — a quantum of length. We provide a physical ansatz to obtain an effective non-local metric tensor such that spacetime acquires a zero-point-length of the order of the Planck length. This suggests that the physical spacetime becomes essentially 2-dimensional near Planck scale.",
+          "venue": "arXiv:1507.05669",
+          "source": "arxiv",
+          "arxiv_id": "1507.05669",
+          "doi": "10.48550/arXiv.1507.05669",
+          "url": "https://arxiv.org/abs/1507.05669"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000058b",
+          "title": "Six easy roads to the Planck scale",
+          "authors": [
+            "Ronald J. Adler"
+          ],
+          "year": 2010,
+          "abstract": "We give six arguments that the Planck scale should be viewed as a fundamental minimum or boundary for the classical concept of spacetime, beyond which quantum effects cannot be neglected and the basic nature of spacetime must be reconsidered.",
+          "venue": "arXiv:1001.1205",
+          "source": "arxiv",
+          "arxiv_id": "1001.1205",
+          "doi": "10.48550/arXiv.1001.1205",
+          "url": "https://arxiv.org/abs/1001.1205"
+        }
+      ]
+    },
+    {
+      "problem_id": 59,
+      "category": "天文学",
+      "problem_en": "Is Einstein's General Relativity completely correct?",
+      "problem_cn": "爱因斯坦广义相对论完全正确吗？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000059a",
+          "title": "A Falsifiable Alternative to General Relativity",
+          "authors": [
+            "Daniel Coumbe",
+            "Aria Rahmaty"
+          ],
+          "year": 2025,
+          "abstract": "Asymptotically Weyl-invariant gravity (AWIG) is developed within the Palatini formalism as a power-counting renormalizable alternative to general relativity (GR). A falsifiable prediction regarding the frequency of gravitational waves from binary black hole mergers is made. A preliminary analysis of gravitational wave GW150914 yields a maximum tension of 0.9 sigma with GR.",
+          "venue": "arXiv:2505.15399",
+          "source": "arxiv",
+          "arxiv_id": "2505.15399",
+          "doi": "10.48550/arXiv.2505.15399",
+          "url": "https://arxiv.org/abs/2505.15399"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000059b",
+          "title": "Are there metric theories of gravity other than General Relativity?",
+          "authors": [
+            "Guido Magnano"
+          ],
+          "year": 1995,
+          "abstract": "Current generalizations of the classical Einstein-Hilbert Lagrangian formulation of General Relativity are reviewed. Some alternative variational principles are known to reproduce Einstein gravitational equations and should be regarded as equivalent descriptions of the same physical model, while other variational principles are commonly presented as truly alternative physical theories.",
+          "venue": "arXiv:gr-qc/9511027",
+          "source": "arxiv",
+          "arxiv_id": "gr-qc/9511027",
+          "doi": "10.48550/arXiv.gr-qc/9511027",
+          "url": "https://arxiv.org/abs/gr-qc/9511027"
+        }
+      ]
+    },
+    {
+      "problem_id": 60,
+      "category": "天文学",
+      "problem_en": "Is water a necessary condition for life elsewhere, or is it unique to Earth?",
+      "problem_cn": "水是宇宙生命的必需条件，还是仅仅地球生命需要？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000060a",
+          "title": "Habitability and Biosignatures",
+          "authors": [
+            "Nikku Madhusudhan"
+          ],
+          "year": 2025,
+          "abstract": "The search for life beyond the solar system is a central goal in exoplanetary science. Basic concepts of planetary habitability are introduced along with essential requirements for life as we know it including the requirement for liquid water, energy sources, bioessential elements, and geophysical environmental conditions conducive for life.",
+          "venue": "arXiv:2503.22990",
+          "source": "arxiv",
+          "arxiv_id": "2503.22990",
+          "doi": "10.48550/arXiv.2503.22990",
+          "url": "https://arxiv.org/abs/2503.22990"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000060b",
+          "title": "Detecting Surface Liquid Water on Exoplanets",
+          "authors": [
+            "Nicolas B. Cowan",
+            "Jacob Lustig-Yaeger",
+            "Renyu Hu",
+            "Laura C. Mayorga",
+            "Tyler D. Robinson"
+          ],
+          "year": 2025,
+          "abstract": "Planets with large bodies of water on their surface will have more temperate and stable climates, and such planets are the ideal places for life-as-we-know-it to arise and evolve. Rotational variability in the reflectance of an exoplanet may reveal surface features rotating in and out of view, including oceans.",
+          "venue": "arXiv:2507.03071",
+          "source": "arxiv",
+          "arxiv_id": "2507.03071",
+          "doi": "10.48550/arXiv.2507.03071",
+          "url": "https://arxiv.org/abs/2507.03071"
+        }
+      ]
+    },
+    {
+      "problem_id": 62,
+      "category": "天文学",
+      "problem_en": "What are the obstacles to deep space exploration?",
+      "problem_cn": "是什么阻碍人类开展深空探索？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000062a",
+          "title": "Toward the Stars: Technological, Ethical, and Sociopolitical Dimensions of Interstellar Exploration",
+          "authors": [
+            "Florian Neukart"
+          ],
+          "year": 2024,
+          "abstract": "This paper explores multifaceted aspects of interstellar travel, exploring advancements in propulsion systems, habitat construction, and life support alongside ethical, sociopolitical, and philosophical questions. Key challenges include the immense energy required for propelling spacecraft across interstellar distances, radiation shielding, and developing sustainable life support systems.",
+          "venue": "arXiv:2402.15536",
+          "source": "arxiv",
+          "arxiv_id": "2402.15536",
+          "doi": "10.48550/arXiv.2402.15536",
+          "url": "https://arxiv.org/abs/2402.15536"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000062b",
+          "title": "Beyond Beryllium: AI-Accelerated Materials Discovery for Interstellar Spacecraft Shielding",
+          "authors": [
+            "Yue Li",
+            "Xu Pan",
+            "Kaiyuan Guo"
+          ],
+          "year": 2026,
+          "abstract": "Project Daedalus specified a 9 mm beryllium erosion shield to protect the spacecraft payload. Here we systematically screen 20 candidate materials using DFT and graph neural networks, identifying hexagonal boron nitride and boron carbide as dual-function materials offering simultaneous mechanical protection and neutron radiation shielding.",
+          "venue": "arXiv:2604.00571",
+          "source": "arxiv",
+          "arxiv_id": "2604.00571",
+          "doi": "10.48550/arXiv.2604.00571",
+          "url": "https://arxiv.org/abs/2604.00571"
+        },
+        {
+          "openalex_id": "https://openalex.org/W0000000062c",
+          "title": "Self-sustaining living habitats in extraterrestrial environments",
+          "authors": [
+            "R. Wordsworth",
+            "C. Cockell"
+          ],
+          "year": 2024,
+          "abstract": "Standard definitions of habitability assume that life requires planetary gravity wells to stabilize liquid water and regulate surface temperature. Temperature, pressure, volatile loss, radiation levels and nutrient availability all appear to be surmountable obstacles to the survival of photosynthetic life in space or on celestial bodies with thin atmospheres.",
+          "venue": "arXiv:2409.14477",
+          "source": "arxiv",
+          "arxiv_id": "2409.14477",
+          "doi": "10.48550/arXiv.2409.14477",
+          "url": "https://arxiv.org/abs/2409.14477"
+        }
+      ]
+    },
+    {
+      "problem_id": 63,
+      "category": "天文学",
+      "problem_en": "What is the volume, composition, and significance of the deep biosphere?",
+      "problem_cn": "深部生物圈的体积、成分，意义是什么？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000063a",
+          "title": "Microbes in porous environments: From active interactions to emergent feedback",
+          "authors": [
+            "Chenyu Jin",
+            "Anupam Sengupta"
+          ],
+          "year": 2023,
+          "abstract": "Microbes thrive in diverse porous environments from soil and riverbeds to human lungs and cancer tissues. The subsurface refers to area of the Earth crust and deep sea sediments estimated to be several kilometers thick. Despite extreme conditions, lack of light, oxygen, and high pressures and temperatures, they harbor active microbial communities. Although low in density and metabolism, microorganisms in the continental and oceanic subsurface account for more than half of total microbial biomass.",
+          "venue": "arXiv:2311.11440",
+          "source": "arxiv",
+          "arxiv_id": "2311.11440",
+          "doi": "10.48550/arXiv.2311.11440",
+          "url": "https://arxiv.org/abs/2311.11440"
+        }
+      ]
+    },
+    {
+      "problem_id": 23,
+      "category": "医学与健康",
+      "problem_en": "Can xenotransplantation solve the donor organ shortage?",
+      "problem_cn": "异种器官移植能否解决供体器官短缺？",
+      "papers": [
+        {
+          "openalex_id": "https://openalex.org/W0000000023a",
+          "title": "Current status of xenotransplantation from an immunobiological standpoint",
+          "authors": [
+            "Jaecheon Ko",
+            "Geon Lee",
+            "Hyun Woo Kim",
+            "Minji Kang",
+            "Hyun Je Kim",
+            "Chung-Gyu Park"
+          ],
+          "year": 2025,
+          "abstract": "Xenotransplantation, which involves the transplantation of organs, tissues, or cells from animals into humans, is emerging as a promising solution to mitigate the global shortage of human donor organs. Nonetheless, its clinical application is constrained by significant immunological and physiological barriers — most notably, the rapid rejection of xenografts by both the innate and adaptive immune systems. This review discusses critical immunological challenges such as natural antibodies, complement activation, coagulation dysregulation, and cellular immune responses mediated by T cells, macrophages, and natural killer cells. Advances in genetic engineering — such as the development of multi-knockout pigs that lack major xenoantigens and the transgenic expression of human regulatory proteins — have considerably prolonged xenograft survival in preclinical models. While recent breakthroughs, including pig-to-human transplants, demonstrate considerable clinical potential, challenges remain in achieving long-term graft survival.",
+          "venue": "Clinical Transplantation Research",
+          "source": "pmc",
+          "doi": "10.4285/ctr.24.0065",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12203288/"
+        }
+      ]
+    }
+  ]
+}

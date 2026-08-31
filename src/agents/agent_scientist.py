@@ -62,10 +62,11 @@ SYSTEM_PROMPT = """你是一位顶尖的跨学科科学家，专精于将文献�
 1. **可证伪性硬约束**：每条假设必须包含具体的、可操作的推翻条件（falsification_condition），长度≥15字符。
 2. **三级计划跃迁**：每条假设的 plan 必须包含 L1（概念级）、L2（量化指标级，含数字阈值）、L3（容错级，含备选方案）。
 3. **双判定标准**：verification_criteria 必须包含 confirm（成立条件）和 reject（推翻条件）。
+4. **证据锚定原则**：每条假设的 `source` 字段必须明确引用提供的证据来源之一，不得凭空捏造文献或脱离已有证据集另起炉灶。迭代优化时此约束优先级最高。
 
 ## 假设生成策略
 - 2-3 条假设应呈现竞争性：不同机制、不同尺度、不同因果关系方向
-- 如果证据不足，可利用跨域类比线索进行合理推测，但必须明确标注
+- 如果证据不足，可利用跨域类比线索进行合理推测，但必须在 source 中标注"基于类比推测"
 
 ## 输出格式（纯 JSON，字段名必须严格一致，大小写敏感）
 必须使用嵌套对象结构！禁止把对象写成描述性字符串！
@@ -159,6 +160,7 @@ def generate_hypotheses(
 
     # 上一轮 Critic 评审结果（迭代时注入）
     critic_section = ""
+    is_iteration = prev_critic_output is not None
     if prev_critic_output:
         scores = prev_critic_output.get("scores", {})
         top_flaw = prev_critic_output.get("top_flaw", "")
@@ -185,6 +187,19 @@ def generate_hypotheses(
 4. 目标：本轮综合得分必须显著高于上一轮（至少提升 0.5 分）
 """
 
+    # 迭代时的核心约束：新假设必须锚定在已有证据上
+    iteration_anchor = ""
+    if is_iteration and evidence_list:
+        evidence_sources = [ev.get("source", "未知") for ev in evidence_list]
+        iteration_anchor = f"""
+## ⚠️ 迭代约束（最高优先级，违反将导致重生成）
+你正在基于**已有的固定证据集**进行迭代优化，这些证据不可替换、不可忽略：
+- 可用证据来源：{', '.join(evidence_sources)}
+- 每条新假设的 `source` 字段**必须明确引用上述证据之一**，不得凭空引入未提供的新文献
+- 可以在已有证据基础上做更深层推理或补充类比，但不能脱离这些证据另起炉灶
+- 如果专家认为需要新证据，请在 L3_robustness 中说明"下一步需要检索 XX 方向文献来验证"，而不是直接声称已有该证据
+"""
+
     messages = [
         SystemMessage(content=SYSTEM_PROMPT),
         HumanMessage(content=f"""
@@ -201,6 +216,7 @@ def generate_hypotheses(
 {analogies_str}
 {critic_section}
 {feedback_section}
+{iteration_anchor}
 
 请严格按照 JSON 格式输出。
 """)

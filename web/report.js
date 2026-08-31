@@ -123,12 +123,12 @@ function render(snap, all) {
     <h3>问题骨架</h3>
     <p>${esc(e.problem_skelton || "")}</p>
     <h3>证据列表</h3>
-    ${(e.evidence_list || []).filter(ev => /arxiv|openalex/i.test(String(ev.source || ""))).length
-      ? `<table class="evidence"><thead><tr><th>证据陈述</th><th>来源</th><th>年份</th></tr></thead><tbody>${e.evidence_list.filter(ev => /arxiv|openalex/i.test(String(ev.source || ""))).map(ev => `<tr>
+    ${(e.evidence_list || []).filter(ev => ev.source && String(ev.source).trim()).length
+      ? `<table class="evidence"><thead><tr><th>证据陈述</th><th>来源</th><th>年份</th></tr></thead><tbody>${e.evidence_list.filter(ev => ev.source && String(ev.source).trim()).map(ev => `<tr>
           <td>${esc(ev.claim)}</td><td>${esc(ev.source || "未知")}</td>
           <td>${ev.year && /^\d{4}$/.test(String(ev.year)) ? esc(ev.year) : "—"}</td>
         </tr>`).join("")}</tbody></table>`
-      : "<p>未检索到可展示的 arXiv / openalex 在线来源证据。</p>"}
+      : "<p>未检索到相关文献证据。</p>"}
     <h3>知识缺口</h3>
     ${list(e.knowledge_gaps, "暂无识别到知识缺口。")}
     <h3>跨域类比</h3>
@@ -203,11 +203,11 @@ function snapshotToMarkdown(snap, allRounds) {
   L.push(`## 一、探索者（Explorer）`, "");
   L.push(`### 问题骨架`, "", e.problem_skelton || "（未提供）", "");
   L.push(`### 证据列表`, "");
-  const mdEvidence = (e.evidence_list || []).filter(ev => /arxiv|openalex/i.test(String(ev.source || "")));
+  const mdEvidence = (e.evidence_list || []).filter(ev => ev.source && String(ev.source).trim());
   if (mdEvidence.length) {
     mdEvidence.forEach(ev => L.push(`- ${ev.claim}（来源：${ev.source || "未知"}${ev.year && /^\d{4}$/.test(String(ev.year)) ? `, ${ev.year}` : ""}）`));
   } else {
-    L.push("- （无 arXiv / openalex 在线来源证据）");
+    L.push("- （无证据）");
   }
   L.push("");
   L.push(`### 知识缺口`, "");

@@ -868,11 +868,10 @@ function renderCriticRadar() {
 }
 
 /* ================= 四个 Tab 的渲染 ================= */
-// 证据来源是否可展示：仅保留可溯源的 arXiv / openalex 在线来源，
-// 隐藏 Science_2025（本地中文浓缩库）、本地 PDF、种子锚点等其它来源。
-// 后端仍会检索 Science_2025 参与假设构建，这里只做前端展示层过滤。
+// 证据来源展示：保留所有可溯源的证据（arXiv、OpenAlex、Science_2025、本地 PDF 等），
+// 不再仅限制在线来源，确保本地文献证据也能正常展示。
 function isOnlineEvidenceSource(source) {
-  return /arxiv|openalex/i.test(String(source || ""));
+  return Boolean(source && String(source).trim());
 }
 
 function renderExplorer(snap) {
@@ -1303,7 +1302,7 @@ function snapshotToMarkdown(snap, allRounds) {
       L.push(`- ${ev.claim}（来源：${source}${yearSuffix}）`);
     });
   } else {
-    L.push("- （无 arXiv / openalex 在线来源证据）");
+    L.push("- （无证据）");
   }
   L.push("");
   L.push(`### 知识缺口`, "");

@@ -205,6 +205,7 @@ def run_full_pipeline(
     cancel_check: Optional[Callable[[], bool]] = None,
     auto_search_papers: bool = False,
     paper_granularity: str = "fast",
+    images: Optional[List[Dict[str, str]]] = None,
 ) -> Dict[str, Any]:
     """
     执行完整流水线
@@ -290,7 +291,7 @@ def run_full_pipeline(
             if progress_callback:
                 progress_callback("explorer", 15)
             _check_cancel()
-            explorer_result = explore(question)
+            explorer_result = explore(question, images=images)
 
         # Step 2: Scientist
         logger.info("Step 2: 科学家执行中...")

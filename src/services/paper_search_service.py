@@ -252,7 +252,7 @@ class PaperSearchService:
 
     @staticmethod
     def _vision_service():
-        """懒构建 qwen-vl 视觉描述器。复用 DASHSCOPE key / 兼容 base_url。
+        """懒构建 qwen-vl 视觉描述器。优先使用 VL 专用 key，缺省回退主 key。
 
         返回带 caption_images(bytes列表)->List[str] 的对象；未配置 key 时返回 None。
         """
@@ -262,14 +262,15 @@ class PaperSearchService:
             logger.warning(f"视觉图注不可用（langchain_openai 未安装）: {e}")
             return None
         model = os.getenv("QWEN_VL_MODEL", "qwen-vl-max")
-        api_key = os.getenv("DASHSCOPE_API_KEY")
+        api_key = os.getenv("DASHSCOPE_API_KEY_VL") or os.getenv("DASHSCOPE_API_KEY")
         if not model or not api_key:
-            logger.warning("视觉图注未启用：缺少 QWEN_VL_MODEL 或 DASHSCOPE_API_KEY")
+            logger.warning("视觉图注未启用：缺少 QWEN_VL_MODEL 或 DASHSCOPE_API_KEY(_VL)")
             return None
+        base_url = os.getenv("DASHSCOPE_API_BASE_VL") or os.getenv("DASHSCOPE_API_BASE", "https://dashscope.aliyuncs.com/compatible-mode/v1")
         llm = ChatOpenAI(
             model=model,
             api_key=api_key,
-            base_url=os.getenv("DASHSCOPE_API_BASE", "https://dashscope.aliyuncs.com/compatible-mode/v1"),
+            base_url=base_url,
             temperature=0.2,
             max_tokens=512,
             timeout=45.0,

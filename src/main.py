@@ -1,7 +1,7 @@
 import os
 import logging
 from pathlib import Path
-from typing import Optional
+from typing import Optional, List, Dict
 from dotenv import load_dotenv
 
 from fastapi import FastAPI, HTTPException
@@ -125,6 +125,7 @@ class RunRequest(BaseModel):
     project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
     auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认关闭，避免演示时在线下载 PDF 拖慢）")
     paper_granularity: str = Field("fast", description="arXiv 文献入库粒度：fast=摘要模式(省token,默认)，full=全文模式(证据更细)")
+    images: Optional[List[Dict[str, str]]] = Field(None, description="多模态图片列表，每项含 name 和 data（base64 data URL）")
 
 
 class FeedbackRequest(BaseModel):
@@ -134,6 +135,7 @@ class FeedbackRequest(BaseModel):
     project_id: Optional[str] = Field(None, description="项目 ID（前端生成，缺省由后端生成）")
     auto_search_papers: bool = Field(False, description="是否在 pipeline 前自动检索 arXiv 文献入库（跑完清理，默认关闭，避免演示时在线下载 PDF 拖慢）")
     paper_granularity: str = Field("fast", description="arXiv 文献入库粒度：fast=摘要模式(省token,默认)，full=全文模式(证据更细)")
+    images: Optional[List[Dict[str, str]]] = Field(None, description="多模态图片列表，每项含 name 和 data（base64 data URL）")
 
 
 class SearchPapersRequest(BaseModel):
@@ -174,7 +176,7 @@ async def root():
     }
 
 
-def _enqueue(question: str, round_label: str, feedback=None, project_id=None, auto_search_papers: bool = False, paper_granularity: str = "fast"):
+def _enqueue(question: str, round_label: str, feedback=None, project_id=None, auto_search_papers: bool = False, paper_granularity: str = "fast", images=None):
     """创建后台任务并提交到线程池，返回 JobRecord。
 
     流水线在 worker 线程执行（不阻塞事件循环）；通过 progress_callback_for /
@@ -209,6 +211,7 @@ def _enqueue(question: str, round_label: str, feedback=None, project_id=None, au
             cancel_check=cancel_check_for(job),
             auto_search_papers=auto_search_papers,
             paper_granularity=paper_granularity,
+            images=images,
         )
 
     submit_job(job, run_fn)
@@ -233,6 +236,7 @@ async def run_pipeline(request: RunRequest):
         project_id=request.project_id,
         auto_search_papers=request.auto_search_papers,
         paper_granularity=request.paper_granularity,
+        images=request.images,
     )
     logger.info("已入队任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
     return {
@@ -260,6 +264,7 @@ async def submit_feedback(request: FeedbackRequest):
         project_id=request.project_id,
         auto_search_papers=request.auto_search_papers,
         paper_granularity=request.paper_granularity,
+        images=request.images,
     )
     logger.info("已入队迭代任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
     return {

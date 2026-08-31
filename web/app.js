@@ -228,6 +228,123 @@ function md(src) {
   return html || "<p>（暂无内容）</p>";
 }
 
+/* ================= 多模态：图片上传 ================= */
+const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB
+const MAX_IMAGES = 4;
+
+// 两个输入区的图片状态
+const composerImages = []; // {id, dataUrl, name}
+const customImages = [];
+
+function genImageId() { return "img_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 7); }
+
+function renderImagePreviews(images, containerId) {
+  const box = $(containerId);
+  if (!box) return;
+  box.innerHTML = "";
+  images.forEach(img => {
+    const thumb = document.createElement("div");
+    thumb.className = "image-thumb";
+    thumb.innerHTML = `<img src="${img.dataUrl}" alt="${img.name}" title="点击放大"><button class="remove-img" data-id="${img.id}" title="移除">×</button>`;
+    thumb.querySelector("img").addEventListener("click", () => openImageLightbox(img.dataUrl, img.name));
+    box.appendChild(thumb);
+  });
+  box.querySelectorAll(".remove-img").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const id = btn.dataset.id;
+      const idx = images.findIndex(i => i.id === id);
+      if (idx >= 0) images.splice(idx, 1);
+      renderImagePreviews(images, containerId);
+    });
+  });
+}
+
+function openImageLightbox(src, name) {
+  let overlay = $("#imageLightboxOverlay");
+  if (!overlay) {
+    overlay = document.createElement("div");
+    overlay.id = "imageLightboxOverlay";
+    overlay.innerHTML = '<div class="lightbox-inner"><img id="lightboxImg" src="" alt=""><div class="lightbox-caption"></div></div><button class="lightbox-close" type="button" title="关闭">×</button>';
+    overlay.addEventListener("click", e => { if (e.target === overlay || e.target.classList.contains("lightbox-close")) closeImageLightbox(); });
+    overlay.querySelector(".lightbox-close").addEventListener("click", e => { e.stopPropagation(); closeImageLightbox(); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") closeImageLightbox(); });
+    document.body.appendChild(overlay);
+  }
+  overlay.querySelector("#lightboxImg").src = src;
+  overlay.querySelector(".lightbox-caption").textContent = name || "";
+  overlay.classList.add("open");
+}
+function closeImageLightbox() {
+  const overlay = $("#imageLightboxOverlay");
+  if (overlay) overlay.classList.remove("open");
+}
+
+function handleImageFiles(files, images, containerId) {
+  const remaining = MAX_IMAGES - images.length;
+  if (remaining <= 0) { addSystemToast(`最多上传 ${MAX_IMAGES} 张图片`); return; }
+  const toProcess = Array.from(files).slice(0, remaining);
+  toProcess.forEach(file => {
+    if (!file.type.startsWith("image/")) return;
+    if (file.size > MAX_IMAGE_SIZE) { addSystemToast(`图片 "${file.name}" 超过 5MB，已跳过`); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      images.push({ id: genImageId(), dataUrl: reader.result, name: file.name });
+      renderImagePreviews(images, containerId);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function _extractClipboardImages(clipboardData) {
+  const imgs = [];
+  if (!clipboardData) return imgs;
+  if (clipboardData.files && clipboardData.files.length) {
+    for (const f of clipboardData.files) {
+      if (f.type.startsWith("image/")) imgs.push(f);
+    }
+  }
+  if (!imgs.length && clipboardData.items) {
+    for (const item of clipboardData.items) {
+      if (item.type.startsWith("image/")) imgs.push(item.getAsFile());
+    }
+  }
+  return imgs;
+}
+
+function bindImageUpload(btnId, inputId, previewId, images) {
+  const btn = $(btnId);
+  const input = $(inputId);
+  if (!btn || !input) return;
+  btn.addEventListener("click", () => input.click());
+  input.addEventListener("change", () => {
+    if (input.files && input.files.length) {
+      handleImageFiles(input.files, images, previewId);
+      input.value = "";
+    }
+  });
+  // 拖拽到 textarea 区域
+  const container = btn.closest(".composer-box, .custom-question");
+  if (container) {
+    container.addEventListener("dragover", e => { e.preventDefault(); container.style.outline = "2px dashed var(--cyan)"; });
+    container.addEventListener("dragleave", () => { container.style.outline = ""; });
+    container.addEventListener("drop", e => {
+      e.preventDefault(); container.style.outline = "";
+      if (e.dataTransfer?.files?.length) handleImageFiles(e.dataTransfer.files, images, previewId);
+    });
+  }
+  // 粘贴图片：绑定到容器即可，textarea 内的 paste 会冒泡上来
+  if (container) {
+    container.addEventListener("paste", e => {
+      const imgs = _extractClipboardImages(e.clipboardData);
+      if (imgs.length) { e.preventDefault(); e.stopPropagation(); handleImageFiles(imgs, images, previewId); }
+    });
+  }
+}
+
+function imagesToBase64List(images) {
+  return images.map(img => ({ name: img.name, data: img.dataUrl }));
+}
+
 /* ================= API 层 ================= */
 async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -286,20 +403,21 @@ function currentAutoSearchPapers() {
   const ckb = $("#autoSearchPapers");
   return !!(ckb && ckb.checked);
 }
-async function apiCreateJob(question, feedback, round, projectId) {
+async function apiCreateJob(question, feedback, round, projectId, images) {
   const payloadBase = {
     paper_granularity: currentPaperGranularity(),
     auto_search_papers: currentAutoSearchPapers(),
   };
+  const imgPayload = images && images.length ? { images: imagesToBase64List(images) } : {};
   if (feedback) {
     return apiFetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, ...payloadBase }),
+      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, ...payloadBase, ...imgPayload }),
     }, 15000);
   }
   return apiFetch("/api/run", {
     method: "POST",
-    body: JSON.stringify({ question, initial_round: round, project_id: projectId, ...payloadBase }),
+    body: JSON.stringify({ question, initial_round: round, project_id: projectId, ...payloadBase, ...imgPayload }),
   }, 15000);
 }
 async function apiJobStatus(jobId) {
@@ -475,6 +593,8 @@ function setWorkspaceMode(active) {
 function setComposerEnabled(enabled, mode = "feedback") {
   $("#expertInput").disabled = !enabled;
   $("#sendBtn").disabled = !enabled;
+  const imgBtn = $("#composerImageBtn");
+  if (imgBtn) imgBtn.disabled = !enabled;
   $("#composerBox").classList.toggle("needs-human", mode === "v3-max" || mode === "readonly");
   const prompt = $("#composerPrompt");
   if (mode === "loading") {
@@ -812,6 +932,8 @@ function returnHome() {
   appStatus = "idle";
   setStopBtn(false);
   setWorkspaceMode(false);
+  composerImages.length = 0;
+  renderImagePreviews(composerImages, "composerImagePreview");
   showWelcomeView();
   updateTopbar();
   renderHistoryList();
@@ -885,7 +1007,7 @@ function renderExplorer(snap) {
     <p>${esc(e.problem_skelton || "（未提供）")}</p>
   </div>
   <div class="panel-card">
-    <h3>证据列表 <span style="font-size:10px;color:var(--muted);font-weight:400">来自 Chroma 向量库检索</span></h3>
+    <h3>证据列表</h3>
     ${evidence.length ? `<table class="evidence-table">
       <thead><tr><th>证据陈述</th><th>来源</th></tr></thead>
       <tbody>${evidence.map(ev => `<tr>
@@ -1472,8 +1594,8 @@ function onJobCancelled(d) {
 
 /* ================= 任务提交 ================= */
 /* 提交任务到后端并开始轮询；jobs 与 historyStore 占位同步更新 */
-function enqueueJob(question, round, feedback, projectId) {
-  return apiCreateJob(question, feedback, round, projectId).then(d => {
+function enqueueJob(question, round, feedback, projectId, images) {
+  return apiCreateJob(question, feedback, round, projectId, images).then(d => {
     const runStartedAt = historyStore[d.project_id]?.run_started_at || new Date().toISOString();
     const job = {
       job_id: d.job_id,
@@ -1527,7 +1649,9 @@ async function startResearch(question) {
   showLoading("V1", projectId, null);
   saveViewKey();
   try {
-    await enqueueJob(q, "V1", null, projectId);
+    await enqueueJob(q, "V1", null, projectId, customImages.slice());
+    customImages.length = 0;
+    renderImagePreviews(customImages, "customImagePreview");
   } catch (e) {
     // 入队失败：清理占位并恢复旧数据
     if (historyStore[projectId] && !Object.keys(historyStore[projectId].rounds).length) {
@@ -1558,8 +1682,11 @@ async function submitFeedback() {
   saveViewKey();
   try {
     // 后端按 current_round 自行 +1：这里传当前轮次，避免二次递增导致跳轮（V1 直接变 V3）
-    await enqueueJob(question, fromRound, text, proj.project_id);
+    const imgs = composerImages.slice();
+    await enqueueJob(question, fromRound, text, proj.project_id, imgs);
     $("#expertInput").value = "";
+    composerImages.length = 0;
+    renderImagePreviews(composerImages, "composerImagePreview");
   } catch (e) {
     if (e.status === 400) {
       addSystemToast(e.message || "已达到最大迭代次数 V3");
@@ -1663,6 +1790,8 @@ function closeQuestionModal() {
   modal.setAttribute("aria-hidden", "true");
   $(".app").inert = false;
   document.body.classList.remove("dialog-open");
+  customImages.length = 0;
+  renderImagePreviews(customImages, "customImagePreview");
   questionModalTrigger?.focus();
 }
 
@@ -1737,6 +1866,8 @@ function animateShell() {
 }
 
 /* ================= 事件绑定 ================= */
+bindImageUpload("#composerImageBtn", "#composerImageInput", "#composerImagePreview", composerImages);
+bindImageUpload("#customImageBtn", "#customImageInput", "#customImagePreview", customImages);
 $("#newResearchBtn").onclick = openQuestionModal;
 $("#welcomeStart").onclick = openQuestionModal;
 $("#mobileNewResearchBtn").onclick = openQuestionModal;

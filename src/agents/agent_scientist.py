@@ -43,7 +43,7 @@ _DEFAULT_MODEL = ""
 _DEFAULT_API_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
 llm = ChatOpenAI(
-    model=os.getenv("QWEN_MODEL", _DEFAULT_MODEL),
+    model=os.getenv("QWEN_MODEL_SCIENTIST") or os.getenv("QWEN_MODEL", _DEFAULT_MODEL),
     api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
     temperature=0.7,
@@ -232,7 +232,7 @@ def generate_hypotheses(
             # 每次重试微调 temperature
             if attempt > 1:
                 llm_cur = ChatOpenAI(
-                    model=os.getenv("QWEN_MODEL", "qwen-plus"),
+                    model=os.getenv("QWEN_MODEL_SCIENTIST") or os.getenv("QWEN_MODEL", "qwen-plus"),
                     api_key=os.getenv("DASHSCOPE_API_KEY"),
                     base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
                     temperature=current_temp,

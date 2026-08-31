@@ -240,6 +240,7 @@ def run_full_pipeline(
     # ====== 读取上一轮快照，将 Critic 评审结果传给 Scientist ======
     prev_critic_output = None
     prev_overall_score = None
+    prev_explorer_output = None
     prev_round_num = int(round_label[1:])
     if prev_round_num > 1:
         prev_round_label = f"V{prev_round_num - 1}"
@@ -247,6 +248,7 @@ def run_full_pipeline(
         if prev_snapshot:
             prev_critic_output = prev_snapshot.get("agent_critic")
             prev_overall_score = prev_snapshot.get("overall_score")
+            prev_explorer_output = prev_snapshot.get("agent_explorer")
             logger.info(f"已加载上一轮 {prev_round_label} Critic 结果（综合得分 {prev_overall_score}），将注入 Scientist")
         else:
             logger.info(f"上一轮 {prev_round_label} 快照不存在，本轮 Scientist 不参考历史评审")
@@ -277,12 +279,18 @@ def run_full_pipeline(
             _paper_svc = None  # 标记不清理
 
     try:
-        # Step 1: Explorer
-        logger.info("Step 1: 探索者执行中...")
-        if progress_callback:
-            progress_callback("explorer", 15)
-        _check_cancel()
-        explorer_result = explore(question)
+        # Step 1: Explorer（V2/V3 复用上一轮检索结果，避免证据逐轮退化）
+        if prev_explorer_output:
+            logger.info("Step 1: 复用上一轮 Explorer 检索结果（跳过重新检索）")
+            if progress_callback:
+                progress_callback("explorer", 15)
+            explorer_result = ExplorerOutput(**prev_explorer_output)
+        else:
+            logger.info("Step 1: 探索者执行中...")
+            if progress_callback:
+                progress_callback("explorer", 15)
+            _check_cancel()
+            explorer_result = explore(question)
 
         # Step 2: Scientist
         logger.info("Step 2: 科学家执行中...")
@@ -421,7 +429,7 @@ def iterate_with_feedback(
     # 集中式 V3 边界守卫（防御性：main.py 端点已校验，这里兜底）
     validate_round_limit(current_round)
     next_round = next_round_label(current_round)
-    logger.info(f"收到反馈，触发 {next_round} 全链路重跑...")
+    logger.info(f"收到反馈，触发 {next_round} 迭代（复用上一轮证据检索）...")
 
     return run_full_pipeline(
         question=question,

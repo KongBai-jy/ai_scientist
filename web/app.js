@@ -236,10 +236,43 @@ const MAX_IMAGES = 4;
 const composerImages = []; // {id, dataUrl, name}
 const customImages = [];
 
+// 文档状态（PDF/Markdown）
+const MAX_DOCUMENT_SIZE = 10 * 1024 * 1024; // 10MB
+const MAX_DOCUMENTS = 3;
+const composerDocuments = []; // {id, dataUrl, name, type}
+const customDocuments = [];
+
 function genImageId() { return "img_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 7); }
+function genDocId() { return "doc_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 7); }
+
+function isDocumentFile(file) {
+  const name = file.name.toLowerCase();
+  const mime = file.type || "";
+  return name.endsWith(".pdf") || name.endsWith(".md") || name.endsWith(".markdown") ||
+         mime === "application/pdf" || mime === "text/markdown";
+}
+
+function renderDocumentPreviews(documents, containerId) {
+  const box = document.getElementById(containerId.replace(/^#/, ''));
+  if (!box) return;
+  box.innerHTML = "";
+  documents.forEach(doc => {
+    const thumb = document.createElement("div");
+    thumb.className = "doc-thumb";
+    const icon = doc.name.toLowerCase().endsWith(".pdf") ? "📄" : "📝";
+    thumb.innerHTML = `<span class="doc-icon">${icon}</span><span class="doc-name" title="${doc.name}">${doc.name}</span><button class="remove-doc" data-id="${doc.id}" title="移除">×</button>`;
+    thumb.querySelector(".remove-doc").addEventListener("click", () => {
+      const id = doc.id;
+      const idx = documents.findIndex(d => d.id === id);
+      if (idx >= 0) documents.splice(idx, 1);
+      renderDocumentPreviews(documents, containerId);
+    });
+    box.appendChild(thumb);
+  });
+}
 
 function renderImagePreviews(images, containerId) {
-  const box = $(containerId);
+  const box = document.getElementById(containerId.replace(/^#/, ''));
   if (!box) return;
   box.innerHTML = "";
   images.forEach(img => {
@@ -295,6 +328,36 @@ function handleImageFiles(files, images, containerId) {
   });
 }
 
+function handleDocumentFiles(files, documents, containerId) {
+  const remaining = MAX_DOCUMENTS - documents.length;
+  if (remaining <= 0) { addSystemToast(`最多上传 ${MAX_DOCUMENTS} 个文档`); return; }
+  const toProcess = Array.from(files).slice(0, remaining);
+  toProcess.forEach(file => {
+    if (!isDocumentFile(file)) return;
+    if (file.size > MAX_DOCUMENT_SIZE) { addSystemToast(`文档 "${file.name}" 超过 10MB，已跳过`); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      documents.push({ id: genDocId(), dataUrl: reader.result, name: file.name, type: file.type || "unknown" });
+      renderDocumentPreviews(documents, containerId);
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function handleFiles(files, images, imageContainerId, documents, docContainerId) {
+  const imageFiles = [];
+  const docFiles = [];
+  Array.from(files).forEach(file => {
+    if (file.type.startsWith("image/")) {
+      imageFiles.push(file);
+    } else if (isDocumentFile(file)) {
+      docFiles.push(file);
+    }
+  });
+  if (imageFiles.length) handleImageFiles(imageFiles, images, imageContainerId);
+  if (docFiles.length) handleDocumentFiles(docFiles, documents, docContainerId);
+}
+
 function _extractClipboardImages(clipboardData) {
   const imgs = [];
   if (!clipboardData) return imgs;
@@ -311,14 +374,31 @@ function _extractClipboardImages(clipboardData) {
   return imgs;
 }
 
-function bindImageUpload(btnId, inputId, previewId, images) {
+function _extractClipboardFiles(clipboardData) {
+  const files = [];
+  if (!clipboardData) return files;
+  if (clipboardData.files && clipboardData.files.length) {
+    for (const f of clipboardData.files) {
+      if (f.type.startsWith("image/") || isDocumentFile(f)) files.push(f);
+    }
+  }
+  if (!files.length && clipboardData.items) {
+    for (const item of clipboardData.items) {
+      const file = item.getAsFile();
+      if (file && (file.type.startsWith("image/") || isDocumentFile(file))) files.push(file);
+    }
+  }
+  return files;
+}
+
+function bindImageUpload(btnId, inputId, previewId, images, docPreviewId, documents) {
   const btn = $(btnId);
   const input = $(inputId);
   if (!btn || !input) return;
   btn.addEventListener("click", () => input.click());
   input.addEventListener("change", () => {
     if (input.files && input.files.length) {
-      handleImageFiles(input.files, images, previewId);
+      handleFiles(input.files, images, previewId, documents, docPreviewId);
       input.value = "";
     }
   });
@@ -329,14 +409,14 @@ function bindImageUpload(btnId, inputId, previewId, images) {
     container.addEventListener("dragleave", () => { container.style.outline = ""; });
     container.addEventListener("drop", e => {
       e.preventDefault(); container.style.outline = "";
-      if (e.dataTransfer?.files?.length) handleImageFiles(e.dataTransfer.files, images, previewId);
+      if (e.dataTransfer?.files?.length) handleFiles(e.dataTransfer.files, images, previewId, documents, docPreviewId);
     });
   }
-  // 粘贴图片：绑定到容器即可，textarea 内的 paste 会冒泡上来
+  // 粘贴图片/文档：绑定到容器即可，textarea 内的 paste 会冒泡上来
   if (container) {
     container.addEventListener("paste", e => {
-      const imgs = _extractClipboardImages(e.clipboardData);
-      if (imgs.length) { e.preventDefault(); e.stopPropagation(); handleImageFiles(imgs, images, previewId); }
+      const files = _extractClipboardFiles(e.clipboardData);
+      if (files.length) { e.preventDefault(); e.stopPropagation(); handleFiles(files, images, previewId, documents, docPreviewId); }
     });
   }
 }
@@ -345,19 +425,18 @@ function imagesToBase64List(images) {
   return images.map(img => ({ name: img.name, data: img.dataUrl }));
 }
 
+function documentsToBase64List(documents) {
+  return documents.map(doc => ({ name: doc.name, data: doc.dataUrl, type: doc.type }));
+}
+
 /* ================= API 层 ================= */
 async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
   const controller = new AbortController();
   const externalSignal = options.signal || null;
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    // 强制请求体按 UTF-8 编码发送：body 为字符串时用 TextEncoder 转 UTF-8 Uint8Array，
-    // 避免个别浏览器/代理在无 charset 时回退到 latin1 导致中文被替换为 ?
     const fetchOpts = { ...options };
     const baseHeaders = { "Content-Type": "application/json; charset=utf-8", ...(options.headers || {}) };
-    if (typeof fetchOpts.body === "string") {
-      fetchOpts.body = new TextEncoder().encode(fetchOpts.body);
-    }
     fetchOpts.headers = baseHeaders;
     fetchOpts.signal = externalSignal && window.AbortSignal?.any
       ? window.AbortSignal.any([controller.signal, externalSignal])
@@ -403,21 +482,22 @@ function currentAutoSearchPapers() {
   const ckb = $("#autoSearchPapers");
   return !!(ckb && ckb.checked);
 }
-async function apiCreateJob(question, feedback, round, projectId, images) {
+async function apiCreateJob(question, feedback, round, projectId, images, documents) {
   const payloadBase = {
     paper_granularity: currentPaperGranularity(),
     auto_search_papers: currentAutoSearchPapers(),
   };
   const imgPayload = images && images.length ? { images: imagesToBase64List(images) } : {};
+  const docPayload = documents && documents.length ? { documents: documentsToBase64List(documents) } : {};
   if (feedback) {
     return apiFetch("/api/feedback", {
       method: "POST",
-      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, ...payloadBase, ...imgPayload }),
+      body: JSON.stringify({ question, feedback, current_round: round, project_id: projectId, ...payloadBase, ...imgPayload, ...docPayload }),
     }, 15000);
   }
   return apiFetch("/api/run", {
     method: "POST",
-    body: JSON.stringify({ question, initial_round: round, project_id: projectId, ...payloadBase, ...imgPayload }),
+    body: JSON.stringify({ question, initial_round: round, project_id: projectId, ...payloadBase, ...imgPayload, ...docPayload }),
   }, 15000);
 }
 async function apiJobStatus(jobId) {
@@ -1192,9 +1272,15 @@ function chartsDataFromSnapshots() {
       to_round: curr.round,
     });
   }
-  // 与后端 get_chart_risk 相同的启发式：counterfactual 越短风险越高
+  // 与后端 get_chart_risk 一致：优先用新字段，回退到长度启发式
   const risk_index = list.map(s => {
-    const cf = (s.agent_critic || {}).counterfactual || "";
+    const critic = s.agent_critic || {};
+    const sev = critic.counterfactual_severity;
+    const vul = critic.counterfactual_vulnerability;
+    if (sev != null && vul != null) {
+      return Math.round(Math.min(10, sev * vul / 10) * 100) / 100;
+    }
+    const cf = critic.counterfactual || "";
     return Math.round(Math.max(0, Math.min(10, 10 - cf.length / 20)) * 100) / 100;
   });
   return {
@@ -1594,8 +1680,8 @@ function onJobCancelled(d) {
 
 /* ================= 任务提交 ================= */
 /* 提交任务到后端并开始轮询；jobs 与 historyStore 占位同步更新 */
-function enqueueJob(question, round, feedback, projectId, images) {
-  return apiCreateJob(question, feedback, round, projectId, images).then(d => {
+function enqueueJob(question, round, feedback, projectId, images, documents) {
+  return apiCreateJob(question, feedback, round, projectId, images, documents).then(d => {
     const runStartedAt = historyStore[d.project_id]?.run_started_at || new Date().toISOString();
     const job = {
       job_id: d.job_id,
@@ -1649,9 +1735,11 @@ async function startResearch(question) {
   showLoading("V1", projectId, null);
   saveViewKey();
   try {
-    await enqueueJob(q, "V1", null, projectId, customImages.slice());
+    await enqueueJob(q, "V1", null, projectId, customImages.slice(), customDocuments.slice());
     customImages.length = 0;
     renderImagePreviews(customImages, "customImagePreview");
+    customDocuments.length = 0;
+    renderDocumentPreviews(customDocuments, "customDocPreview");
   } catch (e) {
     // 入队失败：清理占位并恢复旧数据
     if (historyStore[projectId] && !Object.keys(historyStore[projectId].rounds).length) {
@@ -1681,13 +1769,22 @@ async function submitFeedback() {
   showLoading(nextRound, proj.project_id, null);
   saveViewKey();
   try {
-    // 后端按 current_round 自行 +1：这里传当前轮次，避免二次递增导致跳轮（V1 直接变 V3）
     const imgs = composerImages.slice();
-    await enqueueJob(question, fromRound, text, proj.project_id, imgs);
-    $("#expertInput").value = "";
+    const docs = composerDocuments.slice();
+    const savedText = text;
     composerImages.length = 0;
     renderImagePreviews(composerImages, "composerImagePreview");
+    composerDocuments.length = 0;
+    renderDocumentPreviews(composerDocuments, "composerDocPreview");
+    $("#expertInput").value = "";
+    await enqueueJob(question, fromRound, savedText, proj.project_id, imgs, docs);
   } catch (e) {
+    console.error("[submitFeedback] error:", e);
+    composerImages.push(...imgs);
+    renderImagePreviews(composerImages, "composerImagePreview");
+    composerDocuments.push(...docs);
+    renderDocumentPreviews(composerDocuments, "composerDocPreview");
+    $("#expertInput").value = savedText;
     if (e.status === 400) {
       addSystemToast(e.message || "已达到最大迭代次数 V3");
     } else {
@@ -1866,8 +1963,8 @@ function animateShell() {
 }
 
 /* ================= 事件绑定 ================= */
-bindImageUpload("#composerImageBtn", "#composerImageInput", "#composerImagePreview", composerImages);
-bindImageUpload("#customImageBtn", "#customImageInput", "#customImagePreview", customImages);
+bindImageUpload("#composerImageBtn", "#composerImageInput", "#composerImagePreview", composerImages, "#composerDocPreview", composerDocuments);
+bindImageUpload("#customImageBtn", "#customImageInput", "#customImagePreview", customImages, "#customDocPreview", customDocuments);
 $("#newResearchBtn").onclick = openQuestionModal;
 $("#welcomeStart").onclick = openQuestionModal;
 $("#mobileNewResearchBtn").onclick = openQuestionModal;

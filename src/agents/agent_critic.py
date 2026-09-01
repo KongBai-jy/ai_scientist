@@ -100,6 +100,18 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
     * cross_domain (float) —— 跨学科适配度
 - top_flaw (字符串，≥10 字符)
 - counterfactual (字符串，≥15 字符)
+- counterfactual_severity (float，0-10) —— 反事实条件严苛度评分：
+    * 9-10分：条件极端苛刻，在现实中几乎不可能满足
+    * 7-8分：条件非常苛刻，需要极端技术突破
+    * 5-6分：条件有一定难度，但并非完全不可能
+    * 3-4分：条件相对温和，现有条件基本可满足
+    * 0-2分：条件几乎不构成实质挑战
+- counterfactual_vulnerability (float，0-10) —— 假设在该反事实条件下的脆弱度评分：
+    * 9-10分：假设在该条件下立即被推翻，无任何回旋余地
+    * 7-8分：假设核心逻辑被严重动摇，仅部分残余
+    * 5-6分：假设需要重大修改才能存活
+    * 3-4分：假设可通过局部调整继续成立
+    * 0-2分：假设几乎不受影响，轻松抵御
 - missing_evidences (字符串数组)
 - detailed_review (字符串，≥30 字符)
 
@@ -114,6 +126,8 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
   },
   "top_flaw": "最致命的缺陷描述",
   "counterfactual": "在 XX 极端条件下，该假设必然被推翻",
+  "counterfactual_severity": 7.5,
+  "counterfactual_vulnerability": 6.0,
   "missing_evidences": ["缺失证据1", "缺失证据2"],
   "detailed_review": "详细评审意见（Markdown 格式）"
 }
@@ -195,6 +209,8 @@ def critique(
 1. 反事实条件（counterfactual）必须具体、极端，例如："若未来探测器精度无法达到 10^-12 量级，则该假设无法验证"
 2. 缺失证据（missing_evidences）应具体到可检索的关键词
 3. 评分必须客观反映假设实际质量，不得放水
+4. counterfactual_severity 评估该反事实条件在现实中实现的苛刻程度（越极端越不可能，分越高）
+5. counterfactual_vulnerability 评估假设在该条件下被推翻的容易程度（越脆弱，分越高）
 """)
     ]
 

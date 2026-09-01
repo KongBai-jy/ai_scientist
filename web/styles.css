@@ -145,3 +145,11 @@
 #imageLightboxOverlay .lightbox-close{position:fixed;top:20px;right:24px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.1);color:#fff;font-size:20px;cursor:pointer;display:grid;place-items:center;transition:background .15s}
 #imageLightboxOverlay .lightbox-close:hover{background:rgba(255,255,255,.2)}
 .image-thumb img{cursor:zoom-in}
+
+/* 文档预览样式 */
+.doc-preview-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.doc-thumb{display:flex;align-items:center;gap:6px;padding:4px 8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);border-radius:6px;font-size:12px;max-width:200px}
+.doc-icon{font-size:14px}
+.doc-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#3b82f6}
+.remove-doc{width:16px;height:16px;border:none;background:rgba(239,68,68,.8);color:#fff;border-radius:50%;font-size:10px;cursor:pointer;display:grid;place-items:center;flex-shrink:0}
+.remove-doc:hover{background:#ef4444}

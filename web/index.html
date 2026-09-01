@@ -6,7 +6,7 @@
 <meta name="theme-color" content="#10161c"/>
 <title>AI Scientist · Research Workspace</title>
 <link rel="icon" href="data:,"/>
-<link rel="stylesheet" href="/static/styles.css?v=20260827-toggle"/>
+<link rel="stylesheet" href="/static/styles.css?v=20260901-fb-preview"/>
 <link rel="stylesheet" href="/static/workspace.css?v=20260818-v21"/>
 </head>
 <body>
@@ -39,25 +39,29 @@
     </div>
   </aside>
 
-  <main class="center" id="workspaceMain">
-    <header class="topbar">
-      <div class="top-title">
-        <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="隐藏研究档案" aria-controls="historySidebar" aria-expanded="true" title="隐藏侧边栏">
-          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4" width="17" height="16" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 4v16" stroke="currentColor" stroke-width="1.6"/></svg>
-        </button>
-        <button class="qid" id="mobileNavBtn" type="button" aria-label="打开研究轮次" aria-controls="historySidebar" aria-expanded="false"><span id="topQid">AI</span></button>
-        <div><span class="workspace-label">ACTIVE RESEARCH</span><b id="topTitle">输入一个科学问题开始研究</b></div>
-        <span class="top-tag" id="topCategory" style="display:none">V1</span>
-      </div>
-      <div class="top-actions">
-        <button class="home-btn" id="homeBtn" type="button">返回首页</button>
-        <span class="api-status" id="apiStatus" aria-live="polite"><i></i> 连接中…</span>
-        <button class="report-btn" id="reportBtn" type="button" style="display:none">完整报告</button>
-        <button class="mobile-new-btn" id="mobileNewResearchBtn" type="button">新建</button>
-        <button class="danger-btn" id="stopBtn" type="button" style="display:none">取消</button>
-      </div>
-    </header>
+  <header class="topbar">
+    <div class="top-title">
+      <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="隐藏研究档案" aria-controls="historySidebar" aria-expanded="true" title="隐藏侧边栏">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><rect x="3.5" y="4" width="17" height="16" rx="2.5" stroke="currentColor" stroke-width="1.6"/><path d="M9 4v16" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <button class="qid" id="mobileNavBtn" type="button" aria-label="打开研究轮次" aria-controls="historySidebar" aria-expanded="false"><span id="topQid">AI</span></button>
+      <div><span class="workspace-label">ACTIVE RESEARCH</span><b id="topTitle">输入一个科学问题开始研究</b></div>
+      <span class="top-tag" id="topCategory" style="display:none">V1</span>
+    </div>
+    <div class="top-actions">
+      <button class="home-btn" id="homeBtn" type="button">返回首页</button>
+      <span class="api-status" id="apiStatus" aria-live="polite"><i></i> 连接中…</span>
+      <button class="report-btn" id="reportBtn" type="button" style="display:none">完整报告</button>
+      <button class="mobile-new-btn" id="mobileNewResearchBtn" type="button">新建</button>
+      <button class="danger-btn" id="stopBtn" type="button" style="display:none">取消</button>
+      <button class="fb-toggle-btn" id="feedbackToggle" type="button" aria-label="切换专家反馈面板" title="专家反馈">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        反馈
+      </button>
+    </div>
+  </header>
 
+  <main class="center" id="workspaceMain">
     <div class="chat-wrap" id="chatWrap">
       <div class="welcome-scene" id="welcomeScene" aria-hidden="true">
         <div class="welcome-scene-image"><div class="welcome-scene-art"></div><video class="welcome-scene-video" src="/static/assets/welcome.mp4" autoplay muted loop playsinline preload="auto" onerror="this.style.display='none'"></video></div>
@@ -78,6 +82,16 @@
       </div>
     </div>
   </main>
+
+  <aside class="right" id="feedbackSidebar" aria-label="专家反馈历史">
+    <div class="right-header">
+      <b>专家反馈</b>
+      <small id="feedbackRoundTag"></small>
+    </div>
+    <div class="right-body" id="feedbackList">
+      <div class="feedback-empty">暂无反馈记录</div>
+    </div>
+  </aside>
 
   <div class="composer-wrap">
     <div class="composer-box" id="composerBox">
@@ -146,6 +160,6 @@
 
 <script src="/static/vendor/gsap.min.js?v=3.13.0"></script>
 <script src="/static/vendor/echarts.min.js?v=5.5.1"></script>
-<script src="/static/app.js?v=20260831-doc-upload2"></script>
+<script src="/static/app.js?v=20260901-fb-preview"></script>
 </body>
 </html>

@@ -834,6 +834,77 @@ function bindHistorySwipe(wrap, item, deleteBtn) {
   });
 }
 
+/* 右侧反馈历史面板：遍历所有轮次快照，展示每轮的专家反馈 */
+function renderFeedbackHistory() {
+  const el = $("#feedbackList");
+  const tag = $("#feedbackRoundTag");
+  if (!el) return;
+  const rounds = ROUNDS.filter(r => snapshots[r] && (snapshots[r].human_feedback || []).length > 0);
+  if (!rounds.length) {
+    el.innerHTML = `<div class="feedback-empty">暂无反馈记录</div>`;
+    if (tag) tag.textContent = currentRound || "";
+    return;
+  }
+  if (tag) tag.textContent = currentRound || "";
+  el.innerHTML = rounds.map(r => {
+    const fb = snapshots[r].human_feedback;
+    return `<div class="fb-round">
+      <span class="fb-round-tag">${r}</span>
+      ${fb.map((f, fi) => {
+        if (!f || !f.content) return "";
+        let html = `<div class="fb-round-item">${esc(f.content)}</div>`;
+        if (f.images && f.images.length) {
+          html += `<div class="fb-attachments">${f.images.map((img, i) =>
+            `<img class="fb-img-thumb" data-fb-img="${i}" data-fb-fi="${fi}" data-fb-round="${r}" src="${esc(img.data || img)}" alt="${esc(img.name || "图片")}" title="点击放大：${esc(img.name || "图片")}"/>`
+          ).join("")}</div>`;
+        }
+        if (f.documents && f.documents.length) {
+          html += `<div class="fb-docs">${f.documents.map((d, i) =>
+            `<span class="fb-doc-chip" data-fb-doc="${i}" data-fb-fi="${fi}" data-fb-round="${r}" title="点击预览：${esc(d.name || "文档")}">${esc(d.name || "文档")}</span>`
+          ).join("")}</div>`;
+        }
+        return html;
+      }).join("")}
+    </div>`;
+  }).join("");
+
+  // 图片点击放大
+  el.querySelectorAll(".fb-img-thumb").forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      const snap = snapshots[thumb.dataset.fbRound];
+      const f = snap && (snap.human_feedback || [])[Number(thumb.dataset.fbFi)];
+      const img = f && (f.images || [])[Number(thumb.dataset.fbImg)];
+      if (img) openImageLightbox(img.data || img, img.name || "图片");
+    });
+  });
+
+  // 文档点击预览（新窗口打开）
+  el.querySelectorAll(".fb-doc-chip").forEach(chip => {
+    chip.addEventListener("click", () => {
+      const snap = snapshots[chip.dataset.fbRound];
+      const f = snap && (snap.human_feedback || [])[Number(chip.dataset.fbFi)];
+      const doc = f && (f.documents || [])[Number(chip.dataset.fbDoc)];
+      if (!doc) return;
+      const dataUrl = doc.data || doc;
+      // base64 data URL → blob → 新窗口打开
+      if (typeof dataUrl === "string" && dataUrl.startsWith("data:")) {
+        const [header, b64] = dataUrl.split(",");
+        const mime = (header.match(/data:([^;]+)/) || [])[1] || "application/octet-stream";
+        try {
+          const byteStr = atob(b64);
+          const ab = new Uint8Array(byteStr.length);
+          for (let i = 0; i < byteStr.length; i++) ab[i] = byteStr.charCodeAt(i);
+          const blob = new Blob([ab], { type: mime });
+          const url = URL.createObjectURL(blob);
+          window.open(url, "_blank");
+        } catch (e) {
+          addSystemToast("文档预览失败");
+        }
+      }
+    });
+  });
+}
+
 function renderWorkspace() {
   const snap = snapshots[currentRound];
   if (!snap) return;
@@ -907,6 +978,7 @@ function renderWorkspace() {
 
   updateTopbar();
   renderHistoryList();
+  renderFeedbackHistory();
   animateIn($("#workspaceRoot"), { y: 14, duration: .5 });
 }
 
@@ -934,6 +1006,7 @@ function switchProject(projectId) {
     chartsRendered = false;
     setWorkspaceMode(true);
     showLoading(job?.round || proj.round || "V1", proj.project_id, job);
+    renderFeedbackHistory();
     refreshComposer();
     document.querySelector(".chat-wrap").scrollTo({ top: 0, behavior: "auto" });
     saveViewKey();
@@ -1017,6 +1090,7 @@ function returnHome() {
   showWelcomeView();
   updateTopbar();
   renderHistoryList();
+  renderFeedbackHistory();
   saveViewKey();
   $("#chatWrap").scrollTo({ top: 0, behavior: "auto" });
 }
@@ -1972,6 +2046,7 @@ $("#mobileNavBtn").onclick = openMobileSidebar;
 $("#mobileSidebarClose").onclick = () => closeMobileSidebar();
 $("#mobileSidebarBg").onclick = () => closeMobileSidebar();
 $("#sidebarToggle").onclick = () => setSidebarCollapsed(!document.querySelector(".app").classList.contains("sidebar-collapsed"));
+$("#feedbackToggle").onclick = () => $(".app").classList.toggle("feedback-collapsed");
 $("#homeBtn").onclick = returnHome;
 $("#closeQuestionModal").onclick = closeQuestionModal;
 $("#questionModalBg").onclick = closeQuestionModal;

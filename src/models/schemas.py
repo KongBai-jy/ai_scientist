@@ -100,6 +100,8 @@ class CriticOutput(BaseModel):
     scores: DimensionScores
     top_flaw: str = Field(..., min_length=10)
     counterfactual: str = Field(..., min_length=15)
+    counterfactual_severity: Optional[float] = Field(None, ge=0, le=10, description="反事实条件严苛度：条件越极端/越不可能实现，分数越高")
+    counterfactual_vulnerability: Optional[float] = Field(None, ge=0, le=10, description="假设在该反事实条件下的脆弱度：越容易被推翻，分数越高")
     missing_evidences: List[str] = Field(default_factory=list)
     detailed_review: str = Field(..., min_length=30)
 

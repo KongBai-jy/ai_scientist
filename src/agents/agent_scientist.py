@@ -149,6 +149,7 @@ def generate_hypotheses(
     prev_overall_score: Optional[float] = None,
     max_retries: int = 3,
     images: Optional[List[Dict[str, str]]] = None,
+    document_texts: Optional[List[Dict[str, str]]] = None,
 ) -> ScientistOutput:
     """
     生成假设与研究计划
@@ -189,6 +190,24 @@ def generate_hypotheses(
 2. 将图片信息与已有证据结合，作为新假设的支撑
 3. 如果图片揭示了新的证据或视角，请在假设中体现
 """
+
+    # 文档分析指令
+    document_instruction = ""
+    has_documents = bool(document_texts)
+    if has_documents:
+        doc_names = [d.get("name", "unknown") for d in document_texts]
+        document_instruction = f"""
+## 用户提供的文档材料（{', '.join(doc_names)}）
+用户在本轮反馈中提供了以下文档，请结合文档内容进行分析：
+1. 提取文档中的科学信息（数据、方法、结论、参考文献等）
+2. 将文档内容与已有证据结合，作为新假设的支撑
+3. 如果文档揭示了新的证据或视角，请在假设中体现
+"""
+        # 添加每个文档的内容
+        for doc in document_texts:
+            doc_name = doc.get("name", "unknown")
+            doc_content = doc.get("content", "")
+            document_instruction += f"\n### 文档：{doc_name}\n```\n{doc_content[:10000]}\n```\n"
 
     # 上一轮 Critic 评审结果（迭代时注入）
     critic_section = ""
@@ -248,6 +267,7 @@ def generate_hypotheses(
 {critic_section}
 {feedback_section}
 {image_instruction}
+{document_instruction}
 {iteration_anchor}
 
 请严格按照 JSON 格式输出。

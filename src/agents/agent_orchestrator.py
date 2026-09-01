@@ -206,6 +206,7 @@ def run_full_pipeline(
     auto_search_papers: bool = False,
     paper_granularity: str = "fast",
     images: Optional[List[Dict[str, str]]] = None,
+    documents: Optional[List[Dict[str, str]]] = None,
 ) -> Dict[str, Any]:
     """
     执行完整流水线
@@ -279,6 +280,17 @@ def run_full_pipeline(
             logger.warning(f"自动检索文献失败，跳过（不影响主流程）: {e}")
             _paper_svc = None  # 标记不清理
 
+    # ====== 解析用户上传的文档（PDF/Markdown）======
+    document_texts = []
+    if documents:
+        try:
+            from services.document_parser import parse_documents
+            document_texts = parse_documents(documents)
+            if document_texts:
+                logger.info(f"📄 文档解析成功: {len(document_texts)} 个文档")
+        except Exception as e:
+            logger.warning(f"文档解析失败，跳过（不影响主流程）: {e}")
+
     try:
         # Step 1: Explorer（V2/V3 复用上一轮检索结果，避免证据逐轮退化）
         if prev_explorer_output:
@@ -307,6 +319,7 @@ def run_full_pipeline(
             prev_critic_output=prev_critic_output,
             prev_overall_score=prev_overall_score,
             images=images,
+            document_texts=document_texts,
         )
 
         # Step 3: Critic
@@ -547,13 +560,22 @@ def get_chart_risk(project_id: Optional[str] = None) -> Dict[str, Any]:
     if not snapshots:
         return {"xAxis": [], "risk_index": [], "level": []}
 
-    # 根据 counterfactual 长度粗略估算风险指数（越短说明越苛刻=风险越高）
     risk_levels = []
     for s in snapshots:
-        cf = s["agent_critic"].get("counterfactual", "")
-        # 简单启发：长度越短风险越高（更苛刻的条件）
-        risk = max(0, min(10, 10 - len(cf) / 20))
-        risk_levels.append(round(risk, 2))
+        critic = s["agent_critic"]
+        severity = critic.get("counterfactual_severity")
+        vulnerability = critic.get("counterfactual_vulnerability")
+
+        if severity is not None and vulnerability is not None:
+            # 新逻辑：风险 = 严苛度 × 脆弱度 / 10，映射到 0-10
+            risk = round(severity * vulnerability / 10, 2)
+        else:
+            # 旧快照兼容：回退到长度启发式
+            cf = critic.get("counterfactual", "")
+            risk = max(0, min(10, 10 - len(cf) / 20))
+            risk = round(risk, 2)
+
+        risk_levels.append(min(10, risk))
 
     return {
         "xAxis": [s["round"] for s in snapshots],

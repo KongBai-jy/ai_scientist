@@ -328,12 +328,15 @@ def run_full_pipeline(
             progress_callback("critic", 85)
         _check_cancel()
         prev_scores_for_critic = None
+        prev_cf_for_critic = None
         if prev_critic_output:
             prev_scores_for_critic = prev_critic_output.get("scores")
+            prev_cf_for_critic = prev_critic_output.get("counterfactual")
         critic_result = critique(
             hypotheses=[h.model_dump() for h in scientist_result.hypotheses],
             round_label=round_label,
             prev_scores=prev_scores_for_critic,
+            prev_counterfactual=prev_cf_for_critic,
         )
 
         # Step 4: 计算综合得分

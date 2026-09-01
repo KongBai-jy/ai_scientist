@@ -43,7 +43,7 @@ _DEFAULT_MODEL = ""
 _DEFAULT_API_BASE = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
 llm = ChatOpenAI(
-    model=os.getenv("QWEN_MODEL", _DEFAULT_MODEL),
+    model=os.getenv("QWEN_MODEL_CRITIC") or os.getenv("QWEN_MODEL", _DEFAULT_MODEL),
     api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
     temperature=0.3,  # 降低温度：评审需要更稳定、可复现的评分
@@ -100,18 +100,30 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
     * cross_domain (float) —— 跨学科适配度
 - top_flaw (字符串，≥10 字符)
 - counterfactual (字符串，≥15 字符)
-- counterfactual_severity (float，0-10) —— 反事实条件严苛度评分：
-    * 9-10分：条件极端苛刻，在现实中几乎不可能满足
-    * 7-8分：条件非常苛刻，需要极端技术突破
-    * 5-6分：条件有一定难度，但并非完全不可能
-    * 3-4分：条件相对温和，现有条件基本可满足
-    * 0-2分：条件几乎不构成实质挑战
-- counterfactual_vulnerability (float，0-10) —— 假设在该反事实条件下的脆弱度评分：
-    * 9-10分：假设在该条件下立即被推翻，无任何回旋余地
-    * 7-8分：假设核心逻辑被严重动摇，仅部分残余
-    * 5-6分：假设需要重大修改才能存活
-    * 3-4分：假设可通过局部调整继续成立
-    * 0-2分：假设几乎不受影响，轻松抵御
+- counterfactual_severity (float，0-10) —— 反事实条件严苛度，必须参照以下锚定案例校准：
+    【锚定参照】
+    * severity=10："若需在普朗克尺度（10^-35 m）进行直接测量"——受物理定律根本限制，永远不可能
+    * severity=8："若要求单次测量精度超越当前技术极限 3 个数量级以上"——需要全新技术范式
+    * severity=6："若要求探测器精度达到 10^-12 m"——当前 LIGO 已达 10^-19，该条件反而容易满足（因此仅 6 分）
+    * severity=4："若要求实验样本量 N≥500 且信噪比 >5σ"——大型合作组已可做到
+    * severity=2："若要求排除所有已知系统误差"——标准实验流程即可应对
+    评分时必须与上述锚点对比，给出相对合理的绝对分数。
+- counterfactual_vulnerability_detail (对象) —— 通过以下 3 个逻辑检验客观推导脆弱度：
+    * confirm_still_satisfiable ("yes"/"partial"/"no")：假设的 verification_criteria.confirm 在该反事实场景下是否仍可满足？
+        - "yes" = 仍可满足（不脆弱，+0）
+        - "partial" = 需降低标准才能部分满足（+2）
+        - "no" = 确认条件在该场景下完全被堵死（+4）
+    * robustness_addresses_it ("yes"/"partial"/"no")：假设的 plan.L3_robustness 是否已包含针对该反事实场景的应对策略？
+        - "yes" = 已有充分应对（不脆弱，+0）
+        - "partial" = 有涉及但未直接针对该场景（+1.5）
+        - "no" = 完全无应对方案（+3）
+    * reasoning_depends_on_negation ("yes"/"partial"/"no")：假设的 supporting_reasoning 核心推理链是否依赖该反事实条件不成立？
+        - "yes" = 核心依赖，条件成立则推理链断裂（+3）
+        - "partial" = 部分依赖，有替代推理路径但说服力下降（+1.5）
+        - "no" = 推理链独立于该条件（不脆弱，+0）
+- counterfactual_vulnerability (float，0-10) —— 由上述 3 个子问题的档位分数相加得出：
+    可能取值：0, 1.5, 2, 3, 3.5, 4, 4.5, 5, 5.5, 6, 7, 7.5, 8, 9, 10
+    即：全"安全"=0（完全鲁棒），全"最脆弱"=10（极度脆弱）
 - missing_evidences (字符串数组)
 - detailed_review (字符串，≥30 字符)
 
@@ -125,9 +137,14 @@ SYSTEM_PROMPT = """你是一位顶尖期刊（如 Nature/Science）的严苛审�
     "cross_domain": 6.5
   },
   "top_flaw": "最致命的缺陷描述",
-  "counterfactual": "在 XX 极端条件下，该假设必然被推翻",
-  "counterfactual_severity": 7.5,
-  "counterfactual_vulnerability": 6.0,
+  "counterfactual": "若未来探测器精度无法达到 10^-12 量级，则该假设无法验证",
+  "counterfactual_severity": 6.0,
+  "counterfactual_vulnerability_detail": {
+    "confirm_still_satisfiable": "no",
+    "robustness_addresses_it": "yes",
+    "reasoning_depends_on_negation": "no"
+  },
+  "counterfactual_vulnerability": 4.0,
   "missing_evidences": ["缺失证据1", "缺失证据2"],
   "detailed_review": "详细评审意见（Markdown 格式）"
 }
@@ -151,6 +168,7 @@ def critique(
     hypotheses: List[Dict[str, Any]],
     round_label: str = "V1",
     prev_scores: Optional[Dict[str, float]] = None,
+    prev_counterfactual: Optional[str] = None,
     max_retries: int = 3
 ) -> CriticOutput:
     """
@@ -160,6 +178,7 @@ def critique(
         hypotheses: 假设列表
         round_label: 当前轮次标签（V1/V2/V3）
         prev_scores: 上一轮五维评分（迭代评审时传入）
+        prev_counterfactual: 上一轮反事实条件（迭代评审时传入）
         max_retries: 最大重试次数
 
     Returns:
@@ -195,6 +214,22 @@ def critique(
 3. **聚焦薄弱维度突破**：上一轮最弱的两个维度（{weak_desc}）是本轮改进的重点。如果这些维度有实质性改善，即使其他维度略有波动，综合评分仍应体现进步。
 4. **避免矫枉过正惩罚**：如果 Scientist 为修复某一缺陷而在其他方面做了合理权衡（如为增强可证伪性而牺牲部分新颖度），不应视为退步。
 5. **评分锚定**：本轮各维度评分与上一轮的差值应在 [-2, +3] 范围内，超出此范围需在 detailed_review 中给出充分理由。
+
+## 反事实条件收敛原则（重要）
+"""
+
+    if prev_counterfactual:
+        iterative_context += f"""上一轮的反事实条件为：
+> "{prev_counterfactual}"
+
+请判断本轮假设是否已有效应对了该条件：
+- **如果已应对**（假设中已包含针对该场景的防御或规避策略）：本轮应构造一个**相对温和**的新反事实条件，严苛度评分（counterfactual_severity）应低于上轮，体现风险收敛。
+- **如果未应对**（假设仍未解决该场景的威胁）：可以维持类似严苛度的反事实条件，但应在 detailed_review 中明确指出上轮缺陷仍未修复。
+
+目标：反事实风险应随迭代逐轮下降，体现假设鲁棒性的提升。禁止每轮都构造同等极端或更极端的新条件而忽视已有改进。
+"""
+    else:
+        iterative_context += """本轮为首轮或非首轮评审。构造反事实条件时应尽量具体、可检验。
 """
 
     messages = [
@@ -209,8 +244,8 @@ def critique(
 1. 反事实条件（counterfactual）必须具体、极端，例如："若未来探测器精度无法达到 10^-12 量级，则该假设无法验证"
 2. 缺失证据（missing_evidences）应具体到可检索的关键词
 3. 评分必须客观反映假设实际质量，不得放水
-4. counterfactual_severity 评估该反事实条件在现实中实现的苛刻程度（越极端越不可能，分越高）
-5. counterfactual_vulnerability 评估假设在该条件下被推翻的容易程度（越脆弱，分越高）
+4. counterfactual_severity 必须与锚定参照案例对比后给出分数，避免全部打 9-10 分
+5. counterfactual_vulnerability_detail 必须对 3 个逻辑检验各回答 "yes"/"partial"/"no"，counterfactual_vulnerability 由档位分数相加推导
 """)
     ]
 
@@ -237,7 +272,17 @@ def critique(
             if len(result.counterfactual) < 15:
                 raise ValueError(f"反事实条件过短 ({len(result.counterfactual)} < 15)")
 
-            logger.info(f"✅ 评审完成")
+            # 逻辑分解校验：用 detail 推导的分数强制覆写 vulnerability，消除自评偏差
+            if result.counterfactual_vulnerability_detail:
+                computed = result.counterfactual_vulnerability_detail.compute_score()
+                if result.counterfactual_vulnerability != computed:
+                    logger.info(
+                        "脆弱度修正: LLM自评=%.1f → 逻辑推导=%.1f",
+                        result.counterfactual_vulnerability or 0, computed
+                    )
+                    result.counterfactual_vulnerability = computed
+
+            logger.info(f"评审完成 severity={result.counterfactual_severity} vulnerability={result.counterfactual_vulnerability}")
             return result
 
         except Exception as e:
@@ -282,6 +327,7 @@ class CriticState(BaseModel):
     hypotheses: List[Dict[str, Any]] = Field(default_factory=list)
     round_label: str = "V1"
     prev_scores: Optional[Dict[str, float]] = None
+    prev_counterfactual: Optional[str] = None
     critic_output: Optional[CriticOutput] = None
     retry_count: int = 0
     errors: List[str] = Field(default_factory=list)
@@ -296,6 +342,7 @@ def critic_node(state: dict) -> dict:
             state["hypotheses"],
             round_label=state.get("round_label", "V1"),
             prev_scores=state.get("prev_scores"),
+            prev_counterfactual=state.get("prev_counterfactual"),
         )
         return {
             "critic_output": result.model_dump(),

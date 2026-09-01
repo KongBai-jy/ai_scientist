@@ -4,6 +4,75 @@
 
 ---
 
+## 2026-09-01
+
+### 1. 三级模型分离（`.env` 新增 `QWEN_MODEL_CRITIC`）
+- **改动文件**：`.env`、`.env.example`、`src/agents/agent_critic.py`、`README.md`
+- **改动**：在 `QWEN_MODEL` / `QWEN_MODEL_SCIENTIST` 之外，新增 `QWEN_MODEL_CRITIC` 供 Critic 独立选型（`agent_critic.py` 用 `QWEN_MODEL_CRITIC or QWEN_MODEL` 回退链）。
+- **当前配置**：
+  | 变量 | 值 | 用途 |
+  |---|---|---|
+  | `QWEN_MODEL` | `qwen3.8-flash` | Explorer / Orchestrator / 检索词翻译 |
+  | `QWEN_MODEL_SCIENTIST` | `qwen3.7-plus` | Scientist 假设生成（提速，可升回 max） |
+  | `QWEN_MODEL_CRITIC` | `qwen3.7-flash` | Critic 结构化评分（提速档，可换回 plus） |
+  | `QWEN_VL_MODEL` | `qwen3.8-flash` | 视觉理解 |
+- **约束**：三个 Agent 都走 `with_structured_output()`，须用支持 JSON Schema 的模型（仅 Qwen3.7/3.8 系列）；`qwen3.6-plus`/`qwen3.5-plus` 仅 JSON Object 模式。
+
+### 2. 视觉模型迁移：弃用 `qwen-vl-max` → `qwen3.8-flash`
+- **改动文件**：`.env`、`.env.example`、`src/agents/agent_explorer.py`、`src/agents/agent_scientist.py`、`src/services/paper_search_service.py`、`README.md`
+- **背景**：官方已将 `qwen-vl-max`/`qwen-vl-plus` 标记为旧版并逐步弃用，推荐迁移到原生多模态 Qwen3.x 系列。
+- **改动**：`QWEN_VL_MODEL=qwen3.8-flash`，并把 4 处硬编码兜底默认值 `qwen-vl-max` 一并更新。
+- **验证**：视觉 + 结构化输出组合实测通过（正确识图、返回规范 JSON）。
+
+### 3. 修复「建议问题悬浮提示不显示」
+- **改动文件**：`src/agents/agent_orchestrator.py`（`_get_suggest_llm`）
+- **问题**：建议生成改用 `qwen3.8-flash`（思考模型）后，`max_tokens=512` 被 reasoning token 全部吃光，`content=''`，JSON 解析失败 → 前端拿不到 `questions` → 清空提示框。实测：长上下文下 `output_token_details={'reasoning':512}`、`content=''`。
+- **修复**：`_get_suggest_llm` 加 `extra_body={"enable_thinking": False}`（轻量任务关闭思考），并把 `max_tokens` 512→2048、`timeout` 30→60 作余量兜底。
+- **验证**：真实 `suggest_questions()` + V3 快照长上下文，1.5s 返回 3 条规范问题（`dim` 为 deep_dive/method/cross_domain），`error=None`。
+- **注意**：不要用 `.bind(extra_body=...)` 方式传 `enable_thinking`——实测该路径思考未被可靠关闭（14.6s，逼近前端 12s 超时），须放在构造器里。
+
+### 4. 三个 Agent `max_tokens` 4096 → 16384（避免截断重试）
+- **改动文件**：`src/agents/agent_explorer.py`（2 处）、`src/agents/agent_scientist.py`（4 处）、`src/agents/agent_critic.py`（1 处）
+- **背景**：换用 Qwen3.x 思考模型后，reasoning token 计入 `max_tokens`。4096 预算下，长输出（Scientist 多条假设+三级计划、Critic 五维+反事实三检验大 JSON）易被 reasoning 挤占导致正文截断 → `with_structured_output` 解析失败 → 降级纯文本再失败 → 触发整轮重试，单次耗时翻倍。
+- **改动**：7 处 `max_tokens=4096` 统一提到 `16384`（实测三模型均接受 32768，留足余量）。`timeout` 保持 180s。
+- **附带实测**：Critic 从 `qwen3.7-plus` 换 `qwen3.7-flash` 仅提速约 15%（39.9s→34.1s），且评分口径变宽松（evidence 3→7）；真正瓶颈是 Scientist 的 `qwen3.8-max`（单轮 6 分钟级），非 Critic。
+
+### 5. Scientist 降档：`qwen3.8-max` → `qwen3.7-plus`
+- **改动文件**：`.env`、`.env.example`、`README.md`
+- **背景**：Scientist 是 pipeline 最慢环节（max 单轮 6 分钟级）。
+- **实测对比**（真实 `ScientistOutput` 结构化输出，各 1 次）：`qwen3.7-plus` 38.3s 通过校验；`qwen3.8-max` 142.1s 且因 `L2_quantitative` 缺数值阈值被 validator 拒绝。plus 快约 3.7 倍且这轮更稳。
+- **回退**：若假设质量不足，改回 `QWEN_MODEL_SCIENTIST=qwen3.8-max` 即可（无需动代码）。
+
+### 6. 修复「知识缺口显示 `! ,`」
+- **改动文件**：`src/models/schemas.py`（`ExplorerOutput` 新增 `knowledge_gaps` 校验器）
+- **诊断**：**非前端渲染失败**。前端 `renderExplorer` 的 `gaps.map(...)` 忠实渲染，`!` 恒为图标 `gap-ico`，后面的 `,` 是 `esc(g)` 的条目内容。查 V3 快照 `agent_explorer.knowledge_gaps` 原始值为 `["", ""]`（单条、值为逗号分隔符 `", "`），V1/V2/V3 三轮一致。
+- **根因**：Explorer 文本模型 `qwen3.8-flash` 结构化输出数组纪律弱，在「无明显缺口」时未返回空列表，而是吐出用逗号拼接的空占位项。
+- **修复**：`ExplorerOutput.knowledge_gaps` 加 `mode="before"` 校验器，过滤掉不含字母/数字/中文的退化条目（`","`、空白、纯标点）；全空时前端自然回落到「暂无识别到知识缺口」空状态。
+- **注意**：仅对**新 run** 生效；已有 V3 快照仍存旧脏数据，需重跑该轮才会刷新。
+
+### 7. 修复「双击 `start.bat` 打不开前端页面」
+- **改动文件**：`start.bat`、`scripts/_boot_runner.py`、`.gitattributes`（新增）
+- **诊断**：`start.bat` 首字节为 `EF BB BF`（UTF-8 BOM），且全文件为**纯 LF 行尾**（`git ls-files --eol` → `i/lf w/lf`，仓库无 `.gitattributes`）。cmd.exe 的批处理解析器只保证 CRLF：BOM 让首行 `@echo off` 变成非法命令，纯 LF 会让 `^` 续行（原第 56-57 行的 PowerShell 健康检查）和多行 `( )` 块静默失效。旁证：全项目找不到 `data/boot.log`，说明执行流从未真正走到启动服务那一步。
+- **次因**：① 脚本 `set "AUTO_OPEN_BROWSER=0"` 被子进程继承，关掉了 `main.py:_open_browser` 的自启浏览器，于是「打开前端」完全依赖那一次 45 秒健康检查——而首次启动的知识库初始化自身就要 10-30 秒，极易超时。② 原 `_boot_runner.py` 用 `subprocess.run(stdout=PIPE)`，只在子进程退出后才一次性吐字，常驻服务全程空白，崩溃也拿不到 Traceback。③ 自重启分支的 `"""%_BAT%"""` 前后引号不对称。
+- **修复**：
+  1. `start.bat` 重写为 **ASCII + 无 BOM + CRLF**；健康检查改为**单行** PowerShell（不再依赖 `^` 续行），超时 45s → **120s**；启动前先探测 `import fastapi, uvicorn`，环境坏了直接报错退出而不是静默超时；**无论健康检查成败都执行 `start "" <URL>`**（失败时额外打印 boot.log 尾部 40 行）；自重启与服务窗口改用 `cmd /K call "<path>"` 形式，去掉易碎的嵌套引号；`/D "%~dp0."` 避免尾部反斜杠吃掉引号。
+  2. `_boot_runner.py` 改为 `Popen` + **逐行流式**双写（控制台 + boot.log），并处理 Ctrl+C 时终止子进程；docstring 改原始串消除 `SyntaxWarning`。
+  3. 新增 `.gitattributes`：`*.bat/*.cmd/*.ps1 → eol=crlf`、`*.sh → eol=lf`，防止以后被编辑器或 `core.autocrlf=true` 再次写成 LF。
+- **验证**：已确证 `start.bat` 无 BOM / 全 CRLF / 纯 ASCII；`_boot_runner.py` `py_compile` 通过；PowerShell 探测命令在 Windows PowerShell 5.1 下解析执行正常（服务未起时按预期返回 1）。**双击端到端流程未实测**（该执行命令被权限层拦截），需用户本人双击确认。
+
+### 8. 回归修复：双击弹出两个前端页 + 服务日志中文乱码
+- **改动文件**：`start.bat`、`scripts/_boot_runner.py`
+- **现象**：双击后浏览器出现两个完全相同的 `127.0.0.1:8848/static/index.html` 标签页；服务窗口日志里中文显示为 `◇◇◇W◇◇◇1715`。
+- **根因 1（双开）**：第 7 条重写 `start.bat` 时漏掉了原有的 `set "AUTO_OPEN_BROWSER=0"`。该变量本应通过环境继承传给服务窗口，用来关掉 `src/main.py:_open_browser()`（`main.py:510` 的 `webbrowser.open`）；缺了它，服务端与脚本各开一次页。`load_dotenv()`（`main.py:48`）未传 `override=True`，所以脚本里 `set` 的值优先于 `.env`，即使 `.env` 写了 `AUTO_OPEN_BROWSER=1` 也不会复活双开。
+- **修复 1**：配置区恢复 `set "AUTO_OPEN_BROWSER=0"`，开页职责单一化——只由 `start.bat` 打开一次。
+- **根因 2（乱码）**：子进程的 stdout 被 runner 用管道接管，中文 Windows 下 Python 对管道按 ANSI 代码页（cp936）编码日志，而 `_boot_runner.py` 固定 `decode("utf-8", errors="replace")` → 中文字节被替换成 U+FFFD。
+- **修复 2**：给子进程显式注入 `PYTHONIOENCODING=utf-8`（`env=dict(os.environ, ...)`），让它按 UTF-8 吐字，与 runner 的解码一致；runner 自身写控制台仍按控制台代码页编码，服务窗口显示正常。
+- **根因 3（行距翻倍）**：子进程文本层已把 `\n` 转成 `\r\n`，`log_fp` 又以默认 `newline=None` 打开，写 `\n` 再转一次 → 落盘 `\r\r\n`。
+- **修复 3**：`log_fp` 改为 `newline="\n"`，并在流式循环里把行尾 `\r\n` 归一为 `\n`。
+- **验证**：临时子进程打印中文经 runner 落盘，日志字节断言得到 `ENC=utf-8`、`ZS=\u77e5\u8bc6\u5df2\u5c31\u7eea`（即"知识已就绪"，合法 UTF-8）、`has_cr_cr_lf=False`、全文件纯 LF；`start.bat` 复查仍为无 BOM / 全 CRLF / 纯 ASCII。双开一项因无法执行 `start.bat` 未做运行时验证，按代码路径推定。
+
+---
+
 ## 2026-08-27
 
 ### 1. 证据列表：由「固定配额」改回「纯 Top-3」

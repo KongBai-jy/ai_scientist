@@ -34,6 +34,19 @@ class ExplorerOutput(BaseModel):
     knowledge_gaps: List[str] = Field(default_factory=list, description="知识缺口")
     analogies: List[Analogy] = Field(default_factory=list, description="跨域类比线索")
 
+    @field_validator("knowledge_gaps", mode="before")
+    @classmethod
+    def _drop_empty_gaps(cls, v):
+        # 小模型有时把缺口列表输出成 "," / 空白 / 纯标点等退化项，过滤无文字内容的条目
+        if not v:
+            return []
+        cleaned = []
+        for g in v:
+            s = str(g).strip()
+            if s and re.search(r"[\w\u4e00-\u9fff]", s):
+                cleaned.append(s)
+        return cleaned
+
 
 # ============================================================
 # Agent 2：科学家 输入/输出

@@ -47,7 +47,7 @@ llm = ChatOpenAI(
     api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
     temperature=0.7,
-    max_tokens=4096,
+    max_tokens=16384,
     timeout=180.0,
 )
 
@@ -60,11 +60,11 @@ def _get_vl_llm() -> ChatOpenAI:
         vl_key = os.getenv("DASHSCOPE_API_KEY_VL") or os.getenv("DASHSCOPE_API_KEY")
         vl_base = os.getenv("DASHSCOPE_API_BASE_VL") or os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE)
         _vl_llm = ChatOpenAI(
-            model=os.getenv("QWEN_VL_MODEL", "qwen-vl-max"),
+            model=os.getenv("QWEN_VL_MODEL", "qwen3.8-flash"),
             api_key=vl_key,
             base_url=vl_base,
             temperature=0.7,
-            max_tokens=4096,
+            max_tokens=16384,
             timeout=180.0,
         )
     return _vl_llm
@@ -307,11 +307,11 @@ def generate_hypotheses(
                     vl_key = os.getenv("DASHSCOPE_API_KEY_VL") or os.getenv("DASHSCOPE_API_KEY")
                     vl_base = os.getenv("DASHSCOPE_API_BASE_VL") or os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE)
                     llm_cur = ChatOpenAI(
-                        model=os.getenv("QWEN_VL_MODEL", "qwen-vl-max"),
+                        model=os.getenv("QWEN_VL_MODEL", "qwen3.8-flash"),
                         api_key=vl_key,
                         base_url=vl_base,
                         temperature=current_temp,
-                        max_tokens=4096,
+                        max_tokens=16384,
                         timeout=180.0,
                     )
                 else:
@@ -324,7 +324,7 @@ def generate_hypotheses(
                         api_key=os.getenv("DASHSCOPE_API_KEY"),
                         base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
                         temperature=current_temp,
-                        max_tokens=4096,
+                        max_tokens=16384,
                         timeout=180.0,
                     )
                 else:

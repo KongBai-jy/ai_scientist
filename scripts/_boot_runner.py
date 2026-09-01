@@ -1,4 +1,4 @@
-"""极简 boot runner：
+r"""极简 boot runner：
 - 执行给定命令（一般是 venv\Scripts\python.exe src\main.py）
 - 同时把 stdout/stderr 按 utf-8 写入 boot.log（追加）和继承控制台（便于崩溃时一眼看到）
 用法：scripts\_boot_runner.py "<boot_log_path>" "<python_exe>" "<main_py_path>" [extra main.py args...]
@@ -50,7 +50,8 @@ def main(argv):
 
     os.makedirs(os.path.dirname(os.path.abspath(boot_log)) or ".", exist_ok=True)
     # start.bat 每次启动前会清空 boot.log；这里追加，避免子进程覆盖。
-    log_fp = open(boot_log, "a", encoding="utf-8", errors="replace", buffering=1)
+    # newline="\n"：否则子进程本已带 CRLF，再被转义成 \r\r\n，日志行距翻倍。
+    log_fp = open(boot_log, "a", encoding="utf-8", errors="replace", buffering=1, newline="\n")
     tee_out = Tee(sys.stdout, log_fp)
     tee_err = Tee(sys.stderr, log_fp)
 
@@ -62,37 +63,48 @@ def main(argv):
     tee_out.flush()
 
     cmd = [python_exe, "-u", main_py, *rest]
+    # 子进程 stdout 是管道，中文 Windows 下 Python 默认按 cp936 编码日志，
+    # 而这里固定按 utf-8 解码 -> 中文变替换符。强制子进程用 utf-8 吐字。
+    child_env = dict(os.environ, PYTHONIOENCODING="utf-8")
     try:
-        completed = subprocess.run(
+        proc = subprocess.Popen(
             cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
-            text=False,
-            creationflags=0,
+            bufsize=0,
+            env=child_env,
         )
-        # 子进程所有输出（stdout+stderr 合并）逐字节以 utf-8 解码后双写。
-        raw = completed.stdout or b""
-        try:
-            text = raw.decode("utf-8", errors="replace")
-        except Exception:
-            text = raw.decode("mbcs", errors="replace")
-        tee_out.write(text)
-        if not text.endswith("\n"):
-            tee_out.write("\n")
-        tee_out.write("--- boot runner finished (exit={}) ---\n".format(completed.returncode))
-        log_fp.flush()
-        log_fp.close()
-        return completed.returncode
     except FileNotFoundError as e:
         tee_err.write("boot runner: cannot locate python or entry: {}\n".format(e))
-        log_fp.flush()
         log_fp.close()
         return 3
+
+    # 逐行流式转发：uvicorn 是常驻进程，必须边跑边写，
+    # 否则启动窗口与 boot.log 会一路空白，崩溃时也拿不到 Traceback。
+    try:
+        for raw_line in proc.stdout:
+            try:
+                text = raw_line.decode("utf-8", errors="replace")
+            except Exception:
+                text = raw_line.decode("mbcs", errors="replace")
+            if text.endswith("\r\n"):
+                text = text[:-2] + "\n"
+            tee_out.write(text)
+    except KeyboardInterrupt:
+        proc.terminate()
+        tee_err.write("boot runner: interrupted, terminating child\n")
     except Exception as e:
         tee_err.write("boot runner unhandled error: {}\n".format(e))
-        log_fp.flush()
-        log_fp.close()
-        return 4
+    finally:
+        try:
+            proc.stdout.close()
+        except Exception:
+            pass
+
+    returncode = proc.wait()
+    tee_out.write("--- boot runner finished (exit={}) ---\n".format(returncode))
+    log_fp.close()
+    return returncode
 
 
 if __name__ == "__main__":

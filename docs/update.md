@@ -137,3 +137,60 @@ logger.info("已入队任务 %s（%s，%s，images=%d）", job.job_id, job.proje
 3. ✅ 提交失败时图片和文本自动恢复
 4. ✅ POST /api/feedback 返回 200，图片数据成功发送到后端
 5. ✅ V3 流水线正常执行，综合得分从 6.94 提升到 7.16
+
+## 2026-09-01
+
+### 1. PDF/Markdown 文档上传功能
+- **改动文件**：`src/services/document_parser.py`（新建）、`src/main.py`、`src/agents/agent_orchestrator.py`、`src/agents/agent_scientist.py`、`web/app.js`、`web/index.html`、`web/styles.css`
+- **功能描述**：支持用户上传 PDF 和 Markdown 文档，后端解析提取文本后注入 Agent prompt，作为证据来源。
+
+#### 新增模块
+
+**后端**：
+| 文件 | 说明 |
+|------|------|
+| `src/services/document_parser.py` | 文档解析服务，支持 PDF（pypdf）和 Markdown（直接读取） |
+
+**前端**：
+| 文件 | 说明 |
+|------|------|
+| `web/app.js` | 添加 `composerDocuments`/`customDocuments` 状态、`renderDocumentPreviews`、`handleDocumentFiles`、`documentsToBase64List`、`_extractClipboardFiles` |
+| `web/index.html` | 添加 `#composerDocPreview`/`#customDocPreview` 容器；更新 `accept="image/*,.pdf,.md,.markdown"` |
+| `web/styles.css` | 添加文档预览样式（`.doc-thumb`、`.doc-icon`、`.doc-name`、`.remove-doc`） |
+
+#### 数据流
+```
+用户选择文档 → 前端读取为 base64 → POST /api/feedback {documents: [...]}
+→ 后端解析文档提取文本 → 注入 Scientist prompt → Agent 结合文档内容生成假设
+```
+
+#### 遇到的问题及解决方法
+
+**问题 1：粘贴文档无效**
+- **现象**：从资源管理器复制 PDF 后粘贴到输入框，无反应。
+- **原因**：粘贴处理器只调用 `_extractClipboardImages` 提取图片，没有处理文档。
+- **修复**：新增 `_extractClipboardFiles` 函数，同时提取图片和文档；更新粘贴处理器调用 `handleFiles`。
+
+**问题 2：文档预览选择器**
+- **现象**：与图片预览相同的选择器问题。
+- **修复**：复用图片预览的修复方案，使用 `document.getElementById(containerId.replace(/^#/, ''))`。
+
+#### 功能限制
+| 限制 | 值 |
+|------|-----|
+| 文档大小 | ≤10MB |
+| 文档数量 | ≤3 个 |
+| 提取文本长度 | ≤50000 字符（超出截断） |
+| 支持格式 | `.pdf`、`.md`、`.markdown` |
+| 不支持 | 加密 PDF、扫描版 PDF（无法提取文本） |
+
+#### 依赖说明
+无需新增依赖，复用已有的 `pypdf` 库（requirements.txt 第 51 行）。详见 `experiment.txt` 文件。
+
+#### 测试验证
+1. ✅ 文档预览正常渲染（显示文件名和删除按钮）
+2. ✅ 点击上传按钮可选择文档
+3. ✅ 拖拽文档到输入框可添加
+4. ✅ 粘贴文档可添加
+5. ✅ 提交后文档预览立即清除
+6. ✅ 提交失败时文档自动恢复

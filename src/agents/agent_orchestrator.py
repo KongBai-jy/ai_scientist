@@ -369,7 +369,7 @@ def run_full_pipeline(
             "agent_critic": critic_result.model_dump(),
             "overall_score": overall_score,
             "granularity_score": granularity_score,
-            "human_feedback": [{"content": feedback}] if feedback else [],
+            "human_feedback": [{"content": feedback, "images": images or [], "documents": documents or []}] if feedback else [],
             "granularity_stats": granularity_stats,
         }
 
@@ -396,7 +396,7 @@ def run_full_pipeline(
                     scientist_output=scientist_result.model_dump(),
                     critic_output=critic_result.model_dump(),
                     granularity_stats=granularity_stats,
-                    human_feedback=[{"content": feedback}] if feedback else []
+                    human_feedback=[{"content": feedback, "images": images or [], "documents": documents or []}] if feedback else []
                 )
                 db.add(record)
                 db.commit()

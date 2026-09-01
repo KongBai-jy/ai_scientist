@@ -239,7 +239,7 @@ const customImages = [];
 function genImageId() { return "img_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 7); }
 
 function renderImagePreviews(images, containerId) {
-  const box = $(containerId);
+  const box = document.getElementById(containerId.replace(/^#/, ''));
   if (!box) return;
   box.innerHTML = "";
   images.forEach(img => {
@@ -351,13 +351,8 @@ async function apiFetch(url, options = {}, timeoutMs = API_TIMEOUT_MS) {
   const externalSignal = options.signal || null;
   const timer = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    // 强制请求体按 UTF-8 编码发送：body 为字符串时用 TextEncoder 转 UTF-8 Uint8Array，
-    // 避免个别浏览器/代理在无 charset 时回退到 latin1 导致中文被替换为 ?
     const fetchOpts = { ...options };
     const baseHeaders = { "Content-Type": "application/json; charset=utf-8", ...(options.headers || {}) };
-    if (typeof fetchOpts.body === "string") {
-      fetchOpts.body = new TextEncoder().encode(fetchOpts.body);
-    }
     fetchOpts.headers = baseHeaders;
     fetchOpts.signal = externalSignal && window.AbortSignal?.any
       ? window.AbortSignal.any([controller.signal, externalSignal])
@@ -1681,13 +1676,17 @@ async function submitFeedback() {
   showLoading(nextRound, proj.project_id, null);
   saveViewKey();
   try {
-    // 后端按 current_round 自行 +1：这里传当前轮次，避免二次递增导致跳轮（V1 直接变 V3）
     const imgs = composerImages.slice();
-    await enqueueJob(question, fromRound, text, proj.project_id, imgs);
-    $("#expertInput").value = "";
+    const savedText = text;
     composerImages.length = 0;
     renderImagePreviews(composerImages, "composerImagePreview");
+    $("#expertInput").value = "";
+    await enqueueJob(question, fromRound, savedText, proj.project_id, imgs);
   } catch (e) {
+    console.error("[submitFeedback] error:", e);
+    composerImages.push(...imgs);
+    renderImagePreviews(composerImages, "composerImagePreview");
+    $("#expertInput").value = savedText;
     if (e.status === 400) {
       addSystemToast(e.message || "已达到最大迭代次数 V3");
     } else {

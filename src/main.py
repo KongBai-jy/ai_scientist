@@ -238,7 +238,7 @@ async def run_pipeline(request: RunRequest):
         paper_granularity=request.paper_granularity,
         images=request.images,
     )
-    logger.info("已入队任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
+    logger.info("已入队任务 %s（%s，%s，images=%d）", job.job_id, job.project_id, round_label, len(request.images) if request.images else 0)
     return {
         "success": True,
         "job_id": job.job_id,
@@ -266,7 +266,7 @@ async def submit_feedback(request: FeedbackRequest):
         paper_granularity=request.paper_granularity,
         images=request.images,
     )
-    logger.info("已入队迭代任务 %s（%s，%s）", job.job_id, job.project_id, round_label)
+    logger.info("已入队迭代任务 %s（%s，%s，images=%d）", job.job_id, job.project_id, round_label, len(request.images) if request.images else 0)
     return {
         "success": True,
         "job_id": job.job_id,

@@ -306,6 +306,7 @@ def run_full_pipeline(
             feedback=feedback,
             prev_critic_output=prev_critic_output,
             prev_overall_score=prev_overall_score,
+            images=images,
         )
 
         # Step 3: Critic

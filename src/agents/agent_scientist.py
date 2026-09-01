@@ -51,6 +51,24 @@ llm = ChatOpenAI(
     timeout=180.0,
 )
 
+_vl_llm = None
+
+def _get_vl_llm() -> ChatOpenAI:
+    """获取视觉语言模型（用于处理图片）"""
+    global _vl_llm
+    if _vl_llm is None:
+        vl_key = os.getenv("DASHSCOPE_API_KEY_VL") or os.getenv("DASHSCOPE_API_KEY")
+        vl_base = os.getenv("DASHSCOPE_API_BASE_VL") or os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE)
+        _vl_llm = ChatOpenAI(
+            model=os.getenv("QWEN_VL_MODEL", "qwen-vl-max"),
+            api_key=vl_key,
+            base_url=vl_base,
+            temperature=0.7,
+            max_tokens=4096,
+            timeout=180.0,
+        )
+    return _vl_llm
+
 
 # ============================================================
 # 2. Prompt 模板
@@ -129,7 +147,8 @@ def generate_hypotheses(
     feedback: Optional[str] = None,
     prev_critic_output: Optional[Dict[str, Any]] = None,
     prev_overall_score: Optional[float] = None,
-    max_retries: int = 3
+    max_retries: int = 3,
+    images: Optional[List[Dict[str, str]]] = None,
 ) -> ScientistOutput:
     """
     生成假设与研究计划
@@ -143,6 +162,7 @@ def generate_hypotheses(
         prev_critic_output: 上一轮 Critic 评审结果（含评分、缺陷、缺失证据）
         prev_overall_score: 上一轮综合得分
         max_retries: 最大重试次数
+        images: 可选图片列表（反馈时提供的新图片），每项含 name + data（data URL）
 
     Returns:
         ScientistOutput: 包含假设和研究计划
@@ -150,13 +170,25 @@ def generate_hypotheses(
     Raises:
         RuntimeError: 超过最大重试次数仍失败
     """
-    structured_llm = llm.with_structured_output(ScientistOutput)
+    has_images = bool(images)
+    logger.info("generate_hypotheses: has_images=%s, images_count=%s", has_images, len(images) if images else 0)
 
     evidence_str = json.dumps(evidence_list, ensure_ascii=False, indent=2)
     gaps_str = json.dumps(knowledge_gaps, ensure_ascii=False, indent=2)
     analogies_str = json.dumps(analogies, ensure_ascii=False, indent=2)
 
     feedback_section = f"\n## 专家反馈（本轮迭代必须响应的修正指令）\n{feedback}" if feedback else ""
+
+    # 图片分析指令
+    image_instruction = ""
+    if has_images:
+        image_instruction = """
+## 用户提供的图片（反馈附件）
+用户在本轮反馈中提供了相关图片，请结合图片内容进行分析：
+1. 提取图片中的科学信息（数据、图表、实验结果、示意图等）
+2. 将图片信息与已有证据结合，作为新假设的支撑
+3. 如果图片揭示了新的证据或视角，请在假设中体现
+"""
 
     # 上一轮 Critic 评审结果（迭代时注入）
     critic_section = ""
@@ -200,9 +232,8 @@ def generate_hypotheses(
 - 如果专家认为需要新证据，请在 L3_robustness 中说明"下一步需要检索 XX 方向文献来验证"，而不是直接声称已有该证据
 """
 
-    messages = [
-        SystemMessage(content=SYSTEM_PROMPT),
-        HumanMessage(content=f"""
+    # 构建消息（支持多模态：文本 + 图片）
+    text_content = f"""
 ## 问题骨架
 {problem_skelton}
 
@@ -216,10 +247,30 @@ def generate_hypotheses(
 {analogies_str}
 {critic_section}
 {feedback_section}
+{image_instruction}
 {iteration_anchor}
 
 请严格按照 JSON 格式输出。
-""")
+"""
+
+    if has_images:
+        # 多模态模式：文本 + 图片
+        content_blocks: list = [{"type": "text", "text": text_content}]
+        for img in images:
+            data_url = img.get("data", "")
+            if data_url:
+                content_blocks.append({
+                    "type": "image_url",
+                    "image_url": {"url": data_url},
+                })
+        human_msg = HumanMessage(content=content_blocks)
+    else:
+        # 纯文本模式
+        human_msg = HumanMessage(content=text_content)
+
+    messages = [
+        SystemMessage(content=SYSTEM_PROMPT),
+        human_msg,
     ]
 
     last_error = None
@@ -229,18 +280,35 @@ def generate_hypotheses(
         try:
             logger.info(f"Agent 2 生成尝试 {attempt}/{max_retries}...")
 
-            # 每次重试微调 temperature
-            if attempt > 1:
-                llm_cur = ChatOpenAI(
-                    model=os.getenv("QWEN_MODEL_SCIENTIST") or os.getenv("QWEN_MODEL", "qwen-plus"),
-                    api_key=os.getenv("DASHSCOPE_API_KEY"),
-                    base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
-                    temperature=current_temp,
-                    max_tokens=4096,
-                    timeout=180.0,
-                )
+            # 选择模型：有图片时使用 VL 模型，否则使用文本模型
+            if has_images:
+                # 使用视觉语言模型处理图片
+                if attempt > 1:
+                    vl_key = os.getenv("DASHSCOPE_API_KEY_VL") or os.getenv("DASHSCOPE_API_KEY")
+                    vl_base = os.getenv("DASHSCOPE_API_BASE_VL") or os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE)
+                    llm_cur = ChatOpenAI(
+                        model=os.getenv("QWEN_VL_MODEL", "qwen-vl-max"),
+                        api_key=vl_key,
+                        base_url=vl_base,
+                        temperature=current_temp,
+                        max_tokens=4096,
+                        timeout=180.0,
+                    )
+                else:
+                    llm_cur = _get_vl_llm()
             else:
-                llm_cur = llm
+                # 使用文本模型
+                if attempt > 1:
+                    llm_cur = ChatOpenAI(
+                        model=os.getenv("QWEN_MODEL_SCIENTIST") or os.getenv("QWEN_MODEL", "qwen-plus"),
+                        api_key=os.getenv("DASHSCOPE_API_KEY"),
+                        base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
+                        temperature=current_temp,
+                        max_tokens=4096,
+                        timeout=180.0,
+                    )
+                else:
+                    llm_cur = llm
 
             try:
                 # 首选路径：结构化输出（如果 API 网关支持 response_format）

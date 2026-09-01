@@ -77,3 +77,63 @@ venv\Scripts\python.exe src\main.py   # 必须：项目根目录 + venv python
     4. 避免矫枉过正惩罚（合理权衡不视为退步）
     5. 评分锚定：各维度差值应在 [-2, +3] 范围内
 - **效果**：Critic 评分更能反映迭代的实际进步，避免因绝对标准过严导致分数逐轮递减。
+
+### 4. 图片预览选择器修复与提交时机优化
+- **改动文件**：`web/app.js`、`web/index.html`、`src/main.py`
+- **问题背景**：用户反馈在 V2/V3 迭代提交反馈时，粘贴截图并输入文本后点击提交，文本消失了但图片仍留在输入框中。
+
+#### 问题 1：图片预览从未渲染（根本原因）
+- **现象**：图片预览区域始终为空，清除操作无效。
+- **原因**：`renderImagePreviews` 函数中 `$(containerId)` 使用了 `document.querySelector`，需要 CSS 选择器格式（如 `#composerImagePreview`），但调用时传入的是纯 ID 字符串（如 `"composerImagePreview"`）。`querySelector('composerImagePreview')` 会查找 `<composerImagePreview>` 标签（不存在），而非 `#composerImagePreview` 元素。
+- **影响**：图片预览从未被渲染；清除操作调用 `box.innerHTML = ""` 时 `box` 为 `null`，直接 return。
+- **修复**：
+```javascript
+// 修改前（app.js:242）
+const box = $(containerId);
+
+// 修改后
+const box = document.getElementById(containerId.replace(/^#/, ''));
+```
+
+#### 问题 2：修复后出现新报错
+- **现象**：修复问题 1 后，页面报错 `Uncaught SyntaxError: Failed to execute 'querySelector' on 'Document': '#composerImagePreview' is not a valid selector.`
+- **原因**：`bindImageUpload` 函数调用 `renderImagePreviews` 时，传入的 `previewId` 参数已带 `#` 前缀（如 `"#composerImagePreview"`）。第一次修复使用 `$('#' + containerId)`，导致选择器变成 `##composerImagePreview`（无效选择器）。
+- **修复**：使用 `document.getElementById` 并自动去除可能存在的 `#` 前缀，兼容两种调用方式。
+
+#### 问题 3：图片清除时机不当
+- **现象**：即使图片预览能正常渲染，提交后图片清除需要等待 `enqueueJob` 的 HTTP 请求完成才执行。对于大图片，请求可能耗时数秒，期间用户看到图片仍在输入框，误以为未提交。
+- **原因**：原代码在 `await enqueueJob(...)` **之后**才清除图片和文本。
+- **修复**：调整执行顺序——先清空 UI，再发起异步请求；失败时恢复图片和文本：
+```javascript
+// app.js:1678-1689
+try {
+  const imgs = composerImages.slice();
+  const savedText = text;
+  composerImages.length = 0;
+  renderImagePreviews(composerImages, "composerImagePreview");
+  $("#expertInput").value = "";
+  await enqueueJob(question, fromRound, savedText, proj.project_id, imgs);
+} catch (e) {
+  // 失败时恢复
+  composerImages.push(...imgs);
+  renderImagePreviews(composerImages, "composerImagePreview");
+  $("#expertInput").value = savedText;
+  // ... 错误处理
+}
+```
+
+#### 问题 4：后端缺少图片接收日志
+- **现象**：无法从服务器日志确认后端是否收到了图片数据。
+- **修复**：在 `/api/feedback` 和 `/api/run` 的入队日志中增加 `images=N` 字段：
+```python
+# src/main.py
+logger.info("已入队迭代任务 %s（%s，%s，images=%d）", job.job_id, job.project_id, round_label, len(request.images) if request.images else 0)
+logger.info("已入队任务 %s（%s，%s，images=%d）", job.job_id, job.project_id, round_label, len(request.images) if request.images else 0)
+```
+
+#### 测试验证
+1. ✅ 图片预览正常渲染（兼容带/不带 `#` 前缀的调用方式）
+2. ✅ 提交后图片预览和文本立即清除
+3. ✅ 提交失败时图片和文本自动恢复
+4. ✅ POST /api/feedback 返回 200，图片数据成功发送到后端
+5. ✅ V3 流水线正常执行，综合得分从 6.94 提升到 7.16

@@ -3,7 +3,7 @@
 所有 Agent 共用
 """
 
-from typing import List, Dict, Any, Optional
+from typing import List, Dict, Any, Optional, Literal
 from pydantic import BaseModel, Field, field_validator
 import re
 
@@ -96,12 +96,43 @@ class CriticInput(BaseModel):
     hypotheses: List[Hypothesis]
 
 
+class CounterfactualVulnerabilityCheck(BaseModel):
+    """反事实脆弱度的逻辑分解检验——由 3 个子问题客观推导分数"""
+    confirm_still_satisfiable: Literal["yes", "partial", "no"] = Field(
+        ..., description="假设的 verification_criteria.confirm 在该反事实场景下是否仍可满足（yes=可满足, partial=部分可满足, no=完全不可满足）")
+    robustness_addresses_it: Literal["yes", "partial", "no"] = Field(
+        ..., description="假设的 plan.L3_robustness 是否已包含对该反事实场景的应对策略（yes=充分应对, partial=有涉及但不充分, no=完全无应对）")
+    reasoning_depends_on_negation: Literal["yes", "partial", "no"] = Field(
+        ..., description="假设的 supporting_reasoning 是否依赖该反事实条件不成立（yes=核心依赖, partial=部分依赖, no=不依赖）")
+
+    def compute_score(self) -> float:
+        """从 3 个子问题推导脆弱度分数（0-10），三档制"""
+        score = 0.0
+        # confirm 不可满足：yes=0, partial=2, no=4
+        if self.confirm_still_satisfiable == "no":
+            score += 4.0
+        elif self.confirm_still_satisfiable == "partial":
+            score += 2.0
+        # robustness 无应对：yes=0, partial=1.5, no=3
+        if self.robustness_addresses_it == "no":
+            score += 3.0
+        elif self.robustness_addresses_it == "partial":
+            score += 1.5
+        # reasoning 依赖否定：yes=3, partial=1.5, no=0（注意语义反转）
+        if self.reasoning_depends_on_negation == "yes":
+            score += 3.0
+        elif self.reasoning_depends_on_negation == "partial":
+            score += 1.5
+        return score
+
+
 class CriticOutput(BaseModel):
     scores: DimensionScores
     top_flaw: str = Field(..., min_length=10)
     counterfactual: str = Field(..., min_length=15)
-    counterfactual_severity: Optional[float] = Field(None, ge=0, le=10, description="反事实条件严苛度：条件越极端/越不可能实现，分数越高")
-    counterfactual_vulnerability: Optional[float] = Field(None, ge=0, le=10, description="假设在该反事实条件下的脆弱度：越容易被推翻，分数越高")
+    counterfactual_severity: Optional[float] = Field(None, ge=0, le=10, description="反事实条件严苛度（锚定校准后）：条件越极端/越不可能实现，分数越高")
+    counterfactual_vulnerability: Optional[float] = Field(None, ge=0, le=10, description="假设脆弱度（由逻辑检验分解推导）：越容易被推翻，分数越高")
+    counterfactual_vulnerability_detail: Optional[CounterfactualVulnerabilityCheck] = Field(None, description="脆弱度逻辑分解检验结果")
     missing_evidences: List[str] = Field(default_factory=list)
     detailed_review: str = Field(..., min_length=30)
 

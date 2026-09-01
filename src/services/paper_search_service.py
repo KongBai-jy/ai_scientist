@@ -261,7 +261,7 @@ class PaperSearchService:
         except ImportError as e:
             logger.warning(f"视觉图注不可用（langchain_openai 未安装）: {e}")
             return None
-        model = os.getenv("QWEN_VL_MODEL", "qwen-vl-max")
+        model = os.getenv("QWEN_VL_MODEL", "qwen3.8-flash")
         api_key = os.getenv("DASHSCOPE_API_KEY")
         if not model or not api_key:
             logger.warning("视觉图注未启用：缺少 QWEN_VL_MODEL 或 DASHSCOPE_API_KEY")

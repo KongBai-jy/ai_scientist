@@ -47,7 +47,7 @@ llm = ChatOpenAI(
     api_key=os.getenv("DASHSCOPE_API_KEY"),
     base_url=os.getenv("DASHSCOPE_API_BASE", _DEFAULT_API_BASE),
     temperature=0.3,  # 降低温度：评审需要更稳定、可复现的评分
-    max_tokens=4096,
+    max_tokens=16384,
     timeout=180.0,
 )
 

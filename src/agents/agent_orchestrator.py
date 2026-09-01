@@ -652,8 +652,10 @@ def _get_suggest_llm():
             api_key=os.getenv("DASHSCOPE_API_KEY"),
             base_url=os.getenv("DASHSCOPE_API_BASE", "https://dashscope.aliyuncs.com/compatible-mode/v1"),
             temperature=0.5,
-            max_tokens=512,
-            timeout=30.0,
+            max_tokens=2048,
+            timeout=60.0,
+            # 建议生成是轻量任务：关闭思考模式，避免 reasoning token 占满输出预算导致 content 为空
+            extra_body={"enable_thinking": False},
         )
     return _suggest_llm
 

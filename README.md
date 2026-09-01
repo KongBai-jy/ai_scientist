@@ -87,7 +87,7 @@ cp .env.example .env
 
 ```dotenv
 DASHSCOPE_API_KEY=your_dashscope_api_key
-QWEN_MODEL=qwen-plus
+QWEN_MODEL=qwen3.7-plus
 ```
 
 完整配置项见 `.env.example`，包含模型选择、向量库、数据库、LangSmith 追踪等所有可选参数。
@@ -135,9 +135,10 @@ http://127.0.0.1:8000/static/index.html
 |---|---:|---|---|
 | `DASHSCOPE_API_KEY` | 是 | — | 阿里云百炼 API Key |
 | `DASHSCOPE_API_BASE` | 否 | 百炼兼容接口 | OpenAI 兼容 API 地址 |
-| `QWEN_MODEL` | 否 | `qwen-plus` | Explorer、Critic、Orchestrator 使用的模型 |
-| `QWEN_MODEL_SCIENTIST` | 否 | 同 `QWEN_MODEL` | Scientist 专用模型，留空则统一使用 `QWEN_MODEL`；建议用最强模型（如 `qwen-max`） |
-| `QWEN_VL_MODEL` | 否 | `qwen-vl-max` | 视觉模型，用于多模态图片理解；可选 `qwen-vl-max` / `qwen-vl-plus` / `qwen-vl-ocr` |
+| `QWEN_MODEL` | 否 | `qwen3.8-flash` | Explorer、Orchestrator 使用的模型 |
+| `QWEN_MODEL_SCIENTIST` | 否 | 同 `QWEN_MODEL` | Scientist 专用模型，留空则统一使用 `QWEN_MODEL`；当前用 `qwen3.7-plus`，质量不足可升 `qwen3.8-max` |
+| `QWEN_MODEL_CRITIC` | 否 | 同 `QWEN_MODEL` | Critic 专用模型，留空则统一使用 `QWEN_MODEL`；需支持 JSON Schema 结构化输出（如 `qwen3.7-flash`） |
+| `QWEN_VL_MODEL` | 否 | `qwen3.8-flash` | 视觉模型，用于多模态图片理解；可选 `qwen3.8-flash` / `qwen3.7-plus` / `qwen3.8-max`（旧版 `qwen-vl-*` 已弃用） |
 | `DASHSCOPE_API_KEY_VL` | 否 | 主 API Key | 视觉模型独立 API Key，留空则复用 `DASHSCOPE_API_KEY` |
 | `DASHSCOPE_API_BASE_VL` | 否 | 百炼兼容接口 | 视觉模型 API 地址，留空则复用 `DASHSCOPE_API_BASE` |
 | `QWEN_MODEL_EMBEDDING` | 否 | 项目配置值 | Chroma 文档向量模型（`qwen3.7-text-embedding`，1024 维） |
@@ -239,3 +240,4 @@ python -m tests.test_fallback_parser
 - 大模型生成内容可能存在事实或引用偏差，研究结果必须由领域专家复核。
 - 系统用于辅助提出和评估研究假设，不应替代实验验证、同行评议或正式科研决策。
 - 首次运行会调用模型和 Embedding API，可能产生相应的云服务费用。
+

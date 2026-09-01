@@ -1,0 +1,8 @@
+# Windows 批处理/PowerShell 脚本必须在检出时保持 CRLF，
+# 否则 cmd.exe 会解析出错（BOM 或纯 LF 都会让多行 ( ) 块与 ^ 续行静默失效）。
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+*.ps1  text eol=crlf
+
+# 需在 Linux/WSL/CI 下执行的脚本保持 LF。
+*.sh   text eol=lf

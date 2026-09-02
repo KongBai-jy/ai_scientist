@@ -1,5 +1,13 @@
 # 变更记录
 
+## 2026-09-02
+
+### 1. 首页隐藏「返回首页」和「反馈」按钮
+- **改动文件**：`web/styles.css`
+- **需求**：右上角「返回首页」(`#homeBtn`) 和「反馈」(`#feedbackToggle`) 图标仅在研究项目开始后显示，在首页不显示。
+- **改动**：在 `styles.css` 第 106 行已有规则 `.app:not(.has-research) .danger-btn{display:none}` 之后，新增 `.app:not(.has-research) .home-btn,.app:not(.has-research) .fb-toggle-btn{display:none}`。
+- **原理**：应用通过 `.app` 元素的 `has-research` CSS 类区分首页与研究中状态（`setWorkspaceMode(true/false)` 切换）。首页时无此类，CSS 选择器匹配并隐藏两个按钮；研究开始后添加此类，按钮自动显示。与已有的 `.danger-btn`（取消按钮）隐藏逻辑完全一致。
+
 ## 2026-09-01
 
 ### 1. 三级模型分离（`.env` 新增 `QWEN_MODEL_CRITIC`）

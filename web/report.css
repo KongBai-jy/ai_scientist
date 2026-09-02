@@ -97,7 +97,8 @@ blockquote{margin:16px 0;padding:18px 20px;background:#eef5f2;border-radius:10px
   html,body{background:#fff!important}
   .no-print{display:none!important}
   .paper{width:auto;margin:0;border:0;box-shadow:none;padding:0;min-height:0;background:#fff!important}
-  section{break-inside:avoid}
+  section{break-inside:auto}
+  .hypothesis,.feedback,.score-table,table.evidence,.rounds-history{break-inside:avoid;page-break-inside:avoid}
   .cover{padding-top:0}
   .metrics{background:#fff;border:1px solid #8d9692}
   .metrics div{border-color:#c8cdca}

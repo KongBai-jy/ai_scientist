@@ -25,7 +25,7 @@ table.evidence td{padding:9px;border-bottom:1px solid #eee;line-height:1.6;verti
 .score-row .bar i{display:block;height:100%;background:linear-gradient(90deg,#4fa99e,#79c9bd);border-radius:999px}
 .score-row b{font-family:monospace;font-size:13px;color:#2c716b;text-align:right}
 p.flaw{background:#fdf1ee;border:1px solid #efd0c9;border-radius:8px;padding:11px 14px;color:#85483f}
-.md{font-size:13px;line-height:1.85}
+.md{font-size:13px;line-height:1.85;overflow-wrap:anywhere}
 .md h1,.md h2,.md h3,.md h4{font-size:14.5px;margin:14px 0 6px;color:#2f4f4c}
 .md p{margin:6px 0}
 .md ul,.md ol{margin:6px 0;padding-left:22px}

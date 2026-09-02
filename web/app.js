@@ -202,30 +202,124 @@ function evidenceYear(evidence) {
 
 /* ---------- 极简 Markdown 渲染（详细评审用） ---------- */
 function md(src) {
-  // LLM 偶尔把换行写成字面量 \n（JSON 双重转义），先还原成真实换行
-  const lines = String(src || "").replace(/\\n/g, "\n").split(/\r?\n/);
+  // 极简 markdown 渲染。
+  // 兼容两种情况：
+  //  1) 正常带换行的 markdown；
+  //  2) LLM 把换行折成空格的「单行压缩 markdown」——此时按块标记（## / - ** / N. ** / ###）
+  //     重新切出块级结构，避免几百字挤进一个 <p>/<ol> 导致逐个字换行成竖排。
+  const blocks = splitMdBlocks(src);
   let html = "";
   let listType = null; // "ul" | "ol"
   const closeList = () => { if (listType) { html += `</${listType}>`; listType = null; } };
   const inline = t => esc(t)
     .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
     .replace(/`([^`]+)`/g, "<code>$1</code>");
-  for (const raw of lines) {
-    const line = raw.trimEnd();
-    if (/^\s*$/.test(line)) { closeList(); continue; }
-    const h = line.match(/^(#{1,4})\s+(.*)$/);
-    if (h) { closeList(); html += `<h${h[1].length}>${inline(h[2])}</h${h[1].length}>`; continue; }
-    const ul = line.match(/^[-*]\s+(.*)$/);
-    if (ul) { if (listType !== "ul") { closeList(); html += "<ul>"; listType = "ul"; } html += `<li>${inline(ul[1])}</li>`; continue; }
-    const ol = line.match(/^\d+[.、)]\s+(.*)$/);
-    if (ol) { if (listType !== "ol") { closeList(); html += "<ol>"; listType = "ol"; } html += `<li>${inline(ol[1])}</li>`; continue; }
-    const bq = line.match(/^>\s?(.*)$/);
-    if (bq) { closeList(); html += `<blockquote>${inline(bq[1])}</blockquote>`; continue; }
-    closeList();
-    html += `<p>${inline(line)}</p>`;
+  for (const { kind, c } of blocks) {
+    if (kind.startsWith("h")) {
+      closeList();
+      html += `<h${Number(kind.slice(1))}>${inline(c)}</h${Number(kind.slice(1))}>`;
+    } else if (kind === "ul") {
+      if (listType !== "ul") { closeList(); html += "<ul>"; listType = "ul"; }
+      html += `<li>${inline(c)}</li>`;
+    } else if (kind === "ol") {
+      if (listType !== "ol") { closeList(); html += "<ol>"; listType = "ol"; }
+      html += `<li>${inline(c)}</li>`;
+    } else if (kind === "bq") {
+      closeList(); html += `<blockquote>${inline(c)}</blockquote>`;
+    } else {
+      closeList(); html += `<p>${inline(c)}</p>`;
+    }
   }
   closeList();
   return html || "<p>（暂无内容）</p>";
+}
+
+/* 把 markdown 文本切分成块级元素列表 [{kind, c}]。
+   kind: "h2"~"h6" | "ul" | "ol" | "bq" | "p"。
+   面对单行压缩文本时，仅当块标记处于「句子边界」才切分，
+   并做保护避免误伤正文里的年份（2003)、科学记数（>30%)、micro-CT 等。 */
+function splitMdBlocks(str) {
+  const s = String(str || "").replace(/\\n/g, "\n").replace(/\r\n?/g, "\n");
+  const blocks = [];
+  let cur = null;
+  const startBlock = (kind) => { if (cur) blocks.push(cur); cur = { kind, text: [] }; };
+  const append = (t) => { if (!cur) startBlock("p"); cur.text.push(t); };
+  const endBlock = () => { if (cur) blocks.push(cur); cur = null; };
+  const flushToken = () => { if (token.trim()) { append(token); token = ""; } };
+  const len = s.length;
+  let i = 0;
+  let token = "";
+
+  while (i < len) {
+    const ch = s[i];
+    // 标题 ## ~ ######：仅当处于句子边界才识别
+    if (ch === "#") {
+      let h = 0, j = i; while (j < len && s[j] === "#") { h++; j++; }
+      if (h >= 2 && h <= 6 && j < len && (s[j] === " " || s[j] === "\t")) {
+        const prev = i > 0 ? s[i - 1] : "";
+        if (i === 0 || /[\s\u3000。；：！？，、)）〉"”]/.test(prev)) {
+          flushToken(); startBlock("h" + h); token = "";
+          while (j < len && (s[j] === " " || s[j] === "\t")) j++;
+          i = j; continue;
+        }
+      }
+    }
+    // 无序是列表 - / * + 空格。为避免 micro-CT、5.8-7.2 误判，
+    // 其前置字符不能是字母/数字；且后面多半是 **xx** 或中英文开头。
+    if ((ch === "-" || ch === "*") && i + 1 < len && (s[i + 1] === " " || s[i + 1] === "\t")) {
+      const prev = i > 0 ? s[i - 1] : "";
+      if (i === 0 || !/[0-9A-Za-z]/.test(prev)) {
+        let j = i + 1; while (j < len && s[j] === " ") j++;
+        const looksItem = (s[j] === "*" && s[j + 1] === "*") || /[\u4e00-\u9fffA-Z0-9]/.test(s[j] || "");
+        if (looksItem) {
+          flushToken(); startBlock("ul"); token = "";
+          while (j < len && s[j] === " ") j++;
+          i = j; continue;
+        }
+      }
+    }
+    // 有序列表 N. / N、 / N) + 空格。保护：N 前置不能是字母/数字（避开 2003) 年份）。
+    if (/[0-9]/.test(ch)) {
+      let j = i; while (j < len && /[0-9]/.test(s[j])) j++;
+      const nums = s.slice(i, j);
+      if (nums.length <= 3 && j < len && /[.、)]/.test(s[j]) && j + 1 < len && /\s/.test(s[j + 1])) {
+        const prev = i > 0 ? s[i - 1] : "";
+        if (i === 0 || !/[0-9A-Za-z]/.test(prev)) {
+          let k = j + 1; while (k < len && s[k] === " ") k++;
+          const looksItem = s[k] === "*" || /[\u4e00-\u9fffA-Z0-9]/.test(s[k] || "");
+          if (looksItem) {
+            flushToken(); startBlock("ol"); token = "";
+            while (k < len && s[k] === " ") k++;
+            i = k; continue;
+          }
+        }
+      }
+    }
+    // 显式换行：视为段落分隔
+    if (ch === "\n") { flushToken(); endBlock(); i++; continue; }
+    token += ch; i++;
+  }
+  flushToken(); endBlock();
+
+  const out = [];
+  for (const b of blocks) {
+    const c = b.text.join(" ").replace(/[ \t]+/g, " ").trim();
+    if (c) out.push({ kind: b.kind, c });
+  }
+  // 标题后紧跟正文（换行丢失导致被并入标题行）时，把正文拆为段落。
+  const final = [];
+  for (const b of out) {
+    if (b.kind.startsWith("h") && b.c.length > 30) {
+      const sp = b.c.search(/\s/);
+      if (sp > -1 && sp < 40) {
+        const title = b.c.slice(0, sp).trim();
+        const body = b.c.slice(sp).trim();
+        if (title && body) { final.push({ kind: b.kind, c: title }); final.push({ kind: "p", c: body }); continue; }
+      }
+    }
+    final.push(b);
+  }
+  return final;
 }
 
 /* ================= 多模态：图片上传 ================= */

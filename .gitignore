@@ -37,6 +37,7 @@ data/*.duckdb
 *.db-journal
 *.sqlite
 *.sqlite3
+!data/chroma_db/chroma.sqlite3
 *.sqlite-shm
 *.sqlite-wal
 data/ai_scientist.db

@@ -31,6 +31,9 @@ ENV/
 # --- 向量数据库（Chroma）持久化数据 ---
 data/chroma_db_backup_v1/
 data/*.duckdb
+#  本地 1715 条知识库 sqlite3（≈17.9 MB），避免个人增量修改被误提交/推送到远端。
+#  全局 *.sqlite3 规则本已覆盖，这里显式声明以防未来全局规则调整失效。
+data/chroma_db/chroma.sqlite3
 
 # --- SQLite 数据库及 WAL/SHM 文件（全局 + data 下双层覆盖）---
 *.db

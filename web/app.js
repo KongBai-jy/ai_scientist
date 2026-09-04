@@ -756,8 +756,11 @@ function stopLoadingAnim() {
 
 /* ================= 工作台渲染 ================= */
 function setWorkspaceMode(active) {
-  $(".app").classList.toggle("has-research", !!active);
-  if (motionEnabled() && active) {
+  const hasResearch = !!active;
+  $(".app").classList.toggle("has-research", hasResearch);
+  // 首页历史栏固定展示；收起控制只属于研究工作台。
+  $("#sidebarToggle").style.display = hasResearch ? "" : "none";
+  if (motionEnabled() && hasResearch) {
     const composer = $(".composer-wrap");
     window.gsap.fromTo(composer, { autoAlpha: 0, y: 18 }, { autoAlpha: 1, y: 0, duration: .42, ease: "power3.out", clearProps: "transform,opacity,visibility" });
     // 兜底：动画未播放时强制显示输入区
